@@ -87,6 +87,7 @@ final class TimeTravelViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setLayout()
+        getNotification()
     }
     
     // MARK: - Custom Method
@@ -185,5 +186,32 @@ final class TimeTravelViewController: UIViewController {
     
     @objc func returnButtonDidTap() {
         print("돌아가기 버튼 누름")
+    }
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut) {
+            self.timeTravelView.snp.updateConstraints {
+                $0.top.equalTo(self.yearBackView.snp.bottom).offset(52)
+            }
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification) {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut) {
+            self.timeTravelView.snp.updateConstraints {
+                $0.top.equalTo(self.yearBackView.snp.bottom).offset(119)
+            }
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    // MARK: - Custom Method
+    
+    private func getNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
     }
 }
