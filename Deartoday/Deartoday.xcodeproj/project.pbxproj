@@ -35,6 +35,7 @@
 		92DB358628756B76001E2006 /* TempDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB358528756B76001E2006 /* TempDataModel.swift */; };
 		92DB358828756B7D001E2006 /* TempService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB358728756B7D001E2006 /* TempService.swift */; };
 		92DB358A28756B8E001E2006 /* TempAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB358928756B8E001E2006 /* TempAPI.swift */; };
+		98BFBCBE2879544A00F01F04 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BFBCBD2879544A00F01F04 /* Image.swift */; };
 		A3EDF83E9CD70073D83CA26D /* Pods_Deartoday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A3CEAB5A8D31B890C8B41E /* Pods_Deartoday.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		92DB358728756B7D001E2006 /* TempService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempService.swift; sourceTree = "<group>"; };
 		92DB358928756B8E001E2006 /* TempAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempAPI.swift; sourceTree = "<group>"; };
 		92DB358B28756F3F001E2006 /* Deartoday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Deartoday.entitlements; sourceTree = "<group>"; };
+		98BFBCBD2879544A00F01F04 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		A1A07BC470FAC0358D40F43A /* Pods-Deartoday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deartoday.release.xcconfig"; path = "Target Support Files/Pods-Deartoday/Pods-Deartoday.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				92DB35712875661A001E2006 /* Constant.swift */,
+				98BFBCBD2879544A00F01F04 /* Image.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				92DB35332875633D001E2006 /* SceneDelegate.swift in Sources */,
 				92DB357C28756A8F001E2006 /* NetworkResult.swift in Sources */,
 				92DB356428756517001E2006 /* OnboardingView.swift in Sources */,
+				98BFBCBE2879544A00F01F04 /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
