@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		923061D4287754DB00F04EDA /* TimeTravelDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923061D3287754DB00F04EDA /* TimeTravelDataModel.swift */; };
+		923061D6287754FA00F04EDA /* TimeTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923061D5287754FA00F04EDA /* TimeTravelView.swift */; };
+		923061D82877550E00F04EDA /* TimeTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923061D72877550E00F04EDA /* TimeTravelViewController.swift */; };
+		923C69B5287810DE00B8EC56 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C69B4287810DE00B8EC56 /* UITextField+.swift */; };
 		928A8A6B2875FB7C000D4E99 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 928A8A6A2875FB7C000D4E99 /* GoogleService-Info.plist */; };
 		92DB35312875633D001E2006 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB35302875633D001E2006 /* AppDelegate.swift */; };
 		92DB35332875633D001E2006 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB35322875633D001E2006 /* SceneDelegate.swift */; };
@@ -42,6 +46,10 @@
 /* Begin PBXFileReference section */
 		6117E07E0B8313B67F3D1573 /* Pods-Deartoday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deartoday.debug.xcconfig"; path = "Target Support Files/Pods-Deartoday/Pods-Deartoday.debug.xcconfig"; sourceTree = "<group>"; };
 		91A3CEAB5A8D31B890C8B41E /* Pods_Deartoday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Deartoday.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		923061D3287754DB00F04EDA /* TimeTravelDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelDataModel.swift; sourceTree = "<group>"; };
+		923061D5287754FA00F04EDA /* TimeTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelView.swift; sourceTree = "<group>"; };
+		923061D72877550E00F04EDA /* TimeTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelViewController.swift; sourceTree = "<group>"; };
+		923C69B4287810DE00B8EC56 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		928A8A6A2875FB7C000D4E99 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		92DB352D2875633D001E2006 /* Deartoday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deartoday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92DB35302875633D001E2006 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +114,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		923061CF287754BB00F04EDA /* TimeTravel */ = {
+			isa = PBXGroup;
+			children = (
+				923061D2287754D000F04EDA /* Model */,
+				923061D1287754CB00F04EDA /* View */,
+				923061D0287754C200F04EDA /* Controller */,
+			);
+			path = TimeTravel;
+			sourceTree = "<group>";
+		};
+		923061D0287754C200F04EDA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				923061D72877550E00F04EDA /* TimeTravelViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		923061D1287754CB00F04EDA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				923061D5287754FA00F04EDA /* TimeTravelView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		923061D2287754D000F04EDA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				923061D3287754DB00F04EDA /* TimeTravelDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		92DB35242875633D001E2006 = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +203,7 @@
 		92DB3546287563C0001E2006 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				923061CF287754BB00F04EDA /* TimeTravel */,
 				92DB355B287564BA001E2006 /* Main */,
 				92DB355228756443001E2006 /* Onboarding */,
 			);
@@ -193,6 +236,7 @@
 				92DB356B2875658F001E2006 /* UIView+.swift */,
 				92DB356D287565AC001E2006 /* UIScreen+.swift */,
 				92DB356F287565E4001E2006 /* UILabel+.swift */,
+				923C69B4287810DE00B8EC56 /* UITextField+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -463,12 +507,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				92DB35682875656C001E2006 /* DDSButton.swift in Sources */,
+				923061D82877550E00F04EDA /* TimeTravelViewController.swift in Sources */,
+				923061D6287754FA00F04EDA /* TimeTravelView.swift in Sources */,
 				92DB35352875633D001E2006 /* MainViewController.swift in Sources */,
 				92DB3562287564F3001E2006 /* MainView.swift in Sources */,
 				92DB358628756B76001E2006 /* TempDataModel.swift in Sources */,
 				92DB3570287565E4001E2006 /* UILabel+.swift in Sources */,
 				92DB358828756B7D001E2006 /* TempService.swift in Sources */,
 				92DB358028756AE8001E2006 /* MoyaLoggingPlugin.swift in Sources */,
+				923061D4287754DB00F04EDA /* TimeTravelDataModel.swift in Sources */,
 				92DB35312875633D001E2006 /* AppDelegate.swift in Sources */,
 				92DB35662875652F001E2006 /* OnboardingViewController.swift in Sources */,
 				92DB3560287564ED001E2006 /* MainModel.swift in Sources */,
@@ -482,6 +529,7 @@
 				92DB356A28756577001E2006 /* DDSTextField.swift in Sources */,
 				92DB356C2875658F001E2006 /* UIView+.swift in Sources */,
 				92DB357628756682001E2006 /* TempFont.swift in Sources */,
+				923C69B5287810DE00B8EC56 /* UITextField+.swift in Sources */,
 				92DB358428756B67001E2006 /* BaseTargetType.swift in Sources */,
 				92DB35332875633D001E2006 /* SceneDelegate.swift in Sources */,
 				92DB357C28756A8F001E2006 /* NetworkResult.swift in Sources */,
