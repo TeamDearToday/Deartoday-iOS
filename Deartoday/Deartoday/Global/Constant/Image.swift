@@ -5,21 +5,18 @@
 //  Created by 이경민 on 2022/07/09.
 //
 
-import Foundation
 import UIKit
 
 extension Constant {
     struct Image {
         
         // MARK: - Common
-        
         ///button
         static let btnCircleBasic = UIImage(named: "btnCircleBasic")!
         ///icon
         static let icRewind = UIImage(named: "icRewind")!
         
         // MARK: - 로그인
-        
         ///image
         static let logo = UIImage(named: "logo")!
         ///button
