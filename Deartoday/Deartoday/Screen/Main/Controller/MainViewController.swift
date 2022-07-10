@@ -12,8 +12,10 @@ final class MainViewController: UIViewController {
     // MARK: - Property
     
     // MARK: - UI Property
-    
+
     @IBOutlet var dateLabelCollection: [UILabel]!
+    
+    @IBOutlet weak var timeTravelButtonHeightConstraint: NSLayoutConstraint!
     @IBOutlet var backgroundImageViewWidthConstraintCollection: [NSLayoutConstraint]!
     
     // MARK: - Life Cycle
@@ -30,6 +32,7 @@ final class MainViewController: UIViewController {
     private func setUI() {
         setConstraint()
         setDateLabel()
+        setLayout()
     }
     
     private func setConstraint() {
@@ -44,6 +47,21 @@ final class MainViewController: UIViewController {
             dateLabelCollection[i].textColor = .lightBlue00
             dateLabelCollection[i].text = getDateInfo()[i]
         }
+    }
+    
+    private func setLayout() {
+        timeTravelButtonHeightConstraint.constant = getDeviceWidth() * (246 / 375)
+    }
+    
+    // MARK: - IBAction
+    
+    @IBAction func timeTravelButtonDidTap(_ sender: Any) {
+    }
+    
+    @IBAction func settingButtonDidTap(_ sender: Any) {
+    }
+    
+    @IBAction func helpButtonDidTap(_ sender: Any) {
     }
 }
 
