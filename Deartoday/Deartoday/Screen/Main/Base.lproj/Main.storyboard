@@ -66,6 +66,56 @@
                                                     <constraint firstAttribute="height" constant="28" id="Rjo-8q-WJD"/>
                                                 </constraints>
                                             </imageView>
+                                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ein-JI-aqo">
+                                                <rect key="frame" x="544" y="208" width="181" height="177"/>
+                                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="ein-JI-aqo" secondAttribute="height" multiplier="181:177" id="3cD-HG-KhU"/>
+                                                    <constraint firstAttribute="height" constant="177" id="aeQ-y4-bXz"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="checkMessageButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4YV-xi-ZhZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qJ-Cs-81A">
+                                                <rect key="frame" x="582" y="163" width="68" height="90"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="68" id="emj-hx-SPr"/>
+                                                    <constraint firstAttribute="height" constant="90" id="sE4-Ym-WjQ"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="btnCircleBasic"/>
+                                                <connections>
+                                                    <action selector="checkMessageButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lCi-z9-1n0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TgA-8j-2gh">
+                                                <rect key="frame" x="399" y="506" width="313" height="189"/>
+                                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="189" id="MBc-g8-APE"/>
+                                                    <constraint firstAttribute="width" secondItem="TgA-8j-2gh" secondAttribute="height" multiplier="313:189" id="bZp-R3-Xej"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="checkTimeTravelButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VvO-gp-Jct"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYn-6d-KCP">
+                                                <rect key="frame" x="545" y="461" width="68" height="90"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="90" id="7uO-KX-LmE"/>
+                                                    <constraint firstAttribute="width" constant="68" id="Z6J-ly-Jp8"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="btnCircleBasic"/>
+                                                <connections>
+                                                    <action selector="checkTimeTravelButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MJl-F8-aVT"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -75,11 +125,17 @@
                                             <constraint firstAttribute="bottom" secondItem="QIl-7z-7U7" secondAttribute="bottom" id="JxW-OO-xOd"/>
                                             <constraint firstItem="tKA-ES-cfr" firstAttribute="leading" secondItem="QIl-7z-7U7" secondAttribute="trailing" id="KNA-30-WWd"/>
                                             <constraint firstAttribute="bottom" secondItem="tKA-ES-cfr" secondAttribute="bottom" id="Kjf-Uj-GDK"/>
+                                            <constraint firstAttribute="trailing" secondItem="9qJ-Cs-81A" secondAttribute="trailing" constant="100" id="Mev-Ga-Btj"/>
+                                            <constraint firstItem="ein-JI-aqo" firstAttribute="top" secondItem="9qJ-Cs-81A" secondAttribute="bottom" constant="-45" id="S8E-sH-U1L"/>
+                                            <constraint firstAttribute="trailing" secondItem="ein-JI-aqo" secondAttribute="trailing" constant="25" id="STu-tN-f5M"/>
                                             <constraint firstItem="BNe-RC-mB1" firstAttribute="top" secondItem="UGG-9o-HrI" secondAttribute="bottom" constant="11" id="VHg-Ii-2zM"/>
                                             <constraint firstAttribute="trailing" secondItem="tKA-ES-cfr" secondAttribute="trailing" id="cw3-MK-FFR"/>
+                                            <constraint firstItem="TgA-8j-2gh" firstAttribute="top" secondItem="tYn-6d-KCP" secondAttribute="bottom" constant="-45" id="d9T-3k-slj"/>
+                                            <constraint firstAttribute="trailing" secondItem="tYn-6d-KCP" secondAttribute="trailing" constant="137" id="dKK-dw-K3C"/>
                                             <constraint firstItem="QIl-7z-7U7" firstAttribute="top" secondItem="USj-eL-kCX" secondAttribute="top" id="gHQ-Gq-VYP"/>
                                             <constraint firstItem="BNe-RC-mB1" firstAttribute="leading" secondItem="USj-eL-kCX" secondAttribute="leading" constant="16" id="mej-gN-Cba"/>
                                             <constraint firstItem="UGG-9o-HrI" firstAttribute="leading" secondItem="USj-eL-kCX" secondAttribute="leading" constant="97" id="nug-7a-Kdn"/>
+                                            <constraint firstAttribute="trailing" secondItem="TgA-8j-2gh" secondAttribute="trailing" constant="38" id="pAX-Jn-6l6"/>
                                             <constraint firstItem="tKA-ES-cfr" firstAttribute="top" secondItem="USj-eL-kCX" secondAttribute="top" id="vFq-Qp-SlB"/>
                                         </constraints>
                                     </view>
@@ -172,7 +228,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ein-JI-aqo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="164" id="6JF-ri-3Yt"/>
                             <constraint firstItem="m3y-wI-V1B" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6rp-Ow-dh2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TgA-8j-2gh" secondAttribute="bottom" constant="83" id="AFO-mn-1iC"/>
                             <constraint firstItem="BNe-RC-mB1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="312" id="HSh-hF-dvX"/>
                             <constraint firstItem="aSn-XE-spf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JiW-VV-Xqk"/>
                             <constraint firstItem="aSn-XE-spf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LLZ-27-rEL"/>
@@ -229,8 +287,14 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

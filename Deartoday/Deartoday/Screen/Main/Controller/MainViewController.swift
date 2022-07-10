@@ -58,6 +58,12 @@ final class MainViewController: UIViewController {
     @IBAction func timeTravelButtonDidTap(_ sender: Any) {
     }
     
+    @IBAction func checkMessageButtonDidTap(_ sender: Any) {
+    }
+    
+    @IBAction func checkTimeTravelButtonDidTap(_ sender: Any) {
+    }
+    
     @IBAction func settingButtonDidTap(_ sender: Any) {
     }
     
