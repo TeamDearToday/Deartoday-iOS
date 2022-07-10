@@ -11,7 +11,6 @@ import SnapKit
 import Then
 
 import Photos
-import PhotosUI
 
 final class TimeTravelViewController: UIViewController {
     
@@ -44,7 +43,7 @@ final class TimeTravelViewController: UIViewController {
     private var yearLabel = UILabel().then {
         $0.text = "2022"
         $0.textColor = .lightBlue00
-        $0.font = UIFont.GmarketSans(.medium, size: 24)
+        $0.font = .h0
     }
     
     private var monthBackView = UIImageView().then {
@@ -54,7 +53,7 @@ final class TimeTravelViewController: UIViewController {
     private var monthLabel = UILabel().then {
         $0.text = "07"
         $0.textColor = .lightBlue00
-        $0.font = UIFont.GmarketSans(.medium, size: 24)
+        $0.font = .h0
     }
     
     private var dateBackView = UIImageView().then {
@@ -64,7 +63,7 @@ final class TimeTravelViewController: UIViewController {
     private var dateLabel = UILabel().then {
         $0.text = "02"
         $0.textColor = .lightBlue00
-        $0.font = UIFont.GmarketSans(.medium, size: 24)
+        $0.font = .h0
     }
     
     private lazy var exitButton = UIButton().then {
@@ -78,10 +77,10 @@ final class TimeTravelViewController: UIViewController {
                   테이프를 터치하여
                   돌아가고 싶은 순간을 선택해주세요
                   """
-        $0.font = UIFont.p2
-        $0.textColor = .white
+        $0.font = .p2
+        $0.textColor = .glassBlue
         $0.numberOfLines = 2
-        $0.addLineSpacing(spacing: 20)
+        $0.addLineSpacing(spacing: 23)
     }
     
     private var timeTravelView = TimeTravelView().then {
@@ -96,6 +95,8 @@ final class TimeTravelViewController: UIViewController {
         $0.addTarget(self, action: #selector(returnButtonDidTap), for: .touchUpInside)
     }
     
+    private let imagePicker = UIImagePickerController()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -109,19 +110,6 @@ final class TimeTravelViewController: UIViewController {
     
     private func setUI() {
         view.backgroundColor = .white
-        
-        [yearBackView, monthBackView, dateBackView].forEach {
-            $0.layer.applySketchShadow(color: UIColor(red: 0 / 255,
-                                                      green: 26 / 255,
-                                                      blue: 255 / 255,
-                                                      alpha: 0.14),
-                                       alpha: 1,
-                                       x: 0,
-                                       y: 0,
-                                       blur: 10,
-                                       spread: 0)
-            $0.makeRound(radius: 8)
-        }
         
         timeTravelView.delegate = self
     }
@@ -249,57 +237,47 @@ final class TimeTravelViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(enableReturnButton(_:)), name: NSNotification.Name("EnableReturnButton"), object: nil)
     }
-    
-    private func openPHPicker() {
-        var config = PHPickerConfiguration(photoLibrary: PHPhotoLibrary.shared())
-        config.filter = .images
-        config.selectionLimit = 1
-        let controller = PHPickerViewController(configuration: config)
-        
-        controller.delegate = self
-        self.present(controller, animated: true, completion: nil)
-    }
-}
-
-// MARK: - PHPicker Delegate
-
-extension TimeTravelViewController: PHPickerViewControllerDelegate {
-    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-        picker.dismiss(animated: true)
-        guard !results.isEmpty else {
-            return
-        }
-        
-        let imageResult = results[0]
-        
-        if let assetId = imageResult.assetIdentifier {
-            let assetResults = PHAsset.fetchAssets(withLocalIdentifiers: [assetId], options: nil)
-            DispatchQueue.main.async {
-                self.timeTravelView.hasPhoto = true
-                if let date = assetResults.firstObject?.creationDate {
-                    self.timeTravelView.dateText = self.dateFormatter.string(from: date)
-                }
-            }
-        }
-        
-        if imageResult.itemProvider.canLoadObject(ofClass: UIImage.self) {
-            imageResult.itemProvider.loadObject(ofClass: UIImage.self) { (selectedImage, error) in
-                if let error = error {
-                    print(error.localizedDescription)
-                } else {
-                    DispatchQueue.main.async {
-                        self.timeTravelView.photoImage = selectedImage as? UIImage
-                    }
-                }
-            }
-        }
-    }
 }
 
 // MARK: - Custom Delegate
 
 extension TimeTravelViewController: TimeTravelViewDelegate {
     func photoImageViewDidTap() {
-        openPHPicker()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
+        present(self.imagePicker, animated: true)
+    }
+}
+
+// MARK: - UIImagePicker Delegate
+
+extension TimeTravelViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // 이미지 사진 업로드
+        var newImage: UIImage? = nil
+        
+        if let possibleImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            newImage = possibleImage
+        } else if let possibleImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            newImage = possibleImage
+        }
+        
+        timeTravelView.photoImageView.image = newImage
+        
+        // 이미지 날짜 업로드
+        let asset = info[.phAsset] as? PHAsset
+        
+        let option = PHContentEditingInputRequestOptions()
+        option.canHandleAdjustmentData = { _ in true }
+        
+        asset?.requestContentEditingInput(with: option, completionHandler: { (contentEditingInput, info) in
+            if let date = contentEditingInput?.creationDate {
+                self.timeTravelView.dateTextField.text = self.dateFormatter.string(from: date)
+                self.timeTravelView.hasPhoto = true
+            }
+        })
+        
+        picker.dismiss(animated: true, completion: nil)
     }
 }

@@ -35,12 +35,6 @@ final class TimeTravelView: UIView {
         }
     }
     
-    public var dateText: String? = nil {
-        didSet {
-            dateTextField.text = dateText
-        }
-    }
-    
     private let dateFormatter = DateFormatter().then {
         $0.locale = Locale(identifier: "ko_kr")
         $0.timeZone = TimeZone(abbreviation: "ko_kr")
@@ -57,10 +51,11 @@ final class TimeTravelView: UIView {
         $0.contentMode = .scaleAspectFill
     }
     
-    private var photoImageView = UIImageView().then {
+    var photoImageView = UIImageView().then {
         $0.backgroundColor = .lightBlue00
         $0.makeRound(radius: 8)
         $0.isUserInteractionEnabled = true
+        $0.contentMode = .scaleAspectFill
     }
     
     lazy var dateTextField = DDSTextField().then {
@@ -150,7 +145,8 @@ final class TimeTravelView: UIView {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         toolBar.translatesAutoresizingMaskIntoConstraints = false
-        toolBar.tintColor = .blue
+        toolBar.tintColor = .blue02
+        toolBar.backgroundColor = .white
         
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelbutton = UIBarButtonItem(title: "취소", style: .done, target: self, action: #selector(cancelButtonDidTap))
