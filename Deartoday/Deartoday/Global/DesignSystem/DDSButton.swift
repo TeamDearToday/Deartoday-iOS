@@ -22,42 +22,29 @@ final class DDSButton: UIButton {
         case disable
         
         var textColor: UIColor {
-            
-            // MARK: - TODO: Color Asset 변경
-            
             switch self {
             case .present:
-                return UIColor.blue
-            case .past:
-                return UIColor.darkGray
-            case .disable:
-                return UIColor.lightGray
+                return .blue02
+            case .past, .disable:
+                return .gray00
             }
         }
         
         var backgroundImage: UIImage {
-            
-            // MARK: - TODO: Image Asset 변경
-            
             switch self {
             case .present:
-                return UIImage(named: "") ?? UIImage()
+                return Constant.Image.btnSmallPresent
             case .past:
-                return UIImage(named: "") ?? UIImage()
+                return Constant.Image.btnSmallPast
             case .disable:
-                return UIImage(named: "") ?? UIImage()
+                return Constant.Image.btnSmallDisable
             }
         }
         
         var buttonLeftIcon: UIImage {
-            
-            // MARK: - TODO: Image Asset 변경
-            
             switch self {
-            case .present:
-                return UIImage(named: "") ?? UIImage()
-            case .past, .disable:
-                return UIImage(named: "") ?? UIImage()
+            case .present, .past, .disable:
+                return Constant.Image.rewind
             }
         }
         
@@ -104,11 +91,11 @@ final class DDSButton: UIButton {
     }
     
     private var leftIconImageView = UIImageView().then {
-        $0.backgroundColor = .lightGray
+        $0.contentMode = .scaleAspectFill
     }
     
     private var textLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 16, weight: .medium)
+        $0.font = .Pretendard(.medium, size: 16)
     }
     
     // MARK: - Initializer
@@ -125,26 +112,24 @@ final class DDSButton: UIButton {
     // MARK: - Set UI
     
     private func setTitleColor() {
-        titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
+        titleLabel?.font = .Pretendard(.medium, size: 16)
         setTitleColor(style.textColor, for: .normal)
         setTitleColor(style.textColor, for: .highlighted)
         
-        switch style {
-        case .present:
-            textLabel.textColor = .blue
-        case .past:
-            textLabel.textColor = .darkGray
-        case .disable:
-            textLabel.textColor = .lightGray
-        }
+        textLabel.textColor = style.textColor
     }
     
     private func setStyle() {
+        leftIconImageView.tintColor = style.textColor
+        
         setBackgroundImage(style.backgroundImage, for: .normal)
         setBackgroundImage(style.backgroundImage, for: .highlighted)
     }
     
     private func setLeftIconImage() {
+        leftIconImageView.image = style.buttonLeftIcon
+        leftIconImageView.tintColor = style.textColor
+        
         stackView.isHidden = !hasLeftIcon
         
         addSubview(stackView)
