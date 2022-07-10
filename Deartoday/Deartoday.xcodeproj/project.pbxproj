@@ -30,7 +30,6 @@
 		92DB356E287565AC001E2006 /* UIScreen+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB356D287565AC001E2006 /* UIScreen+.swift */; };
 		92DB3570287565E4001E2006 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB356F287565E4001E2006 /* UILabel+.swift */; };
 		92DB35722875661A001E2006 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB35712875661A001E2006 /* Constant.swift */; };
-		92DB357628756682001E2006 /* TempFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB357528756682001E2006 /* TempFont.swift */; };
 		92DB357A28756A61001E2006 /* URLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB357928756A61001E2006 /* URLConstant.swift */; };
 		92DB357C28756A8F001E2006 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB357B28756A8F001E2006 /* NetworkResult.swift */; };
 		92DB357E28756AB8001E2006 /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB357D28756AB8001E2006 /* NetworkConstant.swift */; };
@@ -41,6 +40,14 @@
 		92DB358828756B7D001E2006 /* TempService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB358728756B7D001E2006 /* TempService.swift */; };
 		92DB358A28756B8E001E2006 /* TempAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB358928756B8E001E2006 /* TempAPI.swift */; };
 		98BFBCBE2879544A00F01F04 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BFBCBD2879544A00F01F04 /* Image.swift */; };
+		98BFBCC12879B66A00F01F04 /* GmarketSansBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 98BFBCBF2879B66A00F01F04 /* GmarketSansBold.otf */; };
+		98BFBCC22879B66A00F01F04 /* GmarketSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 98BFBCC02879B66A00F01F04 /* GmarketSansMedium.otf */; };
+		98BFBCC72879B68600F01F04 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 98BFBCC32879B68600F01F04 /* Pretendard-Medium.otf */; };
+		98BFBCC82879B68600F01F04 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 98BFBCC42879B68600F01F04 /* Pretendard-SemiBold.otf */; };
+		98BFBCC92879B68600F01F04 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 98BFBCC52879B68600F01F04 /* Pretendard-Bold.otf */; };
+		98BFBCCA2879B68600F01F04 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 98BFBCC62879B68600F01F04 /* Pretendard-Regular.otf */; };
+		98BFBCCF2879B85400F01F04 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BFBCCE2879B85400F01F04 /* UIFont+.swift */; };
+		98BFBCD12879BBB700F01F04 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BFBCD02879BBB700F01F04 /* UIColor+.swift */; };
 		A3EDF83E9CD70073D83CA26D /* Pods_Deartoday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A3CEAB5A8D31B890C8B41E /* Pods_Deartoday.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,7 +79,6 @@
 		92DB356D287565AC001E2006 /* UIScreen+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+.swift"; sourceTree = "<group>"; };
 		92DB356F287565E4001E2006 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		92DB35712875661A001E2006 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		92DB357528756682001E2006 /* TempFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempFont.swift; sourceTree = "<group>"; };
 		92DB357928756A61001E2006 /* URLConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstant.swift; sourceTree = "<group>"; };
 		92DB357B28756A8F001E2006 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		92DB357D28756AB8001E2006 /* NetworkConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
@@ -84,6 +90,14 @@
 		92DB358928756B8E001E2006 /* TempAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempAPI.swift; sourceTree = "<group>"; };
 		92DB358B28756F3F001E2006 /* Deartoday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Deartoday.entitlements; sourceTree = "<group>"; };
 		98BFBCBD2879544A00F01F04 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		98BFBCBF2879B66A00F01F04 /* GmarketSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansBold.otf; sourceTree = "<group>"; };
+		98BFBCC02879B66A00F01F04 /* GmarketSansMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansMedium.otf; sourceTree = "<group>"; };
+		98BFBCC32879B68600F01F04 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		98BFBCC42879B68600F01F04 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		98BFBCC52879B68600F01F04 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		98BFBCC62879B68600F01F04 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		98BFBCCE2879B85400F01F04 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		98BFBCD02879BBB700F01F04 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		A1A07BC470FAC0358D40F43A /* Pods-Deartoday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deartoday.release.xcconfig"; path = "Target Support Files/Pods-Deartoday/Pods-Deartoday.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -240,6 +254,8 @@
 				92DB356F287565E4001E2006 /* UILabel+.swift */,
 				923C69B4287810DE00B8EC56 /* UITextField+.swift */,
 				923C69B628798F4800B8EC56 /* CALayer+.swift */,
+				98BFBCCE2879B85400F01F04 /* UIFont+.swift */,
+				98BFBCD02879BBB700F01F04 /* UIColor+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -380,7 +396,12 @@
 		92DB357328756653001E2006 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				92DB357528756682001E2006 /* TempFont.swift */,
+				98BFBCC52879B68600F01F04 /* Pretendard-Bold.otf */,
+				98BFBCC32879B68600F01F04 /* Pretendard-Medium.otf */,
+				98BFBCC62879B68600F01F04 /* Pretendard-Regular.otf */,
+				98BFBCC42879B68600F01F04 /* Pretendard-SemiBold.otf */,
+				98BFBCBF2879B66A00F01F04 /* GmarketSansBold.otf */,
+				98BFBCC02879B66A00F01F04 /* GmarketSansMedium.otf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -453,9 +474,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98BFBCC72879B68600F01F04 /* Pretendard-Medium.otf in Resources */,
+				98BFBCC12879B66A00F01F04 /* GmarketSansBold.otf in Resources */,
 				92DB353D2875633F001E2006 /* LaunchScreen.storyboard in Resources */,
+				98BFBCC82879B68600F01F04 /* Pretendard-SemiBold.otf in Resources */,
 				928A8A6B2875FB7C000D4E99 /* GoogleService-Info.plist in Resources */,
+				98BFBCC22879B66A00F01F04 /* GmarketSansMedium.otf in Resources */,
 				92DB353A2875633F001E2006 /* Assets.xcassets in Resources */,
+				98BFBCCA2879B68600F01F04 /* Pretendard-Regular.otf in Resources */,
+				98BFBCC92879B68600F01F04 /* Pretendard-Bold.otf in Resources */,
 				92DB35382875633D001E2006 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,18 +554,19 @@
 				92DB358228756B0B001E2006 /* GeneralResponse.swift in Sources */,
 				92DB357E28756AB8001E2006 /* NetworkConstant.swift in Sources */,
 				92DB35582875646E001E2006 /* OnboardingModel.swift in Sources */,
+				98BFBCCF2879B85400F01F04 /* UIFont+.swift in Sources */,
 				92DB357A28756A61001E2006 /* URLConstant.swift in Sources */,
 				92DB356E287565AC001E2006 /* UIScreen+.swift in Sources */,
 				92DB358A28756B8E001E2006 /* TempAPI.swift in Sources */,
 				92DB356A28756577001E2006 /* DDSTextField.swift in Sources */,
 				92DB356C2875658F001E2006 /* UIView+.swift in Sources */,
-				92DB357628756682001E2006 /* TempFont.swift in Sources */,
 				923C69B5287810DE00B8EC56 /* UITextField+.swift in Sources */,
 				92DB358428756B67001E2006 /* BaseTargetType.swift in Sources */,
 				92DB35332875633D001E2006 /* SceneDelegate.swift in Sources */,
 				92DB357C28756A8F001E2006 /* NetworkResult.swift in Sources */,
 				92DB356428756517001E2006 /* OnboardingView.swift in Sources */,
 				98BFBCBE2879544A00F01F04 /* Image.swift in Sources */,
+				98BFBCD12879BBB700F01F04 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

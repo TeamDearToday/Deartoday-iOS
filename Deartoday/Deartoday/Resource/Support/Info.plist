@@ -4,6 +4,15 @@
 <dict>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>사진 업로드를 위해 앨범 접근 권한이 필요합니다.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Pretendard-Bold.otf</string>
+		<string>Pretendard-Medium.otf</string>
+		<string>Pretendard-Regular.otf</string>
+		<string>Pretendard-SemiBold.otf</string>
+		<string>GmarketSansBold.otf</string>
+		<string>GmarketSansMedium.otf</string>
+	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
