@@ -36,7 +36,7 @@
                                             </imageView>
                                             <button opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNe-RC-mB1">
                                                 <rect key="frame" x="16" y="356" width="265" height="246"/>
-                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="246" id="ccK-1W-800"/>
                                                     <constraint firstAttribute="width" secondItem="BNe-RC-mB1" secondAttribute="height" multiplier="265:246" id="kPa-Ra-HkX"/>
@@ -68,7 +68,7 @@
                                             </imageView>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ein-JI-aqo">
                                                 <rect key="frame" x="544" y="208" width="181" height="177"/>
-                                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ein-JI-aqo" secondAttribute="height" multiplier="181:177" id="3cD-HG-KhU"/>
                                                     <constraint firstAttribute="height" constant="177" id="aeQ-y4-bXz"/>
@@ -100,7 +100,7 @@
                                             </imageView>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TgA-8j-2gh">
                                                 <rect key="frame" x="399" y="506" width="313" height="189"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="189" id="MBc-g8-APE"/>
                                                     <constraint firstAttribute="width" secondItem="TgA-8j-2gh" secondAttribute="height" multiplier="313:189" id="bZp-R3-Xej"/>
@@ -130,14 +130,14 @@
                                                     <constraint firstAttribute="height" constant="22" id="yaU-bL-Knj"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PU-Ad-LwK">
-                                                <rect key="frame" x="588" y="485" width="10.333333333333371" height="20.333333333333314"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PU-Ad-LwK">
+                                                <rect key="frame" x="588" y="495" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Goz-jN-lWr">
-                                                <rect key="frame" x="625" y="187" width="10.333333333333371" height="20.333333333333343"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Goz-jN-lWr">
+                                                <rect key="frame" x="625" y="197" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -258,6 +258,9 @@
                                     <constraint firstItem="6ZP-5U-TGT" firstAttribute="centerX" secondItem="kCm-XR-W2f" secondAttribute="centerX" id="zcG-yD-phz"/>
                                 </constraints>
                             </view>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="59W-gz-LAT">
+                                <rect key="frame" x="326.33333333333331" y="753" width="96.666666666666686" height="25"/>
+                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -271,13 +274,17 @@
                             <constraint firstItem="m3y-wI-V1B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NOo-Rt-3lI"/>
                             <constraint firstItem="USj-eL-kCX" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" priority="250" id="QUf-uJ-yaq"/>
                             <constraint firstItem="USj-eL-kCX" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="V4N-K3-P3C"/>
+                            <constraint firstItem="59W-gz-LAT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZJo-5S-hFm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m3y-wI-V1B" secondAttribute="trailing" id="aDo-8D-RP7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="59W-gz-LAT" secondAttribute="bottom" id="gnF-1c-KPo"/>
                             <constraint firstAttribute="bottom" secondItem="m3y-wI-V1B" secondAttribute="bottom" id="nGY-3g-oZV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4jK-K6-bBR"/>
                     <size key="freeformSize" width="749" height="812"/>
                     <connections>
+                        <outlet property="backgroundScrollView" destination="m3y-wI-V1B" id="8ay-N6-Hxy"/>
+                        <outlet property="pageControl" destination="59W-gz-LAT" id="cBF-6v-Vop"/>
                         <outlet property="timeTravelButtonHeightConstraint" destination="ccK-1W-800" id="cms-gd-bZG"/>
                         <outletCollection property="backgroundImageViewWidthConstraintCollection" destination="AMU-RF-Elr" collectionClass="NSMutableArray" id="OsQ-2a-KQu"/>
                         <outletCollection property="backgroundImageViewWidthConstraintCollection" destination="dmh-gd-7ZW" collectionClass="NSMutableArray" id="0h8-fV-uxy"/>
@@ -324,15 +331,6 @@
         <image name="rewind" width="22" height="22"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

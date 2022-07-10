@@ -11,6 +11,8 @@ final class MainViewController: UIViewController {
     
     // MARK: - UI Property
 
+    @IBOutlet weak var backgroundScrollView: UIScrollView!
+    @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet var messageCountLabelCollection: [UILabel]!
     @IBOutlet var dateLabelCollection: [UILabel]!
     @IBOutlet weak var timeTravelButtonHeightConstraint: NSLayoutConstraint!
@@ -22,6 +24,12 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setData()
+        setDelegate()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setPageControl(page: backgroundScrollView.contentOffset.x == 0 ? 0 : 1)
     }
     
     // MARK: - Custom Method
@@ -29,36 +37,27 @@ final class MainViewController: UIViewController {
     private func setUI() {
         setConstraint()
         setLabelUI()
+        setPageControlUI()
         setLayout()
     }
     
     private func setData() {
-        setDateLabel()
+        setDate()
     }
     
-    private func setConstraint() {
-        backgroundImageViewWidthConstraintCollection.forEach {
-            $0.constant = getDeviceWidth()
-        }
+    private func setDelegate() {
+        backgroundScrollView.delegate = self
     }
     
-    private func setLabelUI() {
-        messageCountLabelCollection.forEach {
-            $0.textColor = .blue02
-            $0.font = .p3
-        }
-    }
-    
-    private func setDateLabel() {
+    private func setDate() {
         for i in 0...2 {
-            dateLabelCollection[i].font = .h0
-            dateLabelCollection[i].textColor = .lightBlue00
             dateLabelCollection[i].text = getDateInfo()[i]
         }
     }
     
-    private func setLayout() {
-        timeTravelButtonHeightConstraint.constant = getDeviceWidth() * (246 / 375)
+    private func setPageControl(page: Int) {
+        pageControl.setIndicatorImage(UIImage(systemName: "circle.fill"), forPage: page)
+        pageControl.setIndicatorImage(UIImage(systemName: "circle"), forPage: page == 0 ? 1 : 0)
     }
     
     // MARK: - IBAction
@@ -79,3 +78,46 @@ final class MainViewController: UIViewController {
     }
 }
 
+// MARK: - UIScrollViewDelegate
+
+extension MainViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.x == 0 {
+            setPageControl(page: 0)
+        }
+        else if scrollView.contentOffset.x == getDeviceWidth() {
+            setPageControl(page: 1)
+        }
+    }
+}
+
+// MARK: - Component UI Setting functions
+
+extension MainViewController {
+    ///Color Asset 추가 시 refactoring 가능
+    private func setLabelUI() {
+        messageCountLabelCollection.forEach {
+            $0.textColor = .blue02
+            $0.font = .p3
+        }
+        dateLabelCollection.forEach {
+            $0.font = .h0
+            $0.textColor = .lightBlue00
+        }
+    }
+    
+    private func setPageControlUI() {
+        pageControl.currentPageIndicatorTintColor = .lightBlue00
+        pageControl.pageIndicatorTintColor = .lightBlue00
+    }
+    
+    private func setConstraint() {
+        backgroundImageViewWidthConstraintCollection.forEach {
+            $0.constant = getDeviceWidth()
+        }
+    }
+    
+    private func setLayout() {
+        timeTravelButtonHeightConstraint.constant = getDeviceWidth() * (246 / 375)
+    }
+}
