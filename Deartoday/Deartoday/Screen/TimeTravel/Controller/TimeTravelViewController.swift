@@ -10,6 +10,9 @@ import UIKit
 import SnapKit
 import Then
 
+import Photos
+import PhotosUI
+
 final class TimeTravelViewController: UIViewController {
     
     // MARK: - Property
@@ -17,6 +20,23 @@ final class TimeTravelViewController: UIViewController {
     private var todayDate = Date()
     
     private var momentDate = Date()
+    
+    private let dateFormatter = DateFormatter().then {
+        $0.locale = Locale(identifier: "ko_kr")
+        $0.timeZone = TimeZone(abbreviation: "ko_kr")
+        $0.dateFormat = "yyyy.MM.dd"
+    }
+    
+    public var hasText: Bool = false {
+        didSet {
+            if hasText {
+                returnButton.style = .present
+                returnButton.isEnabled = true
+            } else {
+                returnButton.style = .disable
+            }
+        }
+    }
     
     // MARK: - UI Property
     
@@ -28,7 +48,7 @@ final class TimeTravelViewController: UIViewController {
         $0.backgroundColor = UIColor(red: 50 / 255, green: 50 / 255, blue: 50 / 255, alpha: 0.8)
     }
     
-    private var yearBackView = UIView().then {
+    private var yearBackView = UIImageView().then {
         $0.backgroundColor = UIColor(red: 240 / 255, green: 246 / 255, blue: 255 / 255, alpha: 0.2)
     }
     
@@ -38,7 +58,7 @@ final class TimeTravelViewController: UIViewController {
         $0.font = .systemFont(ofSize: 24, weight: .medium)
     }
     
-    private var monthBackView = UIView().then {
+    private var monthBackView = UIImageView().then {
         $0.backgroundColor = UIColor(red: 240 / 255, green: 246 / 255, blue: 255 / 255, alpha: 0.2)
     }
     
@@ -48,7 +68,7 @@ final class TimeTravelViewController: UIViewController {
         $0.font = .systemFont(ofSize: 24, weight: .medium)
     }
     
-    private var dateBackView = UIView().then {
+    private var dateBackView = UIImageView().then {
         $0.backgroundColor = UIColor(red: 240 / 255, green: 246 / 255, blue: 255 / 255, alpha: 0.2)
     }
     
@@ -72,12 +92,15 @@ final class TimeTravelViewController: UIViewController {
         $0.numberOfLines = 2
     }
     
-    private var timeTravelView = TimeTravelView()
+    private var timeTravelView = TimeTravelView().then {
+        $0.hasPhoto = false
+        $0.isUserInteractionEnabled = true
+    }
     
     private lazy var returnButton = DDSButton().then {
-        $0.style = .disable
         $0.text = "과거로 돌아가기"
         $0.hasLeftIcon = true
+        $0.style = .disable
         $0.addTarget(self, action: #selector(returnButtonDidTap), for: .touchUpInside)
     }
 
@@ -107,6 +130,8 @@ final class TimeTravelViewController: UIViewController {
                                        spread: 0)
             $0.makeRound(radius: 8)
         }
+        
+        timeTravelView.delegate = self
     }
     
     private func setLayout() {
@@ -178,14 +203,28 @@ final class TimeTravelViewController: UIViewController {
         
         returnButton.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(6)
-            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(12)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(2)
         }
     }
     
     // MARK: - @objc
     
     @objc func returnButtonDidTap() {
-        print("돌아가기 버튼 누름")
+        print("탭")
+        UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseOut) {
+            self.guideLabel.alpha = 0
+            self.timeTravelView.dateTextField.alpha = 0
+            self.timeTravelView.titleTextField.alpha = 0
+            self.returnButton.alpha = 0
+            
+            self.view.layoutIfNeeded()
+        } completion: { _ in
+            UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveEaseOut) {
+                self.timeTravelView.alpha = 0
+            }
+            
+            self.view.layoutIfNeeded()
+        }
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
@@ -212,6 +251,58 @@ final class TimeTravelViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    private func openPHPicker() {
+        var config = PHPickerConfiguration(photoLibrary: PHPhotoLibrary.shared())
+        config.filter = .images
+        config.selectionLimit = 1
+        let controller = PHPickerViewController(configuration: config)
         
+        controller.delegate = self
+        self.present(controller, animated: true, completion: nil)
+    }
+}
+
+// MARK: - PHPicker Delegate
+
+extension TimeTravelViewController: PHPickerViewControllerDelegate {
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true)
+        guard !results.isEmpty else {
+            return
+        }
+        
+        let imageResult = results[0]
+        
+        if let assetId = imageResult.assetIdentifier {
+            let assetResults = PHAsset.fetchAssets(withLocalIdentifiers: [assetId], options: nil)
+            DispatchQueue.main.async {
+                self.timeTravelView.hasPhoto = true
+                if let date = assetResults.firstObject?.creationDate {
+                    self.timeTravelView.dateText = self.dateFormatter.string(from: date)
+                }
+            }
+        }
+        if imageResult.itemProvider.canLoadObject(ofClass: UIImage.self) {
+            imageResult.itemProvider.loadObject(ofClass: UIImage.self) { (selectedImage, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    DispatchQueue.main.async {
+                        self.timeTravelView.photoImage = selectedImage as? UIImage
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+// MARK: - Custom Delegate
+
+extension TimeTravelViewController: TimeTravelViewDelegate {
+    func photoImageViewDidTap() {
+        openPHPicker()
     }
 }
