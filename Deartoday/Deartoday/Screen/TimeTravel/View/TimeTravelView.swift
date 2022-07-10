@@ -52,25 +52,24 @@ final class TimeTravelView: UIView {
     // MARK: - UI Property
     
     private var videoTapeImageView = UIImageView().then {
-        $0.backgroundColor = .yellow
+        $0.image = Constant.Image.imgTape
         $0.isUserInteractionEnabled = true
+        $0.contentMode = .scaleAspectFill
     }
     
     private var photoImageView = UIImageView().then {
-        $0.backgroundColor = .blue
+        $0.backgroundColor = .lightBlue00
         $0.makeRound(radius: 8)
         $0.isUserInteractionEnabled = true
     }
     
     lazy var dateTextField = DDSTextField().then {
         $0.placeholder = "이 순간의 날짜를 선택해주세요"
-        $0.textColor = .white
         $0.inputView = datePickerView
     }
     
     var titleTextField = DDSTextField().then {
         $0.placeholder = "이 순간의 제목을 붙여주세요"
-        $0.textColor = .white
     }
     
     private var datePickerView = UIDatePicker().then {
@@ -184,8 +183,10 @@ final class TimeTravelView: UIView {
 extension TimeTravelView: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         if dateTextField.hasText && titleTextField.hasText {
-            let vc = TimeTravelViewController()
-            vc.hasText = true
+            
+            // MARK: - FIX: Notification 말고 다른 방법 없을까?
+            
+            NotificationCenter.default.post(name: NSNotification.Name("EnableReturnButton"), object: nil)
         }
     }
     

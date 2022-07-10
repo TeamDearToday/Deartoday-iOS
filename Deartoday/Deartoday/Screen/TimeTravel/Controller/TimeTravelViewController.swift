@@ -27,17 +27,6 @@ final class TimeTravelViewController: UIViewController {
         $0.dateFormat = "yyyy.MM.dd"
     }
     
-    public var hasText: Bool = false {
-        didSet {
-            if hasText {
-                returnButton.style = .present
-                returnButton.isEnabled = true
-            } else {
-                returnButton.style = .disable
-            }
-        }
-    }
-    
     // MARK: - UI Property
     
     private var backImageView = UIImageView().then {
@@ -49,37 +38,39 @@ final class TimeTravelViewController: UIViewController {
     }
     
     private var yearBackView = UIImageView().then {
-        $0.backgroundColor = UIColor(red: 240 / 255, green: 246 / 255, blue: 255 / 255, alpha: 0.2)
+        $0.image = Constant.Image.bgYear
     }
     
     private var yearLabel = UILabel().then {
         $0.text = "2022"
-        $0.textColor = .white
-        $0.font = .systemFont(ofSize: 24, weight: .medium)
+        $0.textColor = .lightBlue00
+        $0.font = UIFont.GmarketSans(.medium, size: 24)
     }
     
     private var monthBackView = UIImageView().then {
-        $0.backgroundColor = UIColor(red: 240 / 255, green: 246 / 255, blue: 255 / 255, alpha: 0.2)
+        $0.image = Constant.Image.bgDate
     }
     
     private var monthLabel = UILabel().then {
         $0.text = "07"
-        $0.textColor = .white
-        $0.font = .systemFont(ofSize: 24, weight: .medium)
+        $0.textColor = .lightBlue00
+        $0.font = UIFont.GmarketSans(.medium, size: 24)
     }
     
     private var dateBackView = UIImageView().then {
-        $0.backgroundColor = UIColor(red: 240 / 255, green: 246 / 255, blue: 255 / 255, alpha: 0.2)
+        $0.image = Constant.Image.bgDate
     }
     
     private var dateLabel = UILabel().then {
         $0.text = "02"
-        $0.textColor = .white
-        $0.font = .systemFont(ofSize: 24, weight: .medium)
+        $0.textColor = .lightBlue00
+        $0.font = UIFont.GmarketSans(.medium, size: 24)
     }
     
-    private var exitButton = UIButton().then {
-        $0.backgroundColor = .systemPink
+    private lazy var exitButton = UIButton().then {
+        $0.setImage(Constant.Image.icExit, for: .normal)
+        $0.setImage(Constant.Image.icExit, for: .highlighted)
+        $0.addTarget(self, action: #selector(exitButtonDidTap), for: .touchUpInside)
     }
     
     private var guideLabel = UILabel().then {
@@ -87,9 +78,10 @@ final class TimeTravelViewController: UIViewController {
                   테이프를 터치하여
                   돌아가고 싶은 순간을 선택해주세요
                   """
-        $0.font = .systemFont(ofSize: 16, weight: .regular)
+        $0.font = UIFont.p2
         $0.textColor = .white
         $0.numberOfLines = 2
+        $0.addLineSpacing(spacing: 20)
     }
     
     private var timeTravelView = TimeTravelView().then {
@@ -97,13 +89,13 @@ final class TimeTravelViewController: UIViewController {
         $0.isUserInteractionEnabled = true
     }
     
-    private lazy var returnButton = DDSButton().then {
+    lazy var returnButton = DDSButton().then {
         $0.text = "과거로 돌아가기"
         $0.hasLeftIcon = true
         $0.style = .disable
         $0.addTarget(self, action: #selector(returnButtonDidTap), for: .touchUpInside)
     }
-
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -158,24 +150,24 @@ final class TimeTravelViewController: UIViewController {
         }
         
         yearBackView.snp.makeConstraints {
-            $0.width.equalTo(94)
-            $0.height.equalTo(36)
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(16)
-            $0.leading.equalToSuperview().inset(16)
+            $0.width.equalTo(114)
+            $0.height.equalTo(56)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(8)
+            $0.leading.equalToSuperview().inset(6)
         }
         
         monthBackView.snp.makeConstraints {
-            $0.width.equalTo(53)
-            $0.height.equalTo(36)
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(16)
-            $0.leading.equalTo(yearBackView.snp.trailing).offset(6)
+            $0.width.equalTo(73)
+            $0.height.equalTo(56)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(8)
+            $0.leading.equalToSuperview().inset(106)
         }
         
         dateBackView.snp.makeConstraints {
-            $0.width.equalTo(53)
-            $0.height.equalTo(36)
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(16)
-            $0.leading.equalTo(monthBackView.snp.trailing).offset(6)
+            $0.width.equalTo(73)
+            $0.height.equalTo(56)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(8)
+            $0.leading.equalToSuperview().inset(165)
         }
         
         [yearLabel, monthLabel, dateLabel].forEach {
@@ -209,21 +201,20 @@ final class TimeTravelViewController: UIViewController {
     
     // MARK: - @objc
     
+    @objc func exitButtonDidTap() {
+        dismiss(animated: true)
+    }
+    
     @objc func returnButtonDidTap() {
-        print("탭")
-        UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseOut) {
+        UIView.animate(withDuration: 0.6, delay: 0.3, options: .curveEaseOut) {
             self.guideLabel.alpha = 0
             self.timeTravelView.dateTextField.alpha = 0
             self.timeTravelView.titleTextField.alpha = 0
             self.returnButton.alpha = 0
-            
-            self.view.layoutIfNeeded()
         } completion: { _ in
             UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveEaseOut) {
                 self.timeTravelView.alpha = 0
             }
-            
-            self.view.layoutIfNeeded()
         }
     }
     
@@ -245,12 +236,18 @@ final class TimeTravelViewController: UIViewController {
         }
     }
     
+    @objc func enableReturnButton(_ notification: Notification) {
+        returnButton.style = .present
+    }
+    
     // MARK: - Custom Method
     
     private func getNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(enableReturnButton(_:)), name: NSNotification.Name("EnableReturnButton"), object: nil)
     }
     
     private func openPHPicker() {
@@ -284,6 +281,7 @@ extension TimeTravelViewController: PHPickerViewControllerDelegate {
                 }
             }
         }
+        
         if imageResult.itemProvider.canLoadObject(ofClass: UIImage.self) {
             imageResult.itemProvider.loadObject(ofClass: UIImage.self) { (selectedImage, error) in
                 if let error = error {
@@ -296,7 +294,6 @@ extension TimeTravelViewController: PHPickerViewControllerDelegate {
             }
         }
     }
-    
 }
 
 // MARK: - Custom Delegate
