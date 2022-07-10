@@ -11,6 +11,9 @@ extension Constant {
     struct Image {
         
         // MARK: - Common
+        ///image
+        static let bgYear = UIImage(named: "bgYear")!
+        static let bgDate = UIImage(named: "bgDate")!
         ///button
         static let btnCircleBasic = UIImage(named: "btnCircleBasic")!
         ///icon
