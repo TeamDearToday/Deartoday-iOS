@@ -13,6 +13,7 @@ final class MainViewController: UIViewController {
     
     // MARK: - UI Property
     
+    @IBOutlet var dateLabelCollection: [UILabel]!
     @IBOutlet var backgroundImageViewWidthConstraintCollection: [NSLayoutConstraint]!
     
     // MARK: - Life Cycle
@@ -28,11 +29,20 @@ final class MainViewController: UIViewController {
     
     private func setUI() {
         setConstraint()
+        setDateLabel()
     }
     
     private func setConstraint() {
         backgroundImageViewWidthConstraintCollection.forEach {
-            $0.constant = UIScreen.main.bounds.width
+            $0.constant = getDeviceWidth()
+        }
+    }
+    
+    private func setDateLabel() {
+        for i in 0...2 {
+            dateLabelCollection[i].font = .h0
+            dateLabelCollection[i].textColor = .lightBlue00
+            dateLabelCollection[i].text = getDateInfo()[i]
         }
     }
 }
