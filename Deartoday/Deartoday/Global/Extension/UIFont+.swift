@@ -39,23 +39,23 @@ extension UIFont {
 extension UIFont {
 
   class var h0: UIFont {
-    return UIFont(name: "GmarketSans-Medium", size: 24.0)!
+    return UIFont(name: "GmarketSansMedium", size: 24.0)!
   }
 
   class var p1: UIFont {
-    return UIFont(name: "Pretendard-Regular", size: 20.0)!
+    return UIFont(name: "PretendardRegular", size: 20.0)!
   }
 
   class var p5En: UIFont {
-    return UIFont(name: "GmarketSans-Medium", size: 19.0)!
+    return UIFont(name: "GmarketSansMedium", size: 19.0)!
   }
 
   class var p0En: UIFont {
-    return UIFont(name: "GmarketSans-Medium", size: 19.0)!
+    return UIFont(name: "GmarketSansMedium", size: 19.0)!
   }
 
   class var btn1En: UIFont {
-    return UIFont(name: "GmarketSans-Bold", size: 16.0)!
+    return UIFont(name: "GmarketSansBold", size: 16.0)!
   }
 
   class var btn0: UIFont {
