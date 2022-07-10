@@ -47,8 +47,12 @@ extension Constant {
         // MARK: - 시간 여행
         ///image
         static let imgTape = UIImage(named: "imgTape")!
+        static let rewind = UIImage(named: "rewind")!
         ///icon
         static let icExit = UIImage(named: "icExit")!
-
+        ///button
+        static let btnSmallPresent = UIImage(named: "btnSmallPresent")!
+        static let btnSmallPast = UIImage(named: "btnSmallPast")!
+        static let btnSmallDisable = UIImage(named: "btnSmallDisable")!
     }
 }

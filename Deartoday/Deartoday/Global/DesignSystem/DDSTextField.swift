@@ -30,7 +30,7 @@ public class DDSTextField: UITextField {
     // MARK: - UI Property
     
     private var underlineView = UIView().then {
-        $0.backgroundColor = .blue
+        $0.backgroundColor = .blue02
     }
     
     // MARK: - Initializer
@@ -48,7 +48,8 @@ public class DDSTextField: UITextField {
     // MARK: - Set UI
     
     private func setUI() {
-        tintColor = .blue
+        textColor = .lightBlue01
+        tintColor = .blue02
         backgroundColor = .clear
         setPadding()
     }
@@ -73,7 +74,7 @@ public class DDSTextField: UITextField {
 
         attributedPlaceholder = NSAttributedString(
             string: placeholder,
-            attributes: [.foregroundColor: UIColor.lightGray]
+            attributes: [.foregroundColor: UIColor.gray01]
         )
     }
 }
