@@ -9,12 +9,10 @@ import UIKit
 
 final class MainViewController: UIViewController {
     
-    // MARK: - Property
-    
     // MARK: - UI Property
 
+    @IBOutlet var messageCountLabelCollection: [UILabel]!
     @IBOutlet var dateLabelCollection: [UILabel]!
-    
     @IBOutlet weak var timeTravelButtonHeightConstraint: NSLayoutConstraint!
     @IBOutlet var backgroundImageViewWidthConstraintCollection: [NSLayoutConstraint]!
     
@@ -23,21 +21,31 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        setData()
     }
-
-    // MARK: - @objc
     
     // MARK: - Custom Method
     
     private func setUI() {
         setConstraint()
-        setDateLabel()
+        setLabelUI()
         setLayout()
+    }
+    
+    private func setData() {
+        setDateLabel()
     }
     
     private func setConstraint() {
         backgroundImageViewWidthConstraintCollection.forEach {
             $0.constant = getDeviceWidth()
+        }
+    }
+    
+    private func setLabelUI() {
+        messageCountLabelCollection.forEach {
+            $0.textColor = .blue02
+            $0.font = .p3
         }
     }
     
