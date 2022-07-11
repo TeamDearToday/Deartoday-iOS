@@ -16,6 +16,9 @@ extension Constant {
         static let bgDate = UIImage(named: "bgDate")!
         ///button
         static let btnCircleBasic = UIImage(named: "btnCircleBasic")!
+        static let btnSmallPresent = UIImage(named: "btnSmallPresent")!
+        static let btnSmallPast = UIImage(named: "btnSmallPast")!
+        static let btnSmallDisable = UIImage(named: "btnSmallDisable")!
         ///icon
         static let icRewind = UIImage(named: "icRewind")!
         
@@ -50,9 +53,14 @@ extension Constant {
         static let rewind = UIImage(named: "rewind")!
         ///icon
         static let icExit = UIImage(named: "icExit")!
-        ///button
-        static let btnSmallPresent = UIImage(named: "btnSmallPresent")!
-        static let btnSmallPast = UIImage(named: "btnSmallPast")!
-        static let btnSmallDisable = UIImage(named: "btnSmallDisable")!
+        
+        // MARK: - 메시지 확인
+        ///image
+        static let imgMemoBundle = UIImage(named: "imgMemoBundle")!
+        static let imgMemoempty = UIImage(named: "imgMemoempty")!
+        
+        // MARK: - 시간여행 확인
+        ///image
+        static let imgTapeBundle = UIImage(named: "imgTapeBundle")!
     }
 }
