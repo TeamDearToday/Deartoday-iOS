@@ -99,7 +99,9 @@ final class TimeTravelViewController: UIViewController {
     
     private let imagePicker = UIImagePickerController()
     
-    private var playerAnimationView = AnimationView()
+    private var playerAnimationView = AnimationView().then {
+        $0.isHidden = true
+    }
     
     // MARK: - Life Cycle
     
@@ -108,8 +110,8 @@ final class TimeTravelViewController: UIViewController {
         setUI()
         setLayout()
         getNotification()
-        setDelegte()
         setAnimationView()
+        setDelegate()
     }
     
     // MARK: - Custom Method
@@ -242,10 +244,6 @@ final class TimeTravelViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(enableReturnButton(_:)), name: NSNotification.Name("EnableReturnButton"), object: nil)
     }
     
-    private func setDelegte() {
-        timeTravelView.delegate = self
-    }
-    
     private func setAnimationView() {
         view.addSubview(playerAnimationView)
         
@@ -254,6 +252,10 @@ final class TimeTravelViewController: UIViewController {
         }
         
         playerAnimationView.play()
+    }
+    
+    private func setDelegate() {
+        timeTravelView.delegate = self
     }
 }
 
