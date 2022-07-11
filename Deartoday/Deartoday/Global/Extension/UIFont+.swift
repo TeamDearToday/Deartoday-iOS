@@ -42,8 +42,12 @@ extension UIFont {
     return UIFont(name: "GmarketSansMedium", size: 24.0)!
   }
 
+  class var h1: UIFont {
+    return UIFont(name: "Pretendard-Medium", size: 24.0)!
+  }
+
   class var p1: UIFont {
-    return UIFont(name: "PretendardRegular", size: 20.0)!
+    return UIFont(name: "Pretendard-Regular", size: 20.0)!
   }
 
   class var p5En: UIFont {
@@ -52,6 +56,10 @@ extension UIFont {
 
   class var p0En: UIFont {
     return UIFont(name: "GmarketSansMedium", size: 19.0)!
+  }
+
+  class var p5: UIFont {
+    return UIFont(name: "Pretendard-Medium", size: 18.0)!
   }
 
   class var btn1En: UIFont {
@@ -74,6 +82,10 @@ extension UIFont {
     return UIFont(name: "Pretendard-Medium", size: 15.0)!
   }
 
+  class var caption2: UIFont {
+    return UIFont(name: "Pretendard-Regular", size: 14.0)!
+  }
+
   class var caption0: UIFont {
     return UIFont(name: "Pretendard-Regular", size: 14.0)!
   }
@@ -82,8 +94,12 @@ extension UIFont {
     return UIFont(name: "Pretendard-Regular", size: 13.0)!
   }
 
+  class var p6: UIFont {
+    return UIFont(name: "Pretendard-Regular", size: 12.0)!
+  }
+
   class var caption1: UIFont {
     return UIFont(name: "Pretendard-Regular", size: 12.0)!
   }
-    
+
 }
