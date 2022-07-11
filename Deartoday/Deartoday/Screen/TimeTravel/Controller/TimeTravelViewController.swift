@@ -12,6 +12,8 @@ import Then
 
 import Photos
 
+import Lottie
+
 final class TimeTravelViewController: UIViewController {
     
     // MARK: - Property
@@ -97,6 +99,8 @@ final class TimeTravelViewController: UIViewController {
     
     private let imagePicker = UIImagePickerController()
     
+    private var playerAnimationView = AnimationView()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -104,14 +108,14 @@ final class TimeTravelViewController: UIViewController {
         setUI()
         setLayout()
         getNotification()
+        setDelegte()
+        setAnimationView()
     }
     
     // MARK: - Custom Method
     
     private func setUI() {
         view.backgroundColor = .white
-        
-        timeTravelView.delegate = self
     }
     
     private func setLayout() {
@@ -190,7 +194,7 @@ final class TimeTravelViewController: UIViewController {
     // MARK: - @objc
     
     @objc func exitButtonDidTap() {
-        dismiss(animated: true)
+        print("돌아가기 버튼 누름")
     }
     
     @objc func returnButtonDidTap() {
@@ -209,7 +213,7 @@ final class TimeTravelViewController: UIViewController {
     @objc func keyboardWillShow(_ notification: Notification) {
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut) {
             self.timeTravelView.snp.updateConstraints {
-                $0.top.equalTo(self.yearBackView.snp.bottom).offset(52)
+                $0.top.equalTo(self.yearBackView.snp.bottom).offset(self.getDeviceHeight() == 812 ? 52 : 19)
             }
             self.view.layoutIfNeeded()
         }
@@ -236,6 +240,20 @@ final class TimeTravelViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(enableReturnButton(_:)), name: NSNotification.Name("EnableReturnButton"), object: nil)
+    }
+    
+    private func setDelegte() {
+        timeTravelView.delegate = self
+    }
+    
+    private func setAnimationView() {
+        view.addSubview(playerAnimationView)
+        
+        playerAnimationView.snp.makeConstraints {
+            $0.top.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        playerAnimationView.play()
     }
 }
 
