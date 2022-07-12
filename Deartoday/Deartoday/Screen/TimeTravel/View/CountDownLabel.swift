@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CountDownLabel: UILabel {
+final class CountDownLabel: UILabel {
     private var scrollLayers: [CAScrollLayer] = []
     private var labels: [UILabel] = []
     private var duration: TimeInterval = 0
@@ -19,7 +19,6 @@ class CountDownLabel: UILabel {
         setupLabel(numString: num)
     }
     
-    // 가로로 각각 레이블 생성
     private func setupLabel(numString: String) {
         let numArr = numString.map { String($0) }
         var x: CGFloat = 0
@@ -38,7 +37,6 @@ class CountDownLabel: UILabel {
         }
     }
     
-    // 각각의 레이블에 대해서 세로로 스크롤레이어 추가
     private func createScrollLayer(label: UILabel, num: Int) {
         let scrollLayer = CAScrollLayer()
         scrollLayer.frame = label.frame
@@ -48,7 +46,6 @@ class CountDownLabel: UILabel {
         makeScrollContent(num: num, scrollLayer: scrollLayer)
     }
     
-    // 각각의 레이블의 스크롤레이어에 스크롤 될 콘텐츠 레이블추가
     private func makeScrollContent(num: Int, scrollLayer: CAScrollLayer) {
         var numSet: [Int] = []
         
@@ -66,13 +63,13 @@ class CountDownLabel: UILabel {
             label.frame = .init(x: 0, y: height, width: scrollLayer.frame.width, height: scrollLayer.frame.height)
             label.sizeToFit()
             scrollLayer.addSublayer(label.layer)
-            labels.append(label) // 저장안하면 해제되서 사라지는 이슈주의
+            labels.append(label)
             height = label.frame.maxY
         }
     }
     
     func animate(ascending: Bool) {
-        var offset: TimeInterval = 0.0 // 각 자리마다 시간차를 주기위함
+        var offset: TimeInterval = 0.0
         for scrollLayer in scrollLayers {
             let maxY = scrollLayer.sublayers?.last?.frame.origin.y ?? 0
             let animation = CABasicAnimation(keyPath: "sublayerTransform.translation.y")

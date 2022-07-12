@@ -6,13 +6,11 @@
 //
 
 import UIKit
-
-import SnapKit
-import Then
-
 import Photos
 
 import Lottie
+import SnapKit
+import Then
 
 final class TimeTravelViewController: UIViewController {
     
@@ -53,7 +51,7 @@ final class TimeTravelViewController: UIViewController {
     }
     
     private lazy var yearLabel = UILabel().then {
-        $0.text = yearFormatter.string(from: Date())
+        $0.text = getYearInfo()
         $0.textColor = .lightBlue00
         $0.font = .h0
         $0.isHidden = false
@@ -71,7 +69,7 @@ final class TimeTravelViewController: UIViewController {
     }
     
     private lazy var monthLabel = UILabel().then {
-        $0.text = monthFormatter.string(from: Date())
+        $0.text = getMonthInfo()
         $0.textColor = .lightBlue00
         $0.font = .h0
         $0.isHidden = false
@@ -89,7 +87,7 @@ final class TimeTravelViewController: UIViewController {
     }
     
     private lazy var dayLabel = UILabel().then {
-        $0.text = dayFormatter.string(from: Date())
+        $0.text = getDayInfo()
         $0.textColor = .lightBlue00
         $0.font = .h0
         $0.isHidden = false
@@ -152,11 +150,6 @@ final class TimeTravelViewController: UIViewController {
     
     private func setUI() {
         view.backgroundColor = .white
-        
-        [dateFormatter, yearFormatter, monthFormatter, dayFormatter].forEach {
-            $0.locale = Locale(identifier: "ko_kr")
-            $0.timeZone = TimeZone(abbreviation: "ko_kr")
-        }
     }
     
     private func setLayout() {
@@ -279,11 +272,20 @@ final class TimeTravelViewController: UIViewController {
     // MARK: - Custom Method
     
     private func getNotification() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow(_:)),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide(_:)),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(enableReturnButton(_:)), name: NSNotification.Name("EnableReturnButton"), object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(enableReturnButton(_:)),
+                                               name: NSNotification.Name("EnableReturnButton"),
+                                               object: nil)
     }
     
     private func setAnimationView() {
