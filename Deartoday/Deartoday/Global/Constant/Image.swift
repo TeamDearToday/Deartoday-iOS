@@ -21,6 +21,7 @@ extension Constant {
         static let btnSmallDisable = UIImage(named: "btnSmallDisable")!
         ///icon
         static let icRewind = UIImage(named: "icRewind")!
+        static let icBack = UIImage(named: "icBack")!
         
         // MARK: - 로그인
         ///image
@@ -56,6 +57,10 @@ extension Constant {
         static let bgMonthYellow = UIImage(named: "bgMonthYellow")!
         ///icon
         static let icExit = UIImage(named: "icExit")!
+        
+        // MARK: - 추억의 방
+        ///image
+        static let imgTextBoxShadow = UIImage(named: "imgTextBoxShadow")!
         
         // MARK: - 메시지 확인
         ///image
