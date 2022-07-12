@@ -58,6 +58,10 @@ extension Constant {
         ///icon
         static let icExit = UIImage(named: "icExit")!
         
+        // MARK: - 추억의 방
+        ///image
+        static let imgTextBoxShadow = UIImage(named: "imgTextBoxShadow")!
+        
         // MARK: - 메시지 확인
         ///image
         static let imgMemoBundle = UIImage(named: "imgMemoBundle")!
