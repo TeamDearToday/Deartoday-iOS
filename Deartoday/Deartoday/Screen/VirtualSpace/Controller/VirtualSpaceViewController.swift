@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class TimeTravelVirtualSpaceViewController: UIViewController {
+final class VirtualSpaceViewController: UIViewController {
     
     // MARK: - Property
     
@@ -138,8 +138,8 @@ final class TimeTravelVirtualSpaceViewController: UIViewController {
     }
     
     private func setCollectionView() {
-        mediaCollectionView.register(TimeTravelVirtualSpaceCollectionViewCell.self,
-                                     forCellWithReuseIdentifier: TimeTravelVirtualSpaceCollectionViewCell.cellIdentifier)
+        mediaCollectionView.register(VirtualSpaceCollectionViewCell.self,
+                                     forCellWithReuseIdentifier: VirtualSpaceCollectionViewCell.cellIdentifier)
         
         mediaCollectionView.delegate = self
         mediaCollectionView.dataSource = self
@@ -148,7 +148,7 @@ final class TimeTravelVirtualSpaceViewController: UIViewController {
 
 // MARK: - UICollectionView Delegate
 
-extension TimeTravelVirtualSpaceViewController: UICollectionViewDelegateFlowLayout {
+extension VirtualSpaceViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellWidth = CGFloat(313)
         let cellHeight = collectionView.frame.height
@@ -164,16 +164,16 @@ extension TimeTravelVirtualSpaceViewController: UICollectionViewDelegateFlowLayo
     }
 }
 
-extension TimeTravelVirtualSpaceViewController: UICollectionViewDataSource {
+extension VirtualSpaceViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return TimeTravelVirtualSpaceDataModel.images.count
+        return VirtualSpaceDataModel.images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TimeTravelVirtualSpaceCollectionViewCell.cellIdentifier, for: indexPath) as? TimeTravelVirtualSpaceCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VirtualSpaceCollectionViewCell.cellIdentifier, for: indexPath) as? VirtualSpaceCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.setData(TimeTravelVirtualSpaceDataModel.images[indexPath.item])
+        cell.setData(VirtualSpaceDataModel.images[indexPath.item])
         return cell
     }
 }

@@ -12,7 +12,7 @@ import Then
 
 import Kingfisher
 
-class TimeTravelVirtualSpaceCollectionViewCell: UICollectionViewCell {
+class VirtualSpaceCollectionViewCell: UICollectionViewCell {
     static var cellIdentifier: String { return String(describing: self) }
     
     // MARK: - UI Property
@@ -47,7 +47,7 @@ class TimeTravelVirtualSpaceCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    internal func setData(_ data: TimeTravelVirtualSpaceDataModel) {
+    internal func setData(_ data: VirtualSpaceDataModel) {
         let url = URL(string: data.image)
         mediaImageView.kf.setImage(with: url)
     }
