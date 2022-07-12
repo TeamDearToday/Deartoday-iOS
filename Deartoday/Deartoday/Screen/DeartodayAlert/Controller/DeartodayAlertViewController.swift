@@ -50,7 +50,7 @@ final class DeartodayAlertViewController: UIViewController {
         $0.backgroundColor = .glassGray
     }
     
-    private let denyButton = UIButton().then {
+    private let cancelButton = UIButton().then {
         $0.backgroundColor = .clear
         $0.setTitle("", for: .normal)
         $0.setTitleColor(.darkGray00, for: .normal)
@@ -58,7 +58,7 @@ final class DeartodayAlertViewController: UIViewController {
         $0.addTarget(self, action: #selector(denyButtonDidTap), for: .touchUpInside)
     }
     
-    private let okButton = UIButton().then {
+    private let confirmButton = UIButton().then {
         $0.backgroundColor = .clear
         $0.setTitle("", for: .normal)
         $0.setTitleColor(.blue02, for: .normal)
@@ -94,13 +94,13 @@ final class DeartodayAlertViewController: UIViewController {
         case .exit:
             titleLabel.text = "시간 여행을 그만두시겠어요?"
             descriptionLabel.isHidden = false
-            denyButton.setTitle("그만두기", for: .normal)
-            okButton.setTitle("계속하기", for: .normal)
+            cancelButton.setTitle("그만두기", for: .normal)
+            confirmButton.setTitle("계속하기", for: .normal)
         case .logout:
             titleLabel.text = "로그아웃 하시겠어요?"
             descriptionLabel.isHidden = true
-            denyButton.setTitle("취소", for: .normal)
-            okButton.setTitle("확인", for: .normal)
+            cancelButton.setTitle("취소", for: .normal)
+            confirmButton.setTitle("확인", for: .normal)
         }
     }
     
@@ -108,7 +108,7 @@ final class DeartodayAlertViewController: UIViewController {
         view.addSubviews([backgroundView, alertView,
                          titleLabel, descriptionLabel,
                          horizontalView, verticalView,
-                         denyButton, okButton])
+                         cancelButton, confirmButton])
     }
     
     private func setConstraint() {
@@ -146,7 +146,7 @@ final class DeartodayAlertViewController: UIViewController {
             $0.centerX.equalToSuperview()
         }
         
-        denyButton.snp.makeConstraints {
+        cancelButton.snp.makeConstraints {
             $0.top.equalTo(horizontalView.snp.bottom)
             $0.leading.equalTo(alertView.snp.leading)
             $0.bottom.equalTo(alertView.snp.bottom)
@@ -154,7 +154,7 @@ final class DeartodayAlertViewController: UIViewController {
             $0.height.equalTo(63)
         }
         
-        okButton.snp.makeConstraints {
+        confirmButton.snp.makeConstraints {
             $0.top.equalTo(horizontalView.snp.bottom)
             $0.leading.equalTo(verticalView.snp.trailing)
             $0.trailing.equalTo(alertView.snp.trailing)
