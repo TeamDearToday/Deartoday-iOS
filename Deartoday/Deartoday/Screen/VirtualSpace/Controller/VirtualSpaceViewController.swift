@@ -76,10 +76,11 @@ final class VirtualSpaceViewController: UIViewController {
     
     private var textBoxImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
+        $0.image = Constant.Image.imgTextBoxShadow
     }
     
     private var textBoxLabel = UILabel().then {
-        $0.text = "우리의 0000년, 기억하시나요?"
+        $0.text = "우리의 0000년, 기억나나요?"
         $0.textColor = .gray00
         $0.font = .btn0
     }
