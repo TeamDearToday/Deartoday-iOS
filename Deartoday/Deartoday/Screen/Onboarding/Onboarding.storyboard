@@ -19,14 +19,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1Withg" translatesAutoresizingMaskIntoConstraints="NO" id="32K-94-dsE">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="오늘도 지친 몸을 끌고 집으로 돌아온 당신," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZK-HK-Qtx">
-                                <rect key="frame" x="77" y="665" width="259" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘도 지친 몸을 끌고 집으로 돌아온 당신," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZK-HK-Qtx">
+                                <rect key="frame" x="77" y="673" width="259" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="방 안에 정체 불명의 상자 하나가 놓여 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peP-cm-NGj">
-                                <rect key="frame" x="64" y="698" width="286" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="방 안에 정체 불명의 상자 하나가 놓여 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peP-cm-NGj">
+                                <rect key="frame" x="64" y="706" width="286" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -37,25 +37,41 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjd-0T-ndi">
+                                <rect key="frame" x="6" y="796" width="402" height="68"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="다음" backgroundImage="btnSmallPresent">
+                                    <color key="titleColor" red="0.33333333333333331" green="0.5607843137254902" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="AbA-pt-nSG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="32K-94-dsE" secondAttribute="bottom" id="0Ok-bf-V7o"/>
+                            <constraint firstItem="Fjd-0T-ndi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="6" id="3ff-Dc-VD3"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0ZK-HK-Qtx" secondAttribute="trailing" constant="78" id="Ff6-C7-n7b"/>
                             <constraint firstAttribute="bottom" secondItem="ZpD-nQ-Nlt" secondAttribute="bottom" constant="77" id="FsP-nD-IxH"/>
                             <constraint firstItem="ZpD-nQ-Nlt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="93" id="GIY-NS-qzw"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="32K-94-dsE" secondAttribute="trailing" id="Hk3-aC-fau"/>
                             <constraint firstItem="0ZK-HK-Qtx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="77" id="HqQ-HA-pUt"/>
+                            <constraint firstItem="Fjd-0T-ndi" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="2" id="P6R-Fd-WGA"/>
                             <constraint firstItem="32K-94-dsE" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Vn4-aG-E1w"/>
                             <constraint firstItem="peP-cm-NGj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="64" id="coZ-V1-YjZ"/>
+                            <constraint firstItem="Fjd-0T-ndi" firstAttribute="top" secondItem="peP-cm-NGj" secondAttribute="bottom" constant="69" id="oH2-LW-T87"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="peP-cm-NGj" secondAttribute="trailing" constant="64" id="pCa-CZ-eTs"/>
                             <constraint firstItem="peP-cm-NGj" firstAttribute="top" secondItem="0ZK-HK-Qtx" secondAttribute="bottom" constant="12" id="pTL-Mg-PzN"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Fjd-0T-ndi" secondAttribute="trailing" constant="6" id="tRI-ej-Rsi"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZpD-nQ-Nlt" secondAttribute="trailing" constant="95" id="vDu-eS-6mb"/>
                             <constraint firstItem="32K-94-dsE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ya9-Ji-oGJ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nextButton" destination="Fjd-0T-ndi" id="Vww-s1-yty"/>
                         <outlet property="secondLabel" destination="ZpD-nQ-Nlt" id="b0m-Zn-Ie0"/>
                         <outletCollection property="firstLabelCollection" destination="0ZK-HK-Qtx" collectionClass="NSMutableArray" id="94K-mH-cDV"/>
                         <outletCollection property="firstLabelCollection" destination="peP-cm-NGj" collectionClass="NSMutableArray" id="aqu-Fa-87C"/>
@@ -63,10 +79,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="30" y="61"/>
+            <point key="canvasLocation" x="22" y="-132"/>
         </scene>
     </scenes>
     <resources>
+        <image name="btnSmallPresent" width="57" height="68"/>
         <image name="image1Withg" width="375" height="812"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
