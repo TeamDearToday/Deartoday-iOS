@@ -56,7 +56,6 @@ class OnboardingViewController: UIViewController {
     private func imageGestrue() {
         let imageGesture = UITapGestureRecognizer(target: self, action: #selector(circleButtonDidTap))
         circleButtonImage.addGestureRecognizer(imageGesture)
-        circleButtonImage.isUserInteractionEnabled = false
     }
     
     private func setFirstLabelUI() {
@@ -117,7 +116,6 @@ class OnboardingViewController: UIViewController {
     
     private func showCircleButton() {
         circleButtonImage.isHidden = false
-        circleButtonImage.isUserInteractionEnabled = true
     }
     
     private func isEnableBoxButton() {

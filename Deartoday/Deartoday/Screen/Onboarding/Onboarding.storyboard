@@ -64,7 +64,7 @@
                                     <action selector="boxButtonDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="JfW-MA-ClF"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnCircleBasic" translatesAutoresizingMaskIntoConstraints="NO" id="oeJ-ww-SZA">
+                            <imageView hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnCircleBasic" translatesAutoresizingMaskIntoConstraints="NO" id="oeJ-ww-SZA">
                                 <rect key="frame" x="158" y="221.66666666666663" width="68" height="83"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="83" id="A61-FL-t8v"/>
