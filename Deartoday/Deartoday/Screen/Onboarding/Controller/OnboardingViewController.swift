@@ -19,6 +19,8 @@ class OnboardingViewController: UIViewController {
     @IBOutlet var firstLabelCollection: [UILabel]!
     @IBOutlet weak var secondLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var boxButton: UIButton!
+    @IBOutlet weak var circleButtonImage: UIImageView!
     @IBOutlet weak var labelBottomConstraint: NSLayoutConstraint!
     
     // MARK: - Life Cycle
@@ -31,15 +33,32 @@ class OnboardingViewController: UIViewController {
         setFirstAlpha()
         setSecondAlpha()
         setFirstAnimation()
+        imageGestrue()
     }
     
     // MARK: - @objc
     
+    @objc func circleButtonDidTap() {
+        print("로티")
+    }
+    
     // MARK: - Custom Method
     
-    @IBAction func nextButtonDidTap(_ sender: Any) {
+    @IBAction func nextButtonDidTap(_ sender: UIButton) {
         setFirstAlpha()
         setSecondAnimation()
+        showCircleButton()
+        isEnableBoxButton()
+    }
+    
+    @IBAction func boxButtonDidTap(_ sender: UIButton) {
+        print("로티")
+    }
+    
+    private func imageGestrue() {
+        let imageGesture = UITapGestureRecognizer(target: self, action: #selector(circleButtonDidTap))
+        circleButtonImage.addGestureRecognizer(imageGesture)
+        circleButtonImage.isUserInteractionEnabled = false
     }
     
     private func setFirstLabelUI() {
@@ -95,5 +114,14 @@ class OnboardingViewController: UIViewController {
     private func setLayout() {
         let isSe2 = getDeviceHeight() == 667
         labelBottomConstraint.constant = isSe2 ? 45 : 69
+    }
+    
+    private func showCircleButton() {
+        circleButtonImage.isHidden = false
+        circleButtonImage.isUserInteractionEnabled = true
+    }
+    
+    private func isEnableBoxButton() {
+        boxButton.isEnabled = true
     }
 }
