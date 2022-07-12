@@ -59,17 +59,77 @@
                                     <constraint firstItem="nc3-h5-e5r" firstAttribute="top" secondItem="Zf8-Au-5iP" secondAttribute="top" constant="69" id="rjI-Zf-ERd"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7eY-QY-EB2">
+                                <rect key="frame" x="0.0" y="211" width="414" height="651"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgTape" translatesAutoresizingMaskIntoConstraints="NO" id="vtA-op-hWy">
+                                        <rect key="frame" x="111.5" y="114" width="191" height="109"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="109" id="WdE-lY-dVm"/>
+                                            <constraint firstAttribute="width" constant="191" id="rIK-Py-WTp"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBn-or-bJV">
+                                        <rect key="frame" x="56.5" y="233" width="301.5" height="41"/>
+                                        <string key="text">아직 디어투데이와 함께한 시간 여행이 없어요
+지금 바로 시간 여행을 떠나볼까요?</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnSmallPresent" translatesAutoresizingMaskIntoConstraints="NO" id="I0q-9m-HoA">
+                                        <rect key="frame" x="112" y="286" width="190" height="68"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="190" id="VBC-79-LY7"/>
+                                            <constraint firstAttribute="height" constant="68" id="qsY-Dg-ero"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rewind" translatesAutoresizingMaskIntoConstraints="NO" id="EkG-m7-unL">
+                                        <rect key="frame" x="140.5" y="309" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="MXD-JZ-ZJC"/>
+                                            <constraint firstAttribute="width" secondItem="EkG-m7-unL" secondAttribute="height" multiplier="1:1" id="vvS-OX-UhK"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간 여행 떠나기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCO-SZ-dvV">
+                                        <rect key="frame" x="168.5" y="311" width="99" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="I0q-9m-HoA" firstAttribute="top" secondItem="jBn-or-bJV" secondAttribute="bottom" constant="12" id="13e-Ra-ZSK"/>
+                                    <constraint firstItem="EkG-m7-unL" firstAttribute="centerY" secondItem="I0q-9m-HoA" secondAttribute="centerY" id="CvR-yR-idd"/>
+                                    <constraint firstItem="jBn-or-bJV" firstAttribute="top" secondItem="vtA-op-hWy" secondAttribute="bottom" constant="10" id="MSv-Jj-ZpM"/>
+                                    <constraint firstItem="vtA-op-hWy" firstAttribute="top" secondItem="7eY-QY-EB2" secondAttribute="top" constant="114" id="OTw-AD-y27"/>
+                                    <constraint firstItem="EkG-m7-unL" firstAttribute="leading" secondItem="I0q-9m-HoA" secondAttribute="leading" constant="28.5" id="VMS-gw-tb5"/>
+                                    <constraint firstItem="dCO-SZ-dvV" firstAttribute="leading" secondItem="EkG-m7-unL" secondAttribute="trailing" constant="6" id="ZZA-81-L1x"/>
+                                    <constraint firstItem="vtA-op-hWy" firstAttribute="centerX" secondItem="7eY-QY-EB2" secondAttribute="centerX" id="qzV-WI-wyH"/>
+                                    <constraint firstItem="I0q-9m-HoA" firstAttribute="centerX" secondItem="7eY-QY-EB2" secondAttribute="centerX" id="reI-7C-poo"/>
+                                    <constraint firstItem="dCO-SZ-dvV" firstAttribute="centerY" secondItem="EkG-m7-unL" secondAttribute="centerY" id="wP8-xu-2VL"/>
+                                    <constraint firstItem="jBn-or-bJV" firstAttribute="centerX" secondItem="7eY-QY-EB2" secondAttribute="centerX" id="wvp-2Y-vzI"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="7eY-QY-EB2" firstAttribute="top" secondItem="Zf8-Au-5iP" secondAttribute="bottom" id="3ed-eg-9vQ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="7eY-QY-EB2" secondAttribute="bottom" id="5kP-xU-0cN"/>
                             <constraint firstItem="Zf8-Au-5iP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="6M2-hB-FtK"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zf8-Au-5iP" secondAttribute="trailing" id="9Fx-wp-N8k"/>
+                            <constraint firstItem="7eY-QY-EB2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="H02-I6-g26"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7eY-QY-EB2" secondAttribute="trailing" id="YoD-GK-4cV"/>
                             <constraint firstItem="Zf8-Au-5iP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="vQx-j3-NX6"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="9ZE-vj-FrJ" id="4gn-sr-Hzc"/>
+                        <outlet property="emptyDescriptionLabel" destination="jBn-or-bJV" id="auV-s9-TQP"/>
+                        <outlet property="emptyTitleLabel" destination="dCO-SZ-dvV" id="NAn-x7-xMr"/>
+                        <outlet property="rewindImageView" destination="EkG-m7-unL" id="Atj-GG-hyX"/>
                         <outlet property="titleLabel" destination="N97-cD-rNm" id="xqx-pk-iYs"/>
                     </connections>
                 </viewController>
@@ -79,8 +139,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btnSmallPresent" width="57" height="68"/>
         <image name="icBack" width="44" height="44"/>
+        <image name="imgTape" width="343" height="197"/>
         <image name="imgTapeBundle" width="140" height="84"/>
+        <image name="rewind" width="22" height="22"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

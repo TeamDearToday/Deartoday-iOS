@@ -14,6 +14,9 @@ final class CheckTimeTravelViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var emptyDescriptionLabel: UILabel!
+    @IBOutlet weak var emptyTitleLabel: UILabel!
+    @IBOutlet weak var rewindImageView: UIImageView!
     
     // MARK: - Life Cycle
     
@@ -42,6 +45,10 @@ extension CheckTimeTravelViewController {
     }
     
     private func setEmptyViewUI() {
-        
+        emptyDescriptionLabel.font = .caption2
+        emptyDescriptionLabel.textColor = .gray01
+        emptyTitleLabel.font = .btn0
+        emptyTitleLabel.textColor = .blue02
+        rewindImageView.tintColor = .blue02
     }
 }
