@@ -22,6 +22,7 @@ extension Constant {
         ///icon
         static let icRewind = UIImage(named: "icRewind")!
         static let icBack = UIImage(named: "icBack")!
+        static let icClose = UIImage(named: "icClose")!
         
         // MARK: - 로그인
         ///image
