@@ -31,7 +31,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상자를 터치해서 안을 확인해 보세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpD-nQ-Nlt">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상자를 터치해서 안을 확인해 보세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpD-nQ-Nlt">
                                 <rect key="frame" x="93" y="714" width="187" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -48,11 +48,13 @@
                                     <action selector="nextButtonDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="AbA-pt-nSG"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YhN-8H-Oo1">
-                                <rect key="frame" x="56" y="129" width="25" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
+                            <imageView hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnCircleBasic" translatesAutoresizingMaskIntoConstraints="NO" id="oeJ-ww-SZA">
+                                <rect key="frame" x="158" y="221.66666666666663" width="68" height="83"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="83" id="A61-FL-t8v"/>
+                                    <constraint firstAttribute="width" constant="68" id="sOR-80-1BF"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9w-LV-IyT">
                                 <rect key="frame" x="75" y="310.66666666666669" width="239" height="201"/>
                                 <constraints>
@@ -64,13 +66,6 @@
                                     <action selector="boxButtonDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="JfW-MA-ClF"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnCircleBasic" translatesAutoresizingMaskIntoConstraints="NO" id="oeJ-ww-SZA">
-                                <rect key="frame" x="158" y="221.66666666666663" width="68" height="83"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="83" id="A61-FL-t8v"/>
-                                    <constraint firstAttribute="width" constant="68" id="sOR-80-1BF"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -100,17 +95,17 @@
                     </view>
                     <connections>
                         <outlet property="boxButton" destination="i9w-LV-IyT" id="wee-bP-CLa"/>
-                        <outlet property="circleButtonImage" destination="oeJ-ww-SZA" id="DbZ-Pc-yWn"/>
+                        <outlet property="circleImageView" destination="oeJ-ww-SZA" id="cZi-T2-Csz"/>
                         <outlet property="labelBottomConstraint" destination="oH2-LW-T87" id="fQM-pX-K4y"/>
                         <outlet property="nextButton" destination="Fjd-0T-ndi" id="Vww-s1-yty"/>
-                        <outlet property="secondLabel" destination="ZpD-nQ-Nlt" id="b0m-Zn-Ie0"/>
-                        <outletCollection property="firstLabelCollection" destination="0ZK-HK-Qtx" collectionClass="NSMutableArray" id="94K-mH-cDV"/>
-                        <outletCollection property="firstLabelCollection" destination="peP-cm-NGj" collectionClass="NSMutableArray" id="aqu-Fa-87C"/>
+                        <outletCollection property="labelCollection" destination="0ZK-HK-Qtx" collectionClass="NSMutableArray" id="94K-mH-cDV"/>
+                        <outletCollection property="labelCollection" destination="peP-cm-NGj" collectionClass="NSMutableArray" id="aqu-Fa-87C"/>
+                        <outletCollection property="labelCollection" destination="ZpD-nQ-Nlt" collectionClass="NSMutableArray" id="1lb-Vb-cgI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="21.739130434782609" y="-132.58928571428572"/>
+            <point key="canvasLocation" x="21.600000000000001" y="-133.00492610837438"/>
         </scene>
     </scenes>
     <resources>
