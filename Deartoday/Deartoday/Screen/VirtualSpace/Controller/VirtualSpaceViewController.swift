@@ -84,7 +84,7 @@ final class VirtualSpaceViewController: UIViewController {
         $0.font = .btn0
     }
     
-    private var mediaCollectionView : UICollectionView = {
+    private lazy var mediaCollectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.itemSize = UICollectionViewFlowLayout.automaticSize
@@ -93,6 +93,8 @@ final class VirtualSpaceViewController: UIViewController {
         return UICollectionView(frame: .zero, collectionViewLayout: layout).then {
             $0.backgroundColor = .clear
             $0.isScrollEnabled = true
+            $0.alpha = 0
+            $0.showsHorizontalScrollIndicator = false
         }
     }()
     
@@ -100,7 +102,7 @@ final class VirtualSpaceViewController: UIViewController {
         $0.style = .past
         $0.text = "과거의 나 만나러 가기"
         $0.hasLeftIcon = false
-        $0.addTarget(self, action: #selector(returnButtonDidTap), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(nextButtonDidTap), for: .touchUpInside)
     }
     
     // MARK: - Life Cycle
@@ -110,6 +112,12 @@ final class VirtualSpaceViewController: UIViewController {
         setUI()
         setLayout()
         setCollectionView()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            UIView.animate(withDuration: 0.6, delay: 0.3, options: .curveEaseOut) {
+                self.mediaCollectionView.alpha = 1
+            }
+        }
     }
     
     // MARK: - @objc
@@ -118,7 +126,7 @@ final class VirtualSpaceViewController: UIViewController {
         
     }
     
-    @objc func returnButtonDidTap() {
+    @objc func nextButtonDidTap() {
         
     }
     
@@ -209,8 +217,6 @@ final class VirtualSpaceViewController: UIViewController {
         
         mediaCollectionView.delegate = self
         mediaCollectionView.dataSource = self
-        
-        mediaCollectionView.showsHorizontalScrollIndicator = false
     }
 }
 

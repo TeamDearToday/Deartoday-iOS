@@ -315,6 +315,21 @@ final class TimeTravelViewController: UIViewController {
         
         dayAnimationLabel.config(num: day, duration: 1.2)
         dayAnimationLabel.animate(ascending: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.8) {
+            UIView.animate(withDuration: 0.3, delay: 1.0, options: .curveEaseOut) {
+                let virtualSpaceViewController = VirtualSpaceViewController()
+                
+                virtualSpaceViewController.modalPresentationStyle = .fullScreen
+                virtualSpaceViewController.modalTransitionStyle = .crossDissolve
+                
+                virtualSpaceViewController.year = self.year
+                virtualSpaceViewController.month = self.month
+                virtualSpaceViewController.day = self.day
+                
+                self.present(virtualSpaceViewController, animated: true)
+            }
+        }
     }
 }
 
