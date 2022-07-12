@@ -14,7 +14,7 @@ final class DeartodayAlertViewController: UIViewController {
     
     // MARK: - Property
 
-    var alertType: AlertType = .logout
+    var alertType: AlertType = .exit
     
     // MARK: - UI Property
     
@@ -92,11 +92,18 @@ final class DeartodayAlertViewController: UIViewController {
     }
     
     private func setAlert() {
-        let isExit = (alertType == .exit)
-        titleLabel.text = isExit ? "시간 여행을 그만두시겠어요?" : "로그아웃 하시겠어요?"
-        descriptionLabel.isHidden = !isExit
-        denyButton.setTitle(isExit ? "그만두기" : "취소", for: .normal)
-        okButton.setTitle(isExit ? "계속하기" : "확인", for: .normal)
+        switch alertType {
+        case .exit:
+            titleLabel.text = "시간 여행을 그만두시겠어요?"
+            descriptionLabel.isHidden = false
+            denyButton.setTitle("그만두기", for: .normal)
+            okButton.setTitle("계속하기", for: .normal)
+        case .logout:
+            titleLabel.text = "로그아웃 하시겠어요?"
+            descriptionLabel.isHidden = true
+            denyButton.setTitle("취소", for: .normal)
+            okButton.setTitle("확인", for: .normal)
+        }
     }
     
     private func setHierarchy() {
