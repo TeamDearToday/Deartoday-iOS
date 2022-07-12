@@ -18,31 +18,19 @@ final class TimeTravelViewController: UIViewController {
     
     // MARK: - Property
     
-    private var todayDate = Date()
-    
-    private var momentDate = Date()
-    
     private let dateFormatter = DateFormatter().then {
-        $0.locale = Locale(identifier: "ko_kr")
-        $0.timeZone = TimeZone(abbreviation: "ko_kr")
         $0.dateFormat = "yyyy.MM.dd"
     }
     
     private let yearFormatter = DateFormatter().then {
-        $0.locale = Locale(identifier: "ko_kr")
-        $0.timeZone = TimeZone(abbreviation: "ko_kr")
         $0.dateFormat = "yyyy"
     }
     
     private let monthFormatter = DateFormatter().then {
-        $0.locale = Locale(identifier: "ko_kr")
-        $0.timeZone = TimeZone(abbreviation: "ko_kr")
         $0.dateFormat = "MM"
     }
     
     private let dayFormatter = DateFormatter().then {
-        $0.locale = Locale(identifier: "ko_kr")
-        $0.timeZone = TimeZone(abbreviation: "ko_kr")
         $0.dateFormat = "dd"
     }
     
@@ -65,7 +53,7 @@ final class TimeTravelViewController: UIViewController {
     }
     
     private lazy var yearLabel = UILabel().then {
-        $0.text = yearFormatter.string(from: todayDate)
+        $0.text = yearFormatter.string(from: Date())
         $0.textColor = .lightBlue00
         $0.font = .h0
         $0.isHidden = false
@@ -83,7 +71,7 @@ final class TimeTravelViewController: UIViewController {
     }
     
     private lazy var monthLabel = UILabel().then {
-        $0.text = monthFormatter.string(from: todayDate)
+        $0.text = monthFormatter.string(from: Date())
         $0.textColor = .lightBlue00
         $0.font = .h0
         $0.isHidden = false
@@ -101,7 +89,7 @@ final class TimeTravelViewController: UIViewController {
     }
     
     private lazy var dayLabel = UILabel().then {
-        $0.text = dayFormatter.string(from: todayDate)
+        $0.text = dayFormatter.string(from: Date())
         $0.textColor = .lightBlue00
         $0.font = .h0
         $0.isHidden = false
@@ -164,6 +152,11 @@ final class TimeTravelViewController: UIViewController {
     
     private func setUI() {
         view.backgroundColor = .white
+        
+        [dateFormatter, yearFormatter, monthFormatter, dayFormatter].forEach {
+            $0.locale = Locale(identifier: "ko_kr")
+            $0.timeZone = TimeZone(abbreviation: "ko_kr")
+        }
     }
     
     private func setLayout() {
