@@ -45,8 +45,7 @@ class OnboardingViewController: UIViewController {
     @IBAction func nextButtonDidTap(_ sender: UIButton) {
         hideComponents(isFirst: true)
         setSecondAnimation()
-        showCircleButton()
-        isEnableBoxButton()
+        isEnableButtons()
     }
     
     @IBAction func boxButtonDidTap(_ sender: UIButton) {
@@ -114,11 +113,8 @@ class OnboardingViewController: UIViewController {
         labelBottomConstraint.constant = isSe2 ? 45 : 69
     }
     
-    private func showCircleButton() {
+    private func isEnableButtons() {
         circleButtonImage.isHidden = false
-    }
-    
-    private func isEnableBoxButton() {
         boxButton.isEnabled = true
     }
 }
