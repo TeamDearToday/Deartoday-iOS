@@ -48,20 +48,48 @@
                                     <action selector="nextButtonDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="AbA-pt-nSG"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YhN-8H-Oo1">
+                                <rect key="frame" x="56" y="129" width="25" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9w-LV-IyT">
+                                <rect key="frame" x="75" y="339.5" width="270" height="227"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="i9w-LV-IyT" secondAttribute="height" multiplier="239:201" id="50a-Eq-Rco"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EnN-y1-mcA">
+                                <rect key="frame" x="158" y="196.5" width="99" height="137"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EnN-y1-mcA" secondAttribute="height" multiplier="60:83" id="vcI-b2-bb7"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="btnCircleBasic"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="32K-94-dsE" secondAttribute="bottom" id="0Ok-bf-V7o"/>
                             <constraint firstItem="Fjd-0T-ndi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="6" id="3ff-Dc-VD3"/>
+                            <constraint firstItem="i9w-LV-IyT" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="8Jg-nl-UTr"/>
+                            <constraint firstItem="i9w-LV-IyT" firstAttribute="top" secondItem="EnN-y1-mcA" secondAttribute="bottom" constant="6" id="Czc-KQ-lyO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="i9w-LV-IyT" secondAttribute="trailing" constant="69" id="Esm-Yg-KJn"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0ZK-HK-Qtx" secondAttribute="trailing" constant="78" id="Ff6-C7-n7b"/>
-                            <constraint firstAttribute="bottom" secondItem="ZpD-nQ-Nlt" secondAttribute="bottom" constant="77" id="FsP-nD-IxH"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ZpD-nQ-Nlt" secondAttribute="bottom" constant="43" id="FsP-nD-IxH"/>
                             <constraint firstItem="ZpD-nQ-Nlt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="93" id="GIY-NS-qzw"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="32K-94-dsE" secondAttribute="trailing" id="Hk3-aC-fau"/>
                             <constraint firstItem="0ZK-HK-Qtx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="77" id="HqQ-HA-pUt"/>
-                            <constraint firstItem="Fjd-0T-ndi" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="2" id="P6R-Fd-WGA"/>
+                            <constraint firstItem="i9w-LV-IyT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="75" id="JUb-cg-HSs"/>
+                            <constraint firstItem="Fjd-0T-ndi" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" constant="-32" id="P6R-Fd-WGA"/>
                             <constraint firstItem="32K-94-dsE" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Vn4-aG-E1w"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="EnN-y1-mcA" secondAttribute="trailing" constant="157" id="Wyz-Yd-Ibg"/>
                             <constraint firstItem="peP-cm-NGj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="64" id="coZ-V1-YjZ"/>
+                            <constraint firstItem="EnN-y1-mcA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="158" id="eyu-6x-jWJ"/>
                             <constraint firstItem="Fjd-0T-ndi" firstAttribute="top" secondItem="peP-cm-NGj" secondAttribute="bottom" constant="69" id="oH2-LW-T87"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="peP-cm-NGj" secondAttribute="trailing" constant="64" id="pCa-CZ-eTs"/>
                             <constraint firstItem="peP-cm-NGj" firstAttribute="top" secondItem="0ZK-HK-Qtx" secondAttribute="bottom" constant="12" id="pTL-Mg-PzN"/>
@@ -79,10 +107,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22" y="-132"/>
+            <point key="canvasLocation" x="21.739130434782609" y="-132.58928571428572"/>
         </scene>
     </scenes>
     <resources>
+        <image name="btnCircleBasic" width="68" height="90"/>
         <image name="btnSmallPresent" width="57" height="68"/>
         <image name="image1Withg" width="375" height="812"/>
         <systemColor name="systemBackgroundColor">
