@@ -10,12 +10,6 @@ import UIKit
 import SnapKit
 import Then
 
-@frozen
-enum AlertType {
-    case exit
-    case logout
-}
-
 final class DeartodayAlertViewController: UIViewController {
     
     // MARK: - Property

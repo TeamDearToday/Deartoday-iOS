@@ -49,6 +49,7 @@
 		98BFBCD12879BBB700F01F04 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BFBCD02879BBB700F01F04 /* UIColor+.swift */; };
 		98BFBCD7287AC21000F01F04 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BFBCD6287AC21000F01F04 /* UIViewController+.swift */; };
 		98D912A5287D3B0D0088A7F9 /* DeartodayAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D912A4287D3B0D0088A7F9 /* DeartodayAlertViewController.swift */; };
+		98D912AE287D558A0088A7F9 /* DeartodayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D912AD287D558A0088A7F9 /* DeartodayModel.swift */; };
 		A3EDF83E9CD70073D83CA26D /* Pods_Deartoday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A3CEAB5A8D31B890C8B41E /* Pods_Deartoday.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +101,7 @@
 		98BFBCD02879BBB700F01F04 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		98BFBCD6287AC21000F01F04 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		98D912A4287D3B0D0088A7F9 /* DeartodayAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeartodayAlertViewController.swift; sourceTree = "<group>"; };
+		98D912AD287D558A0088A7F9 /* DeartodayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeartodayModel.swift; sourceTree = "<group>"; };
 		A1A07BC470FAC0358D40F43A /* Pods-Deartoday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deartoday.release.xcconfig"; path = "Target Support Files/Pods-Deartoday/Pods-Deartoday.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -425,9 +427,18 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		98D912AC287D557A0088A7F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				98D912AD287D558A0088A7F9 /* DeartodayModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		98F105ED287C9D5400F98743 /* DeartodayAlert */ = {
 			isa = PBXGroup;
 			children = (
+				98D912AC287D557A0088A7F9 /* Model */,
 				98D912A9287D43530088A7F9 /* Controller */,
 			);
 			path = DeartodayAlert;
@@ -557,6 +568,7 @@
 			files = (
 				92DB35682875656C001E2006 /* DDSButton.swift in Sources */,
 				923061D82877550E00F04EDA /* TimeTravelViewController.swift in Sources */,
+				98D912AE287D558A0088A7F9 /* DeartodayModel.swift in Sources */,
 				923061D6287754FA00F04EDA /* TimeTravelView.swift in Sources */,
 				92DB35352875633D001E2006 /* MainViewController.swift in Sources */,
 				92DB3562287564F3001E2006 /* MainView.swift in Sources */,
