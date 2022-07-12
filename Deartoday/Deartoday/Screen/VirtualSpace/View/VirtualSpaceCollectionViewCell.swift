@@ -9,7 +9,6 @@ import UIKit
 
 import SnapKit
 import Then
-
 import Kingfisher
 
 class VirtualSpaceCollectionViewCell: UICollectionViewCell {
@@ -37,6 +36,7 @@ class VirtualSpaceCollectionViewCell: UICollectionViewCell {
     
     private func setUI() {
         contentView.layer.cornerRadius = 20
+        contentView.backgroundColor = .gray02
     }
     
     private func setLayout() {

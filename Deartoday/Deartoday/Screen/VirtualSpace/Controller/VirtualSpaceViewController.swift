@@ -37,30 +37,34 @@ final class VirtualSpaceViewController: UIViewController {
     
     private var backgroundImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
+        $0.image = Constant.Image.imgHomePastLeft
     }
     
     private var yearBackView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
+        $0.image = Constant.Image.bgYearYellow
     }
     
     private var yearLabel = UILabel().then {
-        $0.text = ""
+        $0.text = "0000"
     }
     
     private var monthBackView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
+        $0.image = Constant.Image.bgMonthYellow
     }
     
     private var monthLabel = UILabel().then {
-        $0.text = ""
+        $0.text = "00"
     }
     
     private var dayBackView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
+        $0.image = Constant.Image.bgMonthYellow
     }
     
     private var dayLabel = UILabel().then {
-        $0.text = ""
+        $0.text = "00"
     }
     
     private var exitButton = UIButton().then {
@@ -74,9 +78,10 @@ final class VirtualSpaceViewController: UIViewController {
         $0.contentMode = .scaleAspectFit
     }
     
-    private lazy var textBoxLabel = UILabel().then {
+    private var textBoxLabel = UILabel().then {
+        $0.text = "우리의 0000년, 기억하시나요?"
         $0.textColor = .gray00
-        $0.font = .btn1En
+        $0.font = .btn0
     }
     
     private var mediaCollectionView : UICollectionView = {
@@ -91,10 +96,10 @@ final class VirtualSpaceViewController: UIViewController {
         }
     }()
     
-    private lazy var returnButton = DDSButton().then {
+    private lazy var nextButton = DDSButton().then {
         $0.style = .past
         $0.text = "과거의 나 만나러 가기"
-        $0.hasLeftIcon = true
+        $0.hasLeftIcon = false
         $0.addTarget(self, action: #selector(returnButtonDidTap), for: .touchUpInside)
     }
     
@@ -121,19 +126,80 @@ final class VirtualSpaceViewController: UIViewController {
     
     private func setUI() {
         view.backgroundColor = .white
+        
+        [yearLabel, monthLabel, dayLabel].forEach {
+            $0.textColor = .gray00
+            $0.font = .h0
+        }
     }
     
     private func setLayout() {
-        view.addSubviews([backgroundImageView, mediaCollectionView])
+        view.addSubviews([backgroundImageView,
+                          yearBackView,
+                          monthBackView,
+                          dayBackView,
+                          textBoxImageView,
+                          mediaCollectionView,
+                          nextButton])
+        
+        yearBackView.addSubview(yearLabel)
+        monthBackView.addSubview(monthLabel)
+        dayBackView.addSubview(dayLabel)
+        
+        textBoxImageView.addSubview(textBoxLabel)
         
         backgroundImageView.snp.makeConstraints {
             $0.top.leading.trailing.bottom.equalToSuperview()
+        }
+        
+        yearBackView.snp.makeConstraints {
+            $0.width.equalTo(114)
+            $0.height.equalTo(56)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(8)
+            $0.leading.equalToSuperview().inset(6)
+        }
+        
+        monthBackView.snp.makeConstraints {
+            $0.width.equalTo(73)
+            $0.height.equalTo(56)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(8)
+            $0.leading.equalToSuperview().inset(106)
+        }
+        
+        dayBackView.snp.makeConstraints {
+            $0.width.equalTo(73)
+            $0.height.equalTo(56)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(8)
+            $0.leading.equalToSuperview().inset(165)
+        }
+        
+        [yearLabel , monthLabel, dayLabel].forEach {
+            $0.snp.makeConstraints {
+                $0.centerX.centerY.equalToSuperview()
+            }
+        }
+        
+        textBoxImageView.snp.makeConstraints {
+            $0.width.equalTo(244)
+            $0.height.equalTo(67)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(58)
+            $0.leading.equalToSuperview().inset(6)
+        }
+        
+        textBoxLabel.snp.makeConstraints {
+            $0.centerX.centerY.equalToSuperview()
         }
         
         mediaCollectionView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(174)
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(161)
+        }
+        
+        nextButton.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(6)
+            $0.height.equalTo(68)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(2)
         }
     }
     
@@ -143,6 +209,8 @@ final class VirtualSpaceViewController: UIViewController {
         
         mediaCollectionView.delegate = self
         mediaCollectionView.dataSource = self
+        
+        mediaCollectionView.showsHorizontalScrollIndicator = false
     }
 }
 
