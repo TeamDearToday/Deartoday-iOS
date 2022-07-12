@@ -30,8 +30,6 @@ class OnboardingViewController: UIViewController {
         setLayout()
         setFirstLabelUI()
         setSecondLabelUI()
-        setFirstAlpha()
-        setSecondAlpha()
         setFirstAnimation()
         imageGestrue()
     }
@@ -45,7 +43,7 @@ class OnboardingViewController: UIViewController {
     // MARK: - Custom Method
     
     @IBAction func nextButtonDidTap(_ sender: UIButton) {
-        setFirstAlpha()
+        hideComponents(isFirst: true)
         setSecondAnimation()
         showCircleButton()
         isEnableBoxButton()
@@ -77,15 +75,16 @@ class OnboardingViewController: UIViewController {
         secondLabel.textAlignment = .center
     }
     
-    private func setFirstAlpha() {
-        firstLabelCollection.forEach {
-            $0.alpha = 0
+    private func hideComponents(isFirst: Bool) {
+        if isFirst {
+            firstLabelCollection.forEach {
+                $0.isHidden = true
+            }
+            nextButton.isHidden = true
         }
-        nextButton.alpha = 0
-    }
-    
-    private func setSecondAlpha() {
-        secondLabel.alpha = 0
+        else {
+            secondLabel.isHidden = true
+        }
     }
     
     private func setFirstAnimation() {
