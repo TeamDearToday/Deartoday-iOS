@@ -9,7 +9,6 @@ import UIKit
 
 final class CheckTimeTravelViewController: UIViewController {
 
-    // MARK: - Property
     // MARK: - UI Property
     
     @IBOutlet weak var titleLabel: UILabel!
