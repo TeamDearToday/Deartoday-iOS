@@ -51,6 +51,9 @@ extension Constant {
         ///image
         static let imgTape = UIImage(named: "imgTape")!
         static let rewind = UIImage(named: "rewind")!
+        static let imgHomePastLeft = UIImage(named: "imgHomePastLeft")!
+        static let bgYearYellow = UIImage(named: "bgYearYellow")!
+        static let bgMonthYellow = UIImage(named: "bgMonthYellow")!
         ///icon
         static let icExit = UIImage(named: "icExit")!
         
