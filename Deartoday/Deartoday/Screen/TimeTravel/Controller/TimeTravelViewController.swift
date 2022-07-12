@@ -304,6 +304,7 @@ final class TimeTravelViewController: UIViewController {
         [yearLabel, yearAnimationLabel, monthLabel, monthAnmationLabel, dayLabel, dayAnimationLabel].forEach {
             $0.isHidden.toggle()
         }
+        
         yearAnimationLabel.config(num: year, duration: 1.2)
         yearAnimationLabel.animate(ascending: true)
         
