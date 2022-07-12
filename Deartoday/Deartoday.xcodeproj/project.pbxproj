@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A706264287C079F00140315 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A706263287C079F00140315 /* Onboarding.storyboard */; };
 		923061D4287754DB00F04EDA /* TimeTravelDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923061D3287754DB00F04EDA /* TimeTravelDataModel.swift */; };
 		923061D6287754FA00F04EDA /* TimeTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923061D5287754FA00F04EDA /* TimeTravelView.swift */; };
 		923061D82877550E00F04EDA /* TimeTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923061D72877550E00F04EDA /* TimeTravelViewController.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A706263287C079F00140315 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		6117E07E0B8313B67F3D1573 /* Pods-Deartoday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deartoday.debug.xcconfig"; path = "Target Support Files/Pods-Deartoday/Pods-Deartoday.debug.xcconfig"; sourceTree = "<group>"; };
 		91A3CEAB5A8D31B890C8B41E /* Pods_Deartoday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Deartoday.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		923061D3287754DB00F04EDA /* TimeTravelDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelDataModel.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 		92DB355228756443001E2006 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				4A706263287C079F00140315 /* Onboarding.storyboard */,
 				92DB35512875643E001E2006 /* Model */,
 				92DB355028756437001E2006 /* Controller */,
 				92DB354F2875642E001E2006 /* View */,
@@ -524,6 +527,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A706264287C079F00140315 /* Onboarding.storyboard in Resources */,
 				98BFBCC72879B68600F01F04 /* Pretendard-Medium.otf in Resources */,
 				98BFBCC12879B66A00F01F04 /* GmarketSansBold.otf in Resources */,
 				92DB353D2875633F001E2006 /* LaunchScreen.storyboard in Resources */,
