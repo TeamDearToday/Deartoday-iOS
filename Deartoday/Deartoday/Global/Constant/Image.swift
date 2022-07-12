@@ -21,6 +21,7 @@ extension Constant {
         static let btnSmallDisable = UIImage(named: "btnSmallDisable")!
         ///icon
         static let icRewind = UIImage(named: "icRewind")!
+        static let icBack = UIImage(named: "icBack")!
         
         // MARK: - 로그인
         ///image
