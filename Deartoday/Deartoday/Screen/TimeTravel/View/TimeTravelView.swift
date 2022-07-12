@@ -179,9 +179,6 @@ final class TimeTravelView: UIView {
 extension TimeTravelView: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         if dateTextField.hasText && titleTextField.hasText {
-            
-            // MARK: - FIX: Notification 말고 다른 방법 없을까?
-            
             NotificationCenter.default.post(name: NSNotification.Name("EnableReturnButton"), object: nil)
         }
     }

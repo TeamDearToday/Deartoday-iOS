@@ -28,6 +28,28 @@ final class TimeTravelViewController: UIViewController {
         $0.dateFormat = "yyyy.MM.dd"
     }
     
+    private let yearFormatter = DateFormatter().then {
+        $0.locale = Locale(identifier: "ko_kr")
+        $0.timeZone = TimeZone(abbreviation: "ko_kr")
+        $0.dateFormat = "yyyy"
+    }
+    
+    private let monthFormatter = DateFormatter().then {
+        $0.locale = Locale(identifier: "ko_kr")
+        $0.timeZone = TimeZone(abbreviation: "ko_kr")
+        $0.dateFormat = "MM"
+    }
+    
+    private let dayFormatter = DateFormatter().then {
+        $0.locale = Locale(identifier: "ko_kr")
+        $0.timeZone = TimeZone(abbreviation: "ko_kr")
+        $0.dateFormat = "dd"
+    }
+    
+    private var year: String = ""
+    private var month: String = ""
+    private var day: String = ""
+    
     // MARK: - UI Property
     
     private var backImageView = UIImageView().then {
@@ -42,30 +64,54 @@ final class TimeTravelViewController: UIViewController {
         $0.image = Constant.Image.bgYear
     }
     
-    private var yearLabel = UILabel().then {
-        $0.text = "2022"
+    private lazy var yearLabel = UILabel().then {
+        $0.text = yearFormatter.string(from: todayDate)
         $0.textColor = .lightBlue00
         $0.font = .h0
+        $0.isHidden = false
+    }
+    
+    private var yearAnimationLabel = CountDownLabel().then {
+        $0.text = "0000"
+        $0.textColor = .clear
+        $0.font = .h0
+        $0.isHidden = true
     }
     
     private var monthBackView = UIImageView().then {
         $0.image = Constant.Image.bgDate
     }
     
-    private var monthLabel = UILabel().then {
-        $0.text = "07"
+    private lazy var monthLabel = UILabel().then {
+        $0.text = monthFormatter.string(from: todayDate)
         $0.textColor = .lightBlue00
         $0.font = .h0
+        $0.isHidden = false
     }
     
-    private var dateBackView = UIImageView().then {
+    private var monthAnmationLabel = CountDownLabel().then {
+        $0.text = "00"
+        $0.textColor = .clear
+        $0.font = .h0
+        $0.isHidden = true
+    }
+    
+    private var dayBackView = UIImageView().then {
         $0.image = Constant.Image.bgDate
     }
     
-    private var dateLabel = UILabel().then {
-        $0.text = "02"
+    private lazy var dayLabel = UILabel().then {
+        $0.text = dayFormatter.string(from: todayDate)
         $0.textColor = .lightBlue00
         $0.font = .h0
+        $0.isHidden = false
+    }
+    
+    private var dayAnimationLabel = CountDownLabel().then {
+        $0.text = "00"
+        $0.textColor = .clear
+        $0.font = .h0
+        $0.isHidden = true
     }
     
     private lazy var exitButton = UIButton().then {
@@ -125,15 +171,15 @@ final class TimeTravelViewController: UIViewController {
                           coverView,
                           monthBackView,
                           yearBackView,
-                          dateBackView,
+                          dayBackView,
                           exitButton,
                           guideLabel,
                           timeTravelView,
                           returnButton])
         
-        yearBackView.addSubview(yearLabel)
-        monthBackView.addSubview(monthLabel)
-        dateBackView.addSubview(dateLabel)
+        yearBackView.addSubviews([yearLabel, yearAnimationLabel])
+        monthBackView.addSubviews([monthLabel, monthAnmationLabel])
+        dayBackView.addSubviews([dayLabel, dayAnimationLabel])
         
         backImageView.snp.makeConstraints {
             $0.top.leading.trailing.bottom.equalToSuperview()
@@ -157,14 +203,14 @@ final class TimeTravelViewController: UIViewController {
             $0.leading.equalToSuperview().inset(106)
         }
         
-        dateBackView.snp.makeConstraints {
+        dayBackView.snp.makeConstraints {
             $0.width.equalTo(73)
             $0.height.equalTo(56)
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(8)
             $0.leading.equalToSuperview().inset(165)
         }
         
-        [yearLabel, monthLabel, dateLabel].forEach {
+        [yearLabel, yearAnimationLabel , monthLabel, monthAnmationLabel, dayLabel, dayAnimationLabel].forEach {
             $0.snp.makeConstraints {
                 $0.centerX.centerY.equalToSuperview()
             }
@@ -196,7 +242,7 @@ final class TimeTravelViewController: UIViewController {
     // MARK: - @objc
     
     @objc func exitButtonDidTap() {
-        print("돌아가기 버튼 누름")
+        print("🚨 Alert")
     }
     
     @objc func returnButtonDidTap() {
@@ -208,6 +254,9 @@ final class TimeTravelViewController: UIViewController {
         } completion: { _ in
             UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveEaseOut) {
                 self.timeTravelView.alpha = 0
+            } completion: { _ in
+                self.playerAnimationView.isHidden = true
+                self.setCountDownAnimation()
             }
         }
     }
@@ -257,6 +306,20 @@ final class TimeTravelViewController: UIViewController {
     private func setDelegate() {
         timeTravelView.delegate = self
     }
+    
+    private func setCountDownAnimation() {
+        [yearLabel, yearAnimationLabel, monthLabel, monthAnmationLabel, dayLabel, dayAnimationLabel].forEach {
+            $0.isHidden.toggle()
+        }
+        yearAnimationLabel.config(num: year, duration: 1.2)
+        yearAnimationLabel.animate(ascending: true)
+        
+        monthAnmationLabel.config(num: month, duration: 1.2)
+        monthAnmationLabel.animate(ascending: true)
+        
+        dayAnimationLabel.config(num: day, duration: 1.2)
+        dayAnimationLabel.animate(ascending: true)
+    }
 }
 
 // MARK: - Custom Delegate
@@ -274,7 +337,6 @@ extension TimeTravelViewController: TimeTravelViewDelegate {
 
 extension TimeTravelViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        // 이미지 사진 업로드
         var newImage: UIImage? = nil
         
         if let possibleImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
@@ -285,7 +347,6 @@ extension TimeTravelViewController : UIImagePickerControllerDelegate, UINavigati
         
         timeTravelView.photoImageView.image = newImage
         
-        // 이미지 날짜 업로드
         let asset = info[.phAsset] as? PHAsset
         
         let option = PHContentEditingInputRequestOptions()
@@ -294,6 +355,9 @@ extension TimeTravelViewController : UIImagePickerControllerDelegate, UINavigati
         asset?.requestContentEditingInput(with: option, completionHandler: { (contentEditingInput, info) in
             if let date = contentEditingInput?.creationDate {
                 self.timeTravelView.dateTextField.text = self.dateFormatter.string(from: date)
+                self.year = self.yearFormatter.string(from: date)
+                self.month = self.monthFormatter.string(from: date)
+                self.day = self.dayFormatter.string(from: date)
                 self.timeTravelView.hasPhoto = true
             }
         })
