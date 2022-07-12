@@ -14,7 +14,7 @@ final class DeartodayAlertViewController: UIViewController {
     
     // MARK: - Property
 
-    var alertType: AlertType = .exit
+    var alertType: AlertType = .logout
     
     // MARK: - UI Property
     
@@ -28,7 +28,7 @@ final class DeartodayAlertViewController: UIViewController {
     }
     
     private let titleLabel = UILabel().then {
-        $0.text = "시간 여행을 그만두시겠어요?"
+        $0.text = ""
         $0.textColor = .darkGray00
         $0.font = .p5
         $0.sizeToFit()
@@ -39,7 +39,7 @@ final class DeartodayAlertViewController: UIViewController {
         $0.textColor = .gray00
         $0.font = .caption0
         $0.sizeToFit()
-        $0.isHidden = false
+        $0.isHidden = true
     }
     
     private let horizontalView = UIView().then {
@@ -52,7 +52,7 @@ final class DeartodayAlertViewController: UIViewController {
     
     private let denyButton = UIButton().then {
         $0.backgroundColor = .clear
-        $0.setTitle("그만두기", for: .normal)
+        $0.setTitle("", for: .normal)
         $0.setTitleColor(.darkGray00, for: .normal)
         $0.titleLabel?.font = .btn0
         $0.addTarget(self, action: #selector(denyButtonDidTap), for: .touchUpInside)
@@ -60,7 +60,7 @@ final class DeartodayAlertViewController: UIViewController {
     
     private let okButton = UIButton().then {
         $0.backgroundColor = .clear
-        $0.setTitle("계속하기", for: .normal)
+        $0.setTitle("", for: .normal)
         $0.setTitleColor(.blue02, for: .normal)
         $0.titleLabel?.font = .btn0
         $0.addTarget(self, action: #selector(okButtonDidTap), for: .touchUpInside)
@@ -88,6 +88,15 @@ final class DeartodayAlertViewController: UIViewController {
     private func setUI() {
         setHierarchy()
         setConstraint()
+        setAlert()
+    }
+    
+    private func setAlert() {
+        let isExit = (alertType == .exit)
+        titleLabel.text = isExit ? "시간 여행을 그만두시겠어요?" : "로그아웃 하시겠어요?"
+        descriptionLabel.isHidden = !isExit
+        denyButton.setTitle(isExit ? "그만두기" : "취소", for: .normal)
+        okButton.setTitle(isExit ? "계속하기" : "확인", for: .normal)
     }
     
     private func setHierarchy() {
