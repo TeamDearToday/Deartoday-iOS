@@ -53,6 +53,7 @@
 		98D912AE287D558A0088A7F9 /* DeartodayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D912AD287D558A0088A7F9 /* DeartodayModel.swift */; };
 		98D912C1287DAA350088A7F9 /* tape.json in Resources */ = {isa = PBXBuildFile; fileRef = 98D912C0287DAA350088A7F9 /* tape.json */; };
 		98D912C3287DAA4E0088A7F9 /* box.json in Resources */ = {isa = PBXBuildFile; fileRef = 98D912C2287DAA4E0088A7F9 /* box.json */; };
+		98D912C5287DB0130088A7F9 /* Lottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D912C4287DB0130088A7F9 /* Lottie.swift */; };
 		A3EDF83E9CD70073D83CA26D /* Pods_Deartoday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A3CEAB5A8D31B890C8B41E /* Pods_Deartoday.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +109,7 @@
 		98D912AD287D558A0088A7F9 /* DeartodayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeartodayModel.swift; sourceTree = "<group>"; };
 		98D912C0287DAA350088A7F9 /* tape.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tape.json; sourceTree = "<group>"; };
 		98D912C2287DAA4E0088A7F9 /* box.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = box.json; sourceTree = "<group>"; };
+		98D912C4287DB0130088A7F9 /* Lottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lottie.swift; sourceTree = "<group>"; };
 		A1A07BC470FAC0358D40F43A /* Pods-Deartoday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deartoday.release.xcconfig"; path = "Target Support Files/Pods-Deartoday/Pods-Deartoday.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -255,6 +257,7 @@
 			children = (
 				92DB35712875661A001E2006 /* Constant.swift */,
 				98BFBCBD2879544A00F01F04 /* Image.swift */,
+				98D912C4287DB0130088A7F9 /* Lottie.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				98D912AE287D558A0088A7F9 /* DeartodayModel.swift in Sources */,
 				923061D6287754FA00F04EDA /* TimeTravelView.swift in Sources */,
 				92DB35352875633D001E2006 /* MainViewController.swift in Sources */,
+				98D912C5287DB0130088A7F9 /* Lottie.swift in Sources */,
 				92DB3562287564F3001E2006 /* MainView.swift in Sources */,
 				92DB358628756B76001E2006 /* TempDataModel.swift in Sources */,
 				92DB3570287565E4001E2006 /* UILabel+.swift in Sources */,
