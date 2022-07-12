@@ -10,17 +10,14 @@ import UIKit
 import SnapKit
 import Then
 
-class OnboardingViewController: UIViewController {
-    
-    // MARK: - Property
+final class OnboardingViewController: UIViewController {
     
     // MARK: - UI Property
     
-    @IBOutlet var firstLabelCollection: [UILabel]!
-    @IBOutlet weak var secondLabel: UILabel!
+    @IBOutlet var labelCollection: [UILabel]!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var boxButton: UIButton!
-    @IBOutlet weak var circleButtonImage: UIImageView!
+    @IBOutlet weak var circleImageView: UIImageView!
     @IBOutlet weak var labelBottomConstraint: NSLayoutConstraint!
     
     // MARK: - Life Cycle
@@ -28,8 +25,7 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setLayout()
-        setFirstLabelUI()
-        setSecondLabelUI()
+        setUI()
         setFirstAnimation()
         imageGestrue()
     }
@@ -43,9 +39,9 @@ class OnboardingViewController: UIViewController {
     // MARK: - Custom Method
     
     @IBAction func nextButtonDidTap(_ sender: UIButton) {
-        hideComponents(isFirst: true)
+        hideComponents()
         setSecondAnimation()
-        isEnableButtons()
+        showComponents()
     }
     
     @IBAction func boxButtonDidTap(_ sender: UIButton) {
@@ -53,12 +49,12 @@ class OnboardingViewController: UIViewController {
     }
     
     private func imageGestrue() {
-        let imageGesture = UITapGestureRecognizer(target: self, action: #selector(circleButtonDidTap))
-        circleButtonImage.addGestureRecognizer(imageGesture)
+        let addCircleImageGesture = UITapGestureRecognizer(target: self, action: #selector(circleButtonDidTap))
+        circleImageView.addGestureRecognizer(addCircleImageGesture)
     }
     
-    private func setFirstLabelUI() {
-        firstLabelCollection.forEach {
+    private func setUI() {
+        labelCollection.forEach {
             $0.textColor = .white
             $0.font = .p1
             $0.font = .systemFont(ofSize: 13)
@@ -66,55 +62,43 @@ class OnboardingViewController: UIViewController {
         }
     }
     
-    private func setSecondLabelUI() {
-        secondLabel.textColor = .white
-        secondLabel.font = .p1
-        secondLabel.font = .systemFont(ofSize: 13)
-        secondLabel.textAlignment = .center
-    }
-    
-    private func hideComponents(isFirst: Bool) {
-        if isFirst {
-            firstLabelCollection.forEach {
+    private func hideComponents() {
+            labelCollection.forEach {
                 $0.isHidden = true
             }
             nextButton.isHidden = true
-        }
-        else {
-            secondLabel.isHidden = true
-        }
+    }
+    
+    private func showComponents() {
+        labelCollection[2].isHidden = false
+        circleImageView.isHidden = false
+        boxButton.isEnabled = true
     }
     
     private func setFirstAnimation() {
         UIView.animate(withDuration: 0.5, delay: 0.5, animations: {
-            self.firstLabelCollection[0].transform = CGAffineTransform(translationX: 0, y: -16)
-            self.firstLabelCollection[0].alpha = 1
+            self.labelCollection[0].transform = CGAffineTransform(translationX: 0, y: -16)
+            self.labelCollection[0].alpha = 1
         }, completion: { _ in
                        UIView.animate(withDuration: 0.5, delay: 0.5, animations: {
-            self.firstLabelCollection[1].transform = CGAffineTransform(translationX: 0, y: -16)
-            self.firstLabelCollection[1].alpha = 1
+            self.labelCollection[1].transform = CGAffineTransform(translationX: 0, y: -16)
+            self.labelCollection[1].alpha = 1
                        }, completion: { _ in
                            UIView.animate(withDuration: 0.3, delay: 0.3, animations: {
                                self.nextButton.alpha = 1
-                           }, completion: { _ in })
+                           }, completion: nil )
                        })
     })
     }
     
     private func setSecondAnimation() {
         UIView.animate(withDuration: 0.5, animations: {
-            self.secondLabel.transform = CGAffineTransform(translationX: 0, y: -16)
-            self.secondLabel.alpha = 1
-        }, completion: { _ in })
+            self.labelCollection[2].transform = CGAffineTransform(translationX: 0, y: -16)
+            self.labelCollection[2].alpha = 1
+        }, completion: nil )
     }
     
     private func setLayout() {
-        let isSe2 = getDeviceHeight() == 667
-        labelBottomConstraint.constant = isSe2 ? 45 : 69
-    }
-    
-    private func isEnableButtons() {
-        circleButtonImage.isHidden = false
-        boxButton.isEnabled = true
+        labelBottomConstraint.constant = (getDeviceHeight() == 667) ? 45 : 69
     }
 }
