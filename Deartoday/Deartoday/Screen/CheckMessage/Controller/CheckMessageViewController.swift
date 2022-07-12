@@ -13,6 +13,9 @@ final class CheckMessageViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var emptyDescriptionLabel: UILabel!
+    @IBOutlet weak var emptyTitleLabel: UILabel!
+    @IBOutlet weak var rewindImageView: UIImageView!
     
     // MARK: - Life Cycle
     
@@ -21,16 +24,18 @@ final class CheckMessageViewController: UIViewController {
         setUI()
     }
     
-    // MARK: - @objc
-    
-    
     // MARK: - Custom Method
     
     private func setUI() {
-        setLabelUI()
+        setHeaderViewUI()
+        setEmptyViewUI()
     }
-    
-    private func setLabelUI() {
+}
+
+// MARK: - Component UI Setting functions
+
+extension CheckMessageViewController {
+    private func setHeaderViewUI() {
         titleLabel.font = .h1
         titleLabel.textColor = .darkGray01
         titleLabel.setPartialLabelColor(targetStringList: ["메시지"], color: .blue02)
@@ -38,5 +43,11 @@ final class CheckMessageViewController: UIViewController {
         descriptionLabel.textColor = .gray00
     }
     
-    // MARK: - IBAction
+    private func setEmptyViewUI() {
+        emptyDescriptionLabel.font = .caption2
+        emptyDescriptionLabel.textColor = .gray01
+        emptyTitleLabel.font = .btn0
+        emptyTitleLabel.textColor = .blue02
+        rewindImageView.tintColor = .blue02
+    }
 }
