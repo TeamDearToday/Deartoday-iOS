@@ -19,12 +19,13 @@ class OnboardingViewController: UIViewController {
     @IBOutlet var firstLabelCollection: [UILabel]!
     @IBOutlet weak var secondLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
-
+    @IBOutlet weak var labelBottomConstraint: NSLayoutConstraint!
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setLayout()
         setFirstLabelUI()
         setSecondLabelUI()
         setFirstAlpha()
@@ -89,5 +90,10 @@ class OnboardingViewController: UIViewController {
             self.secondLabel.transform = CGAffineTransform(translationX: 0, y: -16)
             self.secondLabel.alpha = 1
         }, completion: { _ in })
+    }
+    
+    private func setLayout() {
+        let isSe2 = getDeviceHeight() == 667
+        labelBottomConstraint.constant = isSe2 ? 45 : 69
     }
 }
