@@ -7,23 +7,36 @@
 
 import UIKit
 
-class CheckMessageViewController: UIViewController {
-
+final class CheckMessageViewController: UIViewController {
+    
+    // MARK: - UI Property
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - @objc
+    
+    
+    // MARK: - Custom Method
+    
+    private func setUI() {
+        setLabelUI()
     }
-    */
-
+    
+    private func setLabelUI() {
+        titleLabel.font = .h1
+        titleLabel.textColor = .darkGray01
+        titleLabel.setPartialLabelColor(targetStringList: ["메시지"], color: .blue02)
+        descriptionLabel.font = .caption2
+        descriptionLabel.textColor = .gray00
+    }
+    
+    // MARK: - IBAction
 }
