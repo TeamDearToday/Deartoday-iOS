@@ -17,6 +17,7 @@ class OnboardingViewController: UIViewController {
     @IBOutlet var firstLabelCollection: [UILabel]!
     @IBOutlet weak var secondLabel: UILabel!
     
+
     private var nextButton = DDSButton().then {
         $0.style = .present
         $0.text = "다음"
@@ -29,7 +30,9 @@ class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         setLayout()
         setFirstLabelUI()
+        setSecondLabelUI()
         setFirstAlpha()
+        setSecondAlpha()
         setFirstAnimation()
     }
     
@@ -37,12 +40,22 @@ class OnboardingViewController: UIViewController {
     
     @objc func nextButtonDidTap() {
         setFirstAlpha()
+        setSecondAnimation()
     }
     
     // MARK: - Custom Method
     
     private func setFirstLabelUI() {
         firstLabelCollection.forEach {
+            $0.textColor = .white
+            $0.font = .p1
+            $0.font = .systemFont(ofSize: 13)
+            $0.textAlignment = .center
+        }
+    }
+    
+    private func setSecondLabelUI() {
+        secondLabel.then {
             $0.textColor = .white
             $0.font = .p1
             $0.font = .systemFont(ofSize: 13)
@@ -68,6 +81,10 @@ class OnboardingViewController: UIViewController {
         nextButton.alpha = 0
     }
     
+    private func setSecondAlpha() {
+        secondLabel.alpha = 0
+    }
+    
     private func setFirstAnimation() {
         UIView.animate(withDuration: 0.5, delay: 0.5, animations: {
             self.firstLabelCollection[0].transform = CGAffineTransform(translationX: 0, y: -16)
@@ -82,5 +99,12 @@ class OnboardingViewController: UIViewController {
                            }, completion: { _ in })
                        })
     })
+    }
+    
+    private func setSecondAnimation() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.secondLabel.transform = CGAffineTransform(translationX: 0, y: -16)
+            self.secondLabel.alpha = 1
+        }, completion: { _ in })
     }
 }

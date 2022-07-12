@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Onboarding View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="OnboardingViewController" customModule="Deartoday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1Withg" translatesAutoresizingMaskIntoConstraints="NO" id="32K-94-dsE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="오늘도 지친 몸을 끌고 집으로 돌아온 당신," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZK-HK-Qtx">
+                                <rect key="frame" x="77" y="665" width="259" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="방 안에 정체 불명의 상자 하나가 놓여 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peP-cm-NGj">
+                                <rect key="frame" x="64" y="698" width="286" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상자를 터치해서 안을 확인해 보세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpD-nQ-Nlt">
+                                <rect key="frame" x="93" y="798" width="226" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="32K-94-dsE" secondAttribute="bottom" id="0Ok-bf-V7o"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0ZK-HK-Qtx" secondAttribute="trailing" constant="78" id="Ff6-C7-n7b"/>
+                            <constraint firstAttribute="bottom" secondItem="ZpD-nQ-Nlt" secondAttribute="bottom" constant="77" id="FsP-nD-IxH"/>
+                            <constraint firstItem="ZpD-nQ-Nlt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="93" id="GIY-NS-qzw"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="32K-94-dsE" secondAttribute="trailing" id="Hk3-aC-fau"/>
+                            <constraint firstItem="0ZK-HK-Qtx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="77" id="HqQ-HA-pUt"/>
+                            <constraint firstItem="32K-94-dsE" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Vn4-aG-E1w"/>
+                            <constraint firstItem="peP-cm-NGj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="64" id="coZ-V1-YjZ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="peP-cm-NGj" secondAttribute="trailing" constant="64" id="pCa-CZ-eTs"/>
+                            <constraint firstItem="peP-cm-NGj" firstAttribute="top" secondItem="0ZK-HK-Qtx" secondAttribute="bottom" constant="12" id="pTL-Mg-PzN"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZpD-nQ-Nlt" secondAttribute="trailing" constant="95" id="vDu-eS-6mb"/>
+                            <constraint firstItem="32K-94-dsE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ya9-Ji-oGJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="secondLabel" destination="ZpD-nQ-Nlt" id="b0m-Zn-Ie0"/>
+                        <outletCollection property="firstLabelCollection" destination="0ZK-HK-Qtx" collectionClass="NSMutableArray" id="94K-mH-cDV"/>
+                        <outletCollection property="firstLabelCollection" destination="peP-cm-NGj" collectionClass="NSMutableArray" id="aqu-Fa-87C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="30" y="61"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="image1Withg" width="375" height="812"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
