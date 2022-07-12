@@ -76,11 +76,9 @@ final class DeartodayAlertViewController: UIViewController {
     // MARK: - @objc
     
     @objc private func denyButtonDidTap() {
-        print("print deny")
     }
     
     @objc private func okButtonDidTap() {
-        print("print ok")
     }
     
     // MARK: - Custom Method
