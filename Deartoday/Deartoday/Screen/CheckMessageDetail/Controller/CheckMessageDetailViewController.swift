@@ -28,6 +28,7 @@ final class CheckMessageDetailViewController: UIViewController {
     private func setUI() {
         setMessageViewUI()
         setLabelUI()
+        setMessageViewDynamicHeight()
     }
     
     private func setMessageViewUI() {
@@ -37,6 +38,11 @@ final class CheckMessageDetailViewController: UIViewController {
     private func setLabelUI() {
         contentLabel.font = .p6
         writerLabel.font = .p6
+    }
+    
+    private func setMessageViewDynamicHeight() {
+        messageViewHeightConstraint.constant = (contentLabel.frame.height < 145)
+        ? 200 : contentLabel.layer.frame.height + 80
     }
     
     // MARK: - IBAction
