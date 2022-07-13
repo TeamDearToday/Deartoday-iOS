@@ -228,7 +228,7 @@ final class TimeTravelViewController: UIViewController {
     // MARK: - @objc
     
     @objc func exitButtonDidTap() {
-        print("🚨 Alert")
+        dismiss(animated: true)
     }
     
     @objc func returnButtonDidTap() {
