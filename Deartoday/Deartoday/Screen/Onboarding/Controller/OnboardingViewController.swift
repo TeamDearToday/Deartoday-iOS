@@ -34,7 +34,10 @@ final class OnboardingViewController: UIViewController {
     // MARK: - @objc
     
     @objc func circleButtonDidTap() {
-        print("로티")
+        guard let openBoxOnboarding = self.storyboard?.instantiateViewController(withIdentifier: Constant.ViewController.OpenBoxOnboarding) else { return }
+        openBoxOnboarding.modalPresentationStyle = .fullScreen
+        openBoxOnboarding.modalTransitionStyle = .crossDissolve
+        self.present(openBoxOnboarding, animated: true)
     }
     
     // MARK: - Custom Method
@@ -106,9 +109,5 @@ final class OnboardingViewController: UIViewController {
         hideComponents()
         setSecondAnimation()
         showComponents()
-    }
-    
-    @IBAction func boxButtonDidTap(_ sender: UIButton) {
-        print("로티")
     }
 }
