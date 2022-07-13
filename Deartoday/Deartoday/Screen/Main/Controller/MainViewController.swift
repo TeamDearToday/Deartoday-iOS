@@ -63,6 +63,10 @@ final class MainViewController: UIViewController {
     // MARK: - IBAction
     
     @IBAction func timeTravelButtonDidTap(_ sender: Any) {
+        let timeTravel = TimeTravelViewController()
+        timeTravel.modalTransitionStyle = .crossDissolve
+        timeTravel.modalPresentationStyle = .overFullScreen
+        present(timeTravel, animated: true)
     }
     
     @IBAction func checkMessageButtonDidTap(_ sender: Any) {
