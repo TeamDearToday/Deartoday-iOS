@@ -9,6 +9,8 @@ import UIKit
 
 final class TimeTapeTableViewCell: UITableViewCell {
     
+    static let identifier = "TimeTapeTableViewCell"
+    
     // MARK: - UI Property
     
     @IBOutlet weak var pastImageView: UIImageView!
@@ -16,7 +18,8 @@ final class TimeTapeTableViewCell: UITableViewCell {
     @IBOutlet weak var travelToLabel: UILabel!
     @IBOutlet weak var travelFromLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    
+    @IBOutlet weak var separatorView: UIView!
+    @IBOutlet var imageViewConstraintCollection: [NSLayoutConstraint]!
     
     // MARK: - Life Cycle
 
@@ -33,7 +36,8 @@ final class TimeTapeTableViewCell: UITableViewCell {
     
     private func setUI() {
         setLabelUI()
-        setImageViewUI()
+        setViewUI()
+        setLayout()
     }
     
     private func setLabelUI() {
@@ -45,9 +49,16 @@ final class TimeTapeTableViewCell: UITableViewCell {
         titleLabel.textColor = .gray00
     }
     
-    private func setImageViewUI() {
+    private func setViewUI() {
         rewindImageView.tintColor = .gray01
         pastImageView.layer.cornerRadius = 8
+        separatorView.backgroundColor = .lightBlue01
+    }
+    
+    private func setLayout() {
+        imageViewConstraintCollection.forEach {
+            $0.constant = $0.constant * ( UIScreen.main.bounds.width / 375 )
+        }
     }
     
     func setData(index: Int) {
