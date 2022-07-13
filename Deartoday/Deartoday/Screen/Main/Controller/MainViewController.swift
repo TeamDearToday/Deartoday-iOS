@@ -72,6 +72,8 @@ final class MainViewController: UIViewController {
     }
     
     @IBAction func checkTimeTravelButtonDidTap(_ sender: Any) {
+        guard let checkTimeTravelViewController = UIStoryboard(name: Constant.Storyboard.CheckTimeTravel, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.CheckTimeTravel) as? CheckTimeTravelViewController else { return }
+        navigationController?.pushViewController(checkTimeTravelViewController, animated: true)
     }
     
     @IBAction func settingButtonDidTap(_ sender: Any) {
