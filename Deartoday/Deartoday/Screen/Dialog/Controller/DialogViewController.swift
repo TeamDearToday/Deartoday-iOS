@@ -17,6 +17,17 @@ final class DialogViewController: UIViewController {
     internal var year: String = "0000" {
         didSet {
             yearLabel.text = "\(year)"
+            guideLabel.text = """
+                              지금의 당신을 발견한 \(year)년도의 당신,
+                              반갑게 손을 흔들며 당신을 맞이하네요.
+                              한 번 인사를 건네보세요!
+                              """
+            dialogMessageView.dialogText = """
+                                           안녕! 나는 \(year)년도의 너야.
+                                           만나서 정말 반가워!
+                                           너에게 몇 가지 궁금한 게 있는데
+                                           괜찮다면 너와 잠깐 얘기하고 싶어.
+                                           """
         }
     }
     
@@ -40,6 +51,17 @@ final class DialogViewController: UIViewController {
         }
     }
     
+    internal var photoImage: UIImage? = nil {
+        didSet {
+            photoImageView.image = photoImage
+        }
+    }
+    
+    private var questions = [String]()
+    private var answers = [String]()
+    
+    private var count: Int = 0
+    
     // MARK: - UI Property
     
     private var backgroundImageView = UIImageView().then {
@@ -52,27 +74,21 @@ final class DialogViewController: UIViewController {
         $0.image = Constant.Image.bgYearYellow
     }
     
-    private var yearLabel = UILabel().then {
-        $0.text = "0000"
-    }
+    private var yearLabel = UILabel()
     
     private var monthBackView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
         $0.image = Constant.Image.bgMonthYellow
     }
     
-    private var monthLabel = UILabel().then {
-        $0.text = "00"
-    }
+    private var monthLabel = UILabel()
     
     private var dayBackView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
         $0.image = Constant.Image.bgMonthYellow
     }
     
-    private var dayLabel = UILabel().then {
-        $0.text = "00"
-    }
+    private var dayLabel = UILabel()
     
     private var exitButton = UIButton().then {
         $0.setTitle("", for: .normal)
@@ -86,6 +102,12 @@ final class DialogViewController: UIViewController {
         $0.font = .p3
         $0.textAlignment = .center
         $0.numberOfLines = 0
+        $0.alpha = 0
+    }
+    
+    private var dialogMessageView = DialogMessageView().then {
+        $0.alpha = 0
+        $0.backgroundColor = .gray
     }
     
     private lazy var nextButton = DDSButton().then {
@@ -93,10 +115,39 @@ final class DialogViewController: UIViewController {
         $0.hasLeftIcon = false
         $0.style = .present
         $0.addTarget(self, action: #selector(nextButtonDidTap), for: .touchUpInside)
+        $0.alpha = 0
+    }
+    
+    private var photoImageView = UIImageView().then {
+        $0.contentMode = .scaleAspectFit
+        $0.backgroundColor = .gray
+        $0.alpha = 0
+        $0.makeRound(radius: 21)
+    }
+    
+    private lazy var answerTextView = UITextView().then {
+        $0.text = "답장을 입력해주세요."
+        $0.font = .Pretendard(.medium, size: 14)
+        $0.isHidden = true
+        $0.backgroundColor = .clear
+        $0.isScrollEnabled = false
+    }
+    
+    private var underLineView = UIView().then {
+        $0.backgroundColor = .blue02
+        $0.isHidden = true
+    }
+    
+    private lazy var sendButton = UIButton().then {
+        $0.setTitle("보내기", for: .normal)
+        $0.setTitleColor(.blue02, for: .normal)
+        $0.setTitleColor(.blue02, for: .highlighted)
+        $0.isHidden = true
+        $0.addTarget(self, action: #selector(sendButtonDidTap), for: .touchUpInside)
     }
     
     // MARK: - Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -109,8 +160,75 @@ final class DialogViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    @objc func nextButtonDidTap() {
-        guideText = "당신에게 궁금한게 많은지 이것저것 질문을 합니다."
+    @objc func nextButtonDidTap(_ sender: DDSButton) {
+        if sender.text == "안녕!" {
+            UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
+                self.guideLabel.alpha = 0
+                self.nextButton.alpha = 0
+            } completion: { _ in
+                UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
+                    self.guideLabel.transform = CGAffineTransform(translationX: 0, y: -16)
+                    self.guideLabel.alpha = 1
+                    self.guideText = "당신에게 궁금한게 많은지 이것저것 질문을 합니다."
+                } completion: { _ in
+                    UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
+                        self.dialogMessageView.alpha = 1
+                    } completion: { _ in
+                        self.guideText = ""
+                        self.nextButton.text = "응, 좋아!"
+                        
+                        UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
+                            self.nextButton.alpha = 1
+                        }
+                    }
+                }
+            }
+        } else {
+            UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
+                self.dialogMessageView.alpha = 0
+                self.nextButton.alpha = 0
+            } completion: { _ in
+                self.dialogMessageView.dialogText = """
+                                                    고마워!
+                                                    아하, 너는 이때로 가장 돌아가고 싶었구나.
+                                                    """
+                
+                self.dialogMessageView.snp.updateConstraints {
+                    $0.top.equalTo(self.view.safeAreaLayoutGuide).inset(290)
+                    $0.width.equalTo(343)
+                    $0.height.equalTo(68)
+                }
+                
+                UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
+                    self.photoImageView.alpha = 1
+                    self.dialogMessageView.alpha = 1
+                } completion: { _ in
+                    UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
+                        self.dialogMessageView.alpha = 0
+                    } completion: { _ in
+                        self.setDialogAnimation()
+                    }
+                }
+            }
+        }
+    }
+    
+    @objc func sendButtonDidTap() {
+        UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
+            self.dialogMessageView.alpha = 0
+        } completion: { _ in
+            self.dialogMessageView.dialogType = .present
+            
+            if let text = self.answerTextView.text {
+                self.dialogMessageView.dialogText = text
+            }
+            
+            UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
+                self.dialogMessageView.alpha = 1
+            }
+        }
+        
+        count += 1
     }
     
     // MARK: - Custom Method
@@ -118,16 +236,11 @@ final class DialogViewController: UIViewController {
     private func setUI() {
         view.backgroundColor = .gray
         
-        guideText = """
-                    지금의 당신을 발견한 2016년도의 당신,
-                    반갑게 손을 흔들며 당신을 맞이하네요.
-                    한 번 인사를 건네보세요!
-                    """
-        
-        [yearLabel, monthLabel, dayLabel].forEach {
-            $0.textColor = .gray00
-            $0.font = .h0
+        setDateLabel()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.setLabelAnimation()
         }
+        setTextView()
     }
     
     private func setLayout() {
@@ -137,7 +250,12 @@ final class DialogViewController: UIViewController {
                           dayBackView,
                           exitButton,
                           guideLabel,
-                          nextButton])
+                          nextButton,
+                          dialogMessageView,
+                          photoImageView,
+                          sendButton,
+                          underLineView,
+                          answerTextView])
         
         yearBackView.addSubview(yearLabel)
         monthBackView.addSubview(monthLabel)
@@ -189,6 +307,106 @@ final class DialogViewController: UIViewController {
             $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(150)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(240)
+        }
+        
+        dialogMessageView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(228)
+            $0.width.equalTo(343)
+            $0.height.equalTo(110)
+        }
+        
+        photoImageView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(83)
+            $0.width.equalTo(343)
+            $0.height.equalTo(191)
+            $0.centerX.equalToSuperview()
+        }
+        
+        underLineView.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.bottom.equalTo(view.keyboardLayoutGuide.snp.top).inset(-26)
+            $0.height.equalTo(1)
+        }
+        
+        sendButton.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(20)
+            $0.bottom.equalTo(underLineView.snp.top).offset(-9)
+            $0.height.equalTo(27)
+        }
+        
+        answerTextView.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(16)
+            $0.trailing.equalToSuperview().inset(75)
+            $0.bottom.equalTo(underLineView.snp.top).offset(-13)
+            $0.height.equalTo(21)
+        }
+    }
+    
+    private func setDateLabel() {
+        [yearLabel, monthLabel, dayLabel].forEach {
+            $0.textColor = .gray00
+            $0.font = .h0
+        }
+    }
+    
+    private func setLabelAnimation() {
+        UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
+            self.guideLabel.transform = CGAffineTransform(translationX: 0, y: -16)
+            self.guideLabel.alpha = 1
+        } completion: { _ in
+            self.nextButton.alpha = 0
+            
+            UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
+                self.nextButton.alpha = 1
+            }
+        }
+    }
+    
+    private func setDialogAnimation() {
+        [answerTextView, underLineView, sendButton].forEach {
+            $0.isHidden = false
+        }
+        
+        dialogMessageView.dialogText = "이때가 어떤 순간이었는지 설명해 줄 수 있을까?"
+        
+        UIView.animate(withDuration: 0.5, delay: 1.0, options: .curveEaseOut) {
+            self.dialogMessageView.alpha = 1
+            self.answerTextView.becomeFirstResponder()
+        }
+    }
+    
+    private func setTextView() {
+        answerTextView.delegate = self
+    }
+}
+
+// MARK: - UITextView Delegate
+
+extension DialogViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        answerTextView.text = answerTextView.hasText ? "" : "답장을 입력해주세요."
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        let size = CGSize(width: view.frame.width, height: .infinity)
+        let estimatedSize = textView.sizeThatFits(size)
+        
+        if estimatedSize.height >= 50 {
+            textView.isScrollEnabled = true
+            
+            textView.constraints.forEach { (constraint) in
+                if constraint.firstAttribute == .height {
+                    constraint.constant = 50
+                }
+            }
+        } else {
+            textView.isScrollEnabled = false
+            
+            textView.constraints.forEach { (constraint) in
+                if constraint.firstAttribute == .height {
+                    constraint.constant = estimatedSize.height
+                }
+            }
         }
     }
 }

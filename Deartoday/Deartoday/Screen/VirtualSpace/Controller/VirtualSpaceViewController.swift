@@ -104,6 +104,7 @@ final class VirtualSpaceViewController: UIViewController {
         $0.text = "과거의 나 만나러 가기"
         $0.hasLeftIcon = false
         $0.addTarget(self, action: #selector(nextButtonDidTap), for: .touchUpInside)
+        $0.alpha = 0
     }
     
     // MARK: - Life Cycle
@@ -117,6 +118,10 @@ final class VirtualSpaceViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             UIView.animate(withDuration: 0.6, delay: 0.3, options: .curveEaseOut) {
                 self.mediaCollectionView.alpha = 1
+            } completion: { _ in
+                UIView.animate(withDuration: 0.6, delay: 0.3, options: .curveEaseOut) {
+                    self.nextButton.alpha = 1
+                }
             }
         }
     }
@@ -131,6 +136,16 @@ final class VirtualSpaceViewController: UIViewController {
         UIView.animate(withDuration: 0.6, delay: 0.3, options: .curveEaseOut) {
             self.mediaCollectionView.alpha = 0
             self.nextButton.alpha = 0
+        } completion: { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                let dialogViewController = DialogViewController()
+                dialogViewController.modalPresentationStyle = .fullScreen
+                dialogViewController.modalTransitionStyle = .crossDissolve
+                dialogViewController.year = self.year
+                dialogViewController.month = self.month
+                dialogViewController.day = self.day
+                self.present(dialogViewController, animated: true)
+            }
         }
     }
     
