@@ -66,14 +66,14 @@ final class MainViewController: UIViewController {
     }
     
     @IBAction func checkMessageButtonDidTap(_ sender: Any) {
-        guard let checkMessageViewController = UIStoryboard(name: Constant.Storyboard.CheckMessage, bundle: nil)
+        guard let checkMessage = UIStoryboard(name: Constant.Storyboard.CheckMessage, bundle: nil)
             .instantiateViewController(withIdentifier: Constant.ViewController.CheckMessage) as? CheckMessageViewController else { return }
-        navigationController?.pushViewController(checkMessageViewController, animated: true)
+        navigationController?.pushViewController(checkMessage, animated: true)
     }
     
     @IBAction func checkTimeTravelButtonDidTap(_ sender: Any) {
-        guard let checkTimeTravelViewController = UIStoryboard(name: Constant.Storyboard.CheckTimeTravel, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.CheckTimeTravel) as? CheckTimeTravelViewController else { return }
-        navigationController?.pushViewController(checkTimeTravelViewController, animated: true)
+        guard let checkTimeTravel = UIStoryboard(name: Constant.Storyboard.CheckTimeTravel, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.CheckTimeTravel) as? CheckTimeTravelViewController else { return }
+        navigationController?.pushViewController(checkTimeTravel, animated: true)
     }
     
     @IBAction func settingButtonDidTap(_ sender: Any) {
