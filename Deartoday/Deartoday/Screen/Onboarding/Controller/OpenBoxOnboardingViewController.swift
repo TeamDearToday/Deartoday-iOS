@@ -27,11 +27,10 @@ class OpenBoxOnboardingViewController: UIViewController {
     private func setLayout() {
         labelBottomConstraint.constant = (getDeviceHeight() == 667) ? 20 : 44
     }
-    
+
     // MARK: - Component UI Setting functions
     
     private func setUI() {
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.setComponentsAnimation()
         }
@@ -72,3 +71,5 @@ class OpenBoxOnboardingViewController: UIViewController {
         })
     }
 }
+
+
