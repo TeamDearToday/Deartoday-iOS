@@ -128,7 +128,10 @@ final class VirtualSpaceViewController: UIViewController {
     }
     
     @objc func nextButtonDidTap() {
-        
+        UIView.animate(withDuration: 0.6, delay: 0.3, options: .curveEaseOut) {
+            self.mediaCollectionView.alpha = 0
+            self.nextButton.alpha = 0
+        }
     }
     
     // MARK: - Custom Method
