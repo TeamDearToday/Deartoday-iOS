@@ -31,6 +31,17 @@ extension UILabel {
             self.attributedText = attributeString
         }
     }
+    
+    ///Label의 일부만 색을 바꿀 수 있는 익스텐션
+    func setPartialLabelColor(targetStringList: [String], color: UIColor?) {
+        let fullText = text ?? ""
+        let attributedString = NSMutableAttributedString(string: fullText)
+        targetStringList.forEach {
+            let range = (fullText as NSString).range(of: $0)
+            attributedString.addAttributes([.font: font as Any, .foregroundColor: color as Any], range: range)
+        }
+        attributedText = attributedString
+    }
 }
 
 

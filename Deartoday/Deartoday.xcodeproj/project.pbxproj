@@ -43,6 +43,10 @@
 		92DB358628756B76001E2006 /* TempDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB358528756B76001E2006 /* TempDataModel.swift */; };
 		92DB358828756B7D001E2006 /* TempService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB358728756B7D001E2006 /* TempService.swift */; };
 		92DB358A28756B8E001E2006 /* TempAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB358928756B8E001E2006 /* TempAPI.swift */; };
+		98A4750A287DECCF008891F5 /* CheckTimeTravel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A47509287DECCF008891F5 /* CheckTimeTravel.storyboard */; };
+		98A4750F287DECF7008891F5 /* CheckTImeTravelDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A4750E287DECF7008891F5 /* CheckTImeTravelDataModel.swift */; };
+		98A47511287DED02008891F5 /* CheckTimeTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A47510287DED02008891F5 /* CheckTimeTravelView.swift */; };
+		98A47513287DED14008891F5 /* CheckTimeTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A47512287DED14008891F5 /* CheckTimeTravelViewController.swift */; };
 		98BFBCBE2879544A00F01F04 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BFBCBD2879544A00F01F04 /* Image.swift */; };
 		98BFBCC12879B66A00F01F04 /* GmarketSansBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 98BFBCBF2879B66A00F01F04 /* GmarketSansBold.otf */; };
 		98BFBCC22879B66A00F01F04 /* GmarketSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 98BFBCC02879B66A00F01F04 /* GmarketSansMedium.otf */; };
@@ -58,6 +62,10 @@
 		98D912C1287DAA350088A7F9 /* tape.json in Resources */ = {isa = PBXBuildFile; fileRef = 98D912C0287DAA350088A7F9 /* tape.json */; };
 		98D912C3287DAA4E0088A7F9 /* box.json in Resources */ = {isa = PBXBuildFile; fileRef = 98D912C2287DAA4E0088A7F9 /* box.json */; };
 		98D912C5287DB0130088A7F9 /* Lottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D912C4287DB0130088A7F9 /* Lottie.swift */; };
+		98D912C8287DC30F0088A7F9 /* CheckMessage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98D912C7287DC30F0088A7F9 /* CheckMessage.storyboard */; };
+		98D912CE287DC3430088A7F9 /* CheckMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D912CD287DC3430088A7F9 /* CheckMessageViewController.swift */; };
+		98D912D0287DC34F0088A7F9 /* CheckMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D912CF287DC34F0088A7F9 /* CheckMessageView.swift */; };
+		98D912D2287DC3590088A7F9 /* CheckMessageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D912D1287DC3590088A7F9 /* CheckMessageDataModel.swift */; };
 		A3EDF83E9CD70073D83CA26D /* Pods_Deartoday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A3CEAB5A8D31B890C8B41E /* Pods_Deartoday.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +111,10 @@
 		92DB358728756B7D001E2006 /* TempService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempService.swift; sourceTree = "<group>"; };
 		92DB358928756B8E001E2006 /* TempAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempAPI.swift; sourceTree = "<group>"; };
 		92DB358B28756F3F001E2006 /* Deartoday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Deartoday.entitlements; sourceTree = "<group>"; };
+		98A47509287DECCF008891F5 /* CheckTimeTravel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckTimeTravel.storyboard; sourceTree = "<group>"; };
+		98A4750E287DECF7008891F5 /* CheckTImeTravelDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTImeTravelDataModel.swift; sourceTree = "<group>"; };
+		98A47510287DED02008891F5 /* CheckTimeTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelView.swift; sourceTree = "<group>"; };
+		98A47512287DED14008891F5 /* CheckTimeTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelViewController.swift; sourceTree = "<group>"; };
 		98BFBCBD2879544A00F01F04 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		98BFBCBF2879B66A00F01F04 /* GmarketSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansBold.otf; sourceTree = "<group>"; };
 		98BFBCC02879B66A00F01F04 /* GmarketSansMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansMedium.otf; sourceTree = "<group>"; };
@@ -118,6 +130,10 @@
 		98D912C0287DAA350088A7F9 /* tape.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tape.json; sourceTree = "<group>"; };
 		98D912C2287DAA4E0088A7F9 /* box.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = box.json; sourceTree = "<group>"; };
 		98D912C4287DB0130088A7F9 /* Lottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lottie.swift; sourceTree = "<group>"; };
+		98D912C7287DC30F0088A7F9 /* CheckMessage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckMessage.storyboard; sourceTree = "<group>"; };
+		98D912CD287DC3430088A7F9 /* CheckMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessageViewController.swift; sourceTree = "<group>"; };
+		98D912CF287DC34F0088A7F9 /* CheckMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessageView.swift; sourceTree = "<group>"; };
+		98D912D1287DC3590088A7F9 /* CheckMessageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessageDataModel.swift; sourceTree = "<group>"; };
 		A1A07BC470FAC0358D40F43A /* Pods-Deartoday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deartoday.release.xcconfig"; path = "Target Support Files/Pods-Deartoday/Pods-Deartoday.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -274,6 +290,8 @@
 		92DB3546287563C0001E2006 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				98A47508287DECB6008891F5 /* CheckTimeTravel */,
+				98D912C6287DC2FF0088A7F9 /* CheckMessage */,
 				98F105ED287C9D5400F98743 /* DeartodayAlert */,
 				92CC3B9D287D61EF00EA5617 /* VirtualSpace */,
 				923061CF287754BB00F04EDA /* TimeTravel */,
@@ -474,6 +492,41 @@
 			path = Asset;
 			sourceTree = "<group>";
 		};
+		98A47508287DECB6008891F5 /* CheckTimeTravel */ = {
+			isa = PBXGroup;
+			children = (
+				98A47509287DECCF008891F5 /* CheckTimeTravel.storyboard */,
+				98A4750D287DECE2008891F5 /* Model */,
+				98A4750C287DECDF008891F5 /* View */,
+				98A4750B287DECD9008891F5 /* Controller */,
+			);
+			path = CheckTimeTravel;
+			sourceTree = "<group>";
+		};
+		98A4750B287DECD9008891F5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				98A47512287DED14008891F5 /* CheckTimeTravelViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		98A4750C287DECDF008891F5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				98A47510287DED02008891F5 /* CheckTimeTravelView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		98A4750D287DECE2008891F5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				98A4750E287DECF7008891F5 /* CheckTImeTravelDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		98D912A9287D43530088A7F9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -497,6 +550,41 @@
 				98D912C0287DAA350088A7F9 /* tape.json */,
 			);
 			path = Lottie;
+			sourceTree = "<group>";
+		};
+		98D912C6287DC2FF0088A7F9 /* CheckMessage */ = {
+			isa = PBXGroup;
+			children = (
+				98D912C7287DC30F0088A7F9 /* CheckMessage.storyboard */,
+				98D912CC287DC3370088A7F9 /* Model */,
+				98D912CB287DC3330088A7F9 /* View */,
+				98D912CA287DC32D0088A7F9 /* Controller */,
+			);
+			path = CheckMessage;
+			sourceTree = "<group>";
+		};
+		98D912CA287DC32D0088A7F9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				98D912CD287DC3430088A7F9 /* CheckMessageViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		98D912CB287DC3330088A7F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				98D912CF287DC34F0088A7F9 /* CheckMessageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		98D912CC287DC3370088A7F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				98D912D1287DC3590088A7F9 /* CheckMessageDataModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		98F105ED287C9D5400F98743 /* DeartodayAlert */ = {
@@ -568,7 +656,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98A4750A287DECCF008891F5 /* CheckTimeTravel.storyboard in Resources */,
 				4A706264287C079F00140315 /* Onboarding.storyboard in Resources */,
+				98D912C8287DC30F0088A7F9 /* CheckMessage.storyboard in Resources */,
 				98BFBCC72879B68600F01F04 /* Pretendard-Medium.otf in Resources */,
 				98BFBCC12879B66A00F01F04 /* GmarketSansBold.otf in Resources */,
 				92DB353D2875633F001E2006 /* LaunchScreen.storyboard in Resources */,
@@ -640,6 +730,7 @@
 				92DB35352875633D001E2006 /* MainViewController.swift in Sources */,
 				98D912C5287DB0130088A7F9 /* Lottie.swift in Sources */,
 				92DB3562287564F3001E2006 /* MainView.swift in Sources */,
+				98A47513287DED14008891F5 /* CheckTimeTravelViewController.swift in Sources */,
 				92DB358628756B76001E2006 /* TempDataModel.swift in Sources */,
 				92DB3570287565E4001E2006 /* UILabel+.swift in Sources */,
 				92DB358828756B7D001E2006 /* TempService.swift in Sources */,
@@ -649,6 +740,7 @@
 				92DB35312875633D001E2006 /* AppDelegate.swift in Sources */,
 				92DB35662875652F001E2006 /* OnboardingViewController.swift in Sources */,
 				92DB3560287564ED001E2006 /* MainModel.swift in Sources */,
+				98D912D0287DC34F0088A7F9 /* CheckMessageView.swift in Sources */,
 				92DB35722875661A001E2006 /* Constant.swift in Sources */,
 				92DB358228756B0B001E2006 /* GeneralResponse.swift in Sources */,
 				92DB357E28756AB8001E2006 /* NetworkConstant.swift in Sources */,
@@ -657,19 +749,23 @@
 				92CC3BA6287D633600EA5617 /* VirtualSpaceCollectionViewCell.swift in Sources */,
 				92DB357A28756A61001E2006 /* URLConstant.swift in Sources */,
 				92DB356E287565AC001E2006 /* UIScreen+.swift in Sources */,
+				98D912D2287DC3590088A7F9 /* CheckMessageDataModel.swift in Sources */,
 				92DB358A28756B8E001E2006 /* TempAPI.swift in Sources */,
+				98A47511287DED02008891F5 /* CheckTimeTravelView.swift in Sources */,
 				98D912A5287D3B0D0088A7F9 /* DeartodayAlertViewController.swift in Sources */,
 				92DB356A28756577001E2006 /* DDSTextField.swift in Sources */,
 				92DB356C2875658F001E2006 /* UIView+.swift in Sources */,
 				92CC3BA2287D62C400EA5617 /* VirtualSpaceDataModel.swift in Sources */,
 				923C69B5287810DE00B8EC56 /* UITextField+.swift in Sources */,
 				92DB358428756B67001E2006 /* BaseTargetType.swift in Sources */,
+				98A4750F287DECF7008891F5 /* CheckTImeTravelDataModel.swift in Sources */,
 				92DB35332875633D001E2006 /* SceneDelegate.swift in Sources */,
 				92CC3BA4287D62DE00EA5617 /* VirtualSpaceViewController.swift in Sources */,
 				92DB357C28756A8F001E2006 /* NetworkResult.swift in Sources */,
 				92DB356428756517001E2006 /* OnboardingView.swift in Sources */,
 				98BFBCD7287AC21000F01F04 /* UIViewController+.swift in Sources */,
 				98BFBCBE2879544A00F01F04 /* Image.swift in Sources */,
+				98D912CE287DC3430088A7F9 /* CheckMessageViewController.swift in Sources */,
 				98BFBCD12879BBB700F01F04 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

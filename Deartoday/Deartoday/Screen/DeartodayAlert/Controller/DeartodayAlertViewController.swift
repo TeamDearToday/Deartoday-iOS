@@ -87,6 +87,7 @@ final class DeartodayAlertViewController: UIViewController {
         setHierarchy()
         setConstraint()
         setAlert()
+        setBackground()
     }
     
     private func setAlert() {
@@ -160,5 +161,9 @@ final class DeartodayAlertViewController: UIViewController {
             $0.trailing.equalTo(alertView.snp.trailing)
             $0.bottom.equalTo(alertView.snp.bottom)
         }
+    }
+    
+    private func setBackground() {
+        view.backgroundColor = .clear
     }
 }
