@@ -30,6 +30,12 @@ final class CheckMessageViewController: UIViewController {
         setHeaderViewUI()
         setEmptyViewUI()
     }
+    
+    // MARK: - IBAction
+    
+    @IBAction func backButtonDidTap(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 // MARK: - Component UI Setting functions

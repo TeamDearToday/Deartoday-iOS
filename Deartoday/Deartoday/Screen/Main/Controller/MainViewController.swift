@@ -63,12 +63,21 @@ final class MainViewController: UIViewController {
     // MARK: - IBAction
     
     @IBAction func timeTravelButtonDidTap(_ sender: Any) {
+        let timeTravel = TimeTravelViewController()
+        timeTravel.modalTransitionStyle = .crossDissolve
+        timeTravel.modalPresentationStyle = .overFullScreen
+        present(timeTravel, animated: true)
     }
     
     @IBAction func checkMessageButtonDidTap(_ sender: Any) {
+        guard let checkMessage = UIStoryboard(name: Constant.Storyboard.CheckMessage, bundle: nil)
+            .instantiateViewController(withIdentifier: Constant.ViewController.CheckMessage) as? CheckMessageViewController else { return }
+        navigationController?.pushViewController(checkMessage, animated: true)
     }
     
     @IBAction func checkTimeTravelButtonDidTap(_ sender: Any) {
+        guard let checkTimeTravel = UIStoryboard(name: Constant.Storyboard.CheckTimeTravel, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.CheckTimeTravel) as? CheckTimeTravelViewController else { return }
+        navigationController?.pushViewController(checkTimeTravel, animated: true)
     }
     
     @IBAction func settingButtonDidTap(_ sender: Any) {
