@@ -242,6 +242,8 @@ extension VirtualSpaceViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: - UICollectionView DataSource
+
 extension VirtualSpaceViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return VirtualSpaceDataModel.images.count
