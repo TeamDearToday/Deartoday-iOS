@@ -195,6 +195,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="labelBottomConstraint" destination="DWe-2G-lUv" id="AGW-2e-Gs4"/>
                         <outlet property="letterButton" destination="70R-xl-hYW" id="H5I-bb-DmM"/>
                         <outletCollection property="labelCollection" destination="HLl-Ah-hlx" collectionClass="NSMutableArray" id="72S-Fw-q30"/>
                         <outletCollection property="labelCollection" destination="CDM-6j-O6K" collectionClass="NSMutableArray" id="EBE-P0-CmL"/>

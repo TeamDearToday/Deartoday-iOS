@@ -12,12 +12,20 @@ class OpenBoxOnboardingViewController: UIViewController {
     // MARK: - UI Property
     @IBOutlet var labelCollection: [UILabel]!
     @IBOutlet weak var letterButton: UIButton!
+    @IBOutlet weak var labelBottomConstraint: NSLayoutConstraint!
     
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        setLayout()
+    }
+    
+    // MARK: - Custom Method
+    
+    private func setLayout() {
+        labelBottomConstraint.constant = (getDeviceHeight() == 667) ? 20 : 44
     }
     
     // MARK: - Component UI Setting functions
