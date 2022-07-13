@@ -12,10 +12,14 @@
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="CheckMessageDetailViewController" id="Y6W-OH-hqX" customClass="CheckMessageDetailViewController" customModule="Deartoday" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" alpha="0.69999999999999996" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sI1-Dv-DIK">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4K-3w-k3M">
                                 <rect key="frame" x="107" y="353" width="200" height="200"/>
                                 <subviews>
@@ -57,11 +61,15 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ZxV-4x-oli" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="4Vn-Cs-mur"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="sI1-Dv-DIK" secondAttribute="trailing" id="Dmq-mi-Mbg"/>
+                            <constraint firstItem="sI1-Dv-DIK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="FcI-Fp-Lb8"/>
                             <constraint firstItem="S4K-3w-k3M" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="FkG-Qh-RIP"/>
                             <constraint firstItem="ZxV-4x-oli" firstAttribute="top" secondItem="S4K-3w-k3M" secondAttribute="bottom" constant="8" id="NpI-Eg-UGy"/>
+                            <constraint firstItem="sI1-Dv-DIK" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="S9q-Vb-MAc"/>
+                            <constraint firstAttribute="bottom" secondItem="sI1-Dv-DIK" secondAttribute="bottom" id="lg8-rp-gOJ"/>
                             <constraint firstItem="S4K-3w-k3M" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="oNU-TW-7hB"/>
                         </constraints>
                     </view>
