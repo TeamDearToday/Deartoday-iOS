@@ -58,6 +58,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="icClose"/>
+                                <connections>
+                                    <action selector="closeButtonDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="X0D-2q-8SJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>

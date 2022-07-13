@@ -47,5 +47,7 @@ final class CheckMessageDetailViewController: UIViewController {
     
     // MARK: - IBAction
     
-    
+    @IBAction func closeButtonDidTap(_ sender: Any) {
+        dismiss(animated: true)
+    }
 }
