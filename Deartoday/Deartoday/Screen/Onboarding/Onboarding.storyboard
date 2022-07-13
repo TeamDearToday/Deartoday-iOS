@@ -19,21 +19,21 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1Withg" translatesAutoresizingMaskIntoConstraints="NO" id="32K-94-dsE">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘도 지친 몸을 끌고 집으로 돌아온 당신," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZK-HK-Qtx">
-                                <rect key="frame" x="77" y="589" width="220" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘도 지친 몸을 끌고 집으로 돌아온 당신," textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZK-HK-Qtx">
+                                <rect key="frame" x="77" y="599.66666666666663" width="220" height="15.666666666666629"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="방 안에 정체 불명의 상자 하나가 놓여 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peP-cm-NGj">
-                                <rect key="frame" x="64" y="622" width="247" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="방 안에 정체 불명의 상자 하나가 놓여 있습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peP-cm-NGj">
+                                <rect key="frame" x="64" y="627.33333333333337" width="247" height="15.666666666666629"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상자를 터치해서 안을 확인해 보세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpD-nQ-Nlt">
-                                <rect key="frame" x="93" y="714" width="187" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상자를 터치해서 안을 확인해 보세요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpD-nQ-Nlt">
+                                <rect key="frame" x="93" y="719.33333333333337" width="187" height="15.666666666666629"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -66,10 +66,10 @@
                                     <action selector="boxButtonDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="JfW-MA-ClF"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2B-Nh-U49">
+                            <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2B-Nh-U49">
                                 <rect key="frame" x="169" y="234" width="38" height="38"/>
                                 <subviews>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GYo-0r-i7V">
+                                    <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GYo-0r-i7V">
                                         <rect key="frame" x="1" y="1" width="36" height="36"/>
                                         <color key="backgroundColor" red="0.94117647058823528" green="0.96470588235294119" blue="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     </view>
@@ -116,14 +116,14 @@
                     </view>
                     <connections>
                         <outlet property="boxButton" destination="i9w-LV-IyT" id="wee-bP-CLa"/>
-                        <outlet property="circleBorderView" destination="U2B-Nh-U49" id="joR-cF-rLG"/>
                         <outlet property="circleImageView" destination="oeJ-ww-SZA" id="cZi-T2-Csz"/>
-                        <outlet property="circleView" destination="GYo-0r-i7V" id="MeK-qQ-vnR"/>
                         <outlet property="labelBottomConstraint" destination="oH2-LW-T87" id="fQM-pX-K4y"/>
                         <outlet property="nextButton" destination="Fjd-0T-ndi" id="Vww-s1-yty"/>
                         <outletCollection property="labelCollection" destination="0ZK-HK-Qtx" collectionClass="NSMutableArray" id="94K-mH-cDV"/>
                         <outletCollection property="labelCollection" destination="peP-cm-NGj" collectionClass="NSMutableArray" id="aqu-Fa-87C"/>
                         <outletCollection property="labelCollection" destination="ZpD-nQ-Nlt" collectionClass="NSMutableArray" id="1lb-Vb-cgI"/>
+                        <outletCollection property="circleCollection" destination="U2B-Nh-U49" collectionClass="NSMutableArray" id="A6P-rC-3qg"/>
+                        <outletCollection property="circleCollection" destination="GYo-0r-i7V" collectionClass="NSMutableArray" id="Zf0-uv-r8k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
