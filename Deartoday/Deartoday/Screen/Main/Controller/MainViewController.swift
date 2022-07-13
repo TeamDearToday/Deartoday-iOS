@@ -66,6 +66,9 @@ final class MainViewController: UIViewController {
     }
     
     @IBAction func checkMessageButtonDidTap(_ sender: Any) {
+        guard let checkMessageViewController = UIStoryboard(name: Constant.Storyboard.CheckMessage, bundle: nil)
+            .instantiateViewController(withIdentifier: Constant.ViewController.CheckMessage) as? CheckMessageViewController else { return }
+        navigationController?.pushViewController(checkMessageViewController, animated: true)
     }
     
     @IBAction func checkTimeTravelButtonDidTap(_ sender: Any) {
