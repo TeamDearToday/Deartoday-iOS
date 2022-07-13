@@ -19,6 +19,10 @@ final class OnboardingViewController: UIViewController {
     @IBOutlet weak var boxButton: UIButton!
     @IBOutlet weak var circleImageView: UIImageView!
     @IBOutlet weak var labelBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var circleBorderView: UIView!
+    @IBOutlet weak var circleView: UIView!
+    
+    
     
     // MARK: - Life Cycle
     
@@ -29,6 +33,8 @@ final class OnboardingViewController: UIViewController {
         setFirstAnimation()
         imageGestrue()
     }
+    
+    
     
     // MARK: - @objc
     
@@ -60,6 +66,9 @@ final class OnboardingViewController: UIViewController {
             $0.font = .systemFont(ofSize: 13)
             $0.textAlignment = .center
         }
+        
+        circleBorderView.layer.cornerRadius = circleBorderView.frame.width / 2
+        circleView.layer.cornerRadius = circleView.frame.height / 2
     }
     
     private func hideComponents() {
@@ -73,6 +82,8 @@ final class OnboardingViewController: UIViewController {
         labelCollection[2].isHidden = false
         circleImageView.isHidden = false
         boxButton.isEnabled = true
+        circleBorderView.isHidden = false
+        circleView.isHidden = false
     }
     
     private func setFirstAnimation() {
