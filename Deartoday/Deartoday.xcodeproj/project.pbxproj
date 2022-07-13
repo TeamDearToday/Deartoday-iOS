@@ -53,6 +53,8 @@
 		98A47516287E0106008891F5 /* CheckMessageDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A47515287E0106008891F5 /* CheckMessageDetail.storyboard */; };
 		98A47519287E0129008891F5 /* CheckMessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A47518287E0129008891F5 /* CheckMessageDetailViewController.swift */; };
 		98A4751C287E013F008891F5 /* CheckMessageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A4751B287E013F008891F5 /* CheckMessageDetailView.swift */; };
+		98B4B5AA287EB54600F4AD7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B4B5A9287EB54600F4AD7A /* ViewController.swift */; };
+		98B4B5AC287EB5EF00F4AD7A /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B4B5AB287EB5EF00F4AD7A /* Storyboard.swift */; };
 		98BFBCBE2879544A00F01F04 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BFBCBD2879544A00F01F04 /* Image.swift */; };
 		98BFBCC12879B66A00F01F04 /* GmarketSansBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 98BFBCBF2879B66A00F01F04 /* GmarketSansBold.otf */; };
 		98BFBCC22879B66A00F01F04 /* GmarketSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 98BFBCC02879B66A00F01F04 /* GmarketSansMedium.otf */; };
@@ -127,6 +129,8 @@
 		98A47515287E0106008891F5 /* CheckMessageDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckMessageDetail.storyboard; sourceTree = "<group>"; };
 		98A47518287E0129008891F5 /* CheckMessageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessageDetailViewController.swift; sourceTree = "<group>"; };
 		98A4751B287E013F008891F5 /* CheckMessageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessageDetailView.swift; sourceTree = "<group>"; };
+		98B4B5A9287EB54600F4AD7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		98B4B5AB287EB5EF00F4AD7A /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		98BFBCBD2879544A00F01F04 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		98BFBCBF2879B66A00F01F04 /* GmarketSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansBold.otf; sourceTree = "<group>"; };
 		98BFBCC02879B66A00F01F04 /* GmarketSansMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansMedium.otf; sourceTree = "<group>"; };
@@ -367,6 +371,8 @@
 				92DB35712875661A001E2006 /* Constant.swift */,
 				98BFBCBD2879544A00F01F04 /* Image.swift */,
 				98D912C4287DB0130088A7F9 /* Lottie.swift */,
+				98B4B5A9287EB54600F4AD7A /* ViewController.swift */,
+				98B4B5AB287EB5EF00F4AD7A /* Storyboard.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -815,6 +821,7 @@
 				924814B1287EB5CC001177B1 /* DialogViewController.swift in Sources */,
 				923061D4287754DB00F04EDA /* TimeTravelDataModel.swift in Sources */,
 				92DB35312875633D001E2006 /* AppDelegate.swift in Sources */,
+				98B4B5AC287EB5EF00F4AD7A /* Storyboard.swift in Sources */,
 				92DB35662875652F001E2006 /* OnboardingViewController.swift in Sources */,
 				92DB3560287564ED001E2006 /* MainModel.swift in Sources */,
 				98D912D0287DC34F0088A7F9 /* CheckMessageView.swift in Sources */,
@@ -826,6 +833,7 @@
 				92CC3BA6287D633600EA5617 /* VirtualSpaceCollectionViewCell.swift in Sources */,
 				92DB357A28756A61001E2006 /* URLConstant.swift in Sources */,
 				92DB356E287565AC001E2006 /* UIScreen+.swift in Sources */,
+				98B4B5AA287EB54600F4AD7A /* ViewController.swift in Sources */,
 				98D912D2287DC3590088A7F9 /* CheckMessageDataModel.swift in Sources */,
 				92DB358A28756B8E001E2006 /* TempAPI.swift in Sources */,
 				98A47511287DED02008891F5 /* CheckTimeTravelView.swift in Sources */,
