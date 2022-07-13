@@ -7,23 +7,39 @@
 
 import UIKit
 
-class CheckMessageDetailViewController: UIViewController {
+final class CheckMessageDetailViewController: UIViewController {
 
+    // MARK: - UI Property
+    
+    @IBOutlet weak var messageView: UIView!
+    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var writerLabel: UILabel!
+    @IBOutlet weak var messageViewHeightConstraint: NSLayoutConstraint!
+    
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Custom Method
+    
+    private func setUI() {
+        setMessageViewUI()
+        setLabelUI()
     }
-    */
-
+    
+    private func setMessageViewUI() {
+        messageView.backgroundColor = .yellow03
+    }
+    
+    private func setLabelUI() {
+        contentLabel.font = .p6
+        writerLabel.font = .p6
+    }
+    
+    // MARK: - IBAction
+    
+    
 }
