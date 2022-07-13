@@ -19,10 +19,7 @@ final class OnboardingViewController: UIViewController {
     @IBOutlet weak var boxButton: UIButton!
     @IBOutlet weak var circleImageView: UIImageView!
     @IBOutlet weak var labelBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var circleBorderView: UIView!
-    @IBOutlet weak var circleView: UIView!
-    
-    
+    @IBOutlet var circleCollection: [UIView]!
     
     // MARK: - Life Cycle
     
@@ -31,10 +28,8 @@ final class OnboardingViewController: UIViewController {
         setLayout()
         setUI()
         setFirstAnimation()
-        imageGestrue()
+        addCircleImageGesture()
     }
-    
-    
     
     // MARK: - @objc
     
@@ -44,17 +39,7 @@ final class OnboardingViewController: UIViewController {
     
     // MARK: - Custom Method
     
-    @IBAction func nextButtonDidTap(_ sender: UIButton) {
-        hideComponents()
-        setSecondAnimation()
-        showComponents()
-    }
-    
-    @IBAction func boxButtonDidTap(_ sender: UIButton) {
-        print("로티")
-    }
-    
-    private func imageGestrue() {
+    private func addCircleImageGesture() {
         let addCircleImageGesture = UITapGestureRecognizer(target: self, action: #selector(circleButtonDidTap))
         circleImageView.addGestureRecognizer(addCircleImageGesture)
     }
@@ -64,11 +49,11 @@ final class OnboardingViewController: UIViewController {
             $0.textColor = .white
             $0.font = .p1
             $0.font = .systemFont(ofSize: 13)
-            $0.textAlignment = .center
         }
         
-        circleBorderView.layer.cornerRadius = circleBorderView.frame.width / 2
-        circleView.layer.cornerRadius = circleView.frame.height / 2
+        circleCollection.forEach {
+            $0.layer.cornerRadius = $0.frame.width / 2
+        }
     }
     
     private func hideComponents() {
@@ -82,8 +67,10 @@ final class OnboardingViewController: UIViewController {
         labelCollection[2].isHidden = false
         circleImageView.isHidden = false
         boxButton.isEnabled = true
-        circleBorderView.isHidden = false
-        circleView.isHidden = false
+        
+        circleCollection.forEach {
+            $0.isHidden = false
+        }
     }
     
     private func setFirstAnimation() {
@@ -111,5 +98,17 @@ final class OnboardingViewController: UIViewController {
     
     private func setLayout() {
         labelBottomConstraint.constant = (getDeviceHeight() == 667) ? 45 : 69
+    }
+    
+    // MARK: - IBAction
+    
+    @IBAction func nextButtonDidTap(_ sender: UIButton) {
+        hideComponents()
+        setSecondAnimation()
+        showComponents()
+    }
+    
+    @IBAction func boxButtonDidTap(_ sender: UIButton) {
+        print("로티")
     }
 }
