@@ -11,6 +11,7 @@ extension Constant {
     struct ViewController {
         ///온보딩
         static let Onboarding = "OnboardingViewController"
+        static let OpenBoxOnboarding = "OpenBoxOnboardingViewController"
         
         ///메인
         static let Main = "MainViewController"
