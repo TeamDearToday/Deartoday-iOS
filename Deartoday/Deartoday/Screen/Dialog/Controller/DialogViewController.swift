@@ -124,8 +124,7 @@ final class DialogViewController: UIViewController {
     }
     
     private var photoImageView = UIImageView().then {
-        $0.contentMode = .scaleAspectFit
-        $0.backgroundColor = .gray
+        $0.contentMode = .scaleAspectFill
         $0.alpha = 0
         $0.makeRound(radius: 21)
     }
@@ -189,7 +188,7 @@ final class DialogViewController: UIViewController {
                 
                 self.showView(self.photoImageView)
                 self.showPastView(self.pastMessageView) {
-                    self.hidePastView(self.pastMessageView) {
+                    self.hidePastView(self.pastMessageView, delay: 1.2, duration: 1.0) {
                         self.setDialogAnimation()
                     }
                 }
@@ -351,7 +350,7 @@ final class DialogViewController: UIViewController {
     }
     
     private func setDialogMessageViewHeight() {
-        let height = pastMessageView.dialogLabel.intrinsicContentSize.height + 26
+        let height = pastMessageView.dialogLabel.intrinsicContentSize.height + 30
         
         pastMessageView.snp.updateConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide).inset(290)

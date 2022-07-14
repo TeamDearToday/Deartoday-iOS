@@ -52,8 +52,8 @@ extension DialogViewController {
         }
     }
     
-    internal func hidePastView(_ component: UIView, completion: @escaping () -> Void) {
-        UIView.animate(withDuration: 0.3, delay: 0.8, options: .curveEaseOut) {
+    internal func hidePastView(_ component: UIView, delay: Double = 0.8, duration: Double = 0.3, completion: @escaping () -> Void) {
+        UIView.animate(withDuration: duration, delay: delay, options: .curveEaseOut) {
             component.alpha = 0
         } completion: { _ in
             completion()

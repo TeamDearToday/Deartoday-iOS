@@ -33,6 +33,8 @@ final class VirtualSpaceViewController: UIViewController {
         }
     }
     
+    internal var selectedImage = UIImage()
+    
     // MARK: - UI Property
     
     private var backgroundImageView = UIImageView().then {
@@ -144,6 +146,7 @@ final class VirtualSpaceViewController: UIViewController {
                 dialogViewController.year = self.year
                 dialogViewController.month = self.month
                 dialogViewController.day = self.day
+                dialogViewController.photoImage = self.selectedImage
                 self.present(dialogViewController, animated: true)
             }
         }

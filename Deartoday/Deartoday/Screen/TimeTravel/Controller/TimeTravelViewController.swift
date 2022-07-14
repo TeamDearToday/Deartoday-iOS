@@ -36,6 +36,8 @@ final class TimeTravelViewController: UIViewController {
     private var month: String = ""
     private var day: String = ""
     
+    private var selectedImage = UIImage()
+    
     // MARK: - UI Property
     
     private var backImageView = UIImageView().then {
@@ -327,6 +329,8 @@ final class TimeTravelViewController: UIViewController {
                 virtualSpaceViewController.month = self.month
                 virtualSpaceViewController.day = self.day
                 
+                virtualSpaceViewController.selectedImage = self.selectedImage
+                
                 self.present(virtualSpaceViewController, animated: true)
             }
         }
@@ -352,8 +356,10 @@ extension TimeTravelViewController : UIImagePickerControllerDelegate, UINavigati
         
         if let possibleImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             newImage = possibleImage
+            selectedImage = possibleImage
         } else if let possibleImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             newImage = possibleImage
+            selectedImage = possibleImage
         }
         
         timeTravelView.photoImageView.image = newImage
