@@ -45,6 +45,17 @@ final class LetterOnboardingViewController: UIViewController {
         }
     }
     
+    // MARK: - IBAction
+    
+    @IBAction func checkPlayerButtonDidTap(_ sender: UIButton) {
+        guard let playTapeOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.PlayTapeOnboarding) as? PlayTapeOnboardingViewController else { return }
+        playTapeOnboarding.modalTransitionStyle = .crossDissolve
+        playTapeOnboarding.modalPresentationStyle = .fullScreen
+        present(playTapeOnboarding, animated: true)
+    }
+    
+    // MARK: - Animation function
+    
     private func setLayout() {
         letterTopConstraint.constant = (getDeviceHeight() == 667) ? 100 : 160
         dearLabelTopConstraint.constant = (getDeviceHeight() == 667) ? -58 : -64
