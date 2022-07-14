@@ -51,8 +51,7 @@ final class OnboardingViewController: UIViewController {
     private func setUI() {
         labelCollection.forEach {
             $0.textColor = .white
-            $0.font = .p1
-            $0.font = .systemFont(ofSize: 13)
+            $0.font = .onboard0
         }
         
         circleCollection.forEach {
@@ -110,5 +109,12 @@ final class OnboardingViewController: UIViewController {
         hideComponents()
         setSecondAnimation()
         showComponents()
+    }
+    
+    @IBAction func boxButtonDidTap(_ sender: UIButton) {
+        guard let openBoxOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.OpenBoxOnboarding) as? OpenBoxOnboardingViewController else { return }
+        openBoxOnboarding.modalTransitionStyle = .crossDissolve
+        openBoxOnboarding.modalPresentationStyle = .fullScreen
+        present(openBoxOnboarding, animated: true)
     }
 }
