@@ -34,7 +34,11 @@ final class OnboardingViewController: UIViewController {
     // MARK: - @objc
     
     @objc func circleButtonDidTap() {
-        print("로티")
+        guard let openBoxOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.OpenBoxOnboarding) as? OpenBoxOnboardingViewController else { return }
+        
+        openBoxOnboarding.modalPresentationStyle = .fullScreen
+        openBoxOnboarding.modalTransitionStyle = .crossDissolve
+        self.present(openBoxOnboarding, animated: true)
     }
     
     // MARK: - Custom Method
@@ -78,15 +82,15 @@ final class OnboardingViewController: UIViewController {
             self.labelCollection[0].transform = CGAffineTransform(translationX: 0, y: -16)
             self.labelCollection[0].alpha = 1
         }, completion: { _ in
-                       UIView.animate(withDuration: 0.5, delay: 0.5, animations: {
-            self.labelCollection[1].transform = CGAffineTransform(translationX: 0, y: -16)
-            self.labelCollection[1].alpha = 1
-                       }, completion: { _ in
-                           UIView.animate(withDuration: 0.3, delay: 0.3, animations: {
-                               self.nextButton.alpha = 1
-                           }, completion: nil )
-                       })
-    })
+            UIView.animate(withDuration: 0.5, delay: 0.5, animations: {
+                self.labelCollection[1].transform = CGAffineTransform(translationX: 0, y: -16)
+                self.labelCollection[1].alpha = 1
+            }, completion: { _ in
+                UIView.animate(withDuration: 0.3, delay: 0.3, animations: {
+                    self.nextButton.alpha = 1
+                }, completion: nil )
+            })
+        })
     }
     
     private func setSecondAnimation() {
@@ -106,9 +110,5 @@ final class OnboardingViewController: UIViewController {
         hideComponents()
         setSecondAnimation()
         showComponents()
-    }
-    
-    @IBAction func boxButtonDidTap(_ sender: UIButton) {
-        print("로티")
     }
 }

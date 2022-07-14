@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="roV-Nb-bde">
     <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -7,6 +7,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Medium.otf">
+            <string>Pretendard-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Onboarding View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -31,7 +36,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상자를 터치해서 안을 확인해 보세요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpD-nQ-Nlt">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상자를 터치해서 안을 확인해 보세요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpD-nQ-Nlt">
                                 <rect key="frame" x="93" y="719.33333333333337" width="187" height="15.666666666666629"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
@@ -39,7 +44,7 @@
                             </label>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjd-0T-ndi">
                                 <rect key="frame" x="6" y="712" width="363" height="68"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="다음" backgroundImage="btnSmallPresent">
                                     <color key="titleColor" red="0.33333333333333331" green="0.5607843137254902" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -63,7 +68,7 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <connections>
-                                    <action selector="boxButtonDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="JfW-MA-ClF"/>
+                                    <segue destination="roV-Nb-bde" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="z4p-QV-zn7"/>
                                 </connections>
                             </button>
                             <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2B-Nh-U49">
@@ -130,11 +135,114 @@
             </objects>
             <point key="canvasLocation" x="21.600000000000001" y="-133.00492610837438"/>
         </scene>
+        <!--Open Box Onboarding View Controller-->
+        <scene sceneID="BaI-zD-tIC">
+            <objects>
+                <viewController storyboardIdentifier="OpenBoxOnboarding" id="roV-Nb-bde" customClass="OpenBoxOnboardingViewController" customModule="Deartoday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XLR-Kd-n0y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image2Withg" translatesAutoresizingMaskIntoConstraints="NO" id="6ng-i4-D1d">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="의심스러운 눈초리로 상자를 여는 순간," textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLl-Ah-hlx">
+                                <rect key="frame" x="86" y="597" width="202" height="15.666666666666629"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="의아한 당신은 상자 안에서 작은 편지를 발견합니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHS-qE-BFB">
+                                <rect key="frame" x="54" y="652.33333333333337" width="266" height="15.666666666666629"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70R-xl-hYW">
+                                <rect key="frame" x="6" y="712" width="363" height="68"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="편지 읽어보기" backgroundImage="btnSmallPresent">
+                                    <color key="titleColor" red="0.33333333333333331" green="0.5607843137254902" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="letterButtonDidTap:" destination="roV-Nb-bde" eventType="touchUpInside" id="GfA-M2-u1t"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="그 안에 들어있던 건 오랜만에 보는 비디오테이프와 플레이어." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDM-6j-O6K">
+                                <rect key="frame" x="29" y="624.66666666666663" width="316" height="15.666666666666629"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="g3Q-ql-jle"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="g3Q-ql-jle" firstAttribute="trailing" secondItem="HLl-Ah-hlx" secondAttribute="trailing" constant="87" id="4Y4-Xu-vqD"/>
+                            <constraint firstItem="70R-xl-hYW" firstAttribute="top" secondItem="XHS-qE-BFB" secondAttribute="bottom" constant="44" id="DWe-2G-lUv"/>
+                            <constraint firstItem="g3Q-ql-jle" firstAttribute="trailing" secondItem="70R-xl-hYW" secondAttribute="trailing" constant="6" id="FnK-DC-iYR"/>
+                            <constraint firstItem="70R-xl-hYW" firstAttribute="bottom" secondItem="XLR-Kd-n0y" secondAttribute="bottom" constant="-32" id="GrP-TF-BUj"/>
+                            <constraint firstItem="g3Q-ql-jle" firstAttribute="trailing" secondItem="XHS-qE-BFB" secondAttribute="trailing" constant="55" id="Mea-bk-5M4"/>
+                            <constraint firstItem="70R-xl-hYW" firstAttribute="leading" secondItem="g3Q-ql-jle" secondAttribute="leading" constant="6" id="XZj-n0-PBR"/>
+                            <constraint firstItem="6ng-i4-D1d" firstAttribute="leading" secondItem="g3Q-ql-jle" secondAttribute="leading" id="YV4-WT-Sm9"/>
+                            <constraint firstItem="CDM-6j-O6K" firstAttribute="top" secondItem="HLl-Ah-hlx" secondAttribute="bottom" constant="12" id="YeD-hF-k3p"/>
+                            <constraint firstAttribute="bottom" secondItem="6ng-i4-D1d" secondAttribute="bottom" id="cgg-mN-YMS"/>
+                            <constraint firstItem="XHS-qE-BFB" firstAttribute="top" secondItem="CDM-6j-O6K" secondAttribute="bottom" constant="12" id="dmo-Yt-UFd"/>
+                            <constraint firstItem="CDM-6j-O6K" firstAttribute="leading" secondItem="g3Q-ql-jle" secondAttribute="leading" constant="29" id="hE8-rT-9J6"/>
+                            <constraint firstItem="6ng-i4-D1d" firstAttribute="top" secondItem="XLR-Kd-n0y" secondAttribute="top" id="hae-LW-V6S"/>
+                            <constraint firstItem="g3Q-ql-jle" firstAttribute="trailing" secondItem="6ng-i4-D1d" secondAttribute="trailing" id="rsp-hL-tnp"/>
+                            <constraint firstItem="XHS-qE-BFB" firstAttribute="leading" secondItem="g3Q-ql-jle" secondAttribute="leading" constant="54" id="tVD-Mn-HUp"/>
+                            <constraint firstItem="g3Q-ql-jle" firstAttribute="trailing" secondItem="CDM-6j-O6K" secondAttribute="trailing" constant="30" id="xc9-bd-oLP"/>
+                            <constraint firstItem="HLl-Ah-hlx" firstAttribute="leading" secondItem="g3Q-ql-jle" secondAttribute="leading" constant="86" id="zBC-Tb-GHj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="labelBottomConstraint" destination="DWe-2G-lUv" id="AGW-2e-Gs4"/>
+                        <outlet property="letterButton" destination="70R-xl-hYW" id="H5I-bb-DmM"/>
+                        <outletCollection property="labelCollection" destination="HLl-Ah-hlx" collectionClass="NSMutableArray" id="72S-Fw-q30"/>
+                        <outletCollection property="labelCollection" destination="CDM-6j-O6K" collectionClass="NSMutableArray" id="EBE-P0-CmL"/>
+                        <outletCollection property="labelCollection" destination="XHS-qE-BFB" collectionClass="NSMutableArray" id="NKN-On-ZGq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="of8-u7-yms" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="856.79999999999995" y="-133.00492610837438"/>
+        </scene>
+        <!--Letter Onboarding View Controller-->
+        <scene sceneID="uQs-v0-wrz">
+            <objects>
+                <viewController storyboardIdentifier="LetterOnboardingViewController" modalPresentationStyle="overFullScreen" id="y6z-ac-w72" customClass="LetterOnboardingViewController" customModule="Deartoday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EQy-bI-g0g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgLetter" translatesAutoresizingMaskIntoConstraints="NO" id="1vr-xm-Zlx">
+                                <rect key="frame" x="0.0" y="156" width="375" height="656"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aQg-fa-XZj"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="1vr-xm-Zlx" secondAttribute="bottom" id="4Gg-EO-vsR"/>
+                            <constraint firstItem="1vr-xm-Zlx" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" id="GZz-b6-BRk"/>
+                            <constraint firstItem="1vr-xm-Zlx" firstAttribute="top" secondItem="aQg-fa-XZj" secondAttribute="top" constant="112" id="h54-FX-d33"/>
+                            <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="1vr-xm-Zlx" secondAttribute="trailing" id="naF-FY-3qz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="P1B-bh-UwF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3kI-pV-Szm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1710" y="-133"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="bgLetter" width="375" height="652"/>
         <image name="btnCircleBasic" width="68" height="90"/>
         <image name="btnSmallPresent" width="57.666667938232422" height="68"/>
         <image name="image1Withg" width="375" height="812"/>
+        <image name="image2Withg" width="375" height="812"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
