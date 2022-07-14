@@ -61,7 +61,7 @@ final class TimeTapeTableViewCell: UITableViewCell {
         }
     }
     
-    func setData(index: Int) {
-        titleLabel.text = "\(index)"
+    func setData(model: TimeTapeDataModel) {
+        titleLabel.text = model.writtenDate
     }
 }

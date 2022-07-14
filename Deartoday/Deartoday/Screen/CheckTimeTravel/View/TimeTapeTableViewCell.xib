@@ -24,25 +24,28 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1999.04.19" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BX7-mR-AvT">
-                        <rect key="frame" x="4" y="221" width="85" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="4" y="221" width="94" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8W0-D3-oyc">
-                        <rect key="frame" x="4" y="252.00000000000003" width="335" height="19.333333333333343"/>
+                        <rect key="frame" x="4" y="255" width="335" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="Rhg-B0-ljK"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022.07.03" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3HW-89-jtS">
-                        <rect key="frame" x="253.66666666666666" y="221" width="85.333333333333343" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="257.66666666666669" y="223.33333333333334" width="81.333333333333314" height="19.333333333333343"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rewind" translatesAutoresizingMaskIntoConstraints="NO" id="GNg-Ci-vRP">
-                        <rect key="frame" x="227.66666666666666" y="220.66666666666666" width="22" height="22"/>
+                        <rect key="frame" x="231.66666666666666" y="222" width="22" height="22"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="CuV-3p-zQH"/>
                             <constraint firstAttribute="width" secondItem="GNg-Ci-vRP" secondAttribute="height" multiplier="1:1" id="GlN-cv-LCG"/>
@@ -64,6 +67,7 @@
                     </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="8W0-D3-oyc" secondAttribute="bottom" constant="6" id="4BH-IT-Khw"/>
                     <constraint firstAttribute="bottom" secondItem="ank-Nz-zh2" secondAttribute="bottom" id="6bs-0I-Rh6"/>
                     <constraint firstItem="nZk-f1-732" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="100" id="EYz-Y0-jr9"/>
                     <constraint firstItem="BX7-mR-AvT" firstAttribute="top" secondItem="7Hb-p2-PMs" secondAttribute="bottom" constant="12" id="HE6-bT-qjB"/>
