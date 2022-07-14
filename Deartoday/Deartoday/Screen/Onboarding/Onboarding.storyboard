@@ -352,9 +352,32 @@
                     <view key="view" contentMode="scaleToFill" id="Gn5-pW-AGC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image3Withg" translatesAutoresizingMaskIntoConstraints="NO" id="wul-h0-Jab">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비디오 플레이어를 터치해서 사용법을 알아보세요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zz0-Bb-V8i">
+                                <rect key="frame" x="59" y="734" width="274" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="a3U-IX-Q9F"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="a3U-IX-Q9F" firstAttribute="trailing" secondItem="wul-h0-Jab" secondAttribute="trailing" id="6ti-B9-7bF"/>
+                            <constraint firstItem="wul-h0-Jab" firstAttribute="leading" secondItem="a3U-IX-Q9F" secondAttribute="leading" id="8d4-yM-bQx"/>
+                            <constraint firstItem="wul-h0-Jab" firstAttribute="top" secondItem="Gn5-pW-AGC" secondAttribute="top" id="9TL-bG-DIZ"/>
+                            <constraint firstItem="Zz0-Bb-V8i" firstAttribute="leading" secondItem="a3U-IX-Q9F" secondAttribute="leading" constant="59" id="BDV-Qk-a9R"/>
+                            <constraint firstAttribute="bottom" secondItem="wul-h0-Jab" secondAttribute="bottom" id="EZh-cu-d4l"/>
+                            <constraint firstItem="a3U-IX-Q9F" firstAttribute="trailing" secondItem="Zz0-Bb-V8i" secondAttribute="trailing" constant="57" id="hoI-ra-q8Y"/>
+                            <constraint firstItem="a3U-IX-Q9F" firstAttribute="bottom" secondItem="Zz0-Bb-V8i" secondAttribute="bottom" constant="55" id="kWa-W8-4cr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="explanationLabel" destination="Zz0-Bb-V8i" id="Dzv-Y9-6lO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Shr-7q-2Ro" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -367,6 +390,7 @@
         <image name="btnSmallPresent" width="57.666667938232422" height="68"/>
         <image name="image1Withg" width="375" height="812"/>
         <image name="image2Withg" width="375" height="812"/>
+        <image name="image3Withg" width="375" height="812"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
