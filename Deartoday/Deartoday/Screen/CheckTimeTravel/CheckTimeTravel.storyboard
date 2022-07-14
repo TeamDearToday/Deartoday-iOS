@@ -62,7 +62,7 @@
                                     <constraint firstItem="nc3-h5-e5r" firstAttribute="top" secondItem="Zf8-Au-5iP" secondAttribute="top" constant="69" id="rjI-Zf-ERd"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7eY-QY-EB2">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7eY-QY-EB2">
                                 <rect key="frame" x="0.0" y="211" width="414" height="651"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgTape" translatesAutoresizingMaskIntoConstraints="NO" id="vtA-op-hWy">
@@ -115,16 +115,26 @@
                                     <constraint firstItem="jBn-or-bJV" firstAttribute="centerX" secondItem="7eY-QY-EB2" secondAttribute="centerX" id="wvp-2Y-vzI"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="30" estimatedSectionFooterHeight="30" translatesAutoresizingMaskIntoConstraints="NO" id="Gm0-Bz-xex">
+                                <rect key="frame" x="16" y="211" width="382" height="685"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Gm0-Bz-xex" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="2XK-AM-oWT"/>
                             <constraint firstItem="7eY-QY-EB2" firstAttribute="top" secondItem="Zf8-Au-5iP" secondAttribute="bottom" id="3ed-eg-9vQ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="7eY-QY-EB2" secondAttribute="bottom" id="5kP-xU-0cN"/>
                             <constraint firstItem="Zf8-Au-5iP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="6M2-hB-FtK"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zf8-Au-5iP" secondAttribute="trailing" id="9Fx-wp-N8k"/>
+                            <constraint firstAttribute="bottom" secondItem="Gm0-Bz-xex" secondAttribute="bottom" id="ADz-hB-rTF"/>
+                            <constraint firstItem="Gm0-Bz-xex" firstAttribute="top" secondItem="Zf8-Au-5iP" secondAttribute="bottom" id="CZk-92-Lgw"/>
                             <constraint firstItem="7eY-QY-EB2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="H02-I6-g26"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7eY-QY-EB2" secondAttribute="trailing" id="YoD-GK-4cV"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Gm0-Bz-xex" secondAttribute="trailing" constant="16" id="mHe-WN-AYh"/>
                             <constraint firstItem="Zf8-Au-5iP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="vQx-j3-NX6"/>
                         </constraints>
                     </view>
@@ -132,13 +142,15 @@
                         <outlet property="descriptionLabel" destination="9ZE-vj-FrJ" id="4gn-sr-Hzc"/>
                         <outlet property="emptyDescriptionLabel" destination="jBn-or-bJV" id="auV-s9-TQP"/>
                         <outlet property="emptyTitleLabel" destination="dCO-SZ-dvV" id="NAn-x7-xMr"/>
+                        <outlet property="emptyView" destination="7eY-QY-EB2" id="fe4-gf-kOj"/>
                         <outlet property="rewindImageView" destination="EkG-m7-unL" id="Atj-GG-hyX"/>
+                        <outlet property="tableView" destination="Gm0-Bz-xex" id="uHu-1F-2A0"/>
                         <outlet property="titleLabel" destination="N97-cD-rNm" id="xqx-pk-iYs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="63"/>
+            <point key="canvasLocation" x="73.913043478260875" y="62.946428571428569"/>
         </scene>
     </scenes>
     <resources>
