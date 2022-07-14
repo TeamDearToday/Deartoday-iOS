@@ -27,6 +27,7 @@ final class CheckTimeTravelViewController: UIViewController {
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var emptyDescriptionLabel: UILabel!
     @IBOutlet weak var emptyTitleLabel: UILabel!
+    @IBOutlet weak var timeTravelImageView: UIImageView!
     @IBOutlet weak var rewindImageView: UIImageView!
     
     // MARK: - Life Cycle
@@ -35,6 +36,18 @@ final class CheckTimeTravelViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setTableView()
+        setGesture()
+    }
+    
+    // MARK: - @objc
+    
+    @objc private func timeTravelButtonDidTap() {
+        let timeTravel = TimeTravelViewController()
+        timeTravel.modalTransitionStyle = .crossDissolve
+        timeTravel.modalPresentationStyle = .overFullScreen
+        present(timeTravel, animated: true) {
+            self.navigationController?.popViewController(animated: false)
+        }
     }
     
     // MARK: - Custom Method
@@ -71,6 +84,11 @@ final class CheckTimeTravelViewController: UIViewController {
         snapshot.appendSections([.tape])
         snapshot.appendItems(timeTapes, toSection: .tape)
         dataSource.apply(snapshot, animatingDifferences: true)
+    }
+    
+    private func setGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(timeTravelButtonDidTap))
+        timeTravelImageView.addGestureRecognizer(tapGesture)
     }
     
     // MARK: - IBAction
