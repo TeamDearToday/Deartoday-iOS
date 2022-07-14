@@ -13,10 +13,12 @@ final class CheckMessageViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var emptyDescriptionLabel: UILabel!
     @IBOutlet weak var emptyTitleLabel: UILabel!
     @IBOutlet weak var timeTravelImageView: UIImageView!
     @IBOutlet weak var rewindImageView: UIImageView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Life Cycle
     

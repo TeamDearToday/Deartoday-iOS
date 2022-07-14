@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -60,7 +61,7 @@
                                     <constraint firstAttribute="height" constant="161" id="x1b-DB-fN8"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zt-Uz-Hsa">
+                            <view hidden="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zt-Uz-Hsa">
                                 <rect key="frame" x="0.0" y="205" width="414" height="657"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgMemoempty" translatesAutoresizingMaskIntoConstraints="NO" id="VTM-dx-3dn">
@@ -110,23 +111,49 @@
                                     <constraint firstItem="S4K-Wg-fEZ" firstAttribute="leading" secondItem="iRn-ev-RvD" secondAttribute="trailing" constant="6" id="gUW-AJ-86s"/>
                                 </constraints>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VZ2-lb-bMO">
+                                <rect key="frame" x="0.0" y="205" width="414" height="657"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VqC-Aw-gv6">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="vxC-yx-zy2">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vH8-C6-uZF">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="0zt-Uz-Hsa" secondAttribute="bottom" id="4fo-Ot-Se7"/>
                             <constraint firstItem="Ovg-qb-arG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="A5c-Jr-oaD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="VZ2-lb-bMO" secondAttribute="trailing" id="Bdw-Xh-z9c"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="VZ2-lb-bMO" secondAttribute="bottom" id="FFX-sm-Qwr"/>
                             <constraint firstItem="Ovg-qb-arG" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Fuc-8h-jMW"/>
+                            <constraint firstItem="VZ2-lb-bMO" firstAttribute="top" secondItem="Ovg-qb-arG" secondAttribute="bottom" id="MEB-6C-mfx"/>
                             <constraint firstItem="0zt-Uz-Hsa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="dnc-8B-oSc"/>
                             <constraint firstItem="0zt-Uz-Hsa" firstAttribute="top" secondItem="Ovg-qb-arG" secondAttribute="bottom" id="eGZ-ge-UpC"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ovg-qb-arG" secondAttribute="trailing" id="f1D-7f-NL2"/>
+                            <constraint firstItem="VZ2-lb-bMO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="m0J-Ho-Mf8"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0zt-Uz-Hsa" secondAttribute="trailing" id="s3N-a3-qCN"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="VZ2-lb-bMO" id="TCC-w7-aYD"/>
                         <outlet property="descriptionLabel" destination="e1i-cA-Stx" id="coA-BE-XEI"/>
                         <outlet property="emptyDescriptionLabel" destination="yGi-qX-uIL" id="dvg-nW-bas"/>
                         <outlet property="emptyTitleLabel" destination="S4K-Wg-fEZ" id="XV1-4D-44I"/>
+                        <outlet property="emptyView" destination="0zt-Uz-Hsa" id="6WZ-DQ-2d2"/>
                         <outlet property="rewindImageView" destination="iRn-ev-RvD" id="9hd-gY-baR"/>
                         <outlet property="timeTravelImageView" destination="jhI-yC-wSJ" id="WGx-fZ-EGl"/>
                         <outlet property="titleLabel" destination="tOL-kW-PrL" id="Bsl-rc-4qf"/>
