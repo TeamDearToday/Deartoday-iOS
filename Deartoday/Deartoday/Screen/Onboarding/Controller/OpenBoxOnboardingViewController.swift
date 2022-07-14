@@ -7,11 +7,12 @@
 
 import UIKit
 
-class OpenBoxOnboardingViewController: UIViewController {
+final class OpenBoxOnboardingViewController: UIViewController {
 
     // MARK: - UI Property
-    @IBOutlet var labelCollection: [UILabel]!
+    
     @IBOutlet weak var letterButton: UIButton!
+    @IBOutlet var labelCollection: [UILabel]!
     @IBOutlet weak var labelBottomConstraint: NSLayoutConstraint!
     
     // MARK: - Life Cycle
@@ -27,24 +28,17 @@ class OpenBoxOnboardingViewController: UIViewController {
     private func setLayout() {
         labelBottomConstraint.constant = (getDeviceHeight() == 667) ? 20 : 44
     }
-
-    // MARK: - Component UI Setting functions
     
     private func setUI() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.setComponentsAnimation()
         }
-        
         labelCollection.forEach {
             $0.textColor = .white
             $0.font = .p1
             $0.font = .systemFont(ofSize: 13)
-        }
-        
-        labelCollection.forEach {
             $0.isHidden = false
         }
-        
         letterButton.isHidden = false
     }
     

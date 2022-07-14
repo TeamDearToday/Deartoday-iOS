@@ -34,7 +34,8 @@ final class OnboardingViewController: UIViewController {
     // MARK: - @objc
     
     @objc func circleButtonDidTap() {
-        guard let openBoxOnboarding = self.storyboard?.instantiateViewController(withIdentifier: Constant.ViewController.OpenBoxOnboarding) else { return }
+        guard let openBoxOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.OpenBoxOnboarding) as? OpenBoxOnboardingViewController else { return }
+        
         openBoxOnboarding.modalPresentationStyle = .fullScreen
         openBoxOnboarding.modalTransitionStyle = .crossDissolve
         self.present(openBoxOnboarding, animated: true)
