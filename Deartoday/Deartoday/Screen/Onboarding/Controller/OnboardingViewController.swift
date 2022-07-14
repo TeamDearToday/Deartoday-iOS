@@ -110,4 +110,11 @@ final class OnboardingViewController: UIViewController {
         setSecondAnimation()
         showComponents()
     }
+    
+    @IBAction func boxButtonDidTap(_ sender: UIButton) {
+        guard let openBoxOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.OpenBoxOnboarding) as? OpenBoxOnboardingViewController else { return }
+        openBoxOnboarding.modalTransitionStyle = .crossDissolve
+        openBoxOnboarding.modalPresentationStyle = .fullScreen
+        present(openBoxOnboarding, animated: true)
+    }
 }
