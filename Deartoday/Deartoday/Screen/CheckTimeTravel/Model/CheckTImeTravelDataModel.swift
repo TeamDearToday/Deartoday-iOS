@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct TimeTapeDataModel: Hashable {
+    let timeTravelID, title: String
+    let year, month, day: Int
+    let writtenDate, image: String
+}
