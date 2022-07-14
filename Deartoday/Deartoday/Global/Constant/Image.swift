@@ -67,6 +67,7 @@ extension Constant {
         ///image
         static let convoBg = UIImage(named: "convoBg")!
         static let textfieldBlue = UIImage(named: "textfieldBlue")!
+        static let textfieldYellow = UIImage(named: "textfieldYellow")!
         
         // MARK: - 메시지 확인
         ///image
