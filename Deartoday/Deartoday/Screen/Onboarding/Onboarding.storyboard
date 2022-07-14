@@ -196,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="of8-u7-yms" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="856.79999999999995" y="-133.00492610837438"/>
+            <point key="canvasLocation" x="703" y="-134"/>
         </scene>
         <!--Letter Onboarding View Controller-->
         <scene sceneID="uQs-v0-wrz">
@@ -343,7 +343,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3kI-pV-Szm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1709.5999999999999" y="-133.00492610837438"/>
+            <point key="canvasLocation" x="1378" y="-134"/>
+        </scene>
+        <!--Play Tape Onboarding View Controller-->
+        <scene sceneID="fgg-5i-jVb">
+            <objects>
+                <viewController id="6Ss-Ku-CoL" customClass="PlayTapeOnboardingViewController" customModule="Deartoday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gn5-pW-AGC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="a3U-IX-Q9F"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Shr-7q-2Ro" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2098" y="-134"/>
         </scene>
     </scenes>
     <resources>
