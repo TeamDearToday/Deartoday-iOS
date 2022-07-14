@@ -57,7 +57,7 @@ final class DialogViewController: UIViewController {
         }
     }
     
-    private var questions: [String] = ["", "", "", "", "", "", ""]
+    private var questions: [String] = DialogDataModel.questions
     private var answers: [String] = ["", "", "", "", "", "", ""]
     
     private var count: Int = 0
@@ -66,7 +66,7 @@ final class DialogViewController: UIViewController {
     
     private var backgroundImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
-        $0.image = Constant.Image.imgHomePastLeft
+        $0.image = Constant.Image.convoBg
     }
     
     private var yearBackView = UIImageView().then {
@@ -111,7 +111,7 @@ final class DialogViewController: UIViewController {
     }
     
     private var presentMessageView = DialogMessageView().then {
-        $0.dialogType = .past
+        $0.dialogType = .present
         $0.alpha = 0
     }
     
@@ -132,6 +132,7 @@ final class DialogViewController: UIViewController {
     
     private lazy var answerTextView = UITextView().then {
         $0.text = "답장을 입력해주세요."
+        $0.textColor = .white
         $0.font = .p7
         $0.isHidden = true
         $0.backgroundColor = .clear
@@ -186,13 +187,9 @@ final class DialogViewController: UIViewController {
                 
                 self.setDialogMessageViewHeight()
                 
-                UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
-                    self.photoImageView.alpha = 1
-                    self.pastMessageView.alpha = 1
-                } completion: { _ in
-                    UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
-                        self.pastMessageView.alpha = 0
-                    } completion: { _ in
+                self.showView(self.photoImageView)
+                self.showPastView(self.pastMessageView) {
+                    self.hidePastView(self.pastMessageView) {
                         self.setDialogAnimation()
                     }
                 }
@@ -201,7 +198,7 @@ final class DialogViewController: UIViewController {
     }
     
     @objc func sendButtonDidTap() {
-        
+        print("보내기 버튼 누르기")
     }
     
     // MARK: - Custom Method
@@ -210,9 +207,11 @@ final class DialogViewController: UIViewController {
         view.backgroundColor = .gray
         
         setDateLabel()
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.setLabelAnimation()
         }
+        
         setTextView()
     }
     
@@ -285,13 +284,13 @@ final class DialogViewController: UIViewController {
         
         pastMessageView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(228)
-            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.width.equalTo(343)
             $0.height.equalTo(110)
+            $0.centerX.equalToSuperview()
         }
         
         presentMessageView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(228)
-            $0.leading.trailing.equalToSuperview().inset(16)
             $0.height.equalTo(110)
         }
         
@@ -336,15 +335,13 @@ final class DialogViewController: UIViewController {
     }
     
     private func setDialogAnimation() {
-        [answerTextView, underLineView, sendButton].forEach {
-            $0.isHidden = false
-        }
-        
         pastMessageView.dialogText = DialogDataModel.questions[0]
         setDialogMessageViewHeight()
         
-        UIView.animate(withDuration: 0.5, delay: 1.0, options: .curveEaseOut) {
-            self.pastMessageView.alpha = 1
+        showPastView(self.pastMessageView) {
+            [self.answerTextView, self.underLineView, self.sendButton].forEach {
+                $0.isHidden = false
+            }
             self.answerTextView.becomeFirstResponder()
         }
     }
@@ -367,11 +364,11 @@ final class DialogViewController: UIViewController {
 
 extension DialogViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        answerTextView.text = answerTextView.hasText ? "" : "답장을 입력해주세요."
+        answerTextView.text = (answerTextView.text == "답장을 입력해주세요.") ? "" : "답장을 입력해주세요."
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        let size = CGSize(width: view.frame.width, height: .infinity)
+        let size = CGSize(width: answerTextView.frame.width, height: .infinity)
         let estimatedSize = textView.sizeThatFits(size)
         
         if estimatedSize.height >= 50 {
@@ -393,8 +390,11 @@ extension DialogViewController: UITextViewDelegate {
         }
     }
     
-    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
-        answerTextView.text = ""
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
         return true
     }
 }

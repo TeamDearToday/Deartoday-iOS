@@ -20,9 +20,9 @@ final class DialogMessageView: UIView {
         var backgroundImage: UIImage {
             switch self {
             case .past:
-                return UIImage()
+                return Constant.Image.textfieldYellow
             case .present:
-                return UIImage()
+                return Constant.Image.textfieldBlue
             }
         }
     }
@@ -45,9 +45,7 @@ final class DialogMessageView: UIView {
     
     // MARK: - UI Property
     
-    private var backgroundImageView = UIImageView().then {
-        $0.contentMode = .scaleAspectFit
-    }
+    private var backgroundImageView = UIImageView()
     
     var dialogLabel = UILabel().then {
         $0.textColor = .darkGray01
@@ -72,15 +70,7 @@ final class DialogMessageView: UIView {
     // MARK: - Custom Method
     
     private func setUI() {
-        
-        // MARK: - TODO REMOVE
-        
-        switch dialogType {
-        case .past:
-            backgroundColor = .yellow00
-        case .present:
-            backgroundColor = .blue00
-        }
+        backgroundColor = .clear
     }
     
     private func setLayout() {
@@ -92,7 +82,8 @@ final class DialogMessageView: UIView {
         }
         
         dialogLabel.snp.makeConstraints {
-            $0.centerX.centerY.equalToSuperview()
+            $0.top.bottom.equalToSuperview().inset(13)
+            $0.leading.trailing.equalToSuperview().inset(35)
         }
     }
 }
