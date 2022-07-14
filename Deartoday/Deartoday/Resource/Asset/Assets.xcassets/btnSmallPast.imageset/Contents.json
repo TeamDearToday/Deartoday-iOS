@@ -5,7 +5,7 @@
       "idiom" : "universal",
       "resizing" : {
         "cap-insets" : {
-          "left" : 14,
+          "left" : 28,
           "right" : 27
         },
         "center" : {
@@ -21,7 +21,7 @@
       "idiom" : "universal",
       "resizing" : {
         "cap-insets" : {
-          "left" : 27,
+          "left" : 60,
           "right" : 55
         },
         "center" : {
@@ -37,7 +37,7 @@
       "idiom" : "universal",
       "resizing" : {
         "cap-insets" : {
-          "left" : 41,
+          "left" : 90,
           "right" : 85
         },
         "center" : {
