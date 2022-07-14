@@ -17,11 +17,11 @@ final class LetterOnboardingViewController: UIViewController {
     @IBOutlet weak var letterTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var dearLabelTopConstraint: NSLayoutConstraint!
     
-    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setInitAnimation()
         setLabelUI()
         setLayout()
     }
@@ -29,15 +29,19 @@ final class LetterOnboardingViewController: UIViewController {
     // MARK: - Custom Method
     
     private func setLabelUI() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.setComponentsAnimation()
-        }
-        dearLabel.font = .p5En
-        dearLabel.textColor = .blue02
-        
         letterLabelCollection.forEach {
             $0.font = .p4
             $0.textColor = .darkGray01
+        }
+        dearLabel.font = .p5En
+        dearLabel.textColor = .blue02
+        checkPlayerButton.titleLabel?.font = .btn0
+        checkPlayerButton.setTitleColor(.blue02, for: .normal)
+    }
+    
+    private func setInitAnimation() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.setComponentsAnimation()
         }
     }
     
