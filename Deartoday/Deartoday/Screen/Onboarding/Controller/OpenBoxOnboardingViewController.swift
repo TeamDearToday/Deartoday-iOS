@@ -42,17 +42,14 @@ final class OpenBoxOnboardingViewController: UIViewController {
         letterButton.isHidden = false
     }
     
-    private func hideComponents() {
+    // MARK: - IBAction
+    
+    @IBAction func letterButtonDidTap(_ sender: UIButton) {
         labelCollection.forEach {
             $0.isHidden = true
         }
         letterButton.isHidden = true
-    }
-    
-    // MARK: - IBAction
-    
-    @IBAction func letterButtonDidTap(_ sender: UIButton) {
-        hideComponents()
+        
         guard let letterOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.LetterOnboarding) as? LetterOnboardingViewController else { return }
         letterOnboarding.modalPresentationStyle = .overFullScreen
         letterOnboarding.modalTransitionStyle = .crossDissolve
