@@ -66,6 +66,7 @@ extension Constant {
         // MARK: - 나외의 대화
         ///image
         static let convoBg = UIImage(named: "convoBg")!
+        static let textfieldBlue = UIImage(named: "textfieldBlue")!
         
         // MARK: - 메시지 확인
         ///image
