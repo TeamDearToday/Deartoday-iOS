@@ -46,7 +46,7 @@ final class DialogViewController: UIViewController {
     internal var guideText: String = "" {
         didSet {
             guideLabel.text = guideText
-            guideLabel.addLineSpacing(spacing: 25)
+            guideLabel.addLineSpacing(spacing: 30)
             guideLabel.textAlignment = .center
         }
     }
@@ -57,8 +57,8 @@ final class DialogViewController: UIViewController {
         }
     }
     
-    private var questions = [String]()
-    private var answers = [String]()
+    private var questions: [String] = ["", "", "", "", "", "", ""]
+    private var answers: [String] = ["", "", "", "", "", "", ""]
     
     private var count: Int = 0
     
@@ -221,10 +221,24 @@ final class DialogViewController: UIViewController {
             
             if let text = self.answerTextView.text {
                 self.dialogMessageView.dialogText = text
+                self.answers[self.count] = text
             }
             
             UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
                 self.dialogMessageView.alpha = 1
+            } completion: { _ in
+                UIView.animate(withDuration: 0.5, delay: 1.2, options: .curveEaseOut) {
+                    self.dialogMessageView.alpha = 0
+                } completion: { _ in
+                    if self.count == 6 {
+                        self.dialogMessageView.dialogText = ""
+                    } else {
+                        self.dialogMessageView.dialogText = DialogDataModel.questions[self.count]
+                    }
+                    UIView.animate(withDuration: 0.5, delay: 1.2, options: .curveEaseOut) {
+                        self.dialogMessageView.alpha = 1
+                    }
+                }
             }
         }
         
@@ -337,7 +351,7 @@ final class DialogViewController: UIViewController {
         answerTextView.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(16)
             $0.trailing.equalToSuperview().inset(75)
-            $0.bottom.equalTo(underLineView.snp.top).offset(-13)
+            $0.bottom.equalTo(underLineView.snp.top).offset(-12)
             $0.height.equalTo(21)
         }
     }
@@ -367,7 +381,8 @@ final class DialogViewController: UIViewController {
             $0.isHidden = false
         }
         
-        dialogMessageView.dialogText = "이때가 어떤 순간이었는지 설명해 줄 수 있을까?"
+        dialogMessageView.dialogText = DialogDataModel.questions[0]
+        count += 1
         
         UIView.animate(withDuration: 0.5, delay: 1.0, options: .curveEaseOut) {
             self.dialogMessageView.alpha = 1
@@ -408,5 +423,9 @@ extension DialogViewController: UITextViewDelegate {
                 }
             }
         }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        answerTextView.text = ""
     }
 }
