@@ -63,6 +63,10 @@ extension Constant {
         ///image
         static let imgTextBoxShadow = UIImage(named: "imgTextBoxShadow")!
         
+        // MARK: - 나외의 대화
+        ///image
+        static let convoBg = UIImage(named: "convoBg")!
+        
         // MARK: - 메시지 확인
         ///image
         static let imgMemoBundle = UIImage(named: "imgMemoBundle")!
