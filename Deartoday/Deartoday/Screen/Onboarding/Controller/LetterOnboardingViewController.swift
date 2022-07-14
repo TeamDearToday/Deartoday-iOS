@@ -9,21 +9,22 @@ import UIKit
 
 final class LetterOnboardingViewController: UIViewController {
     
-    // MARK: - Property
-    
     // MARK: - UI Property
+    
     @IBOutlet weak var dearLabel: UILabel!
     @IBOutlet weak var checkPlayerButton: UIButton!
     @IBOutlet var letterLabelCollection: [UILabel]!
+    @IBOutlet weak var letterTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var dearLabelTopConstraint: NSLayoutConstraint!
+    
     
     // MARK: - Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setLabelUI()
+        setLayout()
     }
-    
-    // MARK: - @objc
     
     // MARK: - Custom Method
     
@@ -38,6 +39,11 @@ final class LetterOnboardingViewController: UIViewController {
             $0.font = .p4
             $0.textColor = .darkGray01
         }
+    }
+    
+    private func setLayout() {
+        letterTopConstraint.constant = (getDeviceHeight() == 667) ? 100 : 160
+        dearLabelTopConstraint.constant = (getDeviceHeight() == 667) ? -58 : -64
     }
     
     private func setComponentsAnimation() {
