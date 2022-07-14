@@ -166,7 +166,7 @@
                                     <color key="titleColor" red="0.33333333333333331" green="0.5607843137254902" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="y6z-ac-w72" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="96a-HZ-lcI"/>
+                                    <action selector="letterButtonDidTap:" destination="roV-Nb-bde" eventType="touchUpInside" id="GfA-M2-u1t"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="그 안에 들어있던 건 오랜만에 보는 비디오테이프와 플레이어." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDM-6j-O6K">

@@ -12,6 +12,7 @@ extension Constant {
         ///온보딩
         static let Onboarding = "OnboardingViewController"
         static let OpenBoxOnboarding = "OpenBoxOnboardingViewController"
+        static let LetterOnboarding = "LetterOnboardingViewController"
         
         ///메인
         static let Main = "MainViewController"
