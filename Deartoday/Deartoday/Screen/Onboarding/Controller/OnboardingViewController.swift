@@ -7,9 +7,6 @@
 
 import UIKit
 
-import SnapKit
-import Then
-
 final class OnboardingViewController: UIViewController {
     
     // MARK: - UI Property
@@ -26,7 +23,7 @@ final class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setLayout()
-        setUI()
+        setComponentsUI()
         setFirstAnimation()
         addCircleImageGesture()
     }
@@ -48,7 +45,7 @@ final class OnboardingViewController: UIViewController {
         circleImageView.addGestureRecognizer(addCircleImageGesture)
     }
     
-    private func setUI() {
+    private func setComponentsUI() {
         labelCollection.forEach {
             $0.textColor = .white
             $0.font = .onboard0
@@ -57,6 +54,8 @@ final class OnboardingViewController: UIViewController {
         circleCollection.forEach {
             $0.layer.cornerRadius = $0.frame.width / 2
         }
+        nextButton.titleLabel?.font = .btn0
+        nextButton.setTitleColor(.blue02, for: .normal)
     }
     
     private func hideComponents() {

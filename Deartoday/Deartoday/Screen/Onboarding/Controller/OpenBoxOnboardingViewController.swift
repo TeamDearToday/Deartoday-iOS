@@ -19,7 +19,8 @@ final class OpenBoxOnboardingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
+        setInitAnimation()
+        setComponentsUI()
         setLayout()
     }
     
@@ -29,13 +30,18 @@ final class OpenBoxOnboardingViewController: UIViewController {
         labelBottomConstraint.constant = (getDeviceHeight() == 667) ? 20 : 44
     }
     
-    private func setUI() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.setComponentsAnimation()
-        }
+    private func setComponentsUI() {
         labelCollection.forEach {
             $0.textColor = .white
             $0.font = .onboard0
+        }
+        letterButton.titleLabel?.font = .btn0
+        letterButton.setTitleColor(.blue02, for: .normal)
+    }
+    
+    private func setInitAnimation() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.setComponentsAnimation()
         }
     }
     
