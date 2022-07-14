@@ -74,7 +74,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnSmallPresent" translatesAutoresizingMaskIntoConstraints="NO" id="jhI-yC-wSJ">
+                                    <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnSmallPresent" translatesAutoresizingMaskIntoConstraints="NO" id="jhI-yC-wSJ">
                                         <rect key="frame" x="112" y="309" width="190" height="68"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="68" id="kHI-nW-0QP"/>
@@ -128,6 +128,7 @@
                         <outlet property="emptyDescriptionLabel" destination="yGi-qX-uIL" id="dvg-nW-bas"/>
                         <outlet property="emptyTitleLabel" destination="S4K-Wg-fEZ" id="XV1-4D-44I"/>
                         <outlet property="rewindImageView" destination="iRn-ev-RvD" id="9hd-gY-baR"/>
+                        <outlet property="timeTravelImageView" destination="jhI-yC-wSJ" id="WGx-fZ-EGl"/>
                         <outlet property="titleLabel" destination="tOL-kW-PrL" id="Bsl-rc-4qf"/>
                     </connections>
                 </viewController>

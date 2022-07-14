@@ -15,6 +15,7 @@ final class CheckMessageViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var emptyDescriptionLabel: UILabel!
     @IBOutlet weak var emptyTitleLabel: UILabel!
+    @IBOutlet weak var timeTravelImageView: UIImageView!
     @IBOutlet weak var rewindImageView: UIImageView!
     
     // MARK: - Life Cycle
@@ -22,6 +23,18 @@ final class CheckMessageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        setGesture()
+    }
+    
+    // MARK: - @objc
+    
+    @objc private func timeTravelButtonDidTap() {
+        let timeTravel = TimeTravelViewController()
+        timeTravel.modalTransitionStyle = .crossDissolve
+        timeTravel.modalPresentationStyle = .overFullScreen
+        present(timeTravel, animated: true) {
+            self.navigationController?.popViewController(animated: false)
+        }
     }
     
     // MARK: - Custom Method
@@ -29,6 +42,11 @@ final class CheckMessageViewController: UIViewController {
     private func setUI() {
         setHeaderViewUI()
         setEmptyViewUI()
+    }
+    
+    private func setGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(timeTravelButtonDidTap))
+        timeTravelImageView.addGestureRecognizer(tapGesture)
     }
     
     // MARK: - IBAction
