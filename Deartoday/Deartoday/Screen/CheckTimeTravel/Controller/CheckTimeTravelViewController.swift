@@ -46,7 +46,7 @@ final class CheckTimeTravelViewController: UIViewController {
     
     private func setTableView() {
         registerXib()
-        setTableViewLayout()
+        setTableViewUI()
         setDataSource()
     }
     
@@ -55,14 +55,15 @@ final class CheckTimeTravelViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: TimeTapeTableViewCell.identifier)
     }
     
-    private func setTableViewLayout() {
-        tableView.rowHeight = UITableView.automaticDimension
+    private func setTableViewUI() {
         tableView.estimatedRowHeight = 273
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     private func setDataSource() {
         dataSource = UITableViewDiffableDataSource<Section, TimeTapeDataModel>(tableView: tableView, cellProvider: { (tableView: UITableView, indexPath: IndexPath, identifier: TimeTapeDataModel) -> UITableViewCell? in
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TimeTapeTableViewCell.identifier, for: indexPath) as? TimeTapeTableViewCell else { return UITableViewCell() }
+            cell.selectionStyle = .none
             cell.setData(model: self.timeTapes[indexPath.item])
             return cell
         })
