@@ -49,9 +49,9 @@ final class DialogMessageView: UIView {
         $0.contentMode = .scaleAspectFit
     }
     
-    private var dialogLabel = UILabel().then {
+    var dialogLabel = UILabel().then {
         $0.textColor = .darkGray01
-        $0.font = .p6
+        $0.font = .p7
         $0.textAlignment = .left
         $0.numberOfLines = 0
     }
@@ -72,7 +72,15 @@ final class DialogMessageView: UIView {
     // MARK: - Custom Method
     
     private func setUI() {
-        backgroundColor = .clear
+        
+        // MARK: - TODO REMOVE
+        
+        switch dialogType {
+        case .past:
+            backgroundColor = .yellow00
+        case .present:
+            backgroundColor = .blue00
+        }
     }
     
     private func setLayout() {

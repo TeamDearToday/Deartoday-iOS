@@ -9,54 +9,71 @@ import UIKit
 
 extension DialogViewController {
     // 나레이션 라벨 애니메이션
-    private func showNarrationLabel(_ component: UILabel) {
+    internal func showNarrationLabel(_ component: UILabel, completion: @escaping () -> Void) {
         UIView.animate(withDuration: 0.5, delay: 0.7, options: .curveEaseOut) {
+            component.transform = CGAffineTransform(translationX: 0, y: -16)
             component.alpha = 1
+        } completion: { _ in
+            completion()
         }
     }
     
-    private func hideNarrationLabel(_ component: UILabel) {
+    internal func hideNarrationLabel(_ component: UILabel, completion: @escaping () -> Void) {
         UIView.animate(withDuration: 0.5, delay: 0.7, options: .curveEaseOut) {
             component.alpha = 0
+        } completion: { _ in
+            completion()
         }
     }
     
     // 버튼 애니메이션
-    private func showButton(_ component: UIButton) {
+    internal func showButton(_ component: UIButton, completion: @escaping () -> Void) {
         UIView.animate(withDuration: 0.6, delay: 0.6, options: .curveEaseOut) {
             component.alpha = 1
+        } completion: { _ in
+            completion()
         }
     }
     
-    private func hideButton(_ component: UIButton) {
+    internal func hideButton(_ component: UIButton, completion: @escaping () -> Void) {
         UIView.animate(withDuration: 0.6, delay: 0.6, options: .curveEaseOut) {
             component.alpha = 0
+        } completion: { _ in
+            completion()
         }
     }
     
     // 과거의 나 텍스트 애니메이션
-    private func showPastView(_ component: UIView) {
+    internal func showPastView(_ component: UIView, completion: @escaping () -> Void) {
         UIView.animate(withDuration: 0.3, delay: 0.8, options: .curveEaseOut) {
             component.alpha = 1
+        } completion: { _ in
+            completion()
         }
     }
     
-    private func hidePastView(_ component: UIView) {
+    internal func hidePastView(_ component: UIView, completion: @escaping () -> Void) {
         UIView.animate(withDuration: 0.3, delay: 0.8, options: .curveEaseOut) {
             component.alpha = 0
+        } completion: { _ in
+            completion()
         }
     }
     
     // 현재의 나 텍스트 애니메이션
-    private func showPresentView(_ component: UIView) {
+    internal func showPresentView(_ component: UIView, completion: @escaping () -> Void) {
         UIView.animate(withDuration: 1.0, delay: 1.0, options: .curveEaseOut) {
             component.alpha = 1
+        } completion: { _ in
+            completion()
         }
     }
     
-    private func hidePresentView(_ component: UIView) {
+    internal func hidePresentView(_ component: UIView, completion: @escaping () -> Void) {
         UIView.animate(withDuration: 1.0, delay: 1.0, options: .curveEaseOut) {
             component.alpha = 0
+        } completion: { _ in
+            completion()
         }
     }
 }

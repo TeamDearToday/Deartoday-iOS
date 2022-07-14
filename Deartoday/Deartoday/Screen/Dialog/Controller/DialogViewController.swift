@@ -22,7 +22,7 @@ final class DialogViewController: UIViewController {
                               반갑게 손을 흔들며 당신을 맞이하네요.
                               한 번 인사를 건네보세요!
                               """
-            dialogMessageView.dialogText = """
+            pastMessageView.dialogText = """
                                            안녕! 나는 \(year)년도의 너야.
                                            만나서 정말 반가워!
                                            너에게 몇 가지 궁금한 게 있는데
@@ -105,9 +105,14 @@ final class DialogViewController: UIViewController {
         $0.alpha = 0
     }
     
-    private var dialogMessageView = DialogMessageView().then {
+    private var pastMessageView = DialogMessageView().then {
+        $0.dialogType = .past
         $0.alpha = 0
-        $0.backgroundColor = .gray
+    }
+    
+    private var presentMessageView = DialogMessageView().then {
+        $0.dialogType = .past
+        $0.alpha = 0
     }
     
     private lazy var nextButton = DDSButton().then {
@@ -127,7 +132,7 @@ final class DialogViewController: UIViewController {
     
     private lazy var answerTextView = UITextView().then {
         $0.text = "답장을 입력해주세요."
-        $0.font = .Pretendard(.medium, size: 14)
+        $0.font = .p7
         $0.isHidden = true
         $0.backgroundColor = .clear
         $0.isScrollEnabled = false
@@ -162,49 +167,31 @@ final class DialogViewController: UIViewController {
     
     @objc func nextButtonDidTap(_ sender: DDSButton) {
         if sender.text == "안녕!" {
-            UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
-                self.guideLabel.alpha = 0
-                self.nextButton.alpha = 0
-            } completion: { _ in
-                UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
-                    self.guideLabel.transform = CGAffineTransform(translationX: 0, y: -16)
-                    self.guideLabel.alpha = 1
-                    self.guideText = "당신에게 궁금한게 많은지 이것저것 질문을 합니다."
-                } completion: { _ in
-                    UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
-                        self.dialogMessageView.alpha = 1
-                    } completion: { _ in
-                        self.guideText = ""
-                        self.nextButton.text = "응, 좋아!"
-                        
-                        UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
-                            self.nextButton.alpha = 1
-                        }
-                    }
+            hideNarrationLabel(guideLabel) { }
+            hideButton(nextButton) {
+                self.guideText = "당신에게 궁금한게 많은지 이것저것 질문을 합니다."
+                self.showPastView(self.pastMessageView) {
+                    self.guideText = ""
+                    self.nextButton.text = "응, 좋아!"
+                    self.showButton(self.nextButton) { }
                 }
             }
         } else {
-            UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
-                self.dialogMessageView.alpha = 0
-                self.nextButton.alpha = 0
-            } completion: { _ in
-                self.dialogMessageView.dialogText = """
+            hidePastView(self.pastMessageView) { }
+            hideButton(self.nextButton) {
+                self.pastMessageView.dialogText = """
                                                     고마워!
                                                     아하, 너는 이때로 가장 돌아가고 싶었구나.
                                                     """
                 
-                self.dialogMessageView.snp.updateConstraints {
-                    $0.top.equalTo(self.view.safeAreaLayoutGuide).inset(290)
-                    $0.width.equalTo(343)
-                    $0.height.equalTo(68)
-                }
+                self.setDialogMessageViewHeight()
                 
                 UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
                     self.photoImageView.alpha = 1
-                    self.dialogMessageView.alpha = 1
+                    self.pastMessageView.alpha = 1
                 } completion: { _ in
                     UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
-                        self.dialogMessageView.alpha = 0
+                        self.pastMessageView.alpha = 0
                     } completion: { _ in
                         self.setDialogAnimation()
                     }
@@ -214,35 +201,7 @@ final class DialogViewController: UIViewController {
     }
     
     @objc func sendButtonDidTap() {
-        UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
-            self.dialogMessageView.alpha = 0
-        } completion: { _ in
-            self.dialogMessageView.dialogType = .present
-            
-            if let text = self.answerTextView.text {
-                self.dialogMessageView.dialogText = text
-                self.answers[self.count] = text
-            }
-            
-            UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
-                self.dialogMessageView.alpha = 1
-            } completion: { _ in
-                UIView.animate(withDuration: 0.5, delay: 1.2, options: .curveEaseOut) {
-                    self.dialogMessageView.alpha = 0
-                } completion: { _ in
-                    if self.count == 6 {
-                        self.dialogMessageView.dialogText = ""
-                    } else {
-                        self.dialogMessageView.dialogText = DialogDataModel.questions[self.count]
-                    }
-                    UIView.animate(withDuration: 0.5, delay: 1.2, options: .curveEaseOut) {
-                        self.dialogMessageView.alpha = 1
-                    }
-                }
-            }
-        }
         
-        count += 1
     }
     
     // MARK: - Custom Method
@@ -265,7 +224,8 @@ final class DialogViewController: UIViewController {
                           exitButton,
                           guideLabel,
                           nextButton,
-                          dialogMessageView,
+                          pastMessageView,
+                          presentMessageView,
                           photoImageView,
                           sendButton,
                           underLineView,
@@ -323,9 +283,15 @@ final class DialogViewController: UIViewController {
             $0.width.equalTo(240)
         }
         
-        dialogMessageView.snp.makeConstraints {
+        pastMessageView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(228)
-            $0.width.equalTo(343)
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.height.equalTo(110)
+        }
+        
+        presentMessageView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(228)
+            $0.leading.trailing.equalToSuperview().inset(16)
             $0.height.equalTo(110)
         }
         
@@ -364,15 +330,8 @@ final class DialogViewController: UIViewController {
     }
     
     private func setLabelAnimation() {
-        UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
-            self.guideLabel.transform = CGAffineTransform(translationX: 0, y: -16)
-            self.guideLabel.alpha = 1
-        } completion: { _ in
-            self.nextButton.alpha = 0
-            
-            UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseOut) {
-                self.nextButton.alpha = 1
-            }
+        showNarrationLabel(guideLabel) {
+            self.showButton(self.nextButton) { }
         }
     }
     
@@ -381,17 +340,26 @@ final class DialogViewController: UIViewController {
             $0.isHidden = false
         }
         
-        dialogMessageView.dialogText = DialogDataModel.questions[0]
-        count += 1
+        pastMessageView.dialogText = DialogDataModel.questions[0]
+        setDialogMessageViewHeight()
         
         UIView.animate(withDuration: 0.5, delay: 1.0, options: .curveEaseOut) {
-            self.dialogMessageView.alpha = 1
+            self.pastMessageView.alpha = 1
             self.answerTextView.becomeFirstResponder()
         }
     }
     
     private func setTextView() {
         answerTextView.delegate = self
+    }
+    
+    private func setDialogMessageViewHeight() {
+        let height = pastMessageView.dialogLabel.intrinsicContentSize.height + 26
+        
+        pastMessageView.snp.updateConstraints {
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).inset(290)
+            $0.height.equalTo(height)
+        }
     }
 }
 
@@ -425,7 +393,8 @@ extension DialogViewController: UITextViewDelegate {
         }
     }
     
-    func textViewDidEndEditing(_ textView: UITextView) {
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
         answerTextView.text = ""
+        return true
     }
 }
