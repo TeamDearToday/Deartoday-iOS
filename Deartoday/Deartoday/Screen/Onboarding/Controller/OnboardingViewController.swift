@@ -51,8 +51,7 @@ final class OnboardingViewController: UIViewController {
     private func setUI() {
         labelCollection.forEach {
             $0.textColor = .white
-            $0.font = .p1
-            $0.font = .systemFont(ofSize: 13)
+            $0.font = .onboard0
         }
         
         circleCollection.forEach {

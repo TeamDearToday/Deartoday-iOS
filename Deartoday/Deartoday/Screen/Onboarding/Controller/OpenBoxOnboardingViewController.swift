@@ -35,11 +35,8 @@ final class OpenBoxOnboardingViewController: UIViewController {
         }
         labelCollection.forEach {
             $0.textColor = .white
-            $0.font = .p1
-            $0.font = .systemFont(ofSize: 13)
-            $0.isHidden = false
+            $0.font = .onboard0
         }
-        letterButton.isHidden = false
     }
     
     // MARK: - IBAction
