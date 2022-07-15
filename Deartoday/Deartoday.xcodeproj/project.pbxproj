@@ -82,7 +82,6 @@
 		98D912C5287DB0130088A7F9 /* Lottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D912C4287DB0130088A7F9 /* Lottie.swift */; };
 		98D912C8287DC30F0088A7F9 /* CheckMessage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98D912C7287DC30F0088A7F9 /* CheckMessage.storyboard */; };
 		98D912CE287DC3430088A7F9 /* CheckMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D912CD287DC3430088A7F9 /* CheckMessageViewController.swift */; };
-		98D912D0287DC34F0088A7F9 /* CheckMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D912CF287DC34F0088A7F9 /* CheckMessageView.swift */; };
 		98D912D2287DC3590088A7F9 /* CheckMessageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D912D1287DC3590088A7F9 /* CheckMessageDataModel.swift */; };
 		A3EDF83E9CD70073D83CA26D /* Pods_Deartoday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A3CEAB5A8D31B890C8B41E /* Pods_Deartoday.framework */; };
 /* End PBXBuildFile section */
@@ -168,7 +167,6 @@
 		98D912C4287DB0130088A7F9 /* Lottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lottie.swift; sourceTree = "<group>"; };
 		98D912C7287DC30F0088A7F9 /* CheckMessage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckMessage.storyboard; sourceTree = "<group>"; };
 		98D912CD287DC3430088A7F9 /* CheckMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessageViewController.swift; sourceTree = "<group>"; };
-		98D912CF287DC34F0088A7F9 /* CheckMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessageView.swift; sourceTree = "<group>"; };
 		98D912D1287DC3590088A7F9 /* CheckMessageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessageDataModel.swift; sourceTree = "<group>"; };
 		A1A07BC470FAC0358D40F43A /* Pods-Deartoday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deartoday.release.xcconfig"; path = "Target Support Files/Pods-Deartoday/Pods-Deartoday.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -690,7 +688,6 @@
 		98D912CB287DC3330088A7F9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				98D912CF287DC34F0088A7F9 /* CheckMessageView.swift */,
 				9858B3CE288097B000860439 /* MessageCollectionViewCell.swift */,
 				9858B3CF288097B000860439 /* MessageCollectionViewCell.xib */,
 			);
@@ -870,7 +867,6 @@
 				98B4B5AC287EB5EF00F4AD7A /* Storyboard.swift in Sources */,
 				92DB35662875652F001E2006 /* OnboardingViewController.swift in Sources */,
 				92DB3560287564ED001E2006 /* MainModel.swift in Sources */,
-				98D912D0287DC34F0088A7F9 /* CheckMessageView.swift in Sources */,
 				92DB35722875661A001E2006 /* Constant.swift in Sources */,
 				92DB358228756B0B001E2006 /* GeneralResponse.swift in Sources */,
 				92DB357E28756AB8001E2006 /* NetworkConstant.swift in Sources */,
