@@ -86,12 +86,11 @@ final class CheckMessageViewController: UIViewController {
     private func setDataSource() {
         dataSource = UICollectionViewDiffableDataSource<MessageSection, String>(collectionView: collectionView, cellProvider: { (collectionView: UICollectionView, indexPath: IndexPath, identifier: String) -> UICollectionViewCell? in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MessageCollectionViewCell.identifier, for: indexPath) as? MessageCollectionViewCell else { return UICollectionViewCell() }
-            cell.setData(content: "\(indexPath.item)iiiiiiiidsfsfdsfdfsfsdfdddddddddddddddddddddddddddddddddddddsdddf,s;fls;fjskfslknflksnfksldfknsfklslknsdlkfmslfs;kfneslfkna;lamlmd,dmsmmmmd,msdfmdskfslknfdl,smf,mf.s,mdfsm.,dfm.s,mdfls;dflsjkfsj데이")
             return cell
         })
         snapshot = NSDiffableDataSourceSnapshot<MessageSection, String>()
         snapshot.appendSections([.message])
-        snapshot.appendItems(["a", "b", "c", "D", "e"], toSection: .message)
+        snapshot.appendItems(messages, toSection: .message)
         dataSource.apply(snapshot, animatingDifferences: true, completion: nil)
     }
     
