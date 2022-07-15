@@ -36,6 +36,16 @@ final class PlayTapeOnboardingViewController: UIViewController {
     // MARK: IBAction
     
     @IBAction func tapeButtonDidTap(_ sender: UIButton) {
-        guard let LetterOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.LetterOnboarding) as?
+        circleCollection.forEach {
+            $0.isHidden = true
+        }
+        explanationLabel.isHidden = true
+        circleButton.isHidden = true
+        
+        guard let letterOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.LetterOnboarding) as? LetterOnboardingViewController else { return }
+        letterOnboarding.modalTransitionStyle = .crossDissolve
+        letterOnboarding.modalPresentationStyle = .overFullScreen
+        letterOnboarding.letterValue = 2
+        present(letterOnboarding, animated: true)
     }
 }

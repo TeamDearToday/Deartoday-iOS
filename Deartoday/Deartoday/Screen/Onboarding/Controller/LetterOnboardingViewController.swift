@@ -16,8 +16,8 @@ final class LetterOnboardingViewController: UIViewController {
     // MARK: - UI Property
     
     @IBOutlet weak var dearLabel: UILabel!
-    @IBOutlet weak var checkPlayerButton: UIButton!
     @IBOutlet var letterLabelCollection: [UILabel]!
+    @IBOutlet var nextButtonCollection: [UIButton]!
     @IBOutlet weak var letterTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var dearLabelTopConstraint: NSLayoutConstraint!
     
@@ -30,7 +30,7 @@ final class LetterOnboardingViewController: UIViewController {
         if letterValue == 1 {
             setFirstInitAnimation()
         } else if letterValue == 2 {
-            
+            setSecondInitAnimation()
         }
     }
     
@@ -40,15 +40,23 @@ final class LetterOnboardingViewController: UIViewController {
             $0.font = .p4
             $0.textColor = .darkGray01
         }
+        nextButtonCollection.forEach {
+            $0.titleLabel?.font = .btn0
+            $0.setTitleColor(.blue02, for: .normal)
+        }
         dearLabel.font = .p5En
         dearLabel.textColor = .blue02
-        checkPlayerButton.titleLabel?.font = .btn0
-        checkPlayerButton.setTitleColor(.blue02, for: .normal)
     }
     
     private func setFirstInitAnimation() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.setFirstComponentsAnimation()
+        }
+    }
+    
+    private func setSecondInitAnimation() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.setSecondComponentsAnimation()
         }
     }
     
@@ -85,12 +93,26 @@ final class LetterOnboardingViewController: UIViewController {
                                 self.letterLabelCollection[4].alpha = 1
                             }, completion: { _ in
                                 UIView.animate(withDuration: 0.3, delay: 1.2, animations: {
-                                    self.checkPlayerButton.alpha = 1
+                                    self.nextButtonCollection[0].alpha = 1
                                 }, completion: nil )
                             } )
                         })
                     })
                 })
             })
+    }
+    
+    private func setSecondComponentsAnimation() {
+        UIView.animate(withDuration: 0.6, animations: {
+            self.letterLabelCollection[5].alpha = 1
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.6, delay: 1.2, animations: {
+                self.letterLabelCollection[6].alpha = 1
+            }, completion: { _ in
+                UIView.animate(withDuration: 0.3, delay: 1.2, animations: {
+                    self.nextButtonCollection[1].alpha = 1
+                }, completion: nil)
+            } )
+        })
     }
 }
