@@ -7,7 +7,17 @@
 
 import UIKit
 
+enum MessageSection {
+    case message
+}
+
 final class CheckMessageViewController: UIViewController {
+    
+    // MARK: - Property
+    
+    var dataSource: UICollectionViewDiffableDataSource<MessageSection, String>!
+    var snapshot: NSDiffableDataSourceSnapshot<MessageSection, String>!
+    var messages: [String] = []
     
     // MARK: - UI Property
     
@@ -49,8 +59,8 @@ final class CheckMessageViewController: UIViewController {
     
     private func setCollectionView() {
         registerXib()
+        setDataSource()
         collectionView.setCollectionViewLayout(createLayout(), animated: true)
-        collectionView.dataSource = self
     }
     
     private func registerXib() {
@@ -71,6 +81,18 @@ final class CheckMessageViewController: UIViewController {
         section.interGroupSpacing = 15
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
+    }
+    
+    private func setDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<MessageSection, String>(collectionView: collectionView, cellProvider: { (collectionView: UICollectionView, indexPath: IndexPath, identifier: String) -> UICollectionViewCell? in
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MessageCollectionViewCell.identifier, for: indexPath) as? MessageCollectionViewCell else { return UICollectionViewCell() }
+            cell.setData(content: "\(indexPath.item)iiiiiiiidsfsfdsfdfsfsdfdddddddddddddddddddddddddddddddddddddsdddf,s;fls;fjskfslknflksnfksldfknsfklslknsdlkfmslfs;kfneslfkna;lamlmd,dmsmmmmd,msdfmdskfslknfdl,smf,mf.s,mdfsm.,dfm.s,mdfls;dflsjkfsj데이")
+            return cell
+        })
+        snapshot = NSDiffableDataSourceSnapshot<MessageSection, String>()
+        snapshot.appendSections([.message])
+        snapshot.appendItems(["a", "b", "c", "D", "e"], toSection: .message)
+        dataSource.apply(snapshot, animatingDifferences: true, completion: nil)
     }
     
     private func setGesture() {
