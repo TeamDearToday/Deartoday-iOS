@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum Section {
+enum TimeTravelSection {
     case tape
 }
 
@@ -15,8 +15,8 @@ final class CheckTimeTravelViewController: UIViewController {
     
     // MARK: - Property
     
-    var dataSource: UITableViewDiffableDataSource<Section, TimeTapeDataModel>!
-    var snapshot: NSDiffableDataSourceSnapshot<Section, TimeTapeDataModel>!
+    var dataSource: UITableViewDiffableDataSource<TimeTravelSection, TimeTapeDataModel>!
+    var snapshot: NSDiffableDataSourceSnapshot<TimeTravelSection, TimeTapeDataModel>!
     var timeTapes: [TimeTapeDataModel] = []
 
     // MARK: - UI Property
@@ -74,13 +74,13 @@ final class CheckTimeTravelViewController: UIViewController {
     }
     
     private func setDataSource() {
-        dataSource = UITableViewDiffableDataSource<Section, TimeTapeDataModel>(tableView: tableView, cellProvider: { (tableView: UITableView, indexPath: IndexPath, identifier: TimeTapeDataModel) -> UITableViewCell? in
+        dataSource = UITableViewDiffableDataSource<TimeTravelSection, TimeTapeDataModel>(tableView: tableView, cellProvider: { (tableView: UITableView, indexPath: IndexPath, identifier: TimeTapeDataModel) -> UITableViewCell? in
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TimeTapeTableViewCell.identifier, for: indexPath) as? TimeTapeTableViewCell else { return UITableViewCell() }
             cell.selectionStyle = .none
             cell.setData(model: self.timeTapes[indexPath.item])
             return cell
         })
-        snapshot = NSDiffableDataSourceSnapshot<Section, TimeTapeDataModel>()
+        snapshot = NSDiffableDataSourceSnapshot<TimeTravelSection, TimeTapeDataModel>()
         snapshot.appendSections([.tape])
         snapshot.appendItems(timeTapes, toSection: .tape)
         dataSource.apply(snapshot, animatingDifferences: true)
