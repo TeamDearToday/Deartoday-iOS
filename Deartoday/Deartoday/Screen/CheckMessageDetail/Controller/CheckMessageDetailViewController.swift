@@ -8,6 +8,10 @@
 import UIKit
 
 final class CheckMessageDetailViewController: UIViewController {
+    
+    // MARK: - Property
+    
+    var content: String = ""
 
     // MARK: - UI Property
     
@@ -20,6 +24,7 @@ final class CheckMessageDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setData()
         setUI()
     }
     
@@ -40,6 +45,11 @@ final class CheckMessageDetailViewController: UIViewController {
         writerLabel.font = .p6
     }
     
+    private func setData() {
+        contentLabel.text = content
+        contentLabel.sizeToFit()
+    }
+    
     private func setMessageViewDynamicHeight() {
         messageViewHeightConstraint.constant = (contentLabel.frame.height < 145)
         ? 200 : contentLabel.layer.frame.height + 80
@@ -48,6 +58,6 @@ final class CheckMessageDetailViewController: UIViewController {
     // MARK: - IBAction
     
     @IBAction func closeButtonDidTap(_ sender: Any) {
-        dismiss(animated: true)
+        dismiss(animated: false)
     }
 }
