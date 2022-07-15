@@ -58,6 +58,7 @@ final class CheckMessageViewController: UIViewController {
     }
     
     private func setCollectionView() {
+        collectionView.delegate = self
         registerXib()
         setDataSource()
         collectionView.setCollectionViewLayout(createLayout(), animated: true)
@@ -103,6 +104,17 @@ final class CheckMessageViewController: UIViewController {
     
     @IBAction func backButtonDidTap(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension CheckMessageViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let messageDetail = UIStoryboard(name: Constant.Storyboard.CheckMessageDetail, bundle: nil)
+            .instantiateViewController(withIdentifier: Constant.ViewController.CheckMessageDetail) as? CheckMessageDetailViewController else { return }
+        messageDetail.modalPresentationStyle = .overFullScreen
+        present(messageDetail, animated: false, completion: nil)
     }
 }
 
