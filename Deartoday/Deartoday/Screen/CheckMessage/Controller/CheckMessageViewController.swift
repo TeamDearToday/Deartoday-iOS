@@ -7,22 +7,35 @@
 
 import UIKit
 
+enum MessageSection {
+    case message
+}
+
 final class CheckMessageViewController: UIViewController {
+    
+    // MARK: - Property
+    
+    var dataSource: UICollectionViewDiffableDataSource<MessageSection, String>!
+    var snapshot: NSDiffableDataSourceSnapshot<MessageSection, String>!
+    var messages: [String] = []
     
     // MARK: - UI Property
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var emptyDescriptionLabel: UILabel!
     @IBOutlet weak var emptyTitleLabel: UILabel!
     @IBOutlet weak var timeTravelImageView: UIImageView!
     @IBOutlet weak var rewindImageView: UIImageView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        setCollectionView()
         setGesture()
     }
     
@@ -42,6 +55,43 @@ final class CheckMessageViewController: UIViewController {
     private func setUI() {
         setHeaderViewUI()
         setEmptyViewUI()
+    }
+    
+    private func setCollectionView() {
+        registerXib()
+        setDataSource()
+        collectionView.setCollectionViewLayout(createLayout(), animated: true)
+    }
+    
+    private func registerXib() {
+        let nib = UINib(nibName: MessageCollectionViewCell.identifier, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: MessageCollectionViewCell.identifier)
+    }
+    
+    private func createLayout() -> UICollectionViewLayout {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                              heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                               heightDimension: .absolute(((getDeviceWidth()-55)/2)))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+                                                       subitem: item, count: 2)
+        group.interItemSpacing = NSCollectionLayoutSpacing.fixed(15)
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 15
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        return layout
+    }
+    
+    private func setDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<MessageSection, String>(collectionView: collectionView, cellProvider: { (collectionView: UICollectionView, indexPath: IndexPath, identifier: String) -> UICollectionViewCell? in
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MessageCollectionViewCell.identifier, for: indexPath) as? MessageCollectionViewCell else { return UICollectionViewCell() }
+            return cell
+        })
+        snapshot = NSDiffableDataSourceSnapshot<MessageSection, String>()
+        snapshot.appendSections([.message])
+        snapshot.appendItems(messages, toSection: .message)
+        dataSource.apply(snapshot, animatingDifferences: true, completion: nil)
     }
     
     private func setGesture() {
