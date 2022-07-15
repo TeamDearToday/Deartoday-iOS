@@ -9,6 +9,10 @@ import UIKit
 
 final class LetterOnboardingViewController: UIViewController {
     
+    // MARK: - Property
+    
+    var letterValue: Int?
+    
     // MARK: - UI Property
     
     @IBOutlet weak var dearLabel: UILabel!
@@ -21,13 +25,16 @@ final class LetterOnboardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setInitAnimation()
         setLabelUI()
         setLayout()
+        if letterValue == 1 {
+            setFirstInitAnimation()
+        } else if letterValue == 2 {
+            
+        }
     }
     
     // MARK: - Custom Method
-    
     private func setLabelUI() {
         letterLabelCollection.forEach {
             $0.font = .p4
@@ -39,9 +46,9 @@ final class LetterOnboardingViewController: UIViewController {
         checkPlayerButton.setTitleColor(.blue02, for: .normal)
     }
     
-    private func setInitAnimation() {
+    private func setFirstInitAnimation() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.setComponentsAnimation()
+            self.setFirstComponentsAnimation()
         }
     }
     
@@ -61,7 +68,7 @@ final class LetterOnboardingViewController: UIViewController {
         dearLabelTopConstraint.constant = (getDeviceHeight() == 667) ? -58 : -64
     }
     
-    private func setComponentsAnimation() {
+    private func setFirstComponentsAnimation() {
         UIView.animate(withDuration: 0.6, animations: {
             self.dearLabel.alpha = 1
             self.letterLabelCollection[0].alpha = 1 }, completion: { _ in
