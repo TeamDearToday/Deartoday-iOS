@@ -25,6 +25,7 @@ final class CheckMessageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        setCollectionView()
         setGesture()
     }
     
@@ -46,6 +47,32 @@ final class CheckMessageViewController: UIViewController {
         setEmptyViewUI()
     }
     
+    private func setCollectionView() {
+        registerXib()
+        collectionView.setCollectionViewLayout(createLayout(), animated: true)
+        collectionView.dataSource = self
+    }
+    
+    private func registerXib() {
+        let nib = UINib(nibName: MessageCollectionViewCell.identifier, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: MessageCollectionViewCell.identifier)
+    }
+    
+    private func createLayout() -> UICollectionViewLayout {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                              heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                               heightDimension: .absolute(((getDeviceWidth()-55)/2)))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+                                                       subitem: item, count: 2)
+        group.interItemSpacing = NSCollectionLayoutSpacing.fixed(15)
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 15
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        return layout
+    }
+    
     private func setGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(timeTravelButtonDidTap))
         timeTravelImageView.addGestureRecognizer(tapGesture)
@@ -55,6 +82,20 @@ final class CheckMessageViewController: UIViewController {
     
     @IBAction func backButtonDidTap(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+
+extension CheckMessageViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 15
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MessageCollectionViewCell.identifier, for: indexPath) as? MessageCollectionViewCell else { return UICollectionViewCell() }
+        cell.setData(content: "\(indexPath.item)")
+        return cell
     }
 }
 

@@ -111,10 +111,10 @@
                                     <constraint firstItem="S4K-Wg-fEZ" firstAttribute="leading" secondItem="iRn-ev-RvD" secondAttribute="trailing" constant="6" id="gUW-AJ-86s"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VZ2-lb-bMO">
-                                <rect key="frame" x="0.0" y="205" width="414" height="657"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VZ2-lb-bMO">
+                                <rect key="frame" x="20" y="205" width="374" height="657"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VqC-Aw-gv6">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="VqC-Aw-gv6">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -137,14 +137,14 @@
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="0zt-Uz-Hsa" secondAttribute="bottom" id="4fo-Ot-Se7"/>
                             <constraint firstItem="Ovg-qb-arG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="A5c-Jr-oaD"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="VZ2-lb-bMO" secondAttribute="trailing" id="Bdw-Xh-z9c"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="VZ2-lb-bMO" secondAttribute="trailing" constant="20" id="Bdw-Xh-z9c"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="VZ2-lb-bMO" secondAttribute="bottom" id="FFX-sm-Qwr"/>
                             <constraint firstItem="Ovg-qb-arG" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Fuc-8h-jMW"/>
                             <constraint firstItem="VZ2-lb-bMO" firstAttribute="top" secondItem="Ovg-qb-arG" secondAttribute="bottom" id="MEB-6C-mfx"/>
                             <constraint firstItem="0zt-Uz-Hsa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="dnc-8B-oSc"/>
                             <constraint firstItem="0zt-Uz-Hsa" firstAttribute="top" secondItem="Ovg-qb-arG" secondAttribute="bottom" id="eGZ-ge-UpC"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ovg-qb-arG" secondAttribute="trailing" id="f1D-7f-NL2"/>
-                            <constraint firstItem="VZ2-lb-bMO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="m0J-Ho-Mf8"/>
+                            <constraint firstItem="VZ2-lb-bMO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="m0J-Ho-Mf8"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0zt-Uz-Hsa" secondAttribute="trailing" id="s3N-a3-qCN"/>
                         </constraints>
                     </view>
