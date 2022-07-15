@@ -106,20 +106,6 @@ final class CheckMessageViewController: UIViewController {
     }
 }
 
-// MARK: - UICollectionViewDataSource
-
-extension CheckMessageViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MessageCollectionViewCell.identifier, for: indexPath) as? MessageCollectionViewCell else { return UICollectionViewCell() }
-        cell.setData(content: "\(indexPath.item)")
-        return cell
-    }
-}
-
 // MARK: - Component UI Setting functions
 
 extension CheckMessageViewController {
