@@ -82,7 +82,7 @@ final class DialogMessageView: UIView {
         }
         
         dialogLabel.snp.makeConstraints {
-            $0.bottom.equalToSuperview().inset(13)
+            $0.top.equalToSuperview().inset(15)
             $0.leading.trailing.equalToSuperview().inset(35)
         }
     }
