@@ -9,6 +9,8 @@ import Foundation
 
 extension Constant {
     struct Lottie {
+        ///splash
+        static let splash = "splash"
         ///온보딩 3
         static let box = "box"
         ///온보딩 10 & 시간여행 이후
