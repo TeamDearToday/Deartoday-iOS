@@ -24,6 +24,10 @@ extension Constant {
         static let icBack = UIImage(named: "icBack")!
         static let icClose = UIImage(named: "icClose")!
         
+        // MARK: - 스플래시
+        ///image
+        static let soundon = UIImage(named: "soundon")!
+        
         // MARK: - 로그인
         ///image
         static let logo = UIImage(named: "logo")!
