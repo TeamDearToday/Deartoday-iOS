@@ -50,6 +50,7 @@
 		92DB358A28756B8E001E2006 /* TempAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB358928756B8E001E2006 /* TempAPI.swift */; };
 		92E41224287FD01800F55056 /* DialogViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E41223287FD01800F55056 /* DialogViewController+.swift */; };
 		984099E62881F3FB00025092 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 984099E52881F3FB00025092 /* splash.json */; };
+		984099E92881F4A700025092 /* sound_box.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 984099E82881F4A700025092 /* sound_box.mp3 */; };
 		9858B3D0288097B000860439 /* MessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9858B3CE288097B000860439 /* MessageCollectionViewCell.swift */; };
 		9858B3D1288097B000860439 /* MessageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9858B3CF288097B000860439 /* MessageCollectionViewCell.xib */; };
 		98A4750A287DECCF008891F5 /* CheckTimeTravel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A47509287DECCF008891F5 /* CheckTimeTravel.storyboard */; };
@@ -133,6 +134,7 @@
 		92DB358B28756F3F001E2006 /* Deartoday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Deartoday.entitlements; sourceTree = "<group>"; };
 		92E41223287FD01800F55056 /* DialogViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DialogViewController+.swift"; sourceTree = "<group>"; };
 		984099E52881F3FB00025092 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
+		984099E82881F4A700025092 /* sound_box.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_box.mp3; sourceTree = "<group>"; };
 		9858B3CE288097B000860439 /* MessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCollectionViewCell.swift; sourceTree = "<group>"; };
 		9858B3CF288097B000860439 /* MessageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCollectionViewCell.xib; sourceTree = "<group>"; };
 		98A47509287DECCF008891F5 /* CheckTimeTravel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckTimeTravel.storyboard; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 				92DB35742875665A001E2006 /* Asset */,
 				92DB357328756653001E2006 /* Font */,
 				98D912BF287DAA0B0088A7F9 /* Lottie */,
+				984099E72881F47100025092 /* Sound */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -561,6 +564,14 @@
 				92DB35392875633F001E2006 /* Assets.xcassets */,
 			);
 			path = Asset;
+			sourceTree = "<group>";
+		};
+		984099E72881F47100025092 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				984099E82881F4A700025092 /* sound_box.mp3 */,
+			);
+			path = Sound;
 			sourceTree = "<group>";
 		};
 		98A47508287DECB6008891F5 /* CheckTimeTravel */ = {
@@ -773,6 +784,7 @@
 				98A47516287E0106008891F5 /* CheckMessageDetail.storyboard in Resources */,
 				98BFBCC22879B66A00F01F04 /* GmarketSansMedium.otf in Resources */,
 				92DB353A2875633F001E2006 /* Assets.xcassets in Resources */,
+				984099E92881F4A700025092 /* sound_box.mp3 in Resources */,
 				98BFBCCA2879B68600F01F04 /* Pretendard-Regular.otf in Resources */,
 				98BFBCC92879B68600F01F04 /* Pretendard-Bold.otf in Resources */,
 				92DB35382875633D001E2006 /* Main.storyboard in Resources */,
