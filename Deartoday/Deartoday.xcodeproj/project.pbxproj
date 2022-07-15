@@ -51,6 +51,7 @@
 		92E41224287FD01800F55056 /* DialogViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E41223287FD01800F55056 /* DialogViewController+.swift */; };
 		984099E62881F3FB00025092 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 984099E52881F3FB00025092 /* splash.json */; };
 		984099E92881F4A700025092 /* sound_box.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 984099E82881F4A700025092 /* sound_box.mp3 */; };
+		984099EB2881F4CD00025092 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984099EA2881F4CD00025092 /* Sound.swift */; };
 		9858B3D0288097B000860439 /* MessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9858B3CE288097B000860439 /* MessageCollectionViewCell.swift */; };
 		9858B3D1288097B000860439 /* MessageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9858B3CF288097B000860439 /* MessageCollectionViewCell.xib */; };
 		98A4750A287DECCF008891F5 /* CheckTimeTravel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A47509287DECCF008891F5 /* CheckTimeTravel.storyboard */; };
@@ -135,6 +136,7 @@
 		92E41223287FD01800F55056 /* DialogViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DialogViewController+.swift"; sourceTree = "<group>"; };
 		984099E52881F3FB00025092 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 		984099E82881F4A700025092 /* sound_box.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_box.mp3; sourceTree = "<group>"; };
+		984099EA2881F4CD00025092 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		9858B3CE288097B000860439 /* MessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCollectionViewCell.swift; sourceTree = "<group>"; };
 		9858B3CF288097B000860439 /* MessageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCollectionViewCell.xib; sourceTree = "<group>"; };
 		98A47509287DECCF008891F5 /* CheckTimeTravel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckTimeTravel.storyboard; sourceTree = "<group>"; };
@@ -391,6 +393,7 @@
 				98D912C4287DB0130088A7F9 /* Lottie.swift */,
 				98B4B5A9287EB54600F4AD7A /* ViewController.swift */,
 				98B4B5AB287EB5EF00F4AD7A /* Storyboard.swift */,
+				984099EA2881F4CD00025092 /* Sound.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -847,6 +850,7 @@
 				92DB35352875633D001E2006 /* MainViewController.swift in Sources */,
 				98D912C5287DB0130088A7F9 /* Lottie.swift in Sources */,
 				98A47519287E0129008891F5 /* CheckMessageDetailViewController.swift in Sources */,
+				984099EB2881F4CD00025092 /* Sound.swift in Sources */,
 				92DB3562287564F3001E2006 /* MainView.swift in Sources */,
 				98A47513287DED14008891F5 /* CheckTimeTravelViewController.swift in Sources */,
 				92DB358628756B76001E2006 /* TempDataModel.swift in Sources */,
