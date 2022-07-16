@@ -36,7 +36,7 @@
                                             </imageView>
                                             <button opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNe-RC-mB1">
                                                 <rect key="frame" x="16" y="356" width="265" height="246"/>
-                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="246" id="ccK-1W-800"/>
                                                     <constraint firstAttribute="width" secondItem="BNe-RC-mB1" secondAttribute="height" multiplier="265:246" id="kPa-Ra-HkX"/>
@@ -68,7 +68,7 @@
                                             </imageView>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ein-JI-aqo">
                                                 <rect key="frame" x="544" y="208" width="181" height="177"/>
-                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ein-JI-aqo" secondAttribute="height" multiplier="181:177" id="3cD-HG-KhU"/>
                                                     <constraint firstAttribute="height" constant="177" id="aeQ-y4-bXz"/>
@@ -93,7 +93,7 @@
                                             </button>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TgA-8j-2gh">
                                                 <rect key="frame" x="399" y="507" width="313" height="189"/>
-                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="189" id="MBc-g8-APE"/>
                                                     <constraint firstAttribute="width" secondItem="TgA-8j-2gh" secondAttribute="height" multiplier="313:189" id="bZp-R3-Xej"/>
@@ -345,9 +345,6 @@
         <image name="rewind" width="22" height="22"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
