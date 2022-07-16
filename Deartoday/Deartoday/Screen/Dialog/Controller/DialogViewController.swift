@@ -22,12 +22,14 @@ final class DialogViewController: UIViewController {
                               반갑게 손을 흔들며 당신을 맞이하네요.
                               한 번 인사를 건네보세요!
                               """
+            guideLabel.addLineSpacing(spacing: 27)
+            guideLabel.textAlignment = .center
             pastMessageView.dialogText = """
-                                           안녕! 나는 \(year)년도의 너야.
-                                           만나서 정말 반가워!
-                                           너에게 몇 가지 궁금한 게 있는데
-                                           괜찮다면 너와 잠깐 얘기하고 싶어.
-                                           """
+                                         안녕! 나는 \(year)년도의 너야.
+                                         만나서 정말 반가워!
+                                         너에게 몇 가지 궁금한 게 있는데
+                                         괜찮다면 너와 잠깐 얘기하고 싶어.
+                                         """
         }
     }
     
@@ -204,7 +206,7 @@ final class DialogViewController: UIViewController {
                 }
             }
         } else {
-            print("다음 화면으로 이동")
+            view.window?.rootViewController?.dismiss(animated: true)
         }
     }
     
@@ -251,42 +253,41 @@ final class DialogViewController: UIViewController {
         default:
             hideNarrationLabel(guideLabel) {
                 self.showPresentView(self.presentMessageView) {
-                    self.hidePastView(self.photoImageView) {
-                        UIView.animate(withDuration: 0.5, delay: 0.7, options: .curveEaseOut) {
-                            self.presentMessageView.transform = CGAffineTransform(translationX: 0, y: -154)
-                            self.presentMessageView.alpha = 0
-                        } completion: { _ in
-                            [self.answerTextView, self.underLineView, self.sendButton].forEach {
-                                $0.isHidden = true
-                            }
-                            self.answerTextView.resignFirstResponder()
-                            
-                            self.pastMessageView.dialogText = "소중한 말 남겨줘서 정말 고마워."
-                            self.setDialogMessageViewHeight()
-                            
-                            self.pastMessageView.snp.updateConstraints {
-                                $0.top.equalTo(self.view.safeAreaLayoutGuide).inset(228)
-                            }
-                            
-                            self.showPastView(self.pastMessageView) {
-                                self.hidePastView(self.pastMessageView) {
-                                    self.pastMessageView.dialogText = self.lastMessage[0]
-                                    self.setDialogMessageViewHeight(topConstant: 228)
-                                    
-                                    self.showPastView(self.pastMessageView) {
-                                        self.hidePastView(self.pastMessageView) {
-                                            self.pastMessageView.dialogText = self.lastMessage[1]
-                                            self.setDialogMessageViewHeight(topConstant: 228)
-                                            
-                                            self.showPastView(self.pastMessageView) {
-                                                self.nextButton.text = "다시 오늘을 살아가기"
-                                                self.nextButton.snp.updateConstraints {
-                                                    $0.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(2)
-                                                    $0.centerX.equalToSuperview()
-                                                    $0.width.equalTo(363)
-                                                }
-                                                self.showButton(self.nextButton) { }
+                    self.hidePastView(self.photoImageView, delay: 1.0 , duration: 1.0) { }
+                    UIView.animate(withDuration: 1.0, delay: 0.7, options: .curveEaseOut) {
+                        self.presentMessageView.transform = CGAffineTransform(translationX: 0, y: -154)
+                        self.presentMessageView.alpha = 0
+                    } completion: { _ in
+                        [self.answerTextView, self.underLineView, self.sendButton].forEach {
+                            $0.isHidden = true
+                        }
+                        self.answerTextView.resignFirstResponder()
+                        
+                        self.pastMessageView.dialogText = "소중한 말 남겨줘서 정말 고마워."
+                        self.setDialogMessageViewHeight()
+                        
+                        self.pastMessageView.snp.updateConstraints {
+                            $0.top.equalTo(self.view.safeAreaLayoutGuide).inset(228)
+                        }
+                        
+                        self.showPastView(self.pastMessageView) {
+                            self.hidePastView(self.pastMessageView, delay: 1.2, duration: 1.0) {
+                                self.pastMessageView.dialogText = self.lastMessage[0]
+                                self.setDialogMessageViewHeight(topConstant: 228)
+                                
+                                self.showPastView(self.pastMessageView) {
+                                    self.hidePastView(self.pastMessageView) {
+                                        self.pastMessageView.dialogText = self.lastMessage[1]
+                                        self.setDialogMessageViewHeight(topConstant: 228)
+                                        
+                                        self.showPastView(self.pastMessageView) {
+                                            self.nextButton.text = "다시 오늘을 살아가기"
+                                            self.nextButton.snp.updateConstraints {
+                                                $0.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(2)
+                                                $0.centerX.equalToSuperview()
+                                                $0.width.equalTo(363)
                                             }
+                                            self.showButton(self.nextButton) { }
                                         }
                                     }
                                 }
@@ -354,7 +355,7 @@ final class DialogViewController: UIViewController {
             $0.leading.equalToSuperview().inset(165)
         }
         
-        [yearLabel , monthLabel, dayLabel].forEach {
+        [yearLabel, monthLabel, dayLabel].forEach {
             $0.snp.makeConstraints {
                 $0.centerX.centerY.equalToSuperview()
             }
@@ -380,14 +381,14 @@ final class DialogViewController: UIViewController {
         pastMessageView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(228)
             $0.width.equalTo(343)
-            $0.height.equalTo(110)
+            $0.height.equalTo(115)
             $0.centerX.equalToSuperview()
         }
         
         presentMessageView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(228)
             $0.width.equalTo(343)
-            $0.height.equalTo(110)
+            $0.height.equalTo(115)
             $0.centerX.equalToSuperview()
         }
         
