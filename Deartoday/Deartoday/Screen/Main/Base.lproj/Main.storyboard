@@ -36,7 +36,7 @@
                                             </imageView>
                                             <button opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNe-RC-mB1">
                                                 <rect key="frame" x="16" y="356" width="265" height="246"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="246" id="ccK-1W-800"/>
                                                     <constraint firstAttribute="width" secondItem="BNe-RC-mB1" secondAttribute="height" multiplier="265:246" id="kPa-Ra-HkX"/>
@@ -68,7 +68,7 @@
                                             </imageView>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ein-JI-aqo">
                                                 <rect key="frame" x="544" y="208" width="181" height="177"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ein-JI-aqo" secondAttribute="height" multiplier="181:177" id="3cD-HG-KhU"/>
                                                     <constraint firstAttribute="height" constant="177" id="aeQ-y4-bXz"/>
@@ -100,7 +100,7 @@
                                             </imageView>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TgA-8j-2gh">
                                                 <rect key="frame" x="399" y="506" width="313" height="189"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="189" id="MBc-g8-APE"/>
                                                     <constraint firstAttribute="width" secondItem="TgA-8j-2gh" secondAttribute="height" multiplier="313:189" id="bZp-R3-Xej"/>
@@ -109,18 +109,6 @@
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
                                                     <action selector="checkTimeTravelButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VvO-gp-Jct"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYn-6d-KCP">
-                                                <rect key="frame" x="545" y="461" width="68" height="90"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="90" id="7uO-KX-LmE"/>
-                                                    <constraint firstAttribute="width" constant="68" id="Z6J-ly-Jp8"/>
-                                                </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="btnCircleBasic"/>
-                                                <connections>
-                                                    <action selector="checkTimeTravelButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MJl-F8-aVT"/>
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icnTape" translatesAutoresizingMaskIntoConstraints="NO" id="UVK-NG-wji">
@@ -142,31 +130,43 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYn-6d-KCP">
+                                                <rect key="frame" x="545" y="461" width="68" height="90"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="90" id="7uO-KX-LmE"/>
+                                                    <constraint firstAttribute="width" constant="68" id="Z6J-ly-Jp8"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="btnCircleBasic"/>
+                                                <connections>
+                                                    <action selector="checkTimeTravelButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MJl-F8-aVT"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="QIl-7z-7U7" firstAttribute="leading" secondItem="USj-eL-kCX" secondAttribute="leading" id="0Y1-9N-NEE"/>
                                             <constraint firstItem="Goz-jN-lWr" firstAttribute="leading" secondItem="hYj-Yl-O37" secondAttribute="trailing" constant="6" id="4zS-8p-DQi"/>
+                                            <constraint firstItem="UGG-9o-HrI" firstAttribute="leading" secondItem="BNe-RC-mB1" secondAttribute="leading" constant="81" id="57T-T9-G49"/>
                                             <constraint firstItem="jkQ-e5-aBO" firstAttribute="centerX" secondItem="UGG-9o-HrI" secondAttribute="centerX" id="Dgp-LM-D09"/>
                                             <constraint firstItem="jkQ-e5-aBO" firstAttribute="top" secondItem="UGG-9o-HrI" secondAttribute="top" constant="20" id="EcT-JY-PBM"/>
                                             <constraint firstItem="UVK-NG-wji" firstAttribute="leading" secondItem="tYn-6d-KCP" secondAttribute="leading" constant="15" id="Gxm-jN-gDJ"/>
                                             <constraint firstAttribute="bottom" secondItem="QIl-7z-7U7" secondAttribute="bottom" id="JxW-OO-xOd"/>
                                             <constraint firstItem="tKA-ES-cfr" firstAttribute="leading" secondItem="QIl-7z-7U7" secondAttribute="trailing" id="KNA-30-WWd"/>
+                                            <constraint firstItem="9qJ-Cs-81A" firstAttribute="trailing" secondItem="ein-JI-aqo" secondAttribute="trailing" constant="-75" id="KYR-y1-das"/>
                                             <constraint firstAttribute="bottom" secondItem="tKA-ES-cfr" secondAttribute="bottom" id="Kjf-Uj-GDK"/>
                                             <constraint firstItem="hYj-Yl-O37" firstAttribute="leading" secondItem="9qJ-Cs-81A" secondAttribute="leading" constant="15" id="MMG-ha-hRk"/>
-                                            <constraint firstAttribute="trailing" secondItem="9qJ-Cs-81A" secondAttribute="trailing" constant="100" id="Mev-Ga-Btj"/>
                                             <constraint firstItem="ein-JI-aqo" firstAttribute="top" secondItem="9qJ-Cs-81A" secondAttribute="bottom" constant="-45" id="S8E-sH-U1L"/>
                                             <constraint firstAttribute="trailing" secondItem="ein-JI-aqo" secondAttribute="trailing" constant="25" id="STu-tN-f5M"/>
                                             <constraint firstItem="BNe-RC-mB1" firstAttribute="top" secondItem="UGG-9o-HrI" secondAttribute="bottom" constant="11" id="VHg-Ii-2zM"/>
                                             <constraint firstItem="UVK-NG-wji" firstAttribute="top" secondItem="tYn-6d-KCP" secondAttribute="top" constant="23" id="XVz-jL-GMC"/>
                                             <constraint firstAttribute="trailing" secondItem="tKA-ES-cfr" secondAttribute="trailing" id="cw3-MK-FFR"/>
                                             <constraint firstItem="TgA-8j-2gh" firstAttribute="top" secondItem="tYn-6d-KCP" secondAttribute="bottom" constant="-45" id="d9T-3k-slj"/>
-                                            <constraint firstAttribute="trailing" secondItem="tYn-6d-KCP" secondAttribute="trailing" constant="137" id="dKK-dw-K3C"/>
                                             <constraint firstItem="hYj-Yl-O37" firstAttribute="top" secondItem="9qJ-Cs-81A" secondAttribute="top" constant="23" id="dT1-Rb-JeC"/>
                                             <constraint firstItem="QIl-7z-7U7" firstAttribute="top" secondItem="USj-eL-kCX" secondAttribute="top" id="gHQ-Gq-VYP"/>
                                             <constraint firstItem="Goz-jN-lWr" firstAttribute="centerY" secondItem="hYj-Yl-O37" secondAttribute="centerY" id="kdW-WE-GWo"/>
+                                            <constraint firstItem="tYn-6d-KCP" firstAttribute="trailing" secondItem="TgA-8j-2gh" secondAttribute="trailing" constant="-99" id="lmH-Zy-6qa"/>
                                             <constraint firstItem="BNe-RC-mB1" firstAttribute="leading" secondItem="USj-eL-kCX" secondAttribute="leading" constant="16" id="mej-gN-Cba"/>
-                                            <constraint firstItem="UGG-9o-HrI" firstAttribute="leading" secondItem="USj-eL-kCX" secondAttribute="leading" constant="97" id="nug-7a-Kdn"/>
                                             <constraint firstAttribute="trailing" secondItem="TgA-8j-2gh" secondAttribute="trailing" constant="38" id="pAX-Jn-6l6"/>
                                             <constraint firstItem="0PU-Ad-LwK" firstAttribute="leading" secondItem="UVK-NG-wji" secondAttribute="trailing" constant="6" id="qka-lI-ufc"/>
                                             <constraint firstItem="0PU-Ad-LwK" firstAttribute="centerY" secondItem="UVK-NG-wji" secondAttribute="centerY" id="reD-7h-US4"/>
@@ -284,7 +284,9 @@
                     <size key="freeformSize" width="749" height="812"/>
                     <connections>
                         <outlet property="backgroundScrollView" destination="m3y-wI-V1B" id="8ay-N6-Hxy"/>
+                        <outlet property="messageButtonHeightConstraint" destination="aeQ-y4-bXz" id="Ma6-Gp-IVi"/>
                         <outlet property="pageControl" destination="59W-gz-LAT" id="cBF-6v-Vop"/>
+                        <outlet property="tapeButtonHeightConstraint" destination="MBc-g8-APE" id="Hea-Pl-Foe"/>
                         <outlet property="timeTravelButtonHeightConstraint" destination="ccK-1W-800" id="cms-gd-bZG"/>
                         <outletCollection property="backgroundImageViewWidthConstraintCollection" destination="AMU-RF-Elr" collectionClass="NSMutableArray" id="OsQ-2a-KQu"/>
                         <outletCollection property="backgroundImageViewWidthConstraintCollection" destination="dmh-gd-7ZW" collectionClass="NSMutableArray" id="0h8-fV-uxy"/>
@@ -294,6 +296,9 @@
                         <outletCollection property="dateLabelCollection" destination="6ZP-5U-TGT" collectionClass="NSMutableArray" id="wiH-fI-McH"/>
                         <outletCollection property="messageCountLabelCollection" destination="0PU-Ad-LwK" collectionClass="NSMutableArray" id="Jmp-rQ-b92"/>
                         <outletCollection property="messageCountLabelCollection" destination="Goz-jN-lWr" collectionClass="NSMutableArray" id="gYg-iW-Jk8"/>
+                        <outletCollection property="boxButtonHeightConstraintCollection" destination="ccK-1W-800" collectionClass="NSMutableArray" id="1Ml-Jn-OXN"/>
+                        <outletCollection property="boxButtonHeightConstraintCollection" destination="aeQ-y4-bXz" collectionClass="NSMutableArray" id="pGe-m1-CDw"/>
+                        <outletCollection property="boxButtonHeightConstraintCollection" destination="MBc-g8-APE" collectionClass="NSMutableArray" id="PUe-rq-p6l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -331,6 +336,9 @@
         <image name="rewind" width="22" height="22"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

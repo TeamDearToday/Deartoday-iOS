@@ -16,6 +16,13 @@ final class MainViewController: UIViewController {
     @IBOutlet var messageCountLabelCollection: [UILabel]!
     @IBOutlet var dateLabelCollection: [UILabel]!
     @IBOutlet weak var timeTravelButtonHeightConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var messageButtonHeightConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var tapeButtonHeightConstraint: NSLayoutConstraint!
+    
+    
+    @IBOutlet var boxButtonHeightConstraintCollection: [NSLayoutConstraint]!
     @IBOutlet var backgroundImageViewWidthConstraintCollection: [NSLayoutConstraint]!
     
     // MARK: - Life Cycle
@@ -127,6 +134,8 @@ extension MainViewController {
     }
     
     private func setLayout() {
-        timeTravelButtonHeightConstraint.constant = getDeviceWidth() * (246 / 375)
+        boxButtonHeightConstraintCollection.forEach {
+            $0.constant = getDeviceWidth() * ($0.constant / 375)
+        }
     }
 }
