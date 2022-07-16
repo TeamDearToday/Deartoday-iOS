@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Lottie
+
 final class PlayTapeOnboardingViewController: UIViewController {
     
     // MARK: - Property
@@ -74,7 +76,12 @@ final class PlayTapeOnboardingViewController: UIViewController {
     }
     
     @IBAction func playLottieButtonDidTap(_ sender: UIButton) {
-        print("로티 재생 후")
+        let tapeLottieView = AnimationView(name: Constant.Lottie.tape)
+        tapeLottieView.frame = self.view.bounds
+        tapeLottieView.center = self.view.center
+        tapeLottieView.contentMode = .scaleAspectFit
+        self.view.addSubview(tapeLottieView)
+        tapeLottieView.play()
         
         guard let letterOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.LetterOnboarding) as? LetterOnboardingViewController else { return }
         letterOnboarding.modalTransitionStyle = .crossDissolve
