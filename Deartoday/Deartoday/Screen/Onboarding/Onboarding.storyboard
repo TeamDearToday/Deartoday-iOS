@@ -389,7 +389,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3kI-pV-Szm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1378" y="-134"/>
+            <point key="canvasLocation" x="1376.8" y="-134.48275862068965"/>
         </scene>
         <!--Play Tape Onboarding View Controller-->
         <scene sceneID="fgg-5i-jVb">
@@ -443,6 +443,14 @@
                                     <action selector="tapeButtonDidTap:" destination="6Ss-Ku-CoL" eventType="touchUpInside" id="Bw9-fF-TV4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plj-Ey-Rvc">
+                                <rect key="frame" x="6" y="708" width="363" height="68"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="플레이어 작동하기" backgroundImage="btnSmallPresent"/>
+                                <connections>
+                                    <action selector="playLottieButtonDidTap:" destination="6Ss-Ku-CoL" eventType="touchUpInside" id="7cl-ZL-vsi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a3U-IX-Q9F"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -456,9 +464,12 @@
                             <constraint firstAttribute="bottom" secondItem="wul-h0-Jab" secondAttribute="bottom" id="EZh-cu-d4l"/>
                             <constraint firstItem="vcc-mj-cg3" firstAttribute="leading" secondItem="a3U-IX-Q9F" secondAttribute="leading" constant="62" id="GDW-aI-D0G"/>
                             <constraint firstItem="Cs2-pn-BYG" firstAttribute="top" secondItem="a3U-IX-Q9F" secondAttribute="top" constant="188" id="JCd-kD-QRE"/>
+                            <constraint firstItem="plj-Ey-Rvc" firstAttribute="leading" secondItem="a3U-IX-Q9F" secondAttribute="leading" constant="6" id="JOB-f1-nH3"/>
                             <constraint firstItem="Cs2-pn-BYG" firstAttribute="leading" secondItem="a3U-IX-Q9F" secondAttribute="leading" constant="157" id="KbV-0J-Rhr"/>
                             <constraint firstItem="IPC-Aq-EiK" firstAttribute="leading" secondItem="Cs2-pn-BYG" secondAttribute="leading" constant="11" id="bBh-Ye-7jM"/>
+                            <constraint firstItem="a3U-IX-Q9F" firstAttribute="bottom" secondItem="plj-Ey-Rvc" secondAttribute="bottom" constant="2" id="cwy-yf-sct"/>
                             <constraint firstItem="vcc-mj-cg3" firstAttribute="top" secondItem="Cs2-pn-BYG" secondAttribute="bottom" constant="3" id="foO-03-l5T"/>
+                            <constraint firstItem="a3U-IX-Q9F" firstAttribute="trailing" secondItem="plj-Ey-Rvc" secondAttribute="trailing" constant="6" id="gdu-xQ-nzT"/>
                             <constraint firstItem="a3U-IX-Q9F" firstAttribute="trailing" secondItem="Zz0-Bb-V8i" secondAttribute="trailing" constant="57" id="hoI-ra-q8Y"/>
                             <constraint firstItem="a3U-IX-Q9F" firstAttribute="bottom" secondItem="Zz0-Bb-V8i" secondAttribute="bottom" constant="55" id="kWa-W8-4cr"/>
                             <constraint firstItem="Cs2-pn-BYG" firstAttribute="width" secondItem="Cs2-pn-BYG" secondAttribute="height" multiplier="60:83" id="r4G-2t-RTJ"/>
@@ -467,6 +478,7 @@
                     <connections>
                         <outlet property="circleButton" destination="Cs2-pn-BYG" id="wVe-kc-Mg2"/>
                         <outlet property="explanationLabel" destination="Zz0-Bb-V8i" id="Dzv-Y9-6lO"/>
+                        <outlet property="startPlayerButton" destination="plj-Ey-Rvc" id="YdP-4M-kUl"/>
                         <outlet property="tapeButton" destination="vcc-mj-cg3" id="7x6-Ym-UhW"/>
                         <outletCollection property="circleCollection" destination="IPC-Aq-EiK" collectionClass="NSMutableArray" id="kgX-qZ-e0S"/>
                         <outletCollection property="circleCollection" destination="ymW-9q-feV" collectionClass="NSMutableArray" id="wPb-Mi-xhP"/>
@@ -474,7 +486,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Shr-7q-2Ro" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2096.9230769230767" y="-134.36018957345971"/>
+            <point key="canvasLocation" x="2096.8000000000002" y="-134.48275862068965"/>
         </scene>
     </scenes>
     <resources>

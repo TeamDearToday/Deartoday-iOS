@@ -9,18 +9,27 @@ import UIKit
 
 final class PlayTapeOnboardingViewController: UIViewController {
     
+    // MARK: - Property
+    
+    var playTapeNumber: Int?
+    
     // MARK: - UI Property
     
     @IBOutlet weak var explanationLabel: UILabel!
     @IBOutlet weak var circleButton: UIImageView!
     @IBOutlet weak var tapeButton: UIButton!
     @IBOutlet var circleCollection: [UIView]!
+    @IBOutlet weak var startPlayerButton: UIButton!
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setComponentsUI()
+        if playTapeNumber == 1 {
+            hideComponentsUI()
+            showComponentsUI()
+        }
     }
     
     // MARK: - Custom Method
@@ -31,16 +40,27 @@ final class PlayTapeOnboardingViewController: UIViewController {
         }
         explanationLabel.font = .onboard0
         explanationLabel.textColor = .white
+        startPlayerButton.titleLabel?.font = .btn0
+        startPlayerButton.setTitleColor(.blue02, for: .normal)
     }
     
-    // MARK: IBAction
+    private func showComponentsUI() {
+        startPlayerButton.alpha = 1
+    }
     
-    @IBAction func tapeButtonDidTap(_ sender: UIButton) {
+    private func hideComponentsUI() {
         circleCollection.forEach {
             $0.isHidden = true
         }
         explanationLabel.isHidden = true
         circleButton.isHidden = true
+        startPlayerButton.isHidden = true
+    }
+    
+    // MARK: IBAction
+    
+    @IBAction func tapeButtonDidTap(_ sender: UIButton) {
+        hideComponentsUI()
         
         guard let letterOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.LetterOnboarding) as? LetterOnboardingViewController else { return }
         letterOnboarding.modalTransitionStyle = .crossDissolve
@@ -48,4 +68,16 @@ final class PlayTapeOnboardingViewController: UIViewController {
         letterOnboarding.letterNumber = 2
         present(letterOnboarding, animated: true)
     }
+    
+    @IBAction func playLottieButtonDidTap(_ sender: UIButton) {
+        print("로티 재생 후")
+        
+        guard let letterOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.LetterOnboarding) as? LetterOnboardingViewController else { return }
+        letterOnboarding.modalTransitionStyle = .crossDissolve
+        letterOnboarding.modalPresentationStyle = .overFullScreen
+        letterOnboarding.letterNumber = 4
+        present(letterOnboarding, animated: true)
+    }
+    
+    
 }
