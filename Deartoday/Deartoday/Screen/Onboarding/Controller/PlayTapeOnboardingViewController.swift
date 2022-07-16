@@ -7,9 +7,14 @@
 
 import UIKit
 
+import AVFoundation
 import Lottie
 
 final class PlayTapeOnboardingViewController: UIViewController {
+    
+    // MARK: - Property
+    
+    var playerSound = AVAudioPlayer()
     
     // MARK: - Property
     
@@ -76,6 +81,8 @@ final class PlayTapeOnboardingViewController: UIViewController {
     }
     
     @IBAction func playLottieButtonDidTap(_ sender: UIButton) {
+        startPlayerButton.isHidden = true
+        
         let tapeLottieView = AnimationView(name: Constant.Lottie.tape)
         tapeLottieView.frame = self.view.bounds
         tapeLottieView.center = self.view.center
@@ -83,10 +90,22 @@ final class PlayTapeOnboardingViewController: UIViewController {
         self.view.addSubview(tapeLottieView)
         tapeLottieView.play()
         
+        let url = Bundle.main.url(forResource: Constant.Sound.sound_player, withExtension: ".mp3")
+        if let url = url {
+            do {
+                playerSound = try AVAudioPlayer(contentsOf: url)
+                playerSound.prepareToPlay()
+                playerSound.play()
+            } catch {
+                print("error")
+            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4) {
         guard let letterOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.LetterOnboarding) as? LetterOnboardingViewController else { return }
         letterOnboarding.modalTransitionStyle = .crossDissolve
         letterOnboarding.modalPresentationStyle = .overFullScreen
         letterOnboarding.letterNumber = 4
-        present(letterOnboarding, animated: true)
+            self.present(letterOnboarding, animated: true)
+        }
     }
 }
