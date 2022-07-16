@@ -1,13 +1,13 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
       "filename" : "icnMemo.png",
+      "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
       "filename" : "icnMemo@2x.png",
+      "idiom" : "universal",
       "scale" : "2x"
     },
     {
@@ -17,7 +17,10 @@
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "template-rendering-intent" : "template"
   }
 }

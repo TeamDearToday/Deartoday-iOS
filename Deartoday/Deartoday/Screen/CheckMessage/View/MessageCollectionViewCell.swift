@@ -15,6 +15,7 @@ final class MessageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var writerLabel: UILabel!
+    @IBOutlet weak var contentLabelHeightConstraint: NSLayoutConstraint!
     
     // MARK: - Life Cycle
     
@@ -29,9 +30,18 @@ final class MessageCollectionViewCell: UICollectionViewCell {
         backgroundColor = .yellow03
         contentLabel.font = .p6
         writerLabel.font = .p6
+        adjustContentSize()
+    }
+    
+    private func adjustContentSize() {
+        contentLabel.sizeToFit()
+        let labelHeight = (((UIScreen.main.bounds.width - 55)/2)-59)
+        contentLabelHeightConstraint.constant = (contentLabel.frame.height > labelHeight) ?
+        labelHeight : contentLabel.frame.height
     }
     
     func setData(content: String) {
         contentLabel.text = content
+        adjustContentSize()
     }
 }
