@@ -6,9 +6,16 @@
 //
 
 import UIKit
+
+import AVFoundation
 import Lottie
 
 final class OnboardingViewController: UIViewController {
+    
+    // MARK: Property
+    
+    var boxSound = AVAudioPlayer()
+    let url = Bundle.main.url(forResource: Constant.Sound.sound_box, withExtension: "mp3")
     
     // MARK: - UI Property
     
@@ -119,6 +126,17 @@ final class OnboardingViewController: UIViewController {
         self.view.addSubview(boxLottieView)
         boxLottieView.play()
         
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            if let url = self.url {
+                do {
+                    self.boxSound = try AVAudioPlayer(contentsOf: url)
+                    self.boxSound.prepareToPlay()
+                    self.boxSound.play()
+                } catch {
+                    print("error")
+                }
+            }
+        }
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4) {
             guard let openBoxOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.OpenBoxOnboarding) as? OpenBoxOnboardingViewController else { return }
             openBoxOnboarding.modalTransitionStyle = .crossDissolve
