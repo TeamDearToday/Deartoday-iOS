@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina6_0" orientation="portrait" appearance="dark"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Ss-Ku-CoL">
+    <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -11,34 +11,34 @@
         <!--Onboarding View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="OnboardingViewController" customModule="Deartoday" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingViewController" id="Y6W-OH-hqX" customClass="OnboardingViewController" customModule="Deartoday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1Withg" translatesAutoresizingMaskIntoConstraints="NO" id="32K-94-dsE">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘도 지친 몸을 끌고 집으로 돌아온 당신," textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZK-HK-Qtx">
-                                <rect key="frame" x="77" y="631" width="235" height="16"/>
+                                <rect key="frame" x="77" y="599" width="220" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="방 안에 정체 불명의 상자 하나가 놓여 있습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peP-cm-NGj">
-                                <rect key="frame" x="64" y="659" width="262" height="16"/>
+                                <rect key="frame" x="64" y="627" width="247" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상자를 터치해서 안을 확인해 보세요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpD-nQ-Nlt">
-                                <rect key="frame" x="93" y="751" width="202" height="16"/>
+                                <rect key="frame" x="93" y="719" width="187" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjd-0T-ndi">
-                                <rect key="frame" x="6" y="744" width="378" height="68"/>
+                                <rect key="frame" x="6" y="712" width="363" height="68"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="다음" backgroundImage="btnSmallPresent"/>
@@ -47,13 +47,13 @@
                                 </connections>
                             </button>
                             <imageView hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnCircleBasic" translatesAutoresizingMaskIntoConstraints="NO" id="oeJ-ww-SZA">
-                                <rect key="frame" x="165" y="231.33333333333337" width="60" height="83"/>
+                                <rect key="frame" x="157.66666666666666" y="221.66666666666663" width="60" height="83"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oeJ-ww-SZA" secondAttribute="height" multiplier="60:83" id="dkp-se-elP"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9w-LV-IyT">
-                                <rect key="frame" x="75" y="320.33333333333331" width="254" height="213.33333333333331"/>
+                                <rect key="frame" x="75" y="310.66666666666669" width="239" height="201"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="i9w-LV-IyT" secondAttribute="height" multiplier="239:201" id="50a-Eq-Rco"/>
                                 </constraints>
@@ -63,7 +63,7 @@
                                 </connections>
                             </button>
                             <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2B-Nh-U49">
-                                <rect key="frame" x="176" y="243.66666666666663" width="38" height="38"/>
+                                <rect key="frame" x="168.66666666666666" y="234" width="38" height="38"/>
                                 <subviews>
                                     <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GYo-0r-i7V">
                                         <rect key="frame" x="1" y="1" width="36" height="36"/>
@@ -131,26 +131,26 @@
             <objects>
                 <viewController storyboardIdentifier="OpenBoxOnboardingViewController" id="roV-Nb-bde" customClass="OpenBoxOnboardingViewController" customModule="Deartoday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XLR-Kd-n0y">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image2Withg" translatesAutoresizingMaskIntoConstraints="NO" id="6ng-i4-D1d">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="의심스러운 눈초리로 상자를 여는 순간," textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLl-Ah-hlx">
-                                <rect key="frame" x="86" y="628" width="217" height="16"/>
+                                <rect key="frame" x="86" y="596" width="202" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="의아한 당신은 상자 안에서 작은 편지를 발견합니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHS-qE-BFB">
-                                <rect key="frame" x="54" y="684" width="281" height="16"/>
+                                <rect key="frame" x="54" y="652" width="266" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70R-xl-hYW">
-                                <rect key="frame" x="6" y="744" width="378" height="68"/>
+                                <rect key="frame" x="6" y="712" width="363" height="68"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="편지 읽어보기" backgroundImage="btnSmallPresent"/>
@@ -159,7 +159,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="그 안에 들어있던 건 오랜만에 보는 비디오테이프와 플레이어." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDM-6j-O6K">
-                                <rect key="frame" x="29" y="656" width="331" height="16"/>
+                                <rect key="frame" x="29" y="624" width="316" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -196,107 +196,125 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="of8-u7-yms" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="856.79999999999995" y="-133.00492610837438"/>
+            <point key="canvasLocation" x="703" y="-134"/>
         </scene>
         <!--Letter Onboarding View Controller-->
         <scene sceneID="uQs-v0-wrz">
             <objects>
                 <viewController storyboardIdentifier="LetterOnboardingViewController" modalPresentationStyle="overFullScreen" id="y6z-ac-w72" customClass="LetterOnboardingViewController" customModule="Deartoday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EQy-bI-g0g">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgLetter" translatesAutoresizingMaskIntoConstraints="NO" id="1vr-xm-Zlx">
-                                <rect key="frame" x="0.0" y="160" width="390" height="684"/>
+                                <rect key="frame" x="0.0" y="160" width="375" height="652"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dear" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0js-l8-UVl">
-                                <rect key="frame" x="36" y="201" width="314" height="23"/>
+                                <rect key="frame" x="36" y="201" width="299" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022년의 나," lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGk-El-ha2">
-                                <rect key="frame" x="36" y="234" width="314" height="18"/>
+                                <rect key="frame" x="36" y="234" width="299" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcT-Xu-RAO">
-                                <rect key="frame" x="36" y="282" width="318" height="46"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="안녕 많이 놀랐지?">
-                                        <attributes>
-                                            <font key="NSFont" metaFont="system" size="15"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕 많이 놀랐지?" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcT-Xu-RAO">
+                                <rect key="frame" x="36" y="282" width="303" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u50-oo-Mca">
-                                <rect key="frame" x="36" y="361" width="318" height="74"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="믿기지 않을 수 있지만, 나는 2023년의 너야! 너가 이 비디오테이프와 플레이어를 잘 발견했으면 좋겠다.">
-                                        <attributes>
-                                            <font key="NSFont" metaFont="system" size="15"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="믿기지 않을 수 있지만, 나는 2023년의 너야! 너가 이 비디오테이프와 플레이어를 잘 발견했으면 좋겠다." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u50-oo-Mca">
+                                <rect key="frame" x="36" y="351" width="303" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M72-JX-Bhv" userLabel="왜냐하면 이거, 그냥 평범한 플레이어가 아니거든.">
-                                <rect key="frame" x="36" y="466" width="318" height="46"/>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">왜냐하면 이거,
-</string>
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" metaFont="system" size="15"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="그냥 평범한 플레이어가 아니거든.">
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" metaFont="system" size="15"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M72-JX-Bhv" userLabel="왜냐하면 이거, 그냥 평범한 플레이어가 아니거든.">
+                                <rect key="frame" x="36" y="436" width="303" height="36"/>
+                                <string key="text">왜냐하면 이거,
+그냥 평범한 플레이어가 아니거든.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uu1-la-CJ0">
-                                <rect key="frame" x="36" y="542" width="318" height="46"/>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">바로 시간 여행을 도와주는 플레이어야.
-</string>
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" metaFont="system" size="15"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="나도 이 친구를 이용해서 너를 만나러 온 거야 :)">
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" metaFont="system" size="15"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uu1-la-CJ0">
+                                <rect key="frame" x="36" y="502.00000000000006" width="303" height="40.666666666666686"/>
+                                <string key="text">바로 시간 여행을 도와주는 플레이어야.
+나도 이 친구를 이용해서 너를 만나러 온 거야 :)</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9RW-6g-Ted">
-                                <rect key="frame" x="159" y="712" width="205" height="68"/>
+                                <rect key="frame" x="159" y="680" width="190" height="68"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="플레이어 살펴보기" backgroundImage="btnSmallPresent">
                                     <color key="titleColor" red="0.33333333329999998" green="0.56078431370000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="checkPlayerButtonDidTap:" destination="y6z-ac-w72" eventType="touchUpInside" id="eYO-1J-f6e"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우선 플레이어를 사용하는 방법을 알려줄게." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBd-iJ-FJM">
+                                <rect key="frame" x="36" y="203.66666666666666" width="303" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jzk-gP-Rii">
+                                <rect key="frame" x="36" y="258" width="303" height="122"/>
+                                <string key="text">1. 너가 돌아가고 싶은 과거의 순간을 떠올려 2. 그 순간이 담긴 사진을 비디오테이프 위에 붙여. 3. 비디오테이프를 플레이어에 넣고 4. 뒤로감기 버튼을 누르면, 5. 플레이어가 너를 과거의 그 순간으로     데려다 줄거야.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HV9-wY-5to">
+                                <rect key="frame" x="159" y="698.33333333333337" width="190" height="68"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="다음으로" backgroundImage="btnSmallPresent"/>
+                                <connections>
+                                    <action selector="nextButtonDidTap:" destination="y6z-ac-w72" eventType="touchUpInside" id="ifk-lp-mDJ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhN-Qy-0Re">
+                                <rect key="frame" x="36" y="203.33333333333334" width="299" height="101.66666666666666"/>
+                                <string key="text">단, 이 시간 여행에는 규칙이 있어.
+우선 너가 직접 경험한 과거의 순간으로만 
+돌아갈 수 있어.
+그리고 아쉽게도 그 순간으로 돌아간다고 해서
+이미 일어난 일을 바꾸지는 못해.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcp-EJ-9vX">
+                                <rect key="frame" x="36" y="335" width="299" height="101.66666666666669"/>
+                                <string key="text">다만, 너가 할 수 있는 단 한 가지 일은
+바로 과거의 너를 만나서 대화를 나누고 
+그 친구에게 남기고 싶은 것을 
+전달하고 올 수 있다는 거야.
+내가 너에게 이 플레이어를 전달한 것처럼 :)</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="여기까지 읽었는데도 아직 와닿지가 않지?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEF-yU-nqA">
+                                <rect key="frame" x="36" y="470.66666666666669" width="299" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="그럼 지금 한 번 플레이어를 바로 작동시켜봐." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGR-h2-i9c">
+                                <rect key="frame" x="36" y="529.66666666666663" width="299" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aQg-fa-XZj"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -304,12 +322,26 @@
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="Uu1-la-CJ0" secondAttribute="trailing" constant="36" id="14x-8e-Ryo"/>
                             <constraint firstItem="mGk-El-ha2" firstAttribute="top" secondItem="0js-l8-UVl" secondAttribute="bottom" constant="10" id="26Q-HK-vkj"/>
                             <constraint firstAttribute="bottom" secondItem="1vr-xm-Zlx" secondAttribute="bottom" id="4Gg-EO-vsR"/>
+                            <constraint firstItem="zhN-Qy-0Re" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="5NI-S5-vub"/>
+                            <constraint firstItem="1vr-xm-Zlx" firstAttribute="top" secondItem="oBd-iJ-FJM" secondAttribute="bottom" constant="-64" id="7Aa-IA-UiL"/>
+                            <constraint firstItem="Bcp-EJ-9vX" firstAttribute="top" secondItem="zhN-Qy-0Re" secondAttribute="bottom" constant="30" id="98L-d4-Wmt"/>
+                            <constraint firstItem="tEF-yU-nqA" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="CyZ-2C-5Z0"/>
                             <constraint firstItem="1vr-xm-Zlx" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" id="GZz-b6-BRk"/>
                             <constraint firstItem="Uu1-la-CJ0" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="Hea-yo-VYG"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="0js-l8-UVl" secondAttribute="trailing" constant="40" id="IrT-kY-U2e"/>
                             <constraint firstItem="9RW-6g-Ted" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="159" id="JVP-Od-1LI"/>
+                            <constraint firstItem="Jzk-gP-Rii" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="K2o-A4-Zmw"/>
+                            <constraint firstItem="oBd-iJ-FJM" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="KqF-ol-OHR"/>
+                            <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="Jzk-gP-Rii" secondAttribute="trailing" constant="36" id="Lkd-Jz-OX7"/>
+                            <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="XGR-h2-i9c" secondAttribute="trailing" constant="40" id="MEy-h3-kJA"/>
                             <constraint firstItem="u50-oo-Mca" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="NEv-Xz-R7i"/>
+                            <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="Bcp-EJ-9vX" secondAttribute="trailing" constant="40" id="NlH-3l-Sii"/>
                             <constraint firstItem="u50-oo-Mca" firstAttribute="top" secondItem="KcT-Xu-RAO" secondAttribute="bottom" constant="33" id="OdW-Fk-YdP"/>
+                            <constraint firstItem="tEF-yU-nqA" firstAttribute="top" secondItem="Bcp-EJ-9vX" secondAttribute="bottom" constant="34" id="PwJ-bm-9MT"/>
+                            <constraint firstItem="Bcp-EJ-9vX" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="Qqz-YX-aAu"/>
+                            <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="oBd-iJ-FJM" secondAttribute="trailing" constant="36" id="TRy-ud-toz"/>
+                            <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="HV9-wY-5to" secondAttribute="trailing" constant="26" id="Xaw-uE-vEf"/>
+                            <constraint firstItem="XGR-h2-i9c" firstAttribute="top" secondItem="tEF-yU-nqA" secondAttribute="bottom" constant="38" id="Xw6-2A-EfF"/>
                             <constraint firstItem="KcT-Xu-RAO" firstAttribute="top" secondItem="mGk-El-ha2" secondAttribute="bottom" constant="30" id="aUB-L3-ERn"/>
                             <constraint firstItem="M72-JX-Bhv" firstAttribute="top" secondItem="u50-oo-Mca" secondAttribute="bottom" constant="31" id="bgr-OG-Pvi"/>
                             <constraint firstItem="Uu1-la-CJ0" firstAttribute="top" secondItem="M72-JX-Bhv" secondAttribute="bottom" constant="30" id="cXm-Yw-dHb"/>
@@ -318,19 +350,25 @@
                             <constraint firstItem="1vr-xm-Zlx" firstAttribute="top" secondItem="EQy-bI-g0g" secondAttribute="top" constant="160" id="h54-FX-d33"/>
                             <constraint firstItem="mGk-El-ha2" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="hYR-HD-0BP"/>
                             <constraint firstItem="1vr-xm-Zlx" firstAttribute="top" secondItem="0js-l8-UVl" secondAttribute="bottom" constant="-64" id="hkk-RW-763"/>
+                            <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="zhN-Qy-0Re" secondAttribute="trailing" constant="40" id="ify-ue-kxH"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="KcT-Xu-RAO" secondAttribute="trailing" constant="36" id="inJ-HI-GbH"/>
                             <constraint firstItem="KcT-Xu-RAO" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="jQK-HJ-Svp"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="9RW-6g-Ted" secondAttribute="trailing" constant="26" id="lPP-Xd-p8Z"/>
+                            <constraint firstItem="1vr-xm-Zlx" firstAttribute="top" secondItem="zhN-Qy-0Re" secondAttribute="bottom" constant="-145" id="m5F-99-4M8"/>
+                            <constraint firstItem="HV9-wY-5to" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="159" id="mBE-rn-pNP"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="bottom" secondItem="9RW-6g-Ted" secondAttribute="bottom" constant="30" id="muP-SS-MAI"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="1vr-xm-Zlx" secondAttribute="trailing" id="naF-FY-3qz"/>
+                            <constraint firstItem="XGR-h2-i9c" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="pD0-n8-h3s"/>
+                            <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="tEF-yU-nqA" secondAttribute="trailing" constant="40" id="qMv-Mh-j3m"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="mGk-El-ha2" secondAttribute="trailing" constant="40" id="r0u-yq-ke2"/>
+                            <constraint firstItem="Jzk-gP-Rii" firstAttribute="top" secondItem="oBd-iJ-FJM" secondAttribute="bottom" constant="34" id="sPW-bz-se5"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="M72-JX-Bhv" secondAttribute="trailing" constant="36" id="tXD-zZ-Ud4"/>
+                            <constraint firstItem="aQg-fa-XZj" firstAttribute="bottom" secondItem="HV9-wY-5to" secondAttribute="bottom" constant="11.6" id="u7h-Jg-s4v"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="u50-oo-Mca" secondAttribute="trailing" constant="36" id="wg6-uC-YvO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="P1B-bh-UwF"/>
                     <connections>
-                        <outlet property="checkPlayerButton" destination="9RW-6g-Ted" id="gNp-ke-wcb"/>
                         <outlet property="dearLabel" destination="0js-l8-UVl" id="5fi-Ep-wPC"/>
                         <outlet property="dearLabelTopConstraint" destination="hkk-RW-763" id="LXc-Oj-ZI9"/>
                         <outlet property="letterTopConstraint" destination="h54-FX-d33" id="Nob-dj-a6T"/>
@@ -339,11 +377,116 @@
                         <outletCollection property="letterLabelCollection" destination="u50-oo-Mca" collectionClass="NSMutableArray" id="auo-nV-aKF"/>
                         <outletCollection property="letterLabelCollection" destination="M72-JX-Bhv" collectionClass="NSMutableArray" id="MrW-w5-lMM"/>
                         <outletCollection property="letterLabelCollection" destination="Uu1-la-CJ0" collectionClass="NSMutableArray" id="CIQ-Wr-EfR"/>
+                        <outletCollection property="letterLabelCollection" destination="oBd-iJ-FJM" collectionClass="NSMutableArray" id="sK3-vn-28t"/>
+                        <outletCollection property="letterLabelCollection" destination="Jzk-gP-Rii" collectionClass="NSMutableArray" id="1b6-sg-Mva"/>
+                        <outletCollection property="nextButtonCollection" destination="9RW-6g-Ted" collectionClass="NSMutableArray" id="nTL-Fj-Uko"/>
+                        <outletCollection property="nextButtonCollection" destination="HV9-wY-5to" collectionClass="NSMutableArray" id="t5H-pM-oQU"/>
+                        <outletCollection property="letterLabelCollection" destination="zhN-Qy-0Re" collectionClass="NSMutableArray" id="4ZY-61-l9Z"/>
+                        <outletCollection property="letterLabelCollection" destination="Bcp-EJ-9vX" collectionClass="NSMutableArray" id="udI-0B-YrC"/>
+                        <outletCollection property="letterLabelCollection" destination="tEF-yU-nqA" collectionClass="NSMutableArray" id="9SK-GK-9Eh"/>
+                        <outletCollection property="letterLabelCollection" destination="XGR-h2-i9c" collectionClass="NSMutableArray" id="wk9-9W-BPI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3kI-pV-Szm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1709.5999999999999" y="-133.00492610837438"/>
+            <point key="canvasLocation" x="1376.8" y="-134.48275862068965"/>
+        </scene>
+        <!--Play Tape Onboarding View Controller-->
+        <scene sceneID="fgg-5i-jVb">
+            <objects>
+                <viewController storyboardIdentifier="PlayTapeOnboardingViewController" id="6Ss-Ku-CoL" customClass="PlayTapeOnboardingViewController" customModule="Deartoday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gn5-pW-AGC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image3Withg" translatesAutoresizingMaskIntoConstraints="NO" id="wul-h0-Jab">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비디오 플레이어를 터치해서 사용법을 알아보세요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zz0-Bb-V8i">
+                                <rect key="frame" x="59" y="702" width="259" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnCircleBasic" translatesAutoresizingMaskIntoConstraints="NO" id="Cs2-pn-BYG">
+                                <rect key="frame" x="157" y="232" width="60" height="83"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="bSt-kR-jlv"/>
+                                </constraints>
+                            </imageView>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IPC-Aq-EiK">
+                                <rect key="frame" x="168" y="244.66666666666663" width="38" height="38"/>
+                                <subviews>
+                                    <view userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ymW-9q-feV">
+                                        <rect key="frame" x="1" y="1" width="36" height="36"/>
+                                        <color key="backgroundColor" red="0.94117647058823528" green="0.96470588235294119" blue="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ymW-9q-feV" firstAttribute="top" secondItem="IPC-Aq-EiK" secondAttribute="top" constant="1" id="9Gw-BR-xuv"/>
+                                    <constraint firstAttribute="trailing" secondItem="ymW-9q-feV" secondAttribute="trailing" constant="1" id="nCF-Ya-9oL"/>
+                                    <constraint firstAttribute="width" secondItem="IPC-Aq-EiK" secondAttribute="height" multiplier="1:1" id="qW0-SL-D3u"/>
+                                    <constraint firstItem="ymW-9q-feV" firstAttribute="leading" secondItem="IPC-Aq-EiK" secondAttribute="leading" constant="1" id="w9t-Pd-EKT"/>
+                                    <constraint firstAttribute="bottom" secondItem="ymW-9q-feV" secondAttribute="bottom" constant="1" id="wml-cF-Dzm"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcc-mj-cg3">
+                                <rect key="frame" x="62" y="318" width="243" height="223"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="223" id="2bm-2B-1AJ"/>
+                                    <constraint firstAttribute="width" secondItem="vcc-mj-cg3" secondAttribute="height" multiplier="243:223" id="OeV-q8-LOY"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="tapeButtonDidTap:" destination="6Ss-Ku-CoL" eventType="touchUpInside" id="Bw9-fF-TV4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plj-Ey-Rvc">
+                                <rect key="frame" x="6" y="708" width="363" height="68"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="플레이어 작동하기" backgroundImage="btnSmallPresent"/>
+                                <connections>
+                                    <action selector="playLottieButtonDidTap:" destination="6Ss-Ku-CoL" eventType="touchUpInside" id="7cl-ZL-vsi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="a3U-IX-Q9F"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="a3U-IX-Q9F" firstAttribute="trailing" secondItem="wul-h0-Jab" secondAttribute="trailing" id="6ti-B9-7bF"/>
+                            <constraint firstItem="wul-h0-Jab" firstAttribute="leading" secondItem="a3U-IX-Q9F" secondAttribute="leading" id="8d4-yM-bQx"/>
+                            <constraint firstItem="wul-h0-Jab" firstAttribute="top" secondItem="Gn5-pW-AGC" secondAttribute="top" id="9TL-bG-DIZ"/>
+                            <constraint firstItem="Zz0-Bb-V8i" firstAttribute="leading" secondItem="a3U-IX-Q9F" secondAttribute="leading" constant="59" id="BDV-Qk-a9R"/>
+                            <constraint firstItem="IPC-Aq-EiK" firstAttribute="trailing" secondItem="Cs2-pn-BYG" secondAttribute="trailing" constant="-11" id="BPr-Vz-iaf"/>
+                            <constraint firstItem="IPC-Aq-EiK" firstAttribute="top" secondItem="Cs2-pn-BYG" secondAttribute="top" constant="12.5" id="BcL-9y-RTd"/>
+                            <constraint firstAttribute="bottom" secondItem="wul-h0-Jab" secondAttribute="bottom" id="EZh-cu-d4l"/>
+                            <constraint firstItem="vcc-mj-cg3" firstAttribute="leading" secondItem="a3U-IX-Q9F" secondAttribute="leading" constant="62" id="GDW-aI-D0G"/>
+                            <constraint firstItem="Cs2-pn-BYG" firstAttribute="top" secondItem="a3U-IX-Q9F" secondAttribute="top" constant="188" id="JCd-kD-QRE"/>
+                            <constraint firstItem="plj-Ey-Rvc" firstAttribute="leading" secondItem="a3U-IX-Q9F" secondAttribute="leading" constant="6" id="JOB-f1-nH3"/>
+                            <constraint firstItem="Cs2-pn-BYG" firstAttribute="leading" secondItem="a3U-IX-Q9F" secondAttribute="leading" constant="157" id="KbV-0J-Rhr"/>
+                            <constraint firstItem="IPC-Aq-EiK" firstAttribute="leading" secondItem="Cs2-pn-BYG" secondAttribute="leading" constant="11" id="bBh-Ye-7jM"/>
+                            <constraint firstItem="a3U-IX-Q9F" firstAttribute="bottom" secondItem="plj-Ey-Rvc" secondAttribute="bottom" constant="2" id="cwy-yf-sct"/>
+                            <constraint firstItem="vcc-mj-cg3" firstAttribute="top" secondItem="Cs2-pn-BYG" secondAttribute="bottom" constant="3" id="foO-03-l5T"/>
+                            <constraint firstItem="a3U-IX-Q9F" firstAttribute="trailing" secondItem="plj-Ey-Rvc" secondAttribute="trailing" constant="6" id="gdu-xQ-nzT"/>
+                            <constraint firstItem="a3U-IX-Q9F" firstAttribute="trailing" secondItem="Zz0-Bb-V8i" secondAttribute="trailing" constant="57" id="hoI-ra-q8Y"/>
+                            <constraint firstItem="a3U-IX-Q9F" firstAttribute="bottom" secondItem="Zz0-Bb-V8i" secondAttribute="bottom" constant="55" id="kWa-W8-4cr"/>
+                            <constraint firstItem="Cs2-pn-BYG" firstAttribute="width" secondItem="Cs2-pn-BYG" secondAttribute="height" multiplier="60:83" id="r4G-2t-RTJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="circleButton" destination="Cs2-pn-BYG" id="wVe-kc-Mg2"/>
+                        <outlet property="explanationLabel" destination="Zz0-Bb-V8i" id="Dzv-Y9-6lO"/>
+                        <outlet property="startPlayerButton" destination="plj-Ey-Rvc" id="YdP-4M-kUl"/>
+                        <outlet property="tapeButton" destination="vcc-mj-cg3" id="7x6-Ym-UhW"/>
+                        <outletCollection property="circleCollection" destination="IPC-Aq-EiK" collectionClass="NSMutableArray" id="kgX-qZ-e0S"/>
+                        <outletCollection property="circleCollection" destination="ymW-9q-feV" collectionClass="NSMutableArray" id="wPb-Mi-xhP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Shr-7q-2Ro" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2096.8000000000002" y="-134.48275862068965"/>
         </scene>
     </scenes>
     <resources>
@@ -352,6 +495,7 @@
         <image name="btnSmallPresent" width="57.666667938232422" height="68"/>
         <image name="image1Withg" width="375" height="812"/>
         <image name="image2Withg" width="375" height="812"/>
+        <image name="image3Withg" width="375" height="812"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
