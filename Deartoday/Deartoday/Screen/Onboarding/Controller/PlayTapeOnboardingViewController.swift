@@ -18,8 +18,8 @@ final class PlayTapeOnboardingViewController: UIViewController {
     @IBOutlet weak var explanationLabel: UILabel!
     @IBOutlet weak var circleButton: UIImageView!
     @IBOutlet weak var tapeButton: UIButton!
-    @IBOutlet var circleCollection: [UIView]!
     @IBOutlet weak var startPlayerButton: UIButton!
+    @IBOutlet var circleCollection: [UIView]!
     
     // MARK: - Life Cycle
     
