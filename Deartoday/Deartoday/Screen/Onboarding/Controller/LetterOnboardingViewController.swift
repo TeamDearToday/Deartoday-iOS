@@ -28,13 +28,7 @@ final class LetterOnboardingViewController: UIViewController {
         super.viewDidLoad()
         setLabelUI()
         setLayout()
-        if letterNumber == 1 {
-            setFirstInitAnimation()
-        } else if letterNumber == 2 {
-            setSecondInitAnimation()
-        } else if letterNumber == 4 {
-            print("네번째 온보딩 편지")
-        }
+        setAnimation()
     }
     
     // MARK: - Custom Method
@@ -55,6 +49,16 @@ final class LetterOnboardingViewController: UIViewController {
     private func setLayout() {
         letterTopConstraint.constant = (getDeviceHeight() == 667) ? 100 : 160
         dearLabelTopConstraint.constant = (getDeviceHeight() == 667) ? -58 : -64
+    }
+    
+    private func setAnimation() {
+        if letterNumber == 1 {
+            setFirstInitAnimation()
+        } else if letterNumber == 2 {
+            setSecondInitAnimation()
+        } else if letterNumber == 4 {
+            print("네번째 온보딩 편지")
+        }
     }
     
     private func setFirstInitAnimation() {
@@ -101,6 +105,7 @@ final class LetterOnboardingViewController: UIViewController {
             present(playTapeOnboarding, animated: true)
         }
     }
+    
     // MARK: - Animation function
     
     private func setFirstComponentsAnimation() {

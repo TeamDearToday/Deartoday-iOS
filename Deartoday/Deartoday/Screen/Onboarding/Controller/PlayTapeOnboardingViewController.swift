@@ -26,10 +26,7 @@ final class PlayTapeOnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setComponentsUI()
-        if playTapeNumber == 1 {
-            hideComponentsUI()
-            showComponentsUI()
-        }
+        setPlayerButtonUI()
     }
     
     // MARK: - Custom Method
@@ -54,7 +51,13 @@ final class PlayTapeOnboardingViewController: UIViewController {
         }
         explanationLabel.isHidden = true
         circleButton.isHidden = true
-        startPlayerButton.isHidden = true
+    }
+    
+    private func setPlayerButtonUI() {
+        if playTapeNumber == 1 {
+            hideComponentsUI()
+            showComponentsUI()
+        }
     }
     
     // MARK: IBAction
