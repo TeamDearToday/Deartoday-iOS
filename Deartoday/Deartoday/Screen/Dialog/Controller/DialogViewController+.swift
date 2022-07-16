@@ -78,7 +78,6 @@ extension DialogViewController {
     }
     
     // 나타나는 애니메이션
-    
     internal func showView(_ component: UIView, delay: Double = 0.8, duration: Double = 0.3){
         UIView.animate(withDuration: duration, delay: delay, options: .curveEaseOut) {
             component.alpha = 1

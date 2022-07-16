@@ -74,15 +74,14 @@ final class DialogMessageView: UIView {
     }
     
     private func setLayout() {
-        addSubview(backgroundImageView)
-        backgroundImageView.addSubview(dialogLabel)
+        addSubviews([backgroundImageView, dialogLabel])
         
         backgroundImageView.snp.makeConstraints {
             $0.top.leading.trailing.bottom.equalToSuperview()
         }
         
         dialogLabel.snp.makeConstraints {
-            $0.bottom.equalToSuperview().inset(13)
+            $0.top.equalToSuperview().inset(10)
             $0.leading.trailing.equalToSuperview().inset(35)
         }
     }
