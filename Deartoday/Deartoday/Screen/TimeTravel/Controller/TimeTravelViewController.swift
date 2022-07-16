@@ -335,12 +335,29 @@ final class TimeTravelViewController: UIViewController {
             }
         }
     }
+    
+    private func checkLibraryPermission(){
+        PHPhotoLibrary.requestAuthorization( { status in
+            switch status{
+            case .authorized:
+                print("Library: 권한 허용")
+            case .denied:
+                print("Library: 권한 거부")
+            case .restricted, .notDetermined:
+                print("Library: 선택하지 않음")
+            default:
+                break
+            }
+        })
+    }
 }
 
 // MARK: - Custom Delegate
 
 extension TimeTravelViewController: TimeTravelViewDelegate {
     func photoImageViewDidTap() {
+        checkLibraryPermission()
+        
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
