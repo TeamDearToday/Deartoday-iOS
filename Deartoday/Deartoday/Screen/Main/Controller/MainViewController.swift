@@ -15,13 +15,7 @@ final class MainViewController: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet var messageCountLabelCollection: [UILabel]!
     @IBOutlet var dateLabelCollection: [UILabel]!
-    @IBOutlet weak var timeTravelButtonHeightConstraint: NSLayoutConstraint!
-    
-    @IBOutlet weak var messageButtonHeightConstraint: NSLayoutConstraint!
-    
-    @IBOutlet weak var tapeButtonHeightConstraint: NSLayoutConstraint!
-    
-    
+    @IBOutlet var boxButtonTopConstraintCollection: [NSLayoutConstraint]!
     @IBOutlet var boxButtonHeightConstraintCollection: [NSLayoutConstraint]!
     @IBOutlet var backgroundImageViewWidthConstraintCollection: [NSLayoutConstraint]!
     
@@ -136,6 +130,10 @@ extension MainViewController {
     private func setLayout() {
         boxButtonHeightConstraintCollection.forEach {
             $0.constant = getDeviceWidth() * ($0.constant / 375)
+        }
+        boxButtonTopConstraintCollection.forEach {
+            $0.constant = (UIScreen.main.hasNotch) ?
+            getDeviceHeight() * ($0.constant / 812) : $0.constant - 44
         }
     }
 }
