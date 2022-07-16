@@ -39,11 +39,30 @@ final class OnboardingViewController: UIViewController {
     // MARK: - @objc
     
     @objc func circleButtonDidTap() {
-        guard let openBoxOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.OpenBoxOnboarding) as? OpenBoxOnboardingViewController else { return }
+        let boxLottieView = AnimationView(name: Constant.Lottie.box)
+        boxLottieView.frame = self.view.bounds
+        boxLottieView.center = self.view.center
+        boxLottieView.contentMode = .scaleAspectFill
+        self.view.addSubview(boxLottieView)
+        boxLottieView.play()
         
-        openBoxOnboarding.modalPresentationStyle = .fullScreen
-        openBoxOnboarding.modalTransitionStyle = .crossDissolve
-        self.present(openBoxOnboarding, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            if let url = self.url {
+                do {
+                    self.boxSound = try AVAudioPlayer(contentsOf: url)
+                    self.boxSound.prepareToPlay()
+                    self.boxSound.play()
+                } catch {
+                    print("error")
+                }
+            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4) {
+            guard let openBoxOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.OpenBoxOnboarding) as? OpenBoxOnboardingViewController else { return }
+            openBoxOnboarding.modalTransitionStyle = .crossDissolve
+            openBoxOnboarding.modalPresentationStyle = .fullScreen
+            self.present(openBoxOnboarding, animated: true)
+        }
     }
     
     // MARK: - Custom Method
