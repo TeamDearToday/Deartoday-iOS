@@ -49,6 +49,7 @@ final class PlayTapeOnboardingViewController: UIViewController {
         circleCollection.forEach {
             $0.isHidden = true
         }
+        tapeButton.isHidden = true
         explanationLabel.isHidden = true
         circleButton.isHidden = true
     }
