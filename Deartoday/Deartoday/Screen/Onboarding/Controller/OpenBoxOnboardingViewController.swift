@@ -56,7 +56,7 @@ final class OpenBoxOnboardingViewController: UIViewController {
         guard let letterOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.LetterOnboarding) as? LetterOnboardingViewController else { return }
         letterOnboarding.modalPresentationStyle = .overFullScreen
         letterOnboarding.modalTransitionStyle = .crossDissolve
-        letterOnboarding.letterValue = 1
+        letterOnboarding.letterNumber = 1
         present(letterOnboarding, animated: true)
     }
     

@@ -45,7 +45,7 @@ final class PlayTapeOnboardingViewController: UIViewController {
         guard let letterOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.LetterOnboarding) as? LetterOnboardingViewController else { return }
         letterOnboarding.modalTransitionStyle = .crossDissolve
         letterOnboarding.modalPresentationStyle = .overFullScreen
-        letterOnboarding.letterValue = 2
+        letterOnboarding.letterNumber = 2
         present(letterOnboarding, animated: true)
     }
 }

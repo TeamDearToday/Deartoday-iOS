@@ -11,7 +11,8 @@ final class LetterOnboardingViewController: UIViewController {
     
     // MARK: - Property
     
-    var letterValue: Int?
+    var letterNumber: Int?
+    var nextButtonNumber: Int = 0
     
     // MARK: - UI Property
     
@@ -27,14 +28,17 @@ final class LetterOnboardingViewController: UIViewController {
         super.viewDidLoad()
         setLabelUI()
         setLayout()
-        if letterValue == 1 {
+        if letterNumber == 1 {
             setFirstInitAnimation()
-        } else if letterValue == 2 {
+        } else if letterNumber == 2 {
             setSecondInitAnimation()
+        } else if letterNumber == 4 {
+            print("네번째 온보딩 편지")
         }
     }
     
     // MARK: - Custom Method
+    
     private func setLabelUI() {
         letterLabelCollection.forEach {
             $0.font = .p4
@@ -60,6 +64,12 @@ final class LetterOnboardingViewController: UIViewController {
         }
     }
     
+    private func setThirdInitAnimation() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.setThirdComponentsAnimation()
+        }
+    }
+    
     // MARK: - IBAction
     
     @IBAction func checkPlayerButtonDidTap(_ sender: UIButton) {
@@ -69,6 +79,19 @@ final class LetterOnboardingViewController: UIViewController {
         present(playTapeOnboarding, animated: true)
     }
     
+    @IBAction func nextButtonDidTap(_ sender: UIButton) {
+        nextButtonNumber += 1
+        if nextButtonNumber == 1 {
+            letterLabelCollection[5...6].forEach {
+                $0.alpha = 0
+            }
+            nextButtonCollection[1].alpha = 0
+            
+            setThirdInitAnimation()
+        } else {
+            print("나나나")
+        }
+    }
     // MARK: - Animation function
     
     private func setLayout() {
@@ -113,6 +136,28 @@ final class LetterOnboardingViewController: UIViewController {
                     self.nextButtonCollection[1].alpha = 1
                 }, completion: nil)
             } )
+        })
+    }
+    
+    private func setThirdComponentsAnimation() {
+        UIView.animate(withDuration: 0.6, animations: {
+            self.letterLabelCollection[7].alpha = 1
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.6, delay: 1.2, animations: {
+                self.letterLabelCollection[8].alpha = 1
+            }, completion: { _ in
+                UIView.animate(withDuration: 0.6, delay: 1.2, animations: {
+                    self.letterLabelCollection[9].alpha = 1
+                }, completion: { _ in
+                    UIView.animate(withDuration: 0.6, delay: 1.2, animations: {
+                        self.letterLabelCollection[10].alpha = 1
+                    }, completion: { _ in
+                        UIView.animate(withDuration: 0.3, delay: 1.2, animations: {
+                            self.nextButtonCollection[1].alpha = 1
+                        }, completion: nil)
+                    })
+                })
+            })
         })
     }
 }
