@@ -13,6 +13,7 @@ final class MainViewController: UIViewController {
 
     @IBOutlet weak var backgroundScrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet var iconImageViewCollection: [UIImageView]!
     @IBOutlet var messageCountLabelCollection: [UILabel]!
     @IBOutlet var dateLabelCollection: [UILabel]!
     @IBOutlet var boxButtonTopConstraintCollection: [NSLayoutConstraint]!
@@ -113,6 +114,9 @@ extension MainViewController {
         dateLabelCollection.forEach {
             $0.font = .h0
             $0.textColor = .lightBlue00
+        }
+        iconImageViewCollection.forEach {
+            $0.tintColor = .blue02
         }
     }
     
