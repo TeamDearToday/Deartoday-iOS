@@ -133,9 +133,11 @@ final class TimeTravelViewController: UIViewController {
     
     private let imagePicker = UIImagePickerController()
     
-    private var playerAnimationView = AnimationView().then {
-        $0.isHidden = true
-    }
+    private var playerAnimationView: AnimationView = {
+        let animationView = AnimationView.init(name: "tape")
+        animationView.isHidden = true
+        return animationView
+    }()
     
     // MARK: - Life Cycle
     
@@ -144,7 +146,6 @@ final class TimeTravelViewController: UIViewController {
         setUI()
         setLayout()
         getNotification()
-        setAnimationView()
         setDelegate()
     }
     
@@ -157,6 +158,7 @@ final class TimeTravelViewController: UIViewController {
     private func setLayout() {
         view.addSubviews([backImageView,
                           coverView,
+                          playerAnimationView,
                           monthBackView,
                           yearBackView,
                           dayBackView,
@@ -174,6 +176,10 @@ final class TimeTravelViewController: UIViewController {
         }
         
         coverView.snp.makeConstraints {
+            $0.top.leading.trailing.bottom.equalToSuperview()
+        }
+        
+        playerAnimationView.snp.makeConstraints {
             $0.top.leading.trailing.bottom.equalToSuperview()
         }
         
@@ -242,6 +248,7 @@ final class TimeTravelViewController: UIViewController {
         } completion: { _ in
             UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveEaseOut) {
                 self.timeTravelView.alpha = 0
+                self.coverView.alpha = 0
             } completion: { _ in
                 self.playerAnimationView.isHidden = true
                 self.setCountDownAnimation()
@@ -290,21 +297,14 @@ final class TimeTravelViewController: UIViewController {
                                                object: nil)
     }
     
-    private func setAnimationView() {
-        view.addSubview(playerAnimationView)
-        
-        playerAnimationView.snp.makeConstraints {
-            $0.top.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
-        }
-        
-        playerAnimationView.play()
-    }
-    
     private func setDelegate() {
         timeTravelView.delegate = self
     }
     
     private func setCountDownAnimation() {
+        playerAnimationView.isHidden = false
+        playerAnimationView.play()
+        
         [yearLabel, yearAnimationLabel, monthLabel, monthAnmationLabel, dayLabel, dayAnimationLabel].forEach {
             $0.isHidden.toggle()
         }
