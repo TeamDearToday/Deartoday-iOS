@@ -52,6 +52,11 @@ final class LetterOnboardingViewController: UIViewController {
         dearLabel.textColor = .blue02
     }
     
+    private func setLayout() {
+        letterTopConstraint.constant = (getDeviceHeight() == 667) ? 100 : 160
+        dearLabelTopConstraint.constant = (getDeviceHeight() == 667) ? -58 : -64
+    }
+    
     private func setFirstInitAnimation() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.setFirstComponentsAnimation()
@@ -81,12 +86,12 @@ final class LetterOnboardingViewController: UIViewController {
     
     @IBAction func nextButtonDidTap(_ sender: UIButton) {
         nextButtonNumber += 1
+        
         if nextButtonNumber == 1 {
             letterLabelCollection[5...6].forEach {
                 $0.alpha = 0
             }
             nextButtonCollection[1].alpha = 0
-            
             setThirdInitAnimation()
         } else {
             guard let playTapeOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.PlayTapeOnboarding) as? PlayTapeOnboardingViewController else { return }
@@ -97,11 +102,6 @@ final class LetterOnboardingViewController: UIViewController {
         }
     }
     // MARK: - Animation function
-    
-    private func setLayout() {
-        letterTopConstraint.constant = (getDeviceHeight() == 667) ? 100 : 160
-        dearLabelTopConstraint.constant = (getDeviceHeight() == 667) ? -58 : -64
-    }
     
     private func setFirstComponentsAnimation() {
         UIView.animate(withDuration: 0.6, animations: {

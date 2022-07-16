@@ -78,6 +78,4 @@ final class PlayTapeOnboardingViewController: UIViewController {
         letterOnboarding.letterNumber = 4
         present(letterOnboarding, animated: true)
     }
-    
-    
 }
