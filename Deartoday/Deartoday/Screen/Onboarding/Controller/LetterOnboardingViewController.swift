@@ -89,7 +89,11 @@ final class LetterOnboardingViewController: UIViewController {
             
             setThirdInitAnimation()
         } else {
-            print("나나나")
+            guard let playTapeOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.PlayTapeOnboarding) as? PlayTapeOnboardingViewController else { return }
+            playTapeOnboarding.modalTransitionStyle = .crossDissolve
+            playTapeOnboarding.modalPresentationStyle = .fullScreen
+            playTapeOnboarding.playTapeNumber = 1
+            present(playTapeOnboarding, animated: true)
         }
     }
     // MARK: - Animation function
