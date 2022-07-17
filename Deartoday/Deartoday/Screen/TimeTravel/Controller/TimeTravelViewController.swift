@@ -134,7 +134,7 @@ final class TimeTravelViewController: UIViewController {
     private let imagePicker = UIImagePickerController()
     
     private var playerAnimationView: AnimationView = {
-        let animationView = AnimationView.init(name: "timetravel_tape")
+        let animationView = AnimationView.init(name: Constant.Lottie.timetape)
         animationView.alpha = 0
         return animationView
     }()
