@@ -9,6 +9,7 @@ import Moya
 
 enum TimeTravelService {
     case oldMedia(year: Int)
+    case question
 }
 
 extension TimeTravelService: BaseTargetType {
@@ -16,12 +17,15 @@ extension TimeTravelService: BaseTargetType {
         switch self {
         case .oldMedia:
             return URLConstant.oldMedia
+        case .question:
+            return URLConstant.question
         }
     }
     
     var method: Moya.Method {
         switch self {
-        default: return .get
+        case .oldMedia, .question:
+            return .get
         }
     }
     
@@ -31,6 +35,8 @@ extension TimeTravelService: BaseTargetType {
             return .requestParameters(
                 parameters: ["year": year],
                 encoding: URLEncoding.queryString)
+        case .question:
+            return .requestPlain
         
         }
     }
