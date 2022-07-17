@@ -314,10 +314,10 @@
             </objects>
             <point key="canvasLocation" x="1127.2" y="92.364532019704441"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Main Navigation Controller-->
         <scene sceneID="0wQ-qQ-qhy">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="3CX-ZX-hFK" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="3CX-ZX-hFK" customClass="MainNavigationController" customModule="Deartoday" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hev-Il-Iji">
                         <autoresizingMask key="autoresizingMask"/>
