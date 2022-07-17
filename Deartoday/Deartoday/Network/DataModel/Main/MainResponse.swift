@@ -9,6 +9,6 @@ import Foundation
 
 // MARK: - MainDataModel
 
-struct MainDataModel: Codable {
+struct MainResponse: Codable {
     let timeTravelCount: Int
 }
