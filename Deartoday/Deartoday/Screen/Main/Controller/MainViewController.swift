@@ -13,9 +13,11 @@ final class MainViewController: UIViewController {
 
     @IBOutlet weak var backgroundScrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet var iconImageViewCollection: [UIImageView]!
     @IBOutlet var messageCountLabelCollection: [UILabel]!
     @IBOutlet var dateLabelCollection: [UILabel]!
-    @IBOutlet weak var timeTravelButtonHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var boxButtonTopConstraintCollection: [NSLayoutConstraint]!
+    @IBOutlet var boxButtonHeightConstraintCollection: [NSLayoutConstraint]!
     @IBOutlet var backgroundImageViewWidthConstraintCollection: [NSLayoutConstraint]!
     
     // MARK: - Life Cycle
@@ -113,6 +115,9 @@ extension MainViewController {
             $0.font = .h0
             $0.textColor = .lightBlue00
         }
+        iconImageViewCollection.forEach {
+            $0.tintColor = .blue02
+        }
     }
     
     private func setPageControlUI() {
@@ -127,6 +132,12 @@ extension MainViewController {
     }
     
     private func setLayout() {
-        timeTravelButtonHeightConstraint.constant = getDeviceWidth() * (246 / 375)
+        boxButtonHeightConstraintCollection.forEach {
+            $0.constant = getDeviceWidth() * ($0.constant / 375)
+        }
+        boxButtonTopConstraintCollection.forEach {
+            $0.constant = (UIScreen.main.hasNotch) ?
+            getDeviceHeight() * ($0.constant / 812) : $0.constant - 44
+        }
     }
 }
