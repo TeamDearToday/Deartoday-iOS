@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+// MARK: - CheckTimeTravelResponse
+
+struct CheckTimeTravelResponse: Codable {
+    let timeTravels: [TimeTapeDataModel]
+}
