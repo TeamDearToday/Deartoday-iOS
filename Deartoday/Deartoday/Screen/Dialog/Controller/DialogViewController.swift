@@ -276,7 +276,7 @@ final class DialogViewController: UIViewController {
                                 self.setDialogMessageViewHeight(topConstant: 228)
                                 
                                 self.showPastView(self.pastMessageView) {
-                                    self.hidePastView(self.pastMessageView) {
+                                    self.hidePastView(self.pastMessageView, delay: 1.2, duration: 1.0) {
                                         self.pastMessageView.dialogText = self.lastMessage[1]
                                         self.setDialogMessageViewHeight(topConstant: 228)
                                         
@@ -309,6 +309,7 @@ final class DialogViewController: UIViewController {
         }
         
         setTextView()
+        getQuestion()
     }
     
     private func setLayout() {
@@ -488,6 +489,18 @@ extension DialogViewController: UITextViewDelegate {
                     constraint.constant = estimatedSize.height
                 }
             }
+        }
+    }
+}
+
+// MARK: - Network
+
+extension DialogViewController {
+    private func getQuestion() {
+        TimeTravelAPI.shared.getQuestion { questionData, err in
+            guard let questionData = questionData else { return }
+            self.questions = questionData.data?.questions ?? [""]
+            self.lastMessage = questionData.data?.lastMessage ?? [""]
         }
     }
 }
