@@ -63,6 +63,9 @@
 		9803F3B428847C9100A5A239 /* MainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3B328847C9100A5A239 /* MainResponse.swift */; };
 		9803F3B728847D0900A5A239 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3B628847D0900A5A239 /* MainService.swift */; };
 		9803F3BD2884814C00A5A239 /* MainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3BC2884814C00A5A239 /* MainAPI.swift */; };
+		9803F3C028848AAA00A5A239 /* CheckTimeTravelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3BF28848AAA00A5A239 /* CheckTimeTravelAPI.swift */; };
+		9803F3C328848B0F00A5A239 /* CheckTimeTravelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3C228848B0F00A5A239 /* CheckTimeTravelService.swift */; };
+		9803F3C628848B4100A5A239 /* CheckTimeTravelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3C528848B4100A5A239 /* CheckTimeTravelResponse.swift */; };
 		984099E62881F3FB00025092 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 984099E52881F3FB00025092 /* splash.json */; };
 		984099E92881F4A700025092 /* sound_box.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 984099E82881F4A700025092 /* sound_box.mp3 */; };
 		984099EB2881F4CD00025092 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984099EA2881F4CD00025092 /* Sound.swift */; };
@@ -161,6 +164,9 @@
 		9803F3B328847C9100A5A239 /* MainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainResponse.swift; sourceTree = "<group>"; };
 		9803F3B628847D0900A5A239 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
 		9803F3BC2884814C00A5A239 /* MainAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAPI.swift; sourceTree = "<group>"; };
+		9803F3BF28848AAA00A5A239 /* CheckTimeTravelAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelAPI.swift; sourceTree = "<group>"; };
+		9803F3C228848B0F00A5A239 /* CheckTimeTravelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelService.swift; sourceTree = "<group>"; };
+		9803F3C528848B4100A5A239 /* CheckTimeTravelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelResponse.swift; sourceTree = "<group>"; };
 		984099E52881F3FB00025092 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 		984099E82881F4A700025092 /* sound_box.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_box.mp3; sourceTree = "<group>"; };
 		984099EA2881F4CD00025092 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
@@ -507,6 +513,7 @@
 		92DB354C28756404001E2006 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				9803F3BE28848A9A00A5A239 /* CheckTimeTravel */,
 				9803F3BB2884814700A5A239 /* Main */,
 				92C27EA32884450500077FA3 /* TimeTravel */,
 			);
@@ -516,6 +523,7 @@
 		92DB354D28756409001E2006 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				9803F3C128848AF900A5A239 /* CheckTimeTravel */,
 				9803F3B528847D0400A5A239 /* Main */,
 				92C27EA42884451800077FA3 /* TimeTravel */,
 			);
@@ -525,6 +533,7 @@
 		92DB354E28756413001E2006 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				9803F3C428848B2D00A5A239 /* CheckTimeTravel */,
 				9803F3B228847C8900A5A239 /* Main */,
 				92C27EA52884451D00077FA3 /* TimeTravel */,
 			);
@@ -701,6 +710,30 @@
 				9803F3BC2884814C00A5A239 /* MainAPI.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		9803F3BE28848A9A00A5A239 /* CheckTimeTravel */ = {
+			isa = PBXGroup;
+			children = (
+				9803F3BF28848AAA00A5A239 /* CheckTimeTravelAPI.swift */,
+			);
+			path = CheckTimeTravel;
+			sourceTree = "<group>";
+		};
+		9803F3C128848AF900A5A239 /* CheckTimeTravel */ = {
+			isa = PBXGroup;
+			children = (
+				9803F3C228848B0F00A5A239 /* CheckTimeTravelService.swift */,
+			);
+			path = CheckTimeTravel;
+			sourceTree = "<group>";
+		};
+		9803F3C428848B2D00A5A239 /* CheckTimeTravel */ = {
+			isa = PBXGroup;
+			children = (
+				9803F3C528848B4100A5A239 /* CheckTimeTravelResponse.swift */,
+			);
+			path = CheckTimeTravel;
 			sourceTree = "<group>";
 		};
 		984099E72881F47100025092 /* Sound */ = {
@@ -1020,6 +1053,7 @@
 				92DB35662875652F001E2006 /* OnboardingViewController.swift in Sources */,
 				92DB3560287564ED001E2006 /* MainModel.swift in Sources */,
 				9803F3AE28846AF800A5A239 /* CheckTimeTravelDetailDataModel.swift in Sources */,
+				9803F3C028848AAA00A5A239 /* CheckTimeTravelAPI.swift in Sources */,
 				92DB35722875661A001E2006 /* Constant.swift in Sources */,
 				92DB358228756B0B001E2006 /* GeneralResponse.swift in Sources */,
 				9803F3AC28846AEC00A5A239 /* CheckTimeTravelDetailView.swift in Sources */,
@@ -1039,6 +1073,7 @@
 				92DB356C2875658F001E2006 /* UIView+.swift in Sources */,
 				92CC3BA2287D62C400EA5617 /* VirtualSpaceDataModel.swift in Sources */,
 				923C69B5287810DE00B8EC56 /* UITextField+.swift in Sources */,
+				9803F3C628848B4100A5A239 /* CheckTimeTravelResponse.swift in Sources */,
 				92DB358428756B67001E2006 /* BaseTargetType.swift in Sources */,
 				98A4750F287DECF7008891F5 /* CheckTImeTravelDataModel.swift in Sources */,
 				92DB35332875633D001E2006 /* SceneDelegate.swift in Sources */,
@@ -1052,6 +1087,7 @@
 				924814AF287EB53A001177B1 /* DialogMessageView.swift in Sources */,
 				926C7E2028847E1700C0D3B4 /* TimeTravelQuestionResponse.swift in Sources */,
 				98BFBCBE2879544A00F01F04 /* Image.swift in Sources */,
+				9803F3C328848B0F00A5A239 /* CheckTimeTravelService.swift in Sources */,
 				98D912CE287DC3430088A7F9 /* CheckMessageViewController.swift in Sources */,
 				98BFBCD12879BBB700F01F04 /* UIColor+.swift in Sources */,
 				98A4751C287E013F008891F5 /* CheckMessageDetailView.swift in Sources */,
