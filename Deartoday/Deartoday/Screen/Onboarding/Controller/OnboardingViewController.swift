@@ -141,7 +141,7 @@ final class OnboardingViewController: UIViewController {
         let boxLottieView = AnimationView(name: Constant.Lottie.box)
         boxLottieView.frame = self.view.bounds
         boxLottieView.center = self.view.center
-        boxLottieView.contentMode = .scaleAspectFill
+        boxLottieView.contentMode = .scaleAspectFit
         self.view.addSubview(boxLottieView)
         boxLottieView.play()
         
