@@ -63,6 +63,12 @@ final class MainViewController: UIViewController {
         pageControl.setIndicatorImage(UIImage(systemName: "circle"), forPage: page == 0 ? 1 : 0)
     }
     
+    private func setCountLabel(count: Int) {
+        messageCountLabelCollection.forEach {
+            $0.text = count > 99 ? "99+" : "\(count)"
+        }
+    }
+    
     // MARK: - IBAction
     
     @IBAction func timeTravelButtonDidTap(_ sender: Any) {
@@ -109,9 +115,7 @@ extension MainViewController {
     private func getMainData() {
         MainAPI.shared.getMain { mainData in
             guard let mainData = mainData else { return }
-            self.messageCountLabelCollection.forEach {
-                $0.text = "\(mainData.data?.timeTravelCount ?? 0)"
-            }
+            self.setCountLabel(count: mainData.data?.timeTravelCount ?? 0)
         }
     }
 }
