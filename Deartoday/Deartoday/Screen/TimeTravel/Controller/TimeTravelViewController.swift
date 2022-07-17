@@ -134,8 +134,8 @@ final class TimeTravelViewController: UIViewController {
     private let imagePicker = UIImagePickerController()
     
     private var playerAnimationView: AnimationView = {
-        let animationView = AnimationView.init(name: "tape")
-        animationView.isHidden = true
+        let animationView = AnimationView.init(name: "timetravel_tape")
+        animationView.alpha = 0
         return animationView
     }()
     
@@ -246,11 +246,13 @@ final class TimeTravelViewController: UIViewController {
             self.timeTravelView.titleTextField.alpha = 0
             self.returnButton.alpha = 0
         } completion: { _ in
-            UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveEaseOut) {
+            UIView.animate(withDuration: 0.5, delay: 0.3, options: .curveEaseOut) {
                 self.timeTravelView.alpha = 0
                 self.coverView.alpha = 0
+                
+                self.playerAnimationView.alpha = 1
+                self.playerAnimationView.play()
             } completion: { _ in
-                self.playerAnimationView.isHidden = true
                 self.setCountDownAnimation()
             }
         }
@@ -302,9 +304,6 @@ final class TimeTravelViewController: UIViewController {
     }
     
     private func setCountDownAnimation() {
-        playerAnimationView.isHidden = false
-        playerAnimationView.play()
-        
         [yearLabel, yearAnimationLabel, monthLabel, monthAnmationLabel, dayLabel, dayAnimationLabel].forEach {
             $0.isHidden.toggle()
         }
