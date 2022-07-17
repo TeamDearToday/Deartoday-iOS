@@ -133,9 +133,11 @@ final class TimeTravelViewController: UIViewController {
     
     private let imagePicker = UIImagePickerController()
     
-    private var playerAnimationView = AnimationView().then {
-        $0.isHidden = true
-    }
+    private var playerAnimationView: AnimationView = {
+        let animationView = AnimationView.init(name: Constant.Lottie.timetape)
+        animationView.alpha = 0
+        return animationView
+    }()
     
     // MARK: - Life Cycle
     
@@ -144,7 +146,6 @@ final class TimeTravelViewController: UIViewController {
         setUI()
         setLayout()
         getNotification()
-        setAnimationView()
         setDelegate()
     }
     
@@ -157,6 +158,7 @@ final class TimeTravelViewController: UIViewController {
     private func setLayout() {
         view.addSubviews([backImageView,
                           coverView,
+                          playerAnimationView,
                           monthBackView,
                           yearBackView,
                           dayBackView,
@@ -174,6 +176,10 @@ final class TimeTravelViewController: UIViewController {
         }
         
         coverView.snp.makeConstraints {
+            $0.top.leading.trailing.bottom.equalToSuperview()
+        }
+        
+        playerAnimationView.snp.makeConstraints {
             $0.top.leading.trailing.bottom.equalToSuperview()
         }
         
@@ -240,10 +246,13 @@ final class TimeTravelViewController: UIViewController {
             self.timeTravelView.titleTextField.alpha = 0
             self.returnButton.alpha = 0
         } completion: { _ in
-            UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveEaseOut) {
+            UIView.animate(withDuration: 0.5, delay: 0.3, options: .curveEaseOut) {
                 self.timeTravelView.alpha = 0
+                self.coverView.alpha = 0
+                
+                self.playerAnimationView.alpha = 1
+                self.playerAnimationView.play()
             } completion: { _ in
-                self.playerAnimationView.isHidden = true
                 self.setCountDownAnimation()
             }
         }
@@ -290,16 +299,6 @@ final class TimeTravelViewController: UIViewController {
                                                object: nil)
     }
     
-    private func setAnimationView() {
-        view.addSubview(playerAnimationView)
-        
-        playerAnimationView.snp.makeConstraints {
-            $0.top.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
-        }
-        
-        playerAnimationView.play()
-    }
-    
     private func setDelegate() {
         timeTravelView.delegate = self
     }
@@ -335,12 +334,29 @@ final class TimeTravelViewController: UIViewController {
             }
         }
     }
+    
+    private func checkLibraryPermission(){
+        PHPhotoLibrary.requestAuthorization( { status in
+            switch status{
+            case .authorized:
+                print("Library: 권한 허용")
+            case .denied:
+                print("Library: 권한 거부")
+            case .restricted, .notDetermined:
+                print("Library: 선택하지 않음")
+            default:
+                break
+            }
+        })
+    }
 }
 
 // MARK: - Custom Delegate
 
 extension TimeTravelViewController: TimeTravelViewDelegate {
     func photoImageViewDidTap() {
+        checkLibraryPermission()
+        
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
