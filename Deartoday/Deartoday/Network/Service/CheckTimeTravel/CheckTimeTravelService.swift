@@ -7,11 +7,11 @@
 
 import Moya
 
-enum CheckTimeTravel {
+enum CheckTimeTravelService {
     case checkTimeTravel
 }
 
-extension CheckTimeTravel: BaseTargetType {
+extension CheckTimeTravelService: BaseTargetType {
     var path: String {
         switch self {
         case .checkTimeTravel:
