@@ -32,6 +32,7 @@ final class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setPageControl(page: backgroundScrollView.contentOffset.x == 0 ? 0 : 1)
+        getMainData()
     }
     
     // MARK: - Custom Method
@@ -98,6 +99,19 @@ extension MainViewController: UIScrollViewDelegate {
         }
         else if scrollView.contentOffset.x == getDeviceWidth() {
             setPageControl(page: 1)
+        }
+    }
+}
+
+// MARK: - Network
+
+extension MainViewController {
+    private func getMainData() {
+        MainAPI.shared.getMain { mainData in
+            guard let mainData = mainData else { return }
+            self.messageCountLabelCollection.forEach {
+                $0.text = "\(mainData.data?.timeTravelCount ?? 0)"
+            }
         }
     }
 }
