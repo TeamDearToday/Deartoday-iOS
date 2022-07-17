@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - TapeDataModel
 
-struct TimeTapeDataModel: Codable {
+struct TimeTapeDataModel: Codable, Hashable {
     let timeTravelID, title: String
     let year, month, day: Int
     let writtenDate, image: String
