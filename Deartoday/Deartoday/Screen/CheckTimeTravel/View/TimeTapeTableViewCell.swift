@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Kingfisher
+
 final class TimeTapeTableViewCell: UITableViewCell {
     
     static let identifier = "TimeTapeTableViewCell"
@@ -62,6 +64,9 @@ final class TimeTapeTableViewCell: UITableViewCell {
     }
     
     func setData(model: TimeTapeDataModel) {
-        titleLabel.text = model.writtenDate
+        pastImageView.kf.setImage(with: URL(string: model.image))
+        travelFromLabel.text = model.writtenDate
+        travelToLabel.text = "\(model.year).\(model.month).\(model.day)"
+        titleLabel.text = model.title
     }
 }
