@@ -5,9 +5,16 @@
 //  Created by 소연 on 2022/07/06.
 //
 
+import AVFoundation
 import UIKit
 
+import Lottie
+
 final class OnboardingViewController: UIViewController {
+    
+    // MARK: Property
+    
+    var boxSound = AVAudioPlayer()
     
     // MARK: - UI Property
     
@@ -31,11 +38,31 @@ final class OnboardingViewController: UIViewController {
     // MARK: - @objc
     
     @objc func circleButtonDidTap() {
-        guard let openBoxOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.OpenBoxOnboarding) as? OpenBoxOnboardingViewController else { return }
+        let boxLottieView = AnimationView(name: Constant.Lottie.box)
+        boxLottieView.frame = self.view.bounds
+        boxLottieView.center = self.view.center
+        boxLottieView.contentMode = .scaleAspectFill
+        self.view.addSubview(boxLottieView)
+        boxLottieView.play()
         
-        openBoxOnboarding.modalPresentationStyle = .fullScreen
-        openBoxOnboarding.modalTransitionStyle = .crossDissolve
-        self.present(openBoxOnboarding, animated: true)
+        let url = Bundle.main.url(forResource: Constant.Sound.sound_box, withExtension: "mp3")
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            if let url = url {
+                do {
+                    self.boxSound = try AVAudioPlayer(contentsOf: url)
+                    self.boxSound.prepareToPlay()
+                    self.boxSound.play()
+                } catch {
+                    print("error")
+                }
+            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4) {
+            guard let openBoxOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.OpenBoxOnboarding) as? OpenBoxOnboardingViewController else { return }
+            openBoxOnboarding.modalTransitionStyle = .crossDissolve
+            openBoxOnboarding.modalPresentationStyle = .fullScreen
+            self.present(openBoxOnboarding, animated: true)
+        }
     }
     
     // MARK: - Custom Method
@@ -66,13 +93,12 @@ final class OnboardingViewController: UIViewController {
     }
     
     private func showComponents() {
-        labelCollection[2].isHidden = false
-        circleImageView.isHidden = false
-        boxButton.isEnabled = true
-        
         circleCollection.forEach {
             $0.isHidden = false
         }
+        labelCollection[2].isHidden = false
+        circleImageView.isHidden = false
+        boxButton.isEnabled = true
     }
     
     private func setFirstAnimation() {
@@ -111,9 +137,30 @@ final class OnboardingViewController: UIViewController {
     }
     
     @IBAction func boxButtonDidTap(_ sender: UIButton) {
-        guard let openBoxOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.OpenBoxOnboarding) as? OpenBoxOnboardingViewController else { return }
-        openBoxOnboarding.modalTransitionStyle = .crossDissolve
-        openBoxOnboarding.modalPresentationStyle = .fullScreen
-        present(openBoxOnboarding, animated: true)
+        let boxLottieView = AnimationView(name: Constant.Lottie.box)
+        boxLottieView.frame = self.view.bounds
+        boxLottieView.center = self.view.center
+        boxLottieView.contentMode = .scaleAspectFit
+        self.view.addSubview(boxLottieView)
+        boxLottieView.play()
+        
+        let url = Bundle.main.url(forResource: Constant.Sound.sound_box, withExtension: "mp3")
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            if let url = url {
+                do {
+                    self.boxSound = try AVAudioPlayer(contentsOf: url)
+                    self.boxSound.prepareToPlay()
+                    self.boxSound.play()
+                } catch {
+                    print("error")
+                }
+            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4) {
+            guard let openBoxOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.OpenBoxOnboarding) as? OpenBoxOnboardingViewController else { return }
+            openBoxOnboarding.modalTransitionStyle = .crossDissolve
+            openBoxOnboarding.modalPresentationStyle = .fullScreen
+            self.present(openBoxOnboarding, animated: true)
+        }
     }
 }
