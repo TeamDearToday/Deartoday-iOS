@@ -222,19 +222,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕 많이 놀랐지?" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcT-Xu-RAO">
-                                <rect key="frame" x="36" y="282" width="303" height="36"/>
+                                <rect key="frame" x="36" y="272" width="303" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="믿기지 않을 수 있지만, 나는 2023년의 너야! 너가 이 비디오테이프와 플레이어를 잘 발견했으면 좋겠다." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u50-oo-Mca">
-                                <rect key="frame" x="36" y="351" width="303" height="54"/>
+                                <rect key="frame" x="36" y="342" width="303" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M72-JX-Bhv" userLabel="왜냐하면 이거, 그냥 평범한 플레이어가 아니거든.">
-                                <rect key="frame" x="36" y="436" width="303" height="36"/>
+                                <rect key="frame" x="36" y="427" width="303" height="36"/>
                                 <string key="text">왜냐하면 이거,
 그냥 평범한 플레이어가 아니거든.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -242,7 +242,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uu1-la-CJ0">
-                                <rect key="frame" x="36" y="502.00000000000006" width="303" height="40.666666666666686"/>
+                                <rect key="frame" x="36" y="492.00000000000006" width="303" height="40.666666666666686"/>
                                 <string key="text">바로 시간 여행을 도와주는 플레이어야.
 나도 이 친구를 이용해서 너를 만나러 온 거야 :)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -267,7 +267,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jzk-gP-Rii">
-                                <rect key="frame" x="36" y="258" width="303" height="122"/>
+                                <rect key="frame" x="36" y="257" width="303" height="122"/>
                                 <string key="text">1. 너가 돌아가고 싶은 과거의 순간을 떠올려 2. 그 순간이 담긴 사진을 비디오테이프 위에 붙여. 3. 비디오테이프를 플레이어에 넣고 4. 뒤로감기 버튼을 누르면, 5. 플레이어가 너를 과거의 그 순간으로     데려다 줄거야.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -282,7 +282,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhN-Qy-0Re">
-                                <rect key="frame" x="36" y="203.33333333333334" width="299" height="101.66666666666666"/>
+                                <rect key="frame" x="36" y="233.33333333333334" width="299" height="101.66666666666666"/>
                                 <string key="text">단, 이 시간 여행에는 규칙이 있어.
 우선 너가 직접 경험한 과거의 순간으로만 
 돌아갈 수 있어.
@@ -293,7 +293,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcp-EJ-9vX">
-                                <rect key="frame" x="36" y="335" width="299" height="101.66666666666669"/>
+                                <rect key="frame" x="36" y="363" width="299" height="101.66666666666669"/>
                                 <string key="text">다만, 너가 할 수 있는 단 한 가지 일은
 바로 과거의 너를 만나서 대화를 나누고 
 그 친구에게 남기고 싶은 것을 
@@ -304,17 +304,61 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="여기까지 읽었는데도 아직 와닿지가 않지?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEF-yU-nqA">
-                                <rect key="frame" x="36" y="470.66666666666669" width="299" height="21"/>
+                                <rect key="frame" x="36" y="497.66666666666669" width="299" height="21.000000000000057"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="그럼 지금 한 번 플레이어를 바로 작동시켜봐." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGR-h2-i9c">
-                                <rect key="frame" x="36" y="529.66666666666663" width="299" height="21"/>
+                                <rect key="frame" x="36" y="556.66666666666663" width="299" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYg-hy-GVR">
+                                <rect key="frame" x="36" y="228.66666666666666" width="299" height="81.333333333333343"/>
+                                <string key="text">이 비디오 플레이어가 
+너에게 꼭 도움이 되었으면 좋겠어!
+어쩌면 과거의 그 순간을 새롭게 바라보는 
+기회가 될 수도 있거든.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjw-HQ-2Dv">
+                                <rect key="frame" x="36" y="338" width="299" height="61"/>
+                                <string key="text">그리고 잊지 마.
+너의 오늘이야말로, 나한테는 정말 돌아가고 싶고 
+그리운 '좋을 때'의 한 순간이라는 것을.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4W-yk-pCS">
+                                <rect key="frame" x="36" y="427" width="299" height="40.666666666666686"/>
+                                <string key="text">행복한 오늘에 
+하루하루 최선을 다해 살 수 있기를!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Love," lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmN-kQ-kjW">
+                                <rect key="frame" x="36" y="497.66666666666669" width="299" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2032년의 너로부터 :)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffr-OZ-WxE">
+                                <rect key="frame" x="36" y="528" width="299" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IhP-wD-qP5">
+                                <rect key="frame" x="109" y="683" width="240" height="68"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="디어투데이 시작하기" backgroundImage="btnSmallPresent"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aQg-fa-XZj"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -323,10 +367,17 @@
                             <constraint firstItem="mGk-El-ha2" firstAttribute="top" secondItem="0js-l8-UVl" secondAttribute="bottom" constant="10" id="26Q-HK-vkj"/>
                             <constraint firstAttribute="bottom" secondItem="1vr-xm-Zlx" secondAttribute="bottom" id="4Gg-EO-vsR"/>
                             <constraint firstItem="zhN-Qy-0Re" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="5NI-S5-vub"/>
+                            <constraint firstItem="bmN-kQ-kjW" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="6Dk-ZN-NJw"/>
                             <constraint firstItem="1vr-xm-Zlx" firstAttribute="top" secondItem="oBd-iJ-FJM" secondAttribute="bottom" constant="-64" id="7Aa-IA-UiL"/>
-                            <constraint firstItem="Bcp-EJ-9vX" firstAttribute="top" secondItem="zhN-Qy-0Re" secondAttribute="bottom" constant="30" id="98L-d4-Wmt"/>
+                            <constraint firstItem="Bcp-EJ-9vX" firstAttribute="top" secondItem="zhN-Qy-0Re" secondAttribute="bottom" constant="28" id="98L-d4-Wmt"/>
+                            <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="IhP-wD-qP5" secondAttribute="trailing" constant="26" id="9ro-4j-mvG"/>
+                            <constraint firstItem="aQg-fa-XZj" firstAttribute="bottom" secondItem="IhP-wD-qP5" secondAttribute="bottom" constant="27" id="Ao9-H7-D3L"/>
                             <constraint firstItem="tEF-yU-nqA" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="CyZ-2C-5Z0"/>
+                            <constraint firstItem="Q4W-yk-pCS" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="FWs-8h-xE1"/>
+                            <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="zjw-HQ-2Dv" secondAttribute="trailing" constant="40" id="GYh-fr-Koy"/>
                             <constraint firstItem="1vr-xm-Zlx" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" id="GZz-b6-BRk"/>
+                            <constraint firstItem="1vr-xm-Zlx" firstAttribute="top" secondItem="BYg-hy-GVR" secondAttribute="bottom" constant="-150" id="Gwj-8W-TTM"/>
+                            <constraint firstItem="bmN-kQ-kjW" firstAttribute="top" secondItem="Q4W-yk-pCS" secondAttribute="bottom" constant="30" id="H9j-1N-ROp"/>
                             <constraint firstItem="Uu1-la-CJ0" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="Hea-yo-VYG"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="0js-l8-UVl" secondAttribute="trailing" constant="40" id="IrT-kY-U2e"/>
                             <constraint firstItem="9RW-6g-Ted" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="159" id="JVP-Od-1LI"/>
@@ -336,15 +387,19 @@
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="XGR-h2-i9c" secondAttribute="trailing" constant="40" id="MEy-h3-kJA"/>
                             <constraint firstItem="u50-oo-Mca" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="NEv-Xz-R7i"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="Bcp-EJ-9vX" secondAttribute="trailing" constant="40" id="NlH-3l-Sii"/>
-                            <constraint firstItem="u50-oo-Mca" firstAttribute="top" secondItem="KcT-Xu-RAO" secondAttribute="bottom" constant="33" id="OdW-Fk-YdP"/>
-                            <constraint firstItem="tEF-yU-nqA" firstAttribute="top" secondItem="Bcp-EJ-9vX" secondAttribute="bottom" constant="34" id="PwJ-bm-9MT"/>
+                            <constraint firstItem="u50-oo-Mca" firstAttribute="top" secondItem="KcT-Xu-RAO" secondAttribute="bottom" constant="34" id="OdW-Fk-YdP"/>
+                            <constraint firstItem="tEF-yU-nqA" firstAttribute="top" secondItem="Bcp-EJ-9vX" secondAttribute="bottom" constant="33" id="PwJ-bm-9MT"/>
                             <constraint firstItem="Bcp-EJ-9vX" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="Qqz-YX-aAu"/>
+                            <constraint firstItem="zjw-HQ-2Dv" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="Ssk-Ut-5ND"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="oBd-iJ-FJM" secondAttribute="trailing" constant="36" id="TRy-ud-toz"/>
+                            <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="Q4W-yk-pCS" secondAttribute="trailing" constant="40" id="X6I-A0-m4b"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="HV9-wY-5to" secondAttribute="trailing" constant="26" id="Xaw-uE-vEf"/>
                             <constraint firstItem="XGR-h2-i9c" firstAttribute="top" secondItem="tEF-yU-nqA" secondAttribute="bottom" constant="38" id="Xw6-2A-EfF"/>
-                            <constraint firstItem="KcT-Xu-RAO" firstAttribute="top" secondItem="mGk-El-ha2" secondAttribute="bottom" constant="30" id="aUB-L3-ERn"/>
+                            <constraint firstItem="Q4W-yk-pCS" firstAttribute="top" secondItem="zjw-HQ-2Dv" secondAttribute="bottom" constant="28" id="ZIN-5n-YRR"/>
+                            <constraint firstItem="KcT-Xu-RAO" firstAttribute="top" secondItem="mGk-El-ha2" secondAttribute="bottom" constant="20" id="aUB-L3-ERn"/>
                             <constraint firstItem="M72-JX-Bhv" firstAttribute="top" secondItem="u50-oo-Mca" secondAttribute="bottom" constant="31" id="bgr-OG-Pvi"/>
-                            <constraint firstItem="Uu1-la-CJ0" firstAttribute="top" secondItem="M72-JX-Bhv" secondAttribute="bottom" constant="30" id="cXm-Yw-dHb"/>
+                            <constraint firstItem="Uu1-la-CJ0" firstAttribute="top" secondItem="M72-JX-Bhv" secondAttribute="bottom" constant="29" id="cXm-Yw-dHb"/>
+                            <constraint firstItem="ffr-OZ-WxE" firstAttribute="top" secondItem="bmN-kQ-kjW" secondAttribute="bottom" constant="10" id="ciX-FG-HzB"/>
                             <constraint firstItem="M72-JX-Bhv" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="erv-QI-qbX"/>
                             <constraint firstItem="0js-l8-UVl" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="fHp-aF-IJB"/>
                             <constraint firstItem="1vr-xm-Zlx" firstAttribute="top" secondItem="EQy-bI-g0g" secondAttribute="top" constant="160" id="h54-FX-d33"/>
@@ -354,37 +409,50 @@
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="KcT-Xu-RAO" secondAttribute="trailing" constant="36" id="inJ-HI-GbH"/>
                             <constraint firstItem="KcT-Xu-RAO" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="jQK-HJ-Svp"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="9RW-6g-Ted" secondAttribute="trailing" constant="26" id="lPP-Xd-p8Z"/>
-                            <constraint firstItem="1vr-xm-Zlx" firstAttribute="top" secondItem="zhN-Qy-0Re" secondAttribute="bottom" constant="-145" id="m5F-99-4M8"/>
+                            <constraint firstItem="1vr-xm-Zlx" firstAttribute="top" secondItem="zhN-Qy-0Re" secondAttribute="bottom" constant="-175" id="m5F-99-4M8"/>
                             <constraint firstItem="HV9-wY-5to" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="159" id="mBE-rn-pNP"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="bottom" secondItem="9RW-6g-Ted" secondAttribute="bottom" constant="30" id="muP-SS-MAI"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="1vr-xm-Zlx" secondAttribute="trailing" id="naF-FY-3qz"/>
+                            <constraint firstItem="IhP-wD-qP5" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="109" id="oic-bH-2mK"/>
+                            <constraint firstItem="zjw-HQ-2Dv" firstAttribute="top" secondItem="BYg-hy-GVR" secondAttribute="bottom" constant="28" id="p3y-3r-50Q"/>
                             <constraint firstItem="XGR-h2-i9c" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="pD0-n8-h3s"/>
+                            <constraint firstItem="BYg-hy-GVR" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="pPr-pT-mTm"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="tEF-yU-nqA" secondAttribute="trailing" constant="40" id="qMv-Mh-j3m"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="mGk-El-ha2" secondAttribute="trailing" constant="40" id="r0u-yq-ke2"/>
-                            <constraint firstItem="Jzk-gP-Rii" firstAttribute="top" secondItem="oBd-iJ-FJM" secondAttribute="bottom" constant="34" id="sPW-bz-se5"/>
+                            <constraint firstItem="Jzk-gP-Rii" firstAttribute="top" secondItem="oBd-iJ-FJM" secondAttribute="bottom" constant="33" id="sPW-bz-se5"/>
+                            <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="ffr-OZ-WxE" secondAttribute="trailing" constant="40" id="syG-eB-omg"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="M72-JX-Bhv" secondAttribute="trailing" constant="36" id="tXD-zZ-Ud4"/>
+                            <constraint firstItem="ffr-OZ-WxE" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="u4R-XB-Ksr"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="bottom" secondItem="HV9-wY-5to" secondAttribute="bottom" constant="11.6" id="u7h-Jg-s4v"/>
+                            <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="BYg-hy-GVR" secondAttribute="trailing" constant="40" id="v5E-V2-pzr"/>
+                            <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="bmN-kQ-kjW" secondAttribute="trailing" constant="40" id="wFP-vb-f9F"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="u50-oo-Mca" secondAttribute="trailing" constant="36" id="wg6-uC-YvO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="P1B-bh-UwF"/>
                     <connections>
-                        <outlet property="dearLabel" destination="0js-l8-UVl" id="5fi-Ep-wPC"/>
                         <outlet property="dearLabelTopConstraint" destination="hkk-RW-763" id="LXc-Oj-ZI9"/>
                         <outlet property="letterTopConstraint" destination="h54-FX-d33" id="Nob-dj-a6T"/>
-                        <outletCollection property="letterLabelCollection" destination="mGk-El-ha2" collectionClass="NSMutableArray" id="jHt-Aq-Tjk"/>
-                        <outletCollection property="letterLabelCollection" destination="KcT-Xu-RAO" collectionClass="NSMutableArray" id="Ajs-Yz-FQf"/>
-                        <outletCollection property="letterLabelCollection" destination="u50-oo-Mca" collectionClass="NSMutableArray" id="auo-nV-aKF"/>
-                        <outletCollection property="letterLabelCollection" destination="M72-JX-Bhv" collectionClass="NSMutableArray" id="MrW-w5-lMM"/>
-                        <outletCollection property="letterLabelCollection" destination="Uu1-la-CJ0" collectionClass="NSMutableArray" id="CIQ-Wr-EfR"/>
-                        <outletCollection property="letterLabelCollection" destination="oBd-iJ-FJM" collectionClass="NSMutableArray" id="sK3-vn-28t"/>
-                        <outletCollection property="letterLabelCollection" destination="Jzk-gP-Rii" collectionClass="NSMutableArray" id="1b6-sg-Mva"/>
-                        <outletCollection property="nextButtonCollection" destination="9RW-6g-Ted" collectionClass="NSMutableArray" id="nTL-Fj-Uko"/>
-                        <outletCollection property="nextButtonCollection" destination="HV9-wY-5to" collectionClass="NSMutableArray" id="t5H-pM-oQU"/>
-                        <outletCollection property="letterLabelCollection" destination="zhN-Qy-0Re" collectionClass="NSMutableArray" id="4ZY-61-l9Z"/>
-                        <outletCollection property="letterLabelCollection" destination="Bcp-EJ-9vX" collectionClass="NSMutableArray" id="udI-0B-YrC"/>
-                        <outletCollection property="letterLabelCollection" destination="tEF-yU-nqA" collectionClass="NSMutableArray" id="9SK-GK-9Eh"/>
-                        <outletCollection property="letterLabelCollection" destination="XGR-h2-i9c" collectionClass="NSMutableArray" id="wk9-9W-BPI"/>
+                        <outletCollection property="letterGreetingCollection" destination="0js-l8-UVl" collectionClass="NSMutableArray" id="Y1D-1L-pQs"/>
+                        <outletCollection property="letterGreetingCollection" destination="bmN-kQ-kjW" collectionClass="NSMutableArray" id="Vw3-jE-hAi"/>
+                        <outletCollection property="letterLabelCollection" destination="mGk-El-ha2" collectionClass="NSMutableArray" id="1HP-J6-WWV"/>
+                        <outletCollection property="letterLabelLineSpacingCollection" destination="KcT-Xu-RAO" collectionClass="NSMutableArray" id="qdk-Zl-rws"/>
+                        <outletCollection property="letterLabelLineSpacingCollection" destination="u50-oo-Mca" collectionClass="NSMutableArray" id="655-5L-kNi"/>
+                        <outletCollection property="letterLabelLineSpacingCollection" destination="M72-JX-Bhv" collectionClass="NSMutableArray" id="ewr-Of-y2w"/>
+                        <outletCollection property="letterLabelLineSpacingCollection" destination="Uu1-la-CJ0" collectionClass="NSMutableArray" id="C4f-CM-Og4"/>
+                        <outletCollection property="onboardingButtonCollection" destination="9RW-6g-Ted" collectionClass="NSMutableArray" id="b4q-uR-Ijf"/>
+                        <outletCollection property="onboardingButtonCollection" destination="HV9-wY-5to" collectionClass="NSMutableArray" id="PSV-jP-qQD"/>
+                        <outletCollection property="onboardingButtonCollection" destination="IhP-wD-qP5" collectionClass="NSMutableArray" id="lZc-S4-b2P"/>
+                        <outletCollection property="letterLabelCollection" destination="oBd-iJ-FJM" collectionClass="NSMutableArray" id="hat-4l-R7d"/>
+                        <outletCollection property="letterLabelLineSpacingCollection" destination="Jzk-gP-Rii" collectionClass="NSMutableArray" id="55I-w5-iJd"/>
+                        <outletCollection property="letterLabelLineSpacingCollection" destination="zhN-Qy-0Re" collectionClass="NSMutableArray" id="0DM-qG-UaW"/>
+                        <outletCollection property="letterLabelLineSpacingCollection" destination="Bcp-EJ-9vX" collectionClass="NSMutableArray" id="9ha-NI-fcQ"/>
+                        <outletCollection property="letterLabelCollection" destination="tEF-yU-nqA" collectionClass="NSMutableArray" id="z3U-SW-nbL"/>
+                        <outletCollection property="letterLabelCollection" destination="XGR-h2-i9c" collectionClass="NSMutableArray" id="Ugf-O6-6lx"/>
+                        <outletCollection property="letterLabelLineSpacingCollection" destination="BYg-hy-GVR" collectionClass="NSMutableArray" id="7vw-tL-THA"/>
+                        <outletCollection property="letterLabelLineSpacingCollection" destination="zjw-HQ-2Dv" collectionClass="NSMutableArray" id="P9i-dp-hT0"/>
+                        <outletCollection property="letterLabelLineSpacingCollection" destination="Q4W-yk-pCS" collectionClass="NSMutableArray" id="UXu-DO-Rtx"/>
+                        <outletCollection property="letterLabelCollection" destination="ffr-OZ-WxE" collectionClass="NSMutableArray" id="OIJ-2f-Xfo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3kI-pV-Szm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

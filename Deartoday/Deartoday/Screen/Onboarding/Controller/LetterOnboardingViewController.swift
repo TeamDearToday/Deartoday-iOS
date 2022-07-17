@@ -18,6 +18,7 @@ final class LetterOnboardingViewController: UIViewController {
     
     @IBOutlet var letterGreetingCollection: [UILabel]!
     @IBOutlet var letterLabelCollection: [UILabel]!
+    @IBOutlet var letterLabelLineSpacingCollection: [UILabel]!
     @IBOutlet var onboardingButtonCollection: [UIButton]!
     @IBOutlet weak var letterTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var dearLabelTopConstraint: NSLayoutConstraint!
@@ -37,6 +38,12 @@ final class LetterOnboardingViewController: UIViewController {
         letterLabelCollection.forEach {
             $0.font = .p4
             $0.textColor = .darkGray01
+        }
+        letterLabelLineSpacingCollection.forEach {
+            $0.font = .p4
+            $0.textColor = .darkGray01
+            $0.addLineSpacing(spacing: 28)
+            $0.textAlignment = .left
         }
         onboardingButtonCollection.forEach {
             $0.titleLabel?.font = .btn0
@@ -100,9 +107,8 @@ final class LetterOnboardingViewController: UIViewController {
         nextButtonNumber += 1
         
         if nextButtonNumber == 1 {
-            letterLabelCollection[5...6].forEach {
-                $0.alpha = 0
-            }
+            letterLabelCollection[1].alpha = 0
+            letterLabelLineSpacingCollection[4].alpha = 0
             onboardingButtonCollection[1].alpha = 0
             setThirdInitAnimation()
         } else {
@@ -121,16 +127,16 @@ final class LetterOnboardingViewController: UIViewController {
             self.letterGreetingCollection[0].alpha = 1
             self.letterLabelCollection[0].alpha = 1 }, completion: { _ in
                 UIView.animate(withDuration: 0.6, delay: 1.2, animations: {
-                    self.letterLabelCollection[1].alpha = 1
+                    self.letterLabelLineSpacingCollection[0].alpha = 1
                 }, completion: { _ in
                     UIView.animate(withDuration: 0.6, delay: 1.2, animations: {
-                        self.letterLabelCollection[2].alpha = 1
+                        self.letterLabelLineSpacingCollection[1].alpha = 1
                     }, completion: { _ in
                         UIView.animate(withDuration: 0.6, delay: 1.2, animations: {
-                            self.letterLabelCollection[3].alpha = 1
+                            self.letterLabelLineSpacingCollection[2].alpha = 1
                         }, completion: { _ in
                             UIView.animate(withDuration: 0.6, delay: 1.2, animations: {
-                                self.letterLabelCollection[4].alpha = 1
+                                self.letterLabelLineSpacingCollection[3].alpha = 1
                             }, completion: { _ in
                                 UIView.animate(withDuration: 0.3, delay: 1.2, animations: {
                                     self.onboardingButtonCollection[0].alpha = 1
@@ -144,10 +150,10 @@ final class LetterOnboardingViewController: UIViewController {
     
     private func setSecondComponentsAnimation() {
         UIView.animate(withDuration: 0.6, animations: {
-            self.letterLabelCollection[5].alpha = 1
+            self.letterLabelCollection[1].alpha = 1
         }, completion: { _ in
             UIView.animate(withDuration: 0.6, delay: 1.2, animations: {
-                self.letterLabelCollection[6].alpha = 1
+                self.letterLabelLineSpacingCollection[4].alpha = 1
             }, completion: { _ in
                 UIView.animate(withDuration: 0.3, delay: 1.2, animations: {
                     self.onboardingButtonCollection[1].alpha = 1
@@ -158,16 +164,16 @@ final class LetterOnboardingViewController: UIViewController {
     
     private func setThirdComponentsAnimation() {
         UIView.animate(withDuration: 0.6, animations: {
-            self.letterLabelCollection[7].alpha = 1
+            self.letterLabelLineSpacingCollection[5].alpha = 1
         }, completion: { _ in
             UIView.animate(withDuration: 0.6, delay: 1.2, animations: {
-                self.letterLabelCollection[8].alpha = 1
+                self.letterLabelLineSpacingCollection[6].alpha = 1
             }, completion: { _ in
                 UIView.animate(withDuration: 0.6, delay: 1.2, animations: {
-                    self.letterLabelCollection[9].alpha = 1
+                    self.letterLabelCollection[2].alpha = 1
                 }, completion: { _ in
                     UIView.animate(withDuration: 0.6, delay: 1.2, animations: {
-                        self.letterLabelCollection[10].alpha = 1
+                        self.letterLabelCollection[3].alpha = 1
                     }, completion: { _ in
                         UIView.animate(withDuration: 0.3, delay: 1.2, animations: {
                             self.onboardingButtonCollection[1].alpha = 1
@@ -180,16 +186,16 @@ final class LetterOnboardingViewController: UIViewController {
     
     private func setFourthComponentsAnimation() {
         UIView.animate(withDuration: 0.6, animations: {
-            self.letterLabelCollection[11].alpha = 1
+            self.letterLabelLineSpacingCollection[7].alpha = 1
         }, completion: { _ in
             UIView.animate(withDuration: 0.6, delay: 1.2, animations: {
-                self.letterLabelCollection[12].alpha = 1
+                self.letterLabelLineSpacingCollection[8].alpha = 1
             }, completion: { _ in
                 UIView.animate(withDuration: 0.6, delay: 1.2, animations: {
-                    self.letterLabelCollection[13].alpha = 1
+                    self.letterLabelLineSpacingCollection[9].alpha = 1
                 }, completion: { _ in
                     UIView.animate(withDuration: 0.6, delay: 1.2, animations: {
-                        self.letterLabelCollection[14].alpha = 1
+                        self.letterLabelCollection[4].alpha = 1
                         self.letterGreetingCollection[1].alpha = 1
                     }, completion: { _ in
                         UIView.animate(withDuration: 0.3, delay: 1.2, animations: {
