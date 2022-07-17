@@ -50,7 +50,6 @@
 		92DB358028756AE8001E2006 /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB357F28756AE8001E2006 /* MoyaLoggingPlugin.swift */; };
 		92DB358228756B0B001E2006 /* GeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB358128756B0B001E2006 /* GeneralResponse.swift */; };
 		92DB358428756B67001E2006 /* BaseTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB358328756B67001E2006 /* BaseTargetType.swift */; };
-		92DB358628756B76001E2006 /* TempDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB358528756B76001E2006 /* TempDataModel.swift */; };
 		92DB358828756B7D001E2006 /* TempService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB358728756B7D001E2006 /* TempService.swift */; };
 		92DB358A28756B8E001E2006 /* TempAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB358928756B8E001E2006 /* TempAPI.swift */; };
 		92E41224287FD01800F55056 /* DialogViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E41223287FD01800F55056 /* DialogViewController+.swift */; };
@@ -146,7 +145,6 @@
 		92DB357F28756AE8001E2006 /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
 		92DB358128756B0B001E2006 /* GeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResponse.swift; sourceTree = "<group>"; };
 		92DB358328756B67001E2006 /* BaseTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTargetType.swift; sourceTree = "<group>"; };
-		92DB358528756B76001E2006 /* TempDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempDataModel.swift; sourceTree = "<group>"; };
 		92DB358728756B7D001E2006 /* TempService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempService.swift; sourceTree = "<group>"; };
 		92DB358928756B8E001E2006 /* TempAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempAPI.swift; sourceTree = "<group>"; };
 		92DB358B28756F3F001E2006 /* Deartoday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Deartoday.entitlements; sourceTree = "<group>"; };
@@ -523,7 +521,6 @@
 			isa = PBXGroup;
 			children = (
 				92C27EA52884451D00077FA3 /* TimeTravel */,
-				92DB358528756B76001E2006 /* TempDataModel.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -977,7 +974,6 @@
 				9803F3A0288465C600A5A239 /* MainNavigationController.swift in Sources */,
 				4ADAB7E028846CD60049C465 /* InitialViewContoller.swift in Sources */,
 				98A47513287DED14008891F5 /* CheckTimeTravelViewController.swift in Sources */,
-				92DB358628756B76001E2006 /* TempDataModel.swift in Sources */,
 				92DB3570287565E4001E2006 /* UILabel+.swift in Sources */,
 				92DB358828756B7D001E2006 /* TempService.swift in Sources */,
 				98B4B5B1287EC93B00F4AD7A /* TimeTapeTableViewCell.swift in Sources */,
