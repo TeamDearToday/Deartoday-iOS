@@ -50,7 +50,6 @@
 		92DB358028756AE8001E2006 /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB357F28756AE8001E2006 /* MoyaLoggingPlugin.swift */; };
 		92DB358228756B0B001E2006 /* GeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB358128756B0B001E2006 /* GeneralResponse.swift */; };
 		92DB358428756B67001E2006 /* BaseTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB358328756B67001E2006 /* BaseTargetType.swift */; };
-		92DB358828756B7D001E2006 /* TempService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB358728756B7D001E2006 /* TempService.swift */; };
 		92E41224287FD01800F55056 /* DialogViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E41223287FD01800F55056 /* DialogViewController+.swift */; };
 		9803F38D2882F1A900A5A239 /* tape.json in Resources */ = {isa = PBXBuildFile; fileRef = 9803F38C2882F1A900A5A239 /* tape.json */; };
 		9803F38F2882F1B300A5A239 /* box.json in Resources */ = {isa = PBXBuildFile; fileRef = 9803F38E2882F1B300A5A239 /* box.json */; };
@@ -145,7 +144,6 @@
 		92DB357F28756AE8001E2006 /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
 		92DB358128756B0B001E2006 /* GeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResponse.swift; sourceTree = "<group>"; };
 		92DB358328756B67001E2006 /* BaseTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTargetType.swift; sourceTree = "<group>"; };
-		92DB358728756B7D001E2006 /* TempService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempService.swift; sourceTree = "<group>"; };
 		92DB358B28756F3F001E2006 /* Deartoday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Deartoday.entitlements; sourceTree = "<group>"; };
 		92E41223287FD01800F55056 /* DialogViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DialogViewController+.swift"; sourceTree = "<group>"; };
 		9803F38C2882F1A900A5A239 /* tape.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tape.json; sourceTree = "<group>"; };
@@ -511,7 +509,6 @@
 			isa = PBXGroup;
 			children = (
 				92C27EA42884451800077FA3 /* TimeTravel */,
-				92DB358728756B7D001E2006 /* TempService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -984,7 +981,6 @@
 				4ADAB7E028846CD60049C465 /* InitialViewContoller.swift in Sources */,
 				98A47513287DED14008891F5 /* CheckTimeTravelViewController.swift in Sources */,
 				92DB3570287565E4001E2006 /* UILabel+.swift in Sources */,
-				92DB358828756B7D001E2006 /* TempService.swift in Sources */,
 				98B4B5B1287EC93B00F4AD7A /* TimeTapeTableViewCell.swift in Sources */,
 				92C27EA72884455700077FA3 /* TimeTravelResponse.swift in Sources */,
 				92DB358028756AE8001E2006 /* MoyaLoggingPlugin.swift in Sources */,
