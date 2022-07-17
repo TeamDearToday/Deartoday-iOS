@@ -19,6 +19,9 @@
 		924814AF287EB53A001177B1 /* DialogMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924814AE287EB53A001177B1 /* DialogMessageView.swift */; };
 		924814B1287EB5CC001177B1 /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924814B0287EB5CC001177B1 /* DialogViewController.swift */; };
 		928A8A6B2875FB7C000D4E99 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 928A8A6A2875FB7C000D4E99 /* GoogleService-Info.plist */; };
+		92C27EA72884455700077FA3 /* TimeTravelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C27EA62884455700077FA3 /* TimeTravelResponse.swift */; };
+		92C27EA92884459300077FA3 /* TimeTravelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C27EA82884459300077FA3 /* TimeTravelService.swift */; };
+		92C27EAB2884459F00077FA3 /* TimeTravelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C27EAA2884459F00077FA3 /* TimeTravelAPI.swift */; };
 		92CC3B9C287CA17000EA5617 /* CountDownLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC3B9B287CA17000EA5617 /* CountDownLabel.swift */; };
 		92CC3BA2287D62C400EA5617 /* VirtualSpaceDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC3BA1287D62C400EA5617 /* VirtualSpaceDataModel.swift */; };
 		92CC3BA4287D62DE00EA5617 /* VirtualSpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC3BA3287D62DE00EA5617 /* VirtualSpaceViewController.swift */; };
@@ -104,6 +107,9 @@
 		924814AE287EB53A001177B1 /* DialogMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogMessageView.swift; sourceTree = "<group>"; };
 		924814B0287EB5CC001177B1 /* DialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
 		928A8A6A2875FB7C000D4E99 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		92C27EA62884455700077FA3 /* TimeTravelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelResponse.swift; sourceTree = "<group>"; };
+		92C27EA82884459300077FA3 /* TimeTravelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelService.swift; sourceTree = "<group>"; };
+		92C27EAA2884459F00077FA3 /* TimeTravelAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelAPI.swift; sourceTree = "<group>"; };
 		92CC3B9B287CA17000EA5617 /* CountDownLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownLabel.swift; sourceTree = "<group>"; };
 		92CC3BA1287D62C400EA5617 /* VirtualSpaceDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualSpaceDataModel.swift; sourceTree = "<group>"; };
 		92CC3BA3287D62DE00EA5617 /* VirtualSpaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualSpaceViewController.swift; sourceTree = "<group>"; };
@@ -276,6 +282,30 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		92C27EA32884450500077FA3 /* TimeTravel */ = {
+			isa = PBXGroup;
+			children = (
+				92C27EAA2884459F00077FA3 /* TimeTravelAPI.swift */,
+			);
+			path = TimeTravel;
+			sourceTree = "<group>";
+		};
+		92C27EA42884451800077FA3 /* TimeTravel */ = {
+			isa = PBXGroup;
+			children = (
+				92C27EA82884459300077FA3 /* TimeTravelService.swift */,
+			);
+			path = TimeTravel;
+			sourceTree = "<group>";
+		};
+		92C27EA52884451D00077FA3 /* TimeTravel */ = {
+			isa = PBXGroup;
+			children = (
+				92C27EA62884455700077FA3 /* TimeTravelResponse.swift */,
+			);
+			path = TimeTravel;
+			sourceTree = "<group>";
+		};
 		92CC3B9D287D61EF00EA5617 /* VirtualSpace */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,6 +474,7 @@
 		92DB354C28756404001E2006 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				92C27EA32884450500077FA3 /* TimeTravel */,
 				92DB358928756B8E001E2006 /* TempAPI.swift */,
 			);
 			path = API;
@@ -452,6 +483,7 @@
 		92DB354D28756409001E2006 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				92C27EA42884451800077FA3 /* TimeTravel */,
 				92DB358728756B7D001E2006 /* TempService.swift */,
 			);
 			path = Service;
@@ -460,6 +492,7 @@
 		92DB354E28756413001E2006 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				92C27EA52884451D00077FA3 /* TimeTravel */,
 				92DB358528756B76001E2006 /* TempDataModel.swift */,
 			);
 			path = DataModel;
@@ -868,6 +901,7 @@
 				98D912AE287D558A0088A7F9 /* DeartodayModel.swift in Sources */,
 				923061D6287754FA00F04EDA /* TimeTravelView.swift in Sources */,
 				92DB35352875633D001E2006 /* MainViewController.swift in Sources */,
+				92C27EAB2884459F00077FA3 /* TimeTravelAPI.swift in Sources */,
 				98D912C5287DB0130088A7F9 /* Lottie.swift in Sources */,
 				98A47519287E0129008891F5 /* CheckMessageDetailViewController.swift in Sources */,
 				984099EB2881F4CD00025092 /* Sound.swift in Sources */,
@@ -877,6 +911,7 @@
 				92DB3570287565E4001E2006 /* UILabel+.swift in Sources */,
 				92DB358828756B7D001E2006 /* TempService.swift in Sources */,
 				98B4B5B1287EC93B00F4AD7A /* TimeTapeTableViewCell.swift in Sources */,
+				92C27EA72884455700077FA3 /* TimeTravelResponse.swift in Sources */,
 				92DB358028756AE8001E2006 /* MoyaLoggingPlugin.swift in Sources */,
 				4A45D37E287F0B2F00592749 /* OpenBoxOnboardingViewController.swift in Sources */,
 				92CC3B9C287CA17000EA5617 /* CountDownLabel.swift in Sources */,
@@ -910,6 +945,7 @@
 				92DB35332875633D001E2006 /* SceneDelegate.swift in Sources */,
 				92CC3BA4287D62DE00EA5617 /* VirtualSpaceViewController.swift in Sources */,
 				92DB357C28756A8F001E2006 /* NetworkResult.swift in Sources */,
+				92C27EA92884459300077FA3 /* TimeTravelService.swift in Sources */,
 				92DB356428756517001E2006 /* OnboardingView.swift in Sources */,
 				92E41224287FD01800F55056 /* DialogViewController+.swift in Sources */,
 				98BFBCD7287AC21000F01F04 /* UIViewController+.swift in Sources */,
