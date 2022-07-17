@@ -47,7 +47,7 @@
                                 </connections>
                             </button>
                             <imageView hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnCircleBasic" translatesAutoresizingMaskIntoConstraints="NO" id="oeJ-ww-SZA">
-                                <rect key="frame" x="157.66666666666666" y="221.66666666666663" width="60" height="83"/>
+                                <rect key="frame" x="158" y="221.66666666666663" width="60" height="83"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oeJ-ww-SZA" secondAttribute="height" multiplier="60:83" id="dkp-se-elP"/>
                                 </constraints>
@@ -63,7 +63,7 @@
                                 </connections>
                             </button>
                             <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2B-Nh-U49">
-                                <rect key="frame" x="168.66666666666666" y="234" width="38" height="38"/>
+                                <rect key="frame" x="169" y="234" width="38" height="38"/>
                                 <subviews>
                                     <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GYo-0r-i7V">
                                         <rect key="frame" x="1" y="1" width="36" height="36"/>
@@ -87,6 +87,7 @@
                             <constraint firstAttribute="bottom" secondItem="32K-94-dsE" secondAttribute="bottom" id="0Ok-bf-V7o"/>
                             <constraint firstItem="Fjd-0T-ndi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="6" id="3ff-Dc-VD3"/>
                             <constraint firstItem="i9w-LV-IyT" firstAttribute="top" secondItem="oeJ-ww-SZA" secondAttribute="bottom" constant="6" id="7Eg-7g-cDc"/>
+                            <constraint firstItem="oeJ-ww-SZA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="158" id="7cx-sP-qMj"/>
                             <constraint firstItem="i9w-LV-IyT" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="8Jg-nl-UTr"/>
                             <constraint firstItem="U2B-Nh-U49" firstAttribute="leading" secondItem="oeJ-ww-SZA" secondAttribute="leading" constant="11" id="8jv-v7-6dp"/>
                             <constraint firstItem="U2B-Nh-U49" firstAttribute="trailing" secondItem="oeJ-ww-SZA" secondAttribute="trailing" constant="-11" id="AFG-lF-HyZ"/>
@@ -97,7 +98,6 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="32K-94-dsE" secondAttribute="trailing" id="Hk3-aC-fau"/>
                             <constraint firstItem="0ZK-HK-Qtx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="77" id="HqQ-HA-pUt"/>
                             <constraint firstItem="i9w-LV-IyT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="75" id="JUb-cg-HSs"/>
-                            <constraint firstItem="oeJ-ww-SZA" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="MTy-Jz-YV2"/>
                             <constraint firstItem="Fjd-0T-ndi" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" constant="-32" id="P6R-Fd-WGA"/>
                             <constraint firstItem="32K-94-dsE" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Vn4-aG-E1w"/>
                             <constraint firstItem="U2B-Nh-U49" firstAttribute="top" secondItem="oeJ-ww-SZA" secondAttribute="top" constant="12.5" id="byC-HX-ovJ"/>
@@ -544,7 +544,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="circleButton" destination="Cs2-pn-BYG" id="wVe-kc-Mg2"/>
+                        <outlet property="circleImageView" destination="Cs2-pn-BYG" id="wVe-kc-Mg2"/>
                         <outlet property="explanationLabel" destination="Zz0-Bb-V8i" id="Dzv-Y9-6lO"/>
                         <outlet property="startPlayerButton" destination="plj-Ey-Rvc" id="YdP-4M-kUl"/>
                         <outlet property="tapeButton" destination="vcc-mj-cg3" id="7x6-Ym-UhW"/>
