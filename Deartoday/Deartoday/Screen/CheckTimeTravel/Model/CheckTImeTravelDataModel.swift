@@ -7,9 +7,15 @@
 
 import Foundation
 
-///추후 서버 연결 시 data model로 사용 가능하면 삭제
-struct TimeTapeDataModel: Hashable {
+// MARK: - TapeDataModel
+
+struct TimeTapeDataModel: Codable {
     let timeTravelID, title: String
     let year, month, day: Int
     let writtenDate, image: String
+
+    enum CodingKeys: String, CodingKey {
+        case timeTravelID = "timeTravelId"
+        case title, year, month, day, writtenDate, image
+    }
 }
