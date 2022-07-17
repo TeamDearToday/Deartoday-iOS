@@ -36,7 +36,11 @@ final class TimeTravelViewController: UIViewController {
     private var month: String = ""
     private var day: String = ""
     
-    private var selectedImage = UIImage()
+    var selectedImage: UIImage? = nil {
+        didSet {
+            timeTravelView.photoImageView.image = selectedImage
+        }
+    }
     
     // MARK: - UI Property
     
@@ -328,7 +332,7 @@ final class TimeTravelViewController: UIViewController {
                 virtualSpaceViewController.month = self.month
                 virtualSpaceViewController.day = self.day
                 
-                virtualSpaceViewController.selectedImage = self.selectedImage
+                virtualSpaceViewController.selectedImage = self.selectedImage ?? UIImage()
                 
                 self.present(virtualSpaceViewController, animated: true)
             }
@@ -367,34 +371,50 @@ extension TimeTravelViewController: TimeTravelViewDelegate {
 // MARK: - UIImagePicker Delegate
 
 extension TimeTravelViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//        var newImage: UIImage? = nil
+//
+//        if let possibleImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+//            newImage = possibleImage
+//            selectedImage = possibleImage
+//        } else if let possibleImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+//            newImage = possibleImage
+//            selectedImage = possibleImage
+//        }
+//
+////        timeTravelView.photoImageView.image = newImage
+//
+//        let asset = info[.phAsset] as? PHAsset
+//
+//        let option = PHContentEditingInputRequestOptions()
+//        option.canHandleAdjustmentData = { _ in true }
+//
+//        asset?.requestContentEditingInput(with: option, completionHandler: { (contentEditingInput, info) in
+//            if let date = contentEditingInput?.creationDate {
+//                self.timeTravelView.dateTextField.text = self.dateFormatter.string(from: date)
+//                self.year = self.yearFormatter.string(from: date)
+//                self.month = self.monthFormatter.string(from: date)
+//                self.day = self.dayFormatter.string(from: date)
+//                self.timeTravelView.hasPhoto = true
+//            }
+//        })
+//
+//        picker.dismiss(animated: true, completion: {
+//            let cropViewController = CropViewController()
+//            cropViewController.initialImage = newImage
+//            cropViewController.delegate = self
+//            self.present(cropViewController, animated: true)
+//        })
+//    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        var newImage: UIImage? = nil
-        
-        if let possibleImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-            newImage = possibleImage
-            selectedImage = possibleImage
-        } else if let possibleImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            newImage = possibleImage
-            selectedImage = possibleImage
-        }
-        
-        timeTravelView.photoImageView.image = newImage
-        
-        let asset = info[.phAsset] as? PHAsset
-        
-        let option = PHContentEditingInputRequestOptions()
-        option.canHandleAdjustmentData = { _ in true }
-        
-        asset?.requestContentEditingInput(with: option, completionHandler: { (contentEditingInput, info) in
-            if let date = contentEditingInput?.creationDate {
-                self.timeTravelView.dateTextField.text = self.dateFormatter.string(from: date)
-                self.year = self.yearFormatter.string(from: date)
-                self.month = self.monthFormatter.string(from: date)
-                self.day = self.dayFormatter.string(from: date)
-                self.timeTravelView.hasPhoto = true
-            }
+        var chosenImage: UIImage?
+        chosenImage = info[.originalImage] as? UIImage
+                
+        self.dismiss(animated: false, completion: {
+            let cropViewController = CropViewController()
+            cropViewController.initialImage = chosenImage
+            self.present(cropViewController, animated: true)
         })
-        
-        picker.dismiss(animated: true, completion: nil)
     }
 }

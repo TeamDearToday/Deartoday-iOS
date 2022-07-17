@@ -19,12 +19,7 @@
 		924814AF287EB53A001177B1 /* DialogMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924814AE287EB53A001177B1 /* DialogMessageView.swift */; };
 		924814B1287EB5CC001177B1 /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924814B0287EB5CC001177B1 /* DialogViewController.swift */; };
 		928A8A6B2875FB7C000D4E99 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 928A8A6A2875FB7C000D4E99 /* GoogleService-Info.plist */; };
-		92C27E8F2882C4D900077FA3 /* DTCropBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C27E8E2882C4D900077FA3 /* DTCropBorderView.swift */; };
-		92C27E912882C81400077FA3 /* DTImageCropOverlayView-.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C27E902882C81400077FA3 /* DTImageCropOverlayView-.swift */; };
-		92C27E932882C8C600077FA3 /* DTImageCropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C27E922882C8C600077FA3 /* DTImageCropView.swift */; };
-		92C27E952882CA0300077FA3 /* DTResizableCropOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C27E942882CA0300077FA3 /* DTResizableCropOverlayView.swift */; };
-		92C27E972882CDE900077FA3 /* DTImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C27E962882CDE900077FA3 /* DTImagePicker.swift */; };
-		92C27E992882CEE600077FA3 /* DTImageCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C27E982882CEE600077FA3 /* DTImageCropViewController.swift */; };
+		92C27EA02884084400077FA3 /* CropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C27E9F2884084400077FA3 /* CropViewController.swift */; };
 		92CC3B9C287CA17000EA5617 /* CountDownLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC3B9B287CA17000EA5617 /* CountDownLabel.swift */; };
 		92CC3BA2287D62C400EA5617 /* VirtualSpaceDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC3BA1287D62C400EA5617 /* VirtualSpaceDataModel.swift */; };
 		92CC3BA4287D62DE00EA5617 /* VirtualSpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC3BA3287D62DE00EA5617 /* VirtualSpaceViewController.swift */; };
@@ -110,12 +105,7 @@
 		924814AE287EB53A001177B1 /* DialogMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogMessageView.swift; sourceTree = "<group>"; };
 		924814B0287EB5CC001177B1 /* DialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
 		928A8A6A2875FB7C000D4E99 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		92C27E8E2882C4D900077FA3 /* DTCropBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTCropBorderView.swift; sourceTree = "<group>"; };
-		92C27E902882C81400077FA3 /* DTImageCropOverlayView-.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DTImageCropOverlayView-.swift"; sourceTree = "<group>"; };
-		92C27E922882C8C600077FA3 /* DTImageCropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTImageCropView.swift; sourceTree = "<group>"; };
-		92C27E942882CA0300077FA3 /* DTResizableCropOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTResizableCropOverlayView.swift; sourceTree = "<group>"; };
-		92C27E962882CDE900077FA3 /* DTImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTImagePicker.swift; sourceTree = "<group>"; };
-		92C27E982882CEE600077FA3 /* DTImageCropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTImageCropViewController.swift; sourceTree = "<group>"; };
+		92C27E9F2884084400077FA3 /* CropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropViewController.swift; sourceTree = "<group>"; };
 		92CC3B9B287CA17000EA5617 /* CountDownLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownLabel.swift; sourceTree = "<group>"; };
 		92CC3BA1287D62C400EA5617 /* VirtualSpaceDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualSpaceDataModel.swift; sourceTree = "<group>"; };
 		92CC3BA3287D62DE00EA5617 /* VirtualSpaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualSpaceViewController.swift; sourceTree = "<group>"; };
@@ -232,12 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				923061D72877550E00F04EDA /* TimeTravelViewController.swift */,
-				92C27E8E2882C4D900077FA3 /* DTCropBorderView.swift */,
-				92C27E902882C81400077FA3 /* DTImageCropOverlayView-.swift */,
-				92C27E922882C8C600077FA3 /* DTImageCropView.swift */,
-				92C27E942882CA0300077FA3 /* DTResizableCropOverlayView.swift */,
-				92C27E962882CDE900077FA3 /* DTImagePicker.swift */,
-				92C27E982882CEE600077FA3 /* DTImageCropViewController.swift */,
+				92C27E9F2884084400077FA3 /* CropViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -882,7 +867,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				92DB35682875656C001E2006 /* DDSButton.swift in Sources */,
-				92C27E972882CDE900077FA3 /* DTImagePicker.swift in Sources */,
 				923061D82877550E00F04EDA /* TimeTravelViewController.swift in Sources */,
 				98D912AE287D558A0088A7F9 /* DeartodayModel.swift in Sources */,
 				923061D6287754FA00F04EDA /* TimeTravelView.swift in Sources */,
@@ -895,18 +879,14 @@
 				92DB358628756B76001E2006 /* TempDataModel.swift in Sources */,
 				92DB3570287565E4001E2006 /* UILabel+.swift in Sources */,
 				92DB358828756B7D001E2006 /* TempService.swift in Sources */,
-				92C27E992882CEE600077FA3 /* DTImageCropViewController.swift in Sources */,
 				98B4B5B1287EC93B00F4AD7A /* TimeTapeTableViewCell.swift in Sources */,
 				92DB358028756AE8001E2006 /* MoyaLoggingPlugin.swift in Sources */,
 				4A45D37E287F0B2F00592749 /* OpenBoxOnboardingViewController.swift in Sources */,
 				92CC3B9C287CA17000EA5617 /* CountDownLabel.swift in Sources */,
 				924814B1287EB5CC001177B1 /* DialogViewController.swift in Sources */,
-				92C27E932882C8C600077FA3 /* DTImageCropView.swift in Sources */,
 				923061D4287754DB00F04EDA /* TimeTravelDataModel.swift in Sources */,
 				92DB35312875633D001E2006 /* AppDelegate.swift in Sources */,
-				92C27E8F2882C4D900077FA3 /* DTCropBorderView.swift in Sources */,
 				98B4B5AC287EB5EF00F4AD7A /* Storyboard.swift in Sources */,
-				92C27E952882CA0300077FA3 /* DTResizableCropOverlayView.swift in Sources */,
 				92DB35662875652F001E2006 /* OnboardingViewController.swift in Sources */,
 				92DB3560287564ED001E2006 /* MainModel.swift in Sources */,
 				92DB35722875661A001E2006 /* Constant.swift in Sources */,
@@ -916,7 +896,6 @@
 				92DB35582875646E001E2006 /* OnboardingModel.swift in Sources */,
 				98BFBCCF2879B85400F01F04 /* UIFont+.swift in Sources */,
 				92CC3BA6287D633600EA5617 /* VirtualSpaceCollectionViewCell.swift in Sources */,
-				92C27E912882C81400077FA3 /* DTImageCropOverlayView-.swift in Sources */,
 				92DB357A28756A61001E2006 /* URLConstant.swift in Sources */,
 				4A45D380287F2BF800592749 /* LetterOnboardingViewController.swift in Sources */,
 				92DB356E287565AC001E2006 /* UIScreen+.swift in Sources */,
@@ -925,6 +904,7 @@
 				4A44EEFB28807DC00062420E /* PlayTapeOnboardingViewController.swift in Sources */,
 				92DB358A28756B8E001E2006 /* TempAPI.swift in Sources */,
 				98D912A5287D3B0D0088A7F9 /* DeartodayAlertViewController.swift in Sources */,
+				92C27EA02884084400077FA3 /* CropViewController.swift in Sources */,
 				92DB356A28756577001E2006 /* DDSTextField.swift in Sources */,
 				92DB356C2875658F001E2006 /* UIView+.swift in Sources */,
 				92CC3BA2287D62C400EA5617 /* VirtualSpaceDataModel.swift in Sources */,
