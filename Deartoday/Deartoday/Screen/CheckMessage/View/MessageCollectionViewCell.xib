@@ -16,17 +16,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szv-sb-MGO">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szv-sb-MGO">
                         <rect key="frame" x="16" y="16" width="128" height="101"/>
                         <constraints>
-                            <constraint firstAttribute="height" priority="250" constant="101" id="U4V-qC-wF3"/>
+                            <constraint firstAttribute="height" constant="101" id="HGA-jD-cZa"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From. 미래의 나" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUP-PG-XWb">
-                        <rect key="frame" x="16" y="136" width="81" height="17"/>
+                        <rect key="frame" x="16" y="138.5" width="81" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -37,16 +37,16 @@
             <constraints>
                 <constraint firstItem="szv-sb-MGO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="0ZA-f0-nhX"/>
                 <constraint firstItem="gUP-PG-XWb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="39d-MS-lSA"/>
-                <constraint firstItem="gUP-PG-XWb" firstAttribute="top" secondItem="szv-sb-MGO" secondAttribute="bottom" constant="19" id="Hro-Mu-3Gq"/>
                 <constraint firstAttribute="bottom" secondItem="gUP-PG-XWb" secondAttribute="bottom" constant="7" id="LOO-3V-j5d"/>
                 <constraint firstItem="szv-sb-MGO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="QMr-ze-FeJ"/>
                 <constraint firstAttribute="trailing" secondItem="szv-sb-MGO" secondAttribute="trailing" constant="16" id="afC-fQ-fQQ"/>
             </constraints>
             <connections>
                 <outlet property="contentLabel" destination="szv-sb-MGO" id="3d3-1s-l0f"/>
+                <outlet property="contentLabelHeightConstraint" destination="HGA-jD-cZa" id="rTP-MT-44b"/>
                 <outlet property="writerLabel" destination="gUP-PG-XWb" id="221-oH-pcF"/>
             </connections>
-            <point key="canvasLocation" x="139" y="78"/>
+            <point key="canvasLocation" x="137.68115942028987" y="77.678571428571431"/>
         </collectionViewCell>
     </objects>
 </document>

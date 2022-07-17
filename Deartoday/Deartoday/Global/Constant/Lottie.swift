@@ -13,7 +13,9 @@ extension Constant {
         static let splash = "splash"
         ///온보딩 3
         static let box = "box"
-        ///온보딩 10 & 시간여행 이후
+        ///온보딩 10
         static let tape = "tape"
+        ///시간여행 이후
+        static let timetape = "timetape"
     }
 }

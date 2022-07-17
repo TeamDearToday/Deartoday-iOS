@@ -117,8 +117,8 @@ final class VirtualSpaceViewController: UIViewController {
         setLayout()
         setCollectionView()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            UIView.animate(withDuration: 0.6, delay: 0.3, options: .curveEaseOut) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+            UIView.animate(withDuration: 0.7, delay: 0.3, options: .curveEaseOut) {
                 self.mediaCollectionView.alpha = 1
             } completion: { _ in
                 UIView.animate(withDuration: 0.6, delay: 0.3, options: .curveEaseOut) {
