@@ -51,7 +51,6 @@
 		92DB358228756B0B001E2006 /* GeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB358128756B0B001E2006 /* GeneralResponse.swift */; };
 		92DB358428756B67001E2006 /* BaseTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB358328756B67001E2006 /* BaseTargetType.swift */; };
 		92DB358828756B7D001E2006 /* TempService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB358728756B7D001E2006 /* TempService.swift */; };
-		92DB358A28756B8E001E2006 /* TempAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB358928756B8E001E2006 /* TempAPI.swift */; };
 		92E41224287FD01800F55056 /* DialogViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E41223287FD01800F55056 /* DialogViewController+.swift */; };
 		9803F38D2882F1A900A5A239 /* tape.json in Resources */ = {isa = PBXBuildFile; fileRef = 9803F38C2882F1A900A5A239 /* tape.json */; };
 		9803F38F2882F1B300A5A239 /* box.json in Resources */ = {isa = PBXBuildFile; fileRef = 9803F38E2882F1B300A5A239 /* box.json */; };
@@ -146,7 +145,6 @@
 		92DB358128756B0B001E2006 /* GeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResponse.swift; sourceTree = "<group>"; };
 		92DB358328756B67001E2006 /* BaseTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTargetType.swift; sourceTree = "<group>"; };
 		92DB358728756B7D001E2006 /* TempService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempService.swift; sourceTree = "<group>"; };
-		92DB358928756B8E001E2006 /* TempAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempAPI.swift; sourceTree = "<group>"; };
 		92DB358B28756F3F001E2006 /* Deartoday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Deartoday.entitlements; sourceTree = "<group>"; };
 		92E41223287FD01800F55056 /* DialogViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DialogViewController+.swift"; sourceTree = "<group>"; };
 		9803F38C2882F1A900A5A239 /* tape.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tape.json; sourceTree = "<group>"; };
@@ -503,7 +501,6 @@
 			isa = PBXGroup;
 			children = (
 				92C27EA32884450500077FA3 /* TimeTravel */,
-				92DB358928756B8E001E2006 /* TempAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1002,7 +999,6 @@
 				98B4B5AA287EB54600F4AD7A /* ViewController.swift in Sources */,
 				98D912D2287DC3590088A7F9 /* CheckMessageDataModel.swift in Sources */,
 				4A44EEFB28807DC00062420E /* PlayTapeOnboardingViewController.swift in Sources */,
-				92DB358A28756B8E001E2006 /* TempAPI.swift in Sources */,
 				98D912A5287D3B0D0088A7F9 /* DeartodayAlertViewController.swift in Sources */,
 				92DB356A28756577001E2006 /* DDSTextField.swift in Sources */,
 				92DB356C2875658F001E2006 /* UIView+.swift in Sources */,
