@@ -11,9 +11,12 @@ struct URLConstant {
     
     // MARK: - base URL
     
-    static let baseURL = "https://asia-northeast3-cardna-29f5b.cloudfunctions.net/api"
+    static let baseURL = "http://13.209.47.97:8000"
     
     // MARK: - Auth
     
+    // MARK: - Time Travel
+    
+    static let oldMedia = "/timeTravel/oldMedia"
 }
     

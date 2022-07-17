@@ -110,7 +110,7 @@ final class VirtualSpaceViewController: UIViewController {
     }
     
     // MARK: - Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -125,6 +125,10 @@ final class VirtualSpaceViewController: UIViewController {
                     self.nextButton.alpha = 1
                 }
             }
+        }
+        
+        if let year = Int(year) {
+            getOldMedia(year: year)
         }
     }
     
@@ -273,5 +277,16 @@ extension VirtualSpaceViewController: UICollectionViewDataSource {
         }
         cell.setData(VirtualSpaceDataModel.images[indexPath.item])
         return cell
+    }
+}
+
+// MARK: - Network
+
+extension VirtualSpaceViewController {
+    private func getOldMedia(year: Int) {
+        TimeTravelAPI.shared.getOldMedia(year: year) { oldMediaData, err in
+            guard let oldMediaData = oldMediaData else { return }
+            dump(oldMediaData.data?.images)
+        }
     }
 }

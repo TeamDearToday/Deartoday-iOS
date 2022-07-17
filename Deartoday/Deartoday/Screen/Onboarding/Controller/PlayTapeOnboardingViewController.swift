@@ -5,18 +5,22 @@
 //  Created by 황찬미 on 2022/07/15.
 //
 
+import AVFoundation
 import UIKit
+
+import Lottie
 
 final class PlayTapeOnboardingViewController: UIViewController {
     
     // MARK: - Property
     
     var playTapeNumber: Int?
+    var playerSound = AVAudioPlayer()
     
     // MARK: - UI Property
     
     @IBOutlet weak var explanationLabel: UILabel!
-    @IBOutlet weak var circleButton: UIImageView!
+    @IBOutlet weak var circleImageView: UIImageView!
     @IBOutlet weak var tapeButton: UIButton!
     @IBOutlet weak var startPlayerButton: UIButton!
     @IBOutlet var circleCollection: [UIView]!
@@ -27,6 +31,38 @@ final class PlayTapeOnboardingViewController: UIViewController {
         super.viewDidLoad()
         setComponentsUI()
         setPlayerButtonUI()
+        addCircleImageGesture()
+    }
+    
+    // MARK: - objc
+    
+    @objc func circleButtonDidTap() {
+        hideComponentsUI()
+        
+        let tapeLottieView = AnimationView(name: Constant.Lottie.tape)
+        tapeLottieView.frame = self.view.bounds
+        tapeLottieView.center = self.view.center
+        tapeLottieView.contentMode = .scaleAspectFit
+        self.view.addSubview(tapeLottieView)
+        tapeLottieView.play()
+        
+        let url = Bundle.main.url(forResource: Constant.Sound.sound_player, withExtension: ".mp3")
+        if let url = url {
+            do {
+                playerSound = try AVAudioPlayer(contentsOf: url)
+                playerSound.prepareToPlay()
+                playerSound.play()
+            } catch {
+                print("error")
+            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4) {
+            guard let letterOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.LetterOnboarding) as? LetterOnboardingViewController else { return }
+            letterOnboarding.modalTransitionStyle = .crossDissolve
+            letterOnboarding.modalPresentationStyle = .overFullScreen
+            letterOnboarding.letterNumber = 2
+            self.present(letterOnboarding, animated: true)
+        }
     }
     
     // MARK: - Custom Method
@@ -51,7 +87,7 @@ final class PlayTapeOnboardingViewController: UIViewController {
         }
         tapeButton.isHidden = true
         explanationLabel.isHidden = true
-        circleButton.isHidden = true
+        circleImageView.isHidden = true
     }
     
     private func setPlayerButtonUI() {
@@ -59,6 +95,11 @@ final class PlayTapeOnboardingViewController: UIViewController {
             hideComponentsUI()
             showComponentsUI()
         }
+    }
+    
+    private func addCircleImageGesture() {
+        let addCircleImageGesture = UITapGestureRecognizer(target: self, action: #selector(circleButtonDidTap))
+        circleImageView.addGestureRecognizer(addCircleImageGesture)
     }
     
     // MARK: IBAction
@@ -74,12 +115,31 @@ final class PlayTapeOnboardingViewController: UIViewController {
     }
     
     @IBAction func playLottieButtonDidTap(_ sender: UIButton) {
-        print("로티 재생 후")
+        startPlayerButton.isHidden = true
         
+        let tapeLottieView = AnimationView(name: Constant.Lottie.tape)
+        tapeLottieView.frame = self.view.bounds
+        tapeLottieView.center = self.view.center
+        tapeLottieView.contentMode = .scaleAspectFit
+        self.view.addSubview(tapeLottieView)
+        tapeLottieView.play()
+        
+        let url = Bundle.main.url(forResource: Constant.Sound.sound_player, withExtension: ".mp3")
+        if let url = url {
+            do {
+                playerSound = try AVAudioPlayer(contentsOf: url)
+                playerSound.prepareToPlay()
+                playerSound.play()
+            } catch {
+                print("error")
+            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4) {
         guard let letterOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.LetterOnboarding) as? LetterOnboardingViewController else { return }
         letterOnboarding.modalTransitionStyle = .crossDissolve
         letterOnboarding.modalPresentationStyle = .overFullScreen
         letterOnboarding.letterNumber = 4
-        present(letterOnboarding, animated: true)
+            self.present(letterOnboarding, animated: true)
+        }
     }
 }
