@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Ss-Ku-CoL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -221,7 +221,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕 많이 놀랐지?" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcT-Xu-RAO">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕! 많이 놀랐지?" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcT-Xu-RAO">
                                 <rect key="frame" x="36" y="272" width="303" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
@@ -267,7 +267,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jzk-gP-Rii">
-                                <rect key="frame" x="36" y="257" width="303" height="122"/>
+                                <rect key="frame" x="36" y="248.66666666666663" width="303" height="122"/>
                                 <string key="text">1. 너가 돌아가고 싶은 과거의 순간을 떠올려 2. 그 순간이 담긴 사진을 비디오테이프 위에 붙여. 3. 비디오테이프를 플레이어에 넣고 4. 뒤로감기 버튼을 누르면, 5. 플레이어가 너를 과거의 그 순간으로     데려다 줄거야.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -282,7 +282,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhN-Qy-0Re">
-                                <rect key="frame" x="36" y="233.33333333333334" width="299" height="101.66666666666666"/>
+                                <rect key="frame" x="36" y="200" width="299" height="101.66666666666669"/>
                                 <string key="text">단, 이 시간 여행에는 규칙이 있어.
 우선 너가 직접 경험한 과거의 순간으로만 
 돌아갈 수 있어.
@@ -293,7 +293,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcp-EJ-9vX">
-                                <rect key="frame" x="36" y="363" width="299" height="101.66666666666669"/>
+                                <rect key="frame" x="36" y="329.66666666666669" width="299" height="101.66666666666669"/>
                                 <string key="text">다만, 너가 할 수 있는 단 한 가지 일은
 바로 과거의 너를 만나서 대화를 나누고 
 그 친구에게 남기고 싶은 것을 
@@ -304,19 +304,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="여기까지 읽었는데도 아직 와닿지가 않지?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEF-yU-nqA">
-                                <rect key="frame" x="36" y="497.66666666666669" width="299" height="21.000000000000057"/>
+                                <rect key="frame" x="36" y="464.33333333333331" width="299" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="그럼 지금 한 번 플레이어를 바로 작동시켜봐." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGR-h2-i9c">
-                                <rect key="frame" x="36" y="556.66666666666663" width="299" height="21"/>
+                                <rect key="frame" x="36" y="523.33333333333337" width="299" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYg-hy-GVR">
-                                <rect key="frame" x="36" y="228.66666666666666" width="299" height="81.333333333333343"/>
+                                <rect key="frame" x="36" y="200" width="299" height="81.333333333333314"/>
                                 <string key="text">이 비디오 플레이어가 
 너에게 꼭 도움이 되었으면 좋겠어!
 어쩌면 과거의 그 순간을 새롭게 바라보는 
@@ -326,7 +326,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjw-HQ-2Dv">
-                                <rect key="frame" x="36" y="338" width="299" height="61"/>
+                                <rect key="frame" x="36" y="309.33333333333331" width="299" height="61"/>
                                 <string key="text">그리고 잊지 마.
 너의 오늘이야말로, 나한테는 정말 돌아가고 싶고 
 그리운 '좋을 때'의 한 순간이라는 것을.</string>
@@ -335,7 +335,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4W-yk-pCS">
-                                <rect key="frame" x="36" y="427" width="299" height="40.666666666666686"/>
+                                <rect key="frame" x="36" y="398.33333333333331" width="299" height="40.666666666666686"/>
                                 <string key="text">행복한 오늘에 
 하루하루 최선을 다해 살 수 있기를!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -343,13 +343,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Love," lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmN-kQ-kjW">
-                                <rect key="frame" x="36" y="497.66666666666669" width="299" height="20.333333333333314"/>
+                                <rect key="frame" x="36" y="469" width="299" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2032년의 너로부터 :)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffr-OZ-WxE">
-                                <rect key="frame" x="36" y="528" width="299" height="20.333333333333371"/>
+                                <rect key="frame" x="36" y="499.33333333333331" width="299" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -368,7 +368,7 @@
                             <constraint firstAttribute="bottom" secondItem="1vr-xm-Zlx" secondAttribute="bottom" id="4Gg-EO-vsR"/>
                             <constraint firstItem="zhN-Qy-0Re" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="5NI-S5-vub"/>
                             <constraint firstItem="bmN-kQ-kjW" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="6Dk-ZN-NJw"/>
-                            <constraint firstItem="1vr-xm-Zlx" firstAttribute="top" secondItem="oBd-iJ-FJM" secondAttribute="bottom" constant="-64" id="7Aa-IA-UiL"/>
+                            <constraint firstItem="1vr-xm-Zlx" firstAttribute="top" secondItem="zhN-Qy-0Re" secondAttribute="top" constant="-40" id="7Aa-IA-UiL"/>
                             <constraint firstItem="Bcp-EJ-9vX" firstAttribute="top" secondItem="zhN-Qy-0Re" secondAttribute="bottom" constant="28" id="98L-d4-Wmt"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="IhP-wD-qP5" secondAttribute="trailing" constant="26" id="9ro-4j-mvG"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="bottom" secondItem="IhP-wD-qP5" secondAttribute="bottom" constant="27" id="Ao9-H7-D3L"/>
@@ -376,7 +376,7 @@
                             <constraint firstItem="Q4W-yk-pCS" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="FWs-8h-xE1"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="zjw-HQ-2Dv" secondAttribute="trailing" constant="40" id="GYh-fr-Koy"/>
                             <constraint firstItem="1vr-xm-Zlx" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" id="GZz-b6-BRk"/>
-                            <constraint firstItem="1vr-xm-Zlx" firstAttribute="top" secondItem="BYg-hy-GVR" secondAttribute="bottom" constant="-150" id="Gwj-8W-TTM"/>
+                            <constraint firstItem="1vr-xm-Zlx" firstAttribute="top" secondItem="BYg-hy-GVR" secondAttribute="top" constant="-40" id="Gwj-8W-TTM"/>
                             <constraint firstItem="bmN-kQ-kjW" firstAttribute="top" secondItem="Q4W-yk-pCS" secondAttribute="bottom" constant="30" id="H9j-1N-ROp"/>
                             <constraint firstItem="Uu1-la-CJ0" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="Hea-yo-VYG"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="0js-l8-UVl" secondAttribute="trailing" constant="40" id="IrT-kY-U2e"/>
@@ -384,6 +384,7 @@
                             <constraint firstItem="Jzk-gP-Rii" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="K2o-A4-Zmw"/>
                             <constraint firstItem="oBd-iJ-FJM" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="KqF-ol-OHR"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="Jzk-gP-Rii" secondAttribute="trailing" constant="36" id="Lkd-Jz-OX7"/>
+                            <constraint firstItem="1vr-xm-Zlx" firstAttribute="top" secondItem="oBd-iJ-FJM" secondAttribute="bottom" constant="-63.999999999999972" id="M5V-hx-UfK"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="XGR-h2-i9c" secondAttribute="trailing" constant="40" id="MEy-h3-kJA"/>
                             <constraint firstItem="u50-oo-Mca" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="NEv-Xz-R7i"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="Bcp-EJ-9vX" secondAttribute="trailing" constant="40" id="NlH-3l-Sii"/>
@@ -409,7 +410,6 @@
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="KcT-Xu-RAO" secondAttribute="trailing" constant="36" id="inJ-HI-GbH"/>
                             <constraint firstItem="KcT-Xu-RAO" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="jQK-HJ-Svp"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="9RW-6g-Ted" secondAttribute="trailing" constant="26" id="lPP-Xd-p8Z"/>
-                            <constraint firstItem="1vr-xm-Zlx" firstAttribute="top" secondItem="zhN-Qy-0Re" secondAttribute="bottom" constant="-175" id="m5F-99-4M8"/>
                             <constraint firstItem="HV9-wY-5to" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="159" id="mBE-rn-pNP"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="bottom" secondItem="9RW-6g-Ted" secondAttribute="bottom" constant="30" id="muP-SS-MAI"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="1vr-xm-Zlx" secondAttribute="trailing" id="naF-FY-3qz"/>
@@ -419,7 +419,7 @@
                             <constraint firstItem="BYg-hy-GVR" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="pPr-pT-mTm"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="tEF-yU-nqA" secondAttribute="trailing" constant="40" id="qMv-Mh-j3m"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="mGk-El-ha2" secondAttribute="trailing" constant="40" id="r0u-yq-ke2"/>
-                            <constraint firstItem="Jzk-gP-Rii" firstAttribute="top" secondItem="oBd-iJ-FJM" secondAttribute="bottom" constant="33" id="sPW-bz-se5"/>
+                            <constraint firstItem="Jzk-gP-Rii" firstAttribute="top" secondItem="oBd-iJ-FJM" secondAttribute="top" constant="45" id="sPW-bz-se5"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="ffr-OZ-WxE" secondAttribute="trailing" constant="40" id="syG-eB-omg"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="M72-JX-Bhv" secondAttribute="trailing" constant="36" id="tXD-zZ-Ud4"/>
                             <constraint firstItem="ffr-OZ-WxE" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="u4R-XB-Ksr"/>

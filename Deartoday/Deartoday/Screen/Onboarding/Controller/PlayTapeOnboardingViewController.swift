@@ -5,9 +5,9 @@
 //  Created by 황찬미 on 2022/07/15.
 //
 
+import AVFoundation
 import UIKit
 
-import AVFoundation
 import Lottie
 
 final class PlayTapeOnboardingViewController: UIViewController {
@@ -60,7 +60,7 @@ final class PlayTapeOnboardingViewController: UIViewController {
             guard let letterOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.LetterOnboarding) as? LetterOnboardingViewController else { return }
             letterOnboarding.modalTransitionStyle = .crossDissolve
             letterOnboarding.modalPresentationStyle = .overFullScreen
-            letterOnboarding.letterNumber = 4
+            letterOnboarding.letterNumber = 2
             self.present(letterOnboarding, animated: true)
         }
     }

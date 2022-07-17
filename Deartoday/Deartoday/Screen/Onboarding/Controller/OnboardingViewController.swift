@@ -5,9 +5,9 @@
 //  Created by 소연 on 2022/07/06.
 //
 
+import AVFoundation
 import UIKit
 
-import AVFoundation
 import Lottie
 
 final class OnboardingViewController: UIViewController {
