@@ -11,6 +11,7 @@
 		4A45D37E287F0B2F00592749 /* OpenBoxOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A45D37D287F0B2F00592749 /* OpenBoxOnboardingViewController.swift */; };
 		4A45D380287F2BF800592749 /* LetterOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A45D37F287F2BF800592749 /* LetterOnboardingViewController.swift */; };
 		4A706264287C079F00140315 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A706263287C079F00140315 /* Onboarding.storyboard */; };
+		4ADAB7E028846CD60049C465 /* InitialViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAB7DF28846CD60049C465 /* InitialViewContoller.swift */; };
 		923061D4287754DB00F04EDA /* TimeTravelDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923061D3287754DB00F04EDA /* TimeTravelDataModel.swift */; };
 		923061D6287754FA00F04EDA /* TimeTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923061D5287754FA00F04EDA /* TimeTravelView.swift */; };
 		923061D82877550E00F04EDA /* TimeTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923061D72877550E00F04EDA /* TimeTravelViewController.swift */; };
@@ -102,6 +103,7 @@
 		4A45D37D287F0B2F00592749 /* OpenBoxOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenBoxOnboardingViewController.swift; sourceTree = "<group>"; };
 		4A45D37F287F2BF800592749 /* LetterOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterOnboardingViewController.swift; sourceTree = "<group>"; };
 		4A706263287C079F00140315 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		4ADAB7DF28846CD60049C465 /* InitialViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewContoller.swift; sourceTree = "<group>"; };
 		6117E07E0B8313B67F3D1573 /* Pods-Deartoday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deartoday.debug.xcconfig"; path = "Target Support Files/Pods-Deartoday/Pods-Deartoday.debug.xcconfig"; sourceTree = "<group>"; };
 		91A3CEAB5A8D31B890C8B41E /* Pods_Deartoday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Deartoday.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		923061D3287754DB00F04EDA /* TimeTravelDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelDataModel.swift; sourceTree = "<group>"; };
@@ -205,6 +207,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4ADAB7DA28846C9D0049C465 /* Initial */ = {
+			isa = PBXGroup;
+			children = (
+				4ADAB7DB28846CAC0049C465 /* Controller */,
+			);
+			path = Initial;
+			sourceTree = "<group>";
+		};
+		4ADAB7DB28846CAC0049C465 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4ADAB7DF28846CD60049C465 /* InitialViewContoller.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		564EF79FA6C62B5AEA910FF8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +423,7 @@
 		92DB3546287563C0001E2006 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				4ADAB7DA28846C9D0049C465 /* Initial */,
 				9803F3A328846A8800A5A239 /* CheckTimeTravelDetail */,
 				98A47514287E00F1008891F5 /* CheckMessageDetail */,
 				924814A8287EB490001177B1 /* Dialog */,
@@ -956,6 +975,7 @@
 				984099EB2881F4CD00025092 /* Sound.swift in Sources */,
 				92DB3562287564F3001E2006 /* MainView.swift in Sources */,
 				9803F3A0288465C600A5A239 /* MainNavigationController.swift in Sources */,
+				4ADAB7E028846CD60049C465 /* InitialViewContoller.swift in Sources */,
 				98A47513287DED14008891F5 /* CheckTimeTravelViewController.swift in Sources */,
 				92DB358628756B76001E2006 /* TempDataModel.swift in Sources */,
 				92DB3570287565E4001E2006 /* UILabel+.swift in Sources */,
