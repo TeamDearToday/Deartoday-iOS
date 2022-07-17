@@ -16,9 +16,7 @@ class VirtualSpaceCollectionViewCell: UICollectionViewCell {
     
     // MARK: - UI Property
     
-    private var mediaImageView = UIImageView().then {
-        $0.contentMode = .scaleAspectFill
-    }
+    private var mediaImageView = UIImageView()
     
     // MARK: - Initializer
     
@@ -36,7 +34,6 @@ class VirtualSpaceCollectionViewCell: UICollectionViewCell {
     
     private func setUI() {
         contentView.layer.cornerRadius = 20
-        contentView.backgroundColor = .gray02
     }
     
     private func setLayout() {
@@ -47,8 +44,10 @@ class VirtualSpaceCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    internal func setData(_ data: VirtualSpaceDataModel) {
-        let url = URL(string: data.image)
+    internal func setData(_ data: String) {
+        let url = URL(string: data)
         mediaImageView.kf.setImage(with: url)
+        
+        mediaImageView.makeRound(radius: 20)
     }
 }
