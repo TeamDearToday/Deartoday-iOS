@@ -14,11 +14,8 @@ final class PlayTapeOnboardingViewController: UIViewController {
     
     // MARK: - Property
     
-    var playerSound = AVAudioPlayer()
-    
-    // MARK: - Property
-    
     var playTapeNumber: Int?
+    var playerSound = AVAudioPlayer()
     
     // MARK: - UI Property
     

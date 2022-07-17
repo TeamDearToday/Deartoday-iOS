@@ -15,7 +15,6 @@ final class OnboardingViewController: UIViewController {
     // MARK: Property
     
     var boxSound = AVAudioPlayer()
-    let url = Bundle.main.url(forResource: Constant.Sound.sound_box, withExtension: "mp3")
     
     // MARK: - UI Property
     
@@ -46,8 +45,9 @@ final class OnboardingViewController: UIViewController {
         self.view.addSubview(boxLottieView)
         boxLottieView.play()
         
+        let url = Bundle.main.url(forResource: Constant.Sound.sound_box, withExtension: "mp3")
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-            if let url = self.url {
+            if let url = url {
                 do {
                     self.boxSound = try AVAudioPlayer(contentsOf: url)
                     self.boxSound.prepareToPlay()
@@ -93,13 +93,12 @@ final class OnboardingViewController: UIViewController {
     }
     
     private func showComponents() {
-        labelCollection[2].isHidden = false
-        circleImageView.isHidden = false
-        boxButton.isEnabled = true
-        
         circleCollection.forEach {
             $0.isHidden = false
         }
+        labelCollection[2].isHidden = false
+        circleImageView.isHidden = false
+        boxButton.isEnabled = true
     }
     
     private func setFirstAnimation() {
@@ -145,8 +144,9 @@ final class OnboardingViewController: UIViewController {
         self.view.addSubview(boxLottieView)
         boxLottieView.play()
         
+        let url = Bundle.main.url(forResource: Constant.Sound.sound_box, withExtension: "mp3")
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-            if let url = self.url {
+            if let url = url {
                 do {
                     self.boxSound = try AVAudioPlayer(contentsOf: url)
                     self.boxSound.prepareToPlay()
