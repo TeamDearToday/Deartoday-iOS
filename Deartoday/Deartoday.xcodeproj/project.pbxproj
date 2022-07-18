@@ -66,6 +66,7 @@
 		9803F3C328848B0F00A5A239 /* CheckTimeTravelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3C228848B0F00A5A239 /* CheckTimeTravelService.swift */; };
 		9803F3C628848B4100A5A239 /* CheckTimeTravelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3C528848B4100A5A239 /* CheckTimeTravelResponse.swift */; };
 		9803F3C82885397D00A5A239 /* PastImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3C72885397D00A5A239 /* PastImageCollectionViewCell.swift */; };
+		9803F3CA28853AB500A5A239 /* TimeTravelInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3C928853AB500A5A239 /* TimeTravelInfoView.swift */; };
 		984099E62881F3FB00025092 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 984099E52881F3FB00025092 /* splash.json */; };
 		984099E92881F4A700025092 /* sound_box.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 984099E82881F4A700025092 /* sound_box.mp3 */; };
 		984099EB2881F4CD00025092 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984099EA2881F4CD00025092 /* Sound.swift */; };
@@ -167,6 +168,7 @@
 		9803F3C228848B0F00A5A239 /* CheckTimeTravelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelService.swift; sourceTree = "<group>"; };
 		9803F3C528848B4100A5A239 /* CheckTimeTravelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelResponse.swift; sourceTree = "<group>"; };
 		9803F3C72885397D00A5A239 /* PastImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		9803F3C928853AB500A5A239 /* TimeTravelInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelInfoView.swift; sourceTree = "<group>"; };
 		984099E52881F3FB00025092 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 		984099E82881F4A700025092 /* sound_box.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_box.mp3; sourceTree = "<group>"; };
 		984099EA2881F4CD00025092 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
@@ -676,6 +678,7 @@
 			isa = PBXGroup;
 			children = (
 				9803F3C72885397D00A5A239 /* PastImageCollectionViewCell.swift */,
+				9803F3C928853AB500A5A239 /* TimeTravelInfoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1046,6 +1049,7 @@
 				92DB358028756AE8001E2006 /* MoyaLoggingPlugin.swift in Sources */,
 				4A45D37E287F0B2F00592749 /* OpenBoxOnboardingViewController.swift in Sources */,
 				92CC3B9C287CA17000EA5617 /* CountDownLabel.swift in Sources */,
+				9803F3CA28853AB500A5A239 /* TimeTravelInfoView.swift in Sources */,
 				924814B1287EB5CC001177B1 /* DialogViewController.swift in Sources */,
 				923061D4287754DB00F04EDA /* TimeTravelDataModel.swift in Sources */,
 				92DB35312875633D001E2006 /* AppDelegate.swift in Sources */,
