@@ -10,7 +10,7 @@ import Foundation
 // MARK: - LoginReqeust
 
 struct LoginRequest {
-    let social: String = "APPLE"
+    let social: String
     let socialToken: String
     let fcmToken: String
 }
