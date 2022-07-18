@@ -65,7 +65,6 @@ final class CheckMessageViewController: UIViewController {
     private func setCollectionView() {
         collectionView.delegate = self
         registerXib()
-//        setDataSource()
         collectionView.setCollectionViewLayout(createLayout(), animated: true)
     }
     
