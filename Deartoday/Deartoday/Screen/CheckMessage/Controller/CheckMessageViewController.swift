@@ -15,9 +15,9 @@ final class CheckMessageViewController: UIViewController {
     
     // MARK: - Property
     
-    var dataSource: UICollectionViewDiffableDataSource<MessageSection, String>!
-    var snapshot: NSDiffableDataSourceSnapshot<MessageSection, String>!
-    var messages: [String] = []
+    var dataSource: UICollectionViewDiffableDataSource<MessageSection, MessageDataModel>!
+    var snapshot: NSDiffableDataSourceSnapshot<MessageSection, MessageDataModel>!
+    var messages: [MessageDataModel] = []
     
     // MARK: - UI Property
     
@@ -37,6 +37,11 @@ final class CheckMessageViewController: UIViewController {
         setUI()
         setCollectionView()
         setGesture()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getMessageInfo()
     }
     
     // MARK: - @objc
@@ -60,7 +65,6 @@ final class CheckMessageViewController: UIViewController {
     private func setCollectionView() {
         collectionView.delegate = self
         registerXib()
-        setDataSource()
         collectionView.setCollectionViewLayout(createLayout(), animated: true)
     }
     
@@ -85,11 +89,15 @@ final class CheckMessageViewController: UIViewController {
     }
     
     private func setDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<MessageSection, String>(collectionView: collectionView, cellProvider: { (collectionView: UICollectionView, indexPath: IndexPath, identifier: String) -> UICollectionViewCell? in
+        dataSource = UICollectionViewDiffableDataSource<MessageSection, MessageDataModel>(collectionView: collectionView, cellProvider: { (collectionView: UICollectionView, indexPath: IndexPath, identifier: MessageDataModel) -> UICollectionViewCell? in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MessageCollectionViewCell.identifier, for: indexPath) as? MessageCollectionViewCell else { return UICollectionViewCell() }
+            cell.setData(content: self.messages[indexPath.item].message)
             return cell
         })
-        snapshot = NSDiffableDataSourceSnapshot<MessageSection, String>()
+    }
+    
+    private func updateSnapshot() {
+        snapshot = NSDiffableDataSourceSnapshot<MessageSection, MessageDataModel>()
         snapshot.appendSections([.message])
         snapshot.appendItems(messages, toSection: .message)
         dataSource.apply(snapshot, animatingDifferences: true, completion: nil)
@@ -98,6 +106,26 @@ final class CheckMessageViewController: UIViewController {
     private func setGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(timeTravelButtonDidTap))
         timeTravelImageView.addGestureRecognizer(tapGesture)
+    }
+    
+    private func updateMessageList() {
+        setDataSource()
+        updateSnapshot()
+    }
+    
+    private func setMessageInfo(response: [String]) {
+        setMessageArray(response: response)
+        updateMessageList()
+        let isEmpty = (messages.count == 0)
+        emptyView.isHidden = !isEmpty
+        collectionView.isHidden = isEmpty
+    }
+    
+    private func setMessageArray(response: [String]) {
+        messages.removeAll()
+        response.forEach {
+            messages.append(MessageDataModel(message: $0, index: messages.count))
+        }
     }
     
     // MARK: - IBAction
@@ -115,6 +143,18 @@ extension CheckMessageViewController: UICollectionViewDelegate {
             .instantiateViewController(withIdentifier: Constant.ViewController.CheckMessageDetail) as? CheckMessageDetailViewController else { return }
         messageDetail.modalPresentationStyle = .overFullScreen
         present(messageDetail, animated: false, completion: nil)
+    }
+}
+
+// MARK: - Network
+
+extension CheckMessageViewController {
+    private func getMessageInfo() {
+        CheckMessageAPI.shared.getCheckMessage { response in
+            guard let responseData = response else { return }
+            self.messages.removeAll()
+            self.setMessageInfo(response: responseData.data ?? [])
+        }
     }
 }
 

@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct MessageDataModel: Hashable {
+    var message: String
+    var index: Int
+}
