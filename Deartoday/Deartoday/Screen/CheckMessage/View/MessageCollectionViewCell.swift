@@ -30,7 +30,6 @@ final class MessageCollectionViewCell: UICollectionViewCell {
         backgroundColor = .yellow03
         contentLabel.font = .p6
         writerLabel.font = .p6
-        adjustContentSize()
     }
     
     private func adjustContentSize() {
