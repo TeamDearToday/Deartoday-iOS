@@ -67,6 +67,10 @@
 		9803F3C628848B4100A5A239 /* CheckTimeTravelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3C528848B4100A5A239 /* CheckTimeTravelResponse.swift */; };
 		9803F3C82885397D00A5A239 /* PastImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3C72885397D00A5A239 /* PastImageCollectionViewCell.swift */; };
 		9803F3CA28853AB500A5A239 /* TimeTravelInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3C928853AB500A5A239 /* TimeTravelInfoView.swift */; };
+		9803F3CD2885487C00A5A239 /* TimeTravelChatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3CB2885487C00A5A239 /* TimeTravelChatCollectionViewCell.swift */; };
+		9803F3CE2885487C00A5A239 /* TimeTravelChatCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9803F3CC2885487C00A5A239 /* TimeTravelChatCollectionViewCell.xib */; };
+		9803F3D1288548AF00A5A239 /* TimeTravelLastAnswerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3CF288548AF00A5A239 /* TimeTravelLastAnswerCollectionViewCell.swift */; };
+		9803F3D2288548AF00A5A239 /* TimeTravelLastAnswerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9803F3D0288548AF00A5A239 /* TimeTravelLastAnswerCollectionViewCell.xib */; };
 		984099E62881F3FB00025092 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 984099E52881F3FB00025092 /* splash.json */; };
 		984099E92881F4A700025092 /* sound_box.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 984099E82881F4A700025092 /* sound_box.mp3 */; };
 		984099EB2881F4CD00025092 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984099EA2881F4CD00025092 /* Sound.swift */; };
@@ -169,6 +173,10 @@
 		9803F3C528848B4100A5A239 /* CheckTimeTravelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelResponse.swift; sourceTree = "<group>"; };
 		9803F3C72885397D00A5A239 /* PastImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		9803F3C928853AB500A5A239 /* TimeTravelInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelInfoView.swift; sourceTree = "<group>"; };
+		9803F3CB2885487C00A5A239 /* TimeTravelChatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelChatCollectionViewCell.swift; sourceTree = "<group>"; };
+		9803F3CC2885487C00A5A239 /* TimeTravelChatCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeTravelChatCollectionViewCell.xib; sourceTree = "<group>"; };
+		9803F3CF288548AF00A5A239 /* TimeTravelLastAnswerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelLastAnswerCollectionViewCell.swift; sourceTree = "<group>"; };
+		9803F3D0288548AF00A5A239 /* TimeTravelLastAnswerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeTravelLastAnswerCollectionViewCell.xib; sourceTree = "<group>"; };
 		984099E52881F3FB00025092 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 		984099E82881F4A700025092 /* sound_box.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_box.mp3; sourceTree = "<group>"; };
 		984099EA2881F4CD00025092 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
@@ -679,6 +687,10 @@
 			children = (
 				9803F3C72885397D00A5A239 /* PastImageCollectionViewCell.swift */,
 				9803F3C928853AB500A5A239 /* TimeTravelInfoView.swift */,
+				9803F3CB2885487C00A5A239 /* TimeTravelChatCollectionViewCell.swift */,
+				9803F3CC2885487C00A5A239 /* TimeTravelChatCollectionViewCell.xib */,
+				9803F3CF288548AF00A5A239 /* TimeTravelLastAnswerCollectionViewCell.swift */,
+				9803F3D0288548AF00A5A239 /* TimeTravelLastAnswerCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -959,11 +971,13 @@
 				98BFBCC12879B66A00F01F04 /* GmarketSansBold.otf in Resources */,
 				92DB353D2875633F001E2006 /* LaunchScreen.storyboard in Resources */,
 				9803F38F2882F1B300A5A239 /* box.json in Resources */,
+				9803F3CE2885487C00A5A239 /* TimeTravelChatCollectionViewCell.xib in Resources */,
 				98BFBCC82879B68600F01F04 /* Pretendard-SemiBold.otf in Resources */,
 				9803F38D2882F1A900A5A239 /* tape.json in Resources */,
 				98B4B5B2287EC93B00F4AD7A /* TimeTapeTableViewCell.xib in Resources */,
 				984099E62881F3FB00025092 /* splash.json in Resources */,
 				928A8A6B2875FB7C000D4E99 /* GoogleService-Info.plist in Resources */,
+				9803F3D2288548AF00A5A239 /* TimeTravelLastAnswerCollectionViewCell.xib in Resources */,
 				9803F3912882F3C300A5A239 /* timetape.json in Resources */,
 				98A71D5A2882EEBA009508D9 /* Colors.xcassets in Resources */,
 				98A47516287E0106008891F5 /* CheckMessageDetail.storyboard in Resources */,
@@ -1043,6 +1057,7 @@
 				4ADAB7E028846CD60049C465 /* InitialViewContoller.swift in Sources */,
 				9803F3B728847D0900A5A239 /* MainService.swift in Sources */,
 				98A47513287DED14008891F5 /* CheckTimeTravelViewController.swift in Sources */,
+				9803F3CD2885487C00A5A239 /* TimeTravelChatCollectionViewCell.swift in Sources */,
 				92DB3570287565E4001E2006 /* UILabel+.swift in Sources */,
 				98B4B5B1287EC93B00F4AD7A /* TimeTapeTableViewCell.swift in Sources */,
 				92C27EA72884455700077FA3 /* TimeTravelResponse.swift in Sources */,
@@ -1091,6 +1106,7 @@
 				924814AF287EB53A001177B1 /* DialogMessageView.swift in Sources */,
 				926C7E2028847E1700C0D3B4 /* TimeTravelQuestionResponse.swift in Sources */,
 				98BFBCBE2879544A00F01F04 /* Image.swift in Sources */,
+				9803F3D1288548AF00A5A239 /* TimeTravelLastAnswerCollectionViewCell.swift in Sources */,
 				9803F3C328848B0F00A5A239 /* CheckTimeTravelService.swift in Sources */,
 				98D912CE287DC3430088A7F9 /* CheckMessageViewController.swift in Sources */,
 				98BFBCD12879BBB700F01F04 /* UIColor+.swift in Sources */,
