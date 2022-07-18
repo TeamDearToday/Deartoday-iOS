@@ -598,7 +598,6 @@
 		92DB354D28756409001E2006 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				9803F3DF2885E06100A5A239 /* CheckTimeTravelDetail */,
 				9803F3D62885952900A5A239 /* CheckMessage */,
 				4ADAB7E2288504750049C465 /* Login */,
 				9803F3C128848AF900A5A239 /* CheckTimeTravel */,
@@ -808,6 +807,7 @@
 			isa = PBXGroup;
 			children = (
 				9803F3C228848B0F00A5A239 /* CheckTimeTravelService.swift */,
+				9803F3E02885E06F00A5A239 /* CheckTimeTravelDetailService.swift */,
 			);
 			path = CheckTimeTravel;
 			sourceTree = "<group>";
@@ -843,14 +843,6 @@
 				9803F3DD2885E04000A5A239 /* CheckTimeTravelAPI.swift */,
 			);
 			path = CheckTImeTravelDetail;
-			sourceTree = "<group>";
-		};
-		9803F3DF2885E06100A5A239 /* CheckTimeTravelDetail */ = {
-			isa = PBXGroup;
-			children = (
-				9803F3E02885E06F00A5A239 /* CheckTimeTravelDetailService.swift */,
-			);
-			path = CheckTimeTravelDetail;
 			sourceTree = "<group>";
 		};
 		984099E72881F47100025092 /* Sound */ = {
