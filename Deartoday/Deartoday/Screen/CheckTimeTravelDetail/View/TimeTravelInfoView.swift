@@ -9,6 +9,8 @@ import UIKit
 
 final class TimeTravelInfoView: UICollectionReusableView {
 
+    static let identifier = "TimeTravelInfoView"
+    
     // MARK: - Property
     
     // MARK: - UI Property
@@ -82,6 +84,7 @@ final class TimeTravelInfoView: UICollectionReusableView {
         timeTravelTitleLabel.snp.makeConstraints { make in
             make.top.equalTo(timeTravelToLabel.snp.bottom).offset(16)
             make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
     }
 }
