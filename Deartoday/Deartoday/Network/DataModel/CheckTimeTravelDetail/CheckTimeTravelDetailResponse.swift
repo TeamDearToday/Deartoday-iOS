@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+// MARK: - CheckTimeTravelDetailResponse
+
+struct CheckTimeTravelDetailResponse: Codable {
+    let title: String
+    let year, month, day: Int
+    let writtenDate, image: String
+    let messages: [Message]
+}
+
+// MARK: - Message
+
+struct Message: Codable {
+    let question, answer: String
+}
