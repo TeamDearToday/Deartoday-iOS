@@ -24,5 +24,6 @@ struct URLConstant {
     
     static let oldMedia = "/timeTravel/oldMedia"
     static let question = "/timeTravel/question"
+    static let answer = "/timeTravel"
 }
     

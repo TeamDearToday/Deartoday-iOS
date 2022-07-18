@@ -35,6 +35,8 @@ final class VirtualSpaceViewController: UIViewController {
     
     internal var selectedImage = UIImage()
     
+    internal var timeTravelTitle: String? = nil
+    
     private var images = [String]()
     
     // MARK: - UI Property
@@ -153,6 +155,7 @@ final class VirtualSpaceViewController: UIViewController {
                 dialogViewController.month = self.month
                 dialogViewController.day = self.day
                 dialogViewController.photoImage = self.selectedImage
+                dialogViewController.timeTravelTitle = self.timeTravelTitle
                 self.present(dialogViewController, animated: true)
             }
         }
