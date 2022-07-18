@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A2CEA772885A91F00DC9CC9 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2CEA762885A91F00DC9CC9 /* SplashViewController.swift */; };
 		4A44EEFB28807DC00062420E /* PlayTapeOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A44EEFA28807DC00062420E /* PlayTapeOnboardingViewController.swift */; };
 		4A45D37E287F0B2F00592749 /* OpenBoxOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A45D37D287F0B2F00592749 /* OpenBoxOnboardingViewController.swift */; };
 		4A45D380287F2BF800592749 /* LetterOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A45D37F287F2BF800592749 /* LetterOnboardingViewController.swift */; };
@@ -115,6 +116,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A2CEA762885A91F00DC9CC9 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		4A44EEFA28807DC00062420E /* PlayTapeOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTapeOnboardingViewController.swift; sourceTree = "<group>"; };
 		4A45D37D287F0B2F00592749 /* OpenBoxOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenBoxOnboardingViewController.swift; sourceTree = "<group>"; };
 		4A45D37F287F2BF800592749 /* LetterOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterOnboardingViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +241,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A2CEA6C2885A58A00DC9CC9 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				4A2CEA6D2885A5AD00DC9CC9 /* Controller */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		4A2CEA6D2885A5AD00DC9CC9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4A2CEA762885A91F00DC9CC9 /* SplashViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		4ADAB7DA28846C9D0049C465 /* Initial */ = {
 			isa = PBXGroup;
 			children = (
@@ -481,6 +499,7 @@
 		92DB3546287563C0001E2006 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				4A2CEA6C2885A58A00DC9CC9 /* Splash */,
 				4ADAB7DA28846C9D0049C465 /* Initial */,
 				9803F3A328846A8800A5A239 /* CheckTimeTravelDetail */,
 				98A47514287E00F1008891F5 /* CheckMessageDetail */,
@@ -1183,6 +1202,7 @@
 				98BFBCBE2879544A00F01F04 /* Image.swift in Sources */,
 				9803F3D1288548AF00A5A239 /* TimeTravelLastAnswerCollectionViewCell.swift in Sources */,
 				9803F3C328848B0F00A5A239 /* CheckTimeTravelService.swift in Sources */,
+				4A2CEA772885A91F00DC9CC9 /* SplashViewController.swift in Sources */,
 				98D912CE287DC3430088A7F9 /* CheckMessageViewController.swift in Sources */,
 				98BFBCD12879BBB700F01F04 /* UIColor+.swift in Sources */,
 				4ADAB7E4288505A60049C465 /* LoginAPI.swift in Sources */,
