@@ -16,6 +16,7 @@ final class TimeTravelInfoView: UIView {
     private let timeTravelToLabel = UILabel().then {
         $0.textColor = .blue02
         $0.font = .h0
+        $0.text = "1999.04.19"
     }
     
     private let rewindImageView = UIImageView().then {
@@ -26,11 +27,14 @@ final class TimeTravelInfoView: UIView {
     private let timeTravelFromLabel = UILabel().then {
         $0.textColor = .gray01
         $0.font = .caption0
+        $0.text = "1995.12.30"
     }
     
     private let timeTravelTitleLabel = UILabel().then {
         $0.textColor = .darkGray00
         $0.font = .h2
+        $0.numberOfLines = 0
+        $0.text = "어쩔티비?"
     }
     
     // MARK: - Life Cycle
@@ -77,7 +81,7 @@ final class TimeTravelInfoView: UIView {
         
         timeTravelTitleLabel.snp.makeConstraints { make in
             make.top.equalTo(timeTravelToLabel.snp.bottom).offset(16)
-            make.leading.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
         }
     }
 }
