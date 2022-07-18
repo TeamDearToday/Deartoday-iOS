@@ -58,7 +58,6 @@
 		9803F3A0288465C600A5A239 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F39F288465C600A5A239 /* MainNavigationController.swift */; };
 		9803F3A528846AA000A5A239 /* CheckTimeTravelDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9803F3A428846AA000A5A239 /* CheckTimeTravelDetail.storyboard */; };
 		9803F3AA28846AD400A5A239 /* CheckTimeTravelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3A928846AD400A5A239 /* CheckTimeTravelDetailViewController.swift */; };
-		9803F3AC28846AEC00A5A239 /* CheckTimeTravelDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3AB28846AEC00A5A239 /* CheckTimeTravelDetailView.swift */; };
 		9803F3AE28846AF800A5A239 /* CheckTimeTravelDetailDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3AD28846AF800A5A239 /* CheckTimeTravelDetailDataModel.swift */; };
 		9803F3B428847C9100A5A239 /* MainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3B328847C9100A5A239 /* MainResponse.swift */; };
 		9803F3B728847D0900A5A239 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3B628847D0900A5A239 /* MainService.swift */; };
@@ -159,7 +158,6 @@
 		9803F39F288465C600A5A239 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		9803F3A428846AA000A5A239 /* CheckTimeTravelDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckTimeTravelDetail.storyboard; sourceTree = "<group>"; };
 		9803F3A928846AD400A5A239 /* CheckTimeTravelDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelDetailViewController.swift; sourceTree = "<group>"; };
-		9803F3AB28846AEC00A5A239 /* CheckTimeTravelDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelDetailView.swift; sourceTree = "<group>"; };
 		9803F3AD28846AF800A5A239 /* CheckTimeTravelDetailDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelDetailDataModel.swift; sourceTree = "<group>"; };
 		9803F3B328847C9100A5A239 /* MainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainResponse.swift; sourceTree = "<group>"; };
 		9803F3B628847D0900A5A239 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
@@ -675,7 +673,6 @@
 		9803F3A728846AA600A5A239 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9803F3AB28846AEC00A5A239 /* CheckTimeTravelDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1056,7 +1053,6 @@
 				9803F3C028848AAA00A5A239 /* CheckTimeTravelAPI.swift in Sources */,
 				92DB35722875661A001E2006 /* Constant.swift in Sources */,
 				92DB358228756B0B001E2006 /* GeneralResponse.swift in Sources */,
-				9803F3AC28846AEC00A5A239 /* CheckTimeTravelDetailView.swift in Sources */,
 				92DB357E28756AB8001E2006 /* NetworkConstant.swift in Sources */,
 				9858B3D0288097B000860439 /* MessageCollectionViewCell.swift in Sources */,
 				92DB35582875646E001E2006 /* OnboardingModel.swift in Sources */,
