@@ -68,7 +68,7 @@ final class InitialViewController: UIViewController {
         }
         appleLoginButton.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(16)
-            $0.top.equalTo(logoImageView.snp.bottom).inset(10)
+            $0.top.equalTo(logoImageView.snp.bottom).offset(10)
         }
     }
 }
