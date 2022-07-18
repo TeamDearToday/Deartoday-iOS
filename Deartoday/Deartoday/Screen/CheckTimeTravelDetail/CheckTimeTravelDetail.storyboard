@@ -33,7 +33,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 시간 여행" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AG3-5g-QYX">
                                         <rect key="frame" x="50" y="26.5" width="91.5" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="blue01"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -79,6 +79,10 @@
                             <constraint firstItem="kTg-27-aAD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="wAe-yZ-p8f"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="LB5-LL-peD" id="JKQ-0E-FTI"/>
+                        <outlet property="titleLabel" destination="AG3-5g-QYX" id="8AZ-qw-GLz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -89,6 +93,9 @@
         <image name="icBack" width="44" height="44"/>
         <namedColor name="blue00">
             <color red="0.69800001382827759" green="0.81999999284744263" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="blue01">
+            <color red="0.47099998593330383" green="0.65100002288818359" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
