@@ -36,6 +36,7 @@ final class CheckTimeTravelViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setGesture()
+        setTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
