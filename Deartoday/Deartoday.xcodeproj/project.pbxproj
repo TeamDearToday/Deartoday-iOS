@@ -72,6 +72,7 @@
 		9803F3D1288548AF00A5A239 /* TimeTravelLastAnswerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3CF288548AF00A5A239 /* TimeTravelLastAnswerCollectionViewCell.swift */; };
 		9803F3D2288548AF00A5A239 /* TimeTravelLastAnswerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9803F3D0288548AF00A5A239 /* TimeTravelLastAnswerCollectionViewCell.xib */; };
 		9803F3D52885950F00A5A239 /* CheckMessageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3D42885950F00A5A239 /* CheckMessageAPI.swift */; };
+		9803F3D82885953B00A5A239 /* CheckMessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3D72885953B00A5A239 /* CheckMessageService.swift */; };
 		984099E62881F3FB00025092 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 984099E52881F3FB00025092 /* splash.json */; };
 		984099E92881F4A700025092 /* sound_box.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 984099E82881F4A700025092 /* sound_box.mp3 */; };
 		984099EB2881F4CD00025092 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984099EA2881F4CD00025092 /* Sound.swift */; };
@@ -179,6 +180,7 @@
 		9803F3CF288548AF00A5A239 /* TimeTravelLastAnswerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelLastAnswerCollectionViewCell.swift; sourceTree = "<group>"; };
 		9803F3D0288548AF00A5A239 /* TimeTravelLastAnswerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeTravelLastAnswerCollectionViewCell.xib; sourceTree = "<group>"; };
 		9803F3D42885950F00A5A239 /* CheckMessageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessageAPI.swift; sourceTree = "<group>"; };
+		9803F3D72885953B00A5A239 /* CheckMessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessageService.swift; sourceTree = "<group>"; };
 		984099E52881F3FB00025092 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 		984099E82881F4A700025092 /* sound_box.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_box.mp3; sourceTree = "<group>"; };
 		984099EA2881F4CD00025092 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
@@ -536,6 +538,7 @@
 		92DB354D28756409001E2006 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				9803F3D62885952900A5A239 /* CheckMessage */,
 				9803F3C128848AF900A5A239 /* CheckTimeTravel */,
 				9803F3B528847D0400A5A239 /* Main */,
 				92C27EA42884451800077FA3 /* TimeTravel */,
@@ -758,6 +761,14 @@
 			isa = PBXGroup;
 			children = (
 				9803F3D42885950F00A5A239 /* CheckMessageAPI.swift */,
+			);
+			path = CheckMessage;
+			sourceTree = "<group>";
+		};
+		9803F3D62885952900A5A239 /* CheckMessage */ = {
+			isa = PBXGroup;
+			children = (
+				9803F3D72885953B00A5A239 /* CheckMessageService.swift */,
 			);
 			path = CheckMessage;
 			sourceTree = "<group>";
@@ -1062,6 +1073,7 @@
 				98D912C5287DB0130088A7F9 /* Lottie.swift in Sources */,
 				98A47519287E0129008891F5 /* CheckMessageDetailViewController.swift in Sources */,
 				9803F3B428847C9100A5A239 /* MainResponse.swift in Sources */,
+				9803F3D82885953B00A5A239 /* CheckMessageService.swift in Sources */,
 				984099EB2881F4CD00025092 /* Sound.swift in Sources */,
 				92DB3562287564F3001E2006 /* MainView.swift in Sources */,
 				9803F3D52885950F00A5A239 /* CheckMessageAPI.swift in Sources */,
