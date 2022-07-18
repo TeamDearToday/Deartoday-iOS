@@ -20,6 +20,7 @@ final class CheckTimeTravelDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        setCollectionView()
     }
     
     // MARK: - @objc
@@ -32,6 +33,52 @@ final class CheckTimeTravelDetailViewController: UIViewController {
     private func setLabelUI() {
         titleLabel.font = .btn0
     }
+
+    private func setCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        registerXib()
+    }
     
-    // MARK: - IBAction
+    private func registerXib() {
+        let imageXib = UINib(nibName: PastImageCollectionViewCell.identifier, bundle: nil)
+        collectionView.register(imageXib, forCellWithReuseIdentifier: PastImageCollectionViewCell.identifier)
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension CheckTimeTravelDetailViewController: UICollectionViewDelegate {
+}
+
+// MARK: - UICollectionViewDataSource
+
+extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.section == 0 {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PastImageCollectionViewCell.identifier, for: indexPath) as? PastImageCollectionViewCell else { return UICollectionViewCell() }
+            //image data string 넣기
+            cell.setData(image: "")
+            return cell
+        }
+        else {
+            if indexPath.item == 6 {
+                //마지막 한마디 셀
+                return UICollectionViewCell()
+            }
+            else {
+                //대화 셀
+                return UICollectionViewCell()
+            }
+        }
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return (section == 0) ? 1 : 7
+    }
 }
