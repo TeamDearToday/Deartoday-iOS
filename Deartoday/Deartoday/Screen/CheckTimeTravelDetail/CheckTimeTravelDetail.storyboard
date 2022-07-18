@@ -46,7 +46,7 @@
                                     <constraint firstAttribute="height" constant="72" id="nSw-C2-YTm"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LB5-LL-peD">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LB5-LL-peD">
                                 <rect key="frame" x="16" y="116" width="382" height="780"/>
                                 <color key="backgroundColor" name="blue00"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uDn-qZ-5Pe">
