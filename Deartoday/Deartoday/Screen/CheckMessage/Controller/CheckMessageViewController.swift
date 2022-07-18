@@ -142,6 +142,7 @@ extension CheckMessageViewController: UICollectionViewDelegate {
         guard let messageDetail = UIStoryboard(name: Constant.Storyboard.CheckMessageDetail, bundle: nil)
             .instantiateViewController(withIdentifier: Constant.ViewController.CheckMessageDetail) as? CheckMessageDetailViewController else { return }
         messageDetail.modalPresentationStyle = .overFullScreen
+        messageDetail.content = messages[indexPath.item].message
         present(messageDetail, animated: false, completion: nil)
     }
 }
