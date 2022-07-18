@@ -32,6 +32,7 @@ final class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setPageControl(page: backgroundScrollView.contentOffset.x == 0 ? 0 : 1)
+        getMainData()
     }
     
     // MARK: - Custom Method
@@ -60,6 +61,12 @@ final class MainViewController: UIViewController {
     private func setPageControl(page: Int) {
         pageControl.setIndicatorImage(UIImage(systemName: "circle.fill"), forPage: page)
         pageControl.setIndicatorImage(UIImage(systemName: "circle"), forPage: page == 0 ? 1 : 0)
+    }
+    
+    private func setCountLabel(count: Int) {
+        messageCountLabelCollection.forEach {
+            $0.text = count > 99 ? "99+" : "\(count)"
+        }
     }
     
     // MARK: - IBAction
@@ -98,6 +105,17 @@ extension MainViewController: UIScrollViewDelegate {
         }
         else if scrollView.contentOffset.x == getDeviceWidth() {
             setPageControl(page: 1)
+        }
+    }
+}
+
+// MARK: - Network
+
+extension MainViewController {
+    private func getMainData() {
+        MainAPI.shared.getMain { mainData in
+            guard let mainData = mainData else { return }
+            self.setCountLabel(count: mainData.data?.timeTravelCount ?? 0)
         }
     }
 }

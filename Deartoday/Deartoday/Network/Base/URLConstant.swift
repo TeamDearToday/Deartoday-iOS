@@ -15,8 +15,18 @@ struct URLConstant {
     
     // MARK: - Auth
     
+    
+    // MARK: - Main
+    
+    static let main = "/timeTravel/count"
+    
     // MARK: - Time Travel
     
     static let oldMedia = "/timeTravel/oldMedia"
+    static let question = "/timeTravel/question"
+
+    // MARK: - Check Time Travel
+    
+    static let timeTravel = "/timeTravel"
 }
     

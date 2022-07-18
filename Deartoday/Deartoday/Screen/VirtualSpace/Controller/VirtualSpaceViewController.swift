@@ -35,6 +35,8 @@ final class VirtualSpaceViewController: UIViewController {
     
     internal var selectedImage = UIImage()
     
+    private var images = [String]()
+    
     // MARK: - UI Property
     
     private var backgroundImageView = UIImageView().then {
@@ -268,14 +270,14 @@ extension VirtualSpaceViewController: UICollectionViewDelegateFlowLayout {
 
 extension VirtualSpaceViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return VirtualSpaceDataModel.images.count
+        return images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VirtualSpaceCollectionViewCell.cellIdentifier, for: indexPath) as? VirtualSpaceCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.setData(VirtualSpaceDataModel.images[indexPath.item])
+        cell.setData(images[indexPath.item])
         return cell
     }
 }
@@ -286,7 +288,10 @@ extension VirtualSpaceViewController {
     private func getOldMedia(year: Int) {
         TimeTravelAPI.shared.getOldMedia(year: year) { oldMediaData, err in
             guard let oldMediaData = oldMediaData else { return }
-            dump(oldMediaData.data?.images)
+            self.images = oldMediaData.data?.images ?? [""]
+            DispatchQueue.main.async {
+                self.mediaCollectionView.reloadData()
+            }
         }
     }
 }
