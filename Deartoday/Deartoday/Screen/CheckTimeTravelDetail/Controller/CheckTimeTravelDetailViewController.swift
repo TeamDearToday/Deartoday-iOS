@@ -10,6 +10,9 @@ import UIKit
 final class CheckTimeTravelDetailViewController: UIViewController {
 
     // MARK: - Property
+    
+    private let collectionViewFlowLayout = UICollectionViewFlowLayout()
+    
     // MARK: - UI Property
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -23,7 +26,6 @@ final class CheckTimeTravelDetailViewController: UIViewController {
         setCollectionView()
     }
     
-    // MARK: - @objc
     // MARK: - Custom Method
     
     private func setUI() {
@@ -37,7 +39,9 @@ final class CheckTimeTravelDetailViewController: UIViewController {
     private func setCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.collectionViewLayout = collectionViewFlowLayout
         registerXib()
+        setCollectionViewLayout()
     }
     
     private func registerXib() {
@@ -50,15 +54,25 @@ final class CheckTimeTravelDetailViewController: UIViewController {
         let lastXib = UINib(nibName: TimeTravelLastAnswerCollectionViewCell.identifier, bundle: nil)
         collectionView.register(lastXib,
                                 forCellWithReuseIdentifier: TimeTravelLastAnswerCollectionViewCell.identifier)
+        collectionView.register(TimeTravelInfoView.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: TimeTravelInfoView.identifier)
+    }
+    
+    private func setCollectionViewLayout() {
+        collectionViewFlowLayout.scrollDirection = .vertical
+        collectionViewFlowLayout.sectionHeadersPinToVisibleBounds = true
     }
 }
 
 // MARK: - UICollectionViewDelegate
 
 extension CheckTimeTravelDetailViewController: UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return (section == 0) ? .zero : CGSize(width: collectionView.frame.width, height: 150) //변경
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return .zero
     }
