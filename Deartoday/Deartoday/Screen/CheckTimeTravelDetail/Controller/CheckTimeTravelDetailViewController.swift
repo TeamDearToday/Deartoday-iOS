@@ -42,7 +42,14 @@ final class CheckTimeTravelDetailViewController: UIViewController {
     
     private func registerXib() {
         let imageXib = UINib(nibName: PastImageCollectionViewCell.identifier, bundle: nil)
-        collectionView.register(imageXib, forCellWithReuseIdentifier: PastImageCollectionViewCell.identifier)
+        collectionView.register(imageXib,
+                                forCellWithReuseIdentifier: PastImageCollectionViewCell.identifier)
+        let chatXib = UINib(nibName: TimeTravelChatCollectionViewCell.identifier, bundle: nil)
+        collectionView.register(chatXib,
+                                forCellWithReuseIdentifier: TimeTravelChatCollectionViewCell.identifier)
+        let lastXib = UINib(nibName: TimeTravelLastAnswerCollectionViewCell.identifier, bundle: nil)
+        collectionView.register(lastXib,
+                                forCellWithReuseIdentifier: TimeTravelLastAnswerCollectionViewCell.identifier)
     }
 }
 
