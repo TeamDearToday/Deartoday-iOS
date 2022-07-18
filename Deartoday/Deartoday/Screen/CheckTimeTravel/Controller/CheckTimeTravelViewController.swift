@@ -35,8 +35,13 @@ final class CheckTimeTravelViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        setTableView()
         setGesture()
+        setTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getTimeTravelInfo()
     }
     
     // MARK: - @objc
@@ -60,7 +65,6 @@ final class CheckTimeTravelViewController: UIViewController {
     private func setTableView() {
         registerXib()
         setTableViewUI()
-        setDataSource()
     }
     
     private func registerXib() {
@@ -80,10 +84,18 @@ final class CheckTimeTravelViewController: UIViewController {
             cell.setData(model: self.timeTapes[indexPath.item])
             return cell
         })
+    }
+    
+    private func updateSnapshot() {
         snapshot = NSDiffableDataSourceSnapshot<TimeTravelSection, TimeTapeDataModel>()
         snapshot.appendSections([.tape])
         snapshot.appendItems(timeTapes, toSection: .tape)
         dataSource.apply(snapshot, animatingDifferences: true)
+    }
+    
+    private func updateTapeList() {
+        setDataSource()
+        updateSnapshot()
     }
     
     private func setGesture() {
@@ -91,10 +103,29 @@ final class CheckTimeTravelViewController: UIViewController {
         timeTravelImageView.addGestureRecognizer(tapGesture)
     }
     
+    private func setTimeTravelTapeInfo() {
+        updateTapeList()
+        let isEmpty = (timeTapes.count == 0)
+        emptyView.isHidden = !isEmpty
+        tableView.isHidden = isEmpty
+    }
+    
     // MARK: - IBAction
     
     @IBAction func backButtonDidTap(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+}
+
+// MARK: - Network
+
+extension CheckTimeTravelViewController {
+    private func getTimeTravelInfo() {
+        CheckTimeTravelAPI.shared.getCheckTimeTravel { response in
+            guard let responseData = response else { return }
+            self.timeTapes = responseData.data?.timeTravels ?? []
+            self.setTimeTravelTapeInfo()
+        }
     }
 }
 

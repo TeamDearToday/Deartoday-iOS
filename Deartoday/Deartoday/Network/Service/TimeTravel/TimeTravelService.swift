@@ -10,7 +10,7 @@ import Moya
 enum TimeTravelService {
     case oldMedia(year: Int)
     case question
-    case answer(answer: TimeTravelAnswerRequest)
+    case dialog(dialog: TimeTravelAnswerRequest)
 }
 
 extension TimeTravelService: BaseTargetType {
@@ -20,8 +20,8 @@ extension TimeTravelService: BaseTargetType {
             return URLConstant.oldMedia
         case .question:
             return URLConstant.question
-        case .answer:
-            return URLConstant.answer
+        case .dialog:
+            return URLConstant.dialog
         }
     }
     
@@ -29,7 +29,7 @@ extension TimeTravelService: BaseTargetType {
         switch self {
         case .oldMedia, .question:
             return .get
-        case .answer:
+        case .dialog:
             return .post
         }
     }
@@ -42,34 +42,34 @@ extension TimeTravelService: BaseTargetType {
                 encoding: URLEncoding.queryString)
         case .question:
             return .requestPlain
-        case .answer(let answer):
+        case .dialog(let dialog):
             var multiPartFormData: [MultipartFormData] = []
             
-            let title = answer.title.data(using: .utf8) ?? Data()
+            let title = dialog.title.data(using: .utf8) ?? Data()
             multiPartFormData.append(MultipartFormData(provider: .data(title), name: "title"))
             
             // UIImage -> jpegImageData
 //            let imageData = answer.image.jpegData(compressionQuality: 1.0)
 //            let image = MultipartFormData(provider: .data(imageData ?? Data()), name: "image", fileName: "\(title).jpg", mimeType: "image/jpeg")
-            if let image = answer.image {
+            if let image = dialog.image {
                 let image = MultipartFormData(
-                    provider: .data(image), name: "image", fileName: "\(answer.title).jpg", mimeType: "image/jpg")
+                    provider: .data(image), name: "image", fileName: "\(dialog.title).jpg", mimeType: "image/jpg")
                 multiPartFormData.append(image)
             }
             
-            let year = String(answer.year).data(using: .utf8) ?? Data()
-            let month = String(answer.month).data(using: .utf8) ?? Data()
-            let day = String(answer.day).data(using: .utf8) ?? Data()
+            let year = String(dialog.year).data(using: .utf8) ?? Data()
+            let month = String(dialog.month).data(using: .utf8) ?? Data()
+            let day = String(dialog.day).data(using: .utf8) ?? Data()
             
-            let currentDate = answer.currentDate.data(using: .utf8) ?? Data()
+            let currentDate = dialog.currentDate.data(using: .utf8) ?? Data()
             
             multiPartFormData.append(MultipartFormData(provider: .data(year), name: "year"))
             multiPartFormData.append(MultipartFormData(provider: .data(month), name: "month"))
             multiPartFormData.append(MultipartFormData(provider: .data(day), name: "day"))
             multiPartFormData.append(MultipartFormData(provider: .data(currentDate), name: "currentDate"))
             
-            let questions = answer.questions
-            let answers = answer.answers
+            let questions = dialog.questions
+            let answers = dialog.answers
             
 //            var questionsData : [Data] = []
 //            var answersData : [Data] = []
@@ -94,7 +94,7 @@ extension TimeTravelService: BaseTargetType {
     
     var headers: [String : String]? {
         return ["Content-Type": "multipart/form-data",
-                "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJkNTAyMWEyNDEzM2E4OTU3M2YzODM3In0sImlhdCI6MTY1ODEzNzc5MywiZXhwIjoxNjU4MTQxMzkzfQ.QnA-RGbY3GNHR6rggla6a5tlFolh-bBjbNgtDXzW6Tk"]
+                "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJkNTAyMWEyNDEzM2E4OTU3M2YzODM3In0sImlhdCI6MTY1ODE2NjQwNCwiZXhwIjoxNjU4MTcwMDA0fQ.NmPXwlvWf-hMmvn-DTOxTDKfQf_BxoR9NnH2GMSoUFI"]
     }
 }
 

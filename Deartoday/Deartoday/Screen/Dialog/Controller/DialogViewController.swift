@@ -212,7 +212,7 @@ final class DialogViewController: UIViewController {
                 }
             }
         } else {
-            TimeTravelAPI.shared.postAnswers(answer: TimeTravelAnswerRequest(timeTravelTitle ?? "",
+            TimeTravelAPI.shared.postAnswers(dialog: TimeTravelAnswerRequest(timeTravelTitle ?? "",
                                                                              photoImage,
                                                                              Int(year) ?? 0,
                                                                              Int(month) ?? 0,

@@ -15,6 +15,7 @@ struct URLConstant {
     
     // MARK: - Auth
     
+    static let login = "/auth/login/APPLE"
     
     // MARK: - Main
     
@@ -24,6 +25,11 @@ struct URLConstant {
     
     static let oldMedia = "/timeTravel/oldMedia"
     static let question = "/timeTravel/question"
-    static let answer = "/timeTravel"
+    static let dialog = "/timeTravel"
+
+    // MARK: - Check Time Travel + Message
+    
+    static let timeTravel = "/timeTravel"
+    static let answers = "/timeTravel/answers"
 }
     
