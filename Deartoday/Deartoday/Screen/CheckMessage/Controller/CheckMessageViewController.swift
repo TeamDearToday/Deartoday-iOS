@@ -92,6 +92,7 @@ final class CheckMessageViewController: UIViewController {
     private func setDataSource() {
         dataSource = UICollectionViewDiffableDataSource<MessageSection, MessageDataModel>(collectionView: collectionView, cellProvider: { (collectionView: UICollectionView, indexPath: IndexPath, identifier: MessageDataModel) -> UICollectionViewCell? in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MessageCollectionViewCell.identifier, for: indexPath) as? MessageCollectionViewCell else { return UICollectionViewCell() }
+            cell.setData(content: self.messages[indexPath.item].message)
             return cell
         })
     }
