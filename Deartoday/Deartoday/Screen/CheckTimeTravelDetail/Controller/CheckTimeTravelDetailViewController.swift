@@ -111,4 +111,21 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (section == 0) ? 1 : 7
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            guard let headerView = collectionView
+                .dequeueReusableSupplementaryView(ofKind: kind,
+                                                  withReuseIdentifier: TimeTravelInfoView.identifier,
+                                                  for: indexPath) as? TimeTravelInfoView else { return UICollectionReusableView() }
+            //data 잘 설정
+            headerView.timeTravelToLabel.text = "e.e.e."
+            headerView.timeTravelFromLabel.text = "d.d.d"
+            headerView.timeTravelTitleLabel.text = "제목은 어쩔티비"
+            return headerView
+        default:
+            assert(false, "not section header")
+        }
+    }
 }

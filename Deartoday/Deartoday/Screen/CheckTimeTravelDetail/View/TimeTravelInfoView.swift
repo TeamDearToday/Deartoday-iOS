@@ -15,7 +15,7 @@ final class TimeTravelInfoView: UICollectionReusableView {
     
     // MARK: - UI Property
     
-    private let timeTravelToLabel = UILabel().then {
+    let timeTravelToLabel = UILabel().then {
         $0.textColor = .blue02
         $0.font = .h0
         $0.text = "1999.04.19"
@@ -26,13 +26,13 @@ final class TimeTravelInfoView: UICollectionReusableView {
         $0.tintColor = .gray01
     }
     
-    private let timeTravelFromLabel = UILabel().then {
+    let timeTravelFromLabel = UILabel().then {
         $0.textColor = .gray01
         $0.font = .caption0
         $0.text = "1995.12.30"
     }
     
-    private let timeTravelTitleLabel = UILabel().then {
+    let timeTravelTitleLabel = UILabel().then {
         $0.textColor = .darkGray00
         $0.font = .h2
         $0.numberOfLines = 0
