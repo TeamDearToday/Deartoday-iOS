@@ -611,7 +611,6 @@
 		92DB354E28756413001E2006 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				9803F3E22885E08900A5A239 /* CheckTimeTravelDetail */,
 				4ADAB7E7288507830049C465 /* Login */,
 				9803F3C428848B2D00A5A239 /* CheckTimeTravel */,
 				9803F3B228847C8900A5A239 /* Main */,
@@ -817,6 +816,7 @@
 			isa = PBXGroup;
 			children = (
 				9803F3C528848B4100A5A239 /* CheckTimeTravelResponse.swift */,
+				9803F3E52885E0AD00A5A239 /* CheckTimeTravelDetailResponse.swift */,
 			);
 			path = CheckTimeTravel;
 			sourceTree = "<group>";
@@ -849,14 +849,6 @@
 			isa = PBXGroup;
 			children = (
 				9803F3E02885E06F00A5A239 /* CheckTimeTravelDetailService.swift */,
-			);
-			path = CheckTimeTravelDetail;
-			sourceTree = "<group>";
-		};
-		9803F3E22885E08900A5A239 /* CheckTimeTravelDetail */ = {
-			isa = PBXGroup;
-			children = (
-				9803F3E52885E0AD00A5A239 /* CheckTimeTravelDetailResponse.swift */,
 			);
 			path = CheckTimeTravelDetail;
 			sourceTree = "<group>";
