@@ -47,6 +47,11 @@ final class InitialViewController: UIViewController {
         authorizationController.delegate = self
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
+        
+        guard let mainViewController = UIStoryboard(name: Constant.Storyboard.Main, bundle: nil).instantiateViewController(withIdentifier: "MainNavigationController") as? MainNavigationController else { return }
+        mainViewController.modalPresentationStyle = .fullScreen
+        mainViewController.modalTransitionStyle = .crossDissolve
+        present(mainViewController, animated: true)
     }
     
     // MARK: - Custom Method
