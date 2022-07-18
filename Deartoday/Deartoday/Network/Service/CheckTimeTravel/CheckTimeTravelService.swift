@@ -9,6 +9,7 @@ import Moya
 
 enum CheckTimeTravelService {
     case checkTimeTravel
+    case checkTimeTravelDetail(timeTravelId: String)
 }
 
 extension CheckTimeTravelService: BaseTargetType {
@@ -16,18 +17,21 @@ extension CheckTimeTravelService: BaseTargetType {
         switch self {
         case .checkTimeTravel:
             return URLConstant.timeTravel
+        case .checkTimeTravelDetail(let timeTravelId):
+            return "\(URLConstant.timeTravel)/\(timeTravelId)"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        default: return .get
+        case .checkTimeTravel, .checkTimeTravelDetail(_):
+            return .get
         }
     }
     
     var task: Task {
         switch self {
-        case .checkTimeTravel:
+        case .checkTimeTravel, .checkTimeTravelDetail(_):
             return .requestPlain
         }
     }
