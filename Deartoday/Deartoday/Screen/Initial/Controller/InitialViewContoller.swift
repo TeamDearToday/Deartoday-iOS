@@ -57,16 +57,9 @@ final class InitialViewController: UIViewController {
         backgroundView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
-        if getDeviceHeight() == 667 {
-            logoImageView.snp.makeConstraints {
-                $0.leading.equalToSuperview().inset(68)
-                $0.top.equalToSuperview().inset(190)
-            }
-        } else {
-            logoImageView.snp.makeConstraints {
-                $0.leading.equalToSuperview().inset(68)
-                $0.top.equalToSuperview().inset(258)
-            }
+        logoImageView.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(68)
+            $0.top.equalToSuperview().inset(getDeviceHeight() == 667 ? 190 : 258)
         }
         appleLoginButton.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(16)
