@@ -7,11 +7,17 @@
 
 import UIKit
 
-class TimeTravelLastAnswerCollectionViewCell: UICollectionViewCell {
+final class TimeTravelLastAnswerCollectionViewCell: UICollectionViewCell {
 
+    static let identifier = "TimeTravelLastAnswerCollectionViewCell"
+    
+    // MARK: - Property
+    // MARK: - UI Property
+    // MARK: - Life Cycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
+    
+    // MARK: - Custom Method
 }
