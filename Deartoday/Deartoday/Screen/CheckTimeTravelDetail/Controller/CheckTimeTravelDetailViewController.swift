@@ -71,11 +71,14 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
         }
         else {
             if indexPath.item == 6 {
-                //마지막 한마디 셀
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TimeTravelLastAnswerCollectionViewCell.identifier, for: indexPath) as? TimeTravelLastAnswerCollectionViewCell else { return UICollectionViewCell() }
+                //last answer data setting 넣기
                 return UICollectionViewCell()
             }
             else {
                 //대화 셀
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TimeTravelChatCollectionViewCell.identifier, for: indexPath) as? TimeTravelChatCollectionViewCell else { return UICollectionViewCell() }
+                //chat 관련 data setting 넣기
                 return UICollectionViewCell()
             }
         }
