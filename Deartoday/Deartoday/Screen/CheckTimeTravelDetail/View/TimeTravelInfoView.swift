@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TimeTravelInfoView: UIView {
+final class TimeTravelInfoView: UICollectionReusableView {
 
     // MARK: - Property
     
