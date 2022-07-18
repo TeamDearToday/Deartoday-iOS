@@ -78,7 +78,6 @@
 		9803F3D2288548AF00A5A239 /* TimeTravelLastAnswerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9803F3D0288548AF00A5A239 /* TimeTravelLastAnswerCollectionViewCell.xib */; };
 		9803F3D52885950F00A5A239 /* CheckMessageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3D42885950F00A5A239 /* CheckMessageAPI.swift */; };
 		9803F3D82885953B00A5A239 /* CheckMessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3D72885953B00A5A239 /* CheckMessageService.swift */; };
-		9803F3DE2885E04000A5A239 /* CheckTimeTravelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3DD2885E04000A5A239 /* CheckTimeTravelAPI.swift */; };
 		9803F3E62885E0AD00A5A239 /* CheckTimeTravelDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3E52885E0AD00A5A239 /* CheckTimeTravelDetailResponse.swift */; };
 		984099E62881F3FB00025092 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 984099E52881F3FB00025092 /* splash.json */; };
 		984099E92881F4A700025092 /* sound_box.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 984099E82881F4A700025092 /* sound_box.mp3 */; };
@@ -193,7 +192,6 @@
 		9803F3D0288548AF00A5A239 /* TimeTravelLastAnswerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeTravelLastAnswerCollectionViewCell.xib; sourceTree = "<group>"; };
 		9803F3D42885950F00A5A239 /* CheckMessageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessageAPI.swift; sourceTree = "<group>"; };
 		9803F3D72885953B00A5A239 /* CheckMessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessageService.swift; sourceTree = "<group>"; };
-		9803F3DD2885E04000A5A239 /* CheckTimeTravelAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelAPI.swift; sourceTree = "<group>"; };
 		9803F3E52885E0AD00A5A239 /* CheckTimeTravelDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelDetailResponse.swift; sourceTree = "<group>"; };
 		984099E52881F3FB00025092 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 		984099E82881F4A700025092 /* sound_box.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_box.mp3; sourceTree = "<group>"; };
@@ -583,7 +581,6 @@
 		92DB354C28756404001E2006 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				9803F3DC2885E02900A5A239 /* CheckTImeTravelDetail */,
 				9803F3D32885950000A5A239 /* CheckMessage */,
 				4ADAB7E12885046F0049C465 /* Login */,
 				9803F3BE28848A9A00A5A239 /* CheckTimeTravel */,
@@ -832,14 +829,6 @@
 				9803F3D72885953B00A5A239 /* CheckMessageService.swift */,
 			);
 			path = CheckMessage;
-			sourceTree = "<group>";
-		};
-		9803F3DC2885E02900A5A239 /* CheckTImeTravelDetail */ = {
-			isa = PBXGroup;
-			children = (
-				9803F3DD2885E04000A5A239 /* CheckTimeTravelAPI.swift */,
-			);
-			path = CheckTImeTravelDetail;
 			sourceTree = "<group>";
 		};
 		984099E72881F47100025092 /* Sound */ = {
@@ -1187,7 +1176,6 @@
 				9803F3C82885397D00A5A239 /* PastImageCollectionViewCell.swift in Sources */,
 				92DB356C2875658F001E2006 /* UIView+.swift in Sources */,
 				92CC3BA2287D62C400EA5617 /* VirtualSpaceDataModel.swift in Sources */,
-				9803F3DE2885E04000A5A239 /* CheckTimeTravelAPI.swift in Sources */,
 				923C69B5287810DE00B8EC56 /* UITextField+.swift in Sources */,
 				9803F3C628848B4100A5A239 /* CheckTimeTravelResponse.swift in Sources */,
 				92DB358428756B67001E2006 /* BaseTargetType.swift in Sources */,
