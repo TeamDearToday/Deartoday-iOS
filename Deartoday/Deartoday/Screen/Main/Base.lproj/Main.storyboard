@@ -88,7 +88,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="btnCircleBasic"/>
                                                 <connections>
-                                                    <action selector="checkMessageButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lCi-z9-1n0"/>
+                                                    <action selector="checkMessageButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j56-o2-LFj"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TgA-8j-2gh">
@@ -113,7 +113,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="btnCircleBasic"/>
                                                 <connections>
-                                                    <action selector="checkTimeTravelButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MJl-F8-aVT"/>
+                                                    <action selector="checkTimeTravelButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xhh-v9-KR6"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="7kC-Da-iAq">
