@@ -15,6 +15,7 @@ struct URLConstant {
     
     // MARK: - Auth
     
+    static let login = "/auth/login/APPLE"
     
     // MARK: - Main
     
