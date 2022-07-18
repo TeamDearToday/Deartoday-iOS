@@ -10,7 +10,6 @@ import UIKit
 
 import SnapKit
 import Then
-import SwiftUI
 
 final class InitialViewController: UIViewController {
     // MARK: - Property

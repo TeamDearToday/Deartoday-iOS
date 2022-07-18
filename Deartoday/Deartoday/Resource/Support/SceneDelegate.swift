@@ -14,10 +14,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 //        Codebase file 확인 코드 - 추후 삭제
-        guard let scene = (scene as? UIWindowScene) else { return }
-        self.window = UIWindow(windowScene: scene)
-        self.window?.rootViewController = InitialViewController()
-        self.window?.makeKeyAndVisible()
+//        guard let scene = (scene as? UIWindowScene) else { return }
+//        self.window = UIWindow(windowScene: scene)
+//        self.window?.rootViewController = InitialViewController()
+//        self.window?.makeKeyAndVisible()
         
 //        Default function
         guard let _ = (scene as? UIWindowScene) else { return }
