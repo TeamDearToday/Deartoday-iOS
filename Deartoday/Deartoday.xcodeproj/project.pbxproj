@@ -65,6 +65,7 @@
 		9803F3C028848AAA00A5A239 /* CheckTimeTravelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3BF28848AAA00A5A239 /* CheckTimeTravelAPI.swift */; };
 		9803F3C328848B0F00A5A239 /* CheckTimeTravelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3C228848B0F00A5A239 /* CheckTimeTravelService.swift */; };
 		9803F3C628848B4100A5A239 /* CheckTimeTravelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3C528848B4100A5A239 /* CheckTimeTravelResponse.swift */; };
+		9803F3C82885397D00A5A239 /* PastImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3C72885397D00A5A239 /* PastImageCollectionViewCell.swift */; };
 		984099E62881F3FB00025092 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 984099E52881F3FB00025092 /* splash.json */; };
 		984099E92881F4A700025092 /* sound_box.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 984099E82881F4A700025092 /* sound_box.mp3 */; };
 		984099EB2881F4CD00025092 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984099EA2881F4CD00025092 /* Sound.swift */; };
@@ -165,6 +166,7 @@
 		9803F3BF28848AAA00A5A239 /* CheckTimeTravelAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelAPI.swift; sourceTree = "<group>"; };
 		9803F3C228848B0F00A5A239 /* CheckTimeTravelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelService.swift; sourceTree = "<group>"; };
 		9803F3C528848B4100A5A239 /* CheckTimeTravelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelResponse.swift; sourceTree = "<group>"; };
+		9803F3C72885397D00A5A239 /* PastImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		984099E52881F3FB00025092 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 		984099E82881F4A700025092 /* sound_box.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_box.mp3; sourceTree = "<group>"; };
 		984099EA2881F4CD00025092 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
@@ -673,6 +675,7 @@
 		9803F3A728846AA600A5A239 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9803F3C72885397D00A5A239 /* PastImageCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1066,6 +1069,7 @@
 				4A44EEFB28807DC00062420E /* PlayTapeOnboardingViewController.swift in Sources */,
 				98D912A5287D3B0D0088A7F9 /* DeartodayAlertViewController.swift in Sources */,
 				92DB356A28756577001E2006 /* DDSTextField.swift in Sources */,
+				9803F3C82885397D00A5A239 /* PastImageCollectionViewCell.swift in Sources */,
 				92DB356C2875658F001E2006 /* UIView+.swift in Sources */,
 				92CC3BA2287D62C400EA5617 /* VirtualSpaceDataModel.swift in Sources */,
 				923C69B5287810DE00B8EC56 /* UITextField+.swift in Sources */,
