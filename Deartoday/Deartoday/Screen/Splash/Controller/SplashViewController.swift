@@ -45,7 +45,7 @@ final class SplashViewController: UIViewController {
         
         soundOnImageView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(6)
-            (getDeviceHeight() == 667) ? $0.bottom.equalToSuperview().inset(70) : $0.bottom.equalToSuperview().inset(90)
+            $0.bottom.equalToSuperview().inset(getDeviceHeight() == 667 ? 70 : 90 )
         }
         
     }
