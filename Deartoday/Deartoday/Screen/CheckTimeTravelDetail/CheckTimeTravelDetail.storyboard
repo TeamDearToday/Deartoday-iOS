@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--CheckT Ime TravelD-->
+        <!--Check Time Travel Detail View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="CheckTImeTravelViewController" id="Y6W-OH-hqX" customClass="CheckTImeTravelD" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CheckTimeTravelDetailViewController" id="Y6W-OH-hqX" customClass="CheckTimeTravelDetailViewController" customModule="Deartoday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
