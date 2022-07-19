@@ -7,13 +7,26 @@
 
 import UIKit
 
+import Kingfisher
+
 final class PastImageCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "PastImageCollectionViewCell"
+
+    // MARK: - UI Property
+    
+    @IBOutlet weak var pastImageView: UIImageView!
+    
+    // MARK: - Life Cycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setUI()
     }
-
+    
+    // MARK: - Custom Method
+    
+    private func setUI() {
+        pastImageView.layer.cornerRadius = 8
+    }
 }
