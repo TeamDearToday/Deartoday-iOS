@@ -328,6 +328,10 @@ final class TimeTravelViewController: UIViewController {
                 virtualSpaceViewController.month = self.month
                 virtualSpaceViewController.day = self.day
                 
+                if let text = self.timeTravelView.titleTextField.text {
+                    virtualSpaceViewController.timeTravelTitle = text
+                }
+                
                 virtualSpaceViewController.selectedImage = self.selectedImage
                 
                 self.present(virtualSpaceViewController, animated: true)

@@ -25,6 +25,8 @@
 		924814AF287EB53A001177B1 /* DialogMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924814AE287EB53A001177B1 /* DialogMessageView.swift */; };
 		924814B1287EB5CC001177B1 /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924814B0287EB5CC001177B1 /* DialogViewController.swift */; };
 		926C7E2028847E1700C0D3B4 /* TimeTravelQuestionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926C7E1F28847E1700C0D3B4 /* TimeTravelQuestionResponse.swift */; };
+		926C7E222884A1C400C0D3B4 /* TimeTravelAnswerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926C7E212884A1C400C0D3B4 /* TimeTravelAnswerRequest.swift */; };
+		926C7E242884A2BC00C0D3B4 /* TimeTravelAnswerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926C7E232884A2BC00C0D3B4 /* TimeTravelAnswerResponse.swift */; };
 		928A8A6B2875FB7C000D4E99 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 928A8A6A2875FB7C000D4E99 /* GoogleService-Info.plist */; };
 		92C27EA72884455700077FA3 /* TimeTravelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C27EA62884455700077FA3 /* TimeTravelResponse.swift */; };
 		92C27EA92884459300077FA3 /* TimeTravelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C27EA82884459300077FA3 /* TimeTravelService.swift */; };
@@ -127,6 +129,8 @@
 		924814AE287EB53A001177B1 /* DialogMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogMessageView.swift; sourceTree = "<group>"; };
 		924814B0287EB5CC001177B1 /* DialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
 		926C7E1F28847E1700C0D3B4 /* TimeTravelQuestionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelQuestionResponse.swift; sourceTree = "<group>"; };
+		926C7E212884A1C400C0D3B4 /* TimeTravelAnswerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelAnswerRequest.swift; sourceTree = "<group>"; };
+		926C7E232884A2BC00C0D3B4 /* TimeTravelAnswerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelAnswerResponse.swift; sourceTree = "<group>"; };
 		928A8A6A2875FB7C000D4E99 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		92C27EA62884455700077FA3 /* TimeTravelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelResponse.swift; sourceTree = "<group>"; };
 		92C27EA82884459300077FA3 /* TimeTravelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelService.swift; sourceTree = "<group>"; };
@@ -388,6 +392,8 @@
 			children = (
 				92C27EA62884455700077FA3 /* TimeTravelResponse.swift */,
 				926C7E1F28847E1700C0D3B4 /* TimeTravelQuestionResponse.swift */,
+				926C7E212884A1C400C0D3B4 /* TimeTravelAnswerRequest.swift */,
+				926C7E232884A2BC00C0D3B4 /* TimeTravelAnswerResponse.swift */,
 			);
 			path = TimeTravel;
 			sourceTree = "<group>";
@@ -1100,6 +1106,7 @@
 				98BFBCCF2879B85400F01F04 /* UIFont+.swift in Sources */,
 				92CC3BA6287D633600EA5617 /* VirtualSpaceCollectionViewCell.swift in Sources */,
 				92DB357A28756A61001E2006 /* URLConstant.swift in Sources */,
+				926C7E222884A1C400C0D3B4 /* TimeTravelAnswerRequest.swift in Sources */,
 				4A45D380287F2BF800592749 /* LetterOnboardingViewController.swift in Sources */,
 				92DB356E287565AC001E2006 /* UIScreen+.swift in Sources */,
 				98B4B5AA287EB54600F4AD7A /* ViewController.swift in Sources */,
@@ -1114,6 +1121,7 @@
 				92DB358428756B67001E2006 /* BaseTargetType.swift in Sources */,
 				98A4750F287DECF7008891F5 /* CheckTImeTravelDataModel.swift in Sources */,
 				92DB35332875633D001E2006 /* SceneDelegate.swift in Sources */,
+				926C7E242884A2BC00C0D3B4 /* TimeTravelAnswerResponse.swift in Sources */,
 				92CC3BA4287D62DE00EA5617 /* VirtualSpaceViewController.swift in Sources */,
 				92DB357C28756A8F001E2006 /* NetworkResult.swift in Sources */,
 				92C27EA92884459300077FA3 /* TimeTravelService.swift in Sources */,
