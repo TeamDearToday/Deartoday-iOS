@@ -7,23 +7,25 @@
 
 import UIKit
 
-class CheckTimeTravelDetailViewController: UIViewController {
+final class CheckTimeTravelDetailViewController: UIViewController {
 
+    // MARK: - Property
+    // MARK: - UI Property
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
-    */
-
+    
+    // MARK: - Custom Method
+    
+    // MARK: - IBAction
+    
+    @IBAction func backButtonDidTap(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
 }
