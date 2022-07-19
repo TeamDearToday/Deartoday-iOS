@@ -38,6 +38,8 @@ final class CheckTimeTravelDetailViewController: UIViewController {
     }
     
     private func setCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
         registerXib()
     }
     
@@ -60,5 +62,48 @@ final class CheckTimeTravelDetailViewController: UIViewController {
     
     @IBAction func backButtonDidTap(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension CheckTimeTravelDetailViewController: UICollectionViewDelegate {
+    
+}
+
+// MARK: - UICollectionViewDataSource
+
+extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 9
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        switch indexPath.item {
+        case 0:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PastImageCollectionViewCell.identifier, for: indexPath) as? PastImageCollectionViewCell else { return UICollectionViewCell() }
+            //set data
+            return cell
+        case 1:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TravelInfoCollectionViewCell.identifier, for: indexPath) as? TravelInfoCollectionViewCell else { return UICollectionViewCell() }
+            //set data
+            return cell
+        case 8:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TravelAnswerCollectionViewCell.identifier, for: indexPath) as? TravelAnswerCollectionViewCell else { return UICollectionViewCell() }
+            //set data (마지막 말)
+            return cell
+        default:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TravelChatCollectionViewCell.identifier, for: indexPath) as? TravelChatCollectionViewCell else { return UICollectionViewCell() }
+            //set data (채팅에 맞는!)
+            return cell
+        }
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension CheckTimeTravelDetailViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 16
     }
 }
