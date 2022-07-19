@@ -44,12 +44,16 @@ final class CheckTimeTravelDetailViewController: UIViewController {
     private func registerXib() {
         let pastImageXib = UINib(nibName: PastImageCollectionViewCell.identifier, bundle: nil)
         let infoXib = UINib(nibName: TravelInfoCollectionViewCell.identifier, bundle: nil)
+        let chatXib = UINib(nibName: TravelChatCollectionViewCell.identifier, bundle: nil)
         let answerXib = UINib(nibName: TravelAnswerCollectionViewCell.identifier, bundle: nil)
-        let lastXib = UINib(nibName: TravelLastCollectionViewCell.identifier, bundle: nil)
-        collectionView.register(pastImageXib, forCellWithReuseIdentifier: PastImageCollectionViewCell.identifier)
-        collectionView.register(infoXib, forCellWithReuseIdentifier: TravelInfoCollectionViewCell.identifier)
-        collectionView.register(answerXib, forCellWithReuseIdentifier: TravelAnswerCollectionViewCell.identifier)
-        collectionView.register(lastXib, forCellWithReuseIdentifier: TravelLastCollectionViewCell.identifier)
+        collectionView.register(pastImageXib,
+                                forCellWithReuseIdentifier: PastImageCollectionViewCell.identifier)
+        collectionView.register(infoXib,
+                                forCellWithReuseIdentifier: TravelInfoCollectionViewCell.identifier)
+        collectionView.register(chatXib,
+                                forCellWithReuseIdentifier: TravelChatCollectionViewCell.identifier)
+        collectionView.register(answerXib,
+                                forCellWithReuseIdentifier: TravelAnswerCollectionViewCell.identifier)
     }
     
     // MARK: - IBAction
