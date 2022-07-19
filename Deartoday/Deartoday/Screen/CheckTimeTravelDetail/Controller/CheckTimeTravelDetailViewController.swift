@@ -11,10 +11,16 @@ final class CheckTimeTravelDetailViewController: UIViewController {
 
     // MARK: - Property
     // MARK: - UI Property
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUI()
+        setCollectionView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -22,6 +28,29 @@ final class CheckTimeTravelDetailViewController: UIViewController {
     }
     
     // MARK: - Custom Method
+    
+    private func setUI() {
+        setLabelUI()
+    }
+    
+    private func setLabelUI() {
+        titleLabel.font = .btn0
+    }
+    
+    private func setCollectionView() {
+        registerXib()
+    }
+    
+    private func registerXib() {
+        let pastImageXib = UINib(nibName: PastImageCollectionViewCell.identifier, bundle: nil)
+        let infoXib = UINib(nibName: TravelInfoCollectionViewCell.identifier, bundle: nil)
+        let answerXib = UINib(nibName: TravelAnswerCollectionViewCell.identifier, bundle: nil)
+        let lastXib = UINib(nibName: TravelLastCollectionViewCell.identifier, bundle: nil)
+        collectionView.register(pastImageXib, forCellWithReuseIdentifier: PastImageCollectionViewCell.identifier)
+        collectionView.register(infoXib, forCellWithReuseIdentifier: TravelInfoCollectionViewCell.identifier)
+        collectionView.register(answerXib, forCellWithReuseIdentifier: TravelAnswerCollectionViewCell.identifier)
+        collectionView.register(lastXib, forCellWithReuseIdentifier: TravelLastCollectionViewCell.identifier)
+    }
     
     // MARK: - IBAction
     

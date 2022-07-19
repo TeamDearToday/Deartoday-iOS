@@ -6,6 +6,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -48,6 +49,26 @@
                                     <constraint firstItem="dMx-Ti-gy7" firstAttribute="leading" secondItem="gWr-r0-lZc" secondAttribute="trailing" id="mcu-T7-HmG"/>
                                 </constraints>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kjo-GV-Lwo">
+                                <rect key="frame" x="16" y="116" width="382" height="780"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PhX-pg-2oi">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0Ni-P5-Nmz">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ufe-km-w13">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -55,8 +76,16 @@
                             <constraint firstItem="rlm-1g-J9g" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="2A9-xm-vQn"/>
                             <constraint firstItem="rlm-1g-J9g" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="2Xj-Zo-bAl"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rlm-1g-J9g" secondAttribute="trailing" id="A8s-PO-kiv"/>
+                            <constraint firstAttribute="bottom" secondItem="Kjo-GV-Lwo" secondAttribute="bottom" id="CsL-Lz-Q8b"/>
+                            <constraint firstItem="Kjo-GV-Lwo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="EVd-z5-aZV"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Kjo-GV-Lwo" secondAttribute="trailing" constant="16" id="qhv-sD-L4e"/>
+                            <constraint firstItem="Kjo-GV-Lwo" firstAttribute="top" secondItem="rlm-1g-J9g" secondAttribute="bottom" id="vCZ-NS-Zkr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Kjo-GV-Lwo" id="6Oy-ll-fVp"/>
+                        <outlet property="titleLabel" destination="dMx-Ti-gy7" id="flQ-SU-RN4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,6 +102,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
