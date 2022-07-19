@@ -78,6 +78,7 @@ final class VirtualSpaceViewController: UIViewController {
         $0.setImage(Constant.Image.icExit, for: .normal)
         $0.setImage(Constant.Image.icExit, for: .highlighted)
         $0.tintColor = .yellow02
+        $0.addTarget(self, action: #selector(exitButtonDidTap), for: .touchUpInside)
     }
     
     private var textBoxImageView = UIImageView().then {
@@ -139,7 +140,10 @@ final class VirtualSpaceViewController: UIViewController {
     // MARK: - @objc
     
     @objc func exitButtonDidTap() {
-        
+        let dearTodayAlertViewController = DeartodayAlertViewController()
+        dearTodayAlertViewController.modalTransitionStyle = .crossDissolve
+        dearTodayAlertViewController.modalPresentationStyle = .overCurrentContext
+        present(dearTodayAlertViewController, animated: true)
     }
     
     @objc func nextButtonDidTap() {
@@ -177,6 +181,7 @@ final class VirtualSpaceViewController: UIViewController {
                           yearBackView,
                           monthBackView,
                           dayBackView,
+                          exitButton,
                           textBoxImageView,
                           mediaCollectionView,
                           nextButton])
@@ -216,6 +221,12 @@ final class VirtualSpaceViewController: UIViewController {
             $0.snp.makeConstraints {
                 $0.centerX.centerY.equalToSuperview()
             }
+        }
+        
+        exitButton.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(14)
+            $0.trailing.equalToSuperview().inset(16)
+            $0.width.height.equalTo(44)
         }
         
         textBoxImageView.snp.makeConstraints {
