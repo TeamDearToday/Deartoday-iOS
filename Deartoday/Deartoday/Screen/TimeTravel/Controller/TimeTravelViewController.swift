@@ -38,6 +38,9 @@ final class TimeTravelViewController: UIViewController {
     
     private var selectedImage = UIImage()
     
+    private var playTapeNumber: Int?
+    private var playerSound = AVAudioPlayer()
+    
     // MARK: - UI Property
     
     private var backImageView = UIImageView().then {
@@ -246,6 +249,17 @@ final class TimeTravelViewController: UIViewController {
             self.timeTravelView.titleTextField.alpha = 0
             self.returnButton.alpha = 0
         } completion: { _ in
+            let url = Bundle.main.url(forResource: Constant.Sound.sound_player, withExtension: "mp3")
+            if let url = url {
+                do {
+                    self.playerSound = try AVAudioPlayer(contentsOf: url)
+                    self.playerSound.prepareToPlay()
+                    self.playerSound.play()
+                } catch {
+                    print(error)
+                }
+            }
+            
             UIView.animate(withDuration: 0.5, delay: 0.3, options: .curveEaseOut) {
                 self.timeTravelView.alpha = 0
                 self.coverView.alpha = 0
