@@ -107,11 +107,12 @@ final class DialogViewController: UIViewController {
     
     private var dayLabel = UILabel()
     
-    private var exitButton = UIButton().then {
+    private lazy var exitButton = UIButton().then {
         $0.setTitle("", for: .normal)
         $0.setImage(Constant.Image.icExit, for: .normal)
         $0.setImage(Constant.Image.icExit, for: .highlighted)
         $0.tintColor = .yellow02
+        $0.addTarget(self, action: #selector(exitButtonDidTap), for: .touchUpInside)
     }
     
     private var guideLabel = UILabel().then {
@@ -180,7 +181,7 @@ final class DialogViewController: UIViewController {
     // MARK: - @objc
     
     @objc func exitButtonDidTap() {
-        dismiss(animated: true)
+        print("대화 끝")
     }
     
     @objc func nextButtonDidTap(_ sender: DDSButton) {
@@ -188,13 +189,17 @@ final class DialogViewController: UIViewController {
             hideNarrationLabel(guideLabel) { }
             hideButton(nextButton) {
                 self.guideText = "당신에게 궁금한게 많은지 이것저것 질문을 합니다."
-                self.showPastView(self.pastMessageView) {
-                    self.guideText = ""
-                    self.nextButton.text = "응, 좋아!"
-                    self.showButton(self.nextButton) { }
+                self.showNarrationLabel(self.guideLabel) {
+                    self.hideNarrationLabel(self.guideLabel) {
+                        self.nextButton.text = "응, 좋아!"
+                        self.showPastView(self.pastMessageView) {
+                            self.guideText = ""
+                            self.showButton(self.nextButton) { }
+                        }
+                    }
                 }
             }
-        } else if sender.text == "응, 좋아!"{
+        } else if sender.text == "응, 좋아!" {
             hidePastView(self.pastMessageView) { }
             hideButton(self.nextButton) {
                 self.pastMessageView.dialogText = """
