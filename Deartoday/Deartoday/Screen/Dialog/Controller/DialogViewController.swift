@@ -212,19 +212,20 @@ final class DialogViewController: UIViewController {
                 }
             }
         } else {
-            TimeTravelAPI.shared.postAnswers(dialog: TimeTravelAnswerRequest(timeTravelTitle ?? "",
-                                                                             photoImage,
-                                                                             Int(year) ?? 0,
-                                                                             Int(month) ?? 0,
-                                                                             Int(day) ?? 0,
-                                                                             dateFormatter.string(from: Date()),
-                                                                             questions ,
-                                                                             answers)) { answerData, err in
+            TimeTravelAPI.shared.postAnswers(dialog: TimeTravelAnswerRequest(title: timeTravelTitle ?? "",
+                                                                             year: Int(year) ?? 0,
+                                                                             month: Int(month) ?? 0,
+                                                                             day: Int(day) ?? 0,
+                                                                             currentDate: "\(year).\(month).\(day)",
+                                                                             questions: questions,
+                                                                             answers: answers),
+                                             image: photoImage ?? UIImage()) { answerData, err in
                 guard let answerData = answerData else {
                     return
                 }
                 print(answerData.message)
             }
+            
             view.window?.rootViewController?.dismiss(animated: true)
         }
     }

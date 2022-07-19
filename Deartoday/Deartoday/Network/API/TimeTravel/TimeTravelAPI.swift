@@ -57,8 +57,8 @@ final class TimeTravelAPI {
         }
     }
     
-    public func postAnswers(dialog: TimeTravelAnswerRequest, completion: @escaping ((GeneralResponse<TimeTravelAnswerResponse>?, Int?) -> ())) {
-        timeTravelProvider.request(.dialog(dialog: dialog)) { result in
+    public func postAnswers(dialog: TimeTravelAnswerRequest, image: UIImage, completion: @escaping ((GeneralResponse<TimeTravelAnswerResponse>?, Int?) -> ())) {
+        timeTravelProvider.request(.dialog(dialog: dialog, image: image)) { result in
             switch result {
             case .success(let response):
                 do {
