@@ -239,7 +239,10 @@ final class TimeTravelViewController: UIViewController {
     // MARK: - @objc
     
     @objc func exitButtonDidTap() {
-        dismiss(animated: true)
+        let dearTodayAlertViewController = DeartodayAlertViewController()
+        dearTodayAlertViewController.modalTransitionStyle = .crossDissolve
+        dearTodayAlertViewController.modalPresentationStyle = .overCurrentContext
+        present(dearTodayAlertViewController, animated: true)
     }
     
     @objc func returnButtonDidTap() {

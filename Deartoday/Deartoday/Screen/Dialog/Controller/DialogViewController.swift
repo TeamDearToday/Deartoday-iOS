@@ -181,7 +181,10 @@ final class DialogViewController: UIViewController {
     // MARK: - @objc
     
     @objc func exitButtonDidTap() {
-        print("대화 끝")
+        let dearTodayAlertViewController = DeartodayAlertViewController()
+        dearTodayAlertViewController.modalTransitionStyle = .crossDissolve
+        dearTodayAlertViewController.modalPresentationStyle = .overCurrentContext
+        present(dearTodayAlertViewController, animated: true)
     }
     
     @objc func nextButtonDidTap(_ sender: DDSButton) {
