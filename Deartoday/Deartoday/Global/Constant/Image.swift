@@ -81,5 +81,7 @@ extension Constant {
         // MARK: - 시간여행 확인
         ///image
         static let imgTapeBundle = UIImage(named: "imgTapeBundle")!
+        static let imgTextBoxPast = UIImage(named: "imgTextBoxPast")!
+        static let imgTextBoxPresent = UIImage(named: "imgTextBoxPresent")!
     }
 }
