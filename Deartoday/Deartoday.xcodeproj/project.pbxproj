@@ -73,7 +73,8 @@
 		98245CE3288699A6007821FA /* CheckTimeTravelDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98245CE2288699A6007821FA /* CheckTimeTravelDetail.storyboard */; };
 		98245CE728869A0A007821FA /* CheckTimeTravelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98245CE628869A0A007821FA /* CheckTimeTravelDetailViewController.swift */; };
 		98245CE928869B08007821FA /* CheckTimeTravelDetailDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98245CE828869B08007821FA /* CheckTimeTravelDetailDataModel.swift */; };
-		98245CEB28869B23007821FA /* CheckTimeTravelDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98245CEA28869B23007821FA /* CheckTimeTravelDetailView.swift */; };
+		98245CF028869CCB007821FA /* PastImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98245CEE28869CCB007821FA /* PastImageCollectionViewCell.swift */; };
+		98245CF128869CCB007821FA /* PastImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98245CEF28869CCB007821FA /* PastImageCollectionViewCell.xib */; };
 		984099E62881F3FB00025092 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 984099E52881F3FB00025092 /* splash.json */; };
 		984099E92881F4A700025092 /* sound_box.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 984099E82881F4A700025092 /* sound_box.mp3 */; };
 		984099EB2881F4CD00025092 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984099EA2881F4CD00025092 /* Sound.swift */; };
@@ -182,7 +183,8 @@
 		98245CE2288699A6007821FA /* CheckTimeTravelDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckTimeTravelDetail.storyboard; sourceTree = "<group>"; };
 		98245CE628869A0A007821FA /* CheckTimeTravelDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelDetailViewController.swift; sourceTree = "<group>"; };
 		98245CE828869B08007821FA /* CheckTimeTravelDetailDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelDetailDataModel.swift; sourceTree = "<group>"; };
-		98245CEA28869B23007821FA /* CheckTimeTravelDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelDetailView.swift; sourceTree = "<group>"; };
+		98245CEE28869CCB007821FA /* PastImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		98245CEF28869CCB007821FA /* PastImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PastImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		984099E52881F3FB00025092 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 		984099E82881F4A700025092 /* sound_box.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_box.mp3; sourceTree = "<group>"; };
 		984099EA2881F4CD00025092 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
@@ -803,7 +805,8 @@
 		98245CE028869995007821FA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				98245CEA28869B23007821FA /* CheckTimeTravelDetailView.swift */,
+				98245CEE28869CCB007821FA /* PastImageCollectionViewCell.swift */,
+				98245CEF28869CCB007821FA /* PastImageCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1031,6 +1034,7 @@
 				4A706264287C079F00140315 /* Onboarding.storyboard in Resources */,
 				98245CE3288699A6007821FA /* CheckTimeTravelDetail.storyboard in Resources */,
 				9858B3D1288097B000860439 /* MessageCollectionViewCell.xib in Resources */,
+				98245CF128869CCB007821FA /* PastImageCollectionViewCell.xib in Resources */,
 				98D912C8287DC30F0088A7F9 /* CheckMessage.storyboard in Resources */,
 				98BFBCC72879B68600F01F04 /* Pretendard-Medium.otf in Resources */,
 				98BFBCC12879B66A00F01F04 /* GmarketSansBold.otf in Resources */,
@@ -1122,7 +1126,6 @@
 				9803F3A0288465C600A5A239 /* MainNavigationController.swift in Sources */,
 				4ADAB7E028846CD60049C465 /* InitialViewContoller.swift in Sources */,
 				9803F3B728847D0900A5A239 /* MainService.swift in Sources */,
-				98245CEB28869B23007821FA /* CheckTimeTravelDetailView.swift in Sources */,
 				98A47513287DED14008891F5 /* CheckTimeTravelViewController.swift in Sources */,
 				92DB3570287565E4001E2006 /* UILabel+.swift in Sources */,
 				98B4B5B1287EC93B00F4AD7A /* TimeTapeTableViewCell.swift in Sources */,
@@ -1150,6 +1153,7 @@
 				4A45D380287F2BF800592749 /* LetterOnboardingViewController.swift in Sources */,
 				92DB356E287565AC001E2006 /* UIScreen+.swift in Sources */,
 				98B4B5AA287EB54600F4AD7A /* ViewController.swift in Sources */,
+				98245CF028869CCB007821FA /* PastImageCollectionViewCell.swift in Sources */,
 				98D912D2287DC3590088A7F9 /* CheckMessageDataModel.swift in Sources */,
 				4A44EEFB28807DC00062420E /* PlayTapeOnboardingViewController.swift in Sources */,
 				98D912A5287D3B0D0088A7F9 /* DeartodayAlertViewController.swift in Sources */,
