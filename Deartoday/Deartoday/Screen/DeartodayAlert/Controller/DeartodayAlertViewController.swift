@@ -50,7 +50,7 @@ final class DeartodayAlertViewController: UIViewController {
         $0.backgroundColor = .glassGray
     }
     
-    private let cancelButton = UIButton().then {
+    private lazy var cancelButton = UIButton().then {
         $0.backgroundColor = .clear
         $0.setTitle("", for: .normal)
         $0.setTitleColor(.darkGray00, for: .normal)
@@ -58,7 +58,7 @@ final class DeartodayAlertViewController: UIViewController {
         $0.addTarget(self, action: #selector(denyButtonDidTap), for: .touchUpInside)
     }
     
-    private let confirmButton = UIButton().then {
+    private lazy var confirmButton = UIButton().then {
         $0.backgroundColor = .clear
         $0.setTitle("", for: .normal)
         $0.setTitleColor(.blue02, for: .normal)
@@ -76,9 +76,11 @@ final class DeartodayAlertViewController: UIViewController {
     // MARK: - @objc
     
     @objc private func denyButtonDidTap() {
+        view.window?.rootViewController?.dismiss(animated: true)
     }
     
     @objc private func okButtonDidTap() {
+        dismiss(animated: true)
     }
     
     // MARK: - Custom Method
