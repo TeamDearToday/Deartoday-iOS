@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        Codebase file 확인 코드 - 추후 삭제
 //        guard let scene = (scene as? UIWindowScene) else { return }
 //        self.window = UIWindow(windowScene: scene)
-//        self.window?.rootViewController = InitialViewController()
+//        self.window?.rootViewController = SplashViewController()
 //        self.window?.makeKeyAndVisible()
         
 //        Default function

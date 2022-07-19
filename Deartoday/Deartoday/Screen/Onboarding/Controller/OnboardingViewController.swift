@@ -102,19 +102,21 @@ final class OnboardingViewController: UIViewController {
     }
     
     private func setFirstAnimation() {
-        UIView.animate(withDuration: 0.5, delay: 0.5, animations: {
-            self.labelCollection[0].transform = CGAffineTransform(translationX: 0, y: -16)
-            self.labelCollection[0].alpha = 1
-        }, completion: { _ in
-            UIView.animate(withDuration: 0.5, delay: 0.5, animations: {
-                self.labelCollection[1].transform = CGAffineTransform(translationX: 0, y: -16)
-                self.labelCollection[1].alpha = 1
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.labelCollection[0].transform = CGAffineTransform(translationX: 0, y: -16)
+                self.labelCollection[0].alpha = 1
             }, completion: { _ in
-                UIView.animate(withDuration: 0.3, delay: 0.3, animations: {
-                    self.nextButton.alpha = 1
-                }, completion: nil )
+                UIView.animate(withDuration: 0.5, delay: 0.5, animations: {
+                    self.labelCollection[1].transform = CGAffineTransform(translationX: 0, y: -16)
+                    self.labelCollection[1].alpha = 1
+                }, completion: { _ in
+                    UIView.animate(withDuration: 0.3, delay: 0.3, animations: {
+                        self.nextButton.alpha = 1
+                    }, completion: nil )
+                })
             })
-        })
+        }
     }
     
     private func setSecondAnimation() {

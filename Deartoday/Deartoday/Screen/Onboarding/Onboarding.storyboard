@@ -358,6 +358,9 @@
                                 <rect key="frame" x="109" y="683" width="240" height="68"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="디어투데이 시작하기" backgroundImage="btnSmallPresent"/>
+                                <connections>
+                                    <action selector="startLoginButtonDidTap:" destination="y6z-ac-w72" eventType="touchUpInside" id="Sel-v5-FKV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aQg-fa-XZj"/>

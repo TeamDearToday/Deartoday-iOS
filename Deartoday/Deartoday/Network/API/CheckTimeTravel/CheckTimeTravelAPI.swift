@@ -10,9 +10,11 @@ import Moya
 final class CheckTimeTravelAPI {
     static let shared: CheckTimeTravelAPI = CheckTimeTravelAPI()
     private let checkTimeTravelProvider = MoyaProvider<CheckTimeTravelService>(plugins: [MoyaLoggingPlugin()])
+    private let checkTimeTravelDetailProvider = MoyaProvider<CheckTimeTravelService>(plugins: [MoyaLoggingPlugin()])
     private init() { }
     
     public private(set) var checkTimeTravelData: GeneralResponse<CheckTimeTravelResponse>?
+    public private(set) var checkTimeTravelDetailData: GeneralResponse<CheckTimeTravelDetailResponse>?
     
     // MARK: - GET
     
@@ -35,5 +37,25 @@ final class CheckTimeTravelAPI {
             }
         }
         
+    }
+    
+    func getTimeTravelDetail(timeTravelId: String, completion: @escaping ((GeneralResponse<CheckTimeTravelDetailResponse>?) -> ())) {
+        checkTimeTravelDetailProvider.request(.checkTimeTravelDetail(timeTravelId: timeTravelId)) { result in
+            switch result {
+            case .success(let response):
+                do {
+                    self.checkTimeTravelDetailData = try response.map(GeneralResponse<CheckTimeTravelDetailResponse>?.self)
+                    guard let checkTimeTravelDetailData = self.checkTimeTravelDetailData else {
+                        return
+                    }
+                    completion(checkTimeTravelDetailData)
+                } catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+                completion(nil)
+            }
+        }
     }
 }

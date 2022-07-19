@@ -120,6 +120,13 @@ final class LetterOnboardingViewController: UIViewController {
         }
     }
     
+    @IBAction func startLoginButtonDidTap(_ sender: UIButton) {
+        let initialViewController = InitialViewController()
+        initialViewController.modalTransitionStyle = .crossDissolve
+        initialViewController.modalPresentationStyle = .fullScreen
+        present(initialViewController, animated: true)
+    }
+    
     // MARK: - Animation function
     
     private func setFirstComponentsAnimation() {

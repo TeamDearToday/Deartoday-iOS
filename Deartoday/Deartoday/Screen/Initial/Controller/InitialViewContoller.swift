@@ -47,6 +47,11 @@ final class InitialViewController: UIViewController {
         authorizationController.delegate = self
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
+        
+        guard let mainViewController = UIStoryboard(name: Constant.Storyboard.Main, bundle: nil).instantiateViewController(withIdentifier: "MainNavigationController") as? MainNavigationController else { return }
+        mainViewController.modalPresentationStyle = .fullScreen
+        mainViewController.modalTransitionStyle = .crossDissolve
+        present(mainViewController, animated: true)
     }
     
     // MARK: - Custom Method
@@ -57,20 +62,13 @@ final class InitialViewController: UIViewController {
         backgroundView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
-        if getDeviceHeight() == 667 {
-            logoImageView.snp.makeConstraints {
-                $0.leading.equalToSuperview().inset(68)
-                $0.top.equalToSuperview().inset(190)
-            }
-        } else {
-            logoImageView.snp.makeConstraints {
-                $0.leading.equalToSuperview().inset(68)
-                $0.top.equalToSuperview().inset(258)
-            }
+        logoImageView.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(68)
+            $0.top.equalToSuperview().inset(getDeviceHeight() == 667 ? 190 : 258)
         }
         appleLoginButton.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(16)
-            $0.top.equalTo(logoImageView.snp.bottom).inset(10)
+            $0.top.equalTo(logoImageView.snp.bottom).offset(10)
         }
     }
 }

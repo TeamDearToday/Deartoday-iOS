@@ -39,30 +39,11 @@ final class PlayTapeOnboardingViewController: UIViewController {
     @objc func circleButtonDidTap() {
         hideComponentsUI()
         
-        let tapeLottieView = AnimationView(name: Constant.Lottie.tape)
-        tapeLottieView.frame = self.view.bounds
-        tapeLottieView.center = self.view.center
-        tapeLottieView.contentMode = .scaleAspectFit
-        self.view.addSubview(tapeLottieView)
-        tapeLottieView.play()
-        
-        let url = Bundle.main.url(forResource: Constant.Sound.sound_player, withExtension: ".mp3")
-        if let url = url {
-            do {
-                playerSound = try AVAudioPlayer(contentsOf: url)
-                playerSound.prepareToPlay()
-                playerSound.play()
-            } catch {
-                print("error")
-            }
-        }
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4) {
-            guard let letterOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.LetterOnboarding) as? LetterOnboardingViewController else { return }
-            letterOnboarding.modalTransitionStyle = .crossDissolve
-            letterOnboarding.modalPresentationStyle = .overFullScreen
-            letterOnboarding.letterNumber = 2
-            self.present(letterOnboarding, animated: true)
-        }
+        guard let letterOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.LetterOnboarding) as? LetterOnboardingViewController else { return }
+        letterOnboarding.modalTransitionStyle = .crossDissolve
+        letterOnboarding.modalPresentationStyle = .overFullScreen
+        letterOnboarding.letterNumber = 2
+        present(letterOnboarding, animated: true)
     }
     
     // MARK: - Custom Method
