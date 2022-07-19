@@ -7,8 +7,10 @@
 
 import UIKit
 
-class PastImageCollectionViewCell: UICollectionViewCell {
+final class PastImageCollectionViewCell: UICollectionViewCell {
 
+    static let identifier = "PastImageCollectionViewCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

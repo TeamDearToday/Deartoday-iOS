@@ -7,8 +7,10 @@
 
 import UIKit
 
-class TravelLastCollectionViewCell: UICollectionViewCell {
+final class TravelLastCollectionViewCell: UICollectionViewCell {
 
+    static let identifier = "TravelLastCollectionViewCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

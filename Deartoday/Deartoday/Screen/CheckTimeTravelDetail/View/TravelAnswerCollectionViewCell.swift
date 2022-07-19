@@ -7,7 +7,9 @@
 
 import UIKit
 
-class TravelAnswerCollectionViewCell: UICollectionViewCell {
+final class TravelAnswerCollectionViewCell: UICollectionViewCell {
+    
+    static let identifier = "TravelAnswerCollectionViewCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()
