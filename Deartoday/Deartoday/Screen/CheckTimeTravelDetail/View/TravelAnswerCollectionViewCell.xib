@@ -42,8 +42,8 @@
                                     <constraint firstAttribute="width" constant="272" id="i3j-hV-6SD"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="잘 살아라 화이팅 너 앞으로 그러케 살지 말" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0a-QT-vgH">
-                                <rect key="frame" x="16" y="73.5" width="311" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="잘 살아라 화이팅 너 앞으로 그러케 살지 말랄고ㄴㅏㅓ저너ㅓㅣㅓㅔ개ㅎ;ㅓㅣㅎㅎㅎㄴ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0a-QT-vgH">
+                                <rect key="frame" x="16" y="65.5" width="311" height="33.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="311" id="HjX-v4-PP6"/>
                                 </constraints>
