@@ -21,5 +21,6 @@ extension Constant {
         
         ///시간여행 확인
         static let CheckTimeTravel = "CheckTimeTravel"
+        static let CheckTimeTravelDetail = "CheckTimeTravelDetail"
     }
 }

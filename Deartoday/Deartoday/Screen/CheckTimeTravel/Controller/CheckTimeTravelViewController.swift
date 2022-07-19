@@ -63,6 +63,7 @@ final class CheckTimeTravelViewController: UIViewController {
     }
     
     private func setTableView() {
+        tableView.delegate = self
         registerXib()
         setTableViewUI()
     }
@@ -114,6 +115,17 @@ final class CheckTimeTravelViewController: UIViewController {
     
     @IBAction func backButtonDidTap(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension CheckTimeTravelViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let detail = UIStoryboard(name: Constant.Storyboard.CheckTimeTravelDetail, bundle: nil)
+            .instantiateViewController(withIdentifier: Constant.ViewController.CheckTimeTravelDetail) as? CheckTimeTravelDetailViewController else { return }
+        detail.timeTravelID = timeTapes[indexPath.item].timeTravelID
+        navigationController?.pushViewController(detail, animated: true)
     }
 }
 
