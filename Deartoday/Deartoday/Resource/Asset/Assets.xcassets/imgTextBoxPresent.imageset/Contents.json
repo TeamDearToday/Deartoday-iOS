@@ -5,14 +5,17 @@
       "idiom" : "universal",
       "resizing" : {
         "cap-insets" : {
-          "bottom" : 19,
-          "top" : 19
+          "bottom" : 27,
+          "left" : 19,
+          "right" : 19,
+          "top" : 26
         },
         "center" : {
           "height" : 1,
-          "mode" : "tile"
+          "mode" : "tile",
+          "width" : 1
         },
-        "mode" : "3-part-vertical"
+        "mode" : "9-part"
       },
       "scale" : "1x"
     },
@@ -21,14 +24,17 @@
       "idiom" : "universal",
       "resizing" : {
         "cap-insets" : {
-          "bottom" : 38,
-          "top" : 37
+          "bottom" : 54,
+          "left" : 38,
+          "right" : 38,
+          "top" : 53
         },
         "center" : {
           "height" : 1,
-          "mode" : "tile"
+          "mode" : "tile",
+          "width" : 1
         },
-        "mode" : "3-part-vertical"
+        "mode" : "9-part"
       },
       "scale" : "2x"
     },
@@ -37,14 +43,17 @@
       "idiom" : "universal",
       "resizing" : {
         "cap-insets" : {
-          "bottom" : 57,
-          "top" : 57
+          "bottom" : 81,
+          "left" : 58,
+          "right" : 58,
+          "top" : 80
         },
         "center" : {
           "height" : 1,
-          "mode" : "tile"
+          "mode" : "tile",
+          "width" : 1
         },
-        "mode" : "3-part-vertical"
+        "mode" : "9-part"
       },
       "scale" : "3x"
     }
