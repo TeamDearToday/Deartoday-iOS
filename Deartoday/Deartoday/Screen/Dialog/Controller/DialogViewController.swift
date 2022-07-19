@@ -59,6 +59,8 @@ final class DialogViewController: UIViewController {
         }
     }
     
+    internal var timeTravelTitle: String? = nil
+    
     private var canSendMessage: Bool = false {
         didSet {
             sendButton.isUserInteractionEnabled = canSendMessage ? true : false
@@ -67,11 +69,15 @@ final class DialogViewController: UIViewController {
     
     private var isTextViewEditing: Bool = false
     
-    private var questions: [String] = DialogDataModel.questions
-    private var lastMessage: [String] = DialogDataModel.lastMessage
-    private var answers = [String]()
+    private var questions = [String]()
+    private var lastMessage = [String]()
+    private var answers: [String] = ["", "", "", "", "", "", ""]
     
     private var count: Int = 0
+    
+    private let dateFormatter = DateFormatter().then {
+        $0.dateFormat = "yyyy.MM.dd"
+    }
     
     // MARK: - UI Property
     
@@ -206,12 +212,30 @@ final class DialogViewController: UIViewController {
                 }
             }
         } else {
+            TimeTravelAPI.shared.postAnswers(dialog: TimeTravelAnswerRequest(title: timeTravelTitle ?? "",
+                                                                             year: Int(year) ?? 0,
+                                                                             month: Int(month) ?? 0,
+                                                                             day: Int(day) ?? 0,
+                                                                             currentDate: "\(year).\(month).\(day)",
+                                                                             questions: questions,
+                                                                             answers: answers),
+                                             image: photoImage ?? UIImage()) { answerData, err in
+                guard let answerData = answerData else {
+                    return
+                }
+                print(answerData.message)
+            }
+            
             view.window?.rootViewController?.dismiss(animated: true)
         }
     }
     
     @objc func sendButtonDidTap() {
-        presentMessageView.dialogText = answerTextView.text
+        if let text = answerTextView.text {
+            presentMessageView.dialogText = text
+            answers[count] = text
+        }
+        
         setDialogMessageViewHeight()
         
         answerTextView.text = ""

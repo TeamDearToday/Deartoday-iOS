@@ -9,18 +9,18 @@ import Moya
 
 final class TimeTravelAPI {
     static let shared: TimeTravelAPI = TimeTravelAPI()
-    private let oldMediaProvider = MoyaProvider<TimeTravelService>(plugins: [MoyaLoggingPlugin()])
-    private let questionProvider = MoyaProvider<TimeTravelService>(plugins: [MoyaLoggingPlugin()])
+    private let timeTravelProvider = MoyaProvider<TimeTravelService>(plugins: [MoyaLoggingPlugin()])
     private init() { }
     
     public private(set) var oldMediaData: GeneralResponse<TimeTravelResponse>?
     public private(set) var questionData: GeneralResponse<TimeTravelQuestionResponse>?
-    
+    public private(set) var dialogData: GeneralResponse<TimeTravelAnswerResponse>?
+ 
     // MARK: - GET
     
     public func getOldMedia(year: Int,
                             completion: @escaping ((GeneralResponse<TimeTravelResponse>?, Int?) -> ())) {
-        oldMediaProvider.request(.oldMedia(year: year)) { result in
+        timeTravelProvider.request(.oldMedia(year: year)) { result in
             switch result {
             case .success(let response):
                 do {
@@ -39,7 +39,7 @@ final class TimeTravelAPI {
     }
     
     public func getQuestion(completion: @escaping ((GeneralResponse<TimeTravelQuestionResponse>?, Int?) -> ())) {
-        questionProvider.request(.question) { result in
+        timeTravelProvider.request(.question) { result in
             switch result {
             case .success(let response):
                 do {
@@ -47,6 +47,24 @@ final class TimeTravelAPI {
                     guard let questionData = self.questionData else { return }
                     completion(questionData, nil)
                     
+                } catch(let err) {
+                    print(err.localizedDescription, 500)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+                completion(nil, 500)
+            }
+        }
+    }
+    
+    public func postAnswers(dialog: TimeTravelAnswerRequest, image: UIImage, completion: @escaping ((GeneralResponse<TimeTravelAnswerResponse>?, Int?) -> ())) {
+        timeTravelProvider.request(.dialog(dialog: dialog, image: image)) { result in
+            switch result {
+            case .success(let response):
+                do {
+                    self.dialogData = try response.map(GeneralResponse<TimeTravelAnswerResponse>?.self)
+                    guard let dialogData = self.dialogData else { return }
+                    completion(dialogData, nil)
                 } catch(let err) {
                     print(err.localizedDescription, 500)
                 }
