@@ -77,6 +77,8 @@
 		98245CF128869CCB007821FA /* PastImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98245CEF28869CCB007821FA /* PastImageCollectionViewCell.xib */; };
 		98245CF428869D85007821FA /* TravelInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98245CF228869D85007821FA /* TravelInfoCollectionViewCell.swift */; };
 		98245CF528869D85007821FA /* TravelInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98245CF328869D85007821FA /* TravelInfoCollectionViewCell.xib */; };
+		98245CF828869DA6007821FA /* TravelAnswerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98245CF628869DA6007821FA /* TravelAnswerCollectionViewCell.swift */; };
+		98245CF928869DA6007821FA /* TravelAnswerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98245CF728869DA6007821FA /* TravelAnswerCollectionViewCell.xib */; };
 		984099E62881F3FB00025092 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 984099E52881F3FB00025092 /* splash.json */; };
 		984099E92881F4A700025092 /* sound_box.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 984099E82881F4A700025092 /* sound_box.mp3 */; };
 		984099EB2881F4CD00025092 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984099EA2881F4CD00025092 /* Sound.swift */; };
@@ -189,6 +191,8 @@
 		98245CEF28869CCB007821FA /* PastImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PastImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		98245CF228869D85007821FA /* TravelInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		98245CF328869D85007821FA /* TravelInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelInfoCollectionViewCell.xib; sourceTree = "<group>"; };
+		98245CF628869DA6007821FA /* TravelAnswerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelAnswerCollectionViewCell.swift; sourceTree = "<group>"; };
+		98245CF728869DA6007821FA /* TravelAnswerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelAnswerCollectionViewCell.xib; sourceTree = "<group>"; };
 		984099E52881F3FB00025092 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 		984099E82881F4A700025092 /* sound_box.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_box.mp3; sourceTree = "<group>"; };
 		984099EA2881F4CD00025092 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
@@ -813,6 +817,8 @@
 				98245CEF28869CCB007821FA /* PastImageCollectionViewCell.xib */,
 				98245CF228869D85007821FA /* TravelInfoCollectionViewCell.swift */,
 				98245CF328869D85007821FA /* TravelInfoCollectionViewCell.xib */,
+				98245CF628869DA6007821FA /* TravelAnswerCollectionViewCell.swift */,
+				98245CF728869DA6007821FA /* TravelAnswerCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1038,6 +1044,7 @@
 			files = (
 				98A4750A287DECCF008891F5 /* CheckTimeTravel.storyboard in Resources */,
 				4A706264287C079F00140315 /* Onboarding.storyboard in Resources */,
+				98245CF928869DA6007821FA /* TravelAnswerCollectionViewCell.xib in Resources */,
 				98245CE3288699A6007821FA /* CheckTimeTravelDetail.storyboard in Resources */,
 				9858B3D1288097B000860439 /* MessageCollectionViewCell.xib in Resources */,
 				98245CF128869CCB007821FA /* PastImageCollectionViewCell.xib in Resources */,
@@ -1128,6 +1135,7 @@
 				9803F3B428847C9100A5A239 /* MainResponse.swift in Sources */,
 				9803F3D82885953B00A5A239 /* CheckMessageService.swift in Sources */,
 				98245CF428869D85007821FA /* TravelInfoCollectionViewCell.swift in Sources */,
+				98245CF828869DA6007821FA /* TravelAnswerCollectionViewCell.swift in Sources */,
 				984099EB2881F4CD00025092 /* Sound.swift in Sources */,
 				92DB3562287564F3001E2006 /* MainView.swift in Sources */,
 				9803F3D52885950F00A5A239 /* CheckMessageAPI.swift in Sources */,
