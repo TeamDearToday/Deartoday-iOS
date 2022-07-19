@@ -82,7 +82,7 @@ extension TimeTravelService: BaseTargetType {
     
     var headers: [String : String]? {
         return ["Content-Type": "multipart/form-data",
-                "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJkMDE3ZDlmYmU5OTAyZDc4MDhmZDk5In0sImlhdCI6MTY1ODIxNTM4NywiZXhwIjoxNjU4MjE4OTg3fQ.5L__bqfAZ5rN1fq4xG_ApZ1PcL5l6djI9TZPlzexcys"]
+                "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJkMDE3ZDlmYmU5OTAyZDc4MDhmZDk5In0sImlhdCI6MTY1ODIxOTQ2NSwiZXhwIjoxNjU5NDI5MDY1fQ._MbCpp8PqnBM6y6J0OMjjrxMqGjLxBTFwpbPOtBAKX4"]
     }
 }
 
