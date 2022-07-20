@@ -27,6 +27,7 @@ final class CheckTimeTravelDetailViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setCollectionView()
+        getTravelInfo(timeTravelId: timeTravelID)
     }
     
     override func viewDidLayoutSubviews() {
@@ -56,6 +57,8 @@ final class CheckTimeTravelDetailViewController: UIViewController {
         let infoXib = UINib(nibName: TravelInfoCollectionViewCell.identifier, bundle: nil)
         let chatXib = UINib(nibName: TravelChatCollectionViewCell.identifier, bundle: nil)
         let answerXib = UINib(nibName: TravelAnswerCollectionViewCell.identifier, bundle: nil)
+        let pastXib = UINib(nibName: PastDialogCollectionViewCell.identifier, bundle: nil)
+        let presentXib = UINib(nibName: PresentDialogCollectionViewCell.identifier, bundle: nil)
         collectionView.register(pastImageXib,
                                 forCellWithReuseIdentifier: PastImageCollectionViewCell.identifier)
         collectionView.register(infoXib,
@@ -64,6 +67,10 @@ final class CheckTimeTravelDetailViewController: UIViewController {
                                 forCellWithReuseIdentifier: TravelChatCollectionViewCell.identifier)
         collectionView.register(answerXib,
                                 forCellWithReuseIdentifier: TravelAnswerCollectionViewCell.identifier)
+        collectionView.register(pastXib,
+                                forCellWithReuseIdentifier: PastDialogCollectionViewCell.identifier)
+        collectionView.register(presentXib,
+                                forCellWithReuseIdentifier: PresentDialogCollectionViewCell.identifier)
     }
     
     private func setCollectionViewLayout() {
