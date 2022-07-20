@@ -81,7 +81,14 @@ final class CheckTimeTravelDetailViewController: UIViewController {
 // MARK: - UICollectionViewDelegate
 
 extension CheckTimeTravelDetailViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        //todo : 높이 계산해서 넣기(지금 150은 허상임)
+        return (section == 0) ? .zero : CGSize(width: collectionView.frame.width, height: 150)
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return .zero
+    }
 }
 
 // MARK: - UICollectionViewDataSource
