@@ -27,6 +27,7 @@ final class MainViewController: UIViewController {
         setUI()
         setData()
         setDelegate()
+        setBackSwipeGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,6 +68,10 @@ final class MainViewController: UIViewController {
         messageCountLabelCollection.forEach {
             $0.text = count > 99 ? "99+" : "\(count)"
         }
+    }
+    
+    private func setBackSwipeGesture() {
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
     
     // MARK: - IBAction
