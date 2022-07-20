@@ -6,7 +6,7 @@
       "resizing" : {
         "cap-insets" : {
           "bottom" : 27,
-          "left" : 19,
+          "left" : 23,
           "right" : 19,
           "top" : 26
         },
@@ -25,7 +25,7 @@
       "resizing" : {
         "cap-insets" : {
           "bottom" : 54,
-          "left" : 38,
+          "left" : 42,
           "right" : 38,
           "top" : 53
         },
@@ -44,7 +44,7 @@
       "resizing" : {
         "cap-insets" : {
           "bottom" : 81,
-          "left" : 58,
+          "left" : 67,
           "right" : 58,
           "top" : 80
         },
