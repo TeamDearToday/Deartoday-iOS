@@ -9,8 +9,8 @@ import AVFoundation
 import UIKit
 
 import Lottie
-import Then
 import SnapKit
+import Then
 
 final class PlayTapeOnboardingViewController: UIViewController {
     
@@ -28,6 +28,14 @@ final class PlayTapeOnboardingViewController: UIViewController {
     @IBOutlet weak var circleButtonTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var circleButtonLeadingConstraint: NSLayoutConstraint!
     
+    var startPlayerButton = DDSButton().then {
+        $0.text = "플레이어 작동하기"
+        $0.hasLeftIcon = true
+        $0.style = .present
+        $0.alpha = 0
+        $0.addTarget(self, action: #selector(startButtonDidTap), for: .touchUpInside)
+    }
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -39,14 +47,6 @@ final class PlayTapeOnboardingViewController: UIViewController {
     }
     
     // MARK: - objc
-    
-    var startPlayerButton = DDSButton().then {
-        $0.text = "플레이어 작동하기"
-        $0.hasLeftIcon = true
-        $0.style = .present
-        $0.alpha = 0
-        $0.addTarget(self, action: #selector(startButtonDidTap), for: .touchUpInside)
-    }
     
     @objc func startButtonDidTap() {
         startPlayerButton.alpha = 0
@@ -68,11 +68,12 @@ final class PlayTapeOnboardingViewController: UIViewController {
                 print("error")
             }
         }
+        
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4) {
-        guard let letterOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.LetterOnboarding) as? LetterOnboardingViewController else { return }
-        letterOnboarding.modalTransitionStyle = .crossDissolve
-        letterOnboarding.modalPresentationStyle = .overFullScreen
-        letterOnboarding.letterNumber = 4
+            guard let letterOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.LetterOnboarding) as? LetterOnboardingViewController else { return }
+            letterOnboarding.modalTransitionStyle = .crossDissolve
+            letterOnboarding.modalPresentationStyle = .overFullScreen
+            letterOnboarding.letterNumber = 4
             self.present(letterOnboarding, animated: true)
         }
     }
