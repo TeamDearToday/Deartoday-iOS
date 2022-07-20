@@ -88,6 +88,7 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
         default:
             if indexPath.item == 12 {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TravelAnswerCollectionViewCell.identifier, for: indexPath) as? TravelAnswerCollectionViewCell else { return UICollectionViewCell() }
+                cell.setData(answer: dialogs.count == 0 ? "" : dialogs[6].answer)
                 return cell
             }
             else if indexPath.item % 2 == 0 {
@@ -123,7 +124,7 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
 
 extension CheckTimeTravelDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
+        return UIEdgeInsets(top: 0, left: 0, bottom: (section == 0 ? 20 : 0), right: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
