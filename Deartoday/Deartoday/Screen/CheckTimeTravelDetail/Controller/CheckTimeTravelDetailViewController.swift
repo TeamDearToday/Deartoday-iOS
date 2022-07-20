@@ -134,6 +134,21 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
             }
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            guard let headerView = collectionView
+                .dequeueReusableSupplementaryView(ofKind: kind,
+                                                  withReuseIdentifier: TravelInfoCollectionReusableView.identifier,
+                                                  for: indexPath) as? TravelInfoCollectionReusableView else { return UICollectionReusableView() }
+            headerView.titleLabel.text = ""
+            headerView.pastDateLabel.text = ""
+            headerView.writtenDateLabel.text = ""
+            return headerView
+        default: assert(false, "not section header")
+        }
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
