@@ -38,6 +38,7 @@ final class TravelAnswerCollectionViewCell: UICollectionViewCell {
     }
     
     private func updateUI() {
+        contentLabel.sizeToFit()
         contentImageViewWidthConstraint.constant = contentLabel.frame.width + 32
         contentImageVIewHeightConstraint.constant = contentLabel.frame.height + 28
     }
