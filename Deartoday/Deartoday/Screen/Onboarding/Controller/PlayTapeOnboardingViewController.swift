@@ -26,6 +26,7 @@ final class PlayTapeOnboardingViewController: UIViewController {
     @IBOutlet weak var tapeButton: UIButton!
     @IBOutlet var circleCollection: [UIView]!
     @IBOutlet weak var circleButtonTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var circleButtonLeadingConstraint: NSLayoutConstraint!
     
     // MARK: - Life Cycle
     
@@ -122,14 +123,14 @@ final class PlayTapeOnboardingViewController: UIViewController {
     }
     
     private func setLayout() {
-//        circleButtonTopConstraint.constant = (getDeviceWidth() == 667 ? 155 : 190)
         view.addSubview(startPlayerButton)
         
         startPlayerButton.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(6)
             $0.bottom.equalToSuperview().inset(36)
         }
-        circleButtonTopConstraint.constant = (getDeviceHeight() == 667 ? 135 : 180)
+        circleButtonTopConstraint.constant = ((getDeviceHeight() == 667) ? 140 : (getDeviceHeight() == 844) ? 195 : 185)
+        circleButtonLeadingConstraint.constant = (getDeviceHeight() == 884) ? 168 : 158
     }
     
     // MARK: IBAction
