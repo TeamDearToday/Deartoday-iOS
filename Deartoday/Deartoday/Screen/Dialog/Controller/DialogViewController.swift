@@ -79,6 +79,16 @@ final class DialogViewController: UIViewController {
         $0.dateFormat = "yyyy.MM.dd"
     }
     
+    private var reactions: [String] = ["그런 생각을 했었구나.",
+                                       "그래서 이때로 돌아오고 싶었구나.\n정말 잘 왔어!",
+                                       "있잖아,\n지금까지는 그 당시의 너의 생각을 들려줬었다면,\n이제부터는 지금 이 순간의 너의 생각이 궁금해.",
+                                       "오.. 그렇구나!",
+                                       "혹시 이런 말 들어본 적 있어?\n‘좋았다면 추억, 나빴다면 경험’이라는 말이 있듯이,",
+                                       "우리가 살아가면서 겪게 되는 어떤 순간이든 \n시간이 지나고 다시 생각해보면\n그때는 알지 못했던 새로운 부분을 발견할 수 있는 것 같아.",
+                                       "좋은 말이야.\n너에게 마지막으로 궁금한 게 있어.",
+                                       "답해줘서 고마워.\n오늘 너랑 이렇게 이야기할 수 있어서 정말 좋았어.",
+                                       "너가 이때로 다시 한 번 돌아가고 싶다고 생각한 만큼,\n나도 최선을 다해서 나의 오늘을 살아갈게."]
+    
     // MARK: - UI Property
     
     private var backgroundImageView = UIImageView().then {
@@ -250,8 +260,9 @@ final class DialogViewController: UIViewController {
         sendButton.isEnabled = false
         
         count += 1
+        print(count)
         switch count {
-        case 0, 1, 2, 3, 4, 5:
+        case 1:
             hidePastView(pastMessageView) {
                 self.showPresentView(self.presentMessageView) {
                     self.sendButton.isEnabled = false
@@ -265,20 +276,153 @@ final class DialogViewController: UIViewController {
                     }
                 }
             }
+        case 2:
+            hidePastView(pastMessageView) {
+                self.showPresentView(self.presentMessageView) {
+                    self.sendButton.isEnabled = false
+                    self.hidePresentView(self.presentMessageView) {
+                        self.pastMessageView.dialogText = self.reactions[0]
+                        self.setDialogMessageViewHeight()
+                        
+                        self.showPastView(self.pastMessageView) {
+                            self.hidePastView(self.pastMessageView) {
+                                self.pastMessageView.dialogText = self.questions[self.count]
+                                self.setDialogMessageViewHeight()
+                                
+                                self.showPastView(self.pastMessageView) {
+                                    self.sendButton.isEnabled = true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        case 3:
+            hidePastView(pastMessageView) {
+                self.showPresentView(self.presentMessageView) {
+                    self.sendButton.isEnabled = false
+                    self.hidePresentView(self.presentMessageView) {
+                        self.pastMessageView.dialogText = self.reactions[1]
+                        self.setDialogMessageViewHeight()
+                        
+                        self.showPastView(self.pastMessageView) {
+                            self.hidePastView(self.pastMessageView) {
+                                
+                                self.pastMessageView.dialogText = self.reactions[2]
+                                self.setDialogMessageViewHeight()
+                                
+                                self.showPastView(self.pastMessageView) {
+                                    self.hidePastView(self.pastMessageView) {
+                                        self.pastMessageView.dialogText = self.questions[self.count]
+                                        self.setDialogMessageViewHeight()
+                                        
+                                        self.showPastView(self.pastMessageView) {
+                                            self.sendButton.isEnabled = true
+                                        }
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        case 4:
+            hidePastView(pastMessageView) {
+                self.showPresentView(self.presentMessageView) {
+                    self.sendButton.isEnabled = false
+                    self.hidePresentView(self.presentMessageView) {
+                        self.pastMessageView.dialogText = self.reactions[3]
+                        self.setDialogMessageViewHeight()
+                        
+                        self.showPastView(self.pastMessageView) {
+                            self.hidePastView(self.pastMessageView) {
+                                
+                                self.pastMessageView.dialogText = self.reactions[4]
+                                self.setDialogMessageViewHeight()
+                                
+                                self.showPastView(self.pastMessageView) {
+                                    self.hidePastView(self.pastMessageView) {
+                                        
+                                        self.pastMessageView.dialogText = self.reactions[5]
+                                        self.setDialogMessageViewHeight()
+                                        
+                                        self.showPastView(self.pastMessageView) {
+                                            self.hidePastView(self.pastMessageView) {
+                                                self.pastMessageView.dialogText = self.questions[self.count]
+                                                self.setDialogMessageViewHeight()
+                                                
+                                                self.showPastView(self.pastMessageView) {
+                                                    self.sendButton.isEnabled = true
+                                                }
+                                            }
+                                        }
+                                       
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        case 5:
+            hidePastView(pastMessageView) {
+                self.showPresentView(self.presentMessageView) {
+                    self.sendButton.isEnabled = false
+                    self.hidePresentView(self.presentMessageView) {
+                        self.pastMessageView.dialogText = self.reactions[6]
+                        self.setDialogMessageViewHeight()
+                        
+                        self.showPastView(self.pastMessageView) {
+                            self.hidePastView(self.pastMessageView) {
+                                
+                                self.pastMessageView.dialogText = self.questions[self.count]
+                                self.setDialogMessageViewHeight()
+                                
+                                self.showPastView(self.pastMessageView) {
+                                    self.sendButton.isEnabled = true
+                                }
+                                
+                            }
+                        }
+                    }
+                }
+            }
         case 6:
             hidePastView(pastMessageView) {
                 self.showPresentView(self.presentMessageView) {
                     self.hidePresentView(self.presentMessageView) {
-                        self.guideText = "마지막으로,\n과거의 당신에게 꼭 해주고 싶은 말을 남기세요."
-                        self.guideLabel.snp.updateConstraints {
-                            $0.top.equalTo(self.view.safeAreaLayoutGuide).inset(300)
+                        
+                        self.pastMessageView.dialogText = self.reactions[7]
+                        self.setDialogMessageViewHeight()
+                        
+                        self.showPastView(self.pastMessageView) {
+                            self.hidePastView(self.pastMessageView) {
+                                
+                                self.pastMessageView.dialogText = self.reactions[8]
+                                self.setDialogMessageViewHeight()
+                                
+                                self.showPastView(self.pastMessageView) {
+                                    
+                                    self.hidePastView(self.pastMessageView) {
+                                        self.guideText = "마지막으로,\n과거의 당신에게 꼭 해주고 싶은 말을 남기세요."
+                                        self.guideLabel.snp.updateConstraints {
+                                            $0.top.equalTo(self.view.safeAreaLayoutGuide).inset(300)
+                                        }
+                                        
+                                        self.showNarrationLabel(self.guideLabel) {
+                                            self.presentMessageView.dialogText = self.answerTextView.text
+                                            self.setDialogMessageViewHeight()
+                                            self.sendButton.isEnabled = true
+                                        }
+                                    }
+                                    
+                                    
+                                }
+                            }
                         }
                         
-                        self.showNarrationLabel(self.guideLabel) {
-                            self.presentMessageView.dialogText = self.answerTextView.text
-                            self.setDialogMessageViewHeight()
-                            self.sendButton.isEnabled = true
-                        }
                     }
                 }
             }
