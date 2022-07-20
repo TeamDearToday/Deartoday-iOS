@@ -88,7 +88,7 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
         default:
             if indexPath.item == 12 {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TravelAnswerCollectionViewCell.identifier, for: indexPath) as? TravelAnswerCollectionViewCell else { return UICollectionViewCell() }
-                cell.setData(answer: dialogs.count == 0 ? "" : dialogs[6].answer)
+                cell.setData(answer: dialogs.count == 0 ? "" : "\(dialogs[6].answer)")
                 return cell
             }
             else if indexPath.item % 2 == 0 {
@@ -137,7 +137,7 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDelegateFlowLayou
             return CGSize(width: collectionView.frame.width,
                           height: collectionView.frame.width * ( 191 / 343 ))
         default:
-            return CGSize(width: collectionView.frame.width, height: 100)
+            return CGSize(width: collectionView.frame.width, height: 150)
         }
     }
 }

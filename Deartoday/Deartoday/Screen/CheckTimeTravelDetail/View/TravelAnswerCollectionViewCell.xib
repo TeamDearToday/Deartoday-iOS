@@ -84,7 +84,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="imgTextBoxPresent" width="38.5" height="54"/>
+        <image name="imgTextBoxPresent" width="40.5" height="54"/>
         <image name="rewind" width="22" height="22"/>
         <namedColor name="blue02">
             <color red="0.33300000429153442" green="0.56099998950958252" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

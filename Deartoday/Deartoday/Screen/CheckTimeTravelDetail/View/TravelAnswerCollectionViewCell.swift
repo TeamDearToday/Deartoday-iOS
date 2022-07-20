@@ -10,6 +10,10 @@ import UIKit
 final class TravelAnswerCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "TravelAnswerCollectionViewCell"
+    
+    // MARK: - Property
+    
+    private let deviceWidth = UIScreen.main.bounds.width
 
     // MARK: - UI Property
     
@@ -34,9 +38,8 @@ final class TravelAnswerCollectionViewCell: UICollectionViewCell {
     }
     
     private func updateUI() {
-        //image view height는 라벨의 현재 사이즈에 28 더하기
-        //width는 32 더하기
-        //label width 정해놓긴 했는데 안댈라나?
+        contentImageViewWidthConstraint.constant = contentLabel.frame.width + 32
+        contentImageVIewHeightConstraint.constant = contentLabel.frame.height + 28
     }
     
     func setData(answer: String) {
