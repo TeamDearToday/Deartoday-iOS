@@ -99,27 +99,32 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDelegate {
 
 extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (section == 0) ? 1 : 7
+        return (section == 0) ? 1 : 13
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch indexPath.item {
+        switch indexPath.section {
         case 0:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PastImageCollectionViewCell.identifier, for: indexPath) as? PastImageCollectionViewCell else { return UICollectionViewCell() }
-            //set data
-            return cell
-        case 1:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TravelInfoCollectionViewCell.identifier, for: indexPath) as? TravelInfoCollectionViewCell else { return UICollectionViewCell() }
-            //set data
-            return cell
-        case 8:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TravelAnswerCollectionViewCell.identifier, for: indexPath) as? TravelAnswerCollectionViewCell else { return UICollectionViewCell() }
-            //set data (마지막 말)
+            //set data (image string)
             return cell
         default:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TravelChatCollectionViewCell.identifier, for: indexPath) as? TravelChatCollectionViewCell else { return UICollectionViewCell() }
-            //set data (채팅에 맞는!)
-            return cell
+            if indexPath.item == 12 {
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TravelAnswerCollectionViewCell.identifier, for: indexPath) as? TravelAnswerCollectionViewCell else { return UICollectionViewCell() }
+                return cell
+            }
+            else if indexPath.item % 2 == 0 {
+                //과거 채팅 셀 설정
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PastDialogCollectionViewCell.identifier, for: indexPath) as? PastDialogCollectionViewCell else { return UICollectionViewCell() }
+                //set data (채팅에 맞는!)
+                return cell
+            }
+            else {
+                //현재 채팅 셀 설정
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PresentDialogCollectionViewCell.identifier, for: indexPath) as? PresentDialogCollectionViewCell else { return UICollectionViewCell() }
+                //set data (채팅에 맞는!)
+                return cell
+            }
         }
     }
 }
