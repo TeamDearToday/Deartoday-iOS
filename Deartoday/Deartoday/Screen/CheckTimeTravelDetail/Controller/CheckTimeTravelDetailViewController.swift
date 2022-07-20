@@ -10,8 +10,8 @@ import UIKit
 final class CheckTimeTravelDetailViewController: UIViewController {
 
     // MARK: - Property
-    
-    private var timeTravelID: String = ""
+
+    internal var timeTravelID: String = ""
     private var travelInfo: CheckTimeTravelDetailResponse?
     private var dialogs: [Message] = []
     
