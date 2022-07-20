@@ -91,15 +91,13 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
                 return cell
             }
             else if indexPath.item % 2 == 0 {
-                //과거 채팅 셀 설정
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PastDialogCollectionViewCell.identifier, for: indexPath) as? PastDialogCollectionViewCell else { return UICollectionViewCell() }
-                //set data (채팅에 맞는!)
+                cell.setData(content: dialogs.count == 0 ? "" : dialogs[indexPath.item/2].question)
                 return cell
             }
             else {
-                //현재 채팅 셀 설정
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PresentDialogCollectionViewCell.identifier, for: indexPath) as? PresentDialogCollectionViewCell else { return UICollectionViewCell() }
-                //set data (채팅에 맞는!)
+                cell.setData(content: dialogs.count == 0 ? "" : dialogs[indexPath.item/2].answer)
                 return cell
             }
         }
@@ -148,7 +146,7 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDelegateFlowLayou
 extension CheckTimeTravelDetailViewController {
     func getTravelInfo(timeTravelId: String) {
         CheckTimeTravelAPI.shared.getTimeTravelDetail(timeTravelId: timeTravelId) { response in
-            guard let info = response?.data else { return }
+            guard let info = response?.data as? CheckTimeTravelDetailResponse else { return }
             self.travelInfo = info
             self.dialogs = info.messages
             self.collectionView.reloadData()
