@@ -40,45 +40,12 @@ final class CheckTimeTravelDetailViewController: UIViewController {
         setLabelUI()
     }
     
-    private func setLabelUI() {
-        titleLabel.font = .btn0
-    }
-    
     private func setCollectionView() {
+        setCollectionViewLayout()
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.collectionViewLayout = collectionViewFlowLayout
         registerXib()
-        setCollectionViewLayout()
-    }
-    
-    private func registerXib() {
-        let pastImageXib = UINib(nibName: PastImageCollectionViewCell.identifier, bundle: nil)
-        let infoXib = UINib(nibName: TravelInfoCollectionViewCell.identifier, bundle: nil)
-        let chatXib = UINib(nibName: TravelChatCollectionViewCell.identifier, bundle: nil)
-        let answerXib = UINib(nibName: TravelAnswerCollectionViewCell.identifier, bundle: nil)
-        let pastXib = UINib(nibName: PastDialogCollectionViewCell.identifier, bundle: nil)
-        let presentXib = UINib(nibName: PresentDialogCollectionViewCell.identifier, bundle: nil)
-        collectionView.register(pastImageXib,
-                                forCellWithReuseIdentifier: PastImageCollectionViewCell.identifier)
-        collectionView.register(infoXib,
-                                forCellWithReuseIdentifier: TravelInfoCollectionViewCell.identifier)
-        collectionView.register(chatXib,
-                                forCellWithReuseIdentifier: TravelChatCollectionViewCell.identifier)
-        collectionView.register(answerXib,
-                                forCellWithReuseIdentifier: TravelAnswerCollectionViewCell.identifier)
-        collectionView.register(pastXib,
-                                forCellWithReuseIdentifier: PastDialogCollectionViewCell.identifier)
-        collectionView.register(presentXib,
-                                forCellWithReuseIdentifier: PresentDialogCollectionViewCell.identifier)
-        collectionView.register(TravelInfoCollectionReusableView.self,
-                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                withReuseIdentifier: TravelInfoCollectionReusableView.identifier)
-    }
-    
-    private func setCollectionViewLayout() {
-        collectionViewFlowLayout.scrollDirection = .vertical
-        collectionViewFlowLayout.sectionHeadersPinToVisibleBounds = true
     }
     
     // MARK: - IBAction
@@ -96,8 +63,8 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        //todo : 높이 계산해서 넣기(지금 150은 허상임)
-        return (section == 0) ? .zero : CGSize(width: collectionView.frame.width, height: 150)
+        //hedaer view 높이 73에 line height * line 수 만큼 곱하기
+        return (section == 0) ? .zero : CGSize(width: collectionView.frame.width, height: 73)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
@@ -145,9 +112,9 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
                 .dequeueReusableSupplementaryView(ofKind: kind,
                                                   withReuseIdentifier: TravelInfoCollectionReusableView.identifier,
                                                   for: indexPath) as? TravelInfoCollectionReusableView else { return UICollectionReusableView() }
-            headerView.titleLabel.text = ""
-            headerView.pastDateLabel.text = ""
-            headerView.writtenDateLabel.text = ""
+            headerView.titleLabel?.text = travelInfo?.title ?? ""
+            headerView.pastDateLabel?.text = "\(travelInfo?.year ?? 0).\(travelInfo?.month ?? 0).\(travelInfo?.day ?? 0)"
+            headerView.writtenDateLabel?.text = travelInfo?.writtenDate ?? ""
             return headerView
         default: assert(false, "not section header")
         }
@@ -157,6 +124,10 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension CheckTimeTravelDetailViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 16
     }
@@ -167,7 +138,7 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDelegateFlowLayou
             return CGSize(width: collectionView.frame.width,
                           height: collectionView.frame.width * ( 191 / 343 ))
         default:
-            return CGSize.zero
+            return CGSize(width: collectionView.frame.width, height: 100)
         }
     }
 }
