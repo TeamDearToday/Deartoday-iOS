@@ -10,6 +10,11 @@ import UIKit
 final class CheckTimeTravelDetailViewController: UIViewController {
 
     // MARK: - Property
+    
+    private var timeTravelID: String = ""
+    private var travelInfo: CheckTimeTravelDetailResponse?
+    private var dialogs: [Message] = []
+    
     // MARK: - UI Property
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -105,5 +110,17 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
 extension CheckTimeTravelDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 16
+    }
+}
+
+// MARK: - Network
+
+extension CheckTimeTravelDetailViewController {
+    func getTravelInfo(timeTravelId: String) {
+        CheckTimeTravelAPI.shared.getTimeTravelDetail(timeTravelId: timeTravelId) { response in
+            guard let info = response?.data else { return }
+            self.travelInfo = info
+            self.dialogs = info.messages
+        }
     }
 }
