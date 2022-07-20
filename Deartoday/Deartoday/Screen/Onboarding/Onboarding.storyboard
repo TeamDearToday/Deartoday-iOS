@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Ss-Ku-CoL">
     <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -228,13 +229,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="믿기지 않을 수 있지만, 나는 2023년의 너야! 너가 이 비디오테이프와 플레이어를 잘 발견했으면 좋겠다." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u50-oo-Mca">
-                                <rect key="frame" x="36" y="342" width="303" height="54"/>
+                                <rect key="frame" x="36" y="336" width="303" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M72-JX-Bhv" userLabel="왜냐하면 이거, 그냥 평범한 플레이어가 아니거든.">
-                                <rect key="frame" x="36" y="427" width="303" height="36"/>
+                                <rect key="frame" x="36" y="419" width="303" height="36"/>
                                 <string key="text">왜냐하면 이거,
 그냥 평범한 플레이어가 아니거든.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -242,7 +243,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uu1-la-CJ0">
-                                <rect key="frame" x="36" y="492.00000000000006" width="303" height="40.666666666666686"/>
+                                <rect key="frame" x="36" y="483" width="303" height="40.666666666666629"/>
                                 <string key="text">바로 시간 여행을 도와주는 플레이어야.
 나도 이 친구를 이용해서 너를 만나러 온 거야 :)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -261,20 +262,20 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우선 플레이어를 사용하는 방법을 알려줄게." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBd-iJ-FJM">
-                                <rect key="frame" x="36" y="203.66666666666666" width="303" height="20.333333333333343"/>
+                                <rect key="frame" x="36" y="205" width="303" height="20.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jzk-gP-Rii">
-                                <rect key="frame" x="36" y="248.66666666666663" width="303" height="122"/>
+                                <rect key="frame" x="36" y="258.66666666666669" width="303" height="122"/>
                                 <string key="text">1. 너가 돌아가고 싶은 과거의 순간을 떠올려 2. 그 순간이 담긴 사진을 비디오테이프 위에 붙여. 3. 비디오테이프를 플레이어에 넣고 4. 뒤로감기 버튼을 누르면, 5. 플레이어가 너를 과거의 그 순간으로     데려다 줄거야.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HV9-wY-5to">
-                                <rect key="frame" x="159" y="698.33333333333337" width="190" height="68"/>
+                                <rect key="frame" x="159" y="680" width="190" height="68"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="다음으로" backgroundImage="btnSmallPresent"/>
                                 <connections>
@@ -343,19 +344,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Love," lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmN-kQ-kjW">
-                                <rect key="frame" x="36" y="469" width="299" height="20.333333333333314"/>
+                                <rect key="frame" x="36" y="469" width="299" height="20.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2032년의 너로부터 :)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffr-OZ-WxE">
-                                <rect key="frame" x="36" y="499.33333333333331" width="299" height="20.333333333333314"/>
+                                <rect key="frame" x="36" y="499.66666666666669" width="299" height="20.000000000000057"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IhP-wD-qP5">
-                                <rect key="frame" x="109" y="683" width="240" height="68"/>
+                                <rect key="frame" x="109" y="680" width="240" height="68"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="디어투데이 시작하기" backgroundImage="btnSmallPresent"/>
                                 <connections>
@@ -374,7 +375,7 @@
                             <constraint firstItem="1vr-xm-Zlx" firstAttribute="top" secondItem="zhN-Qy-0Re" secondAttribute="top" constant="-40" id="7Aa-IA-UiL"/>
                             <constraint firstItem="Bcp-EJ-9vX" firstAttribute="top" secondItem="zhN-Qy-0Re" secondAttribute="bottom" constant="28" id="98L-d4-Wmt"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="IhP-wD-qP5" secondAttribute="trailing" constant="26" id="9ro-4j-mvG"/>
-                            <constraint firstItem="aQg-fa-XZj" firstAttribute="bottom" secondItem="IhP-wD-qP5" secondAttribute="bottom" constant="27" id="Ao9-H7-D3L"/>
+                            <constraint firstItem="aQg-fa-XZj" firstAttribute="bottom" secondItem="IhP-wD-qP5" secondAttribute="bottom" constant="30" id="Ao9-H7-D3L"/>
                             <constraint firstItem="tEF-yU-nqA" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="CyZ-2C-5Z0"/>
                             <constraint firstItem="Q4W-yk-pCS" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="FWs-8h-xE1"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="zjw-HQ-2Dv" secondAttribute="trailing" constant="40" id="GYh-fr-Koy"/>
@@ -387,11 +388,11 @@
                             <constraint firstItem="Jzk-gP-Rii" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="K2o-A4-Zmw"/>
                             <constraint firstItem="oBd-iJ-FJM" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="KqF-ol-OHR"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="Jzk-gP-Rii" secondAttribute="trailing" constant="36" id="Lkd-Jz-OX7"/>
-                            <constraint firstItem="1vr-xm-Zlx" firstAttribute="top" secondItem="oBd-iJ-FJM" secondAttribute="bottom" constant="-63.999999999999972" id="M5V-hx-UfK"/>
+                            <constraint firstItem="1vr-xm-Zlx" firstAttribute="top" secondItem="oBd-iJ-FJM" secondAttribute="top" constant="-45" id="M5V-hx-UfK"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="XGR-h2-i9c" secondAttribute="trailing" constant="40" id="MEy-h3-kJA"/>
                             <constraint firstItem="u50-oo-Mca" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="NEv-Xz-R7i"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="Bcp-EJ-9vX" secondAttribute="trailing" constant="40" id="NlH-3l-Sii"/>
-                            <constraint firstItem="u50-oo-Mca" firstAttribute="top" secondItem="KcT-Xu-RAO" secondAttribute="bottom" constant="34" id="OdW-Fk-YdP"/>
+                            <constraint firstItem="u50-oo-Mca" firstAttribute="top" secondItem="KcT-Xu-RAO" secondAttribute="bottom" constant="28" id="OdW-Fk-YdP"/>
                             <constraint firstItem="tEF-yU-nqA" firstAttribute="top" secondItem="Bcp-EJ-9vX" secondAttribute="bottom" constant="33" id="PwJ-bm-9MT"/>
                             <constraint firstItem="Bcp-EJ-9vX" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="Qqz-YX-aAu"/>
                             <constraint firstItem="zjw-HQ-2Dv" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="Ssk-Ut-5ND"/>
@@ -401,8 +402,8 @@
                             <constraint firstItem="XGR-h2-i9c" firstAttribute="top" secondItem="tEF-yU-nqA" secondAttribute="bottom" constant="38" id="Xw6-2A-EfF"/>
                             <constraint firstItem="Q4W-yk-pCS" firstAttribute="top" secondItem="zjw-HQ-2Dv" secondAttribute="bottom" constant="28" id="ZIN-5n-YRR"/>
                             <constraint firstItem="KcT-Xu-RAO" firstAttribute="top" secondItem="mGk-El-ha2" secondAttribute="bottom" constant="20" id="aUB-L3-ERn"/>
-                            <constraint firstItem="M72-JX-Bhv" firstAttribute="top" secondItem="u50-oo-Mca" secondAttribute="bottom" constant="31" id="bgr-OG-Pvi"/>
-                            <constraint firstItem="Uu1-la-CJ0" firstAttribute="top" secondItem="M72-JX-Bhv" secondAttribute="bottom" constant="29" id="cXm-Yw-dHb"/>
+                            <constraint firstItem="M72-JX-Bhv" firstAttribute="top" secondItem="u50-oo-Mca" secondAttribute="bottom" constant="29" id="bgr-OG-Pvi"/>
+                            <constraint firstItem="Uu1-la-CJ0" firstAttribute="top" secondItem="M72-JX-Bhv" secondAttribute="bottom" constant="28" id="cXm-Yw-dHb"/>
                             <constraint firstItem="ffr-OZ-WxE" firstAttribute="top" secondItem="bmN-kQ-kjW" secondAttribute="bottom" constant="10" id="ciX-FG-HzB"/>
                             <constraint firstItem="M72-JX-Bhv" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="erv-QI-qbX"/>
                             <constraint firstItem="0js-l8-UVl" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="fHp-aF-IJB"/>
@@ -422,11 +423,11 @@
                             <constraint firstItem="BYg-hy-GVR" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="pPr-pT-mTm"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="tEF-yU-nqA" secondAttribute="trailing" constant="40" id="qMv-Mh-j3m"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="mGk-El-ha2" secondAttribute="trailing" constant="40" id="r0u-yq-ke2"/>
-                            <constraint firstItem="Jzk-gP-Rii" firstAttribute="top" secondItem="oBd-iJ-FJM" secondAttribute="top" constant="45" id="sPW-bz-se5"/>
+                            <constraint firstItem="Jzk-gP-Rii" firstAttribute="top" secondItem="oBd-iJ-FJM" secondAttribute="bottom" constant="33" id="sPW-bz-se5"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="ffr-OZ-WxE" secondAttribute="trailing" constant="40" id="syG-eB-omg"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="M72-JX-Bhv" secondAttribute="trailing" constant="36" id="tXD-zZ-Ud4"/>
                             <constraint firstItem="ffr-OZ-WxE" firstAttribute="leading" secondItem="aQg-fa-XZj" secondAttribute="leading" constant="36" id="u4R-XB-Ksr"/>
-                            <constraint firstItem="aQg-fa-XZj" firstAttribute="bottom" secondItem="HV9-wY-5to" secondAttribute="bottom" constant="11.6" id="u7h-Jg-s4v"/>
+                            <constraint firstItem="aQg-fa-XZj" firstAttribute="bottom" secondItem="HV9-wY-5to" secondAttribute="bottom" constant="30" id="u7h-Jg-s4v"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="BYg-hy-GVR" secondAttribute="trailing" constant="40" id="v5E-V2-pzr"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="bmN-kQ-kjW" secondAttribute="trailing" constant="40" id="wFP-vb-f9F"/>
                             <constraint firstItem="aQg-fa-XZj" firstAttribute="trailing" secondItem="u50-oo-Mca" secondAttribute="trailing" constant="36" id="wg6-uC-YvO"/>
@@ -480,13 +481,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnCircleBasic" translatesAutoresizingMaskIntoConstraints="NO" id="Cs2-pn-BYG">
-                                <rect key="frame" x="157" y="232" width="60" height="83"/>
+                                <rect key="frame" x="157" y="234" width="60" height="83"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="bSt-kR-jlv"/>
                                 </constraints>
                             </imageView>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IPC-Aq-EiK">
-                                <rect key="frame" x="168" y="244.66666666666663" width="38" height="38"/>
+                                <rect key="frame" x="168" y="246.66666666666663" width="38" height="38"/>
                                 <subviews>
                                     <view userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ymW-9q-feV">
                                         <rect key="frame" x="1" y="1" width="36" height="36"/>
@@ -503,23 +504,17 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcc-mj-cg3">
-                                <rect key="frame" x="62" y="318" width="243" height="223"/>
+                                <rect key="frame" x="62" y="320" width="243" height="223"/>
+                                <color key="backgroundColor" name="blue02"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="223" id="2bm-2B-1AJ"/>
+                                    <constraint firstAttribute="width" constant="243" id="H3q-F0-6hz"/>
                                     <constraint firstAttribute="width" secondItem="vcc-mj-cg3" secondAttribute="height" multiplier="243:223" id="OeV-q8-LOY"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
                                     <action selector="tapeButtonDidTap:" destination="6Ss-Ku-CoL" eventType="touchUpInside" id="Bw9-fF-TV4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plj-Ey-Rvc">
-                                <rect key="frame" x="6" y="708" width="363" height="68"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="플레이어 작동하기" backgroundImage="btnSmallPresent"/>
-                                <connections>
-                                    <action selector="playLottieButtonDidTap:" destination="6Ss-Ku-CoL" eventType="touchUpInside" id="7cl-ZL-vsi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -534,22 +529,19 @@
                             <constraint firstItem="IPC-Aq-EiK" firstAttribute="top" secondItem="Cs2-pn-BYG" secondAttribute="top" constant="12.5" id="BcL-9y-RTd"/>
                             <constraint firstAttribute="bottom" secondItem="wul-h0-Jab" secondAttribute="bottom" id="EZh-cu-d4l"/>
                             <constraint firstItem="vcc-mj-cg3" firstAttribute="leading" secondItem="a3U-IX-Q9F" secondAttribute="leading" constant="62" id="GDW-aI-D0G"/>
-                            <constraint firstItem="Cs2-pn-BYG" firstAttribute="top" secondItem="a3U-IX-Q9F" secondAttribute="top" constant="188" id="JCd-kD-QRE"/>
-                            <constraint firstItem="plj-Ey-Rvc" firstAttribute="leading" secondItem="a3U-IX-Q9F" secondAttribute="leading" constant="6" id="JOB-f1-nH3"/>
+                            <constraint firstItem="Cs2-pn-BYG" firstAttribute="top" secondItem="a3U-IX-Q9F" secondAttribute="top" constant="190" id="JCd-kD-QRE"/>
                             <constraint firstItem="Cs2-pn-BYG" firstAttribute="leading" secondItem="a3U-IX-Q9F" secondAttribute="leading" constant="157" id="KbV-0J-Rhr"/>
                             <constraint firstItem="IPC-Aq-EiK" firstAttribute="leading" secondItem="Cs2-pn-BYG" secondAttribute="leading" constant="11" id="bBh-Ye-7jM"/>
-                            <constraint firstItem="a3U-IX-Q9F" firstAttribute="bottom" secondItem="plj-Ey-Rvc" secondAttribute="bottom" constant="2" id="cwy-yf-sct"/>
                             <constraint firstItem="vcc-mj-cg3" firstAttribute="top" secondItem="Cs2-pn-BYG" secondAttribute="bottom" constant="3" id="foO-03-l5T"/>
-                            <constraint firstItem="a3U-IX-Q9F" firstAttribute="trailing" secondItem="plj-Ey-Rvc" secondAttribute="trailing" constant="6" id="gdu-xQ-nzT"/>
                             <constraint firstItem="a3U-IX-Q9F" firstAttribute="trailing" secondItem="Zz0-Bb-V8i" secondAttribute="trailing" constant="57" id="hoI-ra-q8Y"/>
                             <constraint firstItem="a3U-IX-Q9F" firstAttribute="bottom" secondItem="Zz0-Bb-V8i" secondAttribute="bottom" constant="55" id="kWa-W8-4cr"/>
                             <constraint firstItem="Cs2-pn-BYG" firstAttribute="width" secondItem="Cs2-pn-BYG" secondAttribute="height" multiplier="60:83" id="r4G-2t-RTJ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="circleButtonTopConstraint" destination="JCd-kD-QRE" id="7bJ-2l-OKo"/>
                         <outlet property="circleImageView" destination="Cs2-pn-BYG" id="wVe-kc-Mg2"/>
                         <outlet property="explanationLabel" destination="Zz0-Bb-V8i" id="Dzv-Y9-6lO"/>
-                        <outlet property="startPlayerButton" destination="plj-Ey-Rvc" id="YdP-4M-kUl"/>
                         <outlet property="tapeButton" destination="vcc-mj-cg3" id="7x6-Ym-UhW"/>
                         <outletCollection property="circleCollection" destination="IPC-Aq-EiK" collectionClass="NSMutableArray" id="kgX-qZ-e0S"/>
                         <outletCollection property="circleCollection" destination="ymW-9q-feV" collectionClass="NSMutableArray" id="wPb-Mi-xhP"/>
@@ -567,6 +559,9 @@
         <image name="image1Withg" width="375" height="812"/>
         <image name="image2Withg" width="375" height="812"/>
         <image name="image3Withg" width="375" height="812"/>
+        <namedColor name="blue02">
+            <color red="0.33300000429153442" green="0.56099998950958252" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
