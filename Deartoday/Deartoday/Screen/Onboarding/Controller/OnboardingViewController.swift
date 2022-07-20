@@ -23,6 +23,8 @@ final class OnboardingViewController: UIViewController {
     @IBOutlet weak var boxButton: UIButton!
     @IBOutlet weak var circleImageView: UIImageView!
     @IBOutlet weak var labelBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var circleButtonTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var circleButtonLeadingConstraint: NSLayoutConstraint!
     @IBOutlet var circleCollection: [UIView]!
     
     // MARK: - Life Cycle
@@ -128,6 +130,8 @@ final class OnboardingViewController: UIViewController {
     
     private func setLayout() {
         labelBottomConstraint.constant = (getDeviceHeight() == 667) ? 45 : 69
+        circleButtonTopConstraint.constant = (getDeviceHeight() == 844) ? 188 : (getDeviceHeight() == 667) ? 135 : 176
+        circleButtonLeadingConstraint.constant = (getDeviceHeight() == 844) ? 168 : 158
     }
     
     // MARK: - IBAction
@@ -142,7 +146,7 @@ final class OnboardingViewController: UIViewController {
         let boxLottieView = AnimationView(name: Constant.Lottie.box)
         boxLottieView.frame = self.view.bounds
         boxLottieView.center = self.view.center
-        boxLottieView.contentMode = .scaleAspectFit
+        boxLottieView.contentMode = .scaleAspectFill
         self.view.addSubview(boxLottieView)
         boxLottieView.play()
         

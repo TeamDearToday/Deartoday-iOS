@@ -9,6 +9,8 @@ import AVFoundation
 import UIKit
 
 import Lottie
+import SnapKit
+import Then
 
 final class PlayTapeOnboardingViewController: UIViewController {
     
@@ -22,8 +24,17 @@ final class PlayTapeOnboardingViewController: UIViewController {
     @IBOutlet weak var explanationLabel: UILabel!
     @IBOutlet weak var circleImageView: UIImageView!
     @IBOutlet weak var tapeButton: UIButton!
-    @IBOutlet weak var startPlayerButton: UIButton!
     @IBOutlet var circleCollection: [UIView]!
+    @IBOutlet weak var circleButtonTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var circleButtonLeadingConstraint: NSLayoutConstraint!
+    
+    var startPlayerButton = DDSButton().then {
+        $0.text = "플레이어 작동하기"
+        $0.hasLeftIcon = true
+        $0.style = .present
+        $0.alpha = 0
+        $0.addTarget(self, action: #selector(startButtonDidTap), for: .touchUpInside)
+    }
     
     // MARK: - Life Cycle
     
@@ -32,9 +43,40 @@ final class PlayTapeOnboardingViewController: UIViewController {
         setComponentsUI()
         setPlayerButtonUI()
         addCircleImageGesture()
+        setLayout()
     }
     
     // MARK: - objc
+    
+    @objc func startButtonDidTap() {
+        startPlayerButton.alpha = 0
+        
+        let tapeLottieView = AnimationView(name: Constant.Lottie.tape)
+        tapeLottieView.frame = self.view.bounds
+        tapeLottieView.center = self.view.center
+        tapeLottieView.contentMode = .scaleAspectFill
+        self.view.addSubview(tapeLottieView)
+        tapeLottieView.play()
+        
+        let url = Bundle.main.url(forResource: Constant.Sound.sound_player, withExtension: ".mp3")
+        if let url = url {
+            do {
+                playerSound = try AVAudioPlayer(contentsOf: url)
+                playerSound.prepareToPlay()
+                playerSound.play()
+            } catch {
+                print("error")
+            }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4) {
+            guard let letterOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.LetterOnboarding) as? LetterOnboardingViewController else { return }
+            letterOnboarding.modalTransitionStyle = .crossDissolve
+            letterOnboarding.modalPresentationStyle = .overFullScreen
+            letterOnboarding.letterNumber = 4
+            self.present(letterOnboarding, animated: true)
+        }
+    }
     
     @objc func circleButtonDidTap() {
         hideComponentsUI()
@@ -54,8 +96,6 @@ final class PlayTapeOnboardingViewController: UIViewController {
         }
         explanationLabel.font = .onboard0
         explanationLabel.textColor = .white
-        startPlayerButton.titleLabel?.font = .btn0
-        startPlayerButton.setTitleColor(.blue02, for: .normal)
     }
     
     private func showComponentsUI() {
@@ -83,6 +123,17 @@ final class PlayTapeOnboardingViewController: UIViewController {
         circleImageView.addGestureRecognizer(addCircleImageGesture)
     }
     
+    private func setLayout() {
+        view.addSubview(startPlayerButton)
+        
+        startPlayerButton.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(6)
+            $0.bottom.equalToSuperview().inset(36)
+        }
+        circleButtonTopConstraint.constant = ((getDeviceHeight() == 667) ? 140 : (getDeviceHeight() == 844) ? 195 : 185)
+        circleButtonLeadingConstraint.constant = (getDeviceHeight() == 884) ? 168 : 158
+    }
+    
     // MARK: IBAction
     
     @IBAction func tapeButtonDidTap(_ sender: UIButton) {
@@ -93,34 +144,5 @@ final class PlayTapeOnboardingViewController: UIViewController {
         letterOnboarding.modalPresentationStyle = .overFullScreen
         letterOnboarding.letterNumber = 2
         present(letterOnboarding, animated: true)
-    }
-    
-    @IBAction func playLottieButtonDidTap(_ sender: UIButton) {
-        startPlayerButton.isHidden = true
-        
-        let tapeLottieView = AnimationView(name: Constant.Lottie.tape)
-        tapeLottieView.frame = self.view.bounds
-        tapeLottieView.center = self.view.center
-        tapeLottieView.contentMode = .scaleAspectFit
-        self.view.addSubview(tapeLottieView)
-        tapeLottieView.play()
-        
-        let url = Bundle.main.url(forResource: Constant.Sound.sound_player, withExtension: ".mp3")
-        if let url = url {
-            do {
-                playerSound = try AVAudioPlayer(contentsOf: url)
-                playerSound.prepareToPlay()
-                playerSound.play()
-            } catch {
-                print("error")
-            }
-        }
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4) {
-        guard let letterOnboarding = UIStoryboard(name: Constant.Storyboard.Onboarding, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.LetterOnboarding) as? LetterOnboardingViewController else { return }
-        letterOnboarding.modalTransitionStyle = .crossDissolve
-        letterOnboarding.modalPresentationStyle = .overFullScreen
-        letterOnboarding.letterNumber = 4
-            self.present(letterOnboarding, animated: true)
-        }
     }
 }
