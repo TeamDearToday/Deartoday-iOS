@@ -12,6 +12,7 @@ final class CheckTimeTravelDetailViewController: UIViewController {
     // MARK: - Property
 
     internal var timeTravelID: String = ""
+    private let collectionViewFlowLayout = UICollectionViewFlowLayout()
     private var travelInfo: CheckTimeTravelDetailResponse?
     private var dialogs: [Message] = []
     
@@ -45,7 +46,9 @@ final class CheckTimeTravelDetailViewController: UIViewController {
     private func setCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.collectionViewLayout = collectionViewFlowLayout
         registerXib()
+        setCollectionViewLayout()
     }
     
     private func registerXib() {
@@ -61,6 +64,11 @@ final class CheckTimeTravelDetailViewController: UIViewController {
                                 forCellWithReuseIdentifier: TravelChatCollectionViewCell.identifier)
         collectionView.register(answerXib,
                                 forCellWithReuseIdentifier: TravelAnswerCollectionViewCell.identifier)
+    }
+    
+    private func setCollectionViewLayout() {
+        collectionViewFlowLayout.scrollDirection = .vertical
+        collectionViewFlowLayout.sectionHeadersPinToVisibleBounds = true
     }
     
     // MARK: - IBAction
