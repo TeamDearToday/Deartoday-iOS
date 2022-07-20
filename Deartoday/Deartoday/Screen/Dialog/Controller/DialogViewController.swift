@@ -238,12 +238,7 @@ final class DialogViewController: UIViewController {
                                                                              writtenDate: "\(year).\(month).\(day)",
                                                                              questions: questions,
                                                                              answers: answers),
-                                             image: photoImage ?? UIImage()) { answerData, err in
-                guard let answerData = answerData else {
-                    return
-                }
-                print(answerData.message)
-            }
+                                             image: photoImage ?? UIImage()) { _, _ in }
             
             view.window?.rootViewController?.dismiss(animated: true)
         }

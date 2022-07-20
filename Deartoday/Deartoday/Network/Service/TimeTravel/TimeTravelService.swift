@@ -71,6 +71,9 @@ extension TimeTravelService: BaseTargetType {
                 let questionData = questions[index].data(using: .utf8) ?? Data()
                 multiPartFormData.append(MultipartFormData(provider: .data(questionData), name: "questions[\(index)]"))
             }
+            let lastQuestion = "마지막으로, 과거의 당신에게 꼭 해주고 싶은 말을 남겨주세요".data(using: .utf8) ?? Data()
+            multiPartFormData.append(MultipartFormData(provider: .data(lastQuestion), name: "questions[\(6)]"))
+            
             for index in answers.indices {
                 let answerData = answers[index].data(using: .utf8) ?? Data()
                 multiPartFormData.append(MultipartFormData(provider: .data(answerData), name: "answers[\(index)]"))
@@ -81,8 +84,15 @@ extension TimeTravelService: BaseTargetType {
     }
     
     var headers: [String : String]? {
-        return ["Content-Type": "multipart/form-data",
-                "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJjZTgwZDk2ZDZlMjJlOGMzNjFhNDVkIn0sImlhdCI6MTY1ODM0MDk0MCwiZXhwIjoxNjU5NTUwNTQwfQ.0iexVmi8OeJIjq2KwEpq3RclhsK6qvNuS5VCrVcXl_o"]
+        switch self {
+        case .oldMedia, .question:
+            return ["Content-Type": "application/json",
+                    "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJjZTgwZDk2ZDZlMjJlOGMzNjFhNDVkIn0sImlhdCI6MTY1ODM0MDk0MCwiZXhwIjoxNjU5NTUwNTQwfQ.0iexVmi8OeJIjq2KwEpq3RclhsK6qvNuS5VCrVcXl_o"]
+        case .dialog:
+            return ["Content-Type": "multipart/form-data",
+                    "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJjZTgwZDk2ZDZlMjJlOGMzNjFhNDVkIn0sImlhdCI6MTY1ODM0MDk0MCwiZXhwIjoxNjU5NTUwNTQwfQ.0iexVmi8OeJIjq2KwEpq3RclhsK6qvNuS5VCrVcXl_o"]
+        }
+        
     }
 }
 
