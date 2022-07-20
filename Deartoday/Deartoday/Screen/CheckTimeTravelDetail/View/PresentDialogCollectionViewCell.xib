@@ -11,10 +11,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PresentDialogCollectionViewCell" customModule="Deartoday" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="343" height="150"/>
+            <rect key="frame" x="0.0" y="0.0" width="343" height="88"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="343" height="150"/>
+                <rect key="frame" x="0.0" y="0.0" width="343" height="88"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgTextBoxPresent" translatesAutoresizingMaskIntoConstraints="NO" id="oTw-1p-Mwm">
@@ -47,6 +47,7 @@
             <constraints>
                 <constraint firstItem="ADx-V9-v9k" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1ul-nJ-Uhb"/>
                 <constraint firstAttribute="trailing" secondItem="ADx-V9-v9k" secondAttribute="trailing" id="3JK-hD-raT"/>
+                <constraint firstAttribute="bottom" secondItem="ADx-V9-v9k" secondAttribute="bottom" id="5u9-1u-Mzv"/>
                 <constraint firstItem="pDG-HJ-9st" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="14" id="MUI-pN-7Op"/>
                 <constraint firstAttribute="trailing" secondItem="pDG-HJ-9st" secondAttribute="trailing" constant="16" id="XcE-MJ-pXE"/>
                 <constraint firstItem="oTw-1p-Mwm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cnR-tW-hqB"/>
