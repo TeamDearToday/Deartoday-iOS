@@ -89,6 +89,8 @@
 		984099ED2881F50000025092 /* sound_player.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 984099EC2881F50000025092 /* sound_player.mp3 */; };
 		9858B3D0288097B000860439 /* MessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9858B3CE288097B000860439 /* MessageCollectionViewCell.swift */; };
 		9858B3D1288097B000860439 /* MessageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9858B3CF288097B000860439 /* MessageCollectionViewCell.xib */; };
+		986F5C362887FA83001109F1 /* TravelInfoCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986F5C342887FA83001109F1 /* TravelInfoCollectionReusableView.swift */; };
+		986F5C372887FA83001109F1 /* TravelInfoCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 986F5C352887FA83001109F1 /* TravelInfoCollectionReusableView.xib */; };
 		98A4750A287DECCF008891F5 /* CheckTimeTravel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A47509287DECCF008891F5 /* CheckTimeTravel.storyboard */; };
 		98A4750F287DECF7008891F5 /* CheckTImeTravelDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A4750E287DECF7008891F5 /* CheckTImeTravelDataModel.swift */; };
 		98A47513287DED14008891F5 /* CheckTimeTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A47512287DED14008891F5 /* CheckTimeTravelViewController.swift */; };
@@ -207,6 +209,8 @@
 		984099EC2881F50000025092 /* sound_player.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_player.mp3; sourceTree = "<group>"; };
 		9858B3CE288097B000860439 /* MessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCollectionViewCell.swift; sourceTree = "<group>"; };
 		9858B3CF288097B000860439 /* MessageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCollectionViewCell.xib; sourceTree = "<group>"; };
+		986F5C342887FA83001109F1 /* TravelInfoCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelInfoCollectionReusableView.swift; sourceTree = "<group>"; };
+		986F5C352887FA83001109F1 /* TravelInfoCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelInfoCollectionReusableView.xib; sourceTree = "<group>"; };
 		98A47509287DECCF008891F5 /* CheckTimeTravel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckTimeTravel.storyboard; sourceTree = "<group>"; };
 		98A4750E287DECF7008891F5 /* CheckTImeTravelDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTImeTravelDataModel.swift; sourceTree = "<group>"; };
 		98A47512287DED14008891F5 /* CheckTimeTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelViewController.swift; sourceTree = "<group>"; };
@@ -831,6 +835,8 @@
 				98245CF728869DA6007821FA /* TravelAnswerCollectionViewCell.xib */,
 				98245CFF28870389007821FA /* TravelChatCollectionViewCell.swift */,
 				98245D0028870389007821FA /* TravelChatCollectionViewCell.xib */,
+				986F5C342887FA83001109F1 /* TravelInfoCollectionReusableView.swift */,
+				986F5C352887FA83001109F1 /* TravelInfoCollectionReusableView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1082,6 +1088,7 @@
 				98BFBCC92879B68600F01F04 /* Pretendard-Bold.otf in Resources */,
 				984099ED2881F50000025092 /* sound_player.mp3 in Resources */,
 				92DB35382875633D001E2006 /* Main.storyboard in Resources */,
+				986F5C372887FA83001109F1 /* TravelInfoCollectionReusableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1199,6 +1206,7 @@
 				92DB35332875633D001E2006 /* SceneDelegate.swift in Sources */,
 				926C7E242884A2BC00C0D3B4 /* TimeTravelAnswerResponse.swift in Sources */,
 				92CC3BA4287D62DE00EA5617 /* VirtualSpaceViewController.swift in Sources */,
+				986F5C362887FA83001109F1 /* TravelInfoCollectionReusableView.swift in Sources */,
 				92DB357C28756A8F001E2006 /* NetworkResult.swift in Sources */,
 				92C27EA92884459300077FA3 /* TimeTravelService.swift in Sources */,
 				92DB356428756517001E2006 /* OnboardingView.swift in Sources */,
