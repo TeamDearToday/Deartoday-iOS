@@ -95,7 +95,7 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDelegate {
 
 extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return (section == 0) ? 1 : 7
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
