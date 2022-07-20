@@ -46,4 +46,9 @@ final class PresentDialogCollectionViewCell: UICollectionViewCell {
     
     //폰트 한 줄 당 height는 22
     //줄 수 * 22 + 28 -> image view의 높이
+    
+    func setData(content: String) {
+        contentLabel.text = content
+        dummyLabel.text = content
+    }
 }
