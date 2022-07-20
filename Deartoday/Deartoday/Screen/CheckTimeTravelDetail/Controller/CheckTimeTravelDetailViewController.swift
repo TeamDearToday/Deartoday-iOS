@@ -113,7 +113,7 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
         switch indexPath.section {
         case 0:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PastImageCollectionViewCell.identifier, for: indexPath) as? PastImageCollectionViewCell else { return UICollectionViewCell() }
-            //set data (image string)
+            cell.setData(image: travelInfo?.image ?? "")
             return cell
         default:
             if indexPath.item == 12 {

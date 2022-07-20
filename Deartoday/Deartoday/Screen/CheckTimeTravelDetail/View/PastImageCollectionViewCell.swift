@@ -29,4 +29,8 @@ final class PastImageCollectionViewCell: UICollectionViewCell {
     private func setUI() {
         pastImageView.layer.cornerRadius = 8
     }
+    
+    func setData(image: String) {
+        pastImageView.kf.setImage(with: URL(string: image))
+    }
 }
