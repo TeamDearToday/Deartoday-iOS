@@ -71,6 +71,9 @@ final class CheckTimeTravelDetailViewController: UIViewController {
                                 forCellWithReuseIdentifier: PastDialogCollectionViewCell.identifier)
         collectionView.register(presentXib,
                                 forCellWithReuseIdentifier: PresentDialogCollectionViewCell.identifier)
+        collectionView.register(TravelInfoCollectionReusableView.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: TravelInfoCollectionReusableView.identifier)
     }
     
     private func setCollectionViewLayout() {
@@ -149,6 +152,16 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
         default: assert(false, "not section header")
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        switch indexPath.section {
+        case 0:
+            return CGSize(width: collectionView.frame.width,
+                          height: collectionView.frame.width * ( 191 / 343 ))
+        default:
+            return CGSize.zero
+        }
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -167,6 +180,7 @@ extension CheckTimeTravelDetailViewController {
             guard let info = response?.data else { return }
             self.travelInfo = info
             self.dialogs = info.messages
+            self.collectionView.reloadData()
         }
     }
 }
