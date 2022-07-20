@@ -33,7 +33,7 @@ final class TravelAnswerCollectionViewCell: UICollectionViewCell {
         contentLabel.font = .caption2
     }
     
-    private func updateImageViewUI() {
+    private func updateUI() {
         //image view height는 라벨의 현재 사이즈에 28 더하기
         //width는 32 더하기
         //label width 정해놓긴 했는데 안댈라나?
@@ -41,6 +41,6 @@ final class TravelAnswerCollectionViewCell: UICollectionViewCell {
     
     func setData(answer: String) {
         contentLabel.text = answer
-        updateImageViewUI()
+        updateUI()
     }
 }

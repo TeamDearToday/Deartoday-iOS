@@ -81,14 +81,20 @@
 		98245CF528869D85007821FA /* TravelInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98245CF328869D85007821FA /* TravelInfoCollectionViewCell.xib */; };
 		98245CF828869DA6007821FA /* TravelAnswerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98245CF628869DA6007821FA /* TravelAnswerCollectionViewCell.swift */; };
 		98245CF928869DA6007821FA /* TravelAnswerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98245CF728869DA6007821FA /* TravelAnswerCollectionViewCell.xib */; };
-		98245CFC28869DC3007821FA /* TravelLastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98245CFA28869DC3007821FA /* TravelLastCollectionViewCell.swift */; };
-		98245CFD28869DC3007821FA /* TravelLastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98245CFB28869DC3007821FA /* TravelLastCollectionViewCell.xib */; };
+		98245D0128870389007821FA /* TravelChatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98245CFF28870389007821FA /* TravelChatCollectionViewCell.swift */; };
+		98245D0228870389007821FA /* TravelChatCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98245D0028870389007821FA /* TravelChatCollectionViewCell.xib */; };
 		984099E62881F3FB00025092 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 984099E52881F3FB00025092 /* splash.json */; };
 		984099E92881F4A700025092 /* sound_box.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 984099E82881F4A700025092 /* sound_box.mp3 */; };
 		984099EB2881F4CD00025092 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984099EA2881F4CD00025092 /* Sound.swift */; };
 		984099ED2881F50000025092 /* sound_player.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 984099EC2881F50000025092 /* sound_player.mp3 */; };
 		9858B3D0288097B000860439 /* MessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9858B3CE288097B000860439 /* MessageCollectionViewCell.swift */; };
 		9858B3D1288097B000860439 /* MessageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9858B3CF288097B000860439 /* MessageCollectionViewCell.xib */; };
+		986F5C362887FA83001109F1 /* TravelInfoCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986F5C342887FA83001109F1 /* TravelInfoCollectionReusableView.swift */; };
+		986F5C372887FA83001109F1 /* TravelInfoCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 986F5C352887FA83001109F1 /* TravelInfoCollectionReusableView.xib */; };
+		986F5C3C2888345E001109F1 /* PastDialogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986F5C3A2888345E001109F1 /* PastDialogCollectionViewCell.swift */; };
+		986F5C3D2888345E001109F1 /* PastDialogCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 986F5C3B2888345E001109F1 /* PastDialogCollectionViewCell.xib */; };
+		986F5C4028883469001109F1 /* PresentDialogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986F5C3E28883469001109F1 /* PresentDialogCollectionViewCell.swift */; };
+		986F5C4128883469001109F1 /* PresentDialogCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 986F5C3F28883469001109F1 /* PresentDialogCollectionViewCell.xib */; };
 		98A4750A287DECCF008891F5 /* CheckTimeTravel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A47509287DECCF008891F5 /* CheckTimeTravel.storyboard */; };
 		98A4750F287DECF7008891F5 /* CheckTImeTravelDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A4750E287DECF7008891F5 /* CheckTImeTravelDataModel.swift */; };
 		98A47513287DED14008891F5 /* CheckTimeTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A47512287DED14008891F5 /* CheckTimeTravelViewController.swift */; };
@@ -199,14 +205,20 @@
 		98245CF328869D85007821FA /* TravelInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelInfoCollectionViewCell.xib; sourceTree = "<group>"; };
 		98245CF628869DA6007821FA /* TravelAnswerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelAnswerCollectionViewCell.swift; sourceTree = "<group>"; };
 		98245CF728869DA6007821FA /* TravelAnswerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelAnswerCollectionViewCell.xib; sourceTree = "<group>"; };
-		98245CFA28869DC3007821FA /* TravelLastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelLastCollectionViewCell.swift; sourceTree = "<group>"; };
-		98245CFB28869DC3007821FA /* TravelLastCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelLastCollectionViewCell.xib; sourceTree = "<group>"; };
+		98245CFF28870389007821FA /* TravelChatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelChatCollectionViewCell.swift; sourceTree = "<group>"; };
+		98245D0028870389007821FA /* TravelChatCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelChatCollectionViewCell.xib; sourceTree = "<group>"; };
 		984099E52881F3FB00025092 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 		984099E82881F4A700025092 /* sound_box.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_box.mp3; sourceTree = "<group>"; };
 		984099EA2881F4CD00025092 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		984099EC2881F50000025092 /* sound_player.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_player.mp3; sourceTree = "<group>"; };
 		9858B3CE288097B000860439 /* MessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCollectionViewCell.swift; sourceTree = "<group>"; };
 		9858B3CF288097B000860439 /* MessageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCollectionViewCell.xib; sourceTree = "<group>"; };
+		986F5C342887FA83001109F1 /* TravelInfoCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelInfoCollectionReusableView.swift; sourceTree = "<group>"; };
+		986F5C352887FA83001109F1 /* TravelInfoCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelInfoCollectionReusableView.xib; sourceTree = "<group>"; };
+		986F5C3A2888345E001109F1 /* PastDialogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastDialogCollectionViewCell.swift; sourceTree = "<group>"; };
+		986F5C3B2888345E001109F1 /* PastDialogCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PastDialogCollectionViewCell.xib; sourceTree = "<group>"; };
+		986F5C3E28883469001109F1 /* PresentDialogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentDialogCollectionViewCell.swift; sourceTree = "<group>"; };
+		986F5C3F28883469001109F1 /* PresentDialogCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PresentDialogCollectionViewCell.xib; sourceTree = "<group>"; };
 		98A47509287DECCF008891F5 /* CheckTimeTravel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckTimeTravel.storyboard; sourceTree = "<group>"; };
 		98A4750E287DECF7008891F5 /* CheckTImeTravelDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTImeTravelDataModel.swift; sourceTree = "<group>"; };
 		98A47512287DED14008891F5 /* CheckTimeTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelViewController.swift; sourceTree = "<group>"; };
@@ -829,8 +841,14 @@
 				98245CF328869D85007821FA /* TravelInfoCollectionViewCell.xib */,
 				98245CF628869DA6007821FA /* TravelAnswerCollectionViewCell.swift */,
 				98245CF728869DA6007821FA /* TravelAnswerCollectionViewCell.xib */,
-				98245CFA28869DC3007821FA /* TravelLastCollectionViewCell.swift */,
-				98245CFB28869DC3007821FA /* TravelLastCollectionViewCell.xib */,
+				98245CFF28870389007821FA /* TravelChatCollectionViewCell.swift */,
+				98245D0028870389007821FA /* TravelChatCollectionViewCell.xib */,
+				986F5C342887FA83001109F1 /* TravelInfoCollectionReusableView.swift */,
+				986F5C352887FA83001109F1 /* TravelInfoCollectionReusableView.xib */,
+				986F5C3A2888345E001109F1 /* PastDialogCollectionViewCell.swift */,
+				986F5C3B2888345E001109F1 /* PastDialogCollectionViewCell.xib */,
+				986F5C3E28883469001109F1 /* PresentDialogCollectionViewCell.swift */,
+				986F5C3F28883469001109F1 /* PresentDialogCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1054,19 +1072,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98245CFD28869DC3007821FA /* TravelLastCollectionViewCell.xib in Resources */,
 				98A4750A287DECCF008891F5 /* CheckTimeTravel.storyboard in Resources */,
 				4A706264287C079F00140315 /* Onboarding.storyboard in Resources */,
 				98245CF928869DA6007821FA /* TravelAnswerCollectionViewCell.xib in Resources */,
 				98245CE3288699A6007821FA /* CheckTimeTravelDetail.storyboard in Resources */,
 				9858B3D1288097B000860439 /* MessageCollectionViewCell.xib in Resources */,
 				98245CF128869CCB007821FA /* PastImageCollectionViewCell.xib in Resources */,
+				986F5C3D2888345E001109F1 /* PastDialogCollectionViewCell.xib in Resources */,
 				98D912C8287DC30F0088A7F9 /* CheckMessage.storyboard in Resources */,
 				98245CF528869D85007821FA /* TravelInfoCollectionViewCell.xib in Resources */,
 				98BFBCC72879B68600F01F04 /* Pretendard-Medium.otf in Resources */,
 				98BFBCC12879B66A00F01F04 /* GmarketSansBold.otf in Resources */,
 				92DB353D2875633F001E2006 /* LaunchScreen.storyboard in Resources */,
 				9803F38F2882F1B300A5A239 /* box.json in Resources */,
+				98245D0228870389007821FA /* TravelChatCollectionViewCell.xib in Resources */,
 				98BFBCC82879B68600F01F04 /* Pretendard-SemiBold.otf in Resources */,
 				9803F38D2882F1A900A5A239 /* tape.json in Resources */,
 				98B4B5B2287EC93B00F4AD7A /* TimeTapeTableViewCell.xib in Resources */,
@@ -1074,6 +1093,7 @@
 				928A8A6B2875FB7C000D4E99 /* GoogleService-Info.plist in Resources */,
 				9803F3912882F3C300A5A239 /* timetape.json in Resources */,
 				98A71D5A2882EEBA009508D9 /* Colors.xcassets in Resources */,
+				986F5C4128883469001109F1 /* PresentDialogCollectionViewCell.xib in Resources */,
 				98A47516287E0106008891F5 /* CheckMessageDetail.storyboard in Resources */,
 				98BFBCC22879B66A00F01F04 /* GmarketSansMedium.otf in Resources */,
 				92DB353A2875633F001E2006 /* Assets.xcassets in Resources */,
@@ -1082,6 +1102,7 @@
 				98BFBCC92879B68600F01F04 /* Pretendard-Bold.otf in Resources */,
 				984099ED2881F50000025092 /* sound_player.mp3 in Resources */,
 				92DB35382875633D001E2006 /* Main.storyboard in Resources */,
+				986F5C372887FA83001109F1 /* TravelInfoCollectionReusableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1136,6 +1157,7 @@
 			files = (
 				92DB35682875656C001E2006 /* DDSButton.swift in Sources */,
 				923061D82877550E00F04EDA /* TimeTravelViewController.swift in Sources */,
+				98245D0128870389007821FA /* TravelChatCollectionViewCell.swift in Sources */,
 				98D912AE287D558A0088A7F9 /* DeartodayModel.swift in Sources */,
 				923061D6287754FA00F04EDA /* TimeTravelView.swift in Sources */,
 				92DB35352875633D001E2006 /* MainViewController.swift in Sources */,
@@ -1145,11 +1167,11 @@
 				98D912C5287DB0130088A7F9 /* Lottie.swift in Sources */,
 				4ADAB7E9288507A10049C465 /* LoginResponse.swift in Sources */,
 				98A47519287E0129008891F5 /* CheckMessageDetailViewController.swift in Sources */,
+				986F5C3C2888345E001109F1 /* PastDialogCollectionViewCell.swift in Sources */,
 				9803F3B428847C9100A5A239 /* MainResponse.swift in Sources */,
 				9803F3D82885953B00A5A239 /* CheckMessageService.swift in Sources */,
 				98245CF428869D85007821FA /* TravelInfoCollectionViewCell.swift in Sources */,
 				98245CF828869DA6007821FA /* TravelAnswerCollectionViewCell.swift in Sources */,
-				98245CFC28869DC3007821FA /* TravelLastCollectionViewCell.swift in Sources */,
 				984099EB2881F4CD00025092 /* Sound.swift in Sources */,
 				92DB3562287564F3001E2006 /* MainView.swift in Sources */,
 				9803F3D52885950F00A5A239 /* CheckMessageAPI.swift in Sources */,
@@ -1199,7 +1221,9 @@
 				92DB35332875633D001E2006 /* SceneDelegate.swift in Sources */,
 				926C7E242884A2BC00C0D3B4 /* TimeTravelAnswerResponse.swift in Sources */,
 				92CC3BA4287D62DE00EA5617 /* VirtualSpaceViewController.swift in Sources */,
+				986F5C362887FA83001109F1 /* TravelInfoCollectionReusableView.swift in Sources */,
 				92DB357C28756A8F001E2006 /* NetworkResult.swift in Sources */,
+				986F5C4028883469001109F1 /* PresentDialogCollectionViewCell.swift in Sources */,
 				92C27EA92884459300077FA3 /* TimeTravelService.swift in Sources */,
 				92DB356428756517001E2006 /* OnboardingView.swift in Sources */,
 				92E41224287FD01800F55056 /* DialogViewController+.swift in Sources */,

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TravelInfoCollectionReusableView" id="U6b-Vx-4bR" customClass="TravelInfoCollectionReusableView" customModule="Deartoday" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="73"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016.07.03" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRE-VZ-zyj">
+                    <rect key="frame" x="0.0" y="0.0" width="83.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="blue02"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAO-yo-sBy">
+                    <rect key="frame" x="0.0" y="37" width="343" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="darkGray00"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jss-Cy-8bA">
+                    <rect key="frame" x="0.0" y="72" width="343" height="1"/>
+                    <color key="backgroundColor" name="lightBlue01"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="usx-F5-dua"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022.07.03" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Wl-uf-4oj">
+                    <rect key="frame" x="257.5" y="3.5" width="85.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="gray01"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rewind" translatesAutoresizingMaskIntoConstraints="NO" id="oD6-KL-oRp">
+                    <rect key="frame" x="231.5" y="3" width="22" height="22"/>
+                    <color key="tintColor" name="gray01"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="22" id="F6w-Ls-oop"/>
+                        <constraint firstAttribute="height" constant="22" id="FJo-nA-vln"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <color key="backgroundColor" name="white"/>
+            <constraints>
+                <constraint firstItem="YAO-yo-sBy" firstAttribute="top" secondItem="ZRE-VZ-zyj" secondAttribute="bottom" constant="16" id="0ki-2I-H7L"/>
+                <constraint firstItem="ZRE-VZ-zyj" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="17e-nT-qAz"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="YAO-yo-sBy" secondAttribute="trailing" id="8sR-8r-nXa"/>
+                <constraint firstItem="YAO-yo-sBy" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="CHO-r9-DiW"/>
+                <constraint firstItem="oD6-KL-oRp" firstAttribute="centerY" secondItem="0Wl-uf-4oj" secondAttribute="centerY" id="G8J-pz-6AF"/>
+                <constraint firstItem="ZRE-VZ-zyj" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="Gej-7I-2XY"/>
+                <constraint firstItem="jss-Cy-8bA" firstAttribute="top" secondItem="YAO-yo-sBy" secondAttribute="bottom" constant="14" id="Huu-Ru-GL6"/>
+                <constraint firstAttribute="bottom" secondItem="jss-Cy-8bA" secondAttribute="bottom" id="O9g-oZ-uch"/>
+                <constraint firstAttribute="trailing" secondItem="0Wl-uf-4oj" secondAttribute="trailing" id="S0o-eM-WAb"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="jss-Cy-8bA" secondAttribute="trailing" id="dBh-aa-zUA"/>
+                <constraint firstItem="0Wl-uf-4oj" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="3.5" id="hux-xM-4mB"/>
+                <constraint firstItem="jss-Cy-8bA" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="qej-sU-XMg"/>
+                <constraint firstItem="0Wl-uf-4oj" firstAttribute="leading" secondItem="oD6-KL-oRp" secondAttribute="trailing" constant="4" id="tYg-Mf-vJF"/>
+            </constraints>
+            <connections>
+                <outlet property="pastDateLabel" destination="ZRE-VZ-zyj" id="Ibi-nz-6ue"/>
+                <outlet property="titleLabel" destination="YAO-yo-sBy" id="qrM-oF-khb"/>
+                <outlet property="writtenDateLabel" destination="0Wl-uf-4oj" id="meH-0t-NOq"/>
+            </connections>
+            <point key="canvasLocation" x="136.95652173913044" y="48.883928571428569"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="rewind" width="22" height="22"/>
+        <namedColor name="blue02">
+            <color red="0.33300000429153442" green="0.56099998950958252" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="darkGray00">
+            <color red="0.075000002980232239" green="0.075000002980232239" blue="0.075000002980232239" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray01">
+            <color red="0.62699997425079346" green="0.62699997425079346" blue="0.62699997425079346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lightBlue01">
+            <color red="0.91399997472763062" green="0.94499999284744263" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
