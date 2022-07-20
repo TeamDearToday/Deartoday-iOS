@@ -63,8 +63,8 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        //hedaer view 높이 73에 line height * line 수 만큼 곱하기
-        return (section == 0) ? .zero : CGSize(width: collectionView.frame.width, height: 73)
+        //hedaer view 높이 73에 line height * line 수 만큼 곱하기 + 4
+        return (section == 0) ? .zero : CGSize(width: collectionView.frame.width, height: 96)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
@@ -88,18 +88,17 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
         default:
             if indexPath.item == 12 {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TravelAnswerCollectionViewCell.identifier, for: indexPath) as? TravelAnswerCollectionViewCell else { return UICollectionViewCell() }
+                cell.setData(answer: dialogs.count == 0 ? "" : "\(dialogs[6].answer)")
                 return cell
             }
             else if indexPath.item % 2 == 0 {
-                //과거 채팅 셀 설정
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PastDialogCollectionViewCell.identifier, for: indexPath) as? PastDialogCollectionViewCell else { return UICollectionViewCell() }
-                //set data (채팅에 맞는!)
+                cell.setData(content: dialogs.count == 0 ? "" : dialogs[indexPath.item/2].question)
                 return cell
             }
             else {
-                //현재 채팅 셀 설정
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PresentDialogCollectionViewCell.identifier, for: indexPath) as? PresentDialogCollectionViewCell else { return UICollectionViewCell() }
-                //set data (채팅에 맞는!)
+                cell.setData(content: dialogs.count == 0 ? "" : dialogs[indexPath.item/2].answer)
                 return cell
             }
         }
@@ -125,7 +124,7 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
 
 extension CheckTimeTravelDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
+        return UIEdgeInsets(top: 0, left: 0, bottom: (section == 0 ? 20 : 0), right: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -138,7 +137,7 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDelegateFlowLayou
             return CGSize(width: collectionView.frame.width,
                           height: collectionView.frame.width * ( 191 / 343 ))
         default:
-            return CGSize(width: collectionView.frame.width, height: 100)
+            return CGSize(width: collectionView.frame.width, height: 150)
         }
     }
 }
@@ -148,7 +147,7 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDelegateFlowLayou
 extension CheckTimeTravelDetailViewController {
     func getTravelInfo(timeTravelId: String) {
         CheckTimeTravelAPI.shared.getTimeTravelDetail(timeTravelId: timeTravelId) { response in
-            guard let info = response?.data else { return }
+            guard let info = response?.data as? CheckTimeTravelDetailResponse else { return }
             self.travelInfo = info
             self.dialogs = info.messages
             self.collectionView.reloadData()

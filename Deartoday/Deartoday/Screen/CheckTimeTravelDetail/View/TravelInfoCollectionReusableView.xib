@@ -27,8 +27,8 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jss-Cy-8bA">
-                    <rect key="frame" x="0.0" y="72" width="343" height="1"/>
-                    <color key="backgroundColor" name="darkGray00"/>
+                    <rect key="frame" x="0.0" y="70.5" width="343" height="1"/>
+                    <color key="backgroundColor" name="lightBlue01"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="usx-F5-dua"/>
                     </constraints>
@@ -56,9 +56,9 @@
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="YAO-yo-sBy" secondAttribute="trailing" id="8sR-8r-nXa"/>
                 <constraint firstItem="YAO-yo-sBy" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="CHO-r9-DiW"/>
                 <constraint firstItem="ZRE-VZ-zyj" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="Gej-7I-2XY"/>
-                <constraint firstAttribute="bottom" secondItem="jss-Cy-8bA" secondAttribute="bottom" id="O9g-oZ-uch"/>
                 <constraint firstAttribute="trailing" secondItem="0Wl-uf-4oj" secondAttribute="trailing" id="S0o-eM-WAb"/>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="jss-Cy-8bA" secondAttribute="trailing" id="dBh-aa-zUA"/>
+                <constraint firstItem="jss-Cy-8bA" firstAttribute="top" secondItem="YAO-yo-sBy" secondAttribute="bottom" constant="13" id="dbb-GP-Zb1"/>
                 <constraint firstItem="0Wl-uf-4oj" firstAttribute="centerY" secondItem="ZRE-VZ-zyj" secondAttribute="centerY" id="fyZ-YW-oCe"/>
                 <constraint firstItem="jss-Cy-8bA" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="qej-sU-XMg"/>
                 <constraint firstItem="oD6-KL-oRp" firstAttribute="centerY" secondItem="ZRE-VZ-zyj" secondAttribute="centerY" id="rmu-CK-gIf"/>
@@ -82,6 +82,9 @@
         </namedColor>
         <namedColor name="gray01">
             <color red="0.62699997425079346" green="0.62699997425079346" blue="0.62699997425079346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lightBlue01">
+            <color red="0.91399997472763062" green="0.94499999284744263" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="white">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
