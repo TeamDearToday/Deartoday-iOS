@@ -57,7 +57,7 @@ extension TimeTravelService: BaseTargetType {
             let image = MultipartFormData(provider: .data(imageData ?? Data()), name: "image", fileName: "image.jpg", mimeType: "image/jpeg")
             multiPartFormData.append(image)
             
-            let writtenDate = dialog.currentDate.data(using: .utf8) ?? Data()
+            let writtenDate = dialog.writtenDate.data(using: .utf8) ?? Data()
             
             multiPartFormData.append(MultipartFormData(provider: .data(year), name: "year"))
             multiPartFormData.append(MultipartFormData(provider: .data(month), name: "month"))
@@ -82,7 +82,7 @@ extension TimeTravelService: BaseTargetType {
     
     var headers: [String : String]? {
         return ["Content-Type": "multipart/form-data",
-                "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJkMDE3ZDlmYmU5OTAyZDc4MDhmZDk5In0sImlhdCI6MTY1ODIxOTQ2NSwiZXhwIjoxNjU5NDI5MDY1fQ._MbCpp8PqnBM6y6J0OMjjrxMqGjLxBTFwpbPOtBAKX4"]
+                "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJjZTgwZDk2ZDZlMjJlOGMzNjFhNDVkIn0sImlhdCI6MTY1ODM0MDk0MCwiZXhwIjoxNjU5NTUwNTQwfQ.0iexVmi8OeJIjq2KwEpq3RclhsK6qvNuS5VCrVcXl_o"]
     }
 }
 

@@ -229,12 +229,13 @@ final class DialogViewController: UIViewController {
                     }
                 }
             }
+            
         } else {
             TimeTravelAPI.shared.postAnswers(dialog: TimeTravelAnswerRequest(title: timeTravelTitle ?? "",
                                                                              year: Int(year) ?? 0,
                                                                              month: Int(month) ?? 0,
                                                                              day: Int(day) ?? 0,
-                                                                             currentDate: "\(year).\(month).\(day)",
+                                                                             writtenDate: "\(year).\(month).\(day)",
                                                                              questions: questions,
                                                                              answers: answers),
                                              image: photoImage ?? UIImage()) { answerData, err in
@@ -255,7 +256,6 @@ final class DialogViewController: UIViewController {
         }
         
         setDialogMessageViewHeight(topConstant: UIScreen.main.hasNotch ? 290 : 94)
-        hideView(photoImageView)
         
         answerTextView.text = ""
         sendButton.isEnabled = false
@@ -269,7 +269,7 @@ final class DialogViewController: UIViewController {
                     self.sendButton.isEnabled = false
                     self.hidePresentView(self.presentMessageView) {
                         self.pastMessageView.dialogText = self.questions[self.count]
-                        self.setDialogMessageViewHeight()
+                        self.setDialogMessageViewHeight(topConstant: UIScreen.main.hasNotch ? 290 : 94)
                         
                         self.showPastView(self.pastMessageView) {
                             self.sendButton.isEnabled = true
@@ -283,12 +283,12 @@ final class DialogViewController: UIViewController {
                     self.sendButton.isEnabled = false
                     self.hidePresentView(self.presentMessageView) {
                         self.pastMessageView.dialogText = self.reactions[0]
-                        self.setDialogMessageViewHeight()
+                        self.setDialogMessageViewHeight(topConstant: UIScreen.main.hasNotch ? 290 : 94)
                         
                         self.showPastView(self.pastMessageView) {
                             self.hidePastView(self.pastMessageView) {
                                 self.pastMessageView.dialogText = self.questions[self.count]
-                                self.setDialogMessageViewHeight()
+                                self.setDialogMessageViewHeight(topConstant: UIScreen.main.hasNotch ? 290 : 94)
                                 
                                 self.showPastView(self.pastMessageView) {
                                     self.sendButton.isEnabled = true
@@ -304,25 +304,24 @@ final class DialogViewController: UIViewController {
                     self.sendButton.isEnabled = false
                     self.hidePresentView(self.presentMessageView) {
                         self.pastMessageView.dialogText = self.reactions[1]
-                        self.setDialogMessageViewHeight()
+                        self.setDialogMessageViewHeight(topConstant: UIScreen.main.hasNotch ? 290 : 94)
                         
                         self.showPastView(self.pastMessageView) {
                             self.hidePastView(self.pastMessageView) {
                                 
                                 self.pastMessageView.dialogText = self.reactions[2]
-                                self.setDialogMessageViewHeight()
+                                self.setDialogMessageViewHeight(topConstant: UIScreen.main.hasNotch ? 290 : 94)
                                 
                                 self.showPastView(self.pastMessageView) {
                                     self.hidePastView(self.pastMessageView) {
                                         self.pastMessageView.dialogText = self.questions[self.count]
-                                        self.setDialogMessageViewHeight()
+                                        self.setDialogMessageViewHeight(topConstant: UIScreen.main.hasNotch ? 290 : 94)
                                         
                                         self.showPastView(self.pastMessageView) {
                                             self.sendButton.isEnabled = true
                                         }
                                     }
                                 }
-                                
                             }
                         }
                     }
@@ -334,24 +333,24 @@ final class DialogViewController: UIViewController {
                     self.sendButton.isEnabled = false
                     self.hidePresentView(self.presentMessageView) {
                         self.pastMessageView.dialogText = self.reactions[3]
-                        self.setDialogMessageViewHeight()
+                        self.setDialogMessageViewHeight(topConstant: UIScreen.main.hasNotch ? 290 : 94)
                         
                         self.showPastView(self.pastMessageView) {
                             self.hidePastView(self.pastMessageView) {
                                 
                                 self.pastMessageView.dialogText = self.reactions[4]
-                                self.setDialogMessageViewHeight()
+                                self.setDialogMessageViewHeight(topConstant: UIScreen.main.hasNotch ? 290 : 94)
                                 
                                 self.showPastView(self.pastMessageView) {
                                     self.hidePastView(self.pastMessageView) {
                                         
                                         self.pastMessageView.dialogText = self.reactions[5]
-                                        self.setDialogMessageViewHeight()
+                                        self.setDialogMessageViewHeight(topConstant: UIScreen.main.hasNotch ? 290 : 94)
                                         
                                         self.showPastView(self.pastMessageView) {
                                             self.hidePastView(self.pastMessageView) {
                                                 self.pastMessageView.dialogText = self.questions[self.count]
-                                                self.setDialogMessageViewHeight()
+                                                self.setDialogMessageViewHeight(topConstant: UIScreen.main.hasNotch ? 290 : 94)
                                                 
                                                 self.showPastView(self.pastMessageView) {
                                                     self.sendButton.isEnabled = true
@@ -361,7 +360,6 @@ final class DialogViewController: UIViewController {
                                        
                                     }
                                 }
-                                
                             }
                         }
                     }
@@ -373,18 +371,17 @@ final class DialogViewController: UIViewController {
                     self.sendButton.isEnabled = false
                     self.hidePresentView(self.presentMessageView) {
                         self.pastMessageView.dialogText = self.reactions[6]
-                        self.setDialogMessageViewHeight()
+                        self.setDialogMessageViewHeight(topConstant: UIScreen.main.hasNotch ? 290 : 94)
                         
                         self.showPastView(self.pastMessageView) {
                             self.hidePastView(self.pastMessageView) {
                                 
                                 self.pastMessageView.dialogText = self.questions[self.count]
-                                self.setDialogMessageViewHeight()
+                                self.setDialogMessageViewHeight(topConstant: UIScreen.main.hasNotch ? 290 : 94)
                                 
                                 self.showPastView(self.pastMessageView) {
                                     self.sendButton.isEnabled = true
                                 }
-                                
                             }
                         }
                     }
@@ -396,13 +393,13 @@ final class DialogViewController: UIViewController {
                     self.hidePresentView(self.presentMessageView) {
                         
                         self.pastMessageView.dialogText = self.reactions[7]
-                        self.setDialogMessageViewHeight()
+                        self.setDialogMessageViewHeight(topConstant: UIScreen.main.hasNotch ? 290 : 94)
                         
                         self.showPastView(self.pastMessageView) {
                             self.hidePastView(self.pastMessageView) {
                                 
                                 self.pastMessageView.dialogText = self.reactions[8]
-                                self.setDialogMessageViewHeight()
+                                self.setDialogMessageViewHeight(topConstant: UIScreen.main.hasNotch ? 290 : 94)
                                 
                                 self.showPastView(self.pastMessageView) {
                                     
@@ -418,8 +415,6 @@ final class DialogViewController: UIViewController {
                                             self.sendButton.isEnabled = true
                                         }
                                     }
-                                    
-                                    
                                 }
                             }
                         }
@@ -612,8 +607,7 @@ final class DialogViewController: UIViewController {
     
     private func setDialogAnimation() {
         pastMessageView.dialogText = questions[count]
-        setDialogMessageViewHeight(topConstant: (count ==  00 && UIScreen.main.hasNotch) ? 290 : 94)
-        hideView(photoImageView)
+        setDialogMessageViewHeight(topConstant: UIScreen.main.hasNotch ? 290 : 94)
         
         showPastView(self.pastMessageView) {
             [self.answerTextView, self.underLineView, self.sendButton].forEach {
@@ -627,7 +621,7 @@ final class DialogViewController: UIViewController {
         answerTextView.delegate = self
     }
     
-    private func setDialogMessageViewHeight(topConstant: Double = UIScreen.main.hasNotch ? 290 : 94) {
+    private func setDialogMessageViewHeight(topConstant: Double = 290) {
         [pastMessageView, presentMessageView].forEach {
             let height = $0.dialogLabel.intrinsicContentSize.height + 30
             
