@@ -24,18 +24,11 @@
                             <constraint firstAttribute="height" constant="72" id="PHU-nt-5qX"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDG-HJ-9st">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDG-HJ-9st">
                         <rect key="frame" x="87" y="14" width="240" height="20.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="240" id="zfQ-2H-biK"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvg-tU-pd9">
-                        <rect key="frame" x="20" y="20" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -62,7 +55,6 @@
             </constraints>
             <connections>
                 <outlet property="contentLabel" destination="pDG-HJ-9st" id="3AU-td-SWt"/>
-                <outlet property="dummyLabel" destination="hvg-tU-pd9" id="m8C-yO-BVu"/>
                 <outlet property="imageViewHeightConstraint" destination="PHU-nt-5qX" id="gfQ-dm-gFz"/>
                 <outlet property="imageViewWidthConstraint" destination="MUs-mm-YHZ" id="g9J-Y6-MBs"/>
             </connections>
