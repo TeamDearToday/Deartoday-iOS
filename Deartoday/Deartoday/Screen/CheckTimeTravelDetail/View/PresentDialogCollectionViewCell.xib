@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,19 +40,42 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADx-V9-v9k">
+                        <rect key="frame" x="0.0" y="87" width="343" height="1"/>
+                        <color key="backgroundColor" name="lightBlue01"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="WEE-m1-7sp"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" name="white"/>
             <constraints>
+                <constraint firstItem="ADx-V9-v9k" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1ul-nJ-Uhb"/>
+                <constraint firstAttribute="trailing" secondItem="ADx-V9-v9k" secondAttribute="trailing" id="3JK-hD-raT"/>
                 <constraint firstItem="pDG-HJ-9st" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="14" id="MUI-pN-7Op"/>
                 <constraint firstAttribute="trailing" secondItem="pDG-HJ-9st" secondAttribute="trailing" constant="16" id="XcE-MJ-pXE"/>
                 <constraint firstItem="oTw-1p-Mwm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cnR-tW-hqB"/>
                 <constraint firstAttribute="trailing" secondItem="oTw-1p-Mwm" secondAttribute="trailing" id="dUg-QQ-Gwm"/>
+                <constraint firstItem="ADx-V9-v9k" firstAttribute="top" secondItem="oTw-1p-Mwm" secondAttribute="bottom" constant="15" id="izt-1b-KXP"/>
             </constraints>
-            <point key="canvasLocation" x="137.68115942028987" y="61.607142857142854"/>
+            <connections>
+                <outlet property="contentLabel" destination="pDG-HJ-9st" id="3AU-td-SWt"/>
+                <outlet property="dummyLabel" destination="hvg-tU-pd9" id="m8C-yO-BVu"/>
+                <outlet property="imageViewHeightConstraint" destination="PHU-nt-5qX" id="gfQ-dm-gFz"/>
+                <outlet property="imageViewWidthConstraint" destination="MUs-mm-YHZ" id="g9J-Y6-MBs"/>
+            </connections>
+            <point key="canvasLocation" x="136.95652173913044" y="61.607142857142854"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="imgTextBoxPresent" width="40.5" height="54"/>
+        <namedColor name="lightBlue01">
+            <color red="0.91399997472763062" green="0.94499999284744263" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
