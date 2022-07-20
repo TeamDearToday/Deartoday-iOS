@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TravelInfoCollectionReusableView" id="U6b-Vx-4bR" customClass="TravelInfoCollectionReusableView" customModule="Deartoday" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="343" height="80"/>
+            <rect key="frame" x="0.0" y="0.0" width="343" height="73"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016.07.03" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRE-VZ-zyj">
@@ -27,7 +27,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jss-Cy-8bA">
-                    <rect key="frame" x="0.0" y="79" width="343" height="1"/>
+                    <rect key="frame" x="0.0" y="72" width="343" height="1"/>
                     <color key="backgroundColor" name="lightBlue01"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="usx-F5-dua"/>
@@ -57,6 +57,7 @@
                 <constraint firstItem="YAO-yo-sBy" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="CHO-r9-DiW"/>
                 <constraint firstItem="oD6-KL-oRp" firstAttribute="centerY" secondItem="0Wl-uf-4oj" secondAttribute="centerY" id="G8J-pz-6AF"/>
                 <constraint firstItem="ZRE-VZ-zyj" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="Gej-7I-2XY"/>
+                <constraint firstItem="jss-Cy-8bA" firstAttribute="top" secondItem="YAO-yo-sBy" secondAttribute="bottom" constant="14" id="Huu-Ru-GL6"/>
                 <constraint firstAttribute="bottom" secondItem="jss-Cy-8bA" secondAttribute="bottom" id="O9g-oZ-uch"/>
                 <constraint firstAttribute="trailing" secondItem="0Wl-uf-4oj" secondAttribute="trailing" id="S0o-eM-WAb"/>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="jss-Cy-8bA" secondAttribute="trailing" id="dBh-aa-zUA"/>
