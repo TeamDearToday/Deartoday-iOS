@@ -7,13 +7,22 @@
 
 import UIKit
 
-class PresentDialogCollectionViewCell: UICollectionViewCell {
+final class PresentDialogCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "PresentDialogCollectionViewCell"
+
+    // MARK: - UI Property
+    
+    
+    // MARK: - Life Cycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
+    
+    // MARK: - Custom Method
+    
+    private func setUI() {
+        
+    }
 }
