@@ -102,6 +102,7 @@
 		98A47519287E0129008891F5 /* CheckMessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A47518287E0129008891F5 /* CheckMessageDetailViewController.swift */; };
 		98A4751C287E013F008891F5 /* CheckMessageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A4751B287E013F008891F5 /* CheckMessageDetailView.swift */; };
 		98A71D5A2882EEBA009508D9 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A71D592882EEBA009508D9 /* Colors.xcassets */; };
+		98AD713928884FF700E910CD /* CheckMessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AD713828884FF700E910CD /* CheckMessageResponse.swift */; };
 		98B4B5AA287EB54600F4AD7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B4B5A9287EB54600F4AD7A /* ViewController.swift */; };
 		98B4B5AC287EB5EF00F4AD7A /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B4B5AB287EB5EF00F4AD7A /* Storyboard.swift */; };
 		98B4B5B1287EC93B00F4AD7A /* TimeTapeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B4B5AF287EC93B00F4AD7A /* TimeTapeTableViewCell.swift */; };
@@ -226,6 +227,7 @@
 		98A47518287E0129008891F5 /* CheckMessageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessageDetailViewController.swift; sourceTree = "<group>"; };
 		98A4751B287E013F008891F5 /* CheckMessageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessageDetailView.swift; sourceTree = "<group>"; };
 		98A71D592882EEBA009508D9 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		98AD713828884FF700E910CD /* CheckMessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessageResponse.swift; sourceTree = "<group>"; };
 		98B4B5A9287EB54600F4AD7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		98B4B5AB287EB5EF00F4AD7A /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		98B4B5AF287EC93B00F4AD7A /* TimeTapeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTapeTableViewCell.swift; sourceTree = "<group>"; };
@@ -627,6 +629,7 @@
 		92DB354E28756413001E2006 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				98AD713728884FE300E910CD /* CheckMessage */,
 				4ADAB7E7288507830049C465 /* Login */,
 				9803F3C428848B2D00A5A239 /* CheckTimeTravel */,
 				9803F3B228847C8900A5A239 /* Main */,
@@ -940,6 +943,14 @@
 			path = Color;
 			sourceTree = "<group>";
 		};
+		98AD713728884FE300E910CD /* CheckMessage */ = {
+			isa = PBXGroup;
+			children = (
+				98AD713828884FF700E910CD /* CheckMessageResponse.swift */,
+			);
+			path = CheckMessage;
+			sourceTree = "<group>";
+		};
 		98D912A9287D43530088A7F9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -1184,6 +1195,7 @@
 				9803F3E62885E0AD00A5A239 /* CheckTimeTravelDetailResponse.swift in Sources */,
 				92C27EA72884455700077FA3 /* TimeTravelResponse.swift in Sources */,
 				92DB358028756AE8001E2006 /* MoyaLoggingPlugin.swift in Sources */,
+				98AD713928884FF700E910CD /* CheckMessageResponse.swift in Sources */,
 				4A45D37E287F0B2F00592749 /* OpenBoxOnboardingViewController.swift in Sources */,
 				92CC3B9C287CA17000EA5617 /* CountDownLabel.swift in Sources */,
 				924814B1287EB5CC001177B1 /* DialogViewController.swift in Sources */,

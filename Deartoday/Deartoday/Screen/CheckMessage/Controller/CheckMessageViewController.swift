@@ -124,7 +124,7 @@ final class CheckMessageViewController: UIViewController {
     private func setMessageArray(response: [String]) {
         messages.removeAll()
         response.forEach {
-            messages.append(MessageDataModel(message: $0, index: messages.count))
+            messages.append(MessageDataModel(message: $0, uuid: UUID()))
         }
     }
     
@@ -153,8 +153,7 @@ extension CheckMessageViewController {
     private func getMessageInfo() {
         CheckMessageAPI.shared.getCheckMessage { response in
             guard let responseData = response else { return }
-            self.messages.removeAll()
-            self.setMessageInfo(response: responseData.data ?? [])
+            self.setMessageInfo(response: responseData.data?.lastAnswer ?? [])
         }
     }
 }
