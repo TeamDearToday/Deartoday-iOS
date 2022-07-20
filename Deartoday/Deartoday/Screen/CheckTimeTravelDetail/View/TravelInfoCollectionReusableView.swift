@@ -10,8 +10,6 @@ import UIKit
 final class TravelInfoCollectionReusableView: UICollectionReusableView {
     
     static let identifier = "TravelInfoCollectionReusableView"
-
-    // MARK: - Property
     
     // MARK: - UI Property
     
@@ -32,11 +30,5 @@ final class TravelInfoCollectionReusableView: UICollectionReusableView {
         pastDateLabel.font = .h0
         writtenDateLabel.font = .caption0
         titleLabel.font = .h2
-    }
-    
-    func setData(past: String, written: String, title: String) {
-        pastDateLabel.text = past
-        writtenDateLabel.text = written
-        titleLabel.text = title
     }
 }
