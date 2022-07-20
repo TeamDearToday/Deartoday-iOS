@@ -9,6 +9,8 @@ import UIKit
 
 class PresentDialogCollectionViewCell: UICollectionViewCell {
 
+    static let identifier = "PresentDialogCollectionViewCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
