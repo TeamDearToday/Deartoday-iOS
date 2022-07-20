@@ -101,7 +101,7 @@ final class PlayTapeOnboardingViewController: UIViewController {
         let tapeLottieView = AnimationView(name: Constant.Lottie.tape)
         tapeLottieView.frame = self.view.bounds
         tapeLottieView.center = self.view.center
-        tapeLottieView.contentMode = .scaleAspectFit
+        tapeLottieView.contentMode = .scaleAspectFill
         self.view.addSubview(tapeLottieView)
         tapeLottieView.play()
         
