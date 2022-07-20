@@ -66,7 +66,7 @@
                 <outlet property="imageViewHeightConstraint" destination="x00-S4-UC6" id="u9D-ou-foW"/>
                 <outlet property="imageViewWidthConstraint" destination="mKP-FK-W76" id="Qi8-xK-Kr7"/>
             </connections>
-            <point key="canvasLocation" x="139" y="62"/>
+            <point key="canvasLocation" x="138.40579710144928" y="61.607142857142854"/>
         </collectionViewCell>
     </objects>
     <resources>

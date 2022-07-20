@@ -63,8 +63,8 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        //hedaer view 높이 73에 line height * line 수 만큼 곱하기
-        return (section == 0) ? .zero : CGSize(width: collectionView.frame.width, height: 73)
+        //hedaer view 높이 73에 line height * line 수 만큼 곱하기 + 4
+        return (section == 0) ? .zero : CGSize(width: collectionView.frame.width, height: 96)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
