@@ -152,6 +152,14 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
         default: assert(false, "not section header")
         }
     }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension CheckTimeTravelDetailViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 16
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.section {
@@ -161,14 +169,6 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
         default:
             return CGSize.zero
         }
-    }
-}
-
-// MARK: - UICollectionViewDelegateFlowLayout
-
-extension CheckTimeTravelDetailViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 16
     }
 }
 
