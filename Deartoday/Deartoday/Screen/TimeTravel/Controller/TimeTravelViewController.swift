@@ -44,6 +44,7 @@ final class TimeTravelViewController: UIViewController {
     // MARK: - UI Property
     
     private var backImageView = UIImageView().then {
+        $0.contentMode = .scaleAspectFill
         $0.image = Constant.Image.mainLeftWithg
     }
     
@@ -139,6 +140,7 @@ final class TimeTravelViewController: UIViewController {
     private var playerAnimationView: AnimationView = {
         let animationView = AnimationView.init(name: Constant.Lottie.timetape)
         animationView.alpha = 0
+        animationView.contentMode = .scaleAspectFill
         return animationView
     }()
     
@@ -232,7 +234,7 @@ final class TimeTravelViewController: UIViewController {
         
         returnButton.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(6)
-            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(2)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(UIScreen.main.hasNotch ? 2 : 14)
         }
     }
     

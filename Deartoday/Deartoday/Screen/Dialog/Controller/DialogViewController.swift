@@ -92,7 +92,7 @@ final class DialogViewController: UIViewController {
     // MARK: - UI Property
     
     private var backgroundImageView = UIImageView().then {
-        $0.contentMode = .scaleAspectFit
+        $0.contentMode = .scaleAspectFill
         $0.image = Constant.Image.convoBg
     }
     
@@ -254,7 +254,8 @@ final class DialogViewController: UIViewController {
             answers[count] = text
         }
         
-        setDialogMessageViewHeight()
+        setDialogMessageViewHeight(topConstant: UIScreen.main.hasNotch ? 290 : 94)
+        hideView(photoImageView)
         
         answerTextView.text = ""
         sendButton.isEnabled = false
@@ -611,7 +612,8 @@ final class DialogViewController: UIViewController {
     
     private func setDialogAnimation() {
         pastMessageView.dialogText = questions[count]
-        setDialogMessageViewHeight()
+        setDialogMessageViewHeight(topConstant: (count ==  00 && UIScreen.main.hasNotch) ? 290 : 94)
+        hideView(photoImageView)
         
         showPastView(self.pastMessageView) {
             [self.answerTextView, self.underLineView, self.sendButton].forEach {
@@ -625,7 +627,7 @@ final class DialogViewController: UIViewController {
         answerTextView.delegate = self
     }
     
-    private func setDialogMessageViewHeight(topConstant: Double = 290) {
+    private func setDialogMessageViewHeight(topConstant: Double = UIScreen.main.hasNotch ? 290 : 94) {
         [pastMessageView, presentMessageView].forEach {
             let height = $0.dialogLabel.intrinsicContentSize.height + 30
             

@@ -16,7 +16,9 @@ class VirtualSpaceCollectionViewCell: UICollectionViewCell {
     
     // MARK: - UI Property
     
-    private var mediaImageView = UIImageView()
+    private var mediaImageView = UIImageView().then {
+        $0.contentMode = .scaleAspectFill
+    }
     
     // MARK: - Initializer
     
