@@ -10,28 +10,25 @@ import UIKit
 import SnapKit
 import Then
 
-class SettingTableViewCell: UITableViewCell {
+final class SettingTableViewCell: UITableViewCell {
     
     static let identifier = "SettingTableViewCell"
     
     // MARK: - UI Property
     
     @IBOutlet weak var titleTextLabel: UILabel!
-    // MARK: - Life Cycle
     @IBOutlet weak var switchButton: UISwitch!
     
-    
+    // MARK: - Life Cycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setUI()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
-    // MARK: - @objc
     
     // MARK: - Custom Method
     
