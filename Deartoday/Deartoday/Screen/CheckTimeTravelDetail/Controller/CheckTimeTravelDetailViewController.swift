@@ -129,7 +129,7 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
 extension CheckTimeTravelDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: (section == 0 ? 0 : 16), left: 0,
-                            bottom: (section == 0 ? 20 : 0), right: 0)
+                            bottom: (section == 0 ? 20 : 34), right: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
