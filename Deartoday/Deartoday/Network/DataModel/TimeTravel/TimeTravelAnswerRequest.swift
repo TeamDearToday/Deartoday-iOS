@@ -14,7 +14,7 @@ struct TimeTravelAnswerRequest: Codable {
     let year: Int
     let month: Int
     let day: Int
-    let currentDate: String
+    let writtenDate: String
     let questions: [String]
     let answers: [String]
     
@@ -23,7 +23,7 @@ struct TimeTravelAnswerRequest: Codable {
         case year = "year"
         case month = "month"
         case day = "day"
-        case currentDate = "currentDate"
+        case writtenDate = "writtenDate"
         case questions = "questions"
         case answers = "answers"
     }
