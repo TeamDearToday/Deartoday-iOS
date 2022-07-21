@@ -21,6 +21,10 @@ final class TimeTravelView: UIView {
     
     // MARK: - Property
     
+    internal var year: String = ""
+    internal var month: String = ""
+    internal var day: String = ""
+    
     public var hasPhoto: Bool = false {
         didSet {
             [dateTextField, titleTextField].forEach {
@@ -39,6 +43,18 @@ final class TimeTravelView: UIView {
         $0.locale = Locale(identifier: "ko_kr")
         $0.timeZone = TimeZone(abbreviation: "ko_kr")
         $0.dateFormat = "yyyy.MM.dd"
+    }
+    
+    private let yearFormatter = DateFormatter().then {
+        $0.dateFormat = "yyyy"
+    }
+    
+    private let monthFormatter = DateFormatter().then {
+        $0.dateFormat = "MM"
+    }
+    
+    private let dayFormatter = DateFormatter().then {
+        $0.dateFormat = "dd"
     }
     
     weak var delegate: TimeTravelViewDelegate?

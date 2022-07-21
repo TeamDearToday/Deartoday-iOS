@@ -369,7 +369,7 @@ final class DialogViewController: UIViewController {
                         self.setDialogMessageViewHeight(topConstant: UIScreen.main.hasNotch ? 290 : 94)
                         
                         self.showPastView(self.pastMessageView) {
-                            self.hidePastView(self.pastMessageView) {
+                            self.hidePastView(self.pastMessageView, delay: 0.8, duration: 0.8) {
                                 
                                 self.pastMessageView.dialogText = self.questions[self.count]
                                 self.setDialogMessageViewHeight(topConstant: UIScreen.main.hasNotch ? 290 : 94)
@@ -575,14 +575,14 @@ final class DialogViewController: UIViewController {
         
         sendButton.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(20)
-            $0.bottom.equalTo(underLineView.snp.top).offset(-9)
+            $0.bottom.equalTo(underLineView.snp.top).offset(-10)
             $0.height.equalTo(27)
         }
         
         answerTextView.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(16)
             $0.trailing.equalToSuperview().inset(75)
-            $0.bottom.equalTo(underLineView.snp.top).offset(-12)
+            $0.bottom.equalTo(underLineView.snp.top).offset(-9)
             $0.height.equalTo(21)
         }
     }
