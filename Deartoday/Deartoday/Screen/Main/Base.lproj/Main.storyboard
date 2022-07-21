@@ -59,7 +59,7 @@
                                                     <action selector="timeTravelButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VCk-oD-vDd"/>
                                                 </connections>
                                             </button>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rewind" translatesAutoresizingMaskIntoConstraints="NO" id="jkQ-e5-aBO">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rewind" translatesAutoresizingMaskIntoConstraints="NO" id="jkQ-e5-aBO">
                                                 <rect key="frame" x="117" y="275" width="28" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="jkQ-e5-aBO" secondAttribute="height" multiplier="1:1" id="RZ3-Ea-KUy"/>
@@ -119,14 +119,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="7kC-Da-iAq">
                                                 <rect key="frame" x="601" y="186" width="30" height="22"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icnMemo" translatesAutoresizingMaskIntoConstraints="NO" id="hYj-Yl-O37">
+                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icnMemo" translatesAutoresizingMaskIntoConstraints="NO" id="hYj-Yl-O37">
                                                         <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="22" id="NSd-XM-pMn"/>
                                                             <constraint firstAttribute="width" secondItem="hYj-Yl-O37" secondAttribute="height" multiplier="1:1" id="uhL-nl-9LP"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Goz-jN-lWr">
+                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Goz-jN-lWr">
                                                         <rect key="frame" x="26" y="0.0" width="4" height="22"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
@@ -137,14 +137,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="5J9-qv-07r">
                                                 <rect key="frame" x="564" y="485" width="30" height="22"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icnTape" translatesAutoresizingMaskIntoConstraints="NO" id="UVK-NG-wji">
+                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icnTape" translatesAutoresizingMaskIntoConstraints="NO" id="UVK-NG-wji">
                                                         <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="UVK-NG-wji" secondAttribute="height" multiplier="1:1" id="Nty-DZ-FFK"/>
                                                             <constraint firstAttribute="height" constant="22" id="yaU-bL-Knj"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PU-Ad-LwK">
+                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PU-Ad-LwK">
                                                         <rect key="frame" x="26" y="0.0" width="4" height="22"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
