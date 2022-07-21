@@ -49,7 +49,7 @@
                                     <constraint firstItem="dMx-Ti-gy7" firstAttribute="leading" secondItem="gWr-r0-lZc" secondAttribute="trailing" id="mcu-T7-HmG"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kjo-GV-Lwo">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kjo-GV-Lwo">
                                 <rect key="frame" x="16" y="116" width="382" height="780"/>
                                 <color key="backgroundColor" name="white"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PhX-pg-2oi">
