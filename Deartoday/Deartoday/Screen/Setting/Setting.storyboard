@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -43,30 +44,72 @@
                                 <rect key="frame" x="0.0" y="116" width="414" height="746"/>
                                 <sections/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그아웃" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIC-ej-lEh">
+                                <rect key="frame" x="16" y="723" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Juc-k5-ipw">
+                                <rect key="frame" x="16" y="743" width="52" height="1"/>
+                                <color key="backgroundColor" name="blue01"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="52" id="81o-E6-bsY"/>
+                                    <constraint firstAttribute="height" constant="1" id="qrW-hO-kr0"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서비스 탈퇴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDs-AX-CVV">
+                                <rect key="frame" x="16" y="766" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kke-s6-HT0">
+                                <rect key="frame" x="16" y="788" width="69" height="1"/>
+                                <color key="backgroundColor" name="blue01"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="1HA-s6-3WY"/>
+                                    <constraint firstAttribute="height" constant="1" id="9d5-he-La7"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Aza-Sp-fTh" secondAttribute="trailing" id="3c8-vW-Xze"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZoU-IE-iUS" secondAttribute="trailing" id="3tN-ER-5Dl"/>
+                            <constraint firstItem="Juc-k5-ipw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="8pI-3x-ur4"/>
+                            <constraint firstItem="Juc-k5-ipw" firstAttribute="top" secondItem="aIC-ej-lEh" secondAttribute="bottom" constant="-1" id="95O-8A-Xum"/>
                             <constraint firstItem="ZoU-IE-iUS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Ik3-7e-Foy"/>
                             <constraint firstItem="Aza-Sp-fTh" firstAttribute="top" secondItem="ZoU-IE-iUS" secondAttribute="bottom" id="MtY-NL-AyR"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="kke-s6-HT0" secondAttribute="bottom" constant="73" id="NeH-90-HXE"/>
+                            <constraint firstItem="NDs-AX-CVV" firstAttribute="top" secondItem="aIC-ej-lEh" secondAttribute="bottom" constant="22" id="T7u-v2-Vys"/>
                             <constraint firstItem="Aza-Sp-fTh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="TWt-n5-csb"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Aza-Sp-fTh" secondAttribute="bottom" id="VOI-Fz-T6d"/>
+                            <constraint firstItem="NDs-AX-CVV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="bC9-63-h24"/>
                             <constraint firstItem="ZoU-IE-iUS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="bET-2O-3by"/>
+                            <constraint firstItem="kke-s6-HT0" firstAttribute="top" secondItem="NDs-AX-CVV" secondAttribute="bottom" constant="1" id="mMZ-th-0sg"/>
+                            <constraint firstItem="aIC-ej-lEh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="nEM-lu-6fE"/>
+                            <constraint firstItem="kke-s6-HT0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="w5h-ao-G7g"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="labelBottomConstraint" destination="NeH-90-HXE" id="87M-lD-tw1"/>
+                        <outlet property="logoutLabel" destination="aIC-ej-lEh" id="5Uc-Hh-IyD"/>
+                        <outlet property="serviceSecession" destination="NDs-AX-CVV" id="LJ8-E9-uQO"/>
                         <outlet property="tableView" destination="Aza-Sp-fTh" id="Qd5-t0-BT2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-23" y="51"/>
+            <point key="canvasLocation" x="-23.188405797101453" y="50.892857142857139"/>
         </scene>
     </scenes>
     <resources>
         <image name="icBack" width="44" height="44"/>
+        <namedColor name="blue01">
+            <color red="0.47099998593330383" green="0.65100002288818359" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -21,16 +21,29 @@ final class SettingViewController: UIViewController {
     // MARK: - UI Property
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var logoutLabel: UILabel!
+    @IBOutlet weak var serviceSecession: UILabel!
+    @IBOutlet weak var labelBottomConstraint: NSLayoutConstraint!
     
     // MARK: - Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerXib()
         hideSectionHeaderPadding()
+        setLabelUI()
+        setLayout()
     }
     
     // MARK: - @objc
+    
+    @objc func logoutLabelDidTap() {
+        
+    }
+    
+    @objc func serviceSecessionDidTap() {
+        
+    }
     
     // MARK: - Custom Method
     
@@ -44,6 +57,32 @@ final class SettingViewController: UIViewController {
         let nib = UINib(nibName: SettingTableViewCell.identifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: SettingTableViewCell.identifier)
     }
+    
+    private func setLabelUI() {
+        logoutLabel.textColor = .blue01
+        logoutLabel.textAlignment = .left
+        logoutLabel.font = .p4
+        
+        serviceSecession.textColor = .blue01
+        serviceSecession.textAlignment = .left
+        serviceSecession.font = .p4
+    }
+    
+    private func setLayout() {
+        labelBottomConstraint.constant = getDeviceHeight() == 667 ? 35 : 73
+    }
+    
+    private func addLogoutLabelGesture() {
+        let addLogoutLabelGesture = UITapGestureRecognizer(target: self, action: #selector(logoutLabelDidTap))
+        logoutLabel.addGestureRecognizer(addLogoutLabelGesture)
+    }
+    
+    private func addServiceSecessionLabelGestrue() {
+        let addServiceSecessionGesture = UITapGestureRecognizer(target: self, action: #selector(serviceSecessionDidTap))
+        serviceSecession.addGestureRecognizer(addServiceSecessionGesture)
+    }
+    
+    // MARK: IBAciton
     
     @IBAction func backButtonDidTap(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
