@@ -66,6 +66,7 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         dummyLabel.text = travelInfo?.title
+        dummyLabel.setTextWithLineHeight(text: dummyLabel.text, lineHeight: 26)
         dummyLabel.sizeToFit()
         return (section == 0) ? .zero : CGSize(width: collectionView.frame.width,
                                                height: 54 + dummyLabel.frame.height)
@@ -118,6 +119,8 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
             headerView.titleLabel?.text = travelInfo?.title ?? ""
             headerView.pastDateLabel?.text = "\(travelInfo?.year ?? 0).\(travelInfo?.month ?? 0).\(travelInfo?.day ?? 0)"
             headerView.writtenDateLabel?.text = travelInfo?.writtenDate ?? ""
+            headerView.titleLabel.setTextWithLineHeight(text: headerView.titleLabel.text,
+                                                        lineHeight: 26)
             return headerView
         default: assert(false, "not section header")
         }
