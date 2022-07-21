@@ -122,7 +122,7 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
             headerView.titleLabel.setTextWithLineHeight(text: headerView.titleLabel.text,
                                                         lineHeight: 26)
             return headerView
-        default: assert(false, "not section header")
+        default: return UICollectionReusableView()
         }
     }
 }
