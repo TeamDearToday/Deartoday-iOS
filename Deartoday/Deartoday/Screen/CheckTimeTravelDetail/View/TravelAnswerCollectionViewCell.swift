@@ -35,6 +35,7 @@ final class TravelAnswerCollectionViewCell: UICollectionViewCell {
     private func setUI() {
         titleLabel.font = .caption2
         contentLabel.font = .caption2
+        titleLabel.sizeToFit()
     }
     
     private func updateUI() {
