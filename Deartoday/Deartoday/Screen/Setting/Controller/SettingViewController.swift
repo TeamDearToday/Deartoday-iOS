@@ -107,6 +107,7 @@ extension SettingViewController: UITableViewDataSource {
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier, for: indexPath) as? SettingTableViewCell else { return UITableViewCell() }
             cell.setData(secondSectionLabel[indexPath.row])
+            cell.switchButton.isHidden = true
             return cell
         default:
             return UITableViewCell()
