@@ -16,8 +16,8 @@ final class LoginAPI {
     
     // MARK: - Post
     
-    func login(social: String, socialToken: String, FCMToken: String, completion: @escaping ((GeneralResponse<LoginResponse>?, Error?) -> ())) {
-        loginProvider.request(.login(social: social, socialToken: socialToken, FCMToken: FCMToken)) { [weak self] response in
+    func login(param: LoginRequest, completion: @escaping ((GeneralResponse<LoginResponse>?, Error?) -> ())) {
+        loginProvider.request(.login(param: param)) { [weak self] response in
             switch response {
             case .success(let result):
                 do {

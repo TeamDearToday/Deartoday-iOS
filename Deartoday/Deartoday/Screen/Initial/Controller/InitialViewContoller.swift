@@ -47,11 +47,6 @@ final class InitialViewController: UIViewController {
         authorizationController.delegate = self
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
-        
-        guard let mainViewController = UIStoryboard(name: Constant.Storyboard.Main, bundle: nil).instantiateViewController(withIdentifier: "MainNavigationController") as? MainNavigationController else { return }
-        mainViewController.modalPresentationStyle = .fullScreen
-        mainViewController.modalTransitionStyle = .crossDissolve
-        present(mainViewController, animated: true)
     }
     
     // MARK: - Custom Method
@@ -63,7 +58,7 @@ final class InitialViewController: UIViewController {
             $0.edges.equalToSuperview()
         }
         logoImageView.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(68)
+            $0.centerX.equalToSuperview()
             $0.top.equalToSuperview().inset(getDeviceHeight() == 667 ? 190 : 258)
         }
         appleLoginButton.snp.makeConstraints {
@@ -79,17 +74,24 @@ extension InitialViewController: ASAuthorizationControllerDelegate, ASAuthorizat
     }
     
     // Apple ID 연동 성공 시
-//    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-//        if let credential = authorization.credential as? ASAuthorizationAppleIDCredential {
-//            guard let identityToken = credential.identityToken else { return }
-//            guard let socialToken = String(data: identityToken, encoding: .utf8) else { return }
-//            guard let FCMToken = UserDefaults.standard.value(forKey: "Init") as? String else { return }
-//
-//            LoginAPI.shared.login(social: "APPLE", socialToken: socialToken, FCMToken: FCMToken) { appleLoginData, err in
-//                guard let appleloginData = appleLoginData else { return }
-//            }
-//        }
-//    }
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let credential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            guard let identityToken = credential.identityToken else { return }
+            guard let socialToken = String(data: identityToken, encoding: .utf8) else { return }
+            guard let fcmToken = UserDefaults.standard.value(forKey: "Init") as? String else { return }
+
+            LoginAPI.shared.login(param: LoginRequest(social: "APPLE", socialToken: socialToken, fcmToken: fcmToken)) { appleLoginData, err in
+                guard let appleloginData = appleLoginData else { return }
+                guard let accessToken = appleLoginData?.data?.accessToken else { return }
+                print("accessToken:\(accessToken)")
+//                UserDefaults.standard.set("\(accessToken)", forKey: "hasToken")
+            }
+        }
+        guard let mainViewController = UIStoryboard(name: Constant.Storyboard.Main, bundle: nil).instantiateViewController(withIdentifier: "MainNavigationController") as? MainNavigationController else { return }
+        mainViewController.modalPresentationStyle = .fullScreen
+        mainViewController.modalTransitionStyle = .crossDissolve
+        present(mainViewController, animated: true)
+    }
     
     // Apple ID 연동 실패
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
