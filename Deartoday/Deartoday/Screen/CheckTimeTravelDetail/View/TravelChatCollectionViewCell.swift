@@ -34,14 +34,6 @@ final class TravelChatCollectionViewCell: UICollectionViewCell {
         questionLabel.font = .caption2
         answerLabel.font = .caption2
     }
-    
-    private func updateUI() {
-        //past imageview width는 라벨 width에 60을 더함
-        //past imageview height는 라벨 height에 28을 더함
-        
-        //answer imageview width는 라벨 width에 32을 더함
-        //answer imageview height는 라벨 height에 28을 더함
-    }
 
     func setData(question: String, answer: String) {
         questionLabel.text = question
