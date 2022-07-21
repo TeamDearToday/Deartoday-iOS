@@ -45,14 +45,14 @@ extension DialogViewController {
     
     // 과거의 나 텍스트 애니메이션
     internal func showPastView(_ component: UIView, completion: @escaping () -> Void) {
-        UIView.animate(withDuration: 0.3, delay: 0.5, options: .curveEaseOut) {
+        UIView.animate(withDuration: 0.4, delay: 0.5, options: .curveEaseOut) {
             component.alpha = 1
         } completion: { _ in
             completion()
         }
     }
     
-    internal func hidePastView(_ component: UIView, delay: Double = 0.5, duration: Double = 0.5, completion: @escaping () -> Void) {
+    internal func hidePastView(_ component: UIView, delay: Double = 0.7 , duration: Double = 0.5, completion: @escaping () -> Void) {
         UIView.animate(withDuration: duration, delay: delay, options: .curveEaseOut) {
             component.alpha = 0
         } completion: { _ in
@@ -62,7 +62,7 @@ extension DialogViewController {
     
     // 현재의 나 텍스트 애니메이션
     internal func showPresentView(_ component: UIView, completion: @escaping () -> Void) {
-        UIView.animate(withDuration: 1.0, delay: 1.0, options: .curveEaseOut) {
+        UIView.animate(withDuration: 0.5, delay: 1.0, options: .curveEaseOut) {
             component.alpha = 1
         } completion: { _ in
             completion()
@@ -70,7 +70,7 @@ extension DialogViewController {
     }
     
     internal func hidePresentView(_ component: UIView, completion: @escaping () -> Void) {
-        UIView.animate(withDuration: 1.0, delay: 1.0, options: .curveEaseOut) {
+        UIView.animate(withDuration: 0.5, delay: 1.0, options: .curveEaseOut) {
             component.alpha = 0
         } completion: { _ in
             completion()
@@ -78,13 +78,13 @@ extension DialogViewController {
     }
     
     // 나타나는 애니메이션
-    internal func showView(_ component: UIView, delay: Double = 0.5, duration: Double = 0.3){
+    internal func showView(_ component: UIView, delay: Double = 0.5, duration: Double = 0.5){
         UIView.animate(withDuration: duration, delay: delay, options: .curveEaseOut) {
             component.alpha = 1
         }
     }
     
-    internal func hideView(_ component: UIView, delay: Double = 0.5, duration: Double = 0.3){
+    internal func hideView(_ component: UIView, delay: Double = 0.5, duration: Double = 0.5){
         UIView.animate(withDuration: duration, delay: delay, options: .curveEaseOut) {
             component.alpha = 0
         } 
