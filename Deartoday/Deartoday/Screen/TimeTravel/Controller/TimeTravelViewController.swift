@@ -327,13 +327,15 @@ final class TimeTravelViewController: UIViewController {
             $0.isHidden.toggle()
         }
         
-        yearAnimationLabel.config(num: year, duration: 1.2)
+        let text = self.timeTravelView.dateTextField.text?.components(separatedBy: ".")
+        
+        yearAnimationLabel.config(num: text?[0] ?? year, duration: 1.2)
         yearAnimationLabel.animate(ascending: true)
         
-        monthAnmationLabel.config(num: month, duration: 1.2)
+        monthAnmationLabel.config(num: text?[1] ?? month, duration: 1.2)
         monthAnmationLabel.animate(ascending: true)
         
-        dayAnimationLabel.config(num: day, duration: 1.2)
+        dayAnimationLabel.config(num: text?[2] ?? day, duration: 1.2)
         dayAnimationLabel.animate(ascending: true)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.8) {
@@ -343,9 +345,9 @@ final class TimeTravelViewController: UIViewController {
                 virtualSpaceViewController.modalPresentationStyle = .fullScreen
                 virtualSpaceViewController.modalTransitionStyle = .crossDissolve
                 
-                virtualSpaceViewController.year = self.year
-                virtualSpaceViewController.month = self.month
-                virtualSpaceViewController.day = self.day
+                virtualSpaceViewController.year = text?[0] ?? self.year
+                virtualSpaceViewController.month = text?[1] ?? self.month
+                virtualSpaceViewController.day = text?[2] ?? self.day
                 
                 if let text = self.timeTravelView.titleTextField.text {
                     virtualSpaceViewController.timeTravelTitle = text
