@@ -207,8 +207,6 @@ extension CheckTimeTravelDetailViewController {
     
     private func registerXib() {
         let pastImageXib = UINib(nibName: PastImageCollectionViewCell.identifier, bundle: nil)
-        let infoXib = UINib(nibName: TravelInfoCollectionViewCell.identifier, bundle: nil)
-        let chatXib = UINib(nibName: TravelChatCollectionViewCell.identifier, bundle: nil)
         let answerXib = UINib(nibName: TravelAnswerCollectionViewCell.identifier, bundle: nil)
         let pastXib = UINib(nibName: PastDialogCollectionViewCell.identifier, bundle: nil)
         let presentXib = UINib(nibName: PresentDialogCollectionViewCell.identifier, bundle: nil)
@@ -216,10 +214,6 @@ extension CheckTimeTravelDetailViewController {
         collectionView.register(sectionXib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TravelInfoCollectionReusableView.identifier)
         collectionView.register(pastImageXib,
                                 forCellWithReuseIdentifier: PastImageCollectionViewCell.identifier)
-        collectionView.register(infoXib,
-                                forCellWithReuseIdentifier: TravelInfoCollectionViewCell.identifier)
-        collectionView.register(chatXib,
-                                forCellWithReuseIdentifier: TravelChatCollectionViewCell.identifier)
         collectionView.register(answerXib,
                                 forCellWithReuseIdentifier: TravelAnswerCollectionViewCell.identifier)
         collectionView.register(pastXib,
