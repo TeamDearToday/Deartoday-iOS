@@ -79,7 +79,7 @@ final class MainViewController: UIViewController {
     @IBAction func timeTravelButtonDidTap(_ sender: Any) {
         let timeTravel = TimeTravelViewController()
         timeTravel.modalTransitionStyle = .crossDissolve
-        timeTravel.modalPresentationStyle = .overFullScreen
+        timeTravel.modalPresentationStyle = .fullScreen
         present(timeTravel, animated: true)
     }
     
