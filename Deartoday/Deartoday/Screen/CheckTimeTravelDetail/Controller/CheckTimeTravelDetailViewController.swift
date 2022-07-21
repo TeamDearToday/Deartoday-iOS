@@ -20,6 +20,8 @@ final class CheckTimeTravelDetailViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var dummyLabel: UILabel!
+    @IBOutlet weak var dummyLabelWidthConstraint: NSLayoutConstraint!
     
     // MARK: - Life Cycle
     
@@ -63,13 +65,10 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        //hedaer view 높이 73에 line height * line 수 만큼 곱하기 + 4
-        let knds = travelInfo?.title.getEstimatedFrame(with: .h2)
-        var lineheight = ((knds?.width ?? 0) / collectionView.frame.width) * 26
-        if (knds?.width ?? 0).truncatingRemainder(dividingBy: collectionView.frame.width) != 0 {
-            lineheight += 26
-        }
-        return (section == 0) ? .zero : CGSize(width: collectionView.frame.width, height: 58 + lineheight)
+        dummyLabel.text = travelInfo?.title
+        dummyLabel.sizeToFit()
+        return (section == 0) ? .zero : CGSize(width: collectionView.frame.width,
+                                               height: 54 + dummyLabel.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
@@ -129,7 +128,8 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
 
 extension CheckTimeTravelDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: (section == 0 ? 20 : 0), right: 0)
+        return UIEdgeInsets(top: (section == 0 ? 0 : 16), left: 0,
+                            bottom: (section == 0 ? 20 : 0), right: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -146,7 +146,7 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDelegateFlowLayou
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TravelAnswerCollectionViewCell.identifier, for: indexPath) as? TravelAnswerCollectionViewCell else { return .zero }
                 if !dialogs.isEmpty { cell.contentLabel.text = dialogs[6].answer }
                 cell.contentLabel.sizeToFit()
-                height = cell.contentLabel.frame.height + 28 + 63
+                height = cell.contentLabel.frame.height + 91
             }
             else if indexPath.item % 2 == 0 {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PastDialogCollectionViewCell.identifier, for: indexPath) as? PastDialogCollectionViewCell else { return .zero }
@@ -158,7 +158,7 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDelegateFlowLayou
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PresentDialogCollectionViewCell.identifier, for: indexPath) as? PresentDialogCollectionViewCell else { return .zero }
                 if !dialogs.isEmpty { cell.contentLabel.text = dialogs[indexPath.item / 2].answer }
                 cell.contentLabel.sizeToFit()
-                height = cell.contentLabel.frame.height + 43
+                height = cell.contentLabel.frame.height + 45
             }
         default:
             return .zero
@@ -186,6 +186,8 @@ extension CheckTimeTravelDetailViewController {
 extension CheckTimeTravelDetailViewController {
     private func setLabelUI() {
         titleLabel.font = .btn0
+        dummyLabel.font = .h2
+        dummyLabelWidthConstraint.constant = getDeviceWidth() - 32
     }
     
     private func registerXib() {
@@ -214,17 +216,5 @@ extension CheckTimeTravelDetailViewController {
     private func setCollectionViewLayout() {
         collectionViewFlowLayout.scrollDirection = .vertical
         collectionViewFlowLayout.sectionHeadersPinToVisibleBounds = true
-    }
-}
-
-
-
-
-extension String {
-    func getEstimatedFrame(with font: UIFont) -> CGRect {
-        let size = CGSize(width: UIScreen.main.bounds.width * 2/3, height: 1000)
-        let optionss = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
-        let estimatedFrame = NSString(string: self).boundingRect(with: size, options: optionss, attributes: [.font: font], context: nil)
-        return estimatedFrame
     }
 }
