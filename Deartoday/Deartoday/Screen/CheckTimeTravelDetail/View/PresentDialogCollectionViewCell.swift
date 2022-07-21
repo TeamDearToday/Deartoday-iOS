@@ -31,6 +31,8 @@ final class PresentDialogCollectionViewCell: UICollectionViewCell {
     }
     
     private func updateUI() {
+        contentLabel.setTextWithLineHeight(text: contentLabel.text, lineHeight: 22)
+        contentLabel.textAlignment = .right
         contentLabel.sizeToFit()
         imageViewWidthConstraint.constant = contentLabel.frame.width + 32
         imageViewHeightConstraint.constant = contentLabel.frame.height + 28
