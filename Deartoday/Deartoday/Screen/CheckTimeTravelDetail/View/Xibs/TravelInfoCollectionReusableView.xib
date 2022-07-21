@@ -20,14 +20,14 @@
                     <color key="textColor" name="blue02"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAO-yo-sBy">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAO-yo-sBy">
                     <rect key="frame" x="0.0" y="37" width="343" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" name="darkGray00"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jss-Cy-8bA">
-                    <rect key="frame" x="0.0" y="70.5" width="343" height="1"/>
+                    <rect key="frame" x="0.0" y="72" width="343" height="1"/>
                     <color key="backgroundColor" name="lightBlue01"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="usx-F5-dua"/>
@@ -58,8 +58,8 @@
                 <constraint firstItem="ZRE-VZ-zyj" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="Gej-7I-2XY"/>
                 <constraint firstAttribute="trailing" secondItem="0Wl-uf-4oj" secondAttribute="trailing" id="S0o-eM-WAb"/>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="jss-Cy-8bA" secondAttribute="trailing" id="dBh-aa-zUA"/>
-                <constraint firstItem="jss-Cy-8bA" firstAttribute="top" secondItem="YAO-yo-sBy" secondAttribute="bottom" constant="13" id="dbb-GP-Zb1"/>
                 <constraint firstItem="0Wl-uf-4oj" firstAttribute="centerY" secondItem="ZRE-VZ-zyj" secondAttribute="centerY" id="fyZ-YW-oCe"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="jss-Cy-8bA" secondAttribute="bottom" id="gXh-Yb-7sa"/>
                 <constraint firstItem="jss-Cy-8bA" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="qej-sU-XMg"/>
                 <constraint firstItem="oD6-KL-oRp" firstAttribute="centerY" secondItem="ZRE-VZ-zyj" secondAttribute="centerY" id="rmu-CK-gIf"/>
                 <constraint firstItem="0Wl-uf-4oj" firstAttribute="leading" secondItem="oD6-KL-oRp" secondAttribute="trailing" constant="4" id="tYg-Mf-vJF"/>

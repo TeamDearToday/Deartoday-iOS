@@ -20,6 +20,8 @@ final class CheckTimeTravelDetailViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var dummyLabel: UILabel!
+    @IBOutlet weak var dummyLabelWidthConstraint: NSLayoutConstraint!
     
     // MARK: - Life Cycle
     
@@ -63,8 +65,11 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        //hedaer view 높이 73에 line height * line 수 만큼 곱하기 + 4
-        return (section == 0) ? .zero : CGSize(width: collectionView.frame.width, height: 96)
+        dummyLabel.text = travelInfo?.title
+        dummyLabel.setTextWithLineHeight(text: dummyLabel.text, lineHeight: 26)
+        dummyLabel.sizeToFit()
+        return (section == 0) ? .zero : CGSize(width: collectionView.frame.width,
+                                               height: 54 + dummyLabel.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
@@ -114,6 +119,8 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
             headerView.titleLabel?.text = travelInfo?.title ?? ""
             headerView.pastDateLabel?.text = "\(travelInfo?.year ?? 0).\(travelInfo?.month ?? 0).\(travelInfo?.day ?? 0)"
             headerView.writtenDateLabel?.text = travelInfo?.writtenDate ?? ""
+            headerView.titleLabel.setTextWithLineHeight(text: headerView.titleLabel.text,
+                                                        lineHeight: 26)
             return headerView
         default: assert(false, "not section header")
         }
@@ -124,7 +131,8 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
 
 extension CheckTimeTravelDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: (section == 0 ? 20 : 0), right: 0)
+        return UIEdgeInsets(top: (section == 0 ? 0 : 16), left: 0,
+                            bottom: (section == 0 ? 20 : 34), right: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -132,13 +140,46 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDelegateFlowLayou
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var height: CGFloat = 0
         switch indexPath.section {
         case 0:
-            return CGSize(width: collectionView.frame.width,
-                          height: collectionView.frame.width * ( 191 / 343 ))
+            height = collectionView.frame.width * ( 191 / 343 )
+        case 1:
+            if indexPath.item == 12 {
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TravelAnswerCollectionViewCell.identifier, for: indexPath) as? TravelAnswerCollectionViewCell else { return .zero }
+                if !dialogs.isEmpty {
+                    cell.contentLabel.text = dialogs[6].answer
+                    cell.contentLabel.setTextWithLineHeight(text: dialogs[6].answer,
+                                                            lineHeight: 22)
+                }
+                cell.contentLabel.sizeToFit()
+                height = cell.contentLabel.frame.height + 91
+            }
+            else if indexPath.item % 2 == 0 {
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PastDialogCollectionViewCell.identifier, for: indexPath) as? PastDialogCollectionViewCell else { return .zero }
+                if !dialogs.isEmpty {
+                    cell.contentLabel.text = "\(dialogs[indexPath.item / 2].question)"
+                    cell.contentLabel.setTextWithLineHeight(text: dialogs[indexPath.item / 2].question,
+                                                            lineHeight: 22)
+                }
+                cell.contentLabel.sizeToFit()
+                height = cell.contentLabel.frame.height + 28
+            }
+            else {
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PresentDialogCollectionViewCell.identifier, for: indexPath) as? PresentDialogCollectionViewCell else { return .zero }
+                if !dialogs.isEmpty {
+                    cell.contentLabel.text = dialogs[indexPath.item / 2].answer
+                    cell.contentLabel.setTextWithLineHeight(text: dialogs[indexPath.item / 2].answer,
+                                                            lineHeight: 22)
+                }
+                cell.contentLabel.sizeToFit()
+                height = cell.contentLabel.frame.height + 46
+            }
         default:
-            return CGSize(width: collectionView.frame.width, height: 150)
+            return .zero
+            
         }
+        return CGSize(width: collectionView.frame.width, height: height)
     }
 }
 
@@ -160,12 +201,12 @@ extension CheckTimeTravelDetailViewController {
 extension CheckTimeTravelDetailViewController {
     private func setLabelUI() {
         titleLabel.font = .btn0
+        dummyLabel.font = .h2
+        dummyLabelWidthConstraint.constant = getDeviceWidth() - 32
     }
     
     private func registerXib() {
         let pastImageXib = UINib(nibName: PastImageCollectionViewCell.identifier, bundle: nil)
-        let infoXib = UINib(nibName: TravelInfoCollectionViewCell.identifier, bundle: nil)
-        let chatXib = UINib(nibName: TravelChatCollectionViewCell.identifier, bundle: nil)
         let answerXib = UINib(nibName: TravelAnswerCollectionViewCell.identifier, bundle: nil)
         let pastXib = UINib(nibName: PastDialogCollectionViewCell.identifier, bundle: nil)
         let presentXib = UINib(nibName: PresentDialogCollectionViewCell.identifier, bundle: nil)
@@ -173,10 +214,6 @@ extension CheckTimeTravelDetailViewController {
         collectionView.register(sectionXib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TravelInfoCollectionReusableView.identifier)
         collectionView.register(pastImageXib,
                                 forCellWithReuseIdentifier: PastImageCollectionViewCell.identifier)
-        collectionView.register(infoXib,
-                                forCellWithReuseIdentifier: TravelInfoCollectionViewCell.identifier)
-        collectionView.register(chatXib,
-                                forCellWithReuseIdentifier: TravelChatCollectionViewCell.identifier)
         collectionView.register(answerXib,
                                 forCellWithReuseIdentifier: TravelAnswerCollectionViewCell.identifier)
         collectionView.register(pastXib,
