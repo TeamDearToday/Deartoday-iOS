@@ -150,15 +150,21 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDelegateFlowLayou
             }
             else if indexPath.item % 2 == 0 {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PastDialogCollectionViewCell.identifier, for: indexPath) as? PastDialogCollectionViewCell else { return .zero }
-                if !dialogs.isEmpty { cell.contentLabel.text = "\(dialogs[indexPath.item / 2].question)" }
+                if !dialogs.isEmpty {
+                    cell.contentLabel.text = "\(dialogs[indexPath.item / 2].question)"
+                    cell.contentLabel.setTextWithLineHeight(text: dialogs[indexPath.item / 2].question, lineHeight: 22)
+                }
                 cell.contentLabel.sizeToFit()
                 height = cell.contentLabel.frame.height + 28
             }
             else {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PresentDialogCollectionViewCell.identifier, for: indexPath) as? PresentDialogCollectionViewCell else { return .zero }
-                if !dialogs.isEmpty { cell.contentLabel.text = dialogs[indexPath.item / 2].answer }
+                if !dialogs.isEmpty {
+                    cell.contentLabel.text = dialogs[indexPath.item / 2].answer
+                    cell.contentLabel.setTextWithLineHeight(text: dialogs[indexPath.item / 2].answer, lineHeight: 22)
+                }
                 cell.contentLabel.sizeToFit()
-                height = cell.contentLabel.frame.height + 45
+                height = cell.contentLabel.frame.height + 46
             }
         default:
             return .zero
