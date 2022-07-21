@@ -144,7 +144,11 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDelegateFlowLayou
         case 1:
             if indexPath.item == 12 {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TravelAnswerCollectionViewCell.identifier, for: indexPath) as? TravelAnswerCollectionViewCell else { return .zero }
-                if !dialogs.isEmpty { cell.contentLabel.text = dialogs[6].answer }
+                if !dialogs.isEmpty {
+                    cell.contentLabel.text = dialogs[6].answer
+                    cell.contentLabel.setTextWithLineHeight(text: dialogs[6].answer,
+                                                            lineHeight: 22)
+                }
                 cell.contentLabel.sizeToFit()
                 height = cell.contentLabel.frame.height + 91
             }
@@ -152,7 +156,8 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDelegateFlowLayou
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PastDialogCollectionViewCell.identifier, for: indexPath) as? PastDialogCollectionViewCell else { return .zero }
                 if !dialogs.isEmpty {
                     cell.contentLabel.text = "\(dialogs[indexPath.item / 2].question)"
-                    cell.contentLabel.setTextWithLineHeight(text: dialogs[indexPath.item / 2].question, lineHeight: 22)
+                    cell.contentLabel.setTextWithLineHeight(text: dialogs[indexPath.item / 2].question,
+                                                            lineHeight: 22)
                 }
                 cell.contentLabel.sizeToFit()
                 height = cell.contentLabel.frame.height + 28
@@ -161,7 +166,8 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDelegateFlowLayou
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PresentDialogCollectionViewCell.identifier, for: indexPath) as? PresentDialogCollectionViewCell else { return .zero }
                 if !dialogs.isEmpty {
                     cell.contentLabel.text = dialogs[indexPath.item / 2].answer
-                    cell.contentLabel.setTextWithLineHeight(text: dialogs[indexPath.item / 2].answer, lineHeight: 22)
+                    cell.contentLabel.setTextWithLineHeight(text: dialogs[indexPath.item / 2].answer,
+                                                            lineHeight: 22)
                 }
                 cell.contentLabel.sizeToFit()
                 height = cell.contentLabel.frame.height + 46

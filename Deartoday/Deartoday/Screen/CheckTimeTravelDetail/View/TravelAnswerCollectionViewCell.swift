@@ -39,6 +39,8 @@ final class TravelAnswerCollectionViewCell: UICollectionViewCell {
     }
     
     private func updateUI() {
+        contentLabel.setTextWithLineHeight(text: contentLabel.text, lineHeight: 22)
+        contentLabel.textAlignment = .center
         contentLabel.sizeToFit()
         contentImageViewWidthConstraint.constant = contentLabel.frame.width + 32
         contentImageVIewHeightConstraint.constant = contentLabel.frame.height + 28
