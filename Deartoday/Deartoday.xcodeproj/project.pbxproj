@@ -12,6 +12,10 @@
 		4A45D37E287F0B2F00592749 /* OpenBoxOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A45D37D287F0B2F00592749 /* OpenBoxOnboardingViewController.swift */; };
 		4A45D380287F2BF800592749 /* LetterOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A45D37F287F2BF800592749 /* LetterOnboardingViewController.swift */; };
 		4A706264287C079F00140315 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A706263287C079F00140315 /* Onboarding.storyboard */; };
+		4A916175288921E500F72BFC /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A916174288921E500F72BFC /* Setting.storyboard */; };
+		4A916177288921FD00F72BFC /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A916176288921FD00F72BFC /* SettingViewController.swift */; };
+		4AC989B52889240300B4A7BE /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC989B32889240300B4A7BE /* SettingTableViewCell.swift */; };
+		4AC989B62889240300B4A7BE /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC989B42889240300B4A7BE /* SettingTableViewCell.xib */; };
 		4ADAB7E028846CD60049C465 /* InitialViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAB7DF28846CD60049C465 /* InitialViewContoller.swift */; };
 		4ADAB7E4288505A60049C465 /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAB7E3288505A60049C465 /* LoginAPI.swift */; };
 		4ADAB7E6288505EE0049C465 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAB7E5288505EE0049C465 /* LoginService.swift */; };
@@ -127,6 +131,10 @@
 		4A45D37D287F0B2F00592749 /* OpenBoxOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenBoxOnboardingViewController.swift; sourceTree = "<group>"; };
 		4A45D37F287F2BF800592749 /* LetterOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterOnboardingViewController.swift; sourceTree = "<group>"; };
 		4A706263287C079F00140315 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		4A916174288921E500F72BFC /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		4A916176288921FD00F72BFC /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		4AC989B32889240300B4A7BE /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		4AC989B42889240300B4A7BE /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
 		4ADAB7DF28846CD60049C465 /* InitialViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewContoller.swift; sourceTree = "<group>"; };
 		4ADAB7E3288505A60049C465 /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		4ADAB7E5288505EE0049C465 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
@@ -267,6 +275,33 @@
 				4A2CEA762885A91F00DC9CC9 /* SplashViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		4A916173288921DA00F72BFC /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				4A916174288921E500F72BFC /* Setting.storyboard */,
+				4AC989B2288923A600B4A7BE /* View */,
+				4AC989B12889239C00B4A7BE /* Controller */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		4AC989B12889239C00B4A7BE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4A916176288921FD00F72BFC /* SettingViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4AC989B2288923A600B4A7BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4AC989B32889240300B4A7BE /* SettingTableViewCell.swift */,
+				4AC989B42889240300B4A7BE /* SettingTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		4ADAB7DA28846C9D0049C465 /* Initial */ = {
@@ -513,6 +548,7 @@
 		92DB3546287563C0001E2006 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				4A916173288921DA00F72BFC /* Setting */,
 				98245CDE28869980007821FA /* CheckTimeTravelDetail */,
 				4A2CEA6C2885A58A00DC9CC9 /* Splash */,
 				4ADAB7DA28846C9D0049C465 /* Initial */,
@@ -1075,11 +1111,13 @@
 				9858B3D1288097B000860439 /* MessageCollectionViewCell.xib in Resources */,
 				98245CF128869CCB007821FA /* PastImageCollectionViewCell.xib in Resources */,
 				986F5C3D2888345E001109F1 /* PastDialogCollectionViewCell.xib in Resources */,
+				4A916175288921E500F72BFC /* Setting.storyboard in Resources */,
 				98D912C8287DC30F0088A7F9 /* CheckMessage.storyboard in Resources */,
 				98BFBCC72879B68600F01F04 /* Pretendard-Medium.otf in Resources */,
 				98BFBCC12879B66A00F01F04 /* GmarketSansBold.otf in Resources */,
 				92DB353D2875633F001E2006 /* LaunchScreen.storyboard in Resources */,
 				9803F38F2882F1B300A5A239 /* box.json in Resources */,
+				4AC989B62889240300B4A7BE /* SettingTableViewCell.xib in Resources */,
 				98BFBCC82879B68600F01F04 /* Pretendard-SemiBold.otf in Resources */,
 				9803F38D2882F1A900A5A239 /* tape.json in Resources */,
 				98B4B5B2287EC93B00F4AD7A /* TimeTapeTableViewCell.xib in Resources */,
@@ -1153,6 +1191,7 @@
 				923061D82877550E00F04EDA /* TimeTravelViewController.swift in Sources */,
 				98D912AE287D558A0088A7F9 /* DeartodayModel.swift in Sources */,
 				923061D6287754FA00F04EDA /* TimeTravelView.swift in Sources */,
+				4A916177288921FD00F72BFC /* SettingViewController.swift in Sources */,
 				92DB35352875633D001E2006 /* MainViewController.swift in Sources */,
 				92C27EAB2884459F00077FA3 /* TimeTravelAPI.swift in Sources */,
 				9803F3BD2884814C00A5A239 /* MainAPI.swift in Sources */,
@@ -1178,6 +1217,7 @@
 				98AD713928884FF700E910CD /* CheckMessageResponse.swift in Sources */,
 				4A45D37E287F0B2F00592749 /* OpenBoxOnboardingViewController.swift in Sources */,
 				92CC3B9C287CA17000EA5617 /* CountDownLabel.swift in Sources */,
+				4AC989B52889240300B4A7BE /* SettingTableViewCell.swift in Sources */,
 				924814B1287EB5CC001177B1 /* DialogViewController.swift in Sources */,
 				923061D4287754DB00F04EDA /* TimeTravelDataModel.swift in Sources */,
 				92DB35312875633D001E2006 /* AppDelegate.swift in Sources */,
