@@ -13,6 +13,11 @@ final class MainViewController: UIViewController {
 
     @IBOutlet weak var backgroundScrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var rewindImageView: UIImageView!
+    @IBOutlet weak var memoImageView: UIImageView!
+    @IBOutlet weak var messageCountLabel: UILabel!
+    @IBOutlet weak var tapeImageView: UIImageView!
+    @IBOutlet weak var tapeCountLabel: UILabel!
     @IBOutlet var iconImageViewCollection: [UIImageView]!
     @IBOutlet var messageCountLabelCollection: [UILabel]!
     @IBOutlet var dateLabelCollection: [UILabel]!
@@ -28,6 +33,7 @@ final class MainViewController: UIViewController {
         setUI()
         setData()
         setDelegate()
+        setGesture()
         setBackSwipeGesture()
     }
     
@@ -75,24 +81,45 @@ final class MainViewController: UIViewController {
         navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
     
+    private func setGesture() {
+        let timeTravelTapGesture = UITapGestureRecognizer(target: self, action: #selector(timeTravelComponentDidTap))
+        rewindImageView.addGestureRecognizer(timeTravelTapGesture)
+        let checkMessageTapGesture = UITapGestureRecognizer(target: self, action: #selector(checkMessageComponentDidTap))
+        [memoImageView, messageCountLabel].forEach {
+            $0?.addGestureRecognizer(checkMessageTapGesture)
+        }
+        let checkTravelTapGesture = UITapGestureRecognizer(target: self, action: #selector(checkTimeTravelComponentDidTap))
+        [tapeImageView, tapeCountLabel].forEach {
+            $0?.addGestureRecognizer(checkTravelTapGesture)
+        }
+    }
+    
+    // MARK: - @objc
+    
+    @objc private func timeTravelComponentDidTap() {
+        goToTimeTravelViewController()
+    }
+    
+    @objc private func checkMessageComponentDidTap() {
+        goToCheckMessageViewController()
+    }
+    
+    @objc private func checkTimeTravelComponentDidTap() {
+        goToCheckTimeTravelViewController()
+    }
+    
     // MARK: - IBAction
     
     @IBAction func timeTravelButtonDidTap(_ sender: Any) {
-        let timeTravel = TimeTravelViewController()
-        timeTravel.modalTransitionStyle = .crossDissolve
-        timeTravel.modalPresentationStyle = .fullScreen
-        present(timeTravel, animated: true)
+        goToTimeTravelViewController()
     }
     
     @IBAction func checkMessageButtonDidTap(_ sender: Any) {
-        guard let checkMessage = UIStoryboard(name: Constant.Storyboard.CheckMessage, bundle: nil)
-            .instantiateViewController(withIdentifier: Constant.ViewController.CheckMessage) as? CheckMessageViewController else { return }
-        navigationController?.pushViewController(checkMessage, animated: true)
+        goToCheckMessageViewController()
     }
     
     @IBAction func checkTimeTravelButtonDidTap(_ sender: Any) {
-        guard let checkTimeTravel = UIStoryboard(name: Constant.Storyboard.CheckTimeTravel, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.CheckTimeTravel) as? CheckTimeTravelViewController else { return }
-        navigationController?.pushViewController(checkTimeTravel, animated: true)
+        goToCheckTimeTravelViewController()
     }
     
     @IBAction func settingButtonDidTap(_ sender: Any) {
@@ -164,5 +191,27 @@ extension MainViewController {
             getDeviceHeight() * ($0.constant / 812) : $0.constant - 44
         }
         pageControlBottomConstraint.constant = UIScreen.main.hasNotch ? 0 : 20
+    }
+}
+
+// MARK: - View Controller transition
+
+extension MainViewController {
+    private func goToTimeTravelViewController() {
+        let timeTravel = TimeTravelViewController()
+        timeTravel.modalTransitionStyle = .crossDissolve
+        timeTravel.modalPresentationStyle = .fullScreen
+        present(timeTravel, animated: true)
+    }
+    
+    private func goToCheckMessageViewController() {
+        guard let checkMessage = UIStoryboard(name: Constant.Storyboard.CheckMessage, bundle: nil)
+            .instantiateViewController(withIdentifier: Constant.ViewController.CheckMessage) as? CheckMessageViewController else { return }
+        navigationController?.pushViewController(checkMessage, animated: true)
+    }
+    
+    private func goToCheckTimeTravelViewController() {
+        guard let checkTimeTravel = UIStoryboard(name: Constant.Storyboard.CheckTimeTravel, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.CheckTimeTravel) as? CheckTimeTravelViewController else { return }
+        navigationController?.pushViewController(checkTimeTravel, animated: true)
     }
 }
