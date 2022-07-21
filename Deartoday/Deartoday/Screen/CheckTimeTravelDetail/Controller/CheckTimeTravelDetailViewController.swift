@@ -64,7 +64,12 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         //hedaer view 높이 73에 line height * line 수 만큼 곱하기 + 4
-        return (section == 0) ? .zero : CGSize(width: collectionView.frame.width, height: 96)
+        let knds = travelInfo?.title.getEstimatedFrame(with: .h2)
+        var lineheight = ((knds?.width ?? 0) / collectionView.frame.width) * 26
+        if (knds?.width ?? 0).truncatingRemainder(dividingBy: collectionView.frame.width) != 0 {
+            lineheight += 26
+        }
+        return (section == 0) ? .zero : CGSize(width: collectionView.frame.width, height: 58 + lineheight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
@@ -209,5 +214,17 @@ extension CheckTimeTravelDetailViewController {
     private func setCollectionViewLayout() {
         collectionViewFlowLayout.scrollDirection = .vertical
         collectionViewFlowLayout.sectionHeadersPinToVisibleBounds = true
+    }
+}
+
+
+
+
+extension String {
+    func getEstimatedFrame(with font: UIFont) -> CGRect {
+        let size = CGSize(width: UIScreen.main.bounds.width * 2/3, height: 1000)
+        let optionss = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+        let estimatedFrame = NSString(string: self).boundingRect(with: size, options: optionss, attributes: [.font: font], context: nil)
+        return estimatedFrame
     }
 }
