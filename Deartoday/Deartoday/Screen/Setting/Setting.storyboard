@@ -40,7 +40,7 @@
                                     <constraint firstItem="BXD-dN-hEs" firstAttribute="centerY" secondItem="ZoU-IE-iUS" secondAttribute="centerY" id="jD7-ZQ-NH3"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Aza-Sp-fTh">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Aza-Sp-fTh">
                                 <rect key="frame" x="0.0" y="116" width="414" height="746"/>
                                 <sections/>
                             </tableView>
@@ -96,7 +96,7 @@
                     <connections>
                         <outlet property="labelBottomConstraint" destination="NeH-90-HXE" id="87M-lD-tw1"/>
                         <outlet property="logoutLabel" destination="aIC-ej-lEh" id="5Uc-Hh-IyD"/>
-                        <outlet property="serviceSecession" destination="NDs-AX-CVV" id="LJ8-E9-uQO"/>
+                        <outlet property="serviceWithDrawLabel" destination="NDs-AX-CVV" id="LJ8-E9-uQO"/>
                         <outlet property="tableView" destination="Aza-Sp-fTh" id="Qd5-t0-BT2"/>
                     </connections>
                 </viewController>

@@ -7,14 +7,13 @@
 
 import UIKit
 
-import Then
 import SnapKit
+import Then
 
 final class SettingViewController: UIViewController {
     
     // MARK: - Property
     
-    let headerTitleLabel = ["설정", "디어투데이 정보"]
     let firstSectionLabel = ["사운드", "푸시알림"]
     let secondSectionLabel = ["서비스 이용약관", "문의하기", "오픈소스 라이선스", "Team 디어투데이"]
     
@@ -22,17 +21,15 @@ final class SettingViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var logoutLabel: UILabel!
-    @IBOutlet weak var serviceSecession: UILabel!
+    @IBOutlet weak var serviceWithDrawLabel: UILabel!
     @IBOutlet weak var labelBottomConstraint: NSLayoutConstraint!
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerXib()
-        hideSectionHeaderPadding()
-        setLabelUI()
-        setLayout()
+        setTableView()
+        setUI()
     }
     
     // MARK: - @objc
@@ -41,7 +38,7 @@ final class SettingViewController: UIViewController {
         
     }
     
-    @objc func serviceSecessionDidTap() {
+    @objc func serviceWithDrawDidTap() {
         
     }
     
@@ -51,9 +48,19 @@ final class SettingViewController: UIViewController {
         tableView.sectionHeaderTopPadding = 0
     }
     
-    private func registerXib() {
+    private func setUI() {
+        hideSectionHeaderPadding()
+        setLabelUI()
+        setLayout()
+    }
+    
+    private func setTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+        registerXib()
+    }
+    
+    private func registerXib() {
         let nib = UINib(nibName: SettingTableViewCell.identifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: SettingTableViewCell.identifier)
     }
@@ -63,9 +70,9 @@ final class SettingViewController: UIViewController {
         logoutLabel.textAlignment = .left
         logoutLabel.font = .p4
         
-        serviceSecession.textColor = .blue01
-        serviceSecession.textAlignment = .left
-        serviceSecession.font = .p4
+        serviceWithDrawLabel.textColor = .blue01
+        serviceWithDrawLabel.textAlignment = .left
+        serviceWithDrawLabel.font = .p4
     }
     
     private func setLayout() {
@@ -77,9 +84,9 @@ final class SettingViewController: UIViewController {
         logoutLabel.addGestureRecognizer(addLogoutLabelGesture)
     }
     
-    private func addServiceSecessionLabelGestrue() {
-        let addServiceSecessionGesture = UITapGestureRecognizer(target: self, action: #selector(serviceSecessionDidTap))
-        serviceSecession.addGestureRecognizer(addServiceSecessionGesture)
+    private func addServiceWithDrawLabelGestrue() {
+        let addServiceWithDrawGesture = UITapGestureRecognizer(target: self, action: #selector(serviceWithDrawDidTap))
+        serviceWithDrawLabel.addGestureRecognizer(addServiceWithDrawGesture)
     }
     
     // MARK: IBAciton
@@ -89,11 +96,9 @@ final class SettingViewController: UIViewController {
     }
 }
 
-extension SettingViewController: UITableViewDelegate {
-    
-}
+// MAKR: UITableViewDataSource, Delegate
 
-extension SettingViewController: UITableViewDataSource {
+extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -115,14 +120,7 @@ extension SettingViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return 2
-        case 1:
-            return 4
-        default:
-            return 0
-        }
+        return section == 0 ? 2 : 4
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -135,14 +133,7 @@ extension SettingViewController: UITableViewDataSource {
             $0.textColor = .blue02
             $0.textAlignment = .left
             $0.font = .p4
-            switch section {
-            case 0:
-                $0.text = "설정"
-            case 1:
-                $0.text = "디어투데이 정보"
-            default:
-                $0.text = ""
-            }
+            $0.text = section == 0 ? "설정" : "디어투데이 정보"
         }
         
         headerView.addSubview(headerLabel)
