@@ -38,6 +38,5 @@ final class TravelChatCollectionViewCell: UICollectionViewCell {
     func setData(question: String, answer: String) {
         questionLabel.text = question
         answerLabel.text = answer
-        updateUI()
     }
 }
