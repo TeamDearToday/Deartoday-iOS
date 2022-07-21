@@ -59,6 +59,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 세로방향 고정
         return UIInterfaceOrientationMask.portrait
     }
+    
+    func application(application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Messaging.messaging().apnsToken = deviceToken
+    }
 }
 
 // MARK: - MessagingDelegate
