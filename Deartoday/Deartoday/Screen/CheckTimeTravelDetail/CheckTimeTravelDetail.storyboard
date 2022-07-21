@@ -69,6 +69,15 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fl-QS-Yq9">
+                                <rect key="frame" x="35.5" y="438" width="343" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="H21-S7-usP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -78,12 +87,16 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rlm-1g-J9g" secondAttribute="trailing" id="A8s-PO-kiv"/>
                             <constraint firstAttribute="bottom" secondItem="Kjo-GV-Lwo" secondAttribute="bottom" id="CsL-Lz-Q8b"/>
                             <constraint firstItem="Kjo-GV-Lwo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="EVd-z5-aZV"/>
+                            <constraint firstItem="0fl-QS-Yq9" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="IJH-uX-uxq"/>
+                            <constraint firstItem="0fl-QS-Yq9" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Vq0-yf-ebc"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Kjo-GV-Lwo" secondAttribute="trailing" constant="16" id="qhv-sD-L4e"/>
                             <constraint firstItem="Kjo-GV-Lwo" firstAttribute="top" secondItem="rlm-1g-J9g" secondAttribute="bottom" id="vCZ-NS-Zkr"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="Kjo-GV-Lwo" id="6Oy-ll-fVp"/>
+                        <outlet property="dummyLabel" destination="0fl-QS-Yq9" id="ndv-k0-5JF"/>
+                        <outlet property="dummyLabelWidthConstraint" destination="H21-S7-usP" id="B6O-Pi-4Np"/>
                         <outlet property="titleLabel" destination="dMx-Ti-gy7" id="flQ-SU-RN4"/>
                     </connections>
                 </viewController>
