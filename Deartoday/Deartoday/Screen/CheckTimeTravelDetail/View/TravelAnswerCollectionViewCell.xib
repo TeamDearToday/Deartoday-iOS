@@ -81,7 +81,7 @@
                 <outlet property="contentLabel" destination="p0a-QT-vgH" id="uyQ-Oc-yKf"/>
                 <outlet property="titleLabel" destination="s7Z-HM-0LX" id="zp3-pt-u6q"/>
             </connections>
-            <point key="canvasLocation" x="131.15942028985509" y="47.544642857142854"/>
+            <point key="canvasLocation" x="131.15942028985509" y="47.209821428571423"/>
         </collectionViewCell>
     </objects>
     <resources>
