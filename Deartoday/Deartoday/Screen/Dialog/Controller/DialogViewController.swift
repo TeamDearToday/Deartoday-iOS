@@ -505,21 +505,21 @@ final class DialogViewController: UIViewController {
         yearBackView.snp.makeConstraints {
             $0.width.equalTo(114)
             $0.height.equalTo(56)
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(8)
+            $0.top.equalToSuperview().inset(51)
             $0.leading.equalToSuperview().inset(6)
         }
         
         monthBackView.snp.makeConstraints {
             $0.width.equalTo(73)
             $0.height.equalTo(56)
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(8)
+            $0.top.equalToSuperview().inset(51)
             $0.leading.equalToSuperview().inset(106)
         }
         
         dayBackView.snp.makeConstraints {
             $0.width.equalTo(73)
             $0.height.equalTo(56)
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(8)
+            $0.top.equalToSuperview().inset(51)
             $0.leading.equalToSuperview().inset(165)
         }
         
@@ -530,7 +530,7 @@ final class DialogViewController: UIViewController {
         }
         
         exitButton.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(14)
+            $0.top.equalToSuperview().inset(57)
             $0.trailing.equalToSuperview().inset(16)
             $0.width.height.equalTo(44)
         }
@@ -617,6 +617,10 @@ final class DialogViewController: UIViewController {
     }
     
     private func setDialogMessageViewHeight(topConstant: Double = 290) {
+        if !UIScreen.main.hasNotch {
+            hideView(photoImageView)
+        }
+        
         [pastMessageView, presentMessageView].forEach {
             let height = $0.dialogLabel.intrinsicContentSize.height + 30
             

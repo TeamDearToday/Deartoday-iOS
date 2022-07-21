@@ -191,21 +191,21 @@ final class TimeTravelViewController: UIViewController {
         yearBackView.snp.makeConstraints {
             $0.width.equalTo(114)
             $0.height.equalTo(56)
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(8)
+            $0.top.equalToSuperview().inset(51)
             $0.leading.equalToSuperview().inset(6)
         }
         
         monthBackView.snp.makeConstraints {
             $0.width.equalTo(73)
             $0.height.equalTo(56)
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(8)
+            $0.top.equalToSuperview().inset(51)
             $0.leading.equalToSuperview().inset(106)
         }
         
         dayBackView.snp.makeConstraints {
             $0.width.equalTo(73)
             $0.height.equalTo(56)
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(8)
+            $0.top.equalToSuperview().inset(51)
             $0.leading.equalToSuperview().inset(165)
         }
         
@@ -216,18 +216,18 @@ final class TimeTravelViewController: UIViewController {
         }
         
         exitButton.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(14)
+            $0.top.equalToSuperview().inset(57)
             $0.trailing.equalToSuperview().inset(16)
             $0.width.height.equalTo(44)
         }
         
         guideLabel.snp.makeConstraints {
-            $0.top.equalTo(yearBackView.snp.bottom).offset(56)
+            $0.top.equalTo(yearBackView.snp.bottom).offset(46)
             $0.leading.equalToSuperview().inset(16)
         }
         
         timeTravelView.snp.makeConstraints {
-            $0.top.equalTo(yearBackView.snp.bottom).offset(119)
+            $0.top.equalTo(yearBackView.snp.bottom).offset(109)
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.height.equalTo(380)
         }
@@ -280,7 +280,7 @@ final class TimeTravelViewController: UIViewController {
     @objc func keyboardWillShow(_ notification: Notification) {
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut) {
             self.timeTravelView.snp.updateConstraints {
-                $0.top.equalTo(self.yearBackView.snp.bottom).offset(self.getDeviceHeight() == 812 ? 52 : 19)
+                $0.top.equalTo(self.yearBackView.snp.bottom).offset(self.getDeviceHeight() == 812 ? 42 : 9)
             }
             self.view.layoutIfNeeded()
         }
@@ -289,7 +289,7 @@ final class TimeTravelViewController: UIViewController {
     @objc func keyboardWillHide(_ notification: Notification) {
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut) {
             self.timeTravelView.snp.updateConstraints {
-                $0.top.equalTo(self.yearBackView.snp.bottom).offset(119)
+                $0.top.equalTo(self.yearBackView.snp.bottom).offset(109)
             }
             self.view.layoutIfNeeded()
         }

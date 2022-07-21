@@ -199,21 +199,21 @@ final class VirtualSpaceViewController: UIViewController {
         yearBackView.snp.makeConstraints {
             $0.width.equalTo(114)
             $0.height.equalTo(56)
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(8)
+            $0.top.equalToSuperview().inset(51)
             $0.leading.equalToSuperview().inset(6)
         }
         
         monthBackView.snp.makeConstraints {
             $0.width.equalTo(73)
             $0.height.equalTo(56)
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(8)
+            $0.top.equalToSuperview().inset(51)
             $0.leading.equalToSuperview().inset(106)
         }
         
         dayBackView.snp.makeConstraints {
             $0.width.equalTo(73)
             $0.height.equalTo(56)
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(8)
+            $0.top.equalToSuperview().inset(51)
             $0.leading.equalToSuperview().inset(165)
         }
         
@@ -224,7 +224,7 @@ final class VirtualSpaceViewController: UIViewController {
         }
         
         exitButton.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(14)
+            $0.top.equalToSuperview().inset(57)
             $0.trailing.equalToSuperview().inset(16)
             $0.width.height.equalTo(44)
         }
@@ -232,7 +232,7 @@ final class VirtualSpaceViewController: UIViewController {
         textBoxImageView.snp.makeConstraints {
             $0.width.equalTo(244)
             $0.height.equalTo(67)
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(58)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(UIScreen.main.hasNotch ? 58 : 81)
             $0.leading.equalToSuperview().inset(6)
         }
         
@@ -241,9 +241,9 @@ final class VirtualSpaceViewController: UIViewController {
         }
         
         mediaCollectionView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(174)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(UIScreen.main.hasNotch ? 173 : 187)
             $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(161)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(UIScreen.main.hasNotch ? 162 : 132)
         }
         
         nextButton.snp.makeConstraints {
