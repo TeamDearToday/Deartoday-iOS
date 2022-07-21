@@ -8,7 +8,7 @@
 import Moya
 
 enum LoginService {
-    case login(social: String, socialToken: String, FCMToken: String)
+    case login(param: LoginRequest)
 }
 
 extension LoginService: BaseTargetType {
@@ -27,12 +27,12 @@ extension LoginService: BaseTargetType {
     
     var task: Task {
         switch self {
-        case .login:
-            return .requestPlain
+        case .login(let param):
+            return .requestJSONEncodable(param)
         }
     }
     
     var headers: [String : String]? {
-        return NetworkConstant.hasTokenHeader
+        return NetworkConstant.noTokenHeader
     }
 }

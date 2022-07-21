@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - LoginReqeust
 
-struct LoginRequest {
+struct LoginRequest: Codable {
     let social: String
     let socialToken: String
     let fcmToken: String
