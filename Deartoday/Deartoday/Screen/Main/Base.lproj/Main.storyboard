@@ -199,8 +199,8 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgDate" translatesAutoresizingMaskIntoConstraints="NO" id="kCm-XR-W2f">
                                         <rect key="frame" x="165" y="51" width="73" height="56"/>
                                     </imageView>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQ1-B5-dn2">
-                                        <rect key="frame" x="315" y="20" width="44" height="44"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQ1-B5-dn2">
+                                        <rect key="frame" x="315" y="63" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="lhz-0k-hB9"/>
                                             <constraint firstAttribute="width" secondItem="xQ1-B5-dn2" secondAttribute="height" multiplier="1:1" id="pzJ-wP-9Do"/>
@@ -211,8 +211,8 @@
                                             <action selector="settingButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1g8-K4-tpH"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tab-NT-xCD">
-                                        <rect key="frame" x="315" y="64" width="44" height="44"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tab-NT-xCD">
+                                        <rect key="frame" x="315" y="107" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="tab-NT-xCD" secondAttribute="height" multiplier="1:1" id="csq-H3-n6k"/>
                                             <constraint firstAttribute="height" constant="44" id="qiV-C9-nzh"/>
@@ -260,7 +260,7 @@
                                     <constraint firstItem="vFI-8L-qfB" firstAttribute="top" secondItem="aSn-XE-spf" secondAttribute="top" constant="51" id="kAn-ss-pgo"/>
                                     <constraint firstItem="kCm-XR-W2f" firstAttribute="top" secondItem="aSn-XE-spf" secondAttribute="top" constant="51" id="oW3-cb-UMu"/>
                                     <constraint firstItem="6ZP-5U-TGT" firstAttribute="centerY" secondItem="kCm-XR-W2f" secondAttribute="centerY" id="oue-a2-sav"/>
-                                    <constraint firstItem="xQ1-B5-dn2" firstAttribute="top" secondItem="aSn-XE-spf" secondAttribute="top" constant="20" id="pZX-Vn-BcM"/>
+                                    <constraint firstItem="xQ1-B5-dn2" firstAttribute="top" secondItem="aSn-XE-spf" secondAttribute="top" constant="63" id="pZX-Vn-BcM"/>
                                     <constraint firstItem="6ZP-5U-TGT" firstAttribute="centerX" secondItem="kCm-XR-W2f" secondAttribute="centerX" id="zcG-yD-phz"/>
                                 </constraints>
                             </view>
