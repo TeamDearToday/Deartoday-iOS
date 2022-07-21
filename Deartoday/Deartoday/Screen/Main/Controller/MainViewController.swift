@@ -14,10 +14,8 @@ final class MainViewController: UIViewController {
     @IBOutlet weak var backgroundScrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var rewindImageView: UIImageView!
-    @IBOutlet weak var memoImageView: UIImageView!
-    @IBOutlet weak var messageCountLabel: UILabel!
-    @IBOutlet weak var tapeImageView: UIImageView!
-    @IBOutlet weak var tapeCountLabel: UILabel!
+    @IBOutlet weak var messageStackView: UIStackView!
+    @IBOutlet weak var tapeStackView: UIStackView!
     @IBOutlet var iconImageViewCollection: [UIImageView]!
     @IBOutlet var messageCountLabelCollection: [UILabel]!
     @IBOutlet var dateLabelCollection: [UILabel]!
@@ -85,13 +83,9 @@ final class MainViewController: UIViewController {
         let timeTravelTapGesture = UITapGestureRecognizer(target: self, action: #selector(timeTravelComponentDidTap))
         rewindImageView.addGestureRecognizer(timeTravelTapGesture)
         let checkMessageTapGesture = UITapGestureRecognizer(target: self, action: #selector(checkMessageComponentDidTap))
-        [memoImageView, messageCountLabel].forEach {
-            $0?.addGestureRecognizer(checkMessageTapGesture)
-        }
+        messageStackView.addGestureRecognizer(checkMessageTapGesture)
         let checkTravelTapGesture = UITapGestureRecognizer(target: self, action: #selector(checkTimeTravelComponentDidTap))
-        [tapeImageView, tapeCountLabel].forEach {
-            $0?.addGestureRecognizer(checkTravelTapGesture)
-        }
+        tapeStackView.addGestureRecognizer(checkTravelTapGesture)
     }
     
     // MARK: - @objc

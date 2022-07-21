@@ -3,6 +3,7 @@
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -61,6 +62,7 @@
                                             </button>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rewind" translatesAutoresizingMaskIntoConstraints="NO" id="jkQ-e5-aBO">
                                                 <rect key="frame" x="117" y="275" width="28" height="28"/>
+                                                <color key="tintColor" name="blue02"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="jkQ-e5-aBO" secondAttribute="height" multiplier="1:1" id="RZ3-Ea-KUy"/>
                                                     <constraint firstAttribute="height" constant="28" id="Rjo-8q-WJD"/>
@@ -121,6 +123,7 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icnMemo" translatesAutoresizingMaskIntoConstraints="NO" id="hYj-Yl-O37">
                                                         <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                                                        <color key="tintColor" name="blue02"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="22" id="NSd-XM-pMn"/>
                                                             <constraint firstAttribute="width" secondItem="hYj-Yl-O37" secondAttribute="height" multiplier="1:1" id="uhL-nl-9LP"/>
@@ -151,6 +154,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
+                                                <color key="tintColor" name="blue02"/>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -290,13 +294,11 @@
                     <size key="freeformSize" width="749" height="812"/>
                     <connections>
                         <outlet property="backgroundScrollView" destination="m3y-wI-V1B" id="8ay-N6-Hxy"/>
-                        <outlet property="memoImageView" destination="hYj-Yl-O37" id="UJ7-Gb-kAe"/>
-                        <outlet property="messageCountLabel" destination="Goz-jN-lWr" id="TW2-1B-bMF"/>
+                        <outlet property="messageStackView" destination="7kC-Da-iAq" id="ZxC-Rf-aCJ"/>
                         <outlet property="pageControl" destination="59W-gz-LAT" id="cBF-6v-Vop"/>
                         <outlet property="pageControlBottomConstraint" destination="gnF-1c-KPo" id="ERy-Rb-wbQ"/>
                         <outlet property="rewindImageView" destination="jkQ-e5-aBO" id="hbd-ZR-36y"/>
-                        <outlet property="tapeCountLabel" destination="0PU-Ad-LwK" id="ydH-SK-de9"/>
-                        <outlet property="tapeImageView" destination="UVK-NG-wji" id="9cS-OL-wxN"/>
+                        <outlet property="tapeStackView" destination="5J9-qv-07r" id="wmm-XW-wCf"/>
                         <outletCollection property="backgroundImageViewWidthConstraintCollection" destination="AMU-RF-Elr" collectionClass="NSMutableArray" id="OsQ-2a-KQu"/>
                         <outletCollection property="backgroundImageViewWidthConstraintCollection" destination="dmh-gd-7ZW" collectionClass="NSMutableArray" id="0h8-fV-uxy"/>
                         <outletCollection property="backgroundImageViewWidthConstraintCollection" destination="e6Y-Lx-1MC" collectionClass="NSMutableArray" id="xv9-OO-ARi"/>
@@ -349,6 +351,9 @@
         <image name="mainLeftWithg" width="375" height="812"/>
         <image name="mainRightWithg" width="375" height="812"/>
         <image name="rewind" width="22" height="22"/>
+        <namedColor name="blue02">
+            <color red="0.33300000429153442" green="0.56099998950958252" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
