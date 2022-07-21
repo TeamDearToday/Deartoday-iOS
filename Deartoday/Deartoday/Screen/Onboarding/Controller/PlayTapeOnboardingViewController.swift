@@ -134,7 +134,7 @@ final class PlayTapeOnboardingViewController: UIViewController {
         circleButtonLeadingConstraint.constant = (getDeviceHeight() == 884) ? 168 : 158
     }
     
-    // MARK: IBAction
+    // MARK: - IBAction
     
     @IBAction func tapeButtonDidTap(_ sender: UIButton) {
         hideComponentsUI()
