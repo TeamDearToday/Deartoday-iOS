@@ -49,7 +49,7 @@ final class CheckMessageViewController: UIViewController {
     @objc private func timeTravelButtonDidTap() {
         let timeTravel = TimeTravelViewController()
         timeTravel.modalTransitionStyle = .crossDissolve
-        timeTravel.modalPresentationStyle = .overFullScreen
+        timeTravel.modalPresentationStyle = .fullScreen
         present(timeTravel, animated: true) {
             self.navigationController?.popViewController(animated: false)
         }
