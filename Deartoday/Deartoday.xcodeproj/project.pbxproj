@@ -74,7 +74,6 @@
 		9803F3E62885E0AD00A5A239 /* CheckTimeTravelDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3E52885E0AD00A5A239 /* CheckTimeTravelDetailResponse.swift */; };
 		98245CE3288699A6007821FA /* CheckTimeTravelDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98245CE2288699A6007821FA /* CheckTimeTravelDetail.storyboard */; };
 		98245CE728869A0A007821FA /* CheckTimeTravelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98245CE628869A0A007821FA /* CheckTimeTravelDetailViewController.swift */; };
-		98245CE928869B08007821FA /* CheckTimeTravelDetailDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98245CE828869B08007821FA /* CheckTimeTravelDetailDataModel.swift */; };
 		98245CF028869CCB007821FA /* PastImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98245CEE28869CCB007821FA /* PastImageCollectionViewCell.swift */; };
 		98245CF128869CCB007821FA /* PastImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98245CEF28869CCB007821FA /* PastImageCollectionViewCell.xib */; };
 		98245CF828869DA6007821FA /* TravelAnswerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98245CF628869DA6007821FA /* TravelAnswerCollectionViewCell.swift */; };
@@ -195,7 +194,6 @@
 		9803F3E52885E0AD00A5A239 /* CheckTimeTravelDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelDetailResponse.swift; sourceTree = "<group>"; };
 		98245CE2288699A6007821FA /* CheckTimeTravelDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckTimeTravelDetail.storyboard; sourceTree = "<group>"; };
 		98245CE628869A0A007821FA /* CheckTimeTravelDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelDetailViewController.swift; sourceTree = "<group>"; };
-		98245CE828869B08007821FA /* CheckTimeTravelDetailDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelDetailDataModel.swift; sourceTree = "<group>"; };
 		98245CEE28869CCB007821FA /* PastImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		98245CEF28869CCB007821FA /* PastImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PastImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		98245CF628869DA6007821FA /* TravelAnswerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelAnswerCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -812,7 +810,6 @@
 			isa = PBXGroup;
 			children = (
 				98245CE2288699A6007821FA /* CheckTimeTravelDetail.storyboard */,
-				98245CE12886999A007821FA /* Model */,
 				98245CE028869995007821FA /* View */,
 				98245CDF2886998F007821FA /* Controller */,
 			);
@@ -842,14 +839,6 @@
 				986F5C3F28883469001109F1 /* PresentDialogCollectionViewCell.xib */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		98245CE12886999A007821FA /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				98245CE828869B08007821FA /* CheckTimeTravelDetailDataModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		984099E72881F47100025092 /* Sound */ = {
@@ -1158,7 +1147,6 @@
 				923061D6287754FA00F04EDA /* TimeTravelView.swift in Sources */,
 				92DB35352875633D001E2006 /* MainViewController.swift in Sources */,
 				92C27EAB2884459F00077FA3 /* TimeTravelAPI.swift in Sources */,
-				98245CE928869B08007821FA /* CheckTimeTravelDetailDataModel.swift in Sources */,
 				9803F3BD2884814C00A5A239 /* MainAPI.swift in Sources */,
 				98D912C5287DB0130088A7F9 /* Lottie.swift in Sources */,
 				4ADAB7E9288507A10049C465 /* LoginResponse.swift in Sources */,
