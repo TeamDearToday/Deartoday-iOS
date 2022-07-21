@@ -291,6 +291,7 @@
                     <connections>
                         <outlet property="backgroundScrollView" destination="m3y-wI-V1B" id="8ay-N6-Hxy"/>
                         <outlet property="pageControl" destination="59W-gz-LAT" id="cBF-6v-Vop"/>
+                        <outlet property="pageControlBottomConstraint" destination="gnF-1c-KPo" id="ERy-Rb-wbQ"/>
                         <outletCollection property="backgroundImageViewWidthConstraintCollection" destination="AMU-RF-Elr" collectionClass="NSMutableArray" id="OsQ-2a-KQu"/>
                         <outletCollection property="backgroundImageViewWidthConstraintCollection" destination="dmh-gd-7ZW" collectionClass="NSMutableArray" id="0h8-fV-uxy"/>
                         <outletCollection property="backgroundImageViewWidthConstraintCollection" destination="e6Y-Lx-1MC" collectionClass="NSMutableArray" id="xv9-OO-ARi"/>

@@ -16,6 +16,7 @@ final class MainViewController: UIViewController {
     @IBOutlet var iconImageViewCollection: [UIImageView]!
     @IBOutlet var messageCountLabelCollection: [UILabel]!
     @IBOutlet var dateLabelCollection: [UILabel]!
+    @IBOutlet weak var pageControlBottomConstraint: NSLayoutConstraint!
     @IBOutlet var boxButtonTopConstraintCollection: [NSLayoutConstraint]!
     @IBOutlet var boxButtonHeightConstraintCollection: [NSLayoutConstraint]!
     @IBOutlet var backgroundImageViewWidthConstraintCollection: [NSLayoutConstraint]!
@@ -162,5 +163,6 @@ extension MainViewController {
             $0.constant = (UIScreen.main.hasNotch) ?
             getDeviceHeight() * ($0.constant / 812) : $0.constant - 44
         }
+        pageControlBottomConstraint.constant = UIScreen.main.hasNotch ? 0 : 20
     }
 }
