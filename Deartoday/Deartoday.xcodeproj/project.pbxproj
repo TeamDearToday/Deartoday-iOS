@@ -827,16 +827,12 @@
 		98245CE028869995007821FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				98AD713A28894EB200E910CD /* Xibs */,
 				98245CEE28869CCB007821FA /* PastImageCollectionViewCell.swift */,
-				98245CEF28869CCB007821FA /* PastImageCollectionViewCell.xib */,
-				98245CF628869DA6007821FA /* TravelAnswerCollectionViewCell.swift */,
-				98245CF728869DA6007821FA /* TravelAnswerCollectionViewCell.xib */,
 				986F5C342887FA83001109F1 /* TravelInfoCollectionReusableView.swift */,
-				986F5C352887FA83001109F1 /* TravelInfoCollectionReusableView.xib */,
 				986F5C3A2888345E001109F1 /* PastDialogCollectionViewCell.swift */,
-				986F5C3B2888345E001109F1 /* PastDialogCollectionViewCell.xib */,
 				986F5C3E28883469001109F1 /* PresentDialogCollectionViewCell.swift */,
-				986F5C3F28883469001109F1 /* PresentDialogCollectionViewCell.xib */,
+				98245CF628869DA6007821FA /* TravelAnswerCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -926,6 +922,18 @@
 				98AD713828884FF700E910CD /* CheckMessageResponse.swift */,
 			);
 			path = CheckMessage;
+			sourceTree = "<group>";
+		};
+		98AD713A28894EB200E910CD /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				98245CEF28869CCB007821FA /* PastImageCollectionViewCell.xib */,
+				986F5C352887FA83001109F1 /* TravelInfoCollectionReusableView.xib */,
+				986F5C3B2888345E001109F1 /* PastDialogCollectionViewCell.xib */,
+				986F5C3F28883469001109F1 /* PresentDialogCollectionViewCell.xib */,
+				98245CF728869DA6007821FA /* TravelAnswerCollectionViewCell.xib */,
+			);
+			path = Xibs;
 			sourceTree = "<group>";
 		};
 		98D912A9287D43530088A7F9 /* Controller */ = {
