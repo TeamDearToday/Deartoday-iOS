@@ -78,11 +78,11 @@ final class MainViewController: UIViewController {
     
     private func setGesture() {
         let timeTravelTapGesture = UITapGestureRecognizer(target: self, action: #selector(timeTravelComponentDidTap))
-        rewindImageView.addGestureRecognizer(timeTravelTapGesture)
+
         let checkMessageTapGesture = UITapGestureRecognizer(target: self, action: #selector(checkMessageComponentDidTap))
-        messageStackView.addGestureRecognizer(checkMessageTapGesture)
+
         let checkTravelTapGesture = UITapGestureRecognizer(target: self, action: #selector(checkTimeTravelComponentDidTap))
-        tapeStackView.addGestureRecognizer(checkTravelTapGesture)
+
     }
     
     // MARK: - @objc
