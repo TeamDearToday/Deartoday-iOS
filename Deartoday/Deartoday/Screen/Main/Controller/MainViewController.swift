@@ -13,6 +13,10 @@ final class MainViewController: UIViewController {
 
     @IBOutlet weak var backgroundScrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var timeTravelView: UIView!
+    
+    @IBOutlet weak var checkTimeTravelView: UIView!
+    @IBOutlet weak var checkMessageView: UIView!
     @IBOutlet var iconImageViewCollection: [UIImageView]!
     @IBOutlet var messageCountLabelCollection: [UILabel]!
     @IBOutlet var dateLabelCollection: [UILabel]!
