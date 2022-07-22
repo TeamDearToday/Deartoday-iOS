@@ -245,9 +245,14 @@ final class DialogViewController: UIViewController {
     }
     
     @objc func sendButtonDidTap() {
-        if let text = answerTextView.text {
-            presentMessageView.dialogText = text
-            answers[count] = text
+        if answerTextView.text == "" {
+            presentMessageView.dialogText = " "
+            answers[count] = " "
+        } else {
+            if let text = answerTextView.text {
+                presentMessageView.dialogText = text
+                answers[count] = text
+            }
         }
         
         setDialogMessageViewHeight(topConstant: UIScreen.main.hasNotch ? 290 : 94)
