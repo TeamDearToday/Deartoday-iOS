@@ -9,12 +9,15 @@ import UIKit
 
 final class MainViewController: UIViewController {
     
+    // MARK: - Property
+    
+    private var isPushed: Bool = false
+    
     // MARK: - UI Property
 
     @IBOutlet weak var backgroundScrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var timeTravelView: UIView!
-    
     @IBOutlet weak var checkTimeTravelView: UIView!
     @IBOutlet weak var checkMessageView: UIView!
     @IBOutlet var iconImageViewCollection: [UIImageView]!
@@ -38,6 +41,7 @@ final class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setInitializeState()
         setPageControl(page: backgroundScrollView.contentOffset.x == 0 ? 0 : 1)
         getMainData()
     }
@@ -82,11 +86,15 @@ final class MainViewController: UIViewController {
     
     private func setGesture() {
         let timeTravelTapGesture = UITapGestureRecognizer(target: self, action: #selector(timeTravelComponentDidTap))
-
+        timeTravelView.addGestureRecognizer(timeTravelTapGesture)
         let checkMessageTapGesture = UITapGestureRecognizer(target: self, action: #selector(checkMessageComponentDidTap))
-
+        checkMessageView.addGestureRecognizer(checkMessageTapGesture)
         let checkTravelTapGesture = UITapGestureRecognizer(target: self, action: #selector(checkTimeTravelComponentDidTap))
-
+        checkTimeTravelView.addGestureRecognizer(checkTravelTapGesture)
+    }
+    
+    private func setInitializeState() {
+        isPushed = false
     }
     
     // MARK: - @objc
@@ -193,6 +201,8 @@ extension MainViewController {
 
 extension MainViewController {
     private func goToTimeTravelViewController() {
+        if isPushed { return }
+        isPushed = true
         let timeTravel = TimeTravelViewController()
         timeTravel.modalTransitionStyle = .crossDissolve
         timeTravel.modalPresentationStyle = .fullScreen
@@ -200,12 +210,16 @@ extension MainViewController {
     }
     
     private func goToCheckMessageViewController() {
+        if isPushed { return }
+        isPushed = true
         guard let checkMessage = UIStoryboard(name: Constant.Storyboard.CheckMessage, bundle: nil)
             .instantiateViewController(withIdentifier: Constant.ViewController.CheckMessage) as? CheckMessageViewController else { return }
         navigationController?.pushViewController(checkMessage, animated: true)
     }
     
     private func goToCheckTimeTravelViewController() {
+        if isPushed { return }
+        isPushed = true
         guard let checkTimeTravel = UIStoryboard(name: Constant.Storyboard.CheckTimeTravel, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.CheckTimeTravel) as? CheckTimeTravelViewController else { return }
         navigationController?.pushViewController(checkTimeTravel, animated: true)
     }
