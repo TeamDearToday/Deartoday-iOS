@@ -13,9 +13,6 @@ final class MainViewController: UIViewController {
 
     @IBOutlet weak var backgroundScrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var rewindImageView: UIImageView!
-    @IBOutlet weak var messageStackView: UIStackView!
-    @IBOutlet weak var tapeStackView: UIStackView!
     @IBOutlet var iconImageViewCollection: [UIImageView]!
     @IBOutlet var messageCountLabelCollection: [UILabel]!
     @IBOutlet var dateLabelCollection: [UILabel]!

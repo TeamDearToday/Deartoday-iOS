@@ -56,9 +56,6 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="btnCircleBasic"/>
-                                                <connections>
-                                                    <action selector="timeTravelButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VCk-oD-vDd"/>
-                                                </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rewind" translatesAutoresizingMaskIntoConstraints="NO" id="jkQ-e5-aBO">
                                                 <rect key="frame" x="117" y="275" width="28" height="28"/>
@@ -89,9 +86,6 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="btnCircleBasic"/>
-                                                <connections>
-                                                    <action selector="checkMessageButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j56-o2-LFj"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TgA-8j-2gh">
                                                 <rect key="frame" x="399" y="507" width="313" height="189"/>
@@ -114,9 +108,6 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="btnCircleBasic"/>
-                                                <connections>
-                                                    <action selector="checkTimeTravelButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xhh-v9-KR6"/>
-                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="7kC-Da-iAq">
                                                 <rect key="frame" x="601" y="186" width="30" height="22"/>
@@ -294,11 +285,8 @@
                     <size key="freeformSize" width="749" height="812"/>
                     <connections>
                         <outlet property="backgroundScrollView" destination="m3y-wI-V1B" id="8ay-N6-Hxy"/>
-                        <outlet property="messageStackView" destination="7kC-Da-iAq" id="ZxC-Rf-aCJ"/>
                         <outlet property="pageControl" destination="59W-gz-LAT" id="cBF-6v-Vop"/>
                         <outlet property="pageControlBottomConstraint" destination="gnF-1c-KPo" id="ERy-Rb-wbQ"/>
-                        <outlet property="rewindImageView" destination="jkQ-e5-aBO" id="hbd-ZR-36y"/>
-                        <outlet property="tapeStackView" destination="5J9-qv-07r" id="wmm-XW-wCf"/>
                         <outletCollection property="backgroundImageViewWidthConstraintCollection" destination="AMU-RF-Elr" collectionClass="NSMutableArray" id="OsQ-2a-KQu"/>
                         <outletCollection property="backgroundImageViewWidthConstraintCollection" destination="dmh-gd-7ZW" collectionClass="NSMutableArray" id="0h8-fV-uxy"/>
                         <outletCollection property="backgroundImageViewWidthConstraintCollection" destination="e6Y-Lx-1MC" collectionClass="NSMutableArray" id="xv9-OO-ARi"/>
