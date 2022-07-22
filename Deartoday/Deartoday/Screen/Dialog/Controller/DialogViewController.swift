@@ -235,7 +235,7 @@ final class DialogViewController: UIViewController {
                                                                              year: Int(year) ?? 0,
                                                                              month: Int(month) ?? 0,
                                                                              day: Int(day) ?? 0,
-                                                                             writtenDate: "\(year).\(month).\(day)",
+                                                                             writtenDate: "\(dateFormatter.string(from: Date()))",
                                                                              questions: questions,
                                                                              answers: answers),
                                              image: photoImage ?? UIImage()) { _, _ in }
