@@ -43,12 +43,12 @@
                                                     <constraint firstAttribute="width" secondItem="BNe-RC-mB1" secondAttribute="height" multiplier="265:246" id="kPa-Ra-HkX"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <buttonConfiguration key="configuration" style="plain" title=""/>
                                                 <connections>
                                                     <action selector="timeTravelButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="twj-9H-DmF"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGG-9o-HrI">
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGG-9o-HrI">
                                                 <rect key="frame" x="97" y="255" width="68" height="90"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="68" id="3ah-Rg-RaA"/>
@@ -56,11 +56,8 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="btnCircleBasic"/>
-                                                <connections>
-                                                    <action selector="timeTravelButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VCk-oD-vDd"/>
-                                                </connections>
                                             </button>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rewind" translatesAutoresizingMaskIntoConstraints="NO" id="jkQ-e5-aBO">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rewind" translatesAutoresizingMaskIntoConstraints="NO" id="jkQ-e5-aBO">
                                                 <rect key="frame" x="117" y="275" width="28" height="28"/>
                                                 <color key="tintColor" name="blue02"/>
                                                 <constraints>
@@ -81,7 +78,7 @@
                                                     <action selector="checkMessageButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4YV-xi-ZhZ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qJ-Cs-81A">
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qJ-Cs-81A">
                                                 <rect key="frame" x="582" y="163" width="68" height="90"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="68" id="emj-hx-SPr"/>
@@ -89,9 +86,6 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="btnCircleBasic"/>
-                                                <connections>
-                                                    <action selector="checkMessageButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j56-o2-LFj"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TgA-8j-2gh">
                                                 <rect key="frame" x="399" y="507" width="313" height="189"/>
@@ -106,7 +100,7 @@
                                                     <action selector="checkTimeTravelButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VvO-gp-Jct"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYn-6d-KCP">
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYn-6d-KCP">
                                                 <rect key="frame" x="545" y="462" width="68" height="90"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="90" id="7uO-KX-LmE"/>
@@ -114,14 +108,11 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="btnCircleBasic"/>
-                                                <connections>
-                                                    <action selector="checkTimeTravelButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xhh-v9-KR6"/>
-                                                </connections>
                                             </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="7kC-Da-iAq">
+                                            <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="7kC-Da-iAq">
                                                 <rect key="frame" x="601" y="186" width="30" height="22"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icnMemo" translatesAutoresizingMaskIntoConstraints="NO" id="hYj-Yl-O37">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icnMemo" translatesAutoresizingMaskIntoConstraints="NO" id="hYj-Yl-O37">
                                                         <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
                                                         <color key="tintColor" name="blue02"/>
                                                         <constraints>
@@ -129,7 +120,7 @@
                                                             <constraint firstAttribute="width" secondItem="hYj-Yl-O37" secondAttribute="height" multiplier="1:1" id="uhL-nl-9LP"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Goz-jN-lWr">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Goz-jN-lWr">
                                                         <rect key="frame" x="26" y="0.0" width="4" height="22"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
@@ -137,17 +128,17 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="5J9-qv-07r">
+                                            <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="5J9-qv-07r">
                                                 <rect key="frame" x="564" y="485" width="30" height="22"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icnTape" translatesAutoresizingMaskIntoConstraints="NO" id="UVK-NG-wji">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icnTape" translatesAutoresizingMaskIntoConstraints="NO" id="UVK-NG-wji">
                                                         <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="UVK-NG-wji" secondAttribute="height" multiplier="1:1" id="Nty-DZ-FFK"/>
                                                             <constraint firstAttribute="height" constant="22" id="yaU-bL-Knj"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PU-Ad-LwK">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PU-Ad-LwK">
                                                         <rect key="frame" x="26" y="0.0" width="4" height="22"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
@@ -156,21 +147,41 @@
                                                 </subviews>
                                                 <color key="tintColor" name="blue02"/>
                                             </stackView>
+                                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PhP-IM-Xgy">
+                                                <rect key="frame" x="97" y="255" width="68" height="90"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WtZ-FU-8ga">
+                                                <rect key="frame" x="545" y="462" width="68" height="45"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hof-Bk-CHA">
+                                                <rect key="frame" x="582" y="163" width="68" height="45"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="QIl-7z-7U7" firstAttribute="leading" secondItem="USj-eL-kCX" secondAttribute="leading" id="0Y1-9N-NEE"/>
                                             <constraint firstItem="UGG-9o-HrI" firstAttribute="leading" secondItem="BNe-RC-mB1" secondAttribute="leading" constant="81" id="57T-T9-G49"/>
+                                            <constraint firstItem="WtZ-FU-8ga" firstAttribute="trailing" secondItem="tYn-6d-KCP" secondAttribute="trailing" id="A85-LR-SfG"/>
                                             <constraint firstItem="7kC-Da-iAq" firstAttribute="centerX" secondItem="9qJ-Cs-81A" secondAttribute="centerX" id="DIx-WJ-xsz"/>
                                             <constraint firstItem="jkQ-e5-aBO" firstAttribute="centerX" secondItem="UGG-9o-HrI" secondAttribute="centerX" id="Dgp-LM-D09"/>
                                             <constraint firstItem="jkQ-e5-aBO" firstAttribute="top" secondItem="UGG-9o-HrI" secondAttribute="top" constant="20" id="EcT-JY-PBM"/>
+                                            <constraint firstItem="hof-Bk-CHA" firstAttribute="leading" secondItem="9qJ-Cs-81A" secondAttribute="leading" id="Fbb-eH-uFv"/>
+                                            <constraint firstItem="PhP-IM-Xgy" firstAttribute="width" secondItem="UGG-9o-HrI" secondAttribute="width" id="GHA-4D-TrO"/>
+                                            <constraint firstItem="PhP-IM-Xgy" firstAttribute="height" secondItem="UGG-9o-HrI" secondAttribute="height" id="Hby-75-VWt"/>
                                             <constraint firstAttribute="bottom" secondItem="QIl-7z-7U7" secondAttribute="bottom" id="JxW-OO-xOd"/>
                                             <constraint firstItem="tKA-ES-cfr" firstAttribute="leading" secondItem="QIl-7z-7U7" secondAttribute="trailing" id="KNA-30-WWd"/>
                                             <constraint firstItem="9qJ-Cs-81A" firstAttribute="trailing" secondItem="ein-JI-aqo" secondAttribute="trailing" constant="-75" id="KYR-y1-das"/>
                                             <constraint firstAttribute="bottom" secondItem="tKA-ES-cfr" secondAttribute="bottom" id="Kjf-Uj-GDK"/>
+                                            <constraint firstItem="TgA-8j-2gh" firstAttribute="top" secondItem="WtZ-FU-8ga" secondAttribute="bottom" id="LPd-TS-AlE"/>
+                                            <constraint firstItem="PhP-IM-Xgy" firstAttribute="centerX" secondItem="UGG-9o-HrI" secondAttribute="centerX" id="NAf-Xz-8ob"/>
                                             <constraint firstItem="5J9-qv-07r" firstAttribute="top" secondItem="tYn-6d-KCP" secondAttribute="top" constant="23" id="P55-cL-022"/>
+                                            <constraint firstItem="ein-JI-aqo" firstAttribute="top" secondItem="hof-Bk-CHA" secondAttribute="bottom" id="Ptg-xb-a8s"/>
                                             <constraint firstItem="5J9-qv-07r" firstAttribute="centerX" secondItem="tYn-6d-KCP" secondAttribute="centerX" id="PwZ-sg-H0x"/>
                                             <constraint firstItem="ein-JI-aqo" firstAttribute="top" secondItem="9qJ-Cs-81A" secondAttribute="bottom" constant="-45" id="S8E-sH-U1L"/>
+                                            <constraint firstItem="hof-Bk-CHA" firstAttribute="top" secondItem="9qJ-Cs-81A" secondAttribute="top" id="SGc-j1-99e"/>
                                             <constraint firstAttribute="trailing" secondItem="ein-JI-aqo" secondAttribute="trailing" constant="25" id="STu-tN-f5M"/>
                                             <constraint firstItem="BNe-RC-mB1" firstAttribute="top" secondItem="UGG-9o-HrI" secondAttribute="bottom" constant="11" id="VHg-Ii-2zM"/>
                                             <constraint firstAttribute="trailing" secondItem="tKA-ES-cfr" secondAttribute="trailing" id="cw3-MK-FFR"/>
@@ -178,8 +189,12 @@
                                             <constraint firstItem="QIl-7z-7U7" firstAttribute="top" secondItem="USj-eL-kCX" secondAttribute="top" id="gHQ-Gq-VYP"/>
                                             <constraint firstItem="tYn-6d-KCP" firstAttribute="trailing" secondItem="TgA-8j-2gh" secondAttribute="trailing" constant="-99" id="lmH-Zy-6qa"/>
                                             <constraint firstItem="BNe-RC-mB1" firstAttribute="leading" secondItem="USj-eL-kCX" secondAttribute="leading" constant="16" id="mej-gN-Cba"/>
+                                            <constraint firstItem="PhP-IM-Xgy" firstAttribute="centerY" secondItem="UGG-9o-HrI" secondAttribute="centerY" id="nYg-2e-TjB"/>
                                             <constraint firstItem="7kC-Da-iAq" firstAttribute="top" secondItem="9qJ-Cs-81A" secondAttribute="top" constant="23" id="od8-5w-swU"/>
+                                            <constraint firstItem="WtZ-FU-8ga" firstAttribute="top" secondItem="tYn-6d-KCP" secondAttribute="top" id="otS-d5-5jR"/>
                                             <constraint firstAttribute="trailing" secondItem="TgA-8j-2gh" secondAttribute="trailing" constant="38" id="pAX-Jn-6l6"/>
+                                            <constraint firstItem="hof-Bk-CHA" firstAttribute="trailing" secondItem="9qJ-Cs-81A" secondAttribute="trailing" id="tGE-Dv-o5p"/>
+                                            <constraint firstItem="WtZ-FU-8ga" firstAttribute="leading" secondItem="tYn-6d-KCP" secondAttribute="leading" id="uI1-O0-Jqv"/>
                                             <constraint firstItem="tKA-ES-cfr" firstAttribute="top" secondItem="USj-eL-kCX" secondAttribute="top" id="vFq-Qp-SlB"/>
                                         </constraints>
                                     </view>
@@ -203,7 +218,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgDate" translatesAutoresizingMaskIntoConstraints="NO" id="kCm-XR-W2f">
                                         <rect key="frame" x="165" y="51" width="73" height="56"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQ1-B5-dn2">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQ1-B5-dn2">
                                         <rect key="frame" x="315" y="63" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="lhz-0k-hB9"/>
@@ -215,7 +230,7 @@
                                             <action selector="settingButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1g8-K4-tpH"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tab-NT-xCD">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tab-NT-xCD">
                                         <rect key="frame" x="315" y="107" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="tab-NT-xCD" secondAttribute="height" multiplier="1:1" id="csq-H3-n6k"/>
@@ -294,11 +309,11 @@
                     <size key="freeformSize" width="749" height="812"/>
                     <connections>
                         <outlet property="backgroundScrollView" destination="m3y-wI-V1B" id="8ay-N6-Hxy"/>
-                        <outlet property="messageStackView" destination="7kC-Da-iAq" id="ZxC-Rf-aCJ"/>
+                        <outlet property="checkMessageView" destination="hof-Bk-CHA" id="65C-HA-s3j"/>
+                        <outlet property="checkTimeTravelView" destination="WtZ-FU-8ga" id="lt5-BL-JGg"/>
                         <outlet property="pageControl" destination="59W-gz-LAT" id="cBF-6v-Vop"/>
                         <outlet property="pageControlBottomConstraint" destination="gnF-1c-KPo" id="ERy-Rb-wbQ"/>
-                        <outlet property="rewindImageView" destination="jkQ-e5-aBO" id="hbd-ZR-36y"/>
-                        <outlet property="tapeStackView" destination="5J9-qv-07r" id="wmm-XW-wCf"/>
+                        <outlet property="timeTravelView" destination="PhP-IM-Xgy" id="Igi-dV-RXC"/>
                         <outletCollection property="backgroundImageViewWidthConstraintCollection" destination="AMU-RF-Elr" collectionClass="NSMutableArray" id="OsQ-2a-KQu"/>
                         <outletCollection property="backgroundImageViewWidthConstraintCollection" destination="dmh-gd-7ZW" collectionClass="NSMutableArray" id="0h8-fV-uxy"/>
                         <outletCollection property="backgroundImageViewWidthConstraintCollection" destination="e6Y-Lx-1MC" collectionClass="NSMutableArray" id="xv9-OO-ARi"/>
