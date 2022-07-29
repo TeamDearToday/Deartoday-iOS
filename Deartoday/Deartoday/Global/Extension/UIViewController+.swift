@@ -61,4 +61,8 @@ extension UIViewController {
             self.present(viewControllerToPresent, animated: true, completion: nil)
         }
     }
+    
+    func setBackSwipeGesture() {
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
+    }
 }

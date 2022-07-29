@@ -79,10 +79,6 @@ final class MainViewController: UIViewController {
         }
     }
     
-    private func setBackSwipeGesture() {
-        navigationController?.interactivePopGestureRecognizer?.delegate = nil
-    }
-    
     private func setGesture() {
         let timeTravelTapGesture = UITapGestureRecognizer(target: self, action: #selector(timeTravelComponentDidTap))
         timeTravelView.addGestureRecognizer(timeTravelTapGesture)
