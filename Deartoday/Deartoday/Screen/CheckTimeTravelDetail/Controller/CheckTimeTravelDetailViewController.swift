@@ -32,10 +32,6 @@ final class CheckTimeTravelDetailViewController: UIViewController {
         getTravelInfo(timeTravelId: timeTravelID)
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
-    
     // MARK: - Custom Method
     
     private func setUI() {
@@ -48,6 +44,11 @@ final class CheckTimeTravelDetailViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.collectionViewLayout = collectionViewFlowLayout
         registerXib()
+    }
+    
+    private func setCollectionViewLayout() {
+        collectionViewFlowLayout.scrollDirection = .vertical
+        collectionViewFlowLayout.sectionHeadersPinToVisibleBounds = true
     }
     
     // MARK: - IBAction
@@ -119,8 +120,7 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDataSource {
             headerView.titleLabel?.text = travelInfo?.title ?? ""
             headerView.pastDateLabel?.text = "\(travelInfo?.year ?? 0).\(travelInfo?.month ?? 0).\(travelInfo?.day ?? 0)"
             headerView.writtenDateLabel?.text = travelInfo?.writtenDate ?? ""
-            headerView.titleLabel.setTextWithLineHeight(text: headerView.titleLabel.text,
-                                                        lineHeight: 26)
+            headerView.titleLabel.setTextWithLineHeight(text: headerView.titleLabel.text, lineHeight: 26)
             return headerView
         default: return UICollectionReusableView()
         }
@@ -220,10 +220,5 @@ extension CheckTimeTravelDetailViewController {
                                 forCellWithReuseIdentifier: PastDialogCollectionViewCell.identifier)
         collectionView.register(presentXib,
                                 forCellWithReuseIdentifier: PresentDialogCollectionViewCell.identifier)
-    }
-    
-    private func setCollectionViewLayout() {
-        collectionViewFlowLayout.scrollDirection = .vertical
-        collectionViewFlowLayout.sectionHeadersPinToVisibleBounds = true
     }
 }
