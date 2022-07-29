@@ -121,6 +121,8 @@ final class MainViewController: UIViewController {
     }
     
     @IBAction func settingButtonDidTap(_ sender: Any) {
+        guard let setting = UIStoryboard(name: Constant.Storyboard.Setting, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.Setting) as? SettingViewController else { return }
+        navigationController?.pushViewController(setting, animated: true)
     }
     
     @IBAction func helpButtonDidTap(_ sender: Any) {
