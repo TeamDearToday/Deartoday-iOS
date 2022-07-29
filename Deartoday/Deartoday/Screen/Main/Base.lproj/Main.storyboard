@@ -285,6 +285,8 @@
                             </view>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="59W-gz-LAT">
                                 <rect key="frame" x="326.33333333333331" y="753" width="96.666666666666686" height="25"/>
+                                <color key="pageIndicatorTintColor" name="lightBlue00"/>
+                                <color key="currentPageIndicatorTintColor" name="lightBlue00"/>
                             </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -368,6 +370,9 @@
         <image name="rewind" width="22" height="22"/>
         <namedColor name="blue02">
             <color red="0.33300000429153442" green="0.56099998950958252" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lightBlue00">
+            <color red="0.94099998474121094" green="0.9649999737739563" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

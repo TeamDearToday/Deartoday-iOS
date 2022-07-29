@@ -51,7 +51,6 @@ final class MainViewController: UIViewController {
     private func setUI() {
         setConstraint()
         setLabelUI()
-        setPageControlUI()
         setLayout()
     }
     
@@ -172,11 +171,6 @@ extension MainViewController {
         iconImageViewCollection.forEach {
             $0.tintColor = .blue02
         }
-    }
-    
-    private func setPageControlUI() {
-        pageControl.currentPageIndicatorTintColor = .lightBlue00
-        pageControl.pageIndicatorTintColor = .lightBlue00
     }
     
     private func setConstraint() {
