@@ -151,9 +151,9 @@ extension CheckMessageViewController: UICollectionViewDelegate {
 
 extension CheckMessageViewController {
     private func getMessageInfo() {
-        CheckMessageAPI.shared.getCheckMessage { response in
-            guard let responseData = response else { return }
-            self.setMessageInfo(response: responseData.data?.lastAnswer ?? [])
+        CheckMessageAPI.shared.getCheckMessage { [weak self] messageData in
+            guard let messageData = messageData else { return }
+            self?.setMessageInfo(response: messageData.data?.lastAnswer ?? [])
         }
     }
 }

@@ -33,7 +33,7 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        setData()
+        setDate()
         setDelegate()
         setGesture()
         setBackSwipeGesture()
@@ -52,10 +52,6 @@ final class MainViewController: UIViewController {
         setConstraint()
         setLabelUI()
         setLayout()
-    }
-    
-    private func setData() {
-        setDate()
     }
     
     private func setDelegate() {
@@ -144,9 +140,9 @@ extension MainViewController: UIScrollViewDelegate {
 
 extension MainViewController {
     private func getMainData() {
-        MainAPI.shared.getMain { mainData in
+        MainAPI.shared.getMain { [weak self] mainData in
             guard let mainData = mainData else { return }
-            self.setCountLabel(count: mainData.data?.timeTravelCount ?? 0)
+            self?.setCountLabel(count: mainData.data?.timeTravelCount ?? 0)
         }
     }
 }

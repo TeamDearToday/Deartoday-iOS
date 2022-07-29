@@ -133,10 +133,10 @@ extension CheckTimeTravelViewController: UITableViewDelegate {
 
 extension CheckTimeTravelViewController {
     private func getTimeTravelInfo() {
-        CheckTimeTravelAPI.shared.getCheckTimeTravel { response in
-            guard let responseData = response else { return }
-            self.timeTapes = responseData.data?.timeTravels ?? []
-            self.setTimeTravelTapeInfo()
+        CheckTimeTravelAPI.shared.getCheckTimeTravel { [weak self] tapeData in
+            guard let tapeData = tapeData else { return }
+            self?.timeTapes = tapeData.data?.timeTravels ?? []
+            self?.setTimeTravelTapeInfo()
         }
     }
 }

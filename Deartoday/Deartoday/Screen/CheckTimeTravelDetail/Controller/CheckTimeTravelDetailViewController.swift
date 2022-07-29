@@ -186,12 +186,12 @@ extension CheckTimeTravelDetailViewController: UICollectionViewDelegateFlowLayou
 // MARK: - Network
 
 extension CheckTimeTravelDetailViewController {
-    func getTravelInfo(timeTravelId: String) {
-        CheckTimeTravelAPI.shared.getTimeTravelDetail(timeTravelId: timeTravelId) { response in
-            guard let info = response?.data as? CheckTimeTravelDetailResponse else { return }
-            self.travelInfo = info
-            self.dialogs = info.messages
-            self.collectionView.reloadData()
+    private func getTravelInfo(timeTravelId: String) {
+        CheckTimeTravelAPI.shared.getTimeTravelDetail(timeTravelId: timeTravelId) { [weak self] travelData in
+            guard let travelData = travelData?.data as? CheckTimeTravelDetailResponse else { return }
+            self?.travelInfo = travelData
+            self?.dialogs = travelData.messages
+            self?.collectionView.reloadData()
         }
     }
 }
