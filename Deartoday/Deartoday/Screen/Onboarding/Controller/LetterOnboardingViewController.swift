@@ -121,10 +121,6 @@ final class LetterOnboardingViewController: UIViewController {
     }
     
     @IBAction func startLoginButtonDidTap(_ sender: UIButton) {
-//        let initialViewController = InitialViewController()
-//        initialViewController.modalTransitionStyle = .crossDissolve
-//        initialViewController.modalPresentationStyle = .fullScreen
-//        present(initialViewController, animated: true)
         guard let main = UIStoryboard(name: Constant.Storyboard.Main, bundle: nil).instantiateViewController(withIdentifier: "MainNavigationController") as? UINavigationController else { return }
         changeRootViewController(main)
     }
