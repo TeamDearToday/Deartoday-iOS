@@ -21,6 +21,7 @@ final class MainViewController: UIViewController {
     @IBOutlet weak var checkTimeTravelView: UIView!
     @IBOutlet weak var checkMessageView: UIView!
     @IBOutlet var iconImageViewCollection: [UIImageView]!
+    @IBOutlet var stackViewCollection: [UIStackView]!
     @IBOutlet var messageCountLabelCollection: [UILabel]!
     @IBOutlet var dateLabelCollection: [UILabel]!
     @IBOutlet weak var pageControlBottomConstraint: NSLayoutConstraint!
@@ -72,6 +73,9 @@ final class MainViewController: UIViewController {
     private func setCountLabel(count: Int) {
         messageCountLabelCollection.forEach {
             $0.text = count > 99 ? "99+" : "\(count)"
+        }
+        stackViewCollection.forEach {
+            $0.isHidden = false
         }
     }
     
@@ -150,18 +154,12 @@ extension MainViewController {
 // MARK: - Component UI Setting functions
 
 extension MainViewController {
-    ///Color Asset 추가 시 refactoring 가능
     private func setLabelUI() {
         messageCountLabelCollection.forEach {
-            $0.textColor = .blue02
             $0.font = .p3
         }
         dateLabelCollection.forEach {
             $0.font = .h0
-            $0.textColor = .lightBlue00
-        }
-        iconImageViewCollection.forEach {
-            $0.tintColor = .blue02
         }
     }
     
