@@ -25,7 +25,8 @@ final class PlayTapeOnboardingViewController: UIViewController {
     @IBOutlet weak var circleImageView: UIImageView!
     @IBOutlet weak var tapeButton: UIButton!
     @IBOutlet var circleCollection: [UIView]!
-    @IBOutlet weak var circleButtonTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tapeButtonHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tapeButtonTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var circleButtonLeadingConstraint: NSLayoutConstraint!
     
     var startPlayerButton = DDSButton().then {
@@ -130,8 +131,9 @@ final class PlayTapeOnboardingViewController: UIViewController {
             $0.leading.trailing.equalToSuperview().inset(6)
             $0.bottom.equalToSuperview().inset(36)
         }
-        circleButtonTopConstraint.constant = ((getDeviceHeight() == 667) ? 140 : (getDeviceHeight() == 844) ? 195 : 185)
-        circleButtonLeadingConstraint.constant = (getDeviceHeight() == 884) ? 168 : 158
+        tapeButtonHeightConstraint.constant = getDeviceWidth() * (tapeButtonHeightConstraint.constant / 360)
+        tapeButtonTopConstraint.constant = getDeviceHeight() * (tapeButtonTopConstraint.constant / 825)
+        circleButtonLeadingConstraint.constant = getDeviceWidth() * (tapeButtonHeightConstraint.constant / 360) * (circleButtonLeadingConstraint.constant / 243)
     }
     
     // MARK: - IBAction
