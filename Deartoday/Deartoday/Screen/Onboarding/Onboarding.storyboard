@@ -59,17 +59,13 @@
                                 </connections>
                             </button>
                             <imageView hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnCircleBasic" translatesAutoresizingMaskIntoConstraints="NO" id="oeJ-ww-SZA">
-                                <rect key="frame" x="158" y="225" width="60" height="83"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="GyN-hJ-Eif"/>
-                                    <constraint firstAttribute="height" constant="83" id="gYE-yF-V8B"/>
-                                </constraints>
+                                <rect key="frame" x="158" y="218" width="68" height="90"/>
                             </imageView>
                             <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2B-Nh-U49">
-                                <rect key="frame" x="169" y="238" width="38" height="38"/>
+                                <rect key="frame" x="169" y="229" width="46" height="46"/>
                                 <subviews>
                                     <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GYo-0r-i7V">
-                                        <rect key="frame" x="1" y="1" width="36" height="36"/>
+                                        <rect key="frame" x="1" y="1" width="44" height="44"/>
                                         <color key="backgroundColor" red="0.94117647058823528" green="0.96470588235294119" blue="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
@@ -78,7 +74,6 @@
                                     <constraint firstAttribute="width" secondItem="U2B-Nh-U49" secondAttribute="height" multiplier="1:1" id="GMW-wT-Jly"/>
                                     <constraint firstItem="GYo-0r-i7V" firstAttribute="leading" secondItem="U2B-Nh-U49" secondAttribute="leading" constant="1" id="QLU-FJ-y3u"/>
                                     <constraint firstAttribute="trailing" secondItem="GYo-0r-i7V" secondAttribute="trailing" constant="1" id="Sxf-3q-0F8"/>
-                                    <constraint firstAttribute="height" constant="38" id="eh2-iQ-Jfp"/>
                                     <constraint firstAttribute="bottom" secondItem="GYo-0r-i7V" secondAttribute="bottom" constant="1" id="tRM-oH-QWV"/>
                                     <constraint firstItem="GYo-0r-i7V" firstAttribute="top" secondItem="U2B-Nh-U49" secondAttribute="top" constant="1" id="ynG-Kn-9p4"/>
                                 </constraints>
@@ -97,8 +92,9 @@
                             <constraint firstItem="i9w-LV-IyT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="75" id="JUb-cg-HSs"/>
                             <constraint firstItem="Fjd-0T-ndi" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" constant="-32" id="P6R-Fd-WGA"/>
                             <constraint firstItem="32K-94-dsE" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Vn4-aG-E1w"/>
+                            <constraint firstItem="U2B-Nh-U49" firstAttribute="trailing" secondItem="oeJ-ww-SZA" secondAttribute="trailing" constant="-11" id="ckg-YA-TAZ"/>
                             <constraint firstItem="peP-cm-NGj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="64" id="coZ-V1-YjZ"/>
-                            <constraint firstItem="U2B-Nh-U49" firstAttribute="top" secondItem="oeJ-ww-SZA" secondAttribute="top" constant="13" id="e1N-g7-U2n"/>
+                            <constraint firstItem="U2B-Nh-U49" firstAttribute="top" secondItem="oeJ-ww-SZA" secondAttribute="top" constant="11" id="e1N-g7-U2n"/>
                             <constraint firstItem="U2B-Nh-U49" firstAttribute="leading" secondItem="oeJ-ww-SZA" secondAttribute="leading" constant="11" id="fyD-Zk-kvP"/>
                             <constraint firstItem="i9w-LV-IyT" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="270" id="hYO-MX-Uk6"/>
                             <constraint firstItem="i9w-LV-IyT" firstAttribute="top" secondItem="oeJ-ww-SZA" secondAttribute="bottom" constant="6" id="nax-2f-iRi"/>

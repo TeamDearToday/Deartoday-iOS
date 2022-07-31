@@ -131,9 +131,9 @@ final class PlayTapeOnboardingViewController: UIViewController {
             $0.leading.trailing.equalToSuperview().inset(6)
             $0.bottom.equalToSuperview().inset(36)
         }
-        tapeButtonHeightConstraint.constant = getDeviceWidth() * (tapeButtonHeightConstraint.constant / 360)
-        tapeButtonTopConstraint.constant = getDeviceHeight() * (tapeButtonTopConstraint.constant / 825)
-        circleButtonLeadingConstraint.constant = getDeviceWidth() * (tapeButtonHeightConstraint.constant / 360) * (circleButtonLeadingConstraint.constant / 243)
+        tapeButtonHeightConstraint.constant = getDeviceWidth() * (tapeButtonHeightConstraint.constant / 372)
+        tapeButtonTopConstraint.constant = getDeviceHeight() * (tapeButtonTopConstraint.constant / 830)
+        circleButtonLeadingConstraint.constant = getDeviceWidth() * (tapeButtonHeightConstraint.constant / 372) * (circleButtonLeadingConstraint.constant / 243)
     }
     
     // MARK: - IBAction

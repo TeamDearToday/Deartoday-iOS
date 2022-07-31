@@ -132,9 +132,9 @@ final class OnboardingViewController: UIViewController {
     
     private func setLayout() {
         labelBottomConstraint.constant = (getDeviceHeight() == 667) ? 45 : 69
-        boxButtonHeightConstraint.constant = getDeviceWidth() * (boxButtonHeightConstraint.constant / 365)
-        boxButtonTopConstraint.constant = (UIScreen.main.hasNotch) ? getDeviceHeight() * (boxButtonTopConstraint.constant / 830) : (boxButtonTopConstraint.constant - 48)
-        circleButtonLeadingConstraint.constant = (getDeviceWidth() * (boxButtonHeightConstraint.constant / 365)) * (circleButtonLeadingConstraint.constant / 201)
+        boxButtonHeightConstraint.constant = getDeviceWidth() * (boxButtonHeightConstraint.constant / 372)
+        boxButtonTopConstraint.constant = getDeviceHeight() * (boxButtonTopConstraint.constant / 830)
+        circleButtonLeadingConstraint.constant = (getDeviceWidth() * (boxButtonHeightConstraint.constant / 372)) * (circleButtonLeadingConstraint.constant / 201)
     }
     
     // MARK: - IBAction
