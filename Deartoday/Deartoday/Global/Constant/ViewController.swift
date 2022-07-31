@@ -17,6 +17,7 @@ extension Constant {
         
         ///메인
         static let Main = "MainViewController"
+        static let MainNavi = "MainNavigationController"
         
         ///메시지 확인 + 상세 확인
         static let CheckMessage = "CheckMessageViewController"
@@ -25,5 +26,8 @@ extension Constant {
         ///시간여행 확인
         static let CheckTimeTravel = "CheckTimeTravelViewController"
         static let CheckTimeTravelDetail = "CheckTimeTravelDetailViewController"
+        
+        ///설정
+        static let Setting = "SettingViewController"
     }
 }

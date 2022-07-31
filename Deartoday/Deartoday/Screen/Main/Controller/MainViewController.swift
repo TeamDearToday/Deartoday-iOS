@@ -21,6 +21,7 @@ final class MainViewController: UIViewController {
     @IBOutlet weak var checkTimeTravelView: UIView!
     @IBOutlet weak var checkMessageView: UIView!
     @IBOutlet var iconImageViewCollection: [UIImageView]!
+    @IBOutlet var stackViewCollection: [UIStackView]!
     @IBOutlet var messageCountLabelCollection: [UILabel]!
     @IBOutlet var dateLabelCollection: [UILabel]!
     @IBOutlet weak var pageControlBottomConstraint: NSLayoutConstraint!
@@ -33,7 +34,7 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        setData()
+        setDate()
         setDelegate()
         setGesture()
         setBackSwipeGesture()
@@ -51,12 +52,7 @@ final class MainViewController: UIViewController {
     private func setUI() {
         setConstraint()
         setLabelUI()
-        setPageControlUI()
         setLayout()
-    }
-    
-    private func setData() {
-        setDate()
     }
     
     private func setDelegate() {
@@ -78,10 +74,9 @@ final class MainViewController: UIViewController {
         messageCountLabelCollection.forEach {
             $0.text = count > 99 ? "99+" : "\(count)"
         }
-    }
-    
-    private func setBackSwipeGesture() {
-        navigationController?.interactivePopGestureRecognizer?.delegate = nil
+        stackViewCollection.forEach {
+            $0.isHidden = false
+        }
     }
     
     private func setGesture() {
@@ -126,6 +121,8 @@ final class MainViewController: UIViewController {
     }
     
     @IBAction func settingButtonDidTap(_ sender: Any) {
+        guard let setting = UIStoryboard(name: Constant.Storyboard.Setting, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.Setting) as? SettingViewController else { return }
+        navigationController?.pushViewController(setting, animated: true)
     }
     
     @IBAction func helpButtonDidTap(_ sender: Any) {
@@ -149,9 +146,9 @@ extension MainViewController: UIScrollViewDelegate {
 
 extension MainViewController {
     private func getMainData() {
-        MainAPI.shared.getMain { mainData in
+        MainAPI.shared.getMain { [weak self] mainData in
             guard let mainData = mainData else { return }
-            self.setCountLabel(count: mainData.data?.timeTravelCount ?? 0)
+            self?.setCountLabel(count: mainData.data?.timeTravelCount ?? 0)
         }
     }
 }
@@ -159,24 +156,13 @@ extension MainViewController {
 // MARK: - Component UI Setting functions
 
 extension MainViewController {
-    ///Color Asset 추가 시 refactoring 가능
     private func setLabelUI() {
         messageCountLabelCollection.forEach {
-            $0.textColor = .blue02
             $0.font = .p3
         }
         dateLabelCollection.forEach {
             $0.font = .h0
-            $0.textColor = .lightBlue00
         }
-        iconImageViewCollection.forEach {
-            $0.tintColor = .blue02
-        }
-    }
-    
-    private func setPageControlUI() {
-        pageControl.currentPageIndicatorTintColor = .lightBlue00
-        pageControl.pageIndicatorTintColor = .lightBlue00
     }
     
     private func setConstraint() {
