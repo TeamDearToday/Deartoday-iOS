@@ -24,10 +24,7 @@ final class OnboardingViewController: UIViewController {
     @IBOutlet var labelCollection: [UILabel]!
     @IBOutlet var circleCollection: [UIView]!
     @IBOutlet weak var labelBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var boxButtonHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var boxButtonTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var circleButtonLeadingConstraint: NSLayoutConstraint!
-    
+    @IBOutlet weak var boxButtonWidthConstraint: NSLayoutConstraint!
     
     // MARK: - Life Cycle
     
@@ -132,9 +129,7 @@ final class OnboardingViewController: UIViewController {
     
     private func setLayout() {
         labelBottomConstraint.constant = (getDeviceHeight() == 667) ? 45 : 69
-        boxButtonHeightConstraint.constant = getDeviceWidth() * (boxButtonHeightConstraint.constant / 372)
-        boxButtonTopConstraint.constant = getDeviceHeight() * (boxButtonTopConstraint.constant / 830)
-        circleButtonLeadingConstraint.constant = (getDeviceWidth() * (boxButtonHeightConstraint.constant / 372)) * (circleButtonLeadingConstraint.constant / 201)
+        boxButtonWidthConstraint.constant = getDeviceWidth() * (boxButtonWidthConstraint.constant / 375)
     }
     
     // MARK: - IBAction
