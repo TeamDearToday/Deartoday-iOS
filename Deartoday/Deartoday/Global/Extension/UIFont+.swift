@@ -109,4 +109,8 @@ extension UIFont {
   class var caption1: UIFont {
     return UIFont(name: "Pretendard-Regular", size: 12.0)!
   }
+    
+  class var p8: UIFont {
+    return UIFont(name: "Pretendard-SemiBold", size: 16.0)!
+  }
 }

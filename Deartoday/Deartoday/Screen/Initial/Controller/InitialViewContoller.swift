@@ -12,7 +12,6 @@ import SnapKit
 import Then
 
 final class InitialViewController: UIViewController {
-    // MARK: - Property
     
     // MARK: - UI Property
     
@@ -25,7 +24,7 @@ final class InitialViewController: UIViewController {
     }
     
     var appleLoginButton = UIButton().then {
-        $0.setBackgroundImage(Constant.Image.btnApple, for: .normal)
+        $0.setImage(Constant.Image.btnApple, for: .normal)
         $0.addTarget(self, action: #selector(appleSignInButtonDidTap), for: .touchUpInside)
     }
     
@@ -51,18 +50,29 @@ final class InitialViewController: UIViewController {
     
     // MARK: - Custom Method
     
+    private func presentMainView() {
+        guard let mainViewController = UIStoryboard(name: Constant.Storyboard.Main, bundle: nil).instantiateViewController(withIdentifier: "MainNavigationController") as? MainNavigationController else { return }
+        mainViewController.modalPresentationStyle = .fullScreen
+        mainViewController.modalTransitionStyle = .crossDissolve
+        present(mainViewController, animated: true)
+    }
+    
     private func setLayout() {
-        view.addSubviews([backgroundView, logoImageView, appleLoginButton])
+        view.addSubviews([backgroundView,
+                          logoImageView,
+                          appleLoginButton])
         
         backgroundView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+        
         logoImageView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().inset(getDeviceHeight() == 667 ? 190 : 258)
+            $0.centerY.equalToSuperview().multipliedBy(0.9)
         }
+        
         appleLoginButton.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.centerX.equalTo(logoImageView)
             $0.top.equalTo(logoImageView.snp.bottom).offset(10)
         }
     }
@@ -85,12 +95,9 @@ extension InitialViewController: ASAuthorizationControllerDelegate, ASAuthorizat
                 guard let accessToken = appleLoginData?.data?.accessToken else { return }
                 print("accessToken:\(accessToken)")
 //                UserDefaults.standard.set("\(accessToken)", forKey: "hasToken")
+                self.presentMainView()
             }
         }
-        guard let mainViewController = UIStoryboard(name: Constant.Storyboard.Main, bundle: nil).instantiateViewController(withIdentifier: "MainNavigationController") as? MainNavigationController else { return }
-        mainViewController.modalPresentationStyle = .fullScreen
-        mainViewController.modalTransitionStyle = .crossDissolve
-        present(mainViewController, animated: true)
     }
     
     // Apple ID 연동 실패
