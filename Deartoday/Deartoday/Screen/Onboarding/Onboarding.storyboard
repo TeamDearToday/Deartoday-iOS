@@ -49,7 +49,7 @@
                             </button>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9w-LV-IyT">
                                 <rect key="frame" x="75.666666666666686" y="309.66666666666669" width="239" height="201"/>
-                                <color key="backgroundColor" name="blue02"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="i9w-LV-IyT" secondAttribute="height" multiplier="239:201" id="50a-Eq-Rco"/>
                                     <constraint firstAttribute="width" constant="239" id="dlF-ou-r8y"/>
@@ -484,10 +484,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcc-mj-cg3">
-                                <rect key="frame" x="62" y="320" width="243" height="223"/>
+                                <rect key="frame" x="62.333333333333343" y="316" width="243.00000000000003" height="223"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="223" id="2bm-2B-1AJ"/>
+                                    <constraint firstAttribute="width" constant="243" id="3SX-JH-Qw9"/>
                                     <constraint firstAttribute="width" secondItem="vcc-mj-cg3" secondAttribute="height" multiplier="243:223" id="OeV-q8-LOY"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
@@ -497,13 +497,17 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnCircleBasic" translatesAutoresizingMaskIntoConstraints="NO" id="Cs2-pn-BYG">
-                                <rect key="frame" x="157" y="227" width="68" height="90"/>
+                                <rect key="frame" x="153.66666666666666" y="230" width="60" height="83"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="H3v-Vl-eSG"/>
+                                    <constraint firstAttribute="width" secondItem="Cs2-pn-BYG" secondAttribute="height" multiplier="60:83" id="SbP-nR-Jwz"/>
+                                </constraints>
                             </imageView>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IPC-Aq-EiK">
-                                <rect key="frame" x="168" y="238" width="46" height="46"/>
+                                <rect key="frame" x="164.66666666666666" y="242" width="38" height="38"/>
                                 <subviews>
                                     <view userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ymW-9q-feV">
-                                        <rect key="frame" x="1" y="1" width="44" height="44"/>
+                                        <rect key="frame" x="1" y="1" width="36" height="36"/>
                                         <color key="backgroundColor" red="0.94117647058823528" green="0.96470588235294119" blue="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
@@ -520,29 +524,27 @@
                         <viewLayoutGuide key="safeArea" id="a3U-IX-Q9F"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vcc-mj-cg3" firstAttribute="top" secondItem="a3U-IX-Q9F" secondAttribute="top" constant="276" id="3rZ-SG-jl9"/>
+                            <constraint firstItem="vcc-mj-cg3" firstAttribute="centerY" secondItem="a3U-IX-Q9F" secondAttribute="centerY" multiplier="1.04" id="27O-mb-5n6"/>
                             <constraint firstAttribute="trailing" secondItem="wul-h0-Jab" secondAttribute="trailing" id="6ti-B9-7bF"/>
                             <constraint firstItem="wul-h0-Jab" firstAttribute="leading" secondItem="Gn5-pW-AGC" secondAttribute="leading" id="8d4-yM-bQx"/>
                             <constraint firstItem="wul-h0-Jab" firstAttribute="top" secondItem="Gn5-pW-AGC" secondAttribute="top" id="9TL-bG-DIZ"/>
                             <constraint firstItem="Zz0-Bb-V8i" firstAttribute="leading" secondItem="a3U-IX-Q9F" secondAttribute="leading" constant="59" id="BDV-Qk-a9R"/>
                             <constraint firstItem="IPC-Aq-EiK" firstAttribute="trailing" secondItem="Cs2-pn-BYG" secondAttribute="trailing" constant="-11" id="BPr-Vz-iaf"/>
-                            <constraint firstItem="IPC-Aq-EiK" firstAttribute="top" secondItem="Cs2-pn-BYG" secondAttribute="top" constant="11" id="BcL-9y-RTd"/>
+                            <constraint firstItem="IPC-Aq-EiK" firstAttribute="top" secondItem="Cs2-pn-BYG" secondAttribute="top" constant="12" id="BcL-9y-RTd"/>
                             <constraint firstAttribute="bottom" secondItem="wul-h0-Jab" secondAttribute="bottom" id="EZh-cu-d4l"/>
-                            <constraint firstItem="vcc-mj-cg3" firstAttribute="leading" secondItem="a3U-IX-Q9F" secondAttribute="leading" constant="62" id="GDW-aI-D0G"/>
-                            <constraint firstItem="Cs2-pn-BYG" firstAttribute="leading" secondItem="vcc-mj-cg3" secondAttribute="leading" constant="95" id="Ygk-YG-5dT"/>
+                            <constraint firstItem="Cs2-pn-BYG" firstAttribute="centerX" secondItem="vcc-mj-cg3" secondAttribute="centerX" id="aJk-LR-76H"/>
                             <constraint firstItem="IPC-Aq-EiK" firstAttribute="leading" secondItem="Cs2-pn-BYG" secondAttribute="leading" constant="11" id="bBh-Ye-7jM"/>
                             <constraint firstItem="vcc-mj-cg3" firstAttribute="top" secondItem="Cs2-pn-BYG" secondAttribute="bottom" constant="3" id="ffL-GH-VBj"/>
+                            <constraint firstItem="vcc-mj-cg3" firstAttribute="centerX" secondItem="a3U-IX-Q9F" secondAttribute="centerX" multiplier="0.98" id="gXh-9i-tfX"/>
                             <constraint firstItem="a3U-IX-Q9F" firstAttribute="trailing" secondItem="Zz0-Bb-V8i" secondAttribute="trailing" constant="57" id="hoI-ra-q8Y"/>
                             <constraint firstItem="a3U-IX-Q9F" firstAttribute="bottom" secondItem="Zz0-Bb-V8i" secondAttribute="bottom" constant="55" id="kWa-W8-4cr"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="circleButtonLeadingConstraint" destination="Ygk-YG-5dT" id="1Z1-4Y-TVJ"/>
                         <outlet property="circleImageView" destination="Cs2-pn-BYG" id="wVe-kc-Mg2"/>
                         <outlet property="explanationLabel" destination="Zz0-Bb-V8i" id="Dzv-Y9-6lO"/>
                         <outlet property="tapeButton" destination="vcc-mj-cg3" id="7x6-Ym-UhW"/>
-                        <outlet property="tapeButtonHeightConstraint" destination="2bm-2B-1AJ" id="fxA-q4-tGG"/>
-                        <outlet property="tapeButtonTopConstraint" destination="3rZ-SG-jl9" id="c5K-jE-YAY"/>
+                        <outlet property="tapeButtonWidthConstraint" destination="3SX-JH-Qw9" id="Ho6-Rx-8Ne"/>
                         <outletCollection property="circleCollection" destination="IPC-Aq-EiK" collectionClass="NSMutableArray" id="kgX-qZ-e0S"/>
                         <outletCollection property="circleCollection" destination="ymW-9q-feV" collectionClass="NSMutableArray" id="wPb-Mi-xhP"/>
                     </connections>
@@ -559,9 +561,6 @@
         <image name="image1Withg" width="375" height="812"/>
         <image name="image2Withg" width="375" height="812"/>
         <image name="image3Withg" width="375" height="812"/>
-        <namedColor name="blue02">
-            <color red="0.33300000429153442" green="0.56099998950958252" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="glassBlue">
             <color red="0.94099998474121094" green="0.9649999737739563" blue="1" alpha="0.80000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

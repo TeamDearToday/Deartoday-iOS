@@ -25,9 +25,8 @@ final class PlayTapeOnboardingViewController: UIViewController {
     @IBOutlet weak var circleImageView: UIImageView!
     @IBOutlet weak var tapeButton: UIButton!
     @IBOutlet var circleCollection: [UIView]!
-    @IBOutlet weak var tapeButtonHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var tapeButtonTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var circleButtonLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tapeButtonWidthConstraint: NSLayoutConstraint!
+    
     
     var startPlayerButton = DDSButton().then {
         $0.text = "플레이어 작동하기"
@@ -131,9 +130,7 @@ final class PlayTapeOnboardingViewController: UIViewController {
             $0.leading.trailing.equalToSuperview().inset(6)
             $0.bottom.equalToSuperview().inset(36)
         }
-        tapeButtonHeightConstraint.constant = getDeviceWidth() * (tapeButtonHeightConstraint.constant / 372)
-        tapeButtonTopConstraint.constant = getDeviceHeight() * (tapeButtonTopConstraint.constant / 830)
-        circleButtonLeadingConstraint.constant = getDeviceWidth() * (tapeButtonHeightConstraint.constant / 372) * (circleButtonLeadingConstraint.constant / 243)
+        tapeButtonWidthConstraint.constant = getDeviceWidth() * (tapeButtonWidthConstraint.constant / 375)
     }
     
     // MARK: - IBAction
