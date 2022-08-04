@@ -12,7 +12,6 @@ import SnapKit
 import Then
 
 final class InitialViewController: UIViewController {
-    // MARK: - Property
     
     // MARK: - UI Property
     
@@ -25,33 +24,8 @@ final class InitialViewController: UIViewController {
     }
     
     var appleLoginButton = UIButton().then {
-        $0.backgroundColor = .black
-        $0.makeRound(radius: 4)
+        $0.setImage(Constant.Image.btnApple, for: .normal)
         $0.addTarget(self, action: #selector(appleSignInButtonDidTap), for: .touchUpInside)
-    }
-    
-    var appleLogo = UIImageView().then {
-        $0.image = UIImage(systemName: "applelogo")
-        $0.contentMode = .scaleAspectFill
-        $0.tintColor = .white
-    }
-    
-    var appleLoginLabel = UILabel().then {
-        $0.text = "Apple로 계속하기"
-        $0.textColor = .white
-        $0.font = .p8
-        $0.sizeToFit()
-    }
-    
-    var appleLoginView = UIView().then {
-        $0.backgroundColor = .clear
-        $0.isUserInteractionEnabled = true
-    }
-    
-    var appleLoginStackView = UIStackView().then {
-        $0.axis = .horizontal
-        $0.spacing = 8
-        $0.alignment = .center
     }
     
     // MARK: - Life Cycle
@@ -59,7 +33,6 @@ final class InitialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setLayout()
-        addAppleLoginViewGesture()
     }
     
     // MARK: - @objc
@@ -84,19 +57,10 @@ final class InitialViewController: UIViewController {
         present(mainViewController, animated: true)
     }
     
-    private func addAppleLoginViewGesture() {
-        let addAppleLoginViewGesture = UITapGestureRecognizer(target: self, action: #selector(appleSignInButtonDidTap))
-        appleLoginView.addGestureRecognizer(addAppleLoginViewGesture)
-    }
-    
     private func setLayout() {
         view.addSubviews([backgroundView,
                           logoImageView,
-                          appleLoginButton,
-                          appleLoginStackView,
-                          appleLoginView])
-        appleLoginStackView.addArrangedSubview(appleLogo)
-        appleLoginStackView.addArrangedSubview(appleLoginLabel)
+                          appleLoginButton])
         
         backgroundView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -108,21 +72,8 @@ final class InitialViewController: UIViewController {
         }
         
         appleLoginButton.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.centerX.equalTo(logoImageView)
             $0.top.equalTo(logoImageView.snp.bottom).offset(10)
-            $0.height.equalTo(48)
-        }
-        
-        appleLogo.snp.makeConstraints {
-            $0.height.equalTo(24)
-        }
-        
-        appleLoginStackView.snp.makeConstraints {
-            $0.centerY.centerX.equalTo(appleLoginButton)
-        }
-        
-        appleLoginView.snp.makeConstraints {
-            $0.edges.equalTo(appleLoginStackView)
         }
     }
 }
