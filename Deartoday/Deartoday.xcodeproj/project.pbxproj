@@ -86,8 +86,6 @@
 		984099E92881F4A700025092 /* sound_box.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 984099E82881F4A700025092 /* sound_box.mp3 */; };
 		984099EB2881F4CD00025092 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984099EA2881F4CD00025092 /* Sound.swift */; };
 		984099ED2881F50000025092 /* sound_player.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 984099EC2881F50000025092 /* sound_player.mp3 */; };
-		9858B3D0288097B000860439 /* MessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9858B3CE288097B000860439 /* MessageCollectionViewCell.swift */; };
-		9858B3D1288097B000860439 /* MessageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9858B3CF288097B000860439 /* MessageCollectionViewCell.xib */; };
 		986E000128A4DCC9008EB3F2 /* CheckMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986E000028A4DCC9008EB3F2 /* CheckMessagesViewController.swift */; };
 		986E000328A62A04008EB3F2 /* MessagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986E000228A62A04008EB3F2 /* MessagesCollectionViewCell.swift */; };
 		986F5C362887FA83001109F1 /* TravelInfoCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986F5C342887FA83001109F1 /* TravelInfoCollectionReusableView.swift */; };
@@ -122,7 +120,6 @@
 		98D912AE287D558A0088A7F9 /* DeartodayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D912AD287D558A0088A7F9 /* DeartodayModel.swift */; };
 		98D912C5287DB0130088A7F9 /* Lottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D912C4287DB0130088A7F9 /* Lottie.swift */; };
 		98D912C8287DC30F0088A7F9 /* CheckMessage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98D912C7287DC30F0088A7F9 /* CheckMessage.storyboard */; };
-		98D912CE287DC3430088A7F9 /* CheckMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D912CD287DC3430088A7F9 /* CheckMessageViewController.swift */; };
 		98D912D2287DC3590088A7F9 /* CheckMessageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D912D1287DC3590088A7F9 /* CheckMessageDataModel.swift */; };
 		A3EDF83E9CD70073D83CA26D /* Pods_Deartoday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A3CEAB5A8D31B890C8B41E /* Pods_Deartoday.framework */; };
 /* End PBXBuildFile section */
@@ -212,8 +209,6 @@
 		984099E82881F4A700025092 /* sound_box.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_box.mp3; sourceTree = "<group>"; };
 		984099EA2881F4CD00025092 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		984099EC2881F50000025092 /* sound_player.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_player.mp3; sourceTree = "<group>"; };
-		9858B3CE288097B000860439 /* MessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCollectionViewCell.swift; sourceTree = "<group>"; };
-		9858B3CF288097B000860439 /* MessageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCollectionViewCell.xib; sourceTree = "<group>"; };
 		986E000028A4DCC9008EB3F2 /* CheckMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessagesViewController.swift; sourceTree = "<group>"; };
 		986E000228A62A04008EB3F2 /* MessagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesCollectionViewCell.swift; sourceTree = "<group>"; };
 		986F5C342887FA83001109F1 /* TravelInfoCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelInfoCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -248,7 +243,6 @@
 		98D912AD287D558A0088A7F9 /* DeartodayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeartodayModel.swift; sourceTree = "<group>"; };
 		98D912C4287DB0130088A7F9 /* Lottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lottie.swift; sourceTree = "<group>"; };
 		98D912C7287DC30F0088A7F9 /* CheckMessage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckMessage.storyboard; sourceTree = "<group>"; };
-		98D912CD287DC3430088A7F9 /* CheckMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessageViewController.swift; sourceTree = "<group>"; };
 		98D912D1287DC3590088A7F9 /* CheckMessageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessageDataModel.swift; sourceTree = "<group>"; };
 		A1A07BC470FAC0358D40F43A /* Pods-Deartoday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deartoday.release.xcconfig"; path = "Target Support Files/Pods-Deartoday/Pods-Deartoday.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1017,7 +1011,6 @@
 		98D912CA287DC32D0088A7F9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				98D912CD287DC3430088A7F9 /* CheckMessageViewController.swift */,
 				986E000028A4DCC9008EB3F2 /* CheckMessagesViewController.swift */,
 			);
 			path = Controller;
@@ -1026,8 +1019,6 @@
 		98D912CB287DC3330088A7F9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9858B3CE288097B000860439 /* MessageCollectionViewCell.swift */,
-				9858B3CF288097B000860439 /* MessageCollectionViewCell.xib */,
 				986E000228A62A04008EB3F2 /* MessagesCollectionViewCell.swift */,
 			);
 			path = View;
@@ -1114,7 +1105,6 @@
 				4A706264287C079F00140315 /* Onboarding.storyboard in Resources */,
 				98245CF928869DA6007821FA /* TravelAnswerCollectionViewCell.xib in Resources */,
 				98245CE3288699A6007821FA /* CheckTimeTravelDetail.storyboard in Resources */,
-				9858B3D1288097B000860439 /* MessageCollectionViewCell.xib in Resources */,
 				98245CF128869CCB007821FA /* PastImageCollectionViewCell.xib in Resources */,
 				986F5C3D2888345E001109F1 /* PastDialogCollectionViewCell.xib in Resources */,
 				4A916175288921E500F72BFC /* Setting.storyboard in Resources */,
@@ -1236,7 +1226,6 @@
 				92DB35722875661A001E2006 /* Constant.swift in Sources */,
 				92DB358228756B0B001E2006 /* GeneralResponse.swift in Sources */,
 				92DB357E28756AB8001E2006 /* NetworkConstant.swift in Sources */,
-				9858B3D0288097B000860439 /* MessageCollectionViewCell.swift in Sources */,
 				92DB35582875646E001E2006 /* OnboardingModel.swift in Sources */,
 				98BFBCCF2879B85400F01F04 /* UIFont+.swift in Sources */,
 				92CC3BA6287D633600EA5617 /* VirtualSpaceCollectionViewCell.swift in Sources */,
@@ -1275,7 +1264,6 @@
 				98BFBCBE2879544A00F01F04 /* Image.swift in Sources */,
 				9803F3C328848B0F00A5A239 /* CheckTimeTravelService.swift in Sources */,
 				4A2CEA772885A91F00DC9CC9 /* SplashViewController.swift in Sources */,
-				98D912CE287DC3430088A7F9 /* CheckMessageViewController.swift in Sources */,
 				98BFBCD12879BBB700F01F04 /* UIColor+.swift in Sources */,
 				4ADAB7E4288505A60049C465 /* LoginAPI.swift in Sources */,
 				98A4751C287E013F008891F5 /* CheckMessageDetailView.swift in Sources */,
