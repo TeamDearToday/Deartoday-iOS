@@ -144,12 +144,8 @@ final class CheckMessageViewController: UIViewController {
     
     private func setCollectionView() {
         collectionView.delegate = self
-        registerXib()
-        collectionView.setCollectionViewLayout(createLayout(), animated: true)
-    }
-    
-    private func registerXib() {
         collectionView.register(MessageCollectionViewCell.self, forCellWithReuseIdentifier: MessageCollectionViewCell.identifier)
+        collectionView.setCollectionViewLayout(createLayout(), animated: true)
     }
     
     private func createLayout() -> UICollectionViewLayout {
