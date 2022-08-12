@@ -87,10 +87,10 @@ extension TimeTravelService: BaseTargetType {
         switch self {
         case .oldMedia, .question:
             return ["Content-Type": "application/json",
-                    "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJkYTk4NjFiYTUxZTU5Zjc4NTU1MDQ5In0sImlhdCI6MTY1ODQ5MzY3NCwiZXhwIjoxNjU5NzAzMjc0fQ.ILj-rFGbKSAbRp97UEq3kqK-AsOdoZHU8lbzf2bQjgM"]
+                    "Authorization": NetworkConstant.accessToken]
         case .dialog:
             return ["Content-Type": "multipart/form-data",
-                    "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJkYTk4NjFiYTUxZTU5Zjc4NTU1MDQ5In0sImlhdCI6MTY1ODQ5MzY3NCwiZXhwIjoxNjU5NzAzMjc0fQ.ILj-rFGbKSAbRp97UEq3kqK-AsOdoZHU8lbzf2bQjgM"]
+                    "Authorization": NetworkConstant.accessToken]
         }
         
     }
