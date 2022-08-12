@@ -86,8 +86,8 @@
 		984099E92881F4A700025092 /* sound_box.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 984099E82881F4A700025092 /* sound_box.mp3 */; };
 		984099EB2881F4CD00025092 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984099EA2881F4CD00025092 /* Sound.swift */; };
 		984099ED2881F50000025092 /* sound_player.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 984099EC2881F50000025092 /* sound_player.mp3 */; };
-		986E000128A4DCC9008EB3F2 /* CheckMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986E000028A4DCC9008EB3F2 /* CheckMessagesViewController.swift */; };
-		986E000328A62A04008EB3F2 /* MessagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986E000228A62A04008EB3F2 /* MessagesCollectionViewCell.swift */; };
+		986E000128A4DCC9008EB3F2 /* CheckMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986E000028A4DCC9008EB3F2 /* CheckMessageViewController.swift */; };
+		986E000328A62A04008EB3F2 /* MessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986E000228A62A04008EB3F2 /* MessageCollectionViewCell.swift */; };
 		986F5C362887FA83001109F1 /* TravelInfoCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986F5C342887FA83001109F1 /* TravelInfoCollectionReusableView.swift */; };
 		986F5C372887FA83001109F1 /* TravelInfoCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 986F5C352887FA83001109F1 /* TravelInfoCollectionReusableView.xib */; };
 		986F5C3C2888345E001109F1 /* PastDialogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986F5C3A2888345E001109F1 /* PastDialogCollectionViewCell.swift */; };
@@ -209,8 +209,8 @@
 		984099E82881F4A700025092 /* sound_box.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_box.mp3; sourceTree = "<group>"; };
 		984099EA2881F4CD00025092 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		984099EC2881F50000025092 /* sound_player.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_player.mp3; sourceTree = "<group>"; };
-		986E000028A4DCC9008EB3F2 /* CheckMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessagesViewController.swift; sourceTree = "<group>"; };
-		986E000228A62A04008EB3F2 /* MessagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesCollectionViewCell.swift; sourceTree = "<group>"; };
+		986E000028A4DCC9008EB3F2 /* CheckMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessageViewController.swift; sourceTree = "<group>"; };
+		986E000228A62A04008EB3F2 /* MessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCollectionViewCell.swift; sourceTree = "<group>"; };
 		986F5C342887FA83001109F1 /* TravelInfoCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelInfoCollectionReusableView.swift; sourceTree = "<group>"; };
 		986F5C352887FA83001109F1 /* TravelInfoCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelInfoCollectionReusableView.xib; sourceTree = "<group>"; };
 		986F5C3A2888345E001109F1 /* PastDialogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastDialogCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1011,7 +1011,7 @@
 		98D912CA287DC32D0088A7F9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				986E000028A4DCC9008EB3F2 /* CheckMessagesViewController.swift */,
+				986E000028A4DCC9008EB3F2 /* CheckMessageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1019,7 +1019,7 @@
 		98D912CB287DC3330088A7F9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				986E000228A62A04008EB3F2 /* MessagesCollectionViewCell.swift */,
+				986E000228A62A04008EB3F2 /* MessageCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1193,7 +1193,7 @@
 				9803F3BD2884814C00A5A239 /* MainAPI.swift in Sources */,
 				98D912C5287DB0130088A7F9 /* Lottie.swift in Sources */,
 				4ADAB7E9288507A10049C465 /* LoginResponse.swift in Sources */,
-				986E000328A62A04008EB3F2 /* MessagesCollectionViewCell.swift in Sources */,
+				986E000328A62A04008EB3F2 /* MessageCollectionViewCell.swift in Sources */,
 				98A47519287E0129008891F5 /* CheckMessageDetailViewController.swift in Sources */,
 				986F5C3C2888345E001109F1 /* PastDialogCollectionViewCell.swift in Sources */,
 				9803F3B428847C9100A5A239 /* MainResponse.swift in Sources */,
@@ -1236,7 +1236,7 @@
 				98B4B5AA287EB54600F4AD7A /* ViewController.swift in Sources */,
 				98245CF028869CCB007821FA /* PastImageCollectionViewCell.swift in Sources */,
 				98D912D2287DC3590088A7F9 /* CheckMessageDataModel.swift in Sources */,
-				986E000128A4DCC9008EB3F2 /* CheckMessagesViewController.swift in Sources */,
+				986E000128A4DCC9008EB3F2 /* CheckMessageViewController.swift in Sources */,
 				4A44EEFB28807DC00062420E /* PlayTapeOnboardingViewController.swift in Sources */,
 				98D912A5287D3B0D0088A7F9 /* DeartodayAlertViewController.swift in Sources */,
 				92DB356A28756577001E2006 /* DDSTextField.swift in Sources */,

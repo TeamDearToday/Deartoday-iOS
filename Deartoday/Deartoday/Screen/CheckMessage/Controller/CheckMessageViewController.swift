@@ -1,5 +1,5 @@
 //
-//  CheckMessagesViewController.swift
+//  CheckMessageViewController.swift
 //  Deartoday
 //
 //  Created by 이경민 on 2022/08/11.
@@ -10,7 +10,11 @@ import UIKit
 import SnapKit
 import Then
 
-final class CheckMessagesViewController: UIViewController {
+enum MessageSection {
+    case message
+}
+
+final class CheckMessageViewController: UIViewController {
     
     // MARK: - Property
     
@@ -145,7 +149,7 @@ final class CheckMessagesViewController: UIViewController {
     }
     
     private func registerXib() {
-        collectionView.register(MessagesCollectionViewCell.self, forCellWithReuseIdentifier: MessagesCollectionViewCell.identifier)
+        collectionView.register(MessageCollectionViewCell.self, forCellWithReuseIdentifier: MessageCollectionViewCell.identifier)
     }
     
     private func createLayout() -> UICollectionViewLayout {
@@ -170,7 +174,7 @@ final class CheckMessagesViewController: UIViewController {
     
     private func setDataSource() {
         dataSource = UICollectionViewDiffableDataSource<MessageSection, MessageDataModel>(collectionView: collectionView, cellProvider: { (collectionView: UICollectionView, indexPath: IndexPath, identifier: MessageDataModel) -> UICollectionViewCell? in
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MessagesCollectionViewCell.identifier, for: indexPath) as? MessagesCollectionViewCell else { return UICollectionViewCell() }
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MessageCollectionViewCell.identifier, for: indexPath) as? MessageCollectionViewCell else { return UICollectionViewCell() }
             cell.setData(content: self.messages[indexPath.item].message)
             return cell
         })
@@ -200,7 +204,7 @@ final class CheckMessagesViewController: UIViewController {
 
 // MARK: - UICollectionViewDelegate
 
-extension CheckMessagesViewController: UICollectionViewDelegate {
+extension CheckMessageViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let messageDetail = UIStoryboard(name: Constant.Storyboard.CheckMessageDetail, bundle: nil)
             .instantiateViewController(withIdentifier: Constant.ViewController.CheckMessageDetail) as? CheckMessageDetailViewController else { return }
@@ -212,7 +216,7 @@ extension CheckMessagesViewController: UICollectionViewDelegate {
 
 // MARK: - Network
 
-extension CheckMessagesViewController {
+extension CheckMessageViewController {
     private func getMessageInfo() {
         CheckMessageAPI.shared.getCheckMessage { [weak self] messageData in
             guard let messageData = messageData else { return }
@@ -223,7 +227,7 @@ extension CheckMessagesViewController {
 
 // MARK: - Constraints
 
-extension CheckMessagesViewController {
+extension CheckMessageViewController {
     private func setNavigationBarConstraint() {
         navigationView.snp.makeConstraints { make in
             make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(0)

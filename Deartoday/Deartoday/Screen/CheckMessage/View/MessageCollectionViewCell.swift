@@ -1,5 +1,5 @@
 //
-//  MessagesCollectionViewCell.swift
+//  MessageCollectionViewCell.swift
 //  Deartoday
 //
 //  Created by 이경민 on 2022/08/12.
@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class MessagesCollectionViewCell: UICollectionViewCell {
+final class MessageCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "MessagesCollectionViewCell"
     
