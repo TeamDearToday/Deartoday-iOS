@@ -193,7 +193,7 @@ final class CheckMessageViewController: UIViewController {
     private func setMessageArray(response: [String]) {
         messages.removeAll()
         response.forEach {
-            messages.append(MessageDataModel(message: $0, uuid: UUID()))
+            messages.append(MessageDataModel(message: $0))
         }
     }
 }

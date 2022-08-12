@@ -9,5 +9,5 @@ import Foundation
 
 struct MessageDataModel: Hashable {
     var message: String
-    var uuid: UUID
+    let uuid = UUID()
 }
