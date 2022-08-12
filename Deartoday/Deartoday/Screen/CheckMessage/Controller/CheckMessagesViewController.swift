@@ -13,6 +13,11 @@ import Then
 final class CheckMessagesViewController: UIViewController {
     
     // MARK: - Property
+    
+    private var dataSource: UICollectionViewDiffableDataSource<MessageSection, MessageDataModel>!
+    private var snapshot: NSDiffableDataSourceSnapshot<MessageSection, MessageDataModel>!
+    private var messages: [MessageDataModel] = []
+    
     // MARK: - UI Property
     
     private let navigationView = UIView().then {
@@ -42,7 +47,7 @@ final class CheckMessagesViewController: UIViewController {
     }
     
     private let emptyView = UIView().then {
-        $0.isHidden = false
+        $0.isHidden = true
         $0.backgroundColor = .clear
     }
     
@@ -69,6 +74,14 @@ final class CheckMessagesViewController: UIViewController {
         $0.isUserInteractionEnabled = true
     }
     
+    private lazy var collectionView: UICollectionView = {
+        return UICollectionView(frame: .zero, collectionViewLayout: createLayout()).then {
+            $0.backgroundColor = .clear
+            $0.showsVerticalScrollIndicator = false
+            $0.isHidden = true
+        }
+    }()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -76,6 +89,8 @@ final class CheckMessagesViewController: UIViewController {
         setUI()
         setLayout()
         setGesture()
+        setCollectionView()
+        getMessageInfo()
     }
     
     // MARK: - @objc
@@ -105,7 +120,7 @@ final class CheckMessagesViewController: UIViewController {
     }
     
     private func setHierarchy() {
-        view.addSubviews([navigationView, emptyView])
+        view.addSubviews([navigationView, emptyView, collectionView])
         navigationView.addSubviews([backButton, messageImageView,
                                    titleLabel, descriptionLabel])
         emptyView.addSubviews([emptyMessageImageView, emptyDescriptionLabel, timeTravelButton])
@@ -115,11 +130,95 @@ final class CheckMessagesViewController: UIViewController {
     private func setConstraint() {
         setNavigationBarConstraint()
         setEmptyViewContraint()
+        setCollectionViewConstraint()
     }
     
     private func setGesture() {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(timeTravelButtonDidTap))
         timeTravelView.addGestureRecognizer(gesture)
+    }
+    
+    private func setCollectionView() {
+        collectionView.delegate = self
+        registerXib()
+        collectionView.setCollectionViewLayout(createLayout(), animated: true)
+    }
+    
+    private func registerXib() {
+        let nib = UINib(nibName: MessageCollectionViewCell.identifier, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: MessageCollectionViewCell.identifier)
+    }
+    
+    private func createLayout() -> UICollectionViewLayout {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                              heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                               heightDimension: .absolute(((getDeviceWidth()-55)/2)))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+                                                       subitem: item, count: 2)
+        group.interItemSpacing = NSCollectionLayoutSpacing.fixed(15)
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 15
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        return layout
+    }
+    
+    private func updateMessageList() {
+        setDataSource()
+        updateSnapshot()
+    }
+    
+    private func setDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<MessageSection, MessageDataModel>(collectionView: collectionView, cellProvider: { (collectionView: UICollectionView, indexPath: IndexPath, identifier: MessageDataModel) -> UICollectionViewCell? in
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MessageCollectionViewCell.identifier, for: indexPath) as? MessageCollectionViewCell else { return UICollectionViewCell() }
+            cell.setData(content: self.messages[indexPath.item].message)
+            return cell
+        })
+    }
+    
+    private func updateSnapshot() {
+        snapshot = NSDiffableDataSourceSnapshot<MessageSection, MessageDataModel>()
+        snapshot.appendSections([.message])
+        snapshot.appendItems(messages, toSection: .message)
+        dataSource.apply(snapshot, animatingDifferences: true, completion: nil)
+    }
+    
+    private func setMessageInfo(response: [String]) {
+        setMessageArray(response: response)
+        updateMessageList()
+        emptyView.isHidden = !(messages.count == 0)
+        collectionView.isHidden = (messages.count == 0)
+    }
+    
+    private func setMessageArray(response: [String]) {
+        messages.removeAll()
+        response.forEach {
+            messages.append(MessageDataModel(message: $0, uuid: UUID()))
+        }
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension CheckMessagesViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let messageDetail = UIStoryboard(name: Constant.Storyboard.CheckMessageDetail, bundle: nil)
+            .instantiateViewController(withIdentifier: Constant.ViewController.CheckMessageDetail) as? CheckMessageDetailViewController else { return }
+        messageDetail.modalPresentationStyle = .overFullScreen
+        messageDetail.content = messages[indexPath.item].message
+        present(messageDetail, animated: false, completion: nil)
+    }
+}
+
+// MARK: - Network
+
+extension CheckMessagesViewController {
+    private func getMessageInfo() {
+        CheckMessageAPI.shared.getCheckMessage { [weak self] messageData in
+            guard let messageData = messageData else { return }
+            self?.setMessageInfo(response: messageData.data?.lastAnswer ?? [])
+        }
     }
 }
 
@@ -179,6 +278,14 @@ extension CheckMessagesViewController {
         
         timeTravelView.snp.makeConstraints { make in
             make.top.leading.trailing.bottom.equalToSuperview()
+        }
+    }
+    
+    private func setCollectionViewConstraint() {
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(navigationView.snp.bottom).offset(0)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(0)
+            make.leading.trailing.equalToSuperview().inset(20)
         }
     }
 }
