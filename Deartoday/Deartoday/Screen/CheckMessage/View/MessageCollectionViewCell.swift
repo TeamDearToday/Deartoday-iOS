@@ -40,6 +40,11 @@ final class MessageCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        initCell()
+    }
+    
     // MARK: - Custom Method
     
     private func setUI() {
@@ -63,6 +68,13 @@ final class MessageCollectionViewCell: UICollectionViewCell {
         writerLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(16)
             make.bottom.equalToSuperview().inset(7)
+        }
+    }
+    
+    private func initCell() {
+        contentLabel.text = ""
+        contentLabel.snp.remakeConstraints { make in
+            make.top.leading.trailing.equalToSuperview().inset(16)
         }
     }
     
