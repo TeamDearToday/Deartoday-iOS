@@ -145,8 +145,7 @@ final class CheckMessagesViewController: UIViewController {
     }
     
     private func registerXib() {
-        let nib = UINib(nibName: MessageCollectionViewCell.identifier, bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: MessageCollectionViewCell.identifier)
+        collectionView.register(MessagesCollectionViewCell.self, forCellWithReuseIdentifier: MessagesCollectionViewCell.identifier)
     }
     
     private func createLayout() -> UICollectionViewLayout {
@@ -171,7 +170,7 @@ final class CheckMessagesViewController: UIViewController {
     
     private func setDataSource() {
         dataSource = UICollectionViewDiffableDataSource<MessageSection, MessageDataModel>(collectionView: collectionView, cellProvider: { (collectionView: UICollectionView, indexPath: IndexPath, identifier: MessageDataModel) -> UICollectionViewCell? in
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MessageCollectionViewCell.identifier, for: indexPath) as? MessageCollectionViewCell else { return UICollectionViewCell() }
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MessagesCollectionViewCell.identifier, for: indexPath) as? MessagesCollectionViewCell else { return UICollectionViewCell() }
             cell.setData(content: self.messages[indexPath.item].message)
             return cell
         })
