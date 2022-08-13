@@ -14,7 +14,8 @@ final class MessageDetailViewController: UIViewController {
     
     // MARK: - Property
     
-    var content: String = ""
+    internal var content: String = ""
+    private let messageWidth = UIScreen.main.bounds.width - 175
     
     // MARK: - UI Property
     
@@ -69,11 +70,9 @@ final class MessageDetailViewController: UIViewController {
     }
     
     private func setDynamicHeight() {
-        let height = contentLabel.frame.height < 145 ? 200 : contentLabel.layer.frame.height + 80
-        messageView.snp.remakeConstraints { make in
-            make.width.equalTo(200)
+        let height = contentLabel.frame.height < 145 ? messageWidth : contentLabel.layer.frame.height + 80
+        messageView.snp.updateConstraints { make in
             make.height.equalTo(height)
-            make.centerX.centerY.equalTo(view.safeAreaLayoutGuide)
         }
     }
     
@@ -84,8 +83,7 @@ final class MessageDetailViewController: UIViewController {
     
     private func setConstraint() {
         messageView.snp.makeConstraints { make in
-            make.width.equalTo(200)
-            make.height.equalTo(200)
+            make.width.height.equalTo(messageWidth)
             make.centerX.centerY.equalTo(view.safeAreaLayoutGuide)
         }
         
