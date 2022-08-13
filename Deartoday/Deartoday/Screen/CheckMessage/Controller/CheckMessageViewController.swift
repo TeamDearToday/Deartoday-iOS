@@ -2,10 +2,13 @@
 //  CheckMessageViewController.swift
 //  Deartoday
 //
-//  Created by 이경민 on 2022/07/12.
+//  Created by 이경민 on 2022/08/11.
 //
 
 import UIKit
+
+import SnapKit
+import Then
 
 enum MessageSection {
     case message
@@ -15,36 +18,90 @@ final class CheckMessageViewController: UIViewController {
     
     // MARK: - Property
     
-    var dataSource: UICollectionViewDiffableDataSource<MessageSection, MessageDataModel>!
-    var snapshot: NSDiffableDataSourceSnapshot<MessageSection, MessageDataModel>!
-    var messages: [MessageDataModel] = []
+    private var dataSource: UICollectionViewDiffableDataSource<MessageSection, MessageDataModel>!
+    private var snapshot: NSDiffableDataSourceSnapshot<MessageSection, MessageDataModel>!
+    private var messages: [MessageDataModel] = []
     
     // MARK: - UI Property
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var emptyView: UIView!
-    @IBOutlet weak var emptyDescriptionLabel: UILabel!
-    @IBOutlet weak var emptyTitleLabel: UILabel!
-    @IBOutlet weak var timeTravelImageView: UIImageView!
-    @IBOutlet weak var rewindImageView: UIImageView!
-    @IBOutlet weak var collectionView: UICollectionView!
+    private let navigationView = UIView().then {
+        $0.backgroundColor = .clear
+    }
+    
+    private let backButton = UIButton().then {
+        $0.setImage(Constant.Image.icBack, for: .normal)
+        $0.addTarget(self, action: #selector(backButtonDidTap), for: .touchUpInside)
+    }
+    
+    private let messageImageView = UIImageView().then {
+        $0.image = Constant.Image.imgMemoBundle
+    }
+    
+    private let titleLabel = UILabel().then {
+        $0.text = "나의 메시지"
+        $0.font = .h1
+        $0.textColor = .darkGray01
+        $0.setPartialLabelColor(targetStringList: ["메시지"], color: .blue02)
+    }
+    
+    private let descriptionLabel = UILabel().then {
+        $0.text = "미래의 나로부터 도착한 메시지를 확인해보세요"
+        $0.font = .caption2
+        $0.textColor = .gray00
+    }
+    
+    private let emptyView = UIView().then {
+        $0.isHidden = true
+        $0.backgroundColor = .clear
+    }
+    
+    private let emptyMessageImageView = UIImageView().then {
+        $0.image = Constant.Image.imgMemoempty
+    }
+    
+    private let emptyDescriptionLabel = UILabel().then {
+        $0.text = "아직 나에게 도착한 메시지가 없어요!\n지금 바로 시간 여행을 떠나볼까요?"
+        $0.numberOfLines = 0
+        $0.font = .caption2
+        $0.textColor = .gray01
+        $0.setTextWithLineHeight(text: $0.text, lineHeight: 22)
+    }
+    
+    private let timeTravelButton = DDSButton().then {
+        $0.text = "시간 여행 떠나기"
+        $0.hasLeftIcon = true
+        $0.style = .present
+    }
+    
+    private let timeTravelView = UIView().then {
+        $0.backgroundColor = .clear
+        $0.isUserInteractionEnabled = true
+    }
+    
+    private lazy var collectionView: UICollectionView = {
+        return UICollectionView(frame: .zero, collectionViewLayout: createLayout()).then {
+            $0.backgroundColor = .clear
+            $0.showsVerticalScrollIndicator = false
+            $0.isHidden = true
+        }
+    }()
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        setCollectionView()
+        setLayout()
         setGesture()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        setCollectionView()
         getMessageInfo()
     }
     
     // MARK: - @objc
+    
+    @objc private func backButtonDidTap() {
+        navigationController?.popViewController(animated: true)
+    }
     
     @objc private func timeTravelButtonDidTap() {
         let timeTravel = TimeTravelViewController()
@@ -58,19 +115,37 @@ final class CheckMessageViewController: UIViewController {
     // MARK: - Custom Method
     
     private func setUI() {
-        setHeaderViewUI()
-        setEmptyViewUI()
+        view.backgroundColor = .white
+    }
+    
+    private func setLayout() {
+        setHierarchy()
+        setConstraint()
+    }
+    
+    private func setHierarchy() {
+        view.addSubviews([navigationView, emptyView, collectionView])
+        navigationView.addSubviews([backButton, messageImageView,
+                                   titleLabel, descriptionLabel])
+        emptyView.addSubviews([emptyMessageImageView, emptyDescriptionLabel, timeTravelButton])
+        timeTravelButton.addSubview(timeTravelView)
+    }
+    
+    private func setConstraint() {
+        setNavigationBarConstraint()
+        setEmptyViewContraint()
+        setCollectionViewConstraint()
+    }
+    
+    private func setGesture() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(timeTravelButtonDidTap))
+        timeTravelView.addGestureRecognizer(gesture)
     }
     
     private func setCollectionView() {
         collectionView.delegate = self
-        registerXib()
+        collectionView.register(MessageCollectionViewCell.self, forCellWithReuseIdentifier: MessageCollectionViewCell.identifier)
         collectionView.setCollectionViewLayout(createLayout(), animated: true)
-    }
-    
-    private func registerXib() {
-        let nib = UINib(nibName: MessageCollectionViewCell.identifier, bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: MessageCollectionViewCell.identifier)
     }
     
     private func createLayout() -> UICollectionViewLayout {
@@ -88,6 +163,11 @@ final class CheckMessageViewController: UIViewController {
         return layout
     }
     
+    private func updateMessageList() {
+        setDataSource()
+        updateSnapshot()
+    }
+    
     private func setDataSource() {
         dataSource = UICollectionViewDiffableDataSource<MessageSection, MessageDataModel>(collectionView: collectionView, cellProvider: { (collectionView: UICollectionView, indexPath: IndexPath, identifier: MessageDataModel) -> UICollectionViewCell? in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MessageCollectionViewCell.identifier, for: indexPath) as? MessageCollectionViewCell else { return UICollectionViewCell() }
@@ -103,35 +183,18 @@ final class CheckMessageViewController: UIViewController {
         dataSource.apply(snapshot, animatingDifferences: true, completion: nil)
     }
     
-    private func setGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(timeTravelButtonDidTap))
-        timeTravelImageView.addGestureRecognizer(tapGesture)
-    }
-    
-    private func updateMessageList() {
-        setDataSource()
-        updateSnapshot()
-    }
-    
     private func setMessageInfo(response: [String]) {
         setMessageArray(response: response)
         updateMessageList()
-        let isEmpty = (messages.count == 0)
-        emptyView.isHidden = !isEmpty
-        collectionView.isHidden = isEmpty
+        emptyView.isHidden = !(messages.count == 0)
+        collectionView.isHidden = (messages.count == 0)
     }
     
     private func setMessageArray(response: [String]) {
         messages.removeAll()
         response.forEach {
-            messages.append(MessageDataModel(message: $0, uuid: UUID()))
+            messages.append(MessageDataModel(message: $0))
         }
-    }
-    
-    // MARK: - IBAction
-    
-    @IBAction func backButtonDidTap(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -158,22 +221,70 @@ extension CheckMessageViewController {
     }
 }
 
-// MARK: - Component UI Setting functions
+// MARK: - Constraints
 
 extension CheckMessageViewController {
-    private func setHeaderViewUI() {
-        titleLabel.font = .h1
-        titleLabel.textColor = .darkGray01
-        titleLabel.setPartialLabelColor(targetStringList: ["메시지"], color: .blue02)
-        descriptionLabel.font = .caption2
-        descriptionLabel.textColor = .gray00
+    private func setNavigationBarConstraint() {
+        navigationView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(0)
+            make.height.equalTo(161)
+        }
+        
+        backButton.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(14)
+            make.leading.equalToSuperview().inset(6)
+            make.width.height.equalTo(44)
+        }
+        
+        messageImageView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(2)
+            make.trailing.equalToSuperview().inset(16)
+        }
+        
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(72)
+            make.leading.equalToSuperview().inset(20)
+        }
+        
+        descriptionLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(4)
+            make.leading.equalToSuperview().inset(20)
+        }
     }
     
-    private func setEmptyViewUI() {
-        emptyDescriptionLabel.font = .caption2
-        emptyDescriptionLabel.textColor = .gray01
-        emptyTitleLabel.font = .btn0
-        emptyTitleLabel.textColor = .blue02
-        rewindImageView.tintColor = .blue02
+    private func setEmptyViewContraint() {
+        emptyView.snp.makeConstraints { make in
+            make.top.equalTo(navigationView.snp.bottom).offset(0)
+            make.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide).inset(0)
+        }
+        
+        emptyMessageImageView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(constraintByNotch(83, 50))
+            make.centerX.equalToSuperview()
+        }
+        
+        emptyDescriptionLabel.snp.makeConstraints { make in
+            make.top.equalTo(emptyMessageImageView.snp.bottom).offset(8)
+            make.centerX.equalToSuperview()
+        }
+        
+        timeTravelButton.snp.makeConstraints { make in
+            make.top.equalTo(emptyDescriptionLabel.snp.bottom).offset(12)
+            make.width.equalTo(190)
+            make.height.equalTo(68)
+            make.centerX.equalToSuperview()
+        }
+        
+        timeTravelView.snp.makeConstraints { make in
+            make.top.leading.trailing.bottom.equalToSuperview()
+        }
+    }
+    
+    private func setCollectionViewConstraint() {
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(navigationView.snp.bottom).offset(0)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(0)
+            make.leading.trailing.equalToSuperview().inset(20)
+        }
     }
 }

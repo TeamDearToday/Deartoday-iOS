@@ -198,9 +198,8 @@ extension MainViewController {
     private func goToCheckMessageViewController() {
         if isPushed { return }
         isPushed = true
-        guard let checkMessage = UIStoryboard(name: Constant.Storyboard.CheckMessage, bundle: nil)
-            .instantiateViewController(withIdentifier: Constant.ViewController.CheckMessage) as? CheckMessageViewController else { return }
-        navigationController?.pushViewController(checkMessage, animated: true)
+        let message = CheckMessageViewController()
+        navigationController?.pushViewController(message, animated: true)
     }
     
     private func goToCheckTimeTravelViewController() {

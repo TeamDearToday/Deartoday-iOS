@@ -7,6 +7,8 @@
 
 import UIKit
 
+import SnapKit
+
 // MARK: - Data 가져오기 기능
 
 extension UIViewController {
@@ -64,5 +66,10 @@ extension UIViewController {
     
     func setBackSwipeGesture() {
         navigationController?.interactivePopGestureRecognizer?.delegate = nil
+    }
+    
+    ///Constraint 설정 시 노치 유무로 기기를 대응하는 상황에서 사용
+    func constraintByNotch(_ hasNotch: Int, _ noNotch: Int) -> ConstraintOffsetTarget {
+        return UIScreen.main.hasNotch ? hasNotch : noNotch
     }
 }
