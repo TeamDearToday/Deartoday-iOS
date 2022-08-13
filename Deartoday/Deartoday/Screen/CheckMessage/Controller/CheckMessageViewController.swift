@@ -202,11 +202,10 @@ final class CheckMessageViewController: UIViewController {
 
 extension CheckMessageViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let messageDetail = UIStoryboard(name: Constant.Storyboard.CheckMessageDetail, bundle: nil)
-            .instantiateViewController(withIdentifier: Constant.ViewController.CheckMessageDetail) as? CheckMessageDetailViewController else { return }
+        let messageDetail = MessageDetailViewController()
         messageDetail.modalPresentationStyle = .overFullScreen
         messageDetail.content = messages[indexPath.item].message
-        present(messageDetail, animated: false, completion: nil)
+        present(messageDetail, animated: false)
     }
 }
 
