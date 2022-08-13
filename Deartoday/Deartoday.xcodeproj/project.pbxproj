@@ -98,9 +98,6 @@
 		98A4750A287DECCF008891F5 /* CheckTimeTravel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A47509287DECCF008891F5 /* CheckTimeTravel.storyboard */; };
 		98A4750F287DECF7008891F5 /* CheckTImeTravelDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A4750E287DECF7008891F5 /* CheckTImeTravelDataModel.swift */; };
 		98A47513287DED14008891F5 /* CheckTimeTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A47512287DED14008891F5 /* CheckTimeTravelViewController.swift */; };
-		98A47516287E0106008891F5 /* CheckMessageDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A47515287E0106008891F5 /* CheckMessageDetail.storyboard */; };
-		98A47519287E0129008891F5 /* CheckMessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A47518287E0129008891F5 /* CheckMessageDetailViewController.swift */; };
-		98A4751C287E013F008891F5 /* CheckMessageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A4751B287E013F008891F5 /* CheckMessageDetailView.swift */; };
 		98A71D5A2882EEBA009508D9 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A71D592882EEBA009508D9 /* Colors.xcassets */; };
 		98AD713928884FF700E910CD /* CheckMessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AD713828884FF700E910CD /* CheckMessageResponse.swift */; };
 		98B4B5AA287EB54600F4AD7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B4B5A9287EB54600F4AD7A /* ViewController.swift */; };
@@ -222,9 +219,6 @@
 		98A47509287DECCF008891F5 /* CheckTimeTravel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckTimeTravel.storyboard; sourceTree = "<group>"; };
 		98A4750E287DECF7008891F5 /* CheckTImeTravelDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTImeTravelDataModel.swift; sourceTree = "<group>"; };
 		98A47512287DED14008891F5 /* CheckTimeTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelViewController.swift; sourceTree = "<group>"; };
-		98A47515287E0106008891F5 /* CheckMessageDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckMessageDetail.storyboard; sourceTree = "<group>"; };
-		98A47518287E0129008891F5 /* CheckMessageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessageDetailViewController.swift; sourceTree = "<group>"; };
-		98A4751B287E013F008891F5 /* CheckMessageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessageDetailView.swift; sourceTree = "<group>"; };
 		98A71D592882EEBA009508D9 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		98AD713828884FF700E910CD /* CheckMessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessageResponse.swift; sourceTree = "<group>"; };
 		98B4B5A9287EB54600F4AD7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -552,7 +546,6 @@
 				98245CDE28869980007821FA /* CheckTimeTravelDetail */,
 				4A2CEA6C2885A58A00DC9CC9 /* Splash */,
 				4ADAB7DA28846C9D0049C465 /* Initial */,
-				98A47514287E00F1008891F5 /* CheckMessageDetail */,
 				924814A8287EB490001177B1 /* Dialog */,
 				98A47508287DECB6008891F5 /* CheckTimeTravel */,
 				98D912C6287DC2FF0088A7F9 /* CheckMessage */,
@@ -918,32 +911,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		98A47514287E00F1008891F5 /* CheckMessageDetail */ = {
-			isa = PBXGroup;
-			children = (
-				98A47515287E0106008891F5 /* CheckMessageDetail.storyboard */,
-				98A4751A287E0136008891F5 /* View */,
-				98A47517287E011F008891F5 /* Controller */,
-			);
-			path = CheckMessageDetail;
-			sourceTree = "<group>";
-		};
-		98A47517287E011F008891F5 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				98A47518287E0129008891F5 /* CheckMessageDetailViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		98A4751A287E0136008891F5 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				98A4751B287E013F008891F5 /* CheckMessageDetailView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		98A71D582882EEAC009508D9 /* Color */ = {
 			isa = PBXGroup;
 			children = (
@@ -1125,7 +1092,6 @@
 				9803F3912882F3C300A5A239 /* timetape.json in Resources */,
 				98A71D5A2882EEBA009508D9 /* Colors.xcassets in Resources */,
 				986F5C4128883469001109F1 /* PresentDialogCollectionViewCell.xib in Resources */,
-				98A47516287E0106008891F5 /* CheckMessageDetail.storyboard in Resources */,
 				98BFBCC22879B66A00F01F04 /* GmarketSansMedium.otf in Resources */,
 				92DB353A2875633F001E2006 /* Assets.xcassets in Resources */,
 				984099E92881F4A700025092 /* sound_box.mp3 in Resources */,
@@ -1198,7 +1164,6 @@
 				98D912C5287DB0130088A7F9 /* Lottie.swift in Sources */,
 				4ADAB7E9288507A10049C465 /* LoginResponse.swift in Sources */,
 				986E000328A62A04008EB3F2 /* MessageCollectionViewCell.swift in Sources */,
-				98A47519287E0129008891F5 /* CheckMessageDetailViewController.swift in Sources */,
 				986F5C3C2888345E001109F1 /* PastDialogCollectionViewCell.swift in Sources */,
 				9803F3B428847C9100A5A239 /* MainResponse.swift in Sources */,
 				9803F3D82885953B00A5A239 /* CheckMessageService.swift in Sources */,
@@ -1270,7 +1235,6 @@
 				4A2CEA772885A91F00DC9CC9 /* SplashViewController.swift in Sources */,
 				98BFBCD12879BBB700F01F04 /* UIColor+.swift in Sources */,
 				4ADAB7E4288505A60049C465 /* LoginAPI.swift in Sources */,
-				98A4751C287E013F008891F5 /* CheckMessageDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
