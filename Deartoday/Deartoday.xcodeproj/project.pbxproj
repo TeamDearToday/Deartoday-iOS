@@ -94,6 +94,7 @@
 		986F5C3D2888345E001109F1 /* PastDialogCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 986F5C3B2888345E001109F1 /* PastDialogCollectionViewCell.xib */; };
 		986F5C4028883469001109F1 /* PresentDialogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986F5C3E28883469001109F1 /* PresentDialogCollectionViewCell.swift */; };
 		986F5C4128883469001109F1 /* PresentDialogCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 986F5C3F28883469001109F1 /* PresentDialogCollectionViewCell.xib */; };
+		988B471F28AAB38900D015D5 /* MainsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988B471E28AAB38900D015D5 /* MainsViewController.swift */; };
 		98A4750A287DECCF008891F5 /* CheckTimeTravel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A47509287DECCF008891F5 /* CheckTimeTravel.storyboard */; };
 		98A4750F287DECF7008891F5 /* CheckTImeTravelDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A4750E287DECF7008891F5 /* CheckTImeTravelDataModel.swift */; };
 		98A47513287DED14008891F5 /* CheckTimeTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A47512287DED14008891F5 /* CheckTimeTravelViewController.swift */; };
@@ -217,6 +218,7 @@
 		986F5C3B2888345E001109F1 /* PastDialogCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PastDialogCollectionViewCell.xib; sourceTree = "<group>"; };
 		986F5C3E28883469001109F1 /* PresentDialogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentDialogCollectionViewCell.swift; sourceTree = "<group>"; };
 		986F5C3F28883469001109F1 /* PresentDialogCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PresentDialogCollectionViewCell.xib; sourceTree = "<group>"; };
+		988B471E28AAB38900D015D5 /* MainsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainsViewController.swift; sourceTree = "<group>"; };
 		98A47509287DECCF008891F5 /* CheckTimeTravel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckTimeTravel.storyboard; sourceTree = "<group>"; };
 		98A4750E287DECF7008891F5 /* CheckTImeTravelDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTImeTravelDataModel.swift; sourceTree = "<group>"; };
 		98A47512287DED14008891F5 /* CheckTimeTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelViewController.swift; sourceTree = "<group>"; };
@@ -742,6 +744,7 @@
 			children = (
 				92DB35342875633D001E2006 /* MainViewController.swift */,
 				9803F39F288465C600A5A239 /* MainNavigationController.swift */,
+				988B471E28AAB38900D015D5 /* MainsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1192,6 +1195,7 @@
 				92C27EAB2884459F00077FA3 /* TimeTravelAPI.swift in Sources */,
 				9803F3BD2884814C00A5A239 /* MainAPI.swift in Sources */,
 				98D912C5287DB0130088A7F9 /* Lottie.swift in Sources */,
+				988B471F28AAB38900D015D5 /* MainsViewController.swift in Sources */,
 				4ADAB7E9288507A10049C465 /* LoginResponse.swift in Sources */,
 				986E000328A62A04008EB3F2 /* MessageCollectionViewCell.swift in Sources */,
 				98A47519287E0129008891F5 /* CheckMessageDetailViewController.swift in Sources */,
