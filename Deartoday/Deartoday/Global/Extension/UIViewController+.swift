@@ -64,6 +64,13 @@ extension UIViewController {
         }
     }
     
+    ///main navigation controller로 root view controller 변경
+    func changeMainRootViewController() {
+        let mainViewController = UINavigationController(rootViewController: MainsViewController())
+        mainViewController.isNavigationBarHidden = true
+        changeRootViewController(mainViewController)
+    }
+    
     func setBackSwipeGesture() {
         navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
