@@ -42,6 +42,7 @@ final class MainsViewController: UIViewController {
     
     private let rewindImageView = UIImageView().then {
         $0.image = Constant.Image.rewind
+        $0.tintColor = .blue02
     }
     
     private let timeTravelView = UIView().then {
@@ -67,16 +68,20 @@ final class MainsViewController: UIViewController {
         $0.image = Constant.Image.btnCircleBasic
     }
     
-    private let messageStackView = UIStackView().then {
+    private lazy var messageStackView = UIStackView().then {
         $0.spacing = 4
+        $0.axis = .horizontal
     }
     
     private let memoImageView = UIImageView().then {
         $0.image = Constant.Image.icnMemo
+        $0.tintColor = .blue02
     }
     
     private let messageCountLabel = UILabel().then {
-        $0.text = "어쩌구"
+        $0.font = .p3
+        $0.textColor = .blue02
+        $0.text = "0"
     }
     
     private let checkMessageButton = UIButton().then {
@@ -88,16 +93,20 @@ final class MainsViewController: UIViewController {
         $0.backgroundColor = .clear
     }
     
-    private let timeTravelStackView = UIStackView().then {
+    private lazy var timeTravelStackView = UIStackView().then {
         $0.spacing = 4
+        $0.axis = .horizontal
     }
     
     private let tapeImageView = UIImageView().then {
         $0.image = Constant.Image.icnTape
+        $0.tintColor = .blue02
     }
     
     private let timeTravelCountLabel = UILabel().then {
-        $0.text = "어쩌구"
+        $0.font = .p3
+        $0.textColor = .blue02
+        $0.text = "99"
     }
     
     private let checkTimeTravelButton = UIButton().then {
@@ -160,8 +169,10 @@ final class MainsViewController: UIViewController {
                                  timeTravelImageView, rewindImageView, timeTravelButton, timeTravelView,
                                  checkMessageImageView, messageStackView, checkMessageButton, checkMessageView,
                                  checkTimeTravelImageView, timeTravelStackView, checkTimeTravelButton, checkTimeTravelView])
-        messageStackView.addSubviews([memoImageView, messageCountLabel])
-        timeTravelStackView.addSubviews([tapeImageView, timeTravelCountLabel])
+        messageStackView.addArrangedSubview(memoImageView)
+        messageStackView.addArrangedSubview(messageCountLabel)
+        timeTravelStackView.addArrangedSubview(tapeImageView)
+        timeTravelStackView.addArrangedSubview(timeTravelCountLabel)
     }
     
     private func setConstraint() {
@@ -235,7 +246,59 @@ extension MainsViewController {
     }
     
     private func setRightScreenConstraint() {
-
+        checkMessageButton.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(constraintByNotch(convertByWidthRatio(164), 120))
+            $0.trailing.equalToSuperview().inset(convertByWidthRatio(25))
+            $0.height.equalTo(convertByWidthRatio(177))
+            $0.width.equalTo(convertByWidthRatio(177) * (181 / 177))
+        }
+        
+        checkMessageImageView.snp.makeConstraints {
+            $0.trailing.equalTo(checkMessageButton.snp.trailing).inset(75)
+            $0.bottom.equalTo(checkMessageButton.snp.top).offset(45)
+            $0.width.equalTo(68)
+            $0.height.equalTo(90)
+        }
+        
+        messageStackView.snp.makeConstraints {
+            $0.top.equalTo(checkMessageImageView.snp.top).offset(23)
+            $0.centerX.equalTo(checkMessageImageView)
+        }
+        
+        memoImageView.snp.makeConstraints {
+            $0.width.height.equalTo(22)
+        }
+        
+        checkMessageView.snp.makeConstraints {
+            $0.top.leading.bottom.trailing.equalTo(checkMessageImageView).offset(0)
+        }
+        
+        checkTimeTravelButton.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(constraintByNotch(convertByWidthRatio(463), 419))
+            $0.trailing.equalToSuperview().inset(convertByWidthRatio(38))
+            $0.height.equalTo(convertByWidthRatio(189))
+            $0.width.equalTo(convertByWidthRatio(189) * (313 / 189))
+        }
+        
+        checkTimeTravelImageView.snp.makeConstraints {
+            $0.trailing.equalTo(checkTimeTravelButton.snp.trailing).inset(99)
+            $0.bottom.equalTo(checkTimeTravelButton.snp.top).offset(45)
+            $0.width.equalTo(68)
+            $0.height.equalTo(90)
+        }
+        
+        timeTravelStackView.snp.makeConstraints {
+            $0.top.equalTo(checkTimeTravelImageView.snp.top).offset(23)
+            $0.centerX.equalTo(checkTimeTravelImageView)
+        }
+        
+        tapeImageView.snp.makeConstraints {
+            $0.width.height.equalTo(22)
+        }
+        
+        checkTimeTravelView.snp.makeConstraints {
+            $0.top.leading.bottom.trailing.equalTo(checkTimeTravelImageView).offset(0)
+        }
     }
     
     private func setHeaderViewConstraint() {
