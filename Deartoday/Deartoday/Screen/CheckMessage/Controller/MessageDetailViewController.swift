@@ -23,10 +23,23 @@ final class MessageDetailViewController: UIViewController {
         $0.backgroundColor = .yellow03
     }
     
+    private lazy var scrollView: UIScrollView = {
+        return UIScrollView(frame: .zero).then {
+            $0.backgroundColor = .clear
+            $0.bounces = false
+            $0.contentInsetAdjustmentBehavior = .never
+        }
+    }()
+    
+    private let contentView = UIView().then {
+        $0.backgroundColor = .clear
+    }
+    
     private lazy var contentLabel = UILabel().then {
         $0.font = .p6
         $0.textColor = .black
         $0.numberOfLines = 0
+        $0.lineBreakMode = .byCharWrapping
         $0.text = content
         $0.setTextWithLineHeight(text: content, lineHeight: 16.8)
         $0.sizeToFit()
@@ -49,6 +62,10 @@ final class MessageDetailViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setLayout()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         setDynamicHeight()
     }
     
@@ -70,15 +87,24 @@ final class MessageDetailViewController: UIViewController {
     }
     
     private func setDynamicHeight() {
-        let height = contentLabel.frame.height < 145 ? messageWidth : contentLabel.layer.frame.height + 80
+        let maxHeight = getDeviceHeight() - 400
+        let contentHeight = contentLabel.frame.height + 80
+        let messageHeight = contentHeight < messageWidth ? messageWidth :
+        (contentHeight > maxHeight ? maxHeight : contentHeight)
+        
         messageView.snp.updateConstraints { make in
-            make.height.equalTo(height)
+            make.height.equalTo(messageHeight)
+        }
+        scrollView.snp.updateConstraints { make in
+            make.height.equalTo(messageHeight - 80)
         }
     }
-    
+
     private func setHierarchy() {
         view.addSubviews([messageView, closeButton])
-        messageView.addSubviews([contentLabel, writerLabel])
+        messageView.addSubviews([scrollView, writerLabel])
+        scrollView.addSubview(contentView)
+        contentView.addSubview(contentLabel)
     }
     
     private func setConstraint() {
@@ -98,8 +124,21 @@ final class MessageDetailViewController: UIViewController {
             make.bottom.equalToSuperview().inset(13)
         }
         
-        contentLabel.snp.makeConstraints { make in
+        scrollView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview().inset(20)
+            make.height.equalTo(messageWidth - 80)
+        }
+
+        contentView.snp.makeConstraints { make in
+            make.top.leading.trailing.bottom.equalToSuperview().inset(0)
+            make.width.equalToSuperview()
+            make.height.equalToSuperview().priority(.low)
+        }
+
+        contentLabel.snp.makeConstraints { make in
+            make.top.leading.equalToSuperview().inset(0)
+            make.trailing.equalTo(messageView.snp.trailing).inset(20)
+            make.bottom.equalToSuperview().inset(0)
         }
     }
 }
