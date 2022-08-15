@@ -79,8 +79,6 @@ final class MainsViewController: UIViewController {
     }
     
     private let messageCountLabel = UILabel().then {
-        $0.font = .p3
-        $0.textColor = .blue02
         $0.text = "0"
     }
     
@@ -104,8 +102,6 @@ final class MainsViewController: UIViewController {
     }
     
     private let timeTravelCountLabel = UILabel().then {
-        $0.font = .p3
-        $0.textColor = .blue02
         $0.text = "99"
     }
     
@@ -118,13 +114,61 @@ final class MainsViewController: UIViewController {
         $0.backgroundColor = .clear
     }
     
+    private let headerView = UIView().then {
+        $0.backgroundColor = .clear
+    }
+    
+    private let yearImageView = UIImageView().then {
+        $0.image = Constant.Image.bgYear
+    }
+    
+    private let monthImageView = UIImageView().then {
+        $0.image = Constant.Image.bgDate
+    }
+    
+    private let dayImageView = UIImageView().then {
+        $0.image = Constant.Image.bgDate
+    }
+    
+    private lazy var yearLabel = UILabel().then {
+        $0.text = getYearInfo()
+    }
+    
+    private lazy var monthLabel = UILabel().then {
+        $0.text = getMonthInfo()
+    }
+    
+    private lazy var dayLabel = UILabel().then {
+        $0.text = getDayInfo()
+    }
+    
+    private let settingButton = UIButton().then {
+        $0.setImage(Constant.Image.icSetting, for: .normal)
+    }
+    
+    private let helpButton = UIButton().then {
+        $0.setImage(Constant.Image.icHelp, for: .normal)
+    }
+    
+    private let pageControl = UIPageControl().then {
+        $0.pageIndicatorTintColor = .lightBlue00
+        $0.currentPageIndicatorTintColor = .lightBlue00
+        $0.numberOfPages = 2
+    }
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         setLayout()
+        setDelegate()
         setGesture()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setInitialState()
     }
     
     // MARK: - @objc
@@ -155,6 +199,14 @@ final class MainsViewController: UIViewController {
     // MARK: - Custom Method
     
     private func setUI() {
+        [messageCountLabel, timeTravelCountLabel].forEach {
+            $0.font = .p3
+            $0.textColor = .blue02
+        }
+        [yearLabel, monthLabel, dayLabel].forEach {
+            $0.textColor = .lightBlue00
+            $0.font = .h0
+        }
     }
     
     private func setLayout() {
@@ -163,7 +215,7 @@ final class MainsViewController: UIViewController {
     }
     
     private func setHierarchy() {
-        view.addSubviews([scrollView])
+        view.addSubviews([scrollView, headerView, pageControl])
         scrollView.addSubview(contentView)
         contentView.addSubviews([leftImageView, rightImageView,
                                  timeTravelImageView, rewindImageView, timeTravelButton, timeTravelView,
@@ -173,6 +225,9 @@ final class MainsViewController: UIViewController {
         messageStackView.addArrangedSubview(messageCountLabel)
         timeTravelStackView.addArrangedSubview(tapeImageView)
         timeTravelStackView.addArrangedSubview(timeTravelCountLabel)
+        headerView.addSubviews([yearImageView, monthImageView, dayImageView,
+                                yearLabel, monthLabel, dayLabel,
+                                settingButton, helpButton])
     }
     
     private func setConstraint() {
@@ -190,6 +245,33 @@ final class MainsViewController: UIViewController {
         checkMessageView.addGestureRecognizer(checkMessageGesture)
         let checkTimeTravelGesture = UITapGestureRecognizer(target: self, action: #selector(checkTimeTravelCompontntDidTap))
         checkTimeTravelView.addGestureRecognizer(checkTimeTravelGesture)
+    }
+    
+    private func setDelegate() {
+        scrollView.delegate = self
+    }
+    
+    private func setPageControl(page: Int) {
+        pageControl.setIndicatorImage(UIImage(systemName: "circle.fill"), forPage: page)
+        pageControl.setIndicatorImage(UIImage(systemName: "circle"), forPage: page == 0 ? 1 : 0)
+    }
+    
+    private func setInitialState() {
+        isPushed = false
+        setPageControl(page: scrollView.contentOffset.x == 0 ? 0 : 1)
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+
+extension MainsViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.x == 0 {
+            setPageControl(page: 0)
+        }
+        else if scrollView.contentOffset.x == getDeviceWidth() {
+            setPageControl(page: 1)
+        }
     }
 }
 
@@ -302,10 +384,55 @@ extension MainsViewController {
     }
     
     private func setHeaderViewConstraint() {
+        headerView.snp.makeConstraints {
+            $0.top.leading.trailing.equalToSuperview().inset(0)
+            $0.height.equalTo(155)
+        }
         
+        yearImageView.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(51)
+            $0.leading.equalToSuperview().inset(6)
+        }
+        
+        yearLabel.snp.makeConstraints {
+            $0.centerX.centerY.equalTo(yearImageView)
+        }
+        
+        monthImageView.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(51)
+            $0.leading.equalToSuperview().inset(106)
+        }
+        
+        monthLabel.snp.makeConstraints {
+            $0.centerX.centerY.equalTo(monthImageView)
+        }
+        
+        dayImageView.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(51)
+            $0.leading.equalToSuperview().inset(165)
+        }
+        
+        dayLabel.snp.makeConstraints {
+            $0.centerX.centerY.equalTo(dayImageView)
+        }
+        
+        settingButton.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(20)
+            $0.trailing.equalToSuperview().inset(16)
+            $0.width.height.equalTo(44)
+        }
+        
+        helpButton.snp.makeConstraints {
+            $0.top.equalTo(settingButton.snp.bottom).offset(0)
+            $0.trailing.equalToSuperview().inset(16)
+            $0.width.height.equalTo(44)
+        }
     }
     
     private func setPageControlConstraint() {
-        
+        pageControl.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(constraintByNotch(0, 20))
+        }
     }
 }
