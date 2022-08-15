@@ -11,9 +11,26 @@ final class MainsViewController: UIViewController {
     
     // MARK: - Property
     
-    private var isPushed: Bool = false
+    private var hasPushed: Bool = false
     
     // MARK: - UI Property
+    
+    private let messageCountLabel = UILabel()
+    private let timeTravelCountLabel = UILabel()
+    private let contentView = UIView()
+    private let timeTravelView = UIView()
+    private let checkMessageView = UIView()
+    private let checkTimeTravelView = UIView()
+    private let headerView = UIView()
+    private let timeTravelImageView = UIImageView(image: Constant.Image.btnCircleBasic)
+    private let checkMessageImageView = UIImageView(image: Constant.Image.btnCircleBasic)
+    private let checkTimeTravelImageView = UIImageView(image: Constant.Image.btnCircleBasic)
+    private let yearImageView = UIImageView(image: Constant.Image.bgYear)
+    private let monthImageView = UIImageView(image: Constant.Image.bgDate)
+    private let dayImageView = UIImageView(image: Constant.Image.bgDate)
+    private let rewindImageView = UIImageView(image: Constant.Image.rewind)
+    private let memoImageView = UIImageView(image: Constant.Image.icnMemo)
+    private let tapeImageView = UIImageView(image: Constant.Image.icnTape)
     
     private lazy var scrollView: UIScrollView = {
         return UIScrollView(frame: .zero).then {
@@ -26,108 +43,24 @@ final class MainsViewController: UIViewController {
         }
     }()
     
-    private let contentView = UIView().then {
-        $0.backgroundColor = .clear
-    }
-    
-    private let leftImageView = UIImageView().then {
-        $0.image = Constant.Image.mainLeftWithg
+    private let leftImageView = UIImageView(image: Constant.Image.mainLeftWithg).then {
         $0.contentMode = .scaleAspectFill
-        $0.clipsToBounds = true
     }
     
-    private let timeTravelImageView = UIImageView().then {
-        $0.image = Constant.Image.btnCircleBasic
-    }
-    
-    private let rewindImageView = UIImageView().then {
-        $0.image = Constant.Image.rewind
-        $0.tintColor = .blue02
-    }
-    
-    private let timeTravelView = UIView().then {
-        $0.backgroundColor = .clear
-    }
-    
-    private let timeTravelButton = UIButton().then {
-        $0.backgroundColor = .clear
-        $0.addTarget(self, action: #selector(timeTravelComponentDidTap), for: .touchUpInside)
-    }
-    
-    private let rightImageView = UIImageView().then {
-        $0.image = Constant.Image.mainRightWithg
+    private let rightImageView = UIImageView(image: Constant.Image.mainRightWithg).then {
         $0.contentMode = .scaleAspectFill
-        $0.clipsToBounds = true
     }
     
-    private let checkMessageImageView = UIImageView().then {
-        $0.image = Constant.Image.btnCircleBasic
-    }
-    
-    private let checkTimeTravelImageView = UIImageView().then {
-        $0.image = Constant.Image.btnCircleBasic
-    }
-    
-    private lazy var messageStackView = UIStackView().then {
+    private let messageStackView = UIStackView().then {
         $0.spacing = 4
         $0.axis = .horizontal
+        $0.isHidden = true
     }
     
-    private let memoImageView = UIImageView().then {
-        $0.image = Constant.Image.icnMemo
-        $0.tintColor = .blue02
-    }
-    
-    private let messageCountLabel = UILabel().then {
-        $0.text = "0"
-    }
-    
-    private let checkMessageButton = UIButton().then {
-        $0.backgroundColor = .clear
-        $0.addTarget(self, action: #selector(checkMessageComponentDidTap), for: .touchUpInside)
-    }
-    
-    private let checkMessageView = UIView().then {
-        $0.backgroundColor = .clear
-    }
-    
-    private lazy var timeTravelStackView = UIStackView().then {
+    private let timeTravelStackView = UIStackView().then {
         $0.spacing = 4
         $0.axis = .horizontal
-    }
-    
-    private let tapeImageView = UIImageView().then {
-        $0.image = Constant.Image.icnTape
-        $0.tintColor = .blue02
-    }
-    
-    private let timeTravelCountLabel = UILabel().then {
-        $0.text = "99"
-    }
-    
-    private let checkTimeTravelButton = UIButton().then {
-        $0.backgroundColor = .clear
-        $0.addTarget(self, action: #selector(checkTimeTravelCompontntDidTap), for: .touchUpInside)
-    }
-    
-    private let checkTimeTravelView = UIView().then {
-        $0.backgroundColor = .clear
-    }
-    
-    private let headerView = UIView().then {
-        $0.backgroundColor = .clear
-    }
-    
-    private let yearImageView = UIImageView().then {
-        $0.image = Constant.Image.bgYear
-    }
-    
-    private let monthImageView = UIImageView().then {
-        $0.image = Constant.Image.bgDate
-    }
-    
-    private let dayImageView = UIImageView().then {
-        $0.image = Constant.Image.bgDate
+        $0.isHidden = true
     }
     
     private lazy var yearLabel = UILabel().then {
@@ -142,12 +75,26 @@ final class MainsViewController: UIViewController {
         $0.text = getDayInfo()
     }
     
+    private let timeTravelButton = UIButton().then {
+        $0.addTarget(self, action: #selector(timeTravelComponentDidTap), for: .touchUpInside)
+    }
+    
+    private let checkMessageButton = UIButton().then {
+        $0.addTarget(self, action: #selector(checkMessageComponentDidTap), for: .touchUpInside)
+    }
+    
+    private let checkTimeTravelButton = UIButton().then {
+        $0.addTarget(self, action: #selector(checkTimeTravelCompontntDidTap), for: .touchUpInside)
+    }
+    
     private let settingButton = UIButton().then {
         $0.setImage(Constant.Image.icSetting, for: .normal)
+        $0.addTarget(self, action: #selector(settingButtonDidTap), for: .touchUpInside)
     }
     
     private let helpButton = UIButton().then {
         $0.setImage(Constant.Image.icHelp, for: .normal)
+        $0.addTarget(self, action: #selector(helpButtonDidTap), for: .touchUpInside)
     }
     
     private let pageControl = UIPageControl().then {
@@ -164,18 +111,20 @@ final class MainsViewController: UIViewController {
         setLayout()
         setDelegate()
         setGesture()
+        setBackSwipeGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setInitialState()
+        getMainData()
     }
     
     // MARK: - @objc
     
     @objc private func timeTravelComponentDidTap() {
-        if isPushed { return }
-        isPushed = true
+        if hasPushed { return }
+        hasPushed = true
         let timeTravel = TimeTravelViewController()
         timeTravel.modalTransitionStyle = .crossDissolve
         timeTravel.modalPresentationStyle = .fullScreen
@@ -183,22 +132,34 @@ final class MainsViewController: UIViewController {
     }
     
     @objc private func checkMessageComponentDidTap() {
-        if isPushed { return }
-        isPushed = true
+        if hasPushed { return }
+        hasPushed = true
         let checkMessage = CheckMessageViewController()
         navigationController?.pushViewController(checkMessage, animated: true)
     }
     
     @objc private func checkTimeTravelCompontntDidTap() {
-        if isPushed { return }
-        isPushed = true
+        if hasPushed { return }
+        hasPushed = true
         guard let checkTimeTravel = UIStoryboard(name: Constant.Storyboard.CheckTimeTravel, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.CheckTimeTravel) as? CheckTimeTravelViewController else { return }
         navigationController?.pushViewController(checkTimeTravel, animated: true)
     }
     
+    @objc private func settingButtonDidTap() {
+        guard let setting = UIStoryboard(name: Constant.Storyboard.Setting, bundle: nil).instantiateViewController(withIdentifier: Constant.ViewController.Setting) as? SettingViewController else { return }
+        navigationController?.pushViewController(setting, animated: true)
+    }
+    
+    @objc private func helpButtonDidTap() { }
+    
     // MARK: - Custom Method
     
     private func setUI() {
+        [rewindImageView, memoImageView, tapeImageView].forEach { $0.tintColor = .blue02 }
+        [timeTravelButton, checkMessageButton, checkTimeTravelButton,
+         contentView, timeTravelView, checkMessageView, checkTimeTravelView, headerView].forEach {
+            $0.backgroundColor = .clear
+        }
         [messageCountLabel, timeTravelCountLabel].forEach {
             $0.font = .p3
             $0.textColor = .blue02
@@ -257,8 +218,25 @@ final class MainsViewController: UIViewController {
     }
     
     private func setInitialState() {
-        isPushed = false
+        hasPushed = false
         setPageControl(page: scrollView.contentOffset.x == 0 ? 0 : 1)
+        
+    }
+    
+    private func setCountLabel(count: Int) {
+        [messageCountLabel, timeTravelCountLabel].forEach { $0.text = (count > 99) ? "99+" : "\(count)" }
+        [messageStackView, timeTravelStackView].forEach { $0.isHidden = false }
+    }
+}
+
+// MARK: - Network
+
+extension MainsViewController {
+    private func getMainData() {
+        MainAPI.shared.getMain { [weak self] mainData in
+            guard let mainData = mainData else { return }
+            self?.setCountLabel(count: mainData.data?.timeTravelCount ?? 0)
+        }
     }
 }
 
