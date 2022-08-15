@@ -186,30 +186,52 @@ final class MainsViewController: UIViewController {
 
 extension MainsViewController {
     private func setBackgroundConstraint() {
-        scrollView.snp.makeConstraints { make in
-            make.top.leading.bottom.trailing.equalToSuperview()
+        scrollView.snp.makeConstraints {
+            $0.top.leading.bottom.trailing.equalToSuperview()
         }
         
-        contentView.snp.makeConstraints { make in
-            make.top.leading.bottom.trailing.equalToSuperview()
-            make.width.equalTo(view.snp.width).priority(.low)
-            make.height.equalTo(view.snp.height)
+        contentView.snp.makeConstraints {
+            $0.top.leading.bottom.trailing.equalToSuperview()
+            $0.width.equalTo(view.snp.width).priority(.low)
+            $0.height.equalTo(view.snp.height)
         }
         
-        leftImageView.snp.makeConstraints { make in
-            make.top.leading.bottom.equalToSuperview()
-            make.width.equalTo(getDeviceWidth())
+        leftImageView.snp.makeConstraints {
+            $0.top.leading.bottom.equalToSuperview()
+            $0.width.equalTo(getDeviceWidth())
         }
         
-        rightImageView.snp.makeConstraints { make in
-            make.top.bottom.trailing.equalToSuperview()
-            make.width.equalTo(getDeviceWidth())
-            make.leading.equalTo(leftImageView.snp.trailing)
+        rightImageView.snp.makeConstraints {
+            $0.top.bottom.trailing.equalToSuperview()
+            $0.width.equalTo(getDeviceWidth())
+            $0.leading.equalTo(leftImageView.snp.trailing)
         }
     }
     
     private func setLeftScreenConstraint() {
+        timeTravelButton.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(constraintByNotch(convertByHeightRatio(312), 268))
+            $0.leading.equalToSuperview().inset(convertByWidthRatio(16))
+            $0.height.equalTo(convertByWidthRatio(246))
+            $0.width.equalTo(convertByWidthRatio(246) * (265 / 246))
+        }
         
+        timeTravelImageView.snp.makeConstraints {
+            $0.leading.equalTo(timeTravelButton.snp.leading).offset(convertByWidthRatio(81))
+            $0.bottom.equalTo(timeTravelButton.snp.top).offset(-11)
+            $0.width.equalTo(68)
+            $0.height.equalTo(90)
+        }
+        
+        rewindImageView.snp.makeConstraints {
+            $0.top.equalTo(timeTravelImageView.snp.top).offset(20)
+            $0.width.height.equalTo(28)
+            $0.centerX.equalTo(timeTravelImageView)
+        }
+        
+        timeTravelView.snp.makeConstraints {
+            $0.top.leading.bottom.trailing.equalTo(timeTravelImageView).offset(0)
+        }
     }
     
     private func setRightScreenConstraint() {
