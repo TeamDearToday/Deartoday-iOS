@@ -66,7 +66,7 @@ extension UIViewController {
     
     ///main navigation controller로 root view controller 변경
     func changeMainRootViewController() {
-        let mainViewController = UINavigationController(rootViewController: MainsViewController())
+        let mainViewController = UINavigationController(rootViewController: MainViewController())
         mainViewController.isNavigationBarHidden = true
         changeRootViewController(mainViewController)
     }
