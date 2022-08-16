@@ -223,7 +223,7 @@ final class MainViewController: UIViewController {
     private func setInitialState() {
         hasPushed = false
         setPageControl(page: scrollView.contentOffset.x == 0 ? 0 : 1)
-        
+        navigationController?.isNavigationBarHidden = true
     }
     
     private func setCountLabel(count: Int) {
