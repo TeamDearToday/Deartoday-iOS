@@ -7,6 +7,10 @@
 
 import UIKit
 
+enum TimeTravelSection {
+    case tape
+}
+
 final class CheckTimeTravelViewController: UIViewController {
     
     // MARK: - Property
