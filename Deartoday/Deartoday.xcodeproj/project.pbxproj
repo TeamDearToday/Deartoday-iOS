@@ -82,6 +82,7 @@
 		984099E92881F4A700025092 /* sound_box.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 984099E82881F4A700025092 /* sound_box.mp3 */; };
 		984099EB2881F4CD00025092 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984099EA2881F4CD00025092 /* Sound.swift */; };
 		984099ED2881F50000025092 /* sound_player.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 984099EC2881F50000025092 /* sound_player.mp3 */; };
+		9862D07228AAE858000EAA7B /* CheckTimeTravelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862D07128AAE858000EAA7B /* CheckTimeTravelsViewController.swift */; };
 		986E000128A4DCC9008EB3F2 /* CheckMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986E000028A4DCC9008EB3F2 /* CheckMessageViewController.swift */; };
 		986E000328A62A04008EB3F2 /* MessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986E000228A62A04008EB3F2 /* MessageCollectionViewCell.swift */; };
 		986F5C362887FA83001109F1 /* TravelInfoCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986F5C342887FA83001109F1 /* TravelInfoCollectionReusableView.swift */; };
@@ -199,6 +200,7 @@
 		984099E82881F4A700025092 /* sound_box.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_box.mp3; sourceTree = "<group>"; };
 		984099EA2881F4CD00025092 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		984099EC2881F50000025092 /* sound_player.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_player.mp3; sourceTree = "<group>"; };
+		9862D07128AAE858000EAA7B /* CheckTimeTravelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelsViewController.swift; sourceTree = "<group>"; };
 		986E000028A4DCC9008EB3F2 /* CheckMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMessageViewController.swift; sourceTree = "<group>"; };
 		986E000228A62A04008EB3F2 /* MessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCollectionViewCell.swift; sourceTree = "<group>"; };
 		986F5C342887FA83001109F1 /* TravelInfoCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelInfoCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -862,6 +864,7 @@
 			isa = PBXGroup;
 			children = (
 				98A47512287DED14008891F5 /* CheckTimeTravelViewController.swift */,
+				9862D07128AAE858000EAA7B /* CheckTimeTravelsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1181,6 +1184,7 @@
 				92CC3BA2287D62C400EA5617 /* VirtualSpaceDataModel.swift in Sources */,
 				923C69B5287810DE00B8EC56 /* UITextField+.swift in Sources */,
 				9803F3C628848B4100A5A239 /* CheckTimeTravelResponse.swift in Sources */,
+				9862D07228AAE858000EAA7B /* CheckTimeTravelsViewController.swift in Sources */,
 				98245CE728869A0A007821FA /* CheckTimeTravelDetailViewController.swift in Sources */,
 				92DB358428756B67001E2006 /* BaseTargetType.swift in Sources */,
 				98A4750F287DECF7008891F5 /* CheckTImeTravelDataModel.swift in Sources */,
