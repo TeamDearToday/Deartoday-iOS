@@ -42,7 +42,6 @@ final class SettingViewController: UIViewController {
     
     private lazy var logoutButton = UIButton().then {
         $0.titleLabel?.font = .p4
-        $0.titleLabel?.sizeToFit()
         $0.setTitle("로그아웃", for: .normal)
         $0.setTitleColor(.blue01, for: .normal)
         $0.addTarget(self, action: #selector(logoutButtonDidTap), for: .touchUpInside)
