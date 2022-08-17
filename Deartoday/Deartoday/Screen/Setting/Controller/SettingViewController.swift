@@ -13,26 +13,41 @@ import Then
 final class SettingViewController: UIViewController {
     
     // MARK: - Property
-    
     let firstSectionLabel = ["사운드", "푸시알림"]
     let secondSectionLabel = ["서비스 이용약관", "문의하기", "오픈소스 라이선스", "Team 디어투데이"]
     
     // MARK: - UI Property
     
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var logoutLabel: UILabel!
-    @IBOutlet weak var serviceWithDrawLabel: UILabel!
-    @IBOutlet weak var labelBottomConstraint: NSLayoutConstraint!
+    private lazy var tableView = UITableView().then {
+        $0.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.identifier)
+    }
+    
+    private lazy var backGroundView = UIView().then {
+        $0.backgroundColor = .white
+    }
+    
+    private lazy var navibarView = UIView().then {
+        $0.backgroundColor = .white
+    }
+    
+    private lazy var backButton = UIButton().then {
+        $0.setImage(Constant.Image.icBack, for: .normal)
+        $0.addTarget(self, action: #selector(backButtonDidTap), for: .touchUpInside)
+    }
     
     // MARK: - Life Cycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
-        setUI()
+        setHierarchy()
+        setLayout()
     }
     
     // MARK: - @objc
+    
+    @objc func backButtonDidTap() {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     @objc func logoutLabelDidTap() {
         
@@ -43,56 +58,38 @@ final class SettingViewController: UIViewController {
     }
     
     // MARK: - Custom Method
-    
     private func hideSectionHeaderPadding() {
         tableView.sectionHeaderTopPadding = 0
     }
     
     private func setUI() {
         hideSectionHeaderPadding()
-        setLabelUI()
-        setLayout()
     }
     
     private func setTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        registerXib()
     }
     
-    private func registerXib() {
-        let nib = UINib(nibName: SettingTableViewCell.identifier, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: SettingTableViewCell.identifier)
-    }
-    
-    private func setLabelUI() {
-        logoutLabel.textColor = .blue01
-        logoutLabel.textAlignment = .left
-        logoutLabel.font = .p4
-        
-        serviceWithDrawLabel.textColor = .blue01
-        serviceWithDrawLabel.textAlignment = .left
-        serviceWithDrawLabel.font = .p4
+    private func setHierarchy() {
+        view.addSubviews([backGroundView, navibarView,
+                          backButton])
     }
     
     private func setLayout() {
-        labelBottomConstraint.constant = getDeviceHeight() == 667 ? 35 : 73
-    }
-    
-    private func addLogoutLabelGesture() {
-        let addLogoutLabelGesture = UITapGestureRecognizer(target: self, action: #selector(logoutLabelDidTap))
-        logoutLabel.addGestureRecognizer(addLogoutLabelGesture)
-    }
-    
-    private func addServiceWithDrawLabelGestrue() {
-        let addServiceWithDrawGesture = UITapGestureRecognizer(target: self, action: #selector(serviceWithDrawDidTap))
-        serviceWithDrawLabel.addGestureRecognizer(addServiceWithDrawGesture)
-    }
-    
-    // MARK: IBAciton
-    
-    @IBAction func backButtonDidTap(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        backGroundView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
+        navibarView.snp.makeConstraints {
+            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(72)
+        }
+        
+        backButton.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(6)
+            $0.centerY.equalTo(navibarView)
+        }
     }
 }
 
