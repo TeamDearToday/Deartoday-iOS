@@ -18,9 +18,14 @@ final class SettingViewController: UIViewController {
     
     // MARK: - UI Property
     
-    private lazy var tableView = UITableView().then {
-        $0.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.identifier)
-    }
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.sectionHeaderHeight = 42
+        tableView.sectionHeaderTopPadding = 0
+        tableView.separatorStyle = .none
+        tableView.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.identifier)
+        return tableView
+    }()
     
     private lazy var backGroundView = UIView().then {
         $0.backgroundColor = .white
@@ -38,9 +43,7 @@ final class SettingViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTableView()
-        setHierarchy()
-        setLayout()
+        setUI()
     }
     
     // MARK: - @objc
@@ -50,20 +53,17 @@ final class SettingViewController: UIViewController {
     }
     
     @objc func logoutLabelDidTap() {
-        
     }
     
     @objc func serviceWithDrawDidTap() {
-        
     }
     
     // MARK: - Custom Method
-    private func hideSectionHeaderPadding() {
-        tableView.sectionHeaderTopPadding = 0
-    }
     
     private func setUI() {
-        hideSectionHeaderPadding()
+        setTableView()
+        setHierarchy()
+        setLayout()
     }
     
     private func setTableView() {
@@ -73,7 +73,7 @@ final class SettingViewController: UIViewController {
     
     private func setHierarchy() {
         view.addSubviews([backGroundView, navibarView,
-                          backButton])
+                          backButton, tableView])
     }
     
     private func setLayout() {
@@ -90,6 +90,12 @@ final class SettingViewController: UIViewController {
             $0.leading.equalToSuperview().inset(6)
             $0.centerY.equalTo(navibarView)
         }
+        
+        tableView.snp.makeConstraints {
+            $0.top.equalTo(navibarView.snp.bottom).inset(0)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(454)
+        }
     }
 }
 
@@ -104,12 +110,12 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
         switch indexPath.section {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier, for: indexPath) as? SettingTableViewCell else { return UITableViewCell() }
-            cell.setData(firstSectionLabel[indexPath.row])
+            cell.setLabelData(firstSectionLabel[indexPath.row])
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier, for: indexPath) as? SettingTableViewCell else { return UITableViewCell() }
-            cell.setData(secondSectionLabel[indexPath.row])
-            cell.switchButton.isHidden = true
+            cell.setLabelData(secondSectionLabel[indexPath.row])
+//            cell.switchButton.isHidden = true
             return cell
         default:
             return UITableViewCell()
@@ -125,34 +131,28 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        var headerLabel = UILabel().then {
+        lazy var headerView = UIView()
+        lazy var headerLabel = UILabel().then {
+            $0.font = .p4
             $0.textColor = .blue02
             $0.textAlignment = .left
-            $0.font = .p4
             $0.text = section == 0 ? "설정" : "디어투데이 정보"
         }
         
         headerView.addSubview(headerLabel)
-        
         headerLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(16)
             $0.centerY.equalTo(headerView)
         }
-        
         return headerView
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 42
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return section == 0 ? 10 : 0
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footerView = UIView()
-        return footerView
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 10
+        lazy var footerView = UIView()
+        return section == 0 ? footerView : nil
     }
 }
