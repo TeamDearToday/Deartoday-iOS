@@ -51,10 +51,7 @@ final class InitialViewController: UIViewController {
     // MARK: - Custom Method
     
     private func presentMainView() {
-        guard let mainViewController = UIStoryboard(name: Constant.Storyboard.Main, bundle: nil).instantiateViewController(withIdentifier: "MainNavigationController") as? MainNavigationController else { return }
-        mainViewController.modalPresentationStyle = .fullScreen
-        mainViewController.modalTransitionStyle = .crossDissolve
-        present(mainViewController, animated: true)
+        changeMainRootViewController()
     }
     
     private func setLayout() {

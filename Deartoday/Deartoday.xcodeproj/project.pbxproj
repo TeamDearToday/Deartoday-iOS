@@ -41,13 +41,9 @@
 		92CC3BA6287D633600EA5617 /* VirtualSpaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC3BA5287D633600EA5617 /* VirtualSpaceCollectionViewCell.swift */; };
 		92DB35312875633D001E2006 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB35302875633D001E2006 /* AppDelegate.swift */; };
 		92DB35332875633D001E2006 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB35322875633D001E2006 /* SceneDelegate.swift */; };
-		92DB35352875633D001E2006 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB35342875633D001E2006 /* MainViewController.swift */; };
-		92DB35382875633D001E2006 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92DB35362875633D001E2006 /* Main.storyboard */; };
 		92DB353A2875633F001E2006 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92DB35392875633F001E2006 /* Assets.xcassets */; };
 		92DB353D2875633F001E2006 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92DB353B2875633F001E2006 /* LaunchScreen.storyboard */; };
 		92DB35582875646E001E2006 /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB35572875646E001E2006 /* OnboardingModel.swift */; };
-		92DB3560287564ED001E2006 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB355F287564ED001E2006 /* MainModel.swift */; };
-		92DB3562287564F3001E2006 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB3561287564F3001E2006 /* MainView.swift */; };
 		92DB356428756517001E2006 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB356328756516001E2006 /* OnboardingView.swift */; };
 		92DB35662875652F001E2006 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB35652875652F001E2006 /* OnboardingViewController.swift */; };
 		92DB35682875656C001E2006 /* DDSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DB35672875656C001E2006 /* DDSButton.swift */; };
@@ -66,7 +62,6 @@
 		9803F38D2882F1A900A5A239 /* tape.json in Resources */ = {isa = PBXBuildFile; fileRef = 9803F38C2882F1A900A5A239 /* tape.json */; };
 		9803F38F2882F1B300A5A239 /* box.json in Resources */ = {isa = PBXBuildFile; fileRef = 9803F38E2882F1B300A5A239 /* box.json */; };
 		9803F3912882F3C300A5A239 /* timetape.json in Resources */ = {isa = PBXBuildFile; fileRef = 9803F3902882F3C300A5A239 /* timetape.json */; };
-		9803F3A0288465C600A5A239 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F39F288465C600A5A239 /* MainNavigationController.swift */; };
 		9803F3B428847C9100A5A239 /* MainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3B328847C9100A5A239 /* MainResponse.swift */; };
 		9803F3B728847D0900A5A239 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3B628847D0900A5A239 /* MainService.swift */; };
 		9803F3BD2884814C00A5A239 /* MainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803F3BC2884814C00A5A239 /* MainAPI.swift */; };
@@ -95,6 +90,7 @@
 		986F5C3D2888345E001109F1 /* PastDialogCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 986F5C3B2888345E001109F1 /* PastDialogCollectionViewCell.xib */; };
 		986F5C4028883469001109F1 /* PresentDialogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986F5C3E28883469001109F1 /* PresentDialogCollectionViewCell.swift */; };
 		986F5C4128883469001109F1 /* PresentDialogCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 986F5C3F28883469001109F1 /* PresentDialogCollectionViewCell.xib */; };
+		988B471F28AAB38900D015D5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988B471E28AAB38900D015D5 /* MainViewController.swift */; };
 		98A4750A287DECCF008891F5 /* CheckTimeTravel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A47509287DECCF008891F5 /* CheckTimeTravel.storyboard */; };
 		98A4750F287DECF7008891F5 /* CheckTImeTravelDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A4750E287DECF7008891F5 /* CheckTImeTravelDataModel.swift */; };
 		98A47513287DED14008891F5 /* CheckTimeTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A47512287DED14008891F5 /* CheckTimeTravelViewController.swift */; };
@@ -160,14 +156,10 @@
 		92DB352D2875633D001E2006 /* Deartoday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deartoday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92DB35302875633D001E2006 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92DB35322875633D001E2006 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		92DB35342875633D001E2006 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		92DB35372875633D001E2006 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92DB35392875633F001E2006 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92DB353C2875633F001E2006 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92DB353E2875633F001E2006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92DB35572875646E001E2006 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
-		92DB355F287564ED001E2006 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
-		92DB3561287564F3001E2006 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		92DB356328756516001E2006 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		92DB35652875652F001E2006 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		92DB35672875656C001E2006 /* DDSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDSButton.swift; sourceTree = "<group>"; };
@@ -187,7 +179,6 @@
 		9803F38C2882F1A900A5A239 /* tape.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tape.json; sourceTree = "<group>"; };
 		9803F38E2882F1B300A5A239 /* box.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = box.json; sourceTree = "<group>"; };
 		9803F3902882F3C300A5A239 /* timetape.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timetape.json; sourceTree = "<group>"; };
-		9803F39F288465C600A5A239 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		9803F3B328847C9100A5A239 /* MainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainResponse.swift; sourceTree = "<group>"; };
 		9803F3B628847D0900A5A239 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
 		9803F3BC2884814C00A5A239 /* MainAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAPI.swift; sourceTree = "<group>"; };
@@ -216,6 +207,7 @@
 		986F5C3B2888345E001109F1 /* PastDialogCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PastDialogCollectionViewCell.xib; sourceTree = "<group>"; };
 		986F5C3E28883469001109F1 /* PresentDialogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentDialogCollectionViewCell.swift; sourceTree = "<group>"; };
 		986F5C3F28883469001109F1 /* PresentDialogCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PresentDialogCollectionViewCell.xib; sourceTree = "<group>"; };
+		988B471E28AAB38900D015D5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		98A47509287DECCF008891F5 /* CheckTimeTravel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckTimeTravel.storyboard; sourceTree = "<group>"; };
 		98A4750E287DECF7008891F5 /* CheckTImeTravelDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTImeTravelDataModel.swift; sourceTree = "<group>"; };
 		98A47512287DED14008891F5 /* CheckTimeTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTimeTravelViewController.swift; sourceTree = "<group>"; };
@@ -716,37 +708,17 @@
 		92DB355B287564BA001E2006 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				92DB35362875633D001E2006 /* Main.storyboard */,
-				92DB355C287564C1001E2006 /* Model */,
-				92DB355E287564CB001E2006 /* View */,
 				92DB355D287564C7001E2006 /* Controller */,
 			);
 			path = Main;
 			sourceTree = "<group>";
 		};
-		92DB355C287564C1001E2006 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				92DB355F287564ED001E2006 /* MainModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		92DB355D287564C7001E2006 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				92DB35342875633D001E2006 /* MainViewController.swift */,
-				9803F39F288465C600A5A239 /* MainNavigationController.swift */,
+				988B471E28AAB38900D015D5 /* MainViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		92DB355E287564CB001E2006 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				92DB3561287564F3001E2006 /* MainView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		92DB357328756653001E2006 /* Font */ = {
@@ -1098,7 +1070,6 @@
 				98BFBCCA2879B68600F01F04 /* Pretendard-Regular.otf in Resources */,
 				98BFBCC92879B68600F01F04 /* Pretendard-Bold.otf in Resources */,
 				984099ED2881F50000025092 /* sound_player.mp3 in Resources */,
-				92DB35382875633D001E2006 /* Main.storyboard in Resources */,
 				986F5C372887FA83001109F1 /* TravelInfoCollectionReusableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1158,10 +1129,10 @@
 				98D912AE287D558A0088A7F9 /* DeartodayModel.swift in Sources */,
 				923061D6287754FA00F04EDA /* TimeTravelView.swift in Sources */,
 				4A916177288921FD00F72BFC /* SettingViewController.swift in Sources */,
-				92DB35352875633D001E2006 /* MainViewController.swift in Sources */,
 				92C27EAB2884459F00077FA3 /* TimeTravelAPI.swift in Sources */,
 				9803F3BD2884814C00A5A239 /* MainAPI.swift in Sources */,
 				98D912C5287DB0130088A7F9 /* Lottie.swift in Sources */,
+				988B471F28AAB38900D015D5 /* MainViewController.swift in Sources */,
 				4ADAB7E9288507A10049C465 /* LoginResponse.swift in Sources */,
 				986E000328A62A04008EB3F2 /* MessageCollectionViewCell.swift in Sources */,
 				986F5C3C2888345E001109F1 /* PastDialogCollectionViewCell.swift in Sources */,
@@ -1169,9 +1140,7 @@
 				9803F3D82885953B00A5A239 /* CheckMessageService.swift in Sources */,
 				98245CF828869DA6007821FA /* TravelAnswerCollectionViewCell.swift in Sources */,
 				984099EB2881F4CD00025092 /* Sound.swift in Sources */,
-				92DB3562287564F3001E2006 /* MainView.swift in Sources */,
 				9803F3D52885950F00A5A239 /* CheckMessageAPI.swift in Sources */,
-				9803F3A0288465C600A5A239 /* MainNavigationController.swift in Sources */,
 				4ADAB7E028846CD60049C465 /* InitialViewContoller.swift in Sources */,
 				9803F3B728847D0900A5A239 /* MainService.swift in Sources */,
 				98A47513287DED14008891F5 /* CheckTimeTravelViewController.swift in Sources */,
@@ -1190,7 +1159,6 @@
 				98B4B5AC287EB5EF00F4AD7A /* Storyboard.swift in Sources */,
 				4ADAB7E6288505EE0049C465 /* LoginService.swift in Sources */,
 				92DB35662875652F001E2006 /* OnboardingViewController.swift in Sources */,
-				92DB3560287564ED001E2006 /* MainModel.swift in Sources */,
 				9803F3C028848AAA00A5A239 /* CheckTimeTravelAPI.swift in Sources */,
 				92DB35722875661A001E2006 /* Constant.swift in Sources */,
 				92DB358228756B0B001E2006 /* GeneralResponse.swift in Sources */,
@@ -1241,14 +1209,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		92DB35362875633D001E2006 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				92DB35372875633D001E2006 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		92DB353B2875633F001E2006 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1388,9 +1348,10 @@
 				DEVELOPMENT_TEAM = PU64TS56AD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Deartoday/Resource/Support/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Dear today";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진 업로드를 위해 앨범 접근 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -1419,9 +1380,10 @@
 				DEVELOPMENT_TEAM = PU64TS56AD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Deartoday/Resource/Support/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Dear today";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진 업로드를 위해 앨범 접근 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
