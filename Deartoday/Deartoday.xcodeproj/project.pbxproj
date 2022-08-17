@@ -12,10 +12,8 @@
 		4A45D37E287F0B2F00592749 /* OpenBoxOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A45D37D287F0B2F00592749 /* OpenBoxOnboardingViewController.swift */; };
 		4A45D380287F2BF800592749 /* LetterOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A45D37F287F2BF800592749 /* LetterOnboardingViewController.swift */; };
 		4A706264287C079F00140315 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A706263287C079F00140315 /* Onboarding.storyboard */; };
-		4A916175288921E500F72BFC /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A916174288921E500F72BFC /* Setting.storyboard */; };
 		4A916177288921FD00F72BFC /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A916176288921FD00F72BFC /* SettingViewController.swift */; };
 		4AC989B52889240300B4A7BE /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC989B32889240300B4A7BE /* SettingTableViewCell.swift */; };
-		4AC989B62889240300B4A7BE /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC989B42889240300B4A7BE /* SettingTableViewCell.xib */; };
 		4ADAB7E028846CD60049C465 /* InitialViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAB7DF28846CD60049C465 /* InitialViewContoller.swift */; };
 		4ADAB7E4288505A60049C465 /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAB7E3288505A60049C465 /* LoginAPI.swift */; };
 		4ADAB7E6288505EE0049C465 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAB7E5288505EE0049C465 /* LoginService.swift */; };
@@ -124,10 +122,8 @@
 		4A45D37D287F0B2F00592749 /* OpenBoxOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenBoxOnboardingViewController.swift; sourceTree = "<group>"; };
 		4A45D37F287F2BF800592749 /* LetterOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterOnboardingViewController.swift; sourceTree = "<group>"; };
 		4A706263287C079F00140315 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
-		4A916174288921E500F72BFC /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		4A916176288921FD00F72BFC /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		4AC989B32889240300B4A7BE /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
-		4AC989B42889240300B4A7BE /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
 		4ADAB7DF28846CD60049C465 /* InitialViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewContoller.swift; sourceTree = "<group>"; };
 		4ADAB7E3288505A60049C465 /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		4ADAB7E5288505EE0049C465 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
@@ -266,7 +262,6 @@
 		4A916173288921DA00F72BFC /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				4A916174288921E500F72BFC /* Setting.storyboard */,
 				4AC989B2288923A600B4A7BE /* View */,
 				4AC989B12889239C00B4A7BE /* Controller */,
 			);
@@ -285,7 +280,6 @@
 			isa = PBXGroup;
 			children = (
 				4AC989B32889240300B4A7BE /* SettingTableViewCell.swift */,
-				4AC989B42889240300B4A7BE /* SettingTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1049,13 +1043,11 @@
 				98245CE3288699A6007821FA /* CheckTimeTravelDetail.storyboard in Resources */,
 				98245CF128869CCB007821FA /* PastImageCollectionViewCell.xib in Resources */,
 				986F5C3D2888345E001109F1 /* PastDialogCollectionViewCell.xib in Resources */,
-				4A916175288921E500F72BFC /* Setting.storyboard in Resources */,
 				98D912C8287DC30F0088A7F9 /* CheckMessage.storyboard in Resources */,
 				98BFBCC72879B68600F01F04 /* Pretendard-Medium.otf in Resources */,
 				98BFBCC12879B66A00F01F04 /* GmarketSansBold.otf in Resources */,
 				92DB353D2875633F001E2006 /* LaunchScreen.storyboard in Resources */,
 				9803F38F2882F1B300A5A239 /* box.json in Resources */,
-				4AC989B62889240300B4A7BE /* SettingTableViewCell.xib in Resources */,
 				98BFBCC82879B68600F01F04 /* Pretendard-SemiBold.otf in Resources */,
 				9803F38D2882F1A900A5A239 /* tape.json in Resources */,
 				98B4B5B2287EC93B00F4AD7A /* TimeTapeTableViewCell.xib in Resources */,

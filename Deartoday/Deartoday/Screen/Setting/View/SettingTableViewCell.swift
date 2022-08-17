@@ -15,7 +15,6 @@ final class SettingTableViewCell: UITableViewCell {
     static let identifier = "SettingTableViewCell"
     
     // MARK: - UI Property
-    
     private lazy var titleLabel = UILabel().then {
         $0.font = .p2
         $0.textAlignment = .left
@@ -33,7 +32,6 @@ final class SettingTableViewCell: UITableViewCell {
     }
     
     // MARK: - Life Cycle
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setLayout()
@@ -44,7 +42,6 @@ final class SettingTableViewCell: UITableViewCell {
     }
     
     // MARK: - Custom Method
-    
     private func setLayout() {
         contentView.addSubviews([titleLabel, switchButton,
                                  cellBottomLine])
@@ -64,6 +61,7 @@ final class SettingTableViewCell: UITableViewCell {
             $0.height.equalTo(1)
         }
     }
+    
     func setLabelData(_ textLabel: String) {
         titleLabel.text = textLabel
     }
