@@ -17,12 +17,12 @@ final class SettingViewController: UIViewController {
     let secondSectionLabel = ["서비스 이용약관", "문의하기", "오픈소스 라이선스", "Team 디어투데이"]
     
     // MARK: - UI Property
-    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.sectionHeaderHeight = 42
         tableView.sectionHeaderTopPadding = 0
         tableView.separatorStyle = .none
+        tableView.isScrollEnabled = false
         tableView.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.identifier)
         return tableView
     }()
@@ -40,6 +40,29 @@ final class SettingViewController: UIViewController {
         $0.addTarget(self, action: #selector(backButtonDidTap), for: .touchUpInside)
     }
     
+    private lazy var logoutButton = UIButton().then {
+        $0.titleLabel?.font = .p4
+        $0.titleLabel?.sizeToFit()
+        $0.setTitle("로그아웃", for: .normal)
+        $0.setTitleColor(.blue01, for: .normal)
+        $0.addTarget(self, action: #selector(logoutButtonDidTap), for: .touchUpInside)
+    }
+    
+    private lazy var withDrawButton = UIButton().then {
+        $0.titleLabel?.font = .p4
+        $0.setTitle("서비스 탈퇴", for: .normal)
+        $0.setTitleColor(.blue01, for: .normal)
+        $0.addTarget(self, action: #selector(withDrawButtonDidTap), for: .touchUpInside)
+    }
+    
+    private lazy var logoutLine = UIView().then {
+        $0.backgroundColor = .blue01
+    }
+    
+    private lazy var withDrawLine = UIView().then {
+        $0.backgroundColor = .blue01
+    }
+
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,19 +70,15 @@ final class SettingViewController: UIViewController {
     }
     
     // MARK: - @objc
-    
     @objc func backButtonDidTap() {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @objc func logoutLabelDidTap() {
-    }
+    @objc func logoutButtonDidTap() {}
     
-    @objc func serviceWithDrawDidTap() {
-    }
+    @objc func withDrawButtonDidTap() {}
     
     // MARK: - Custom Method
-    
     private func setUI() {
         setTableView()
         setHierarchy()
@@ -73,7 +92,9 @@ final class SettingViewController: UIViewController {
     
     private func setHierarchy() {
         view.addSubviews([backGroundView, navibarView,
-                          backButton, tableView])
+                          backButton, tableView,
+                          logoutButton, withDrawButton,
+                          withDrawLine, logoutLine])
     }
     
     private func setLayout() {
@@ -96,11 +117,38 @@ final class SettingViewController: UIViewController {
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(454)
         }
+        
+        withDrawLine.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(16)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(constraintByNotch(73, 40))
+            $0.height.equalTo(1)
+            $0.width.equalTo(69)
+        }
+        
+        withDrawButton.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(16)
+            $0.bottom.equalTo(withDrawLine.snp.top).offset(-1)
+            $0.width.equalTo(69)
+            $0.height.equalTo(18)
+        }
+        
+        logoutLine.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(16)
+            $0.bottom.equalTo(withDrawButton.snp.top).offset(-20)
+            $0.height.equalTo(1)
+            $0.width.equalTo(52)
+        }
+        
+        logoutButton.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(16)
+            $0.bottom.equalTo(logoutLine.snp.top).offset(-1)
+            $0.width.equalTo(52)
+            $0.height.equalTo(20)
+        }
     }
 }
 
-// MAKR: UITableViewDataSource, Delegate
-
+    // MARK: UITableViewDelegate, DataSource
 extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
