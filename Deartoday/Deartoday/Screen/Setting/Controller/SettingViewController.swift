@@ -13,11 +13,13 @@ import Then
 final class SettingViewController: UIViewController {
     
     // MARK: - Property
-    let firstSectionLabel = ["사운드", "푸시알림"]
-    let secondSectionLabel = ["서비스 이용약관", "문의하기", "오픈소스 라이선스", "Team 디어투데이"]
+    
+    let sectionTitles = [["사운드", "푸시알림"],
+                         ["서비스 이용약관", "문의하기", "오픈소스 라이선스", "Team 디어투데이"]]
     
     // MARK: - UI Property
-    private lazy var tableView: UITableView = {
+    
+    private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.sectionHeaderHeight = 42
         tableView.sectionHeaderTopPadding = 0
@@ -27,11 +29,11 @@ final class SettingViewController: UIViewController {
         return tableView
     }()
     
-    private lazy var backGroundView = UIView().then {
+    private let backgroundView = UIView().then {
         $0.backgroundColor = .white
     }
     
-    private lazy var navibarView = UIView().then {
+    private let navigationView = UIView().then {
         $0.backgroundColor = .white
     }
     
@@ -54,23 +56,26 @@ final class SettingViewController: UIViewController {
         $0.addTarget(self, action: #selector(withDrawButtonDidTap), for: .touchUpInside)
     }
     
-    private lazy var logoutLine = UIView().then {
+    private let logoutLineView = UIView().then {
         $0.backgroundColor = .blue01
     }
     
-    private lazy var withDrawLine = UIView().then {
+    private let withDrawLineView = UIView().then {
         $0.backgroundColor = .blue01
     }
 
     // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
+        setLayout()
+        setTableView()
     }
     
     // MARK: - @objc
+    
     @objc func backButtonDidTap() {
-        self.navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     @objc func logoutButtonDidTap() {}
@@ -78,10 +83,10 @@ final class SettingViewController: UIViewController {
     @objc func withDrawButtonDidTap() {}
     
     // MARK: - Custom Method
-    private func setUI() {
-        setTableView()
+    
+    private func setLayout() {
         setHierarchy()
-        setLayout()
+        setConstraint()
     }
     
     private func setTableView() {
@@ -90,34 +95,34 @@ final class SettingViewController: UIViewController {
     }
     
     private func setHierarchy() {
-        view.addSubviews([backGroundView, navibarView,
+        view.addSubviews([backgroundView, navigationView,
                           backButton, tableView,
                           logoutButton, withDrawButton,
-                          withDrawLine, logoutLine])
+                          withDrawLineView, logoutLineView])
     }
     
-    private func setLayout() {
-        backGroundView.snp.makeConstraints {
+    private func setConstraint() {
+        backgroundView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
         
-        navibarView.snp.makeConstraints {
+        navigationView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(72)
         }
         
         backButton.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(6)
-            $0.centerY.equalTo(navibarView)
+            $0.centerY.equalTo(navigationView)
         }
         
         tableView.snp.makeConstraints {
-            $0.top.equalTo(navibarView.snp.bottom).inset(0)
+            $0.top.equalTo(navigationView.snp.bottom).inset(0)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(454)
         }
         
-        withDrawLine.snp.makeConstraints {
+        withDrawLineView.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(16)
             $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(constraintByNotch(73, 40))
             $0.height.equalTo(1)
@@ -126,12 +131,12 @@ final class SettingViewController: UIViewController {
         
         withDrawButton.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(16)
-            $0.bottom.equalTo(withDrawLine.snp.top).offset(-1)
+            $0.bottom.equalTo(withDrawLineView.snp.top).offset(-1)
             $0.width.equalTo(69)
             $0.height.equalTo(18)
         }
         
-        logoutLine.snp.makeConstraints {
+        logoutLineView.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(16)
             $0.bottom.equalTo(withDrawButton.snp.top).offset(-20)
             $0.height.equalTo(1)
@@ -140,28 +145,28 @@ final class SettingViewController: UIViewController {
         
         logoutButton.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(16)
-            $0.bottom.equalTo(logoutLine.snp.top).offset(-1)
+            $0.bottom.equalTo(logoutLineView.snp.top).offset(-1)
             $0.width.equalTo(52)
             $0.height.equalTo(20)
         }
     }
 }
 
-    // MARK: UITableViewDelegate, DataSource
-extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
+    // MARK: UITableViewDataSource
+
+extension SettingViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return sectionTitles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier, for: indexPath) as? SettingTableViewCell else { return UITableViewCell() }
         switch indexPath.section {
         case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier, for: indexPath) as? SettingTableViewCell else { return UITableViewCell() }
-            cell.setLabelData(firstSectionLabel[indexPath.row])
+            cell.titleLabel.text = sectionTitles[0][indexPath.row]
             return cell
         case 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier, for: indexPath) as? SettingTableViewCell else { return UITableViewCell() }
-            cell.setLabelData(secondSectionLabel[indexPath.row])
+            cell.titleLabel.text = sectionTitles[1][indexPath.row]
             cell.switchButton.isHidden = true
             return cell
         default:
@@ -170,7 +175,7 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 2 : 4
+        return section == 0 ? sectionTitles[0].count : sectionTitles[1].count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -178,8 +183,8 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        lazy var headerView = UIView()
-        lazy var headerLabel = UILabel().then {
+        let headerView = UIView()
+        let headerLabel = UILabel().then {
             $0.font = .p4
             $0.textColor = .blue02
             $0.textAlignment = .left
@@ -199,7 +204,9 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        lazy var footerView = UIView()
-        return section == 0 ? footerView : nil
+        return section == 0 ? UIView() : nil
     }
 }
+    // MARK: // UITableViewDelegate
+
+extension SettingViewController: UITableViewDelegate { }
