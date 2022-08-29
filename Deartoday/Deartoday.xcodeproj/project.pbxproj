@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A1483C528BD182700080EEA /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1483C428BD182700080EEA /* UIButton+.swift */; };
 		4A2CEA772885A91F00DC9CC9 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2CEA762885A91F00DC9CC9 /* SplashViewController.swift */; };
 		4A44EEFB28807DC00062420E /* PlayTapeOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A44EEFA28807DC00062420E /* PlayTapeOnboardingViewController.swift */; };
 		4A45D37E287F0B2F00592749 /* OpenBoxOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A45D37D287F0B2F00592749 /* OpenBoxOnboardingViewController.swift */; };
@@ -117,6 +118,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A1483C428BD182700080EEA /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		4A2CEA762885A91F00DC9CC9 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		4A44EEFA28807DC00062420E /* PlayTapeOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTapeOnboardingViewController.swift; sourceTree = "<group>"; };
 		4A45D37D287F0B2F00592749 /* OpenBoxOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenBoxOnboardingViewController.swift; sourceTree = "<group>"; };
@@ -581,6 +583,7 @@
 				98BFBCCE2879B85400F01F04 /* UIFont+.swift */,
 				98BFBCD02879BBB700F01F04 /* UIColor+.swift */,
 				98BFBCD6287AC21000F01F04 /* UIViewController+.swift */,
+				4A1483C428BD182700080EEA /* UIButton+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1146,6 +1149,7 @@
 				92CC3B9C287CA17000EA5617 /* CountDownLabel.swift in Sources */,
 				4AC989B52889240300B4A7BE /* SettingTableViewCell.swift in Sources */,
 				924814B1287EB5CC001177B1 /* DialogViewController.swift in Sources */,
+				4A1483C528BD182700080EEA /* UIButton+.swift in Sources */,
 				923061D4287754DB00F04EDA /* TimeTravelDataModel.swift in Sources */,
 				92DB35312875633D001E2006 /* AppDelegate.swift in Sources */,
 				98B4B5AC287EB5EF00F4AD7A /* Storyboard.swift in Sources */,
