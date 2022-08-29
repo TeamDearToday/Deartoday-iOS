@@ -58,6 +58,7 @@ final class SettingTableViewCell: UITableViewCell {
             $0.trailing.equalToSuperview().inset(16)
             $0.centerY.equalToSuperview()
         }
+        
         separatorView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.bottom.equalToSuperview()
