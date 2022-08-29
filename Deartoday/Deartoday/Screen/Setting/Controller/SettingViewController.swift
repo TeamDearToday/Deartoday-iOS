@@ -46,6 +46,7 @@ final class SettingViewController: UIViewController {
         $0.titleLabel?.font = .p4
         $0.setTitle("로그아웃", for: .normal)
         $0.setTitleColor(.blue01, for: .normal)
+        $0.setUnderline()
         $0.addTarget(self, action: #selector(logoutButtonDidTap), for: .touchUpInside)
     }
     
@@ -53,15 +54,8 @@ final class SettingViewController: UIViewController {
         $0.titleLabel?.font = .p4
         $0.setTitle("서비스 탈퇴", for: .normal)
         $0.setTitleColor(.blue01, for: .normal)
+        $0.setUnderline()
         $0.addTarget(self, action: #selector(withDrawButtonDidTap), for: .touchUpInside)
-    }
-    
-    private let logoutLineView = UIView().then {
-        $0.backgroundColor = .blue01
-    }
-    
-    private let withDrawLineView = UIView().then {
-        $0.backgroundColor = .blue01
     }
 
     // MARK: - Life Cycle
@@ -97,8 +91,7 @@ final class SettingViewController: UIViewController {
     private func setHierarchy() {
         view.addSubviews([backgroundView, navigationView,
                           backButton, tableView,
-                          logoutButton, withDrawButton,
-                          withDrawLineView, logoutLineView])
+                          logoutButton, withDrawButton])
     }
     
     private func setConstraint() {
@@ -122,30 +115,16 @@ final class SettingViewController: UIViewController {
             $0.height.equalTo(454)
         }
         
-        withDrawLineView.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(16)
-            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(constraintByNotch(73, 40))
-            $0.height.equalTo(1)
-            $0.width.equalTo(69)
-        }
-        
         withDrawButton.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(16)
-            $0.bottom.equalTo(withDrawLineView.snp.top).offset(-1)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(constraintByNotch(73, 40))
             $0.width.equalTo(69)
             $0.height.equalTo(18)
         }
         
-        logoutLineView.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(16)
-            $0.bottom.equalTo(withDrawButton.snp.top).offset(-20)
-            $0.height.equalTo(1)
-            $0.width.equalTo(52)
-        }
-        
         logoutButton.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(16)
-            $0.bottom.equalTo(logoutLineView.snp.top).offset(-1)
+            $0.bottom.equalTo(withDrawButton.snp.top).offset(-22)
             $0.width.equalTo(52)
             $0.height.equalTo(20)
         }
