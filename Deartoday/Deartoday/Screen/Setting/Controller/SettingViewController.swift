@@ -131,7 +131,7 @@ final class SettingViewController: UIViewController {
     }
 }
 
-    // MARK: UITableViewDataSource
+    // MARK: - UITableView DataSource
 
 extension SettingViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -140,21 +140,13 @@ extension SettingViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier, for: indexPath) as? SettingTableViewCell else { return UITableViewCell() }
-        switch indexPath.section {
-        case 0:
-            cell.titleLabel.text = sectionTitles[0][indexPath.row]
-            return cell
-        case 1:
-            cell.titleLabel.text = sectionTitles[1][indexPath.row]
-            cell.switchButton.isHidden = true
-            return cell
-        default:
-            return UITableViewCell()
-        }
+        cell.titleLabel.text = sectionTitles[indexPath.section][indexPath.row]
+        cell.switchButton.isHidden = (indexPath.section == 1)
+        return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? sectionTitles[0].count : sectionTitles[1].count
+        return sectionTitles[section].count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -169,7 +161,6 @@ extension SettingViewController: UITableViewDataSource {
             $0.textAlignment = .left
             $0.text = section == 0 ? "설정" : "디어투데이 정보"
         }
-        
         headerView.addSubview(headerLabel)
         headerLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(16)
@@ -183,9 +174,9 @@ extension SettingViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return section == 0 ? UIView() : nil
+        return UIView()
     }
 }
-    // MARK: // UITableViewDelegate
+    // MARK: - UITableView Delegate
 
 extension SettingViewController: UITableViewDelegate { }
