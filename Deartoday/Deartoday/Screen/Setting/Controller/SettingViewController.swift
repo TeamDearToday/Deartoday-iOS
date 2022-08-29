@@ -23,7 +23,8 @@ final class SettingViewController: UIViewController {
         let tableView = UITableView()
         tableView.sectionHeaderHeight = 42
         tableView.sectionHeaderTopPadding = 0
-        tableView.separatorStyle = .none
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        tableView.separatorColor = .blue00
         tableView.isScrollEnabled = false
         tableView.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.identifier)
         return tableView
@@ -131,7 +132,7 @@ final class SettingViewController: UIViewController {
     }
 }
 
-    // MARK: UITableViewDataSource
+    // MARK: - UITableViewDataSource
 
 extension SettingViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -140,21 +141,13 @@ extension SettingViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier, for: indexPath) as? SettingTableViewCell else { return UITableViewCell() }
-        switch indexPath.section {
-        case 0:
-            cell.titleLabel.text = sectionTitles[0][indexPath.row]
-            return cell
-        case 1:
-            cell.titleLabel.text = sectionTitles[1][indexPath.row]
-            cell.switchButton.isHidden = true
-            return cell
-        default:
-            return UITableViewCell()
-        }
+        cell.titleLabel.text = sectionTitles[indexPath.section][indexPath.row]
+        cell.switchButton.isHidden = (indexPath.section == 1)
+        return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? sectionTitles[0].count : sectionTitles[1].count
+        return sectionTitles[section].count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -169,7 +162,6 @@ extension SettingViewController: UITableViewDataSource {
             $0.textAlignment = .left
             $0.text = section == 0 ? "설정" : "디어투데이 정보"
         }
-        
         headerView.addSubview(headerLabel)
         headerLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(16)
@@ -183,9 +175,25 @@ extension SettingViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return section == 0 ? UIView() : nil
+<<<<<<< Updated upstream
+        return UIView()
+=======
+        let footerView = UIView()
+        let topLineView = UIView().then {
+            $0.backgroundColor = .lightBlue01
+        }
+        
+        footerView.addSubview(topLineView)
+        topLineView.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.top.equalTo(footerView.snp.top).inset(0)
+            $0.height.equalTo(1)
+        }
+        
+        return section == 0 ? footerView : nil
+>>>>>>> Stashed changes
     }
 }
-    // MARK: // UITableViewDelegate
+    // MARK: - UITableViewDelegate
 
 extension SettingViewController: UITableViewDelegate { }

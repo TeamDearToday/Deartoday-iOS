@@ -28,7 +28,7 @@ final class SettingTableViewCell: UITableViewCell {
         $0.onTintColor = .blue01
     }
     
-    private let cellBottomLine = UIView().then {
+    private let separatorView = UIView().then {
         $0.backgroundColor = .lightBlue01
     }
     
@@ -47,7 +47,7 @@ final class SettingTableViewCell: UITableViewCell {
     
     private func setLayout() {
         contentView.addSubviews([titleLabel, switchButton,
-                                 cellBottomLine])
+                                 separatorView])
         
         titleLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(16)
@@ -58,10 +58,19 @@ final class SettingTableViewCell: UITableViewCell {
             $0.trailing.equalToSuperview().inset(16)
             $0.centerY.equalToSuperview()
         }
-        cellBottomLine.snp.makeConstraints {
+<<<<<<< Updated upstream
+        
+        separatorView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.bottom.equalToSuperview()
             $0.height.equalTo(1)
         }
+=======
+//        cellBottomLine.snp.makeConstraints {
+//            $0.leading.trailing.equalToSuperview().inset(16)
+//            $0.bottom.equalToSuperview()
+//            $0.height.equalTo(1)
+//        }
+>>>>>>> Stashed changes
     }
 }
