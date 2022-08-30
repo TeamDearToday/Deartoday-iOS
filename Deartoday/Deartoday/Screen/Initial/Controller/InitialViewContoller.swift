@@ -15,15 +15,15 @@ final class InitialViewController: UIViewController {
     
     // MARK: - UI Property
     
-    var backgroundView = UIView().then {
+    private let backgroundView = UIView().then {
         $0.backgroundColor = .lightBlue00
     }
     
-    var logoImageView = UIImageView().then {
+    private let logoImageView = UIImageView().then {
         $0.image = Constant.Image.logo
     }
     
-    var appleLoginButton = UIButton().then {
+    private lazy var appleLoginButton = UIButton().then {
         $0.setImage(Constant.Image.btnApple, for: .normal)
         $0.addTarget(self, action: #selector(appleSignInButtonDidTap), for: .touchUpInside)
     }
